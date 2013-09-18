@@ -2,13 +2,13 @@
 
 ######Open up a terminal window
 
-- Move to your local WDI_NYC_Array_Work folder
+- Move to your local `WDI_NYC_Array_Work` folder
 
 ```bash
 cd path/to/ga_wdi/folder
 cd WDI_NYC_Array_work
 ```
-![image](screenshots/work_directory.png)
+![image](./screenshots/work_directory.png)
 
 - Move to the folder with today's assignment and look at what is inside
 	- The description of the homework is in the README.md file
@@ -19,7 +19,7 @@ cd w01
 cd d01
 ls
 ```
-![image](screenshots/todays_folder.png)
+![image](./screenshots/todays_folder.png)
 
 ######Check out your development branch and make sure you are on the right branch
 
@@ -29,14 +29,14 @@ git checkout development
 git branch
 ```
 
-![image](screenshots/checkout.png)
+![image](./screenshots/checkout.png)
 
 
 ######Move to your __OWN PERSONAL DIRECTORY__ and do the work
 - Do NOT edit any files that are not in your personal directory
 - Remember to save all your files
 
-![image](screenshots/own_directory.png)
+![image](./screenshots/own_directory.png)
 ![image](./screenshots/do_work.png)
 
 
@@ -92,3 +92,7 @@ git push origin master
 ---
 
 ![image](./screenshots/pull_request_04.png)
+
+---
+
+You're DONE!
