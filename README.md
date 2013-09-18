@@ -4,7 +4,7 @@
 
 ####Instructions in words:
 - Open up a terminal window
-- Move to your local WDI_NYC_7_Work folder
+- Move to your local `WDI_NYC_Array_Work` folder
 - Checkout your development branch
 - Pull from the upstream master
 - Do your work
