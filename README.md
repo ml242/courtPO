@@ -41,6 +41,5 @@ git push origin master
 
 ######Make a pull request
 - Go to your own github account and make your pull request
-- You MUST title your pull request starting with `hw_w01_submission`
-  - For example: "hw_w01_submission Complete Calculator HW"
+- Title your pull request with the week and day (for example `HW w01-d01`)
 - You MUST inlucude comments on your successes and challenges
