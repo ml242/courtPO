@@ -90,6 +90,9 @@ git push origin master
 ![image](./screenshots/pull_request_03.png)
 
 ---
+###### Make your pull request
+- Title your pull request with the week and day (for example `HW w01-d01`)
+- You MUST inlucude comments on your successes and challenges
 
 ![image](./screenshots/pull_request_04.png)
 
