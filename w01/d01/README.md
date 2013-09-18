@@ -8,7 +8,7 @@
         - WDI_NYC_Array
         - WDI_NYC_Array_Work
 
-## Homework
+## Homework - ONLY WORK IN YOUR OWN FOLDER
 - Complete `familiarity_hw.rb`
   - Instructions are within
 - Create a README.md file INSIDE your personal folder: WDI_NYC_Array_Work/w01/d1/YOUR_NAME
