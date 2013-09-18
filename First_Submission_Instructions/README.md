@@ -34,6 +34,7 @@ git branch
 
 ######Move to your __OWN PERSONAL DIRECTORY__ and do the work
 - Do NOT edit any files that are not in your personal directory
+- Remember to save all your files
 
 ![image](screenshots/own_directory.png)
 ![image](./screenshots/do_work.png)
@@ -91,7 +92,3 @@ git push origin master
 ---
 
 ![image](./screenshots/pull_request_04.png)
-
----
-
-![image](./screenshots/pull_request_05.png)
