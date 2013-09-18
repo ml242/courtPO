@@ -92,7 +92,3 @@ git push origin master
 ---
 
 ![image](./screenshots/pull_request_04.png)
-
----
-
-![image](./screenshots/pull_request_05.png)
