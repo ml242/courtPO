@@ -12,8 +12,7 @@
 - Commit your changes
 - Push your development branch to origin
 - Checkout your master branch
-- Pull from origin your development branch
-  - In this step, you are merging your development branch into your master branch
+- Merge your development branch into your master branch
 - Push your master to your origin
 - Make a pull request with a title starting with `hw_w01_submission`
 
@@ -29,13 +28,14 @@ git pull upstream master
 #####You may need to `save` and `close` a merge/commit message
 #####At this point, you do the work in your OWN folder
 
-#####Once you have compeleted your work:
+#####Once you have completed your work:
 ```bash
 git add .
 git commit -m "Completed HW"
 git push origin development
 git checkout master
-git pull origin development
+git branch
+git merge development
 git push origin master
 ```
 
