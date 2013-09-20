@@ -4,7 +4,7 @@
 
 ####Instructions in words:
 - Open up a terminal window
-- Move to your local `WDI_NYC_Array_Work` folder
+- Move to your local `WDI_NYC_Hash_Work` folder
 - Checkout your development branch
 - Pull from the upstream master
 - Do your work
@@ -20,7 +20,7 @@
 
 ####Instructions in code:
 ```bash
-cd ~/Documents/ga_wdi/WDI_NYC_Array_Work
+cd ~/Documents/ga_wdi/WDI_NYC_Hash_Work
 git checkout development
 git pull upstream master
 ```
