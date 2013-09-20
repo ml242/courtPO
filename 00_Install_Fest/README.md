@@ -8,9 +8,8 @@
 4. [Homebrew][brew]
 5. Install Git
     1. [Setup SSH Keys][github]
-    2. Configure [.gitconfig][gconfig] & [.gitignore_global][gignore]
+    2. Configure [.gitconfig][gconfig]
 6. [Install Ruby][rbenv]
-7. Set up [Bash Profile][dotfiles]
 
 [osx]:     http://www.apple.com/osx/
 [xcode]:   https://developer.apple.com/devcenter/mac/index.action
@@ -22,10 +21,7 @@
 [rbenv]:   https://github.com/sstephenson/rbenv
 
 [github]:   https://help.github.com/articles/generating-ssh-keys
-[gconfig]:  http://git-scm.com/book/en/Customizing-Git-Git-Configuration
-[gignore]:  https://help.github.com/articles/ignoring-files
-[dotfiles]: /dotfiles
-
+[gconfig]:  https://gist.github.com/phlco/6642359
 Additional Tools
 
 * [Postgres.App](http://postgresapp.com/)
