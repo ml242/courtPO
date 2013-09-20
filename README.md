@@ -12,7 +12,7 @@ Congratulations on joining us at General Assembly for the Web Development Immers
 
 
 ###Phillip Lamplugh
-* <phlco@generalassemb.ly>
+* <phillip.lamplugh@generalassemb.ly>
 
 
 ###Alicia Lauerman
