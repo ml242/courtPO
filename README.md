@@ -55,3 +55,54 @@ From the terminal type:
 ```bash
 git pull origin master
 ```
+
+---
+
+# Class Resources
+
+### Contact Information
+[Spreadsheet](https://docs.google.com/spreadsheet/ccc?key=0AggpMwEqzvVzdGs2eThHNmhidnJUVkc4NWhVczQ0Wmc&usp=sharing)
+
+### How to Study
+[How to Learn](http://www.scotthyoung.com/blog/Programs/HolisticLearningEBook.pdf)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
