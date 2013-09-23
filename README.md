@@ -20,7 +20,7 @@
 
 ####Instructions in code:
 ```bash
-cd ~/Documents/ga_wdi/WDI_NYC_Hash_Work
+cd ~/ga_wdi/WDI_NYC_Hash_Work
 git checkout development
 git pull upstream master
 ```
