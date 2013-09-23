@@ -19,6 +19,7 @@ cd w01
 cd d01
 ls
 ```
+######Make your personal directory: `mkdir firstname_lastname`
 ![image](./screenshots/todays_folder.png)
 
 ######Check out your development branch and make sure you are on the right branch
