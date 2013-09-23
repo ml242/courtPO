@@ -29,5 +29,5 @@ thumbs.db
 /tmp
 
 # Ignore cohort directory function
-bin/cohort_dirs
+util/*
 roster.txt

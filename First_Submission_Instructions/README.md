@@ -2,11 +2,11 @@
 
 ######Open up a terminal window
 
-- Move to your local `WDI_NYC_Array_Work` folder
+- Move to your local `WDI_NYC_Hash_Work` folder
 
 ```bash
 cd path/to/ga_wdi/folder
-cd WDI_NYC_Array_work
+cd WDI_NYC_Hash_work
 ```
 ![image](./screenshots/work_directory.png)
 
