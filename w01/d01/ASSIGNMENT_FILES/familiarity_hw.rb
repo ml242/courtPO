@@ -13,6 +13,9 @@
 #   5. Observe the displayed output
 #   6. Repeat steps 3-5 for all lines below in order
 
+# HW: Save the the last value you get from this exercise to 
+# the README.md you made in your personal work folder, and 
+# make a pull-request to the ga-students/WDI_NYC_Hash_Work repo
 
 first_ans = 7 / 2
 
