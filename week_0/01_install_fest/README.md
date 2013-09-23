@@ -148,7 +148,7 @@ Download and install the [Postgres.App](http://postgresapp.com/)
 * [Spectacle](http://spectacleapp.com/)
 * [HipChat](https://www.hipchat.com/mac)
 * [ST2 Flatland Theme](https://github.com/thinkpixellab/flatland)
-* [Solarized Theme](https://www.dropbox.com/s/7ejobxk753nawi1/Solarized%20Dark%20ansi.terminal)
+* [Solarized Theme](https://www.dropbox.com/s/7d9itjs5vl78r8u/Solarized%20Dark.terminal)
 * [Adobe Source Code Pro Font](http://sourceforge.net/projects/sourcecodepro.adobe/files/SourceCodePro_FontsOnly-1.017.zip/download) 
 
 [st2]: http://www.sublimetext.com/2
