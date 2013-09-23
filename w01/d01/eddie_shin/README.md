@@ -1,2 +1,2 @@
-Name: Eddie SHin
+Name: Eddie Shin
 GitHub: eddition
