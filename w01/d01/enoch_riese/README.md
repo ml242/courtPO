@@ -1,2 +1,2 @@
 Name: Enoch Riese
-GitHub eriese
+GitHub: eriese
