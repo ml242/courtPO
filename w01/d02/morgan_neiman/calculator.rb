@@ -1,11 +1,10 @@
-def getarray(numIn) #method to make an array out of user's numbers
-  puts "Enter the numbers you'd like me to use"
+def getNumbers(numIn) #method to make an array out of user's numbers
+  puts "Enter the numbers you'd like me to use, separated by spaces."
   numIn = gets.chomp #gets numbers
   numbers = numIn.split(" ") #separates numbers into individual strings
   workingArray = [] #create new array
   numbers.each { |num| workingArray << num.to_i } #adds each number to the end of workingArray
 end
-
 
 puts "Welcome to Calculator."
 puts "Would you like to calculate something?"
@@ -27,3 +26,11 @@ puts "What operation would you like to perform?"
 puts "Your options are: Add, Subtract, Multiply, Divide"
 puts "Please enter your choice:"
 choice = gets.chomp!.downcase
+
+if choice == "add"
+  getNumbers(add)
+  sum = 0
+  workingArray.each {|num| sum + num}
+  puts "Your sum is #{sum}"
+end
+
