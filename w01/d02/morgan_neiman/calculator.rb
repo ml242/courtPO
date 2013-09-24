@@ -30,8 +30,16 @@ choice = gets.chomp!.downcase
 if choice == "add"
   getNumbers
   sum = 0
-  workingArray.inject {|sum,x| sum + x}
-  #workingArray.each {|num| sum + num}
+  while numInUse != workingArray.last
+    workingArray.each do |x|
+      sum = sum + x
+      numInUse = x
+    end
+  end
+
+  #workingArray[0]...workingArray.last do |x|
+   # sum = sum + x
+  #end
   puts "Your sum is #{sum}"
 end
 
