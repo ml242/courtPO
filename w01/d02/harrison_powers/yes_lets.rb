@@ -7,7 +7,7 @@ print "y/n "
 
 input = gets.downcase.chomp!
 
-while input == 'y' && counter < 5 do
+while input == 'y' && counter < 5
   counter += 1
   puts "ok we're playing..."
 
@@ -17,9 +17,14 @@ while input == 'y' && counter < 5 do
 
   awesome_things << awesome_thing
 
-  puts "Do you STILL wanna play Yes Let's??"
-  input = gets.chomp!
-  puts "Too bad. The game is over." if counter == 5
+  if counter < 5
+  	puts "Do you STILL wanna play Yes Let's??"
+    input = gets.chomp!
+  else
+  	puts
+    puts "Fun game. It is now time to go to say goodbye."
+  end
 end
-
+puts
+puts "Here is a transcript of your game:"
 p awesome_things
