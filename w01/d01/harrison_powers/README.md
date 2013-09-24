@@ -1,7 +1,5 @@
-Name: Josh Oynick
-Github: oynickj
-
-###Last line of Ruby hw:
+Name: Harrison Powers  
+Github: fijimunkii  
 
 irb(main):042:0> number_array.each { |current_index| puts get_character(message_string, current_index) }
 w
