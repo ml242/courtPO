@@ -24,13 +24,24 @@ I am here to learn as much as I can about full stack development as I can in 12 
 
 To me this means respect everyone's time, their right to learn & ask questions, but also their right to not have the class held up by someone who didn't do the work.  This mutual respect is very important to me.  We also need to respect each other enough to give truthful feedback in a constructive manner and respect each individual's personal growth struggle that they will face during the course.  We need to help each other, __Encourage__ each other, __Support__ each other during this program, and __Inspire__ each other to put in the extra effort to wring every last bit of learning out of this class that we can.
 
-We are in this together and we will learn more and learn faster if we are open and __Share__ along the way.  Share successes & failures and don't be embarassed about either.  Fail early, fail often is a tech mantra as I understand it but the value lies in understanding why something failed and learning from that experience.  __Embracing Iteration__ is not something most people need or have the opportunity to do in normal life but I believe it is a crucial part of our education and evolution and it will only be strengthened if we respect each other enough to honestly and constructively share our opinions about projects, code, and many other aspects of this course during out time in the program.
+We are in this together and we will learn more and learn faster if we are open and __Share__ along the way.  Share successes & failures and don't be embarassed about either.  Failure is not a bad F-word.  Fail early, fail often is a tech mantra as I understand it but the value lies in understanding why something failed and learning from that experience.  __Embracing Iteration__ is not something most people need or have the opportunity to do in normal life but I believe it is a crucial part of our education and evolution and it will only be strengthened if we respect each other enough to honestly and constructively share our opinions about projects, code, and many other aspects of this course during out time in the program.
 
 
 ###Action items for fostering these values
 #####Respect:
-Keep to set timelines.
-- 5 minutes means 5 minutes.  Starting at 1pm means in our seats at 12:58 so that we're ready to start at 1pm.
+Keep to set timelines:
+
+- 5 minutes means 5 minutes and starting at 1pm means in our seats at 12:58pm so that we're ready to start at 1
+
+Everyone does the work:
+
+- we should take advantage of office hours to keep up when we're having trouble with difficult assignments or as dedicated time to makeup missed assignments 
+
+Understand that different people learn at different rates with different concepts
+
+- take advantage of this to help each other -- identify when you get something and volunteer to help anyone who might have questions
+- provide help with encouragement and positive reinforcement
+- raise your hand and ask for help when you need it
 
 
 
@@ -43,6 +54,9 @@ Think about what you talked about from your discussion of Caroll Dwek in your gr
 - Why are these important.
 - What are specific actionable items that you can do to ensure our kick hash community has this mindset?
 - What specific actionable items can you do to help yourself have this mindset?
+
+
+
 
 # Values
 [Photos of the board](http://imgur.com/a/kE2SL)
