@@ -14,7 +14,7 @@ Choose 3 values from the board you put together below (photos below)
 
 - Why are they important to you?
 - What specific actionable items can you do to uphold these values?
-- What specific action items can you do to help others in our kick-hash community to uphold these values?
+- What specific action items  do to help others in our kick-hash community to uphold these values?
 
 
 # Question 2
