@@ -17,6 +17,7 @@ Choose 3 values from the board you put together below (photos below)
 - What specific action items can you do to help others in our kick-hash community to uphold these values?
 
 ---
+#Response 1
 
 The three values that are most important to me are __Respect__,  __Support and Inspire Each Other__, and __Share and Embrace Iteration__.
 
@@ -55,9 +56,28 @@ Think about what you talked about from your discussion of Caroll Dwek in your gr
 - What are specific actionable items that you can do to ensure our kick hash community has this mindset?
 - What specific actionable items can you do to help yourself have this mindset?
 
+---
+#Response 2
+
+#####Important mindset concepts
+
+- Struggle is good
+- Eliminate duck syndrome
+- Identify opportunities for growth
+
+It is important to spend time struggling with difficult concepts to learn how to solve problems and develop creative workarounds while becoming comfortable with this discomfort of creativity.
+
+Duck syndrome–appearing calm while furiously working–will not foster this environment of embracing struggle, creative solutioning, and success.
+
+Acknowledging our strenghts and weaknesses so that we can identify classmates with complementary skills that can help us in the areas where we struggle most will accelerate our learning and growth.
+
+#####Action items 
+
+Get to know my classmates better and share my experiences, strengths, and weaknesses in an attempt to foster this environment.  Communicate when I need help and when I think I can provide help.  Work hard and collaborate to struggle through challenging tasks as a group be it in person on on HipChat.
 
 
-
+---
+---
 # Values
 [Photos of the board](http://imgur.com/a/kE2SL)
 - Passion
