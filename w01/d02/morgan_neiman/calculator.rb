@@ -1,4 +1,4 @@
-def getNumbers(numIn) #method to make an array out of user's numbers
+def getNumbers #method to make an array out of user's numbers
   puts "Enter the numbers you'd like me to use, separated by spaces."
   numIn = gets.chomp #gets numbers
   numbers = numIn.split(" ") #separates numbers into individual strings
@@ -28,31 +28,44 @@ puts "Please enter your choice:"
 choice = gets.chomp!.downcase
 
 if choice == "add"
-  getNumbers(add)
+  getNumbers
   sum = 0
   workingArray.each {|num| sum + num}
   puts "Your sum is #{sum}"
 end
 
 if choice == "subtract"
-  getNumbers(sub)
+  getNumbers
   dif = 0 + workingArray[0] + workingArray[0] #there are two of these to counteract the next step subtracting the first value
   workingArray.each {|num| dif - num}
   puts "Your difference is #{dif}"
 end
 
 if choice == "multiply"
-  getNumbers(mult)
+  getNumbers
   prod = 1
   workingArray.each {|num| prod * num}
   puts "Your product is #{prod}"
 end
 
 if choice == "divide"
-  getNumbers(div)
+  getNumbers
   quot = 1 * workingArray[0] * workingArray[0] #two to counteract first division by first val in array
   workingArray.each {|num| quot / num }
   puts "Your quotient is #{quot}"
 end
 
+puts "Would you like to calculate something else?"
+puts "y/n"
+firstIn = gets.chomp.downcase
+
+if firstIn == "n"
+  puts "k bye!"
+end
+
+if firstIn != "n" && firstIn != "y"
+  puts "I don't get it. Shutting down."
+end
+
+end
 
