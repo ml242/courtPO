@@ -1,5 +1,8 @@
 
+
+
 ##Collective Respect 
+
 
 
 In the context of an immersive, all-day-and-most-of-the-night education experience, there's nothing more vital to group and individual success than a classroom atmosphere of collective respect. 
@@ -18,6 +21,7 @@ __Actionable idea:__ Weekly check-ins/calibrations to make sure our environment 
 
 
 ##Free Think
+
 
 Brilliant ideas are never conceived fully formed, so let's adopt the position of giving every idea a chance, even if only for a moment; Remember, it only takes a spark to start a wildfire. 
 
