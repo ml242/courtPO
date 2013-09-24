@@ -14,9 +14,8 @@ When I chose "creativity," I was thinking not so much of *having* it as of encou
 
 # Growth Mindset
 ---
-The biggest thing I took from watching Carol Dweck's talk was the idea that our society views effort as weakness. 
+- Effort as the path to growth
+- Hug yourself
+- Give someone else a hug
 
-Effort as the path to growth
-Hug yourself
-Give someone else a hug
-Write yourself a letter
+The biggest thing I took from watching Carol Dweck's talk was the idea that our society views effort as weakness. This is true, and I noticed that I thought this way, too, when after college I embarked on a charity cycling trip across the country. For the first few days, I don't think I have ever wanted to quit something so badly in my life. This isn't because I didn't want to do it, but because I was so embarrassed of how much effort it would take me to succeed. I didn't want my other teammates to see me struggling. It took me about two weeks of isolating myself from the group and riding alone before I realized that it was actually easier to get through the day by opening up to others about how much I was struggling. A good way to implement viewing effort as a path to growth in Team Kick-Hash might be to open up to others about what we're struggling with—to let go of any shame associated with trying hard.
