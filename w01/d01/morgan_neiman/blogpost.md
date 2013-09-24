@@ -50,4 +50,4 @@ Think about what you talked about from your discussion of Caroll Dwek in your gr
 - Coffee, Beer and Food
 - Support and Insprie each other
 - Public Skill List
-- Comraderie, Accountabiltiy, Mentorship-
+- Comraderie, Accountabiltiy, Mentorship- 
