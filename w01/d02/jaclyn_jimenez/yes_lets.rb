@@ -4,13 +4,15 @@ puts "Do you want to play Yes Let's?"
 print "y/n?"
 
 input = gets.chomp!
+counter = 0
 
-while input == 'y'
+while input == 'y' && counter < 5
   puts "ok we're playing...."
   puts "What do you want to do?"
   awesome_thing = gets.chomp
   awesome_things << awesome_thing
   puts awesome_things
+  counter += 1
   puts "Do you still want to play Yet Let's?"
   input = gets.chomp!
 end
