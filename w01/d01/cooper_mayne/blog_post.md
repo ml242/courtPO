@@ -1,15 +1,21 @@
 #Blog
 ##Q1
 3 important values:
+
 -pleasure
+
 -cooperation
+
 -creativity
 
 enjoying what i am doing is essential.  it keeps me motivated and pushes me forward.  cooperation is awesome cause it has my name in it... it lets me be a team player and a narcissist at the same time.  creativity feeds the soul or the soul feeds your creativity or... well its one of those.
 
 Actionable Steps...
+
 Pleasure: focus on the present - enjoy the moment, etc
+
 Cooperation: i was born into this one... listen to what people are saying and try to express myself clearly
+
 Creativity: creativity cant be forced... you just make room for it...
 
 ##Q2
