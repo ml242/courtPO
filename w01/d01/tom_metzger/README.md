@@ -19,4 +19,8 @@ if you change puts to print you can get
 welcometowdi
 
 
+<<<<<<< HEAD
 Thank you!
+=======
+Thank you!
+>>>>>>> home work for day 1 changes
