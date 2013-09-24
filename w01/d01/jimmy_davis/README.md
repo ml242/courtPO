@@ -13,4 +13,19 @@ The three values that are most important to me throughout the 12 weeks (and beyo
 ---With regards to Carol Dweck, something that is particularly important to me is to constantly work on “developing yourself.”  In her discussion about perfectionism, I learned that perfection does not have to be your goal, but you should constantly strive for high standards, continuously trying to improve and develop yourself.  My number one goal with WDI is to learn something new.  When you struggle and feel overwhelmed, that is when you are learning.
 ---To make sure the kick-hash community has this mindset, it is important to focus on learning something new each day, even if it seems impossible, because that is when we are truly learning something.  We need to be responsible for ourselves, and make sure that we are continuously getting better.
 ---To ensure that I have this mindset, I need to realize that this is not going to come easy, but when I am faced with a difficult problem or stressful situation, I need to remind myself that if I stay positive I will get through it and learn a priceless new skill set.
----
+---
+#Ruby:
+irb(main):046:0> number_array.each { |current_index| puts get_character(message_string, current_index) }
+w
+e
+l
+c
+o
+m
+e
+t
+o
+w
+d
+i
+=> [6.0, 8, 4.0, 5.0, -1.0, 16, 8, 19, 21, 6, 3, 1]
