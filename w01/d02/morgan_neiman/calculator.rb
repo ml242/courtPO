@@ -34,3 +34,25 @@ if choice == "add"
   puts "Your sum is #{sum}"
 end
 
+if choice == "subtract"
+  getNumbers(sub)
+  dif = 0 + workingArray[0] + workingArray[0] #there are two of these to counteract the next step subtracting the first value
+  workingArray.each {|num| dif - num}
+  puts "Your difference is #{dif}"
+end
+
+if choice == "multiply"
+  getNumbers(mult)
+  prod = 1
+  workingArray.each {|num| prod * num}
+  puts "Your product is #{prod}"
+end
+
+if choice == "divide"
+  getNumbers(div)
+  quot = 1 * workingArray[0] * workingArray[0] #two to counteract first division by first val in array
+  workingArray.each {|num| quot / num }
+  puts "Your quotient is #{quot}"
+end
+
+
