@@ -31,3 +31,13 @@ You have to eat **food** or you will wither away. Might as well be **passionate*
 **Beer** is great.
 
 I have some strong feelings on beer so I will devote an entire post, or two or three, to it in the future. Thank god for beer.
+
+###Regarding Challenging Work
+
+Caroll Dwek has a fantastic concept on why being challenged by your work is not only healthy, but vital for sustained greatness.
+
+People who try to accomplish challenging work (that is, work that is challenging to them) learn much more from their mistakes, than 'child prodigies' who only try to do what they already understand.
+
+It is this very simple concept that re-inforces the time-old notion that hard work pays off. This ties in very closely with **passion**. To read my thoughts on this, see what I wrote above.
+
+Try new things, challenge yourself, and see the amazing things that you can accomplish.
