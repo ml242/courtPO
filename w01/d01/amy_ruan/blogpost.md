@@ -1,62 +1,13 @@
-Here is the actual prompts! Remember, we instructors will be doing this with you too!
-
-# Instructions
-- Download the [Mou App](http://mouapp.com/) if you haven't already
-- Answer the below questions in markdown (probably several paragraphs, we - will be answering these too).
-- Learn about the Markdown syntax from [Daring Fireball's website](http://- daringfireball.net/projects/markdown/syntax).
-- Answer the below questions in markdown
-- Practice using git along the way, REMEMBER, SMALL COMMITS!
-- [Push your answers to the github repository](https://docs.google.com/spreadsheet/ccc?key=0AggpMwEqzvVzdGs2eThHNmhidnJUVkc4NWhVczQ0Wmc#gid=4)
-
-# Question 1
-
-Choose 3 values from the board you put together below (photos below)
-
-Passion, Support, Freethink
-
-- Why are they important to you? 
+# Passion / Support / Freethink
 
 These values are important because it fosters an open environment for teamwork and learning. If individuals are passionate and supportive, everyone will push to do their best and help their teammates reach their potential as well. If freethink is promoted in the group, then individuals and teams will be comfortable with sharing different and new opinions and ideas. 
 
-- What specific actionable items can you do to uphold these values?
+When the learning curve steepens, I have to remind myself daily why I decide to leave my comfort zone and do this course. I will try every weekend to organize my notes and share it with anyone who might be interested. I will encourage others to recap their notes on a weekly basis and share it with the team as well.  
 
 
+# Embrace and learn from your failures and mistakes
 
-- What specific action items can you do to help others in our kick-hash community to uphold these values?
+The most important idea from her "growth-mindset" concept is to embrace and learn from your failures and mistakes. "Potential" should not be measured by our initial effort levevl of failures. We should focus on challenges and work hard to overcome it, instead of just skipping over our failures and moving on to subjects/tasks that are easiest to us. We should always focus on our learning path and take on challenges to help us grow. Throughout most of my academic/professional career, I feel that I was stuck in a "fixed-mindset" because I feared risks and tried to minimize time spent on things that did not come "naturally" to me. I am still working in the process of working on that attitude!
 
+In order to help foster a community that embraces and learn from mistakes, I have to make sure I carry an optimistic and open attitude. If I don't understand a concept, I need to proactively find help and share my concerns. If I understand something well that my team members do not, I have to take the time to share, help and encourage them. 
 
-
-# Question 2
-
-Think about what you talked about from your discussion of Caroll Dwek in your group that was particularly important to you.
-
-- Why are these important.
-- What are specific actionable items that you can do to ensure our kick hash community has this mindset?
-- What specific actionable items can you do to help yourself have this mindset?
-
-# Values
-[Photos of the board](http://imgur.com/a/kE2SL)
-- Passion
-- Respoect
-- Respect
-- Fun
-- Support
-- Take care of yourself
-- Don't compete and encourage sharing
-- Collective respect
-- Friendship
-- Loev
-- Free Think
-- Creativity
-- Sense of Community
-- fun
-- Teamwork
-- Be Friendly
-- Support and encourage and don't judge
-- Share Embrace and interation
-- Communicate
-- Learning
-- Coffee, Beer and Food
-- Support and Insprie each other
-- Public Skill List
-- Comraderie, Accountabiltiy, Mentorship- 
