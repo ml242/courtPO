@@ -12,9 +12,12 @@ end
 include Math
 
 entry = "0"
-
+counter = 0
 while entry != "q"
-	puts "welcome to the ruby calculator"
+	%x(say "welcome to the ruby calculator") if counter < 1
+	puts "welcome to the ruby calculator" if counter < 1
+	puts "lets do some more..." if counter >= 1
+	counter += 1
 	puts
 	puts "press 1 to see a menu of advanced calculations"
 	puts "press 2 to skip ahead to the basic calculator"
@@ -30,32 +33,45 @@ while entry != "q"
 		puts
 		puts "1 - Square"
 		puts "2 - Square Root"
+		%x(say "square or square root")
 		entry = gets.chomp
 		if entry == "1"
 			puts
 			puts "What number would you like to square?"
 			puts
 			entry = gets.chomp
-			puts entry.to_i ** 2
+			answer = entry.to_i ** 2
+			puts answer
+			%x(say #{answer})
 		elsif entry == "2"
 			puts
 			puts "What number would you like to take the square root of?"
 			puts
 			entry = gets.chomp
-			puts sqrt(entry.to_i)
+			answer = sqrt(entry.to_i)
+			puts answer
+			%x(say #{answer})
 		else
-			puts "I hope next time you have something for me to do."
+			puts "R T F M"
+			%x(say "R T F M")
 		end
 	elsif entry == "2"
 		puts
 		puts
 		puts "what would you like to calculate?"
+		%x(say "what would you like to calculate?")
 		puts
 		entry = gets.chomp
-		puts entry.calculate
+		answer = entry.calculate
+		puts answer
+		%x(say #{answer})
 	elsif entry == "q"
 		puts
 		puts "peace homie"
+		%x(say "hasta la vista baby")
+	else
+		puts "R T F M"
+		%x(say "R T F M")
 	end
 	puts
 	puts
