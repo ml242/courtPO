@@ -2,7 +2,7 @@
 
 # end
 
-# counter = 0
+counter = 0
 # something = 10
 
 # while counter < something do
@@ -32,6 +32,7 @@ while input == 'y' do
 
   puts "Do you STILL wanna play Yes Let's??"
   input = gets.chomp!
+  counter += 1
 end
 
 # this print a string with a carriage return of the array
