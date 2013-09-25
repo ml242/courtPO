@@ -17,17 +17,18 @@ while quit != true
   else puts "What numbers would you like to #{func}?"
   end
 
-  if func == "add" then
+  case func
+  when "add" then
     print "for x+y, type x y "
-  elsif func == "subtract" then
+  when "subtract" then
     print "for x-y, type x y "
-  elsif func == "multiply" then
+  when "multiply" then
     print "for x*y, type x y "
-  elsif func == "divide" then
+  when "divide" then
     print  "for x/y, type x y "
-  elsif func == "raise to a power" then
+  when "raise to a power" then
     print "for x^y, type x y "
-  elsif func == "square root" then
+  when "square root" then
     print "for root x, type x "
   end
 
@@ -52,25 +53,27 @@ while quit != true
     break
   end
 
-  if func == "square root" then
+  case func
+  when "square root" then
     puts "finding the square root of #{x}"
-  elsif func == "raise to a power"
+  when "raise to a power"
     puts "raising #{x} to the #{y} power"
   else
    puts "#{func.delete("e")}ing #{x} and #{y}"
   end
 
-  if func == "add" then
+  case func
+  when "add" then
     puts "#{x} + #{y} = #{x_f + y_f}"
-  elsif func == "subtract" then
+  when "subtract" then
     puts "#{x} - #{y} = #{x_f - y_f}"
-  elsif func == "multiply" then
+  when "multiply" then
     puts "#{x} * #{y} = #{x_f * y_f}"
-  elsif func == "divide" then
+  when "divide" then
     puts "#{x} / #{y} = #{x_f / y_f}"
-  elsif func == "raise to a power"
+  when "raise to a power"
     puts "#{x}^#{y} = #{x_f ** y_f}"
-  elsif func == "square root"
+  when "square root"
     puts "the square root of #{x} is #{Math.sqrt(x_f)}"
   end
 end
