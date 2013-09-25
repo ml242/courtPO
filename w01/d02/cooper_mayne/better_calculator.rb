@@ -1,11 +1,16 @@
 def recursive_solver( question )
-  operations_in_order = %w{ pow, mul, div, add, sub }
-  #exit the loop when you get a single number as an answer
-  return question[0] if question.size < 3
 
-  op_loc = question.find_index( "pow"||"mul"||"div"||"add"||"sub")
+  #find operations to do in the correct order...)
+  op_loc =  question.find_index( "pow" ) ||
+            question.find_index( "mul" ) ||
+            question.find_index( "div" ) ||
+            question.find_index( "add" ) ||
+            question.find_index( "sub" ) 
 
-  first_num, operation, second_num = question[op_loc-1], question[op_loc], question[op_loc+1] 
+  #exit the loop when there are no more operations to perform
+  return question[0] if op_loc.nil?
+
+  first_num, operation, second_num = question[op_loc-1].to_f, question[op_loc], question[op_loc+1].to_f
 
   part_answer = single_operation( first_num, operation, second_num)
 
@@ -15,7 +20,9 @@ def recursive_solver( question )
   question.insert( op_loc-1, part_answer )
 
   recursive_solver( question )
-  
+
+
+
 end
 operations = ['add','sub','div','mul','pow']
 
@@ -39,7 +46,7 @@ def proper_question?(question_string, operations_array)
   end
 
   numbers.each do |val|
-    if val.to_i == 0 && val != '0'
+    if val.to_f == 0.0 && val != '0'
       return false
     end
   end
