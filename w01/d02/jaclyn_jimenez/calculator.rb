@@ -19,7 +19,7 @@ def add(numbers)
   sum = 0
   numbers.each do |num|
     num.to_f
-    sum =+ num
+    sum += num
   end
   puts "The sum is #{sum}!"
 end
