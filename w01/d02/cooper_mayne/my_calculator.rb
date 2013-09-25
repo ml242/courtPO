@@ -16,38 +16,54 @@ def proper_question?(question_string, operations_array)
   end
 end
 
+def display_menu(ops)
+  puts "THESE ARE THE COMMANDS CALCZOR UNDERSTANDS!"
+  ops.each {|operation| puts " *  #{operation}"}
 
-puts "welcome to CalcZor!\n"
+  puts "\nWARNING: CalcZor is not all powerful... it can only\nprocess two number and one operation at a time..."
+  puts "\nYour input should look like... \"5 add 3\" or \"3 pow 2\"\n"
+end
 
-puts "THESE ARE THE COMMANDS CALCZOR UNDERSTANDS!"
-operations.each {|operation| puts "   #{operation}"}
+print <<-eos
+   ____           _          _____               
+  / ___|   __ _  | |   ___  |__  /   ___    _ __ 
+ | |      / _` | | |  / __|   / /   / _ \  | '__|
+ | |___  | (_| | | | | (__   / /_  | (_) | | |   
+  \____|  \__,_| |_|  \___| /____|  \___/  |_|  
+\n
+eos
 
-puts "\nWARNING: CalcZor is not all powerful... it can only process two number and one operation at a time..."
-puts "\nYour input should look like... \"5 add 3\" or \"3 pow 2\"\n"
+display_menu(operations)
 
 while true
   print "\nInput: "
   question = gets.downcase.chomp!
+
+  display_menu(operations) if question == "help"
 
   unless proper_question?( question , operations)
     puts "thats a bad question! input \"help\" to learn how to use CalcZor"
     next
   end
 
+
+  question_as_array = question.split(" ")
+
   first_term = question_as_array[0].to_i
   operation = question_as_array[1]
   second_term = question_as_array[2].to_i
 
-  case operation
+  print "Answer: " 
+  puts case operation
   when "add"
-    puts first_term + second_term
+    first_term + second_term
   when "sub"
-    puts first_term - second_term
+    first_term - second_term
   when "div"
-    puts first_term / second_term
+    first_term.to_f / second_term
   when "mul"
-    puts first_term * second_term
+    first_term * second_term
   when "pow"
-    puts first_term ** second_term
+    first_term ** second_term
   end
 end
