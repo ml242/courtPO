@@ -1,20 +1,3 @@
-
-$numbers = Array.new
-
-def math_opperations(opperation)
-  puts "So you want to #{opperation}? Great! Please type the numbers you would like to #{opperation} together. \n Say 'Done' when you are finished."
-    number = 0
-  while number.to_s.downcase != "done"
-    number = gets.chomp
-    if number != number.to_i.to_s && number != number.to_f.to_s
-      number = "done"
-    else
-      $numbers << number.to_f
-    end
-  end
-  puts "The numbers you have chosen are  " + $numbers.to_s
-end
-
 def add(numbers)
   sum = 0
   numbers.each do |num|
@@ -24,24 +7,72 @@ def add(numbers)
   puts "The sum is #{sum}!"
 end
 
+def subtract(numbers)
+  sum = numbers.shift()
+  numbers.each do |num|
+    num.to_f
+    sum -= num
+  end
+  puts "The total is #{sum}!"
+end
+
+def multiply(numbers)
+  sum = numbers.shift()
+  numbers.each do |num|
+    num.to_f
+    sum *= num
+  end
+  puts "The total is #{sum}!"
+end
+
+def divide(numbers)
+  sum = numbers.shift()
+  numbers.each do |num|
+    num.to_f
+    sum /= num
+  end
+  puts "The total is #{sum}!"
+end
+
+def numbers_collect(array)
+  number = 0
+  while number.to_s.downcase != "done"
+    number = gets.chomp
+    if number != number.to_i.to_s && number != number.to_f.to_s
+      number = "done"
+    else
+      array << number.to_f
+    end
+  end
+  puts "The numbers you have chosen are  " + array.to_s
+end
+
+
+
 puts "Welcome to the Calculator!"
 
 puts "What would you like to do? \n \t * Add \n \t * Subtract \n \t * Multiply \n \t * Divide"
 print ">  "
-input = gets.chomp.downcase
+opperation = gets.chomp.downcase
 
-if input != "add"
-  puts "Sorry that is not a valid command."
-  puts input
+numbers = []
+
+greeting = "So you want to #{opperation}? Great! Please type the numbers you would like to #{opperation} together. \n Press enter or say 'Done' when you are finished."
+
+if opperation == "add"
+  puts greeting
+  numbers_collect(numbers)
+  add(numbers)
+elsif opperation == "subtract"
+  puts greeting
+  numbers_collect(numbers)
+  subtract(numbers)
+elsif opperation == "multiply"
+  puts greeting
+  numbers_collect(numbers)
+  multiply(numbers)
 else
-  math_opperations(input)
-end
-
-
-if input == "add"
-  add($numbers)
-elsif input == "subtract"
-  puts "subtract"
-else
-  puts "sorry I don't understand"
+  puts greeting
+  numbers_collect(numbers)
+  divide(numbers)
 end
