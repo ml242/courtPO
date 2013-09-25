@@ -16,7 +16,7 @@ if op == "+"
   puts "Pick a second and press enter again."
   n2a = gets.chomp!
 
-  puts #{n1a} + #{n2a} is:
+  puts "#{n1a} + #{n2a} makes:"
   puts n1a.to_f + n2a.to_f
   end
 
@@ -27,7 +27,7 @@ if op == "-"
   puts "Pick a second and press enter again."
   n2s = gets.chomp!
 
-  puts #{n1s} - #{n2s} is:
+  puts "#{n1s} - #{n2s} makes:"
   puts n1s.to_f - n2s.to_f
   end
 
@@ -38,7 +38,7 @@ if op == "-"
   puts "Pick a second and press enter again."
   n2m = gets.chomp!
 
-  puts #{n1m} * #{n2m} is:
+  puts "#{n1m} * #{n2m} makes:"
   puts n1m.to_f * n2m.to_f
   end
 
@@ -49,8 +49,11 @@ if op == "-"
   puts "Pick a second and press enter again."
   n2d = gets.chomp!
 
-  puts #{n1a} / #{n2a} is:
+  puts "#{n1d} / #{n2d} makes:"
   puts n1d.to_f / n2d.to_f
   end
-puts "Pick another operation. Use + to add, - to sutract, * to multiply, and - to divide, or type 'end' to quit."
+
+puts "Pick another operation. Use + to add, - to sutract, * to multiply, and - to divide, or type 'quit' to quit."
+op = gets.chomp!
+
 end
