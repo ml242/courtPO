@@ -15,14 +15,23 @@ while usr_inpt != 'quit'
   puts
   puts 'If you would like to quit, please input: quit'
   puts
-  usr_inpt = gets.chomp!.downcase
-
+  usr_inpt = gets.chomp.downcase
+=begin
+  until usr_inpt == (("quit") || ('addition') || ('subtraction') || ('multiplication') || ('division') || ('exponents') || ('square root'))
+      puts 'Please put in a correct command'
+      usr_inpt = gets.chomp!.downcase
+  end
+=end
   unless (usr_inpt == 'quit')
+    #if either one of these input mactches, run the script below
 
+  test = ['addition', 'subtraction', 'multiplication', 'division', 'exponents', 'square root'].include? usr_inpt
+
+  if test == true
   puts 'Please enter the number you want to do MATH on: '
   puts
   first_number = gets.chomp!.to_i
-  puts 'Please enter the number you want to do MATH with: (If function is square root, please ignore)'
+  puts 'Please enter the number you want to do MATH with: '
   puts
   second_number = gets.chomp!.to_i
       if usr_inpt == 'addition'
@@ -41,12 +50,18 @@ while usr_inpt != 'quit'
           answer = first_number / second_number
           puts
           puts 'Your answer is ' + answer.to_s
-      elsif usr_inpt == 'exponents'
+      else usr_inpt == 'exponents'
           answer = first_number ** second_number
           puts
           puts 'Your answer is ' + answer.to_s
-      else usr_inpt == 'square root'
-            answer = Math.sqrt(first_number)
+
+      end
+    end
+    if usr_inpt == 'square root'
+            puts 'Please enter the number to squareroot: '
+            puts
+            number = gets.chomp!.to_i
+            answer = Math.sqrt(number)
             puts
             puts 'Your answer is ' + answer.to_s
       end
