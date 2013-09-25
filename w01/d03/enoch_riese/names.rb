@@ -1,4 +1,4 @@
-NAMES = [Name
+NAMES = [
 "Alex Hint",
 "Alicia Lauerman",
 "Amy Ruan",
@@ -25,3 +25,13 @@ NAMES = [Name
 "Travis Vanderhoop",
 "Will Smith",
 "Yaritza Rodriguez"]
+
+def generate_groups
+  puts "How many people per group?"
+  group_size = gets.chomp.to_i
+  group_size.times do
+    puts NAMES.sample
+  end
+end
+
+generate_groups
