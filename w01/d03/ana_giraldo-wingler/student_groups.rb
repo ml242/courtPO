@@ -29,13 +29,16 @@ group_size_str = gets.chomp
 group_size = group_size_str.to_i
 
 #divide class size by desired group size to find # of groups
-group_num = 22 / group_size
+group_num = 23 / group_size
 puts "OK. That makes #{group_num} groups."
 
 #find out the remainder using modulo (%)
-remainder = 22 % group_size
+remainder = 23 % group_size
 
 #create random arrays using group size and number of groups
+student_groups = students.sample(group_size)
+#split sample?
+puts student_groups
 
 
 #add remainder to last group
