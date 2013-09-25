@@ -82,7 +82,7 @@ operations_s = {
 
 #METHODS
 
-def 2_input_calc(input1, input2, math_func)
+def two_input_calc(input1, input2, math_func)
   result = input1 math_func input2
   puts result
 end
