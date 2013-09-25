@@ -31,3 +31,5 @@ thumbs.db
 # Ignore cohort directory function
 util/*
 roster.txt
+=======
+.DS_Store
