@@ -1,7 +1,8 @@
-puts "Do you want to know what to wear? (Y/N)"
-  ans = gets.chomp!
+puts "Do you want to know what to wear? (y/n)"
+  ans = gets.downcase.chomp!
 
-  while ans == "Y" do
+  while ans == "y" do
+
 
 puts "What's the temperature right now?"
     temp = gets.chomp!
@@ -19,7 +20,7 @@ puts "What's the temperature right now?"
           puts "You'll be fine in a t-shirt."
     end
 
-    puts "Do you want to know what to wear? (Y/N)"
-  ans = gets.chomp!
+    puts "Do you want to know what to wear? (y/n)"
+  ans = gets.downcase.chomp!
 
   end
