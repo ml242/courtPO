@@ -18,10 +18,28 @@ PHASE 3
 
 =end
 
-#enter number
 puts "Welcome to your calculator!"
 
+#enter number
+puts "Please enter a number:"
+primary_num = gets.chomp!     #revisit this line to see if I need ! or should get rid of it
+
+
+
+
 #operation -- if arithmetic then prompt for another number and if exponentation or
+
+functions = {
+"a" => "addition",
+"s" => "subtraction",
+"m" => "multiplication",
+"d" => "division",
+#"e" => "exponentation",
+"p" => "raise to the nth power",
+"r" => "take the nth root",
+"c" => "clear the memory"
+}
+
 
 a for addition
 s for subtraction
@@ -30,6 +48,7 @@ d for division
 #e for exponentation
 p to raise to the nth power
 r to take the nth root
+c to clear the memory
 
 
 
