@@ -7,17 +7,26 @@ print "y/n"
 
 input = gets.chomp!
 
-while input == "y" && counter <= 5 do
+while input == "y" && counter <= 4 do
+
+  counter += 1
   puts "ok we're playing..."
 
-  puts "What do you wnat to do?!?"
+  puts "What do you want to do?!?"
   awesome_thing = gets.chomp!
 
   awesome_things << awesome_thing
 
-  puts "Do you STILL want to play Yes Let's??, currently your story says" # add more here
+  puts "Currently your story says:"
+  awesome_things.each {|answer| puts "#{answer}"}
+  if counter != 5
+    puts "Do you STILL want to play Yes Let's??"
+
   input = gets.chomp!
-  counter += 1
+  else
+    puts "Thanks for playing Yes Lets!"
+    exit
+  end
 end
 
 # this print a string with a carriage return of the array
