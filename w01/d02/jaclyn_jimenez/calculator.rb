@@ -53,26 +53,28 @@ puts "Welcome to the Calculator!"
 
 puts "What would you like to do? \n \t * Add \n \t * Subtract \n \t * Multiply \n \t * Divide"
 print ">  "
-opperation = gets.chomp.downcase
+operation = gets.chomp.downcase
 
 numbers = []
 
-greeting = "So you want to #{opperation}? Great! Please type the numbers you would like to #{opperation} together. \n Press enter or say 'Done' when you are finished."
+greeting = "So you want to #{operation}? Great! Please type the numbers you would like to #{operation} together. \n Press enter or say 'Done' when you are finished."
 
-if opperation == "add"
+if operation == "add"
   puts greeting
   numbers_collect(numbers)
   add(numbers)
-elsif opperation == "subtract"
+elsif operation == "subtract"
   puts greeting
   numbers_collect(numbers)
   subtract(numbers)
-elsif opperation == "multiply"
+elsif operation == "multiply"
   puts greeting
   numbers_collect(numbers)
   multiply(numbers)
-else
+elsif operation == "divide"
   puts greeting
   numbers_collect(numbers)
   divide(numbers)
+else
+  puts "Sorry, that is not an operation I understand."
 end
