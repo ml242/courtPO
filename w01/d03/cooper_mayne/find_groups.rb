@@ -1,3 +1,5 @@
+group_size = ARGV[0]
+
 CLASS_MEMBERS = [
   { name: "Alex Hint" },
   #{ name: "Alicia Lauerman" },
@@ -27,17 +29,21 @@ CLASS_MEMBERS = [
   { name: "Yaritza Rodriguez"}
 ]
 
+RANDOM_NAMES = %w(bunnyFaces mouseTails Funkypheasants PinkPanthers Jimmies Calsters Whipperbottoms TankTopsOnly)
+
 def random_name
-  random_names = %w(bunnyFaces mouseTails Funkypheasants PinkPanthers Jimmies Calsters Whipperbottoms TankTopsOnly)
-  random_names.sample
+  name = RANDOM_NAMES.sample
+  RANDOM_NAMES.delete(name)
+  name
 end
+
 def make_groups( people_ungrouped, group_size )
 
   groups = []
 
   i=0
   while people_ungrouped.size > group_size-1 do
-    group_members = people_ungrouped.shift( group_size )
+    group_members = people_ungrouped.suffle.shift( group_size )
     groups.push( { name: random_name, members: group_members, id: i } )
     i += 1
   end
@@ -49,5 +55,11 @@ def make_groups( people_ungrouped, group_size )
 end
 
 groups = make_groups( CLASS_MEMBERS, 3)
-groups.each {|group| puts group; puts}
+puts "\nTHESE ARE YOUR GROUPS!!!  HAVE FUN\n"
+groups.each do |group|
+  puts
+  print group[:name]
+  puts " (" + group[:members].size.to_s + ")"
+  group[:members].each {|member| puts "  -" + member[:name]}
+end
 
