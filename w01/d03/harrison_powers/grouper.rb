@@ -43,8 +43,26 @@ TEAM_NAMES = [
 def grouper(size_of_group = 3)
 	teams = Hash.new
 	i = 0
-	STUDENTS.shuffle.each_slice(size_of_group) {|students| teams[TEAM_NAMES[i]] = students; i+=1}
+	STUDENTS.shuffle.each_slice(size_of_group) do |students|
+		if students.length < size_of_group
+			teams[TEAM_NAMES[i-1]] += students
+		else
+			teams[TEAM_NAMES[i]] = students;
+		end
+		i+=1
+	end
 	pp teams
 end
 
-grouper
+def ask(question)
+	puts question
+	return gets.chomp
+end
+
+def ask_number(question)
+	ask(question).to_i
+end
+
+user_requested_size_of_group = ask_number("size of group?")
+
+grouper(user_requested_size_of_group)
