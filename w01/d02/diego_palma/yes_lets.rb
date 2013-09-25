@@ -1,3 +1,4 @@
+
 # while something_is_true do
 
 # end
@@ -36,7 +37,7 @@ while input == 'y' && counter < 5
     puts "Do you STILL wanna play Yes Let's??"
     input = gets.chomp!.downcase
   else
-    puts "thanks for playing"
+    puts "Thanks for playing!"
   end
 
 end
