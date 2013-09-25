@@ -18,17 +18,9 @@ PHASE 3
 
 =end
 
-puts "Welcome to your calculator!"
+#-------------------------------------------------------
 
-#enter number
-puts "Please enter a number:"
-primary_num = gets.chomp!     #revisit this line to see if I need ! or should get rid of it
-
-
-
-
-#operation -- if arithmetic then prompt for another number and if exponentation or
-
+#VARIABLES & OBJECTS
 functions = {
 "a" => "addition",
 "s" => "subtraction",
@@ -41,14 +33,39 @@ functions = {
 }
 
 
-a for addition
-s for subtraction
-m for multiplication
-d for division
-#e for exponentation
-p to raise to the nth power
-r to take the nth root
-c to clear the memory
+
+#METHODS
+
+
+
+
+#PROGRAM
+
+puts "Welcome to your calculator!"
+
+#enter number
+puts "Please enter a number:"
+primary_num = gets.chomp!     #revisit this line to see if I need ! or should get rid of it
+
+#if this is run in another place besides the terminal a puts primary_num should be placed here
+
+
+functions.each {|abreviation, description| puts "#{abreviation} for #{description}"}
+puts "\nFrom the preceeding menu, please select the operation you would like to perform:"
+
+#operation -- if arithmetic then prompt for another number and if exponentation or
+
+
+
+
+# a for addition
+# s for subtraction
+# m for multiplication
+# d for division
+# #e for exponentation
+# p to raise to the nth power
+# r to take the nth root
+# c to clear the memory
 
 
 
