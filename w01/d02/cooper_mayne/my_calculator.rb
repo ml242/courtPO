@@ -38,7 +38,6 @@ display_menu(operations)
 while true
   print "\nInput: "
   question = gets.downcase.chomp!
-
   display_menu(operations) if question == "help"
 
   unless proper_question?( question , operations)
