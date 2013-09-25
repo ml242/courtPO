@@ -40,5 +40,9 @@ students = [
 ]
 ```
 # later…
- - try making the students into hashes
+ - try incorperating this hash information making the students into hashes to add additional information about them, here is the link that you can use. [Here is the CSV file](http://f.cl.ly/items/06370G222n1u122o2q1W/class.txt).
+ - incorperate using conditionals based
  - try adding emails
+ - try using feature branches for each of these
+ - refactor your codes to use more methods as a craftsperson
+ - try optimizing 
