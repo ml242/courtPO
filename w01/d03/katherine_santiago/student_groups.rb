@@ -27,10 +27,13 @@ students = [
 # ask for desired group size
 puts "How many people should be in each group?"
 puts "Please enter a number between 2 and 11."
-group_size = gets.chomp.to_i
+group_size_str = gets.chomp
+group_size = group_size_str.to_i
 
-
-
+num_of_groups = 22 / group_size
+puts "There will be #{num_of_groups} groups in all."
+remainder = 22 % group_size
+puts "The #{remainder} remainder will be in the last group."
 
 # divide class into random groups of that size
     # divide class size by desired group size (user input)
