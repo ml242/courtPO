@@ -29,9 +29,11 @@ NAMES = [
 def generate_groups
   puts "How many people per group?"
   group_size = gets.chomp.to_i
+  group = []
   group_size.times do
-    puts NAMES.sample
+    group << NAMES.sample
   end
+  print group
 end
 
 generate_groups
