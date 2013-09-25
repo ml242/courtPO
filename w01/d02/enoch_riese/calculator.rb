@@ -1,26 +1,3 @@
-# You will be building a calculator. A calculator can perform multiple
-# arithmetic operations. Your function should allow the user to choose
-# which operation is expected, enter in the values to perform the
-# operation on, and ultimately view the result.
-
-# A user should be given a menu of operations A user should be able to
-# choose from the menu
-# A user should be able to enter numbers to perform
-# the operation on
-# A user should be shown the result This process should
-# continue until the user selects a quit option from the menu
-
-# Phase 1
-# Calculator functionality Calculator should be able to do basic
-# arithmetic (+,-, *, /)
-
-# Phase 2
-# Advanced Calculator functionality Calculator should be able to do
-# basic arithmetic (exponents, square roots)
-
-# Phase 3
-# User should be given a menu of Calculator functionality User should be
-# able to choose indented functionality
 quit = false
 while quit != true
   puts " "
@@ -57,8 +34,12 @@ while quit != true
   nums = gets.chomp!.split
   x = nums [0]
   y = nums [1]
+  x_i = x.to_i
+  x_f = x.to_f
+  y_i = y.to_i
+  y_f = y.to_f
 
-  until (x.to_i.to_s == x || x.to_f.to_s == x || x == "quit") && (y.to_i.to_s == y || y.to_f.to_s == y || y == nil)
+  until (x_i.to_s == x || x.to_s == x || x == "quit") && (y_i.to_s == y || y_f.to_s == y || y == nil)
     puts "I'm sorry, try again. I need numbers"
     print "(x y) "
     nums = gets.chomp!.split
@@ -80,16 +61,16 @@ while quit != true
   end
 
   if func == "add" then
-    puts "#{x} + #{y} = #{x.to_f + y.to_f}"
+    puts "#{x} + #{y} = #{x_f + y_f}"
   elsif func == "subtract" then
-    puts "#{x} - #{y} = #{x.to_f - y.to_f}"
+    puts "#{x} - #{y} = #{x_f - y_f}"
   elsif func == "multiply" then
-    puts "#{x} * #{y} = #{x.to_f * y.to_f}"
+    puts "#{x} * #{y} = #{x_f * y_f}"
   elsif func == "divide" then
-    puts "#{x} / #{y} = #{x.to_f / y.to_f}"
+    puts "#{x} / #{y} = #{x_f / y_f}"
   elsif func == "raise to a power"
-    puts "#{x}^#{y} = #{x.to_f ** y.to_f}"
+    puts "#{x}^#{y} = #{x_f ** y_f}"
   elsif func == "square root"
-    puts "the square root of #{x} is " << Math.sqrt(x.to_f).to_s
+    puts "the square root of #{x} is #{Math.sqrt(x_f)}"
   end
 end
