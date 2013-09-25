@@ -26,20 +26,29 @@ NAMES = [
 "Will Smith",
 "Yaritza Rodriguez"]
 
+def generate_group(group_size)
+  group = []
+  member = 0
+  group_size.times do
+    group << NAMES.sample
+    NAMES.delete(group[member])
+    member+=1
+  end
+  puts group
+  puts " "
+end
+
 def generate_groups
   puts "How many people per group?"
   group_size = gets.chomp.to_i
+  group_num = 0
   while NAMES.size >= group_size * 2
-    group = []
-    member = 0
-    group_size.times do
-      group << NAMES.sample
-      NAMES.delete(group[member])
-      member+=1
-    end
-    print group
+    group_num+=1
+    puts "Group #{group_num}:"
+    generate_group(group_size)
   end
-    print NAMES
+    puts "Group #{group_num+1}:"
+    puts NAMES
 end
 
 groups = generate_groups
