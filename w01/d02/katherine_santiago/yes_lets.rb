@@ -21,6 +21,20 @@ print "y/n "
 
 input = gets.downcase.chomp!
 
+counter = 0
+while input == 'y' && counter < 5
+  puts "ok we're playing..."
+  counter = counter + 1
+
+  puts "What do you wanna do?!"
+  awesome_thing = gets.chomp!
+
+  awesome_things << awesome_thing
+
+  puts "Do you STILL wanna play Yes Let's??"
+  input = gets.chomp!
+end
+
 # this print a string with a carriage return of the array
 puts awesome_things.inspect
 # this print a string without a carriage return of the array

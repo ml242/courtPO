@@ -2,7 +2,7 @@
 
 # end
 
-# counter = 0
+counter = 0
 # something = 10
 
 # while counter < something do
@@ -20,6 +20,20 @@ puts "Do you wanna play Yes Let's?"
 print "y/n "
 
 input = gets.downcase.chomp!
+
+while input == 'y' && counter <= 5 do
+  puts "ok we're playing..."
+
+  puts "What do you wanna do?!"
+  awesome_thing = gets.chomp!
+
+
+  awesome_things << awesome_thing
+
+  puts "Do you STILL wanna play Yes Let's??"
+  input = gets.chomp!
+  counter += 1
+end
 
 # this print a string with a carriage return of the array
 puts awesome_things.inspect
