@@ -4,28 +4,53 @@ puts "- to subtract"
 puts "* to multiply"
 puts "/ to divide"
 
-puts "Pick one, then press enter. To quit, type 'end.'"
+puts "Use + to add, - to subtract, * to multiply, and / to divide. Pick one, then press enter. To quit, type 'quit.'"
 op = gets.chomp!
 
-while op != 'end'
-
-  if op != "+"
-    or op != "-"
-    or op != "*"
-    or op != "/"
-  puts "Use + to add, - to subtract, * to multiply, and / to divide."
-else
+while op != 'quit'
 
 if op == "+"
   puts "Eggsellent. Now, pick your first number and press enter."
+  n1a = gets.chomp!
 
-n1 = gets.chomp!
+  puts "Pick a second and press enter again."
+  n2a = gets.chomp!
 
-puts "Now, Pick another number."
+  puts #{n1a} + #{n2a} is:
+  puts n1a.to_f + n2a.to_f
+  end
 
-n2 = gets.chomp!
+if op == "-"
+  puts "Eggsellent. Now, pick your first number and press enter."
+  n1s = gets.chomp!
 
-puts "Great. Now pick an operation."
-op = gets.chomp!
+  puts "Pick a second and press enter again."
+  n2s = gets.chomp!
 
-print n1 + op + n2
+  puts #{n1s} - #{n2s} is:
+  puts n1s.to_f - n2s.to_f
+  end
+
+  if op == "*"
+  puts "Eggsellent. Now, pick your first number and press enter."
+  n1m = gets.chomp!
+
+  puts "Pick a second and press enter again."
+  n2m = gets.chomp!
+
+  puts #{n1m} * #{n2m} is:
+  puts n1m.to_f * n2m.to_f
+  end
+
+  if op == "/"
+  puts "Eggsellent. Now, pick your first number and press enter."
+  n1d = gets.chomp!
+
+  puts "Pick a second and press enter again."
+  n2d = gets.chomp!
+
+  puts #{n1a} / #{n2a} is:
+  puts n1d.to_f / n2d.to_f
+  end
+puts "Pick another operation. Use + to add, - to sutract, * to multiply, and - to divide, or type 'end' to quit."
+end
