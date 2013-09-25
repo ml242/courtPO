@@ -1,4 +1,4 @@
-# Homework
+cd # Homework
 ###### REMEMBER TO WORK IN YOUR OWN PERSONAL FOLDER IN DAY 2
 ## Pt 1 - Yes, Lets
 Modify the yes_lets.rb program to only run a maximum of 5 times.
