@@ -1,7 +1,8 @@
+
+# Methods for basic Math Opperations
 def add(numbers)
   sum = 0
   numbers.each do |num|
-    num.to_f
     sum += num
   end
   puts "The sum is #{sum}!"
@@ -10,7 +11,6 @@ end
 def subtract(numbers)
   sum = numbers.shift()
   numbers.each do |num|
-    num.to_f
     sum -= num
   end
   puts "The total is #{sum}!"
@@ -19,7 +19,6 @@ end
 def multiply(numbers)
   sum = numbers.shift()
   numbers.each do |num|
-    num.to_f
     sum *= num
   end
   puts "The total is #{sum}!"
@@ -28,12 +27,13 @@ end
 def divide(numbers)
   sum = numbers.shift()
   numbers.each do |num|
-    num.to_f
     sum /= num
   end
   puts "The total is #{sum}!"
 end
 
+# Method for collecting input (numbers) into array.
+# Checks that each input is a vaild number. Changes to float.
 def numbers_collect(array)
   number = 0
   while number.to_s.downcase != "done"
@@ -51,7 +51,7 @@ end
 
 puts "Welcome to the Calculator!"
 
-puts "What would you like to do? \n \t * Add \n \t * Subtract \n \t * Multiply \n \t * Divide"
+puts "What would you like to do? \n \t * Add \n \t * Subtract \n \t * Multiply \n \t * Divide \n \t * Find Square Root (sqrt) \n \t * Raise Exponent"
 print ">  "
 operation = gets.chomp.downcase
 
@@ -75,6 +75,18 @@ elsif operation == "divide"
   puts greeting
   numbers_collect(numbers)
   divide(numbers)
+elsif operation == "square root" || operation == "sqrt"
+  puts "Please type the number you would like the square root of"
+  num1 = gets.chomp.to_f
+  ans = Math.sqrt(num1)
+  puts ans
+elsif operation == "exponent"
+  puts "Please type the number to raise to a power"
+  num1 = gets.chomp.to_i
+  puts "Please type the number you would like to raise #{num1} to that power"
+  num2 = gets.chomp.to_i
+  ans = num1**num2
+  puts ans
 else
   puts "Sorry, that is not an operation I understand."
 end
