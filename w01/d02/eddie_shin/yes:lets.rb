@@ -24,6 +24,6 @@ end
 
 # this print with a carriage return of the string inside of the array
 puts awesome_things.inspect
-#this print a string without a carriage return of the string inside the array
+#this print a string without a carriage return of the string inside the array.
 print awesome_things.inspect
 
