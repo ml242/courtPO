@@ -29,11 +29,17 @@ NAMES = [
 def generate_groups
   puts "How many people per group?"
   group_size = gets.chomp.to_i
+  group_number = NAMES.size / group_size
+
   group = []
+  member = 0
   group_size.times do
     group << NAMES.sample
+    NAMES.delete(group[member])
+    member+=1
+    print group
   end
-  print group
 end
 
-generate_groups
+groups = generate_groups
+puts groups
