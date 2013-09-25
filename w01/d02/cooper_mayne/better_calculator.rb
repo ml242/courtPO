@@ -21,10 +21,7 @@ def recursive_solver( question )
 
   recursive_solver( question )
 
-
-
 end
-operations = ['add','sub','div','mul','pow']
 
 def proper_question?(question_string, operations_array)
   #check 1: are there at least 3 words in the input? and is the question size odd?
@@ -72,12 +69,14 @@ def single_operation (first_term, operation, second_term)
 end
 
 def display_menu(ops)
-  puts "THESE ARE THE COMMANDS CALCZOR UNDERSTANDS!"
+  puts "\nTHESE ARE THE COMMANDS CALCZOR UNDERSTANDS!"
   ops.each {|operation| puts " *  #{operation}"}
 
   puts "\nWARNING: CalcZor is not all powerful... it can only\nprocess two number and one operation at a time..."
-  puts "\nYour input should look like... \"5 add 3\" or \"3 pow 2\"\n"
+  puts "\nEXAMPLE: 1 add 5 div 2 pow 5 add 2\n"
 end
+
+operations = ['add','sub','div','mul','pow']
 
 print <<-eos
    ____           _          _____               
@@ -85,7 +84,6 @@ print <<-eos
  | |      / _` | | |  / __|   / /   / _ \  | '__|
  | |___  | (_| | | | | (__   / /_  | (_) | | |   
   \____|  \__,_| |_|  \___| /____|  \___/  |_|  
-\n
 eos
 
 display_menu(operations)
@@ -103,6 +101,7 @@ while true
 
   question_as_array = question.split(" ")
 
+  print "answer: "
   puts recursive_solver( question_as_array )
 
 end
