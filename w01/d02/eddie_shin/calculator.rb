@@ -42,7 +42,6 @@ while calculator == "yes"
 	#prompt user for operation method
 	puts "Please choose from the following operations"
 	puts "add, subtract, multiply, divide, exponent, or square root"
-	#get users input for operation
 	operation = gets.chomp
 	#prompt user for numbers to perform operation on
 	if operation == "square root"
