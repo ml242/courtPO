@@ -25,4 +25,9 @@ You will be building a calculator. A calculator can perform multiple arithmetic 
 - User should be given a menu of Calculator functionality
 - User should be able to choose intended functionality
 
+
 ### Pt 3 - Add the weather.rb exercise from today's classwork to your folder.
+
+User should be given a menu of Calculator functionality
+User should be able to choose intended functionality
+
