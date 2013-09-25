@@ -1,4 +1,4 @@
-Team_name = [
+TEAM_NAME = [
 "Thunder Cats",
 "Team Voldemort",
 "USA",
@@ -53,6 +53,14 @@ STUDENTS = [
 def random(size)
 	groups = STUDENTS.shuffle.each_slice(size).to_a
 	counter = groups.length
+	group_hash = {}
+	i = 0
+	while counter > 0
+		group_hash[TEAM_NAME.sample] = groups[i]
+		counter = counter -1
+		i = i + 1
+	end
+	return group_hash
 end
 
 
