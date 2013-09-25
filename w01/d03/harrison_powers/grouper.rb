@@ -1,3 +1,6 @@
+require 'enumerator'
+require 'pp'
+
 STUDENTS = [
 	"Alex Hint",
 	"Amy Ruan",
@@ -38,5 +41,10 @@ TEAM_NAMES = [
 ]
 
 def grouper(size_of_group = 3)
-
+	teams = Hash.new
+	i = 0
+	STUDENTS.shuffle.each_slice(size_of_group) {|students| teams[TEAM_NAMES[i]] = students; i+=1}
+	pp teams
 end
+
+grouper
