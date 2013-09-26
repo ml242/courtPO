@@ -1,5 +1,3 @@
-group_size = ARGV[0]
-
 CLASS_MEMBERS = [
   { name: "Alex Hint" },
   #{ name: "Alicia Lauerman" },
@@ -29,7 +27,20 @@ CLASS_MEMBERS = [
   { name: "Yaritza Rodriguez"}
 ]
 
-RANDOM_NAMES = %w(bunnyFaces mouseTails Funkypheasants PinkPanthers Jimmies Calsters Whipperbottoms TankTopsOnly)
+RANDOM_NAMES = ["Bunny Faces", 
+                "Mouse Tails", 
+                "Funky Pheasants", 
+                "Pink Panthers", 
+                "The Jimmies", 
+                "The Calsters", 
+                "Whipper Bottoms", 
+                "Tank Tops Only",
+                "Bruth Eaters" ]
+
+def ask(question)
+  puts question
+  gets.chomp!.to_i
+end
 
 def random_name
   name = RANDOM_NAMES.sample
@@ -42,8 +53,9 @@ def make_groups( people_ungrouped, group_size )
   groups = []
 
   i=0
-  while people_ungrouped.size > group_size-1 do
-    group_members = people_ungrouped.suffle.shift( group_size )
+  while people_ungrouped.size >= group_size do
+    people_ungrouped.shuffle!
+    group_members = people_ungrouped.shift( group_size )
     groups.push( { name: random_name, members: group_members, id: i } )
     i += 1
   end
@@ -54,12 +66,19 @@ def make_groups( people_ungrouped, group_size )
   return groups
 end
 
-groups = make_groups( CLASS_MEMBERS, 3)
-puts "\nTHESE ARE YOUR GROUPS!!!  HAVE FUN\n"
-groups.each do |group|
-  puts
-  print group[:name]
-  puts " (" + group[:members].size.to_s + ")"
-  group[:members].each {|member| puts "  -" + member[:name]}
+def proper_answer?(ans)
+  [1,2,3,4,5].include?(ans)
 end
 
+while true
+  group_size = ask("how many people in each group?")
+  puts "BAD INPUT"; next unless proper_answer?(group_size)
+  groups = make_groups( CLASS_MEMBERS.dup, group_size)
+  puts "\nTHESE ARE YOUR GROUPS!!!  HAVE FUN\n"
+  groups.each do |group|
+    puts
+    print group[:name]
+    puts " (" + group[:members].size.to_s + ")"
+    group[:members].each {|member| puts "  -" + member[:name]}
+  end
+end
