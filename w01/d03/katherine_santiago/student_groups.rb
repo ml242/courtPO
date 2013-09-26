@@ -24,30 +24,33 @@ students = [
 "Yaritza Rodriguez"
 ]
 
+
 # ask for desired group size
 puts "How many people should be in each group?"
 puts "Please enter a number between 2 and 11."
 group_size_str = gets.chomp
 group_size = group_size_str.to_i
 
-num_of_groups = 23 / group_size
-puts "There will be #{num_of_groups} groups in all."
-remainder = 23 % group_size
-puts "The #{remainder} remainder will be in the last group."
+# shuffles the full array of students, slices them by group size, and turns into array
+groups = students.shuffle.each_slice(group_size).to_a
+puts "#{groups}"
 
-student_groups = students.sample(group_size)
-puts student_groups
+#check if last group only has 1 person
+if groups.last.length == 1
+last = groups[-1]
+# prints last person
+puts "#{last}"
+# drops last person
+groups.pop
+# prints new groups without last person
+puts "#{groups}"
+groups[-1] << last.to_s
+puts "#{groups}"
+# puts "#{groups[-1]}"
+# puts "#{last}"
+end
 
-
-
-# divide class into random groups of that size
-
-# {student}.sample.unique
-
-    # divide class size by desired group size (user input)
-        # - sample of a split?
+    # name groups
     # divide class size by desired group size to
         # find out the remainder using % (modulo)
-        # find number of groups
-    # create random samplings / arrays of that size
     # add the remainder to the last group
