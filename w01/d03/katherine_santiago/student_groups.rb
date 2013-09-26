@@ -24,6 +24,20 @@ students = [
 "Yaritza Rodriguez"
 ]
 
+# TEAM = [
+#   :funny1,
+#   :funny2,
+#   :funny3,
+#   :funny4,
+#   :funny5,
+#   :funny6,
+#   :funny7,
+#   :funny8,
+#   :funny9,
+#   :funny10,
+#   :funny11
+# ]
+
 
 # ask for desired group size
 puts "How many people should be in each group?"
@@ -33,21 +47,26 @@ group_size = group_size_str.to_i
 
 # shuffles the full array of students, slices them by group size, and turns into array
 groups = students.shuffle.each_slice(group_size).to_a
-puts "#{groups}"
+# puts "#{groups}"
 
 #check if last group only has 1 person
 if groups.last.length == 1
-last = groups[-1]
-# prints last person
-puts "#{last}"
-# drops last person
-groups.pop
-# prints new groups without last person
-puts "#{groups}"
-groups[-1] << last.to_s
-puts "#{groups}"
-# puts "#{groups[-1]}"
-# puts "#{last}"
+  last = groups[-1]
+  # prints last person
+    # puts "#{last}"
+  # drops last person
+  groups.pop
+    # prints new groups without last person
+    puts "#{groups}"
+  groups[-1] << last
+ groups[-1].flatten!
+    # puts "The groups will be: #{groups}"
+   # puts "#{groups}"
+    # puts "#{groups[-1]}"
+    # puts "#{last}"
+else
+  puts "The randomized groups will be: #{groups}"
+
 end
 
     # name groups
