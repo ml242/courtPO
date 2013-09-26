@@ -53,10 +53,10 @@ def random(size)
 		end
 	group_hash = {}
 	i = 0
-	while i < student_array.length
-		group_hash[team_array[i]] = student_array[i]
-		i = i + 1
-	end
+		while i < student_array.length
+			group_hash[team_array[i]] = student_array[i]
+			i = i + 1
+		end
 	puts group_hash
 end
 
