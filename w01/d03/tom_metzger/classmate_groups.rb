@@ -103,50 +103,67 @@ end
 
 #POTENTIALLY CREATE def select_and_remove(desired_array, )
 
-def create_groups(total_groups, group_names)
+def create_group_names(total_groups, group_names)
   group_array = []
   for i in 1..total_groups
     sampled_group_name = group_names.sample
     group_array << sampled_group_name
     group_names.delete(sampled_group_name)
   end
-  puts group_array
   return group_array
 end
+
+
+
+
+team_names = create_group_names(total_groups, group_names)
+
+
 
 
 #student_array = hash_students.keys.to_a
 #total_students = hash_students.length
 
-#puts hash_students.to_a.sample
+
 
 final_group_size_array = []
 for i in 1..total_groups
   final_group_size_array << group_size
 end
 
-x = final_group_size_array.length - 1
+array_index_max = final_group_size_array.length - 1
 
 for i in 1..remaining_people
-  final_group_size_array[x] += 1
-  x -= 1
+  final_group_size_array[array_index_max] += 1
+  array_index_max -= 1
 end
-puts final_group_size_array
 
 
+#create a hash with team_name, member 1: name
+array_index = final_group_size_array.length - 1
+
+team_hash = {}
+index_num = 0
+
+team_names.each {|team| team_hash[team] = []}
+
+# def silly_loop(value, hash, counter)
+#   until i =
+# end
 
 
+i= 0
+final_group_size_array.each {|value|
+  until i == value
+    kickhash_member = hash_students.to_a.sample
+    team_hash[team_names[i]] << kickhash_member
+    hash_students.delete(kickhash_member)
+    i += 1
+  end
+  }
 
 
-
-
-
-#students should be randomly chosen from the list
-    #add without replacement, or without replacement for x cycles
-
-
-#if there is a remainder student put them in the last group
-    #if someone is not there then temporarily remove them from the groupings
+puts team_hash
 
 
 
