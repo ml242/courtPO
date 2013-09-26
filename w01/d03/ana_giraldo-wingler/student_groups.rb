@@ -6,7 +6,7 @@ students = [
     "Diego Palma",
     "Edward Shin",
     "Enoch Riese",
-    "Harrison Powers ",
+    "Harrison Powers",
     "Jaclyn Jimenez",
     "James Rothpearl",
     "Jimmy Davis",
@@ -24,12 +24,18 @@ students = [
     "Yaritza Rodriguez"
     ]
 
-group_name =  [
+group_name = [
     "The Cheese Smellies",
     "The Twinkle Toes",
     "The Weiner Blasters",
     "The Fantastic Farts",
-    "The Downtrodden"
+    "The Nancies",
+    "The Dumpsters"
+    "Team Z-List"
+    "Team Mediocre"
+    "The Ninnies"
+    "Team Eating Bogies"
+    "The Strange Smells"
     ]
 
 #ask user desired group size
@@ -43,10 +49,9 @@ groups = students.shuffle.each_slice(group_size).to_a
 # check if last group only has one person in it
 if groups.last.length == 1
   #add the last group to the second-to-last
-  remainder = groups[-2] + groups[-1]
+  remainder =  groups [0..-3] + [groups[-2] + groups[-1]]
   #get rid of the last group
-  groups.pop
-  puts "#{groups} #{remainder}"
+  puts "#{remainder}"
   #pop them into last array
 else
   puts "#{groups}"
