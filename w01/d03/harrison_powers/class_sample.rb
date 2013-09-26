@@ -38,4 +38,4 @@ while user_input != "q"
 	pp students
 end
 
-#write_json_file( students, 'class_sample_db.json' )
+write_json_file( students, 'class_sample_db.json' )
