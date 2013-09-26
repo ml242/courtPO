@@ -1,4 +1,5 @@
 require 'json'
+require 'pp'
 
 class Hash
   def shuffle
@@ -28,11 +29,13 @@ user_input = gets.chomp
 
 while user_input != "q"
 	students.shuffle!
+	students = Hash[students.sort_by{|k,v| v}]
 	random_student = students.keys[0]
 	puts random_student
 	%x(say #{random_student})
 	students[random_student] += 1
 	user_input = gets.chomp
+	pp students
 end
 
 #write_json_file( students, 'class_sample_db.json' )
