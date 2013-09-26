@@ -49,7 +49,7 @@ groups = students.shuffle.each_slice(group_size).to_a
 # check if last group only has one person in it
 if groups.last.length == 1
   #add the last group to the second-to-last
-  remainder =  groups [0..-3] + [groups[-2] + groups[-1]]
+  remainder =  groups[0..-3] + [groups[-2] + groups[-1]]
   #get rid of the last group
   puts "#{remainder}"
   #pop them into last array
@@ -57,8 +57,11 @@ else
   puts "#{groups}"
 end
 # assign a funny name to each group
-assigned_name = group_names.shuffle.each_slice((23 / group_size)).to_a
-puts "Here are your assigned group names: #{assigned_name}"
+assigned_name = group_names.sample((23 / group_size_str.to_f).ceil).to_a
+puts "Here are your group names, in order: #{assigned_name}"
+
+# names_and_groups = assigned_name[0..11] + groups[0..11]
+# puts "#{names_and_groups}"
 
 # find out the remainder using modulo (%)
 # remainder = 23 % group_size
