@@ -84,7 +84,7 @@ def name_groups(groups_list, groups_named_list)
   for group in groups_list
       team_name = team_names_c.sample()
       team_names_c.delete(team_name)
-      groups_named_list[team_name] = group
+      groups_named_list[team_name] = group.flatten  #had to flatten to avoid mutli-dimensional array w/in hash values
   end
 end
 
