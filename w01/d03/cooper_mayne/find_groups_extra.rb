@@ -1,30 +1,30 @@
 CLASS_MEMBERS = [
-  { name: "Alex Hint", previously_grouped: 0 },
-  #{ name: "Alicia Lauerman", previously_grouped: 0  },
-  { name: "Amy Ruan", previously_grouped: 0  },
-  { name: "Ana Giraldo-Wingler", previously_grouped: 0  },
-  { name: "Cooper Mayne", previously_grouped: 0  },
-  { name: "Diego Palma", previously_grouped: 0  },
-  { name: "Edward Shin", previously_grouped: 0  },
-  { name: "Enoch Riese", previously_grouped: 0  },
-  { name: "Harrison Powers ", previously_grouped: 0  },
-  { name: "Jaclyn Jimenez", previously_grouped: 0  },
-  { name: "James Rothpearl", previously_grouped: 0  },
-  { name: "Jimmy Davis", previously_grouped: 0  },
-  #{ name: "Jonathan Leung", previously_grouped: 0  },
-  { name: "Jorge Colindres", previously_grouped: 0  },
-  { name: "Joshua Oynick", previously_grouped: 0  },
-  { name: "Katherine Santiago", previously_grouped: 0  },
-  { name: "Matt Lucas", previously_grouped: 0  },
-  { name: "Matthew Korporaal", previously_grouped: 0  },
-  { name: "Morgan Neiman", previously_grouped: 0  },
-  { name: "Natasha Green", previously_grouped: 0  },
-  #{ name: "Phillip Lamplugh", previously_grouped: 0  },
-  { name: "Quin Cogdell ", previously_grouped: 0  },
-  { name: "Tom Metzger", previously_grouped: 0  },
-  { name: "Travis Vanderhoop", previously_grouped: 0  },
-  { name: "Will Smith", previously_grouped: 0  },
-  { name: "Yaritza Rodriguez", previously_grouped: 0 }
+  { name: "Alex Hint" },
+  #{ name: "Alicia Lauerman" },
+  { name: "Amy Ruan" },
+  { name: "Ana Giraldo-Wingler" },
+  { name: "Cooper Mayne" },
+  { name: "Diego Palma" },
+  { name: "Edward Shin" },
+  { name: "Enoch Riese" },
+  { name: "Harrison Powers " },
+  { name: "Jaclyn Jimenez" },
+  { name: "James Rothpearl" },
+  { name: "Jimmy Davis" },
+  #{ name: "Jonathan Leung" },
+  { name: "Jorge Colindres" },
+  { name: "Joshua Oynick" },
+  { name: "Katherine Santiago" },
+  { name: "Matt Lucas" },
+  { name: "Matthew Korporaal" },
+  { name: "Morgan Neiman" },
+  { name: "Natasha Green" },
+  #{ name: "Phillip Lamplugh" },
+  { name: "Quin Cogdell " },
+  { name: "Tom Metzger" },
+  { name: "Travis Vanderhoop" },
+  { name: "Will Smith" },
+  { name: "Yaritza Rodriguez"}
 ]
 
 RANDOM_NAMES = ["Bunny Faces", 
@@ -36,6 +36,11 @@ RANDOM_NAMES = ["Bunny Faces",
                 "Whipper Bottoms", 
                 "Tank Tops Only",
                 "Bruth Eaters" ]
+
+
+ENCOUNTER_COUNTER = []
+
+
 
 def ask(question)
   puts question
