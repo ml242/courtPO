@@ -45,18 +45,28 @@ def ask(question)
   answer.to_i
 end
 
-group_size = ask("What is the size of the group?")
+group_size = ask("How many students in each group?")
 group_size = group_size.to_i
 
 def sort(array, group_size)
-  sorted = array.shuffle!.each_slice(group_size).to_a
-  if sorted.last.length < group_size
-    last_group = sorted.pop
-    new_last_group = sorted.pop
-    final_group = last_group + new_last_group
-    sorted << final_group
+  sorted = array.shuffle!.each_slice(group_size).to_a       #sorted is an array containing a random sample of students sliced in groups of group_size variable
+  if sorted.last.length < group_size                      #if the last group is smaller than the rest
+    last_group = sorted.pop                             #last group is removed and stored in last_group variable
+    new_last_group = sorted.pop                       #the new last group is also removed and stored in a different variable
+    final_group = last_group + new_last_group       # both variable are joined, so the group with remander students is added to the new last group
+    sorted << final_group                         # adds final group to the sorted array
   end
   puts "#{sorted}"
+  puts "\n"
+  give_name_to_groups(sorted)
+end
+
+def give_name_to_groups(array_of_arrays)
+  array_of_arrays.each do |array|
+    #puts name before array
+    puts "SILLY NAME" + array.to_s
+    #puts name plus array
+  end
 end
 
 sort(unsorted, group_size)
