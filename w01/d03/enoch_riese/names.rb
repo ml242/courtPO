@@ -35,7 +35,6 @@ def generate_group(group_size)
     member+=1
   end
   puts group
-  puts " "
 end
 
 def generate_groups
@@ -44,12 +43,13 @@ def generate_groups
   group_num = 0
   while NAMES.size >= group_size * 2
     group_num+=1
+    puts " "
     puts "Group #{group_num}:"
     generate_group(group_size)
   end
+    puts " "
     puts "Group #{group_num+1}:"
     puts NAMES
 end
 
-groups = generate_groups
-puts groups
+puts generate_groups
