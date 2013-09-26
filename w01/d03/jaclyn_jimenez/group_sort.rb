@@ -98,8 +98,8 @@ def give_name_to_groups(array_of_arrays, team_name)
     team_adjectives = "#{team_name[:adjectives].sample}"
     team_nouns = "#{team_name[:nouns].sample}"
     team = "#{team_adjectives} " + "#{team_nouns}"
-      while team_list.include?("#{team}")
-        team = "#{team_adjectives} " + " #{team_nouns}  : "
+      while team_list.include?("#{team_adjectives}") || team_list.include?("#{team_nouns}")
+        team = "#{team_adjectives} " + "#{team_nouns}"
       end
     team_list << team
     puts team.to_s + "  : " + array.to_s
