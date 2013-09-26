@@ -16,10 +16,12 @@ def load_json_file( filename )
 end
 
 def write_json_file( object, filename )
-	File.open(filename, 'w'){ |data| JSON.dump( object, data ) }
+	File.open(filename, 'w'){ |file| JSON.dump( object, file ) }
 end
 
 students = load_json_file( 'class_sample_db.json' )
+
+your_turn = ["your turn", "your next", "batters up", "do it", "good luck"]
 
 puts "This is the class sampler"
 puts "press enter to get a random student"
@@ -32,7 +34,7 @@ while user_input != "q"
 	students = Hash[students.sort_by{|k,v| v}]
 	random_student = students.keys[0]
 	puts random_student
-	%x(say #{random_student})
+	%x(say #{your_turn.sample}, #{random_student})
 	students[random_student] += 1
 	user_input = gets.chomp
 	pp students
