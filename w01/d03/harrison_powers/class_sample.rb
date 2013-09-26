@@ -12,7 +12,7 @@ end
 
 =end
 
-students = load_json_file( class_sampleDB.json )
+students = load_json_file( class_sample_db.json )
 
 
 puts "This is the class sampler"
@@ -30,4 +30,4 @@ while user_input != q
 	user_input = gets.chomp
 end
 
-write_json_file( students, class_sampleDB.json )
+write_json_file( students, class_sample_db.json )
