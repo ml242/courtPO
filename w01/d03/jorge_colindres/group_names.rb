@@ -5,38 +5,38 @@ def ask_group_size
 end
 
 def place_into_random_groups
-  students = [
-    "Alex Hint",
-    "Amy Ruan",
-    "Ana Giraldo-Wingler",
-    "Cooper Mayne",
-    "Diego Palma",
-    "Edward Shin",
-    "Enoch Riese",
-    "Harrison Powers",
-    "Jaclyn Jimenez",
-    "James Rothpearl",
-    "Jimmy Davis",
-    "Jorge Colindres",
-    "Joshua Oynick",
-    "Katherine Santiago",
-    "Matt Lucas",
-    "Matthew Korporaal",
-    "Morgan Neiman",
-    "Natasha Green",
-    "Quin Cogdell",
-    "Tom Metzger",
-    "Travis Vanderhoop",
-    "Will Smith",
-    "Yaritza Rodriguez"
+  kick_hash = [
+    {:name => "Alex Hint", :email => "alex.hint.ah@gmail.com"},
+    {:name => "Amy Ruan", :email => "nyc.amy@gmail.com"},
+    {:name => "Ana Giraldo-Wingler", :email => "agiraldow@gmail.com"},
+    {:name => "Cooper Mayne", :email => "coopermayne@gmail.com"},
+    {:name => "Diego Palma", :email => "dppalma@gmail.com"},
+    {:name => "Edward Shin", :email => "eshin0910@gmail.com"},
+    {:name => "Enoch Riese", :email => "enoch.riese@gmail.com"},
+    {:name => "Harrison Powers ", :email => "harrisonpowers@gmail.com"},
+    {:name => "Jaclyn Jimenez", :email => "jaclynejimenez@gmail.com"},
+    {:name => "James Rothpearl", :email => "jrothpearl@gmail.com"},
+    {:name => "Jimmy Davis", :email => "jamesmdavis5@gmail.com"},
+    {:name => "Jorge Colindres", :email => "jorge.e.colindres@gmail.com"},
+    {:name => "Joshua Oynick", :email => "oynickj@gmail.com"},
+    {:name => "Katherine Santiago", :email => "santiago.kat@gmail.com"},
+    {:name => "Matt Lucas", :email => "mattlucas@gmail.com"},
+    {:name => "Matthew Korporaal", :email => "matthew.korporaal@gmail.com"},
+    {:name => "Morgan Neiman", :email => "quackhouse@me.com"},
+    {:name => "Natasha Green", :email => "greennatasha@aol.com"},
+    {:name => "Quin Cogdell ", :email => "quincogdell@gmail.com"},
+    {:name => "Tom Metzger", :email => "metzgert@gmail.com"},
+    {:name => "Travis Vanderhoop", :email => "vanderhoop@me.com"},
+    {:name => "Will Smith", :email => "will.smith@preplaysports.com"},
+    {:name => "Yaritza Rodriguez", :email => "saturn540@gmail.com"}
   ]
   group_size = ask_group_size
   class_with_groups = Array.new
 
-  until students.empty?
-    students.shuffle!
-    group = students.slice(0, group_size)
-    students = students.drop(group_size)
+  until kick_hash.empty?
+    kick_hash.shuffle!
+    group = kick_hash.slice(0, group_size)
+    kick_hash = kick_hash.drop(group_size)
     class_with_groups << group
   end
   class_with_groups
