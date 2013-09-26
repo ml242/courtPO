@@ -19,7 +19,8 @@ and stop that user is getting off at and prints the total number of stops for th
 - Get the program to work for a single line before trying to tackle multiple lines.
 - Consider diagramming the lines by sketching out the subway lines and their stops and intersection.
 - Make subway lines keys in a hash, while the values are an array of all the stops on each line.
-- The key to the lab is the intersection of the lines at Union Square. Google “ruby array intersect.”
+- The keys to your hash should be symbols. Keep in mind that symbols cannot begin with a number.
+- The key to the lab is the intersection of the lines at Union Square. Google "ruby array intersect."
 - Make sure the stops that are the same for different lines have different names (i.e. 23rd on the N and on the 6 need to be differentiated)
 
 
@@ -28,14 +29,14 @@ and stop that user is getting off at and prints the total number of stops for th
 ##Non-Required:
 
 ###Front-End Bonus:
-- Include colors, i.e. using the `rainbow` gem
+- Include colors, i.e. try the `rainbow` gem. [Read about it here.](https://github.com/sickill/rainbow)
 
 ####Example:
 ```ruby
 require 'rainbow'
-puts "Welcome to NYC!".color('ff0000')
-puts "We ride the subway here...".color('0000ff')
-puts "It will be easy with this my help:".color('ffffff')
+puts "Welcome to NYC!".color(:red)
+puts "We ride the subway here...".color(:red)
+puts "It will be easy with this my help:".color(:yellow)
 
 ```
 
