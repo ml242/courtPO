@@ -23,6 +23,8 @@ students = [
   "Will Smith",
   "Yaritza Rodriguez"
 ]
+# shuffle the array of students
+students.shuffle!
 
 # shuffle the array of students
 students.shuffle!
