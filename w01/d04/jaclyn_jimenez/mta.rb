@@ -1,6 +1,6 @@
 def ask(question)
   puts question
-  gets.chomp
+  gets.chomp.downcase
 end
 
 # #There are 3 subway lines:
@@ -33,9 +33,9 @@ def number_of_stops(start, stop)
 end
 
 mta = {
-  "n_line" => {"Times Square" => 1, "34th" => 2, "28th_n" => 3, "23rd_n" => 4, "Union Square" => 5 , "8th_n" =>6},
-  "l_line" => {"8th_l" => 1, "6th" => 2, "Union Square" => 2, "3rd" => 3, "1st" => 4},
-  "six_line" => {"Grand Central" => 1, "33rd" => 2, "28th_6" => 3, "23rd_6" => 4, "Union Square" => 5, "Astor Place" => 6}
+  "n_line" => {"times square" => 1, "34th" => 2, "28th_n" => 3, "23rd_n" => 4, "union square" => 5 , "8th_n" =>6},
+  "l_line" => {"8th_l" => 1, "6th" => 2, "union square" => 3, "3rd" => 4, "1st" => 5},
+  "six_line" => {"grand central" => 1, "33rd" => 2, "28th_6" => 3, "23rd_6" => 4, "union square" => 5, "astor place" => 6}
 }
 
 line_on = ask("What line are you taking to start?")
@@ -47,12 +47,12 @@ stop_off = ask("What stop are you getting off?")
 start = mta[line_on][stop_on]
 stop = mta[line_off][stop_off]
 
-stops = number_of_stops(start, stop)
+stops_num = number_of_stops(start, stop)
 
+"#{line_on} is #{stops_num} away from #{line_off}"
 
-#puts "So you're getting on at #{start} and getting off at #{stop}"
-
-def stop_count(start, stop)
-
-end
-
+# different lines...
+#looking for it to count from stop 1 to union square, then from union square to second stop.
+#if line1 does not equal line2
+#do intersect method to see what they have in common
+# number of stops (line1 from common_line) and number of stops ()
