@@ -1,5 +1,5 @@
 #VARIABLES & CONSTANTS
-HASH_STUDENTS = {
+hash_students = {
   :alex_hint => {:name => "Alex Hint", :email => "alex.hint.ah@gmail.com"},
   :amy_Ruan => {:name => "Amy Ruan", :email => "nyc.amy@gmail.com"},
   :ana_giraaldo_wingler => {:name => "Ana Giraldo-Wingler", :email => "agiraldow@gmail.com"},
@@ -27,7 +27,7 @@ HASH_STUDENTS = {
 
 desiered_number_of_groups = ""
 
-GROUP_NAMES = [
+group_names = [
   "Open Minds",
   "Gem Enthusiasts",
   "Carpel Tunnel Cartel",
@@ -50,12 +50,13 @@ GROUP_NAMES = [
   "Broadway Bandits"
 ]
 
+total_groups = nil
 
 
 #METHODS
 def ask(question)
   puts(question)
-  answer = gets.chomp!
+  answer = gets.downcase.chomp!
 end
 
 def ask_num(question)
@@ -63,11 +64,13 @@ def ask_num(question)
   number = number_as_string.to_i
 end
 
-def select_student(students_per_group)
-  for i in 1..students_per_group
-    selected_student = student_array.sample
 
-end
+
+# def select_student(students_per_group)
+#   for i in 1..students_per_group
+#     selected_student = student_array.sample
+
+# end
 
 #CODE
 
@@ -75,28 +78,64 @@ end
   #TO DO---- is anyone missing today (y/n)
       # ask for names one by one using a while loop
       # remake list by deleting these students from the list
+      # This will replace hash_students.length
 
 
 #user can select size of group
     #TO DO---  or choose number of groups
+
+
 until desiered_number_of_groups == "y" || desiered_number_of_groups == "yes"
   group_size = ask_num("How many people do you want per group?")
 
-  number_of_groups = HASH_STUDENTS.length / group_size
-  remaining_people = HASH_STUDENTS.length % group_size
+  number_of_groups = hash_students.length / group_size
+  remaining_people = hash_students.length % group_size
   total_groups = number_of_groups + remaining_people
 
   puts "With today's attendance you will have #{number_of_groups} groups of #{group_size} and #{remaining_people} groups of #{group_size + 1} for a total of #{total_groups} groups."
   desiered_number_of_groups = ask("Is this your desiered number of groups? (y/n)")
 end
 
-student_array = HASH_STUDENTS.keys.to_a
-total_students = HASH_STUDENTS.length
+# for i in 1..total_groups do
+#   selected_student = student_array.sample
+#   puts selected_student
+# end
 
-for i in 1..total_groups do
-  selected_student = student_array.sample
-  puts selected_student
+#POTENTIALLY CREATE def select_and_remove(desired_array, )
+
+def create_groups(total_groups, group_names)
+  group_array = []
+  for i in 1..total_groups
+    sampled_group_name = group_names.sample
+    group_array << sampled_group_name
+    group_names.delete(sampled_group_name)
+  end
+  puts group_array
+  return group_array
 end
+
+
+#student_array = hash_students.keys.to_a
+#total_students = hash_students.length
+
+#puts hash_students.to_a.sample
+
+final_group_size_array = []
+for i in 1..total_groups
+  final_group_size_array << group_size
+end
+
+x = final_group_size_array.length - 1
+
+for i in 1..remaining_people
+  final_group_size_array[x] += 1
+  x -= 1
+end
+puts final_group_size_array
+
+
+
+
 
 
 
@@ -108,27 +147,6 @@ end
 
 #if there is a remainder student put them in the last group
     #if someone is not there then temporarily remove them from the groupings
-
-
-#add a funny team name for each team
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
