@@ -22,7 +22,7 @@ elsif
 end
 
 calculator = gets.chomp!
-if calculator != '+' && calculator != '-' && calculator != '*' && calculator  != '/'
+if calculator != '+' && CALCULATOR != '-' && calculator != '*' && calculator  != '/'
     puts "Please enter '+' '-' '*' or '/'"
     calculator = gets.chomp!
 else
