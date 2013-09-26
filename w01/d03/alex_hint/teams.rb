@@ -1,14 +1,14 @@
-team_name_array = ['t1',
-  't2',
-  't3',
-  't4',
-  't5',
-  't6',
-  't7',
-  't8',
-  't9',
-  't10',
-  't11']
+team_name_array = ['Stinks',
+  'Smellies',
+  'Mehs',
+  'Blahs',
+  'Ewwwws',
+  'Farts',
+  'Nerds',
+  'Moos',
+  'Boos',
+  'Whoooos',
+  'LOoosEs']
 
 students_array = [
 "Alex Hint",
@@ -37,13 +37,7 @@ students_array = [
 ]
 
 
-#ask the user for how many people are in each group
-puts 'How many people would you like in each group'
-
-#take the input -- people in each group
-people_per_group_str = gets.chomp
-people_per_group = people_per_group_str.to_i
-
+def student_array_shuffle_method(people_per_group, students_array, team_name_array)
 #shuffle students first
 students_array.shuffle!
 
@@ -74,3 +68,18 @@ p group_array_array
 puts poppedoff_team_name_array
 
 puts group_hash
+
+end
+
+
+#ask the user for how many people are in each group
+puts 'How many people would you like in each group'
+
+#take the input -- people in each group
+people_per_group_str = gets.chomp
+people_per_group = people_per_group_str.to_i
+
+puts student_array_shuffle_method(people_per_group, students_array, team_name_array)
+
+
+
