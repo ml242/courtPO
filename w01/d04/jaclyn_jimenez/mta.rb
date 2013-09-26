@@ -33,9 +33,9 @@ def number_of_stops(start, stop)
 end
 
 mta = {
-  "n_line" => ["Times Square" => 1, "34th" => 2, "28th_n" => 3, "23rd_n" => 4, "Union Square" => 5 , "8th_n" =>6],
+  "n_line" => {"Times Square" => 1, "34th" => 2, "28th_n" => 3, "23rd_n" => 4, "Union Square" => 5 , "8th_n" =>6},
   "l_line" => {"8th_l" => 1, "6th" => 2, "Union Square" => 2, "3rd" => 3, "1st" => 4},
-  "six_line" => ["Grand Central" => 1, "33rd" => 2, "28th_6" => 3, "23rd_6" => 4, "Union Square" => 5, "Astor Place" => 6]
+  "six_line" => {"Grand Central" => 1, "33rd" => 2, "28th_6" => 3, "23rd_6" => 4, "Union Square" => 5, "Astor Place" => 6}
 }
 
 line_on = ask("What line are you taking to start?")
