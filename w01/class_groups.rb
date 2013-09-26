@@ -62,14 +62,16 @@ GROUP_NAMES = [
 def choose_a_group()
   group_size = ask("How many people do you want in your group?")
   group_size = group_size.to_i
-    students = STUDENTS.sample
+  students1 = STUDENTS.sample
+  students2 = STUDENTS.sample
+  students3 = STUDENTS.sample
   group_name = GROUP_NAMES.sample
   if group_size > 1
-    puts "#{students} are in #{group_name}"
+    puts "#{students1}, #{students2}, and #{students3} are in #{group_name}"
   end
 end
 
-# tested with this method below, not sure if it is working
+#### tested with this method below, not sure if it is working
 # def add_students()
 #   students = STUDENTS.sample
 # end
@@ -77,10 +79,13 @@ end
 # add a funny team name for each
 # make different array of funny names to assign each group
 
-def name_the_group()
-  group_name = GROUP_NAMES.sample
-  # puts "The group of #{STUDENTS.sample} is called #{GROUP_NAMES.sample}."
-end
+##### code ran with this commented out, and also uncommented so I don't need it for now
+
+
+# def name_the_group()
+#   group_name = GROUP_NAMES.sample
+#   # puts "The group of #{STUDENTS.sample} is called #{GROUP_NAMES.sample}."
+# end
 
 # if there's a remainder student put them in the last group
 # when there is a remainder, use .push to add the remainder student
@@ -88,4 +93,4 @@ end
 
 
 choose_a_group
-name_the_group
+# name_the_group
