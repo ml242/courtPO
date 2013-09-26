@@ -24,29 +24,29 @@ students = load_json_file( 'class_sample_db.json' )
 sayings = ["your turn", "your next", "batters up", "do it", "good luck"]
 
 nicknames = [
-  "Shoeshine",
-  "Wiggle-bum",
-  "Left Eye",
-  "Sirius",
-  "Letter-Writing",
-  "Squirrel Cheeks",
-  "Happy Days",
-  "Gangsta Walk",
-  "High Socks",
-  "House of La-Code-Sha",
-  "My Humps",
-  "Give It Up",
-  "Bumblefart",
-  "Slightly Askew",
-  "Numbnuts",
-  "Straight Pubes",
-  "Weird Nostrils",
-  "Shiny Teeth",
-  "Clacky Nails",
-  "Loony Bin",
-  "Funny Face",
-  "Sweaty Palms"
-  ]
+	"Shoeshine",
+	"Wiggle-bum",
+	"Left Eye",
+	"Sirius",
+	"Letter-Writing",
+	"Squirrel Cheeks",
+	"Happy Days",
+	"Gangsta Walk",
+	"High Socks",
+	"House of La-Code-Sha",
+	"My Humps",
+	"Give It Up",
+	"Bumblefart",
+	"Slightly Askew",
+	"Numbnuts",
+	"Straight Pubes",
+	"Weird Nostrils",
+	"Shiny Teeth",
+	"Clacky Nails",
+	"Loony Bin",
+	"Funny Face",
+	"Sweaty Palms"
+]
 
 def menu
 	puts "This is the class sampler"
@@ -58,7 +58,7 @@ end
 
 user_input = nil
 
-while user_input != "q"
+while true
 	menu
 	user_input = nil
 	user_input = gets.chomp.downcase
