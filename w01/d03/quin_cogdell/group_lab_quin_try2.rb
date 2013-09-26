@@ -54,6 +54,7 @@ def ask_user_for_groups()
     group_size_input = ask('How many people should be in a group?')
 
     group_size = group_size_input.to_i
+
     num_groups = NUM_STUDENTS / group_size
     puts "There will be #{num_groups} groups today."
 
@@ -62,18 +63,20 @@ def ask_user_for_groups()
 
     puts "The groups are: #{groups_named_list}"
 
+
 end
 
 def create_groups(group_size, num_groups, groups_list)
   #currently does not account for residual group members
   students_c = STUDENTS
-  until students_c.size < 1
+  until students_c.size < group_size
       group = []
       group_members = students_c.sample(group_size)
       group << group_members
       group_members.each { |group_member| students_c.delete(group_member)}
       groups_list << group
   end
+  students_c.each { |non_grouped_student| groups_list[-1][-1] << non_grouped_student }
 end
 
 def name_groups(groups_list, groups_named_list)
