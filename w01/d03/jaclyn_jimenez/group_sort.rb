@@ -50,7 +50,8 @@ team_name = {
     "Sleepy",
     "Lazy",
     "Happy",
-    "Pretty"
+    "Pretty",
+    "Silly"
   ],
   :nouns => [
     "Pirates",
@@ -65,7 +66,8 @@ team_name = {
     "Losers",
     "Coders",
     "Nerds",
-    "Trolls"
+    "Trolls",
+    "Snakes"
   ]
 }
 
@@ -91,10 +93,16 @@ def sort(array, group_size)
 end
 
 def give_name_to_groups(array_of_arrays, team_name)
+  team_list = []
   array_of_arrays.each do |array|
-    #puts name before array
-    puts "#{team_name[:adjectives].sample} " + " #{team_name[:nouns].sample}  : " + array.to_s
-    #puts name plus array
+    team_adjectives = "#{team_name[:adjectives].sample}"
+    team_nouns = "#{team_name[:nouns].sample}"
+    team = "#{team_adjectives} " + "#{team_nouns}"
+      while team_list.include?("#{team}")
+        team = "#{team_adjectives} " + " #{team_nouns}  : "
+      end
+    team_list << team
+    puts team.to_s + "  : " + array.to_s
   end
 end
 
