@@ -24,17 +24,17 @@ students = [
     "Yaritza Rodriguez"
     ]
 
-group_name = [
+group_names = [
     "The Cheese Smellies",
     "The Twinkle Toes",
     "The Weiner Blasters",
     "The Fantastic Farts",
     "The Nancies",
-    "The Dumpsters"
-    "Team Z-List"
-    "Team Mediocre"
-    "The Ninnies"
-    "Team Eating Bogies"
+    "The Dumpsters",
+    "Team Z-List",
+    "Team Mediocre",
+    "The Ninnies",
+    "Team Eating Bogies",
     "The Strange Smells"
     ]
 
@@ -56,6 +56,9 @@ if groups.last.length == 1
 else
   puts "#{groups}"
 end
+# assign a funny name to each group
+assigned_name = group_names.shuffle.each_slice((23 / group_size)).to_a
+puts "Here are your assigned group names: #{assigned_name}"
 
 # find out the remainder using modulo (%)
 # remainder = 23 % group_size
