@@ -23,12 +23,14 @@ students = [
   "Will Smith",
   "Yaritza Rodriguez"
 ]
+# shuffle the array of students
+students.shuffle!
 
 system("clear")
 print "\nHow many students per group? "
 per_group = gets.chomp!.to_i
 
-cohort = students.shuffle!.each_slice(per_group).to_a
+cohort = students.each_slice(per_group).to_a
 
 if cohort[-1].size == 1
   straggler = cohort.pop
