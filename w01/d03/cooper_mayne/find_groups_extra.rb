@@ -65,20 +65,10 @@ def random_name
   name
 end
 
-def make_groups( meetings_counter, group_size )
-
+def make_groups( group_size )
   groups = []
 
-  while people_ungrouped.size >= group_size do
-    people_ungrouped.shuffle!
-    group_members = people_ungrouped.shift( group_size )
-    groups.push( { name: random_name, members: group_members } )
-  end
 
-  people_ungrouped.each_with_index do |person, index|
-    groups[index][:members].push( person )
-  end
-  return groups
 end
 
 def proper_answer?(ans)
@@ -107,7 +97,7 @@ end
 while true
   group_size = ask("how many people in each group?")
   puts "BAD INPUT"; next unless proper_answer?(group_size)
-  groups = make_groups( ENCOUNTER_COUNTER, group_size)
+  groups = make_groups(group_size)
   puts "\nTHESE ARE YOUR GROUPS!!!  HAVE FUN\n"
   groups.each do |group|
     puts
