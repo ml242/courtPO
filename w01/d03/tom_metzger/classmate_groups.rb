@@ -32,7 +32,10 @@ def ask(question)
   answer = gets.chomp!
 end
 
-
+def ask_num(question)
+  number_as_string = ask(question)
+  number = number_as_string.to_i
+end
 
 
 #CODE
@@ -40,8 +43,12 @@ end
 #user can select size of group
     #TO DO---  or choose number of groups
 
-group_size = ask("How many people do you want per group?")
+group_size = ask_num("How many people do you want per group?")
 
+number_of_groups = HASH_STUDENTS.length / group_size
+remaining_people = HASH_STUDENTS.length % group_size
+
+puts "With today's attendance you will have #{number_of_groups} groups of #{group_size} and #{remaining_people} groups of #{group_size + 1} for a total of #{number_of_groups + remaining_people} groups."
     #TO DO---- is anyone missing today (y/n)
         # ask for names one by one using a while loop
         # remake list by deleting these students from the list
