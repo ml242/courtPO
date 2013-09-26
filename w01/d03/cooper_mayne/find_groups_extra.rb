@@ -40,6 +40,18 @@ RANDOM_NAMES = ["Bunny Faces",
 
 ENCOUNTER_COUNTER = []
 
+CLASS_MEMBERS.each do |member|
+  CLASS_MEMBERS.reject{ |mem| mem == member }.each do |friend|
+    pair = [member[:name], friend[:name]].sort
+    meeting_hash = {
+      pair: pair,
+      meeting_count: 0
+    }
+
+    ENCOUNTER_COUNTER.push( meeting_hash ) unless ENCOUNTER_COUNTER.include? meeting_hash
+  end
+end
+
 
 
 def ask(question)
@@ -53,16 +65,14 @@ def random_name
   name
 end
 
-def make_groups( people_ungrouped, group_size )
+def make_groups( meetings_counter, group_size )
 
   groups = []
 
-  i=0
   while people_ungrouped.size >= group_size do
     people_ungrouped.shuffle!
     group_members = people_ungrouped.shift( group_size )
-    groups.push( { name: random_name, members: group_members, id: i } )
-    i += 1
+    groups.push( { name: random_name, members: group_members } )
   end
 
   people_ungrouped.each_with_index do |person, index|
@@ -75,10 +85,29 @@ def proper_answer?(ans)
   [1,2,3,4,5].include?(ans)
 end
 
+def update_encounter_counter( new_groupings )
+  # look at new_groupings and add meetings to ENCOUNTER_COUNTER
+  meetings = []
+  new_groupings.each do |group|
+    group.each do |member|
+      group.reject{ |mem| mem==member }.each do |friend|
+        pair = [member, friend].sort
+        meetings.push pair
+      end
+    end
+  end
+
+  meetings.uniq!
+
+  meetings.each do |meeting|
+    ENCOUNTER_COUNTER[meeting] += 1
+  end
+end
+
 while true
   group_size = ask("how many people in each group?")
   puts "BAD INPUT"; next unless proper_answer?(group_size)
-  groups = make_groups( CLASS_MEMBERS.dup, group_size)
+  groups = make_groups( ENCOUNTER_COUNTER, group_size)
   puts "\nTHESE ARE YOUR GROUPS!!!  HAVE FUN\n"
   groups.each do |group|
     puts
@@ -86,4 +115,7 @@ while true
     puts " (" + group[:members].size.to_s + ")"
     group[:members].each {|member| puts "  -" + member[:name]}
   end
+
+  update_encounter_counter(groups)
 end
+puts ENCOUNTER_COUNTER
