@@ -4,15 +4,13 @@ def load_json_file( filename )
 	JSON.parse( IO.read(filename) )
 end
 
-
-=begin UPDATE WITH ABILITY TO WRITE FROM OBJECT
+=begin Fix IO for writing file
 
 def write_json_file( object, filename )
-	JSON.parse( IO.dump(filename) )
+	JSON.dump( object, IO.write(filename) )
 end
 
 =end
-
 
 students = load_json_file( class_sampleDB.json )
 
@@ -25,6 +23,7 @@ user_input = gets.chomp
 
 while user_input != q
 	random_student = students.first
+	puts random_student
 	%x(say #{random_student.to_s})
 	students[random_student][:frequency] += 1
 	students.shuffle.sort[:frequency]
