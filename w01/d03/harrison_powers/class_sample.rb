@@ -1,19 +1,24 @@
 require 'json'
 
+class Hash
+  def shuffle
+    Hash[self.to_a.sample(self.length)]
+  end
+
+  def shuffle!
+    self.replace(self.shuffle)
+  end
+end
+
 def load_json_file( filename )
 	JSON.parse( IO.read(filename) )
 end
 
-=begin Fix IO for writing file
-
 def write_json_file( object, filename )
-	JSON.dump( object, IO.write(filename) )
+	File.open(filename, 'w'){ |data| JSON.dump( object, data ) }
 end
 
-=end
-
-students = load_json_file( class_sample_db.json )
-
+students = load_json_file( 'class_sample_db.json' )
 
 puts "This is the class sampler"
 puts "press enter to get a random student"
@@ -21,13 +26,13 @@ puts "or press q to exit"
 
 user_input = gets.chomp
 
-while user_input != q
-	random_student = students.first
+while user_input != "q"
+	students.shuffle!
+	random_student = students.keys[0]
 	puts random_student
-	%x(say #{random_student.to_s})
-	students[random_student][:frequency] += 1
-	students.shuffle.sort[:frequency]
+	%x(say #{random_student})
+	students[random_student] += 1
 	user_input = gets.chomp
 end
 
-write_json_file( students, class_sample_db.json )
+#write_json_file( students, 'class_sample_db.json' )
