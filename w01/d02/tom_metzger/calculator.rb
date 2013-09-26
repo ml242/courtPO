@@ -82,7 +82,10 @@ operations_s = {
 
 #METHODS
 
-
+def two_input_calc(input1, input2, math_func)
+  result = input1 math_func input2
+  puts result
+end
 
 
 #PROGRAM
@@ -142,6 +145,13 @@ if execute == "y"
 else
   puts "Your calculation has been cancelled."
 end
+
+
+if execute == "y"
+  2_input_calc(pirmary_num, secondary_num, operations[operation])
+
+
+
 
 #I tried to avoid using case or if statements for this because it is long and ugly but its getting too late and I can't figure out how to get the operations hash to call the symbols/methods correctly
 
