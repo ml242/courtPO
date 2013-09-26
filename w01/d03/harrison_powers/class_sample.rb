@@ -56,22 +56,33 @@ def menu
 	puts "or press (q) to exit"
 end
 
-user_input = nil
-
 while true
 	menu
 	user_input = nil
-	user_input = gets.chomp.downcase
+	user_input = gets.chomp
+
 	break if user_input == "q"
+	
 	students.shuffle!
 	students = Hash[students.sort_by{|k,v| v}]
 	random_student = students.keys[0]
-	puts random_student
-	%x(say #{random_student}) if user_input != "f"
-	%x(say #{random_student.split.first} #{nicknames.sample} #{random_student.split.last}) if user_input == "f"
-	%x(say #{sayings.sample}, #{random_student}) if user_input == "s"
 	students[random_student] += 1
+	
 	pp students
+	
+	puts
+
+	puts random_student if user_input == ""
+	%x(say #{random_student}) if user_input == ""
+	
+	puts "#{random_student.split.first} #{nicknames.sample} #{random_student.split.last}" if user_input == "f"
+	%x(say #{random_student.split.first} #{nicknames.sample} #{random_student.split.last}) if user_input == "f"
+
+	puts "#{sayings.sample}, #{random_student}" if user_input == "s"
+	%x(say #{sayings.sample}, #{random_student}) if user_input == "s"
+
+	puts
+	puts
 end
 
 write_json_file( students, 'class_sample_db.json' )
