@@ -1,13 +1,16 @@
 require 'rainbow'
+
 module LastN
   def last(n)
     self[-n,n]
   end
 end
-# Defines
+# Defines a module that calls certain range on object.
+
 class String
   include LastN
-end#
+end
+# Includes module on strings.
 
 
 subway_lines = {
@@ -22,6 +25,7 @@ puts "Please enter the stop you are getting off:"
 gets_off = gets.chomp!
 
 gets_on_subway = gets_on.last(2)
+# Isolates final two characters of strings.
 
 case gets_on_subway
   when "-N"
@@ -30,11 +34,12 @@ case gets_on_subway
     first_line = :l_line
   when "-6"
     first_line = :six_line
-  when "re"
+  when "re" && gets_on = "Union Square"
     first_line = "Union Square"
   else
     puts "I don't think you typed the first stop right."
 end
+# Separates input by line.
 
 gets_off_subway = gets_off.last(2)
 
@@ -53,20 +58,20 @@ end
 
 if first_line == last_line
   trip_length = subway_lines[first_line].index(gets_on) - subway_lines[first_line].index(gets_off)
-  trip_length = trip_length.abs
+# Uses difference of index numbers to calculate trip length.
 
-  puts trip_length
+  trip_length = trip_length.abs
+# Accounts for possible negatives.
 
   puts "Your trip length is #{trip_length}."
+
 else
   first_trip = subway_lines[first_line].index(gets_on) - subway_lines[first_line].index("Union Square")
   first_trip = first_trip.abs
   second_trip = subway_lines[last_line].index("Union Square") - subway_lines[last_line].index(gets_off)
   second_trip = second_trip.abs
   second_trip = second_trip + 1
-
-  puts first_trip
-  puts second_trip
+# Addition accounts for the Union Square stop.
 
   trip_length = first_trip + second_trip
 
