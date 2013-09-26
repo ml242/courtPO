@@ -38,29 +38,26 @@ STUDENTS = [
 "Will Smith",
 "Yaritza Rodriguez"]
 
-#methods
-#def ask(question)
-#	answer = gets.chomp
-#end
-
-#def ask_for_number(question)
-#	ask(question)
-#	answer=answer.to_i
-#end
-
-
 
 def random(size)
-	groups = STUDENTS.shuffle.each_slice(size).to_a
-	counter = groups.length
+	student_array = STUDENTS.shuffle.each_slice(size).to_a {|a| p a}
+	team_array = TEAM_NAME.shuffle
+		if STUDENTS.length % size != 0
+			remainder = student_array.pop
+			last = student_array[student_array.length-1]
+			n = 0
+				while n < remainder.length
+					last << remainder[n]
+					n = n + 1
+				end
+		end
 	group_hash = {}
 	i = 0
-	while counter > 0
-		group_hash[TEAM_NAME.sample] = groups[i]
-		counter = counter -1
+	while i < student_array.length
+		group_hash[team_array[i]] = student_array[i]
 		i = i + 1
 	end
-	return group_hash
+	puts group_hash
 end
 
 
@@ -70,6 +67,5 @@ ans_str = gets.chomp
 ans_int = ans_str.to_i
 
 puts random(ans_int)
-
 
 
