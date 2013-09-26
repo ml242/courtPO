@@ -1,3 +1,4 @@
+require 'rainbow'
 module LastN
   def last(n)
     self[-n,n]
@@ -6,7 +7,7 @@ end
 # Defines
 class String
   include LastN
-end
+end#
 
 
 subway_lines = {
@@ -50,56 +51,27 @@ case gets_off_subway
     puts "I don't think you typed the first stop right."
 end
 
-if last_line == "Union Square"
-  first_stop_index = subway_lines[first_line].index(gets_on)
-  union_sq_index = subway_lines[first_line].index("Union Square")
+if first_line == last_line
+  trip_length = subway_lines[first_line].index(gets_on) - subway_lines[first_line].index(gets_off)
+  trip_length = trip_length.abs
 
-  if first_stop_index < union_sq_index
-    first_trip = subway_lines[first_line][first_stop_index..union_sq_index].to_a
-  else
-    first_trip = subway_lines[first_line][union_sq_index..first_stop_index].to_a
-  end
+  puts trip_length
 
-  puts "Your trip length is #{first_trip.length}"
-
-elsif first_line == "Union Square"
-
-  last_stop_index = subway_lines[last_line].index(gets_off)
-  union_sq_index2 = subway_lines[last_line].index("Union Square")
-
-  if last_stop_index < union_sq_index2
-    second_trip = subway_lines[last_line][last_stop_index..union_sq_index2].to_a
-  else
-    second_trip = subway_lines[last_line][union_sq_index2..last_stop_index].to_a
-  end
-
-  puts "Your trip length is #{second_trip.length}"
-
+  puts "Your trip length is #{trip_length}."
 else
+  first_trip = subway_lines[first_line].index(gets_on) - subway_lines[first_line].index("Union Square")
+  first_trip = first_trip.abs
+  second_trip = subway_lines[last_line].index("Union Square") - subway_lines[last_line].index(gets_off)
+  second_trip = second_trip.abs
+  second_trip = second_trip + 1
 
-    first_stop_index = subway_lines[first_line].index(gets_on)
-  union_sq_index = subway_lines[first_line].index("Union Square")
+  puts first_trip
+  puts second_trip
 
-  if first_stop_index < union_sq_index
-    first_trip = subway_lines[first_line][first_stop_index..union_sq_index].to_a
-  else
-    first_trip = subway_lines[first_line][union_sq_index..first_stop_index].to_a
-  end
+  trip_length = first_trip + second_trip
 
-  last_stop_index = subway_lines[last_line].index(gets_off)
-  union_sq_index2 = subway_lines[last_line].index("Union Square")
-
-  if last_stop_index < union_sq_index2
-    second_trip = subway_lines[last_line][last_stop_index..union_sq_index2].to_a
-  else
-    second_trip = subway_lines[last_line][union_sq_index2..last_stop_index].to_a
-  end
-
-
-  total_trip = first_trip + second_trip
-  trip_length = total_trip.length - 1
-
-
-  puts "Your trip length is #{trip_length}"
-
+  puts "Your trip length is #{trip_length}."
 end
+
+
+
