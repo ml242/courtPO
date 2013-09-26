@@ -20,7 +20,7 @@ unsorted = [
 "Diego Palma",
 "Edward Shin",
 "Enoch Riese",
-"Harrison Powers ",
+"Harrison Powers",
 "Jaclyn Jimenez",
 "James Rothpearl",
 "Jimmy Davis",
@@ -37,6 +37,38 @@ unsorted = [
 "Will Smith",
 "Yaritza Rodriguez"
 ]
+
+team_name = {
+  :adjectives => [
+    "Smelly",
+    "Beautiful",
+    "Cheerful",
+    "Fabulous",
+    "Fantastic",
+    "Ugly",
+    "Hungry",
+    "Sleepy",
+    "Lazy",
+    "Happy",
+    "Pretty"
+  ],
+  :nouns => [
+    "Pirates",
+    "Hackers",
+    "Rinos",
+    "Dingos",
+    "Ninjas",
+    "Bums",
+    "Carrots",
+    "Apples",
+    "Flowers",
+    "Losers",
+    "Coders",
+    "Nerds",
+    "Trolls"
+  ]
+}
+
 
 
 def ask(question)
@@ -56,17 +88,15 @@ def sort(array, group_size)
     final_group = last_group + new_last_group       # both variable are joined, so the group with remander students is added to the new last group
     sorted << final_group                         # adds final group to the sorted array
   end
-  puts "#{sorted}"
-  puts "\n"
-  give_name_to_groups(sorted)
 end
 
-def give_name_to_groups(array_of_arrays)
+def give_name_to_groups(array_of_arrays, team_name)
   array_of_arrays.each do |array|
     #puts name before array
-    puts "SILLY NAME" + array.to_s
+    puts "#{team_name[:adjectives].sample} " + " #{team_name[:nouns].sample}  : " + array.to_s
     #puts name plus array
   end
 end
 
-sort(unsorted, group_size)
+sorted = sort(unsorted, group_size)
+give_name_to_groups(sorted, team_name)
