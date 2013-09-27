@@ -10,8 +10,8 @@ end
 train_line_options = "N, L or 6 trains"
 train_stops_available = {
   :n => ['times square', '34th', '28th-n', '23rd-n', 'union square', '8th-n'],
-  :l => ['8th-l', '6th', 'Union Square', '3rd', '1st'],
-  :six => ['Grand Central', '33rd', '28th', '23rd', 'Union Square', 'Astor Place']
+  :l => ['8th-l', '6th', 'union Square', '3rd', '1st'],
+  :six => ['grand central', '33rd', '28th', '23rd', 'union square', 'astor place']
 }
 
 #should add another hash for 'junctions' that is used to lookup where trains change
