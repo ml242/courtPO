@@ -25,7 +25,7 @@
 
 subway_lines = {
   :"L" =>["8th_L", "6th_L", "Union Square_L", "3rd_L", "1st_L"],
-  :"N" =>["Times Square_n", "34th_n", "28th_n", "23rd_n", "Union Square_n", "8th_n"],
+  :"N" =>["Times Square_N", "34th_N", "28th_N", "23rd_N", "Union Square_N", "8th_n"],
   :"6" =>["Grand Central_6", "33rd_6", "28th_6", "23rd_6", "Union Square_6", "Astor Place_6"]
 }
 
@@ -40,6 +40,11 @@ end_line = ""
 end_station = ""
 
 @station_position = {}
+
+
+
+transfer_stations = ["Union Square_L", "Union Square_N", "Union Square_6"]
+transfer_station_positions = {"Union Square_L" => 2, "Union Square_N" => 4, "Union Square_6" => 4}
 
 #METHODS    ------------------------------------------
 def ask(question)
@@ -118,11 +123,43 @@ subway_lines.keys.each do |line|
 end
 
 
-#this calculates the simple distance between two stations on the same line and puts it to the console
-trip_stops = travel_distance(start_line, start_station, end_line, end_station)
+# #this calculates the simple distance between two stations on the same line and puts it to the console
+# trip_stops = travel_distance(start_line, start_station, end_line, end_station)
+#   puts "Your trip is #{trip_stops} stops."
 
-puts "Your trip is #{trip_stops} stops."
 
+#THIS CODE CONCEPTUALLY WORKS OUT HOW I WOULD APPROACH CALCULATING DISTANCE BETWEEN 2 STATIONS ON DIFFERENT LINES
+if start_line == end_line
+  trip_stops = travel_distance(start_line, start_station, end_line, end_station)
+  puts "Your trip is #{trip_stops} stops."
+else
+  section_1 = travel_distance(start_line, start_station, start_line, "Union Square_" + start_line)
+  section_2 = travel_distance(end_line, "Union Square_" + end_line, end_line, end_station)
+  total_stops = section_1.abs + section_2.abs
+  puts total_stops
+end
+
+
+
+#THIS CODE WORRIED ABOUT DIRECTIONALITY OF TRAVEL AND WE DON'T ACTUALLY NEED TO CARE ABOUT THAT
+  # if @station_position[start_line.to_sym][start_station] < @station_position[start_line.to_sym]["Union Square_" + start_line]
+  #   #first array stays in ascending order
+  # else
+  #   #first_array.reverse
+  # end
+  # if @station_position[end_line.to_sym][end_station] < @station_position[end_line.to_sym]["Union Square_" + end_line]
+  #   #second array stays in ascending order
+  # else
+  #   #second_array.reverse
+  # end
+
+#build arrays from start to Union Square and from Union square to end using correct directionality
+#get distance -1 (so don't double count union square)
+
+
+
+#  new_array = subway_lines[end_line.to_sym] + subway_lines[start_line.to_sym]
+# also use .reverse if necessary to get right orientation
 
 
 
