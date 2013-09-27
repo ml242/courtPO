@@ -45,6 +45,8 @@ off = ask("Enter ending stop:").downcase
 # count the number of stops between "on" and "off" by indexing
 # the new array
 
+# SUBWAY[:N_line].index(on) - SUBWAY[:N_line].index(union square)
+
 if orig_line == "n"
   if transfer == "6"
     # make a new array out of the orig_line and the trans_line
