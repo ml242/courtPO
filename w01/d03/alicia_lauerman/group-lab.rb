@@ -26,9 +26,6 @@ students = [
 # shuffle the array of students
 students.shuffle!
 
-# shuffle the array of students
-students.shuffle!
-
 system("clear")
 print "\nHow many students per group? "
 per_group = gets.chomp!.to_i
