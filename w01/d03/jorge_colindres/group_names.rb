@@ -47,6 +47,20 @@ def place_into_random_groups
   class_with_groups
 end
 
+def no_small_groups
+  group_size = ask_group_size
+  class_with_groups.last = last_group
+  i = 0
+
+  if last_group.size != group_size
+    last_group.each do |student|
+      class_with_groups[i] << student
+      i += 1
+    end
+  end
+  class_with_groups
+end
+
 def give_group_nicknames
   nicknames = [
     "the_whiskers",
