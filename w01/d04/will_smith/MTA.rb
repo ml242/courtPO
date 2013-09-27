@@ -53,6 +53,13 @@ on_stop = ask("Which stop will you enter? Enter an option from the menu: \n #{SU
 off_train= ask("Which stop will you exit? Enter an option from the menu: \n #{SUBWAY_LINES}")
 puts "You get on the : #{on_train}, at #{on_stop}. You get off at #{off_train}"
 
+def trip_length()
+
+
+end
+
+##This isn't really anything. I spent the night trying to review what we've done so far.
+
 
 
 
