@@ -1,6 +1,8 @@
 puts "What math function do you want to perform: 'add', 'sub', 'mul', 'div', 'exp', 'sqrt' ?"
 input = gets.downcase.chomp!
 
+# should have written .to_f (to float) instead of .to_i
+#could have also used case instead of if statements
 if  input == 'add'
   puts "Please enter 2 numbers to add"
   num1 = gets.chomp!.to_i
