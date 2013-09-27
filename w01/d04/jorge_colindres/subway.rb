@@ -1,4 +1,4 @@
-
+require 'rainbow'
 
 def ask(question)
   puts question
@@ -13,12 +13,12 @@ def calculate_distance(subway_system, selected_start_line, selected_end_line)
   selected_start_line.each do |stop|
     puts "- #{stop}"
   end
-  selected_start_stop = ask("Choose your start stop:")
+  selected_start_stop = ask("Choose your start stop:".foreground(:cyan))
 
   selected_end_line.each do |stop|
     puts "- #{stop}"
   end
-  selected_end_stop = ask("Choose your end stop:")
+  selected_end_stop = ask("Choose your end stop:".foreground(:red))
 
   unless selected_start_line == selected_end_line
     nexus = (selected_start_line & selected_end_line)
@@ -46,14 +46,9 @@ def calculate_distance(subway_system, selected_start_line, selected_end_line)
 
     total_distance = (start_station_num - end_station_num).abs
   end
-  puts "You have to travel #{total_distance} stops."
+  puts "You have to travel #{total_distance} stops.".foreground(:magenta)
 end
 
-
-
-
-
-# Ask user what line they're taking
 SUBWAY_SYSTEM = {
   :n_line => [
     "Times Square",
@@ -93,7 +88,7 @@ selected_start_line = ask(CHOOSE_LINES_PROMPT)
 
 
 if selected_start_line == "1"
- puts "You're starting on the N Line"
+ puts "You're starting on the N Line".color("#f0dd0c")
  selected_end_line = ask("What line do you want to end on?
     > Enter 1 for the L Line
     > Enter 2 for the 6 Line
@@ -104,7 +99,7 @@ if selected_start_line == "1"
     calculate_distance(SUBWAY_SYSTEM, :n_line, :six_line)
   end
 elsif selected_start_line == "2"
-  puts "You're starting on the L Line"
+  puts "You're starting on the L Line".color("#999999")
   selected_end_line = ask("What line do you want to end on?
     > Enter 1 for the N Line
     > Enter 2 for the 6 Line
@@ -115,7 +110,7 @@ elsif selected_start_line == "2"
     calculate_distance(SUBWAY_SYSTEM, :l_line, :six_line)
   end
 elsif selected_start_line == "3"
-  puts "You're startin on the 6 Line"
+  puts "You're starting on the 6 Line".color("#009a2c")
   selected_end_line = ask("What line do you want to end on?
     > Enter 1 for the N Line
     > Enter 2 for the L Line
