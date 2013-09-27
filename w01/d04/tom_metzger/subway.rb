@@ -38,7 +38,7 @@ subway_line_array = [
 @end_line = "6"
 @end_station = "Astor Place_6"
 
-
+@station_position = {}
 
 #METHODS    ------------------------------------------
 def ask(question)
@@ -59,9 +59,9 @@ end
 
 #PROGRAM    ------------------------------------------
 
-#subway_lines.each do |line|
-station_position = Hash[subway_lines[:"6"].map.with_index.to_a]
-#end
+subway_lines.keys.each do |line|
+  @station_position[line] = Hash[subway_lines[line].map.with_index.to_a]
+end
 
 
 puts ""
