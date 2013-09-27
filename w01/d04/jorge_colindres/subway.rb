@@ -74,56 +74,54 @@ SUBWAY_SYSTEM = {
     "Astor Place"
   ]
 }
-CHOOSE_LINES_PROMPT = "
-WELCOME TO THE SUBWAY SYSTEM!
-
+CHOOSE_LINES_PROMPT = "WELCOME TO THE SUBWAY SYSTEM!
 What line do you want to start at?
   > Enter 1 for the N Line
   > Enter 2 for the L Line
   > Enter 3 for the 6 Line
-  > Enter Q to leave the Subway
-"
+  > Enter Q to leave the Subway"
 
-selected_start_line = ask(CHOOSE_LINES_PROMPT)
-
-
-if selected_start_line == "1"
- puts "You're starting on the N Line".color("#f0dd0c")
- selected_end_line = ask("What line do you want to end on?
-    > Enter 1 for the L Line
-    > Enter 2 for the 6 Line
-  ")
- if selected_end_line == "1"
-  calculate_distance(SUBWAY_SYSTEM, :n_line, :l_line)
+system_check = false
+while system_check == false
+  selected_start_line = ask(CHOOSE_LINES_PROMPT)
+  if selected_start_line == "1"
+   puts "\nYou're starting on the N Line\n".color("#f0dd0c")
+   selected_end_line = ask("What line do you want to end on?
+      > Enter 1 for the L Line
+      > Enter 2 for the 6 Line")
+   if selected_end_line == "1"
+    calculate_distance(SUBWAY_SYSTEM, :n_line, :l_line)
+    else
+      calculate_distance(SUBWAY_SYSTEM, :n_line, :six_line)
+    end
+    system_check = true
+  elsif selected_start_line == "2"
+    puts "\nYou're starting on the L Line\n".color("#999999")
+    selected_end_line = ask("What line do you want to end on?
+      > Enter 1 for the N Line
+      > Enter 2 for the 6 Line")
+   if selected_end_line == "1"
+    calculate_distance(SUBWAY_SYSTEM, :l_line, :n_line)
+    else
+      calculate_distance(SUBWAY_SYSTEM, :l_line, :six_line)
+    end
+    system_check = true
+  elsif selected_start_line == "3"
+    puts "\nYou're starting on the 6 Line\n".color("#009a2c")
+    selected_end_line = ask("What line do you want to end on?
+      > Enter 1 for the N Line
+      > Enter 2 for the L Line")
+   if selected_end_line == "1"
+    calculate_distance(SUBWAY_SYSTEM, :six_line, :n_line)
+    else
+      calculate_distance(SUBWAY_SYSTEM, :six_line, :l_line)
+    end
+    system_check = true
+  elsif selected_start_line.upcase == "Q"
+    puts "Good Bye!"
+    system_check = true
   else
-    calculate_distance(SUBWAY_SYSTEM, :n_line, :six_line)
+    puts "\nError. Select only one of the lines within the Subway System\n".foreground(:red)
   end
-elsif selected_start_line == "2"
-  puts "You're starting on the L Line".color("#999999")
-  selected_end_line = ask("What line do you want to end on?
-    > Enter 1 for the N Line
-    > Enter 2 for the 6 Line
-  ")
- if selected_end_line == "1"
-  calculate_distance(SUBWAY_SYSTEM, :l_line, :n_line)
-  else
-    calculate_distance(SUBWAY_SYSTEM, :l_line, :six_line)
-  end
-elsif selected_start_line == "3"
-  puts "You're starting on the 6 Line".color("#009a2c")
-  selected_end_line = ask("What line do you want to end on?
-    > Enter 1 for the N Line
-    > Enter 2 for the L Line
-  ")
- if selected_end_line == "1"
-  calculate_distance(SUBWAY_SYSTEM, :six_line, :n_line)
-  else
-    calculate_distance(SUBWAY_SYSTEM, :six_line, :l_line)
-  end
-elsif selected_start_line.upcase == "Q"
-  puts "Good Bye!"
-else
-  puts "Error"
 end
-
 
