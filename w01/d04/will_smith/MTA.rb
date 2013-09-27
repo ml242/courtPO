@@ -33,13 +33,28 @@ The key to the lab is the intersection of the lines at
 Union Square. Google "ruby array intersect."
 Make sure the stops that are the same for different lines have different names
 (i.e. 23rd on the N and on the 6 need to be differentiated)
-end
+=end
 
 #Make subway lines keys in a hash,
 #while the values are an array of all the stops on each line
 SUBWAY_LINES = {
-  N-Line: "Times Square", "34th", "28th N", "23rd N", "Union Square N", "8th N"
-  L_line: "8th L", "6th", "Union Square L", "3rd", "1st"
-  Six_line: "Grand Central", "33rd", "28th SIX", "23rd SIX", "Union Square SIX", "Astor Place"
+  :N_Line => ["Times Square", "34th", "28th N", "23rd N", "Union Square N", "8th N"],
+  :L_line => ["8th L", "6th", "Union Square L", "3rd", "1st"],
+  :Six_line => ["Grand Central", "33rd", "28th SIX", "23rd SIX", "Union Square SIX", "Astor Place"],
 }
+
+def ask(string)
+  puts string
+  gets.chomp!
+end
+
+on_train = ask("Which train will you take? Type 'N', 'L', or '6'")
+on_stop = ask("Which stop will you enter? Enter an option from the menu: \n #{SUBWAY_LINES}")
+off_train= ask("Which stop will you exit? Enter an option from the menu: \n #{SUBWAY_LINES}")
+puts "You get on the : #{on_train}, at #{on_stop}. You get off at #{off_train}"
+
+
+
+
+
 
