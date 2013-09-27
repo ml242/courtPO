@@ -1,3 +1,7 @@
+require 'pry'
+require 'pry-remote'
+require 'pry-nav'
+
 SUBWAY = {
 	:N => ["T", "34", "28", "23", "U", "8"],
 	:L => ["8", "6", "U", "3", "1"],
@@ -48,14 +52,18 @@ end
 
 while true
 	train_line = ask(MAIN_MENU).upcase
+	if train_line == "6"
+		train_line = "SIX"
+	end
 	break if @user_input.downcase == "q"
-	puts "Which stop are you getting on at?"
-	first_stop = ask(MENU_N) if train_line == "N"
-	first_stop = ask(MENU_L) if train_line == "L"
-	first_stop = ask(MENU_SIX) if train_line == "6"
+	puts "Which stop are you getting on?"
+	first_stop = ask(MENU_N).upcase if train_line == "N"
+	first_stop = ask(MENU_L).upcase if train_line == "L"
+	first_stop = ask(MENU_SIX).upcase if train_line == "SIX"
 	puts "When are you getting off?"
-	last_stop = ask(MENU_N) if train_line == "N"
-	last_stop = ask(MENU_L) if train_line == "L"
-	last_stop = ask(MENU_SIX) if train_line == "6"
-	puts calculate_stops(train_line, first_stop, last_stop)
+	last_stop = ask(MENU_N).upcase if train_line == "N"
+	last_stop = ask(MENU_L).upcase if train_line == "L"
+	last_stop = ask(MENU_SIX).upcase if train_line == "SIX"
+	puts
+	puts "You will have #{calculate_stops(train_line, first_stop, last_stop)} stops."
 end
