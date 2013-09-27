@@ -14,30 +14,36 @@ Create a class for each of the below(IN A SEPARATE FILE FOR EACH CLASS)
 
 |Atrributes of Building Class |Ruby Type|
 |:----------|:-----------|
-|address||
-|has_doorman||
-|is_walkup||
-|num_floors||
-|apartments||
+|address|String|
+|has_doorman|Boolean|
+|is_walkup|Boolean|
+|num_floors|Integer|
+|apartments|hmmmm|
+|count_people|method `def count_renters`|
+|count_apartments_available|method `def count_apartments_available`|
 
 |Attributes of Apartment Class|Ruby Type|
 |:----------|:-----------|
-|sqft||
-|num_bedrooms||
-|num_baths||
-|is_occupied||
-|price||
+|sqft|Integer|
+|num_bedrooms|Integer|
+|num_baths|Integer|
+|renters|hmmmmmm|
+|is_occupied?|A Method `def is_occupied?`|
+|price|Float|
 
-
-|renters|array of person objects|
 
 |Attributes of Person Class|Ruby Type|
 |:----------|:-----------|
-|name||
-|age||
-|gender||
-|apartment||
+|name|String|
+|age|Integer|
+|gender|String|
+|apartment|hmmmmmm|
 
+## Create Some Objects Now!
+- 2 Apartment Building
+- Fill some rooms on at least 2 floors in each apartment building (just put a couple rooms on each floor)
+- Have a couple people living in each apartment.
+- Have a method in the building class that 
 
 
 ---
@@ -53,6 +59,7 @@ REMEMBER, BUILD THE LEAF, do this stuff AFTER, you have
 	- ie Squarefootage
 	- number of bedrooms
 	- number of bathrooms 
+- Create an apartment to figure out the gender ratio of an apartment.
 
 Remember, though! BUILD THE LEAF, don't do this first!
 
