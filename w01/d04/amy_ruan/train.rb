@@ -1,8 +1,8 @@
 
 puts "
-N Line : 8th Street, Union Square, 23rd Street, 28th Street, 34th Street, Times Square
-L Line: 1st Ave, 3rd Ave, Union Square, 6th Ave, 8th Ave
-6 Line: Astor Place, Union Square, 28th Street, 33rd Street, Grand Central
+N : 8th Street, Union Square, 23rd Street, 28th Street, 34th Street, Times Square
+L : 1st Ave, 3rd Ave, Union Square, 6th Ave, 8th Ave
+6 : Astor Place, Union Square, 28th Street, 33rd Street, Grand Central
 "
 
 Line_N = ["8th street_N", "union square", "23rd street_N", "28th street_N", "34th street_N", "times square_N"]
@@ -38,7 +38,7 @@ def intersection_locator(first_array, second_array)
 end
 
 #First you need to know what line you are starting from
-first_line = ask("What is the name of the train line you starting from?").upcase
+first_line = ask("Please enter name of train line for your starting location?").upcase
 first_line_id = line_locator(first_line)
 first_line_hash = line_hash(first_line_id)
 
@@ -47,7 +47,7 @@ first_stop = ask("Please enter starting station name").downcase
 first_stop_id = stop_locator(first_stop, first_line)
 
 #Repeat for destination stop
-last_line = ask("What is the name of the train line for your destination?").upcase
+last_line = ask("Please enter name of train line for your destination?").upcase
 last_line_id = line_locator(last_line)
 last_line_hash = line_hash(last_line_id)
 
