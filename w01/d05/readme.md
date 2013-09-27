@@ -19,8 +19,8 @@ Create a class for each of the below(IN A SEPARATE FILE FOR EACH CLASS)
 |is_walkup|Boolean|
 |num_floors|Integer|
 |apartments|hmmmm|
-|count_people|method `def is_occupied?`|
-|count_apartments_available|method `def count_apartments_available?`|
+|count_people|method `def count_renters`|
+|count_apartments_available|method `def count_apartments_available`|
 
 |Attributes of Apartment Class|Ruby Type|
 |:----------|:-----------|
@@ -59,6 +59,7 @@ REMEMBER, BUILD THE LEAF, do this stuff AFTER, you have
 	- ie Squarefootage
 	- number of bedrooms
 	- number of bathrooms 
+- Create an apartment to figure out the gender ratio of an apartment.
 
 Remember, though! BUILD THE LEAF, don't do this first!
 
