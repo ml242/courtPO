@@ -2,16 +2,15 @@ SUBWAY_LINES =  {  :n_line => ["Times Square", "34th", "28th", "23rd", "Union Sq
                   :l_line => ["8th", "6th", "Union Square", "3rd", "1st"],
                   :six_line => ["Grand Central", "33rd", "28th", "23rd", "Union Square", "Astor Place"] }
 
-def count_stops_single_line( from_stop, to_stop, line )  # string, string, string
+def count_stops_single_line( from_stop, to_stop, line )  #datatypes: string, string, string
   line = SUBWAY_LINES[line.to_sym]
   from_index = line.index(from_stop)
   to_index = line.index(to_stop)
-  #puts to_index.class, from_index.class
   indexs_sorted = [ to_index, from_index ].sort
   stops = indexs_sorted.last - indexs_sorted.first
 end
 
-def count_stops( from_stop, from_line, to_stop, to_line ) #string, string, string, string
+def count_stops( from_stop, from_line, to_stop, to_line ) #datatypes: string, string, string, string
   return count_stops_single_line( from_stop, to_stop, from_line ) if from_line == to_line
 
   leg_one = count_stops_single_line( from_stop, "Union Square", from_line )
@@ -20,7 +19,9 @@ def count_stops( from_stop, from_line, to_stop, to_line ) #string, string, strin
   ans = leg_one + leg_two
 end
 
+#LOGIC OVER --- now i just make a menu....
 def menu
+  #get the starting point data
   puts "which line are you starting on?"
   puts "A) The N line", "B) The L line", "C) The 6 line"
   print "input a/b/c : "
@@ -54,6 +55,7 @@ def menu
   from_stop = stops[input.to_i-1] 
 
 ##============================================================
+  #get the destination data
   puts "which line are you going to?"
   puts "A) The N line", "B) The L line", "C) The 6 line"
   print "input a/b/c : "
@@ -86,14 +88,8 @@ def menu
 
   to_stop = to_stops[input.to_i-1] 
 
-
-  #puts count_stops("n_line","Times Square","l_line","3rd" )
-  
-  #puts from_stop, from_line, to_stop, to_line
   puts "\nANSWER: its going to be #{count_stops( from_stop, from_line, to_stop, to_line)} stops."
-  #puts from_stop, from_line, to_stop, to_line
 
-  #puts count_stops_single_line("8th","3rd","l_line" )
 end
 
 menu
