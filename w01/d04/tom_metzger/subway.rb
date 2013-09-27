@@ -34,15 +34,19 @@ subway_line_array = [
 ]
 
 start_line = ""
+start_station = ""
+
 end_line = ""
+end_station = ""
 
 @station_position = {}
 
 #METHODS    ------------------------------------------
 def ask(question)
   puts(question)
-  answer = gets.downcase.chomp!
+  answer = gets.chomp!
 end
+
 
 def list_options(list_values, station_start = nil)
   return list_values if station_start == nil
@@ -59,47 +63,62 @@ end
 
 #PROGRAM    ------------------------------------------
 
-subway_lines.keys.each do |line|
-  @station_position[line] = Hash[subway_lines[line].map.with_index.to_a]
-end
+
 
 puts ""
-puts "Welcome to Conductor!"
-puts ""
+puts "Welcome to NYC!"
 
+#THE FOUR BLOCKS OF CODE BELOW HERE CAN BE REFACTORED INTO A METHOD, I started this with list options but will need to finish it later
+
+#This block of code gets user input for the line they will start with
 until subway_line_array.include?(start_line)
+puts ""
 puts list_options(subway_line_array)
 line_start = ask("What subway line will you take when you start your journey? Please select a line from the list above:")
 start_line = line_start.upcase
   if subway_line_array.include?(start_line) == false
-    puts "That is not a subway line."
+    puts "That is not a subway line.\n"
   end
 end
 
-# THIS CODE EITHER DIES NOT WORK OR NEEDS TO BE CHECKED
-  # THIS LINE IS BROKEN  puts list_options(subway_lines.keys, line_start)
-  # line_start = line_start.upcase.to_sym
-  # station_start = ask("At which station will you board the subway? Stations on the #{line_start} are listed above")
+#This block of code gets user input for the station where they will start their journey
+until subway_lines[start_line.to_sym].include?(start_station)
+puts ""
+puts subway_lines[start_line.to_sym]
+start_station = ask("At what station will you start your journey? Please select a station from the list above:")
+# will use this line if I control for letter case of user's string entry      start_line = line_start
+puts "That is not a station on this line.\n" if subway_lines[start_line.to_sym].include?(start_station) == false
+end
 
+#This block of code gets user input for the line they will end with
 puts ""
 until subway_line_array.include?(end_line)
+puts ""
 puts list_options(subway_line_array)
 line_end = ask("What is the subway line at your destination station? Please select a line from the list above:")
 end_line = line_end.upcase
   if subway_line_array.include?(end_line) == false
-    puts "That is not a subway line."
+    puts "That is not a subway line.\n"
   end
 end
 
-  # puts list_options(subway_lines, line_end)
-  # line_end = line_end.upcase.to_sym
-  # station_end = ask("At which station will you get off the subway? Stations on the #{line_end} are listed above")
+#This block of code gets user input for the station where they will end their journey
+until subway_lines[end_line.to_sym].include?(end_station)
+puts ""
+puts subway_lines[end_line.to_sym]
+end_station = ask("At what station will you end your journey? Please select a station from the list above:")
+# will use this line if I control for letter case of user's string entry      end_line = line_end
+puts "That is not a station on this line.\n" if subway_lines[end_line.to_sym].include?(end_station) == false
+end
 
 
-start_station = "6th_L"
-end_station = "Union Square_L"
+#this creates a hash and assigns a position on the array to each station in the original subway line hash that holds staions in an array
+subway_lines.keys.each do |line|
+  @station_position[line] = Hash[subway_lines[line].map.with_index.to_a]
+end
 
 
+#this calculates the simple distance between two stations on the same line and puts it to the console
 trip_stops = travel_distance(start_line, start_station, end_line, end_station)
 
 puts "Your trip is #{trip_stops} stops."
