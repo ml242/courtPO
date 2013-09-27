@@ -5,7 +5,7 @@ def ask(question)
   gets.chomp
 end
 
-def riding_n_line(subway_system, selected_start_line, selected_end_line)
+def calculate_distance(subway_system, selected_start_line, selected_end_line)
   # Ask user where they'r going
   selected_start_line = subway_system[selected_start_line]
   selected_end_line = subway_system[selected_end_line]
@@ -91,20 +91,44 @@ What line do you want to start at?
 
 selected_start_line = ask(CHOOSE_LINES_PROMPT)
 
-riding_n_line(SUBWAY_SYSTEM, :n_line, :six_line)
 
-# if selected_start_line == "1"
-#  puts "You're riding the N Line"
-#  riding_n_line(SUBWAY_SYSTEM, :n_line)
-# elsif selected_start_line == "2"
-#   puts "You're riding the L Line"
-# elsif selected_start_line == "3"
-#   puts "You're riding the 6 Line"
-#   riding_n_line(SUBWAY_SYSTEM, :six_line)
-# elsif selected_start_line.upcase == "Q"
-#   puts "Good Bye!"
-# else
-#   puts "error"
-# end
+if selected_start_line == "1"
+ puts "You're starting on the N Line"
+ selected_end_line = ask("What line do you want to end on?
+    > Enter 1 for the L Line
+    > Enter 2 for the 6 Line
+  ")
+ if selected_end_line == "1"
+  calculate_distance(SUBWAY_SYSTEM, :n_line, :l_line)
+  else
+    calculate_distance(SUBWAY_SYSTEM, :n_line, :six_line)
+  end
+elsif selected_start_line == "2"
+  puts "You're starting on the L Line"
+  selected_end_line = ask("What line do you want to end on?
+    > Enter 1 for the N Line
+    > Enter 2 for the 6 Line
+  ")
+ if selected_end_line == "1"
+  calculate_distance(SUBWAY_SYSTEM, :l_line, :n_line)
+  else
+    calculate_distance(SUBWAY_SYSTEM, :l_line, :six_line)
+  end
+elsif selected_start_line == "3"
+  puts "You're startin on the 6 Line"
+  selected_end_line = ask("What line do you want to end on?
+    > Enter 1 for the N Line
+    > Enter 2 for the L Line
+  ")
+ if selected_end_line == "1"
+  calculate_distance(SUBWAY_SYSTEM, :six_line, :n_line)
+  else
+    calculate_distance(SUBWAY_SYSTEM, :six_line, :l_line)
+  end
+elsif selected_start_line.upcase == "Q"
+  puts "Good Bye!"
+else
+  puts "Error"
+end
 
 
