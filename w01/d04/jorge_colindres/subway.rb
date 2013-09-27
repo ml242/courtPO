@@ -5,25 +5,48 @@ def ask(question)
   gets.chomp
 end
 
-def riding_n_line(subway_system, selected_subway_line)
+def riding_n_line(subway_system, selected_start_line, selected_end_line)
   # Ask user where they'r going
-  selected_subway_line = subway_system[selected_subway_line]
+  selected_start_line = subway_system[selected_start_line]
+  selected_end_line = subway_system[selected_end_line]
   # ask("Where are you starting?")
-  puts "Choose a stop to start at:"
-  selected_subway_line.each do |stop|
+  selected_start_line.each do |stop|
     puts "- #{stop}"
   end
-
   selected_start_stop = ask("Choose your start stop:")
+
+  selected_end_line.each do |stop|
+    puts "- #{stop}"
+  end
   selected_end_stop = ask("Choose your end stop:")
 
-  selected_subway_line_hash = Hash[selected_subway_line.map.with_index.to_a]
-  selected_subway_line_hash
+  unless selected_start_line == selected_end_line
+    nexus = (selected_start_line & selected_end_line)
 
-  start_station_num = selected_subway_line_hash[selected_start_stop]
-  end_station_num = selected_subway_line_hash[selected_end_stop]
+    selected_start_line_hash = Hash[selected_start_line.map.with_index.to_a]
+    selected_end_line_hash = Hash[selected_end_line.map.with_index.to_a]
 
-  distance = (end_station_num - start_station_num).abs
+    start_station_num = selected_start_line_hash[selected_start_stop]
+    end_station_num = selected_end_line_hash[selected_end_stop]
+
+    nexus_num = selected_start_line_hash['Union Square']
+
+    distance_into_nexus = (nexus_num - start_station_num).abs
+
+    nexus_num = selected_end_line_hash['Union Square']
+
+    distance_out_of_nexus = (nexus_num - end_station_num).abs
+
+    total_distance = distance_into_nexus + distance_out_of_nexus
+  else
+    selected_start_line_hash = Hash[selected_start_line.map.with_index.to_a]
+
+    start_station_num = selected_start_line_hash[selected_start_stop]
+    end_station_num = selected_start_line_hash[selected_end_stop]
+
+    total_distance = (start_station_num - end_station_num).abs
+  end
+  puts "You have to travel #{total_distance} stops."
 end
 
 
@@ -32,26 +55,26 @@ end
 
 # Ask user what line they're taking
 SUBWAY_SYSTEM = {
-  # :n_line => [
-  #   "Times Square",
-  #   "34",
-  #   "28-N",
-  #   "23-N",
-  #   "Union Square",
-  #   "8-N"
-  # ],
-  # :l_line => [
-  #   "8-L",
-  #   "6",
-  #   "Union Square",
-  #   "3",
-  #   "1"
-  # ],
+  :n_line => [
+    "Times Square",
+    "34",
+    "28-N",
+    "23-N",
+    "Union Square",
+    "8-N"
+  ],
+  :l_line => [
+    "8-L",
+    "6",
+    "Union Square",
+    "3",
+    "1"
+  ],
   :six_line => [
     "Grand Central",
     "33",
-    "28-N",
-    "23-N",
+    "28-6",
+    "23-6",
     "Union Square",
     "Astor Place"
   ]
@@ -66,20 +89,22 @@ What line do you want to start at?
   > Enter Q to leave the Subway
 "
 
-selected_subway_line = ask(CHOOSE_LINES_PROMPT)
+selected_start_line = ask(CHOOSE_LINES_PROMPT)
 
-if selected_subway_line == "1"
- puts "You're riding the N Line"
- riding_n_line(SUBWAY_SYSTEM, :n_line)
-elsif selected_subway_line == "2"
-  puts "You're riding the L Line"
-elsif selected_subway_line == "3"
-  puts "You're riding the 6 Line"
-  riding_n_line(SUBWAY_SYSTEM, :six_line)
-elsif selected_subway_line.upcase == "Q"
-  puts "Good Bye!"
-else
-  puts "error"
-end
+riding_n_line(SUBWAY_SYSTEM, :n_line, :six_line)
+
+# if selected_start_line == "1"
+#  puts "You're riding the N Line"
+#  riding_n_line(SUBWAY_SYSTEM, :n_line)
+# elsif selected_start_line == "2"
+#   puts "You're riding the L Line"
+# elsif selected_start_line == "3"
+#   puts "You're riding the 6 Line"
+#   riding_n_line(SUBWAY_SYSTEM, :six_line)
+# elsif selected_start_line.upcase == "Q"
+#   puts "Good Bye!"
+# else
+#   puts "error"
+# end
 
 
