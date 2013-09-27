@@ -19,10 +19,10 @@ SUBWAY = {
 
 # take the line and stop the user is getting on at
 orig_line = ask("Enter the train line you're boarding (N/L/6):").downcase
-transfer = ask("Do you plan to transfer trains? (y/n)").downcase
-on = ask("Enter the stop you're boarding:").downcase
+on = ask("Enter boarding stop:").downcase
+transfer = ask("Will you transfer? If no, type 'no.' If yes, to which line?").downcase
 # take the line the user is getting off at
-off = ask("Enter the stop you're getting off at:").downcase
+off = ask("Enter ending stop:").downcase
 
 # print the total number of stops for the trip
 # take the position of the first stop and calculate
@@ -32,27 +32,52 @@ off = ask("Enter the stop you're getting off at:").downcase
 # (transfer point) and add it to number of stops btw end line stop
 # and "union square"
 
-if transfer == "y"
-  trans_line = ask("To which line?")
-end
+
+# if transfer == "y"
+#   trans_line = ask("To which line?")
+#   # create array starting w "on" through "union sq" for orig_line
+#   # until_trans =
+#   # create an array starting w trans_line through union sq
+#   # combine the arrays and delete common values using .uniq
+#   # calculate length of resulting array
+# end
+
+# count the number of stops between "on" and "off" by indexing
+# the new array
 
 if orig_line == "n"
-  on_num = SUBWAY[:N_line].index(on)
-  off_num = SUBWAY[:N_line].index(off)
-  total_stops = on_num - off_num
-  puts "You're going #{total_stops.abs} stop(s)."
+  if transfer == "6"
+    # make a new array out of the orig_line and the trans_line
+    trans_stops = SUBWAY[:N_line] + SUBWAY[:six_line]
+    # take out the duplicates using .uniq
+    all_stops = trans_stops.uniq
+    end_stop = all_stops.index(on).to_i - all_stops.index(off).to_i
+    puts "You're going #{end_stop.abs} stop(s)."
+  end
+  if transfer == "l"
+    trans_stops = SUBWAY[:N_line] + SUBWAY[:L_line]
+    all_stops = trans_stops.uniq
+    end_stop = all_stops.index(on).to_i - all_stops.index(off).to_i
+    puts "You're going #{end_stop.abs} stop(s)."
+  end
+  if transfer == "no"
+    on_num = SUBWAY[:N_line].index(on).to_i
+    off_num = SUBWAY[:N_line].index(off).to_i
+    total_stops = on_num - off_num
+    puts "You're going #{total_stops.abs} stop(s)."
+  end
 end
 
 if orig_line == "l"
-  on_num = SUBWAY[:L_line].index(on)
-  off_num = SUBWAY[:L_line].index(off)
+  on_num = SUBWAY[:L_line].index(on).to_i
+  off_num = SUBWAY[:L_line].index(off).to_i
   total_stops = on_num - off_num
   puts "You're going #{total_stops.abs} stop(s)."
 end
 
 if orig_line == "6"
-  on_num = SUBWAY[:six_line].index(on)
-  off_num = SUBWAY[:six_line].index(off)
+  on_num = SUBWAY[:six_line].index(on).to_i
+  off_num = SUBWAY[:six_line].index(off).to_i
   total_stops = on_num - off_num
   puts "You're going #{total_stops.abs} stop(s)."
 end
