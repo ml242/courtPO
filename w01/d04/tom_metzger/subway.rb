@@ -42,9 +42,9 @@ end_station = ""
 @station_position = {}
 
 
-
-transfer_stations = ["Union Square_L", "Union Square_N", "Union Square_6"]
-transfer_station_positions = {"Union Square_L" => 2, "Union Square_N" => 4, "Union Square_6" => 4}
+#I didn't end up using these... they may come in handy if I understand and can use &
+# transfer_stations = ["Union Square_L", "Union Square_N", "Union Square_6"]
+# transfer_station_positions = {"Union Square_L" => 2, "Union Square_N" => 4, "Union Square_6" => 4}
 
 #METHODS    ------------------------------------------
 def ask(question)
