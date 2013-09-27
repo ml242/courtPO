@@ -28,25 +28,30 @@ def calculate_distance(selected_start_line, selected_start_stop, selected_end_li
   unless selected_start_line == selected_end_line
     nexus = (selected_start_line & selected_end_line)
 
-    nexus.each do |element|
-      nexus = element
+    unless nexus.empty?
+      nexus.each do |element|
+        nexus = element
+      end
+
+      selected_start_line_hash = Hash[selected_start_line.map.with_index.to_a]
+      selected_end_line_hash = Hash[selected_end_line.map.with_index.to_a]
+
+      start_station_num = selected_start_line_hash[selected_start_stop]
+      end_station_num = selected_end_line_hash[selected_end_stop]
+
+      nexus_num = selected_start_line_hash[nexus]
+
+      distance_into_nexus = (nexus_num - start_station_num).abs
+
+      nexus_num = selected_end_line_hash[nexus]
+
+      distance_out_of_nexus = (nexus_num - end_station_num).abs
+
+      total_distance = distance_into_nexus + distance_out_of_nexus
+    else
+      puts "Sorry, those two lines don't have a connection.".foreground(:red).bright
+      total_distance = nil
     end
-
-    selected_start_line_hash = Hash[selected_start_line.map.with_index.to_a]
-    selected_end_line_hash = Hash[selected_end_line.map.with_index.to_a]
-
-    start_station_num = selected_start_line_hash[selected_start_stop]
-    end_station_num = selected_end_line_hash[selected_end_stop]
-
-    nexus_num = selected_start_line_hash[nexus]
-
-    distance_into_nexus = (nexus_num - start_station_num).abs
-
-    nexus_num = selected_end_line_hash[nexus]
-
-    distance_out_of_nexus = (nexus_num - end_station_num).abs
-
-    total_distance = distance_into_nexus + distance_out_of_nexus
   else
     selected_start_line_hash = Hash[selected_start_line.map.with_index.to_a]
 
@@ -55,7 +60,9 @@ def calculate_distance(selected_start_line, selected_start_stop, selected_end_li
 
     total_distance = (start_station_num - end_station_num).abs
   end
-  puts "You have to travel #{total_distance} stops.".foreground(:cyan).bright
+  unless total_distance == nil
+    puts "You'll be travelling #{total_distance} stops.".foreground(:cyan).bright
+  end
 end
 
 SUBWAY_SYSTEM = {
