@@ -1,27 +1,36 @@
-require 'rainbow'
+require "rainbow"
 
-def ask(question)
+def ask_puts(question)
   puts question
   gets.chomp
 end
 
-def calculate_distance(subway_system, selected_start_line, selected_end_line)
-  # Ask user where they'r going
-  selected_start_line = subway_system[selected_start_line]
-  selected_end_line = subway_system[selected_end_line]
-  # ask("Where are you starting?")
+def ask_print(question)
+  print question + " "
+  gets.chomp
+end
+
+def get_start_stop(subway_system, selected_start_line)
   selected_start_line.each do |stop|
     puts "- #{stop}"
   end
-  selected_start_stop = ask("Choose your start stop:".foreground(:cyan))
+  ask_print("From above, choose your start stop:".foreground(:blue))
+end
 
+def get_end_stop(subway_system, selected_end_line)
   selected_end_line.each do |stop|
     puts "- #{stop}"
   end
-  selected_end_stop = ask("Choose your end stop:".foreground(:red))
+  ask_print("From above, choose your end stop:".foreground(:red))
+end
 
+def calculate_distance(selected_start_line, selected_start_stop, selected_end_line, selected_end_stop)
   unless selected_start_line == selected_end_line
     nexus = (selected_start_line & selected_end_line)
+
+    nexus.each do |element|
+      nexus = element
+    end
 
     selected_start_line_hash = Hash[selected_start_line.map.with_index.to_a]
     selected_end_line_hash = Hash[selected_end_line.map.with_index.to_a]
@@ -29,11 +38,11 @@ def calculate_distance(subway_system, selected_start_line, selected_end_line)
     start_station_num = selected_start_line_hash[selected_start_stop]
     end_station_num = selected_end_line_hash[selected_end_stop]
 
-    nexus_num = selected_start_line_hash['Union Square']
+    nexus_num = selected_start_line_hash[nexus]
 
     distance_into_nexus = (nexus_num - start_station_num).abs
 
-    nexus_num = selected_end_line_hash['Union Square']
+    nexus_num = selected_end_line_hash[nexus]
 
     distance_out_of_nexus = (nexus_num - end_station_num).abs
 
@@ -46,11 +55,11 @@ def calculate_distance(subway_system, selected_start_line, selected_end_line)
 
     total_distance = (start_station_num - end_station_num).abs
   end
-  puts "You have to travel #{total_distance} stops.".foreground(:magenta)
+  puts "You have to travel #{total_distance} stops.".foreground(:cyan).bright
 end
 
 SUBWAY_SYSTEM = {
-  :n_line => [
+  :"N Line" => [
     "Times Square",
     "34",
     "28-N",
@@ -58,70 +67,70 @@ SUBWAY_SYSTEM = {
     "Union Square",
     "8-N"
   ],
-  :l_line => [
+  :"L Line" => [
     "8-L",
     "6",
     "Union Square",
     "3",
     "1"
   ],
-  :six_line => [
+  :"Six Line" => [
     "Grand Central",
     "33",
     "28-6",
     "23-6",
     "Union Square",
     "Astor Place"
+  ],
+  :"F Line" => [
+    "34",
+    "23-F",
+    "6",
+    "W4",
+    "Broadway-Lafayette"
   ]
 }
-CHOOSE_LINES_PROMPT = "WELCOME TO THE SUBWAY SYSTEM!
+FIRST_LINE_PROMPT = "WELCOME TO THE SUBWAY SYSTEM!
 What line do you want to start at?
-  > Enter 1 for the N Line
-  > Enter 2 for the L Line
-  > Enter 3 for the 6 Line
+  > N Line
+  > L Line
+  > Six Line
+  > F Line
   > Enter Q to leave the Subway"
+SECOND_LINE_PROMPT = "What line do you want to end on?
+  > N Line
+  > L Line
+  > Six Line
+  > F Line"
 
-system_check = false
-while system_check == false
-  selected_start_line = ask(CHOOSE_LINES_PROMPT)
-  if selected_start_line == "1"
-   puts "\nYou're starting on the N Line\n".color("#f0dd0c")
-   selected_end_line = ask("What line do you want to end on?
-      > Enter 1 for the L Line
-      > Enter 2 for the 6 Line")
-   if selected_end_line == "1"
-    calculate_distance(SUBWAY_SYSTEM, :n_line, :l_line)
-    else
-      calculate_distance(SUBWAY_SYSTEM, :n_line, :six_line)
+first_line_check = false
+second_line_check = false
+
+while first_line_check == false
+  selected_start_line = ask_puts(FIRST_LINE_PROMPT).to_sym
+
+  if SUBWAY_SYSTEM.has_key?(selected_start_line)
+    first_line_check = true
+
+    while second_line_check == false
+      selected_end_line = ask_puts(SECOND_LINE_PROMPT).to_sym
+      if SUBWAY_SYSTEM.has_key?(selected_end_line)
+        selected_start_line = SUBWAY_SYSTEM[selected_start_line]
+        selected_end_line = SUBWAY_SYSTEM[selected_end_line]
+        selected_start_stop = get_start_stop(SUBWAY_SYSTEM, selected_start_line)
+        selected_end_stop = get_end_stop(SUBWAY_SYSTEM, selected_end_line)
+        calculate_distance(selected_start_line, selected_start_stop, selected_end_line, selected_end_stop)
+
+        second_line_check = true
+      else
+        puts "\nError. Select a line within the Subway System\n".foreground(:red).blink
+      end
     end
-    system_check = true
-  elsif selected_start_line == "2"
-    puts "\nYou're starting on the L Line\n".color("#999999")
-    selected_end_line = ask("What line do you want to end on?
-      > Enter 1 for the N Line
-      > Enter 2 for the 6 Line")
-   if selected_end_line == "1"
-    calculate_distance(SUBWAY_SYSTEM, :l_line, :n_line)
-    else
-      calculate_distance(SUBWAY_SYSTEM, :l_line, :six_line)
-    end
-    system_check = true
-  elsif selected_start_line == "3"
-    puts "\nYou're starting on the 6 Line\n".color("#009a2c")
-    selected_end_line = ask("What line do you want to end on?
-      > Enter 1 for the N Line
-      > Enter 2 for the L Line")
-   if selected_end_line == "1"
-    calculate_distance(SUBWAY_SYSTEM, :six_line, :n_line)
-    else
-      calculate_distance(SUBWAY_SYSTEM, :six_line, :l_line)
-    end
-    system_check = true
-  elsif selected_start_line.upcase == "Q"
-    puts "Good Bye!"
-    system_check = true
+  elsif selected_start_line.upcase == :"Q"
+    puts "Goodbye!"
+    lines_check = true
   else
-    puts "\nError. Select only one of the lines within the Subway System\n".foreground(:red)
+    puts "\nError. Select a line within the Subway System\n".foreground(:red).blink
   end
 end
 
