@@ -85,10 +85,23 @@ group_size = ask("What is the size of the groups? ")
 # Choose group of student randomly
 # Remainder of student added to last group
 student_groups = choose_group(students, group_size.to_i)
-# Give each team a funny name
-index = 0
-student_groups.each do |x|
-  # Add name to each group
-  puts "Group is: #{group_names[index]} #{x}"
-  index += 1
+
+group_hash = {}
+num_groups = student_groups.length
+num_groups.times do |x|
+  group_hash[group_names[x]] = student_groups[x]
+  print " #{group_hash.keys[x]} - #{group_hash.values[x]}\n"
 end
+#index = 0
+# student_groups.each do |x|
+#   # Add name to each group
+#   puts "Group is: #{group_names[index]} #{x}"
+#   index += 1
+# end
+
+# num_studs = students.length
+# group_names.pop(group_names.length-num_studs)
+
+# num_studs.times do |x|
+# stud_hash[x]
+
