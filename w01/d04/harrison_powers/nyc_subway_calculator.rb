@@ -13,7 +13,6 @@ Which Subway line are you starting on?
 (q)uit
 "
 MENU_N = "
-Which stop?
 (T)ime Square
 (34)th Street
 (28)th Street
@@ -37,8 +36,9 @@ MENU_SIX = "
 (A)stor Place
 "
 
-def calculate_stops
-	SUBWAY[train_line.to_sym].index(first_stop)
+def calculate_stops(train_line, first_stop, last_stop)
+	num_of_stops = SUBWAY[train_line.to_sym].index(first_stop) - SUBWAY[train_line.to_sym].index(last_stop)
+	return num_of_stops.abs
 end
 
 def ask(question)
@@ -49,12 +49,13 @@ end
 while true
 	train_line = ask(MAIN_MENU).upcase
 	break if @user_input.downcase == "q"
+	puts "Which stop are you getting on at?"
 	first_stop = ask(MENU_N) if train_line == "N"
 	first_stop = ask(MENU_L) if train_line == "L"
 	first_stop = ask(MENU_SIX) if train_line == "6"
+	puts "When are you getting off?"
 	last_stop = ask(MENU_N) if train_line == "N"
 	last_stop = ask(MENU_L) if train_line == "L"
 	last_stop = ask(MENU_SIX) if train_line == "6"
-	rename_inputs
-	puts calculate_stops
+	puts calculate_stops(train_line, first_stop, last_stop)
 end
