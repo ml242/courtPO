@@ -1,6 +1,7 @@
 class Apartment
-  attr_accessor :price, :sqft, :num_beds, :num_baths, :renters
-  def initialize(price, sqft, num_beds, num_baths)
+  attr_accessor :price, :sqft, :num_beds, :num_baths, :renters, :apartment_number
+  def initialize(apartment_number, price, sqft, num_beds, num_baths)
+    @apartment_number = apartment_number
     @price = price
     @sqft = sqft
     @num_beds = num_beds
