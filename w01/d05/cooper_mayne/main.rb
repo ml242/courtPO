@@ -27,6 +27,3 @@ class Person
     @gender = gender
   end
 end
-
-nnoremap <silent> <F11> :YRShow<CR>
-
