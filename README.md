@@ -42,4 +42,4 @@ git push origin master
 ######Make a pull request
 - Go to your own github account and make your pull request
 - Title your pull request with the week and day (for example `HW w01-d01`)
-- You MUST inlucude comments on your successes and challenges
+- You MUST include comments on your successes and challenges
