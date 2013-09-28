@@ -1,7 +1,13 @@
+<<<<<<< HEAD
+cd # Homework
+###### REMEMBER TO WORK IN YOUR OWN PERSONAL FOLDER IN DAY 2
+## Pt 1 - Yes, Lets
+=======
 ## Homework - Day 2
 ###### REMEMBER TO WORK IN YOUR OWN PERSONAL FOLDER
 
 ### Pt 1 - Yes, Lets (Ruby)
+>>>>>>> e73c84ff0f06f2a061a2002eceda5488c654f746
 Modify the yes_lets.rb program to only run a maximum of 5 times.
 
 ### Pt 2 - Calculator
