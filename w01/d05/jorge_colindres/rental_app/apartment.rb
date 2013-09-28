@@ -3,14 +3,15 @@ require 'pry-nav'
 require 'pry-remote'
 
 class Apartment
-  attr_accessor :apartment_id, :sqft, :num_bedrooms, :num_baths, :renters, :price
+  attr_accessor :apartment_id, :sqft, :num_bedrooms, :num_baths, :renters
+  attr_reader :price
 
-  def initialize(apartment_id, sqft, num_bedrooms, num_baths, price)
+  def initialize(apartment_id, sqft, num_bedrooms, num_baths)
     @apartment_id = apartment_id
     @sqft = sqft
     @num_bedrooms = num_bedrooms
     @num_baths = num_baths
-    @price = price
+    @price = (@num_bedrooms + @num_baths) * @sqft
     @is_occupied = false
     @renters = []
   end
@@ -36,7 +37,7 @@ class Apartment
 
   def show_apartment
     @is_occupied == true ? occupied = "occupied" : occupied = "vacant"
-    @renters == [] ? renters = "Nobody" : renters = @renters.join(", ")
-    "This is apartment #{@apartment_id}. It is currently #{occupied}. It has #{@sqft} square feet, #{@num_bedrooms} bedrooms, #{@num_baths} bathrooms, and it costs $#{@price}. #{renters} currently lives here."
+    @renters == [] ? renters = "Nobody" : renters = @renters.join(" and ")
+    "This is apartment #{@apartment_id}. It is currently #{occupied}. It has #{@sqft} square feet, #{@num_bedrooms} bedrooms, #{@num_baths} bathrooms, and it costs $#{@price}. #{renters} currently live here."
   end
 end

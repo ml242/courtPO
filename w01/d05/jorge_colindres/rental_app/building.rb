@@ -6,8 +6,9 @@ class Building
   attr_accessor :address
   attr_reader :apartments, :num_floors
 
-  def initialize(address)
+  def initialize(address, apartments_per_floor)
     @address = address
+    @apartments_per_floor = apartments_per_floor
     @is_walkup = true
     @has_doorman = false
     @num_floors = 0
@@ -34,7 +35,7 @@ class Building
 
   def add_apartment(apartment_id, apartment_info)
     @apartments[apartment_id] = apartment_info
-    @num_floors = (@apartments.keys.length / 5.0).ceil
+    @num_floors = (@apartments.keys.length / @apartments_per_floor.to_f).ceil
   end
 
   def count_people
@@ -60,7 +61,8 @@ class Building
   end
 
   def show_building
-    @doorman == true ? doorman = "doorman" : doorman = "non-doorman"
-    "This is a #{doorman} building located at #{@address}. It has #{@apartments.keys.length} apartment units, and #{@available_apartments} are currently available. There are #{@people_counted} total tennants."
+    @has_doorman ? doorman = "doorman" : doorman = "non-doorman"
+    @is_walkup ? walkup = "walkup" : walkup = "elevatored"
+    "This is a #{doorman} #{walkup} building located at #{@address}. It has #{@apartments.keys.length} apartment units on #{@num_floors} floors, and #{@available_apartments} are currently vacant. There are #{@people_counted} total tennants."
   end
 end

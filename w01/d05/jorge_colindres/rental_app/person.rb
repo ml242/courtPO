@@ -9,6 +9,6 @@ class Person
   end
 
   def show_person
-    "Hi, my name is #{@name}. I'm a #{@age} year old #{@gender}, and I live in #{@apartment}."
+    "Hi, my name is #{@name}. I'm a #{@age} year old #{@gender}, and I live in apartment #{@apartment}."
   end
 end
