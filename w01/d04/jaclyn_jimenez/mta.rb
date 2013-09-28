@@ -31,8 +31,6 @@ stop_on = ask("What stop are you starting from?")
 line_off = ask("What line are you getting off")
 stop_off = ask("What stop is your final destination?")
 
-
-
 first_stop = mta[line_on].index(stop_on)           #this is the index of the first stop.
 final_stop = mta[line_off].index(stop_off)    #this is the index of the second stop.
 
