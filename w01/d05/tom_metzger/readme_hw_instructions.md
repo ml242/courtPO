@@ -40,10 +40,13 @@ Create a class for each of the below(IN A SEPARATE FILE FOR EACH CLASS)
 |apartment|hmmmmmm|
 
 ## Create Some Objects Now!
-- 2 Apartment Building
-- Fill some rooms on at least 2 floors in each apartment building (just put a couple rooms on each floor)
+- Create 2 Buildings
+- Fill those 2 Buildings with some apartments on at least 2 floors in each apartment building (just put a couple apartments on each floor)
 - Have a couple people living in each apartment.
 - Have a method in the building class that 
+	- Calculates the number of tenants in the building
+	- The number of filled rooms
+	- The number of empty rooms
 
 
 ---
