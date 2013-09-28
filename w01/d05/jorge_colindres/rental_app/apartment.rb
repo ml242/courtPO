@@ -1,7 +1,8 @@
 class Apartment
-  attr_accessor :sqft, :num_bedrooms, :num_baths, :renters, :price
+  attr_accessor :apartment_id, :sqft, :num_bedrooms, :num_baths, :renters, :price
 
-  def initialize
+  def initialize(apartment_id)
+    @apartment_id = apartment_id
     @is_occupied = false
     @renters = []
   end
