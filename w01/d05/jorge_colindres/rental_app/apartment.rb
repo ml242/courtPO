@@ -14,6 +14,15 @@ class Apartment
     @price = (@num_bedrooms + @num_baths) * @sqft
     @is_occupied = false
     @renters = []
+    @renter_genders = []
+  end
+
+  def renters=(renters)
+    renters.each do |renter|
+      @renters << renter.name
+      @renter_genders << renter.gender
+    end
+    @renters
   end
 
   def occupy
@@ -33,6 +42,23 @@ class Apartment
     apartment_info[:renters] = @renters
     apartment_info[:price] = @price
     apartment_info
+  end
+
+  def get_gender_ratio
+    men = 0
+    women = 0
+    @renter_genders.each do |gender|
+      gender == "female" ? women += 1 : men += 1
+    end
+    if women != 1 && men != 1
+      "There are #{women} women and #{men} men living in this apartment."
+    elsif women == 1 && men != 1
+      "There is #{women} woman and #{men} men living in this apartment."
+    elsif women != 1 && men == 1
+      "There are #{women} women and #{men} man living in this apartment."
+    else
+      "There is #{women} woman and #{men} man living in this apartment."
+    end
   end
 
   def show_apartment

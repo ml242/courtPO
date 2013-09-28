@@ -48,21 +48,21 @@ p16 = Person.new('Loise', 22, 'female', a12.apartment_id)
 
 
 # Filling the apartments with people
-a1.renters = [p1.name, p2.name]
+a1.renters = [p1, p2]
   a1.occupy
-a2.renters = [p3.name, p4.name]
+a2.renters = [p3, p4]
   a2.occupy
-a3.renters = [p5.name, p6.name]
+a3.renters = [p5, p6]
   a3.occupy
-a4.renters = [p7.name, p8.name]
+a4.renters = [p7, p8]
   a4.occupy
-a7.renters = [p9.name, p10.name]
+a7.renters = [p9, p10]
   a7.occupy
-a8.renters = [p11.name, p12.name]
+a8.renters = [p11, p12]
   a8.occupy
-a10.renters = [p13.name, p14.name]
+a10.renters = [p13, p14]
   a10.occupy
-a12.renters = [p15.name, p16.name]
+a12.renters = [p15, p16]
   a12.occupy
 
 # Creating vars for each apartment ID
@@ -125,13 +125,15 @@ b2.count_apartments_available
 puts p1.show_person.color(:green)
 puts b1.show_building.color(:red)
 puts a2.show_apartment.color(:cyan)
-puts a3.show_apartment.color(:yellow)
+puts a2.get_gender_ratio.color(:yellow)
+puts a3.show_apartment.color(:cyan)
+puts a3.get_gender_ratio.color(:yellow)
 
 puts p9.show_person.color(:green)
 puts b2.show_building.color(:red)
 puts a9.show_apartment.color(:cyan)
-puts a12.show_apartment.color(:yellow)
-
-binding.pry
+puts a9.get_gender_ratio.color(:yellow)
+puts a12.show_apartment.color(:cyan)
+puts a12.get_gender_ratio.color(:yellow)
 
 
