@@ -5,10 +5,13 @@ require 'pry-remote'
 class Building
   attr_accessor :address, :num_floors, :apartments
 
-  def initialize
+  def initialize(address)
+    @address = address
     @is_walkup = true
     @has_doorman = false
     @apartments = Hash.new
+    @available_apartments = 0
+    @people_counted = 0
   end
 
   def give_elevator
@@ -33,26 +36,28 @@ class Building
 
   def count_people
     people_in_apts = []
-    people_counted = 0
     @apartments.each_value do |apartment|
       if apartment[:renters].length > 0
         people_in_apts << apartment[:renters].length
       end
     end
     people_in_apts.each do |people|
-      people_counted = people + people_counted
+      @people_counted = people + @people_counted
     end
-    people_counted
-    # people_in_apts.inject { |sum, x| sum + x }
+    @people_counted
   end
 
   def count_apartments_available
-    available_apartments = 0
     @apartments.each_value do |apartment|
       if apartment[:is_occupied] == false
-        available_apartments += 1
+        @available_apartments += 1
       end
     end
-    available_apartments
+    @available_apartments
+  end
+
+  def show_building
+    @doorman == true ? doorman = "doorman" : doorman = "non-doorman"
+    "This is a #{doorman} building located at #{@address}. It has #{@apartments.keys.length} apartment units, and #{@available_apartments} are currently available. There are #{@people_counted} total tennants."
   end
 end

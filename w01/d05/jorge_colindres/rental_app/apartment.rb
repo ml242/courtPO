@@ -1,3 +1,7 @@
+require 'pry'
+require 'pry-nav'
+require 'pry-remote'
+
 class Apartment
   attr_accessor :apartment_id, :sqft, :num_bedrooms, :num_baths, :renters, :price
 
@@ -5,6 +9,7 @@ class Apartment
     @apartment_id = apartment_id
     @is_occupied = false
     @renters = []
+
   end
 
   def occupy
@@ -26,7 +31,10 @@ class Apartment
     apartment_info
   end
 
-  def to_s
-    "Apartment Info -- Occuped: #{@is_occupied}, Sqft: #{@sqft}, Beds: #{@num_bedrooms}, Baths: #{@num_baths}, Tennants: #{@renters}, Price: #{@price}"
+  def show_apartment
+    @is_occupied == true ? occupied = "occupied" : occupied = "vacant"
+    @renters == [] ? renters = "Nobody" : renters = @renters.join(", ")
+    "This is apartment #{@apartment_id}. It is currently #{occupied}. It has #{@sqft} square feet, #{@num_bedrooms} bedrooms, #{@num_baths} bathrooms, and it costs $#{@price}. #{renters} currently lives here."
   end
+
 end
