@@ -2,6 +2,7 @@
 ###### REMEMBER TO WORK IN YOUR OWN PERSONAL FOLDER
 
 ### Pt 1 - Yes, Lets (Ruby)
+>>>>>>> e73c84ff0f06f2a061a2002eceda5488c654f746
 Modify the yes_lets.rb program to only run a maximum of 5 times.
 
 ### Pt 2 - Calculator
@@ -30,4 +31,3 @@ You will be building a calculator. A calculator can perform multiple arithmetic 
 
 User should be given a menu of Calculator functionality
 User should be able to choose intended functionality
-
