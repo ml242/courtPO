@@ -19,8 +19,8 @@ class Building
     @num_apt_available
   end
 
-  def add_renters(building_info_hash, people)
-    building_info_hash[:renters] = people
+  def add_apt(building_info_hash, apartment)
+    building_info_hash[:apartment] = apartment
     @num_apt_available = @num_apartments - 1
   end
 

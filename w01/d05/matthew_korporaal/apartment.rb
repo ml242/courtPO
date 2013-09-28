@@ -7,7 +7,7 @@ class Apartment
     @num_bedroom = apartment_info_hash[:num_bed]
     @num_bath = apartment_info_hash[:num_bath]
     @price = apartment_info_hash[:price]
-    @tenants
+    @tenants = []
   end
 
   def add_tenants(renters_a)
