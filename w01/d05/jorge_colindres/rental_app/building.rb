@@ -1,13 +1,10 @@
-require 'pry'
-require 'pry-nav'
-require 'pry-remote'
-
 class Building
   attr_accessor :address, :num_floors, :apartments
 
   def initialize
     @is_walkup = true
     @has_doorman = false
+    @apartments = Hash.new
   end
 
   def give_elevator
@@ -26,15 +23,27 @@ class Building
     @has_doorman
   end
 
-  def count_people
+  def add_apartment(apartment_id, apartment_info)
+    @apartments[apartment_id] = apartment_info
+  end
 
+  def count_people
+    people_in_apts = []
+    @apartments.each_value do |apartment|
+      if apartment[:renters].length > 0
+        people_in_apts << apartment[:renters].length
+      end
+    end
+    people_in_apts.length
   end
 
   def count_apartments_available
-
+    available_apartments = 0
+    @apartments.each_value do |apartment|
+      if apartment[:is_occupied] == false
+        available_apartments += 1
+      end
+    end
+    available_apartments
   end
 end
-
-b1 = Building.new
-
-binding.pry

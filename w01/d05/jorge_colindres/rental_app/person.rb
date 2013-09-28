@@ -1,7 +1,3 @@
-require 'pry'
-require 'pry-nav'
-require 'pry-remote'
-
 class Person
   attr_accessor :name, :age, :gender, :apartment
 
@@ -9,7 +5,3 @@ class Person
 
   end
 end
-
-p1 = Person.new
-
-binding.pry

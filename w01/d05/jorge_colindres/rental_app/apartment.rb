@@ -1,7 +1,3 @@
-require 'pry'
-require 'pry-nav'
-require 'pry-remote'
-
 class Apartment
   attr_accessor :sqft, :num_bedrooms, :num_baths, :renters, :price
 
@@ -16,8 +12,19 @@ class Apartment
   def occupied?
     @is_occupied
   end
+
+  def get_apartment_info
+    apartment_info = Hash.new
+    apartment_info[:is_occupied] = @is_occupied
+    apartment_info[:sqft] = @sqft
+    apartment_info[:num_bedrooms] = @num_bedrooms
+    apartment_info[:num_baths] = @num_baths
+    apartment_info[:renters] = @renters
+    apartment_info[:price] = @price
+    apartment_info
+  end
+
+  def to_s
+    "Apartment Info -- Occuped: #{@is_occupied}, Sqft: #{@sqft}, Beds: #{@num_bedrooms}, Baths: #{@num_baths}, Tennants: #{@renters}, Price: #{@price}"
+  end
 end
-
-a1 = Apartment.new
-
-binding.pry
