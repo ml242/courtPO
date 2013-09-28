@@ -3,13 +3,15 @@ require 'pry-nav'
 require 'pry-remote'
 
 class Building
-  attr_accessor :address, :num_floors, :apartments
+  attr_accessor :address
+  attr_reader :apartments, :num_floors
 
   def initialize(address)
     @address = address
     @is_walkup = true
     @has_doorman = false
-    @apartments = Hash.new
+    @num_floors = 0
+    @apartments = {}
     @available_apartments = 0
     @people_counted = 0
   end
@@ -32,6 +34,7 @@ class Building
 
   def add_apartment(apartment_id, apartment_info)
     @apartments[apartment_id] = apartment_info
+    @num_floors = (@apartments.keys.length / 5.0).ceil
   end
 
   def count_people

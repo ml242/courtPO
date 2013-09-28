@@ -5,11 +5,14 @@ require 'pry-remote'
 class Apartment
   attr_accessor :apartment_id, :sqft, :num_bedrooms, :num_baths, :renters, :price
 
-  def initialize(apartment_id)
+  def initialize(apartment_id, sqft, num_bedrooms, num_baths, price)
     @apartment_id = apartment_id
+    @sqft = sqft
+    @num_bedrooms = num_bedrooms
+    @num_baths = num_baths
+    @price = price
     @is_occupied = false
     @renters = []
-
   end
 
   def occupy
@@ -21,7 +24,7 @@ class Apartment
   end
 
   def get_apartment_info
-    apartment_info = Hash.new
+    apartment_info = {}
     apartment_info[:is_occupied] = @is_occupied
     apartment_info[:sqft] = @sqft
     apartment_info[:num_bedrooms] = @num_bedrooms
@@ -36,5 +39,4 @@ class Apartment
     @renters == [] ? renters = "Nobody" : renters = @renters.join(", ")
     "This is apartment #{@apartment_id}. It is currently #{occupied}. It has #{@sqft} square feet, #{@num_bedrooms} bedrooms, #{@num_baths} bathrooms, and it costs $#{@price}. #{renters} currently lives here."
   end
-
 end
