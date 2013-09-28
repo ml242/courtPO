@@ -122,18 +122,16 @@ b2.count_people
 b2.count_apartments_available
 
 # Displaying the results
-puts p1.show_person.color(:green)
-puts b1.show_building.color(:red)
-puts a2.show_apartment.color(:cyan)
-puts a2.get_gender_ratio.color(:yellow)
-puts a3.show_apartment.color(:cyan)
+puts p1.show_person
+puts b1.show_building
+puts a3.show_apartment
 puts a3.get_gender_ratio.color(:yellow)
 
-puts p9.show_person.color(:green)
-puts b2.show_building.color(:red)
-puts a9.show_apartment.color(:cyan)
+puts "\n"
+
+puts p9.show_person
+puts b2.show_building
+puts a9.show_apartment
 puts a9.get_gender_ratio.color(:yellow)
-puts a12.show_apartment.color(:cyan)
-puts a12.get_gender_ratio.color(:yellow)
 
 

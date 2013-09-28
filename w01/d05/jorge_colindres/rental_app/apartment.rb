@@ -64,6 +64,10 @@ class Apartment
   def show_apartment
     @is_occupied == true ? occupied = "occupied" : occupied = "vacant"
     @renters == [] ? renters = "Nobody" : renters = @renters.join(" and ")
-    "This is apartment #{@apartment_id}. It is currently #{occupied}. It has #{@sqft} square feet, #{@num_bedrooms} bedrooms, #{@num_baths} bathrooms, and it costs $#{@price}. #{renters} currently live here."
+    puts "This is apartment #{@apartment_id}. It is currently #{occupied}. It has #{@sqft} square feet, #{@num_bedrooms} bedrooms, #{@num_baths} bathrooms, and it costs $#{@price}. #{renters} currently live here.".color(:cyan)
+    puts '_________'.color(:cyan)
+    puts '|       |'.color(:cyan)
+    puts '|  [~]  |'.color(:cyan)
+    puts '---------'.color(:cyan)
   end
 end

@@ -63,6 +63,15 @@ class Building
   def show_building
     @has_doorman ? doorman = "doorman" : doorman = "non-doorman"
     @is_walkup ? walkup = "walkup" : walkup = "elevatored"
-    "This is a #{doorman} #{walkup} building located at #{@address}. It has #{@apartments.keys.length} apartment units on #{@num_floors} floors, and #{@available_apartments} are currently vacant. There are #{@people_counted} total tennants."
+    puts "This is a #{doorman} #{walkup} building located at #{@address}. It has #{@apartments.keys.length} apartment units on #{@num_floors} floors, and #{@available_apartments} are currently vacant. There are #{@people_counted} total tennants."
+    puts '---------'.color('ffffff')
+    i = 0
+    until i == @num_floors
+      puts '|[]   []|'.color('ffffff')
+      i += 1
+    end
+    puts '| _____ |'
+    puts '| o~|~o |'
+    puts '| |_|_| |'.color('ffffff')
   end
 end
