@@ -19,7 +19,7 @@ class Apartment
   end
 end
 
-class Person
+class Person  
   attr_accessor :apartment
   def initialize
     @name = name
