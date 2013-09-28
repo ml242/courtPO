@@ -3,10 +3,11 @@ class Apartment
 
   def initialize
     @is_occupied = false
+    @renters = []
   end
 
   def occupy
-    @is_occupied = true
+    @is_occupied = true unless @renters == []
   end
 
   def occupied?

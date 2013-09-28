@@ -13,11 +13,11 @@ p1 = Person.new
 
 test_renters = ["James", "Susan"]
 
-a1.occupy
 a1.sqft = 500
 a1.num_bedrooms = 2
 a1.num_baths = 1
 a1.renters = test_renters
+a1.occupy
 a1.price = 2500
 
 
@@ -33,6 +33,6 @@ a2_info = a2.get_apartment_info
 b1.add_apartment(:a1, a1_info)
 b1.add_apartment(:a2, a2_info)
 
-puts b1.count_apartments_available
+binding.pry
 
-# binding.pry
+b1.count_people

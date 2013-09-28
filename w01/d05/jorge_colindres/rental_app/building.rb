@@ -1,3 +1,7 @@
+require 'pry'
+require 'pry-nav'
+require 'pry-remote'
+
 class Building
   attr_accessor :address, :num_floors, :apartments
 
@@ -29,12 +33,17 @@ class Building
 
   def count_people
     people_in_apts = []
+    people_counted = 0
     @apartments.each_value do |apartment|
       if apartment[:renters].length > 0
         people_in_apts << apartment[:renters].length
       end
     end
-    people_in_apts.length
+    people_in_apts.each do |people|
+      people_counted = people + people_counted
+    end
+    people_counted
+    # people_in_apts.inject { |sum, x| sum + x }
   end
 
   def count_apartments_available
