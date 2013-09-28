@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-cd # Homework
-###### REMEMBER TO WORK IN YOUR OWN PERSONAL FOLDER IN DAY 2
-## Pt 1 - Yes, Lets
-=======
 ## Homework - Day 2
 ###### REMEMBER TO WORK IN YOUR OWN PERSONAL FOLDER
 
