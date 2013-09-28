@@ -21,7 +21,6 @@ print "y/n "
 
 input = gets.downcase.chomp!
 
-counter = 0
 
 while input == 'y' do
   puts "ok we're playing..."
