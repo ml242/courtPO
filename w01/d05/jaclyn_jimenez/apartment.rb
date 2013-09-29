@@ -31,6 +31,10 @@ class Apartment
     end
   end
 
+  def renters
+    @renters
+  end
+
   def set_building_name(building_name, floor) #call this method in building and pass along its name
     @my_building = "#{building_name}, Floor: #{floor}"
   end
