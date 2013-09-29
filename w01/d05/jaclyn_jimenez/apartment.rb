@@ -1,4 +1,5 @@
 class Apartment
+
   @count = 0
   class << self
   attr_accessor :count
@@ -20,6 +21,9 @@ class Apartment
 
   def number_of_occupants
     @occupants.length
+  end
+  def set_building_name(building_name) #call this method in building and pass along its name
+    @my_building = building_name
   end
 
   def set_occupant(person)

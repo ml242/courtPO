@@ -41,6 +41,7 @@ class Building
     fl = gets.chomp.to_i
     if @num_floors >= fl
       @apartments << apartment
+      apartment.set_building_name(@address)
     else
       puts "We do not have that floor in this building. Consider building more floors."
       add_apartment(apartment)
