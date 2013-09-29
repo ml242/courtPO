@@ -9,8 +9,6 @@ class Building
     @has_doorman = false
     @is_walkup = false
     @apartments = []
-    @occupied_apartments = []
-    @empty_apartments = []
   end
 
   def floor_num
@@ -57,6 +55,8 @@ class Building
   end
 
   def occupied_apartments
+    @occupied_apartments = []
+    @empty_apartments = []
     @apartments.each do |apartment|
       if apartment.is_occupied? == true
         @occupied_apartments << apartment
@@ -72,7 +72,11 @@ class Building
   end
 
   def count_people
-    #fix this later
+    @count_people = 0
+    @apartments.each do |apartment|
+      @count_people = @count_people + apartment.number_of_occupants
+    end
+    @count_people
   end
 
 end
