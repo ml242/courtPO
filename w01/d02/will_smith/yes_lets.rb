@@ -21,6 +21,22 @@ print "y/n "
 
 input = gets.downcase.chomp!
 
+<<<<<<< HEAD:w01/d02/will_smith/yes_lets.rb
+=======
+
+while input == 'y' do
+  puts "ok we're playing..."
+
+  puts "What do you wanna do?!"
+  awesome_thing = gets.chomp!
+
+  awesome_things << awesome_thing
+
+  puts "Do you STILL wanna play Yes Let's??"
+  input = gets.chomp!
+end
+
+>>>>>>> dbe4b68c9b9e88dd39a7cf2db6e15079c377bf79:w01/d02/ASSIGNMENT_FILES/yes_lets.rb
 # this print a string with a carriage return of the array
 puts awesome_things.inspect
 # this print a string without a carriage return of the array
