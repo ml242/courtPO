@@ -40,10 +40,10 @@ class Building
 
   def add_apartment(apartment)
     puts "Add #{apartment} to which floor? Building has #{@num_floors} floors."
-    fl = gets.chomp.to_i
-    if @num_floors >= fl
+    @floor = gets.chomp.to_i
+    if @num_floors >= @floor
       @apartments << apartment
-      apartment.set_building_name(@address)
+      apartment.set_building_name(@address, @floor)
     else
       puts "We do not have that floor in this building. Consider building more floors."
       add_apartment(apartment)

@@ -8,7 +8,7 @@ class Apartment
   attr_accessor :sqft, :num_bedrooms, :num_baths, :price
 
   def initialize
-    @occupants = []
+    @renters = []
     self.class.count += 1
     @apartment_name = "Apartment #{self.class.count}"
   end
@@ -20,20 +20,29 @@ class Apartment
   end
 
   def number_of_occupants
-    @occupants.length
+    @renters.length
   end
-  def set_building_name(building_name) #call this method in building and pass along its name
-    @my_building = building_name
+
+  def is_occupied?
+    if @renters.empty?
+      false
+    else
+      true
+    end
+  end
+
+  def set_building_name(building_name, floor) #call this method in building and pass along its name
+    @my_building = "#{building_name}, Floor: #{floor}"
   end
 
   def set_occupant(person)
-    @occupants << person
+    @renters << person
     person.set_apt_name(@apartment_name)
   end
 
   def move_out(person)
-    if @occupants.include?(person)
-      @occupants.delete(person)
+    if @renters.include?(person)
+      @renters.delete(person)
       "#{person} has moved out."
     else
       "#{person} does not currently live here."
