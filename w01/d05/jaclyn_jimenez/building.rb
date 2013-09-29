@@ -7,8 +7,10 @@ class Building
     @num_floors = floors.to_i
     @address = address
     @has_doorman = false
-    @apartments = []
     @is_walkup = false
+    @apartments = []
+    @occupied_apartments = []
+    @empty_apartments = []
   end
 
   def floor_num
@@ -54,8 +56,19 @@ class Building
     "There are #{@apartments.length} apartments: #{@apartments}"
   end
 
+  def occupied_apartments
+    @apartments.each do |apartment|
+      if apartment.is_occupied? == true
+        @occupied_apartments << apartment
+      else
+        @empty_apartments << apartment
+      end
+    end
+  end
+
   def count_apartments_available
-    #to be created
+    occupied_apartments()
+    @empty_apartments.length
   end
 
   def count_people
