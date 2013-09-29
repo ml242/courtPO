@@ -9,6 +9,10 @@ class Person
     @my_apartment = apartment_name
   end
 
+  def become_doorman
+    @is_doorman = true
+  end
+
   def which_apartment?
     if @my_apartment != nil
       puts "I live in #{@my_apartment}!"

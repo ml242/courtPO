@@ -6,7 +6,7 @@ class Building
   def initialize(address, floors)
     @num_floors = floors.to_i
     @address = address
-    @doorman = false
+    @has_doorman = false
     @apartments = []
   end
 
@@ -15,23 +15,24 @@ class Building
   end
 
   def hire_doorman(person)
-    @doorman = true
+    @has_doorman = true
+    @doorman = person
     "#{person} has been hired as the doorman!"
   end
 
   def has_doorman
-    if @doorman == true
+    if @has_doorman == true
       "This building has a doorman"
     else
-      puts "This building does not have a doorman. would you like to hire one?"
+      puts "This building does not have a doorman. would you like to hire one? [y/n]"
       answer = gets.chomp.downcase
-      if
-        answer = "yes" || answer = "y"
+      if answer != "y"
+        "Ok, we will not hire a doorman."
+      else
         puts "Who will you hire?"
         person = gets.chomp
+        hire_doorman(person)
         self.hire_doorman(person)
-      else
-        "Ok, we will not hire a doorman."
       end
     end
   end
