@@ -2,7 +2,7 @@ require 'faker'
 
 class Building
   attr_accessor :apartments, :has_doorman
-  attr_reader :address, :is_walkup, :num_floors
+  attr_reader :address, :is_walkup, :num_floors, :floor_capacity
   def initialize ( address, has_doorman, is_walkup, num_floors )
     @address = address
     @has_doorman = has_doorman
@@ -22,7 +22,7 @@ class Building
     if floor <= @apartments.size && floor > 0 && space_left?(floor)
       @apartments[floor-1].push (apartment_object)
     else
-      puts 'ERROR...'
+      puts 'ERROR...with add_appartment'
     end
   end
 
@@ -57,7 +57,7 @@ class Apartment
     @price = 1500*@num_bedrooms + 500*@num_baths
   end
 
-  def add_renters renters
+  def add_renters renters   #takes an array of renters
     renters.each do |renter|
       @renters.push renter
       renter.move_to self
@@ -102,21 +102,27 @@ def make_town( number_of_building )
 
     building.apartments.each_index do |i|
       #fill floor with apartments
+      fake_apartment = Apartment.new(rand(500..1000), rand(1..3), rand(1..2))
       building.floor_capacity[i].times do
-        building.add_apartment(fake_apartment, i)
+        building.add_apartment(fake_apartment, i+1)
       end
     end
 
-    #building.apartments.flatten.each do |apartment|
-      ##fill apartments with people
-      #rand(0..3).times do
-        ##how many people? and what are their names?
-      #end
-    #end
+    building.apartments.flatten.each do |apartment|
+      #fill apartments with people
+      renters = apartment.num_bedrooms * rand(0..2)
+      renters.times do
+        #how many people? and what are their names?
+        fake_name = Faker::Name::name
+        renter = Person.new(fake_name, rand(20..80), ['Male','Female'].sample)
+        apartment.add_renters [renter]
+      end
+    end
   end
 
   return town
 
 end
 
-p make_town (2)
+town =  make_town (200)
+p town
