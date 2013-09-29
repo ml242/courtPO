@@ -1,4 +1,5 @@
 require 'pry'
+require 'faker'
 
 require_relative 'building'
 require_relative 'apartment'
@@ -12,12 +13,12 @@ a2 = Apartment.new
 a3 = Apartment.new
 a4 = Apartment.new
 
-p1 = Person.new("Jenny")
-p2 = Person.new("Bobby")
-p3 = Person.new("Haley")
-p4 = Person.new("Meg")
-p5 = Person.new("Steve")
-p6 = Person.new("Ryan")
+p1 = Person.new(Faker::Name.name)
+p2 = Person.new(Faker::Name.name)
+p3 = Person.new(Faker::Name.name)
+p4 = Person.new(Faker::Name.name)
+p5 = Person.new(Faker::Name.name)
+p6 = Person.new(Faker::Name.name)
 
 b1.add_apartment(a1)
 b1.add_apartment(a2)
