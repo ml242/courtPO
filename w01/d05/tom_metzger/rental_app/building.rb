@@ -16,6 +16,7 @@ class Builiding
     @has_doorman  = doorman
     @is_walkup    = walkup
     @num_floors   = number_of_floors
+    #apartments = apartments   WOULD THIS NEED TO BE INITIALIZED?
   end
 
   def count_renters()

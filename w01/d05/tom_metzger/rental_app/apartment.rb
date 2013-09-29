@@ -8,14 +8,15 @@ class Apartment
   attr_accessor :num_bedrooms
   attr_accessor :num_baths
   attr_accessor :price
-  #apartments??????????????
+  #RENTERS??????????????
 
 #only include the values to be given at initialize
-  def initialize(square_footage, bedrooms, bathrooms, price)
+  def initialize(square_footage, bedrooms, bathrooms, price, renters)
     @sqft         = square_footage
     @num_bedrooms = bedrooms
     @num_baths    = bathrooms
     @price        = price
+    #Renters = renters
   end
 
   def is_occupied?()
