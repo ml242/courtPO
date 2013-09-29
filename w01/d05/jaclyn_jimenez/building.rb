@@ -8,6 +8,7 @@ class Building
     @address = address
     @has_doorman = false
     @apartments = []
+    @is_walkup = false
   end
 
   def floor_num
@@ -53,8 +54,12 @@ class Building
     "There are #{@apartments.length} apartments: #{@apartments}"
   end
 
-  def list_renters
-    "There are #{@occupants.length} in this building"
+  def count_apartments_available
+    #to be created
+  end
+
+  def count_people
+    #fix this later
   end
 
 end
