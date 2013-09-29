@@ -6,12 +6,21 @@ def initialize
 end
 
 def count_renters
-  @renter_count = @renters.length
+  total_renters = 0
+  @apartments.each do |apt|
+    total_renters += apt.renters.length
+  end
+  return total_renters
 end
 
 def count_apartments_available
-  @apartments_available = []
-  #make a counter of is_occupied? => false?
+  apartments_available = 0
+    @apartments.each do |apt|
+       if !apt.is_occupied?
+        apartments_available += 1
+      end
+    end
+  return apartments_available
 end
 
 end
