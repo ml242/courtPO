@@ -6,8 +6,8 @@ class Apartment
     @sqft = sqft
     @num_beds = num_beds
     @num_baths = num_baths
-    @renters = []
-    if @renters.length != 0
+    @tenants = []
+    if @tenants.length != 0
       @occupied = "is currently occupied"
     else
       @occupied = "is currently available"
@@ -15,16 +15,16 @@ class Apartment
   end
   def move_in(*renters)
     renters.each do |tenant|
-      @renters << tenant
+      @tenants << tenant
     end
   end
   def move_out(*renters)
     renters.each do |tenant|
-      @renters.delete(tenant)
+      @tenants.delete(tenant)
     end
   end
   def is_occupied?
-    !@renters.empty?
+    !@tenants.empty?
   end
 
   def to_s
