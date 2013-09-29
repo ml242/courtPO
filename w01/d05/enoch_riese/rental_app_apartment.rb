@@ -1,3 +1,6 @@
+require_relative 'rental_app_building'
+require_relative 'rental_app_person'
+
 class Apartment
   attr_reader :sqft
   attr_reader :num_bedrooms

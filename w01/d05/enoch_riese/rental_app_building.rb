@@ -1,4 +1,6 @@
 require 'pry'
+require_relative 'rental_app_apartment'
+require_relative 'rental_app_person'
 
 class Building
 
@@ -34,7 +36,10 @@ class Building
     apartments_list.compact.length
   end
 
-  def count_appartments_available
-    [].length
+  def count_apartments_available
+    apartments_list = @apartments.values.flatten
+    empty_apartments = []
+    apartments_list.each {|apt| empty_apartments << apt if apt.is_occupied? == true}
+    empty_apartments.length
   end
 end

@@ -1,3 +1,6 @@
+require_relative 'rental_app_building'
+require_relative 'rental_app_person'
+
 class Person
   attr_reader :name
   attr_reader :age
