@@ -12,7 +12,7 @@ class Building
   attr_accessor :count_people
   attr_accessor :count_apartments_available
 
-  def intialize(address, has_doorman, is_walkup, num_floors)
+  def initialize(address, has_doorman, is_walkup, num_floors)
     @address = address
     @has_doorman = has_doorman
     @is_walkup = is_walkup
