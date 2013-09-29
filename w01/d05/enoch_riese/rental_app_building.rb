@@ -10,7 +10,7 @@ class Building
   attr_reader :num_floors
   attr_reader :apartments
   attr_accessor :count_people
-  attr_accessor :count_appartments_available
+  attr_accessor :count_apartments_available
 
   def intialize(address, has_doorman, is_walkup, num_floors)
     @address = address
@@ -24,14 +24,17 @@ class Building
       x+=1
     end
     @count_people = count_people
-    @count_appartments_available = count_appartments_available
+    @count_apartments_available = count_apartments_available
   end
 
   def count_people
-    []
+    apartments_list = @apartments.values.flatten
+    people_count = 0
+    apartments_list.each {|apt| people_count += apt.renters.length}
+    people_count
   end
+
   def count_apartments
-    binding.pry
     apartments_list = @apartments.values.flatten
     apartments_list.compact.length
   end
@@ -41,5 +44,11 @@ class Building
     empty_apartments = []
     apartments_list.each {|apt| empty_apartments << apt if apt.is_occupied? == true}
     empty_apartments.length
+  end
+
+  def count_full_apartments
+    all_apts = count_apartments
+    empty_apts = count_apartments_available
+    all_apts - empty_apts
   end
 end
