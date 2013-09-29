@@ -4,9 +4,7 @@ class Person
     @name = name
     @age = age
     @gender = gender
-    @apartment = []
-  end
-  def rent(apartment)
-    @apartment << apartment
+    @apartment = ""
+    @building = ""
   end
 end

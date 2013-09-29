@@ -1,27 +1,19 @@
 class Apartment
-  attr_accessor :price, :sqft, :num_beds, :num_baths, :renters, :apartment_number
-  def initialize(apartment_number, price, sqft, num_beds, num_baths)
+  attr_accessor :price, :sqft, :num_beds, :num_baths, :renters, :apartment_number, :building
+  def initialize(apartment_number, sqft, num_beds, num_baths)
     @apartment_number = apartment_number
-    @price = price
     @sqft = sqft
     @num_beds = num_beds
     @num_baths = num_baths
-    @tenants = []
+    @price = (50 * sqft) + (1000 * num_baths) + (2000 * num_beds)
+    @tenants = {}
+    @building = ""
     if @tenants.length != 0
       @occupied = "is currently occupied"
     else
       @occupied = "is currently available"
     end
-  end
-  def move_in(*renters)
-    renters.each do |tenant|
-      @tenants << tenant
-    end
-  end
-  def move_out(*renters)
-    renters.each do |tenant|
-      @tenants.delete(tenant)
-    end
+
   end
   def is_occupied?
     !@tenants.empty?

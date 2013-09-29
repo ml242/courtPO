@@ -1,6 +1,6 @@
 require 'pry'
 require_relative 'apartments.rb'
-require_relative 'people.rb'
+require_relative 'people.rb'""
 
 class Building
 attr_accessor :address, :style, :has_doorman, :is_walkup, :num_floors, :apartments, :renters
@@ -14,20 +14,42 @@ attr_accessor :address, :style, :has_doorman, :is_walkup, :num_floors, :apartmen
     @apartments = {}
   end
   # Adds apartment array and stores to hash, calls on apartment class.
-  def add_apartment(apartment_number, price, sqft, num_beds, num_baths)
-    new_apt = Apartment.new(apartment_number, price, sqft, num_beds, num_baths)
+  def add_apartment(apartment_number, sqft, num_beds, num_baths)
+    new_apt = Apartment.new(apartment_number, sqft, num_beds, num_baths)
     apartment_number = apartment_number.to_sym
     @apartments[apartment_number] = {
-      apt_object: new_apt ,
-    # Stores tenants variable from apartments class as separate key/value pair for easier access.
-      renters: @tenants
+      price: new_apt.instance_variable_get(:@price),
+      sqft: sqft,
+      num_beds: num_beds,
+      num_baths: num_baths,
+      renters: new_apt.instance_variable_get(:@tenants),
+      apt_object: new_apt
     }
+# Sets building variable in apartment object as building address
+    new_apt.instance_variable_set(:@building, @address)
   end
   # Adds tenant, calls on person class.
   def add_renter(name, age, gender, apartment_number)
-    r1 = Person.new(name, age, gender)
+    new_renter = Person.new(name, age, gender)
+    apartment_number_sym = apartment_number.to_sym
+    renter_name = name.to_sym
+    new_renter_hash = {
+      name: name,
+      age: age,
+      gender: gender,
+      person_object: new_renter
+    }
     # Stores new renter's qualities as array in apartments hash. Key is apartment number.
-    @apartments[:apartment_number] << r1.to_a
+    @apartments[apartment_number_sym][:renters][renter_name] = new_renter_hash
+    # Sets apartment variable in person object to apartment number string.
+    new_renter.instance_variable_set(:@apartment, apartment_number)
+    # Sets building variable in person object to building address.
+    new_renter.instance_variable_set(:@building, @address)
+  end
+  def remove_renter(name, apartment_number)
+    renter_name = name.to_sym
+    apartment_number = apartment_number.to_sym
+    @apartments[apartment_number][:renters].delete(renter_name)
   end
   def doorman_to_s
     if @has_doorman
@@ -66,5 +88,6 @@ attr_accessor :address, :style, :has_doorman, :is_walkup, :num_floors, :apartmen
         apts_occupied += 1
       end
     end
+    return apts_available
   end
 end
