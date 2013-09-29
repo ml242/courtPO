@@ -42,12 +42,17 @@ class Building
     if @num_floors >= fl
       @apartments << apartment
     else
-      "We do not have that floor in this building. Consider building more floors."
+      puts "We do not have that floor in this building. Consider building more floors."
+      add_apartment(apartment)
     end
   end
 
   def list_apartments
     "There are #{@apartments.length} apartments: #{@apartments}"
+  end
+
+  def list_renters
+    "There are #{@occupants.length} in this building"
   end
 
 end

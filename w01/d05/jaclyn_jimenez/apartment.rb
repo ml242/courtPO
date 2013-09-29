@@ -1,17 +1,30 @@
 class Apartment
+  @count = 0
+  class << self
+  attr_accessor :count
+  end
+
   attr_accessor :sqft, :num_bedrooms, :num_baths, :price
 
   def initialize
     @occupants = []
+    self.class.count += 1
+    @apartment_name = "Apartment #{self.class.count}"
   end
 
-  def is_occupied?
-    @occupants.empty?
+  @@count =+ 1
+
+  def apartment_name
+      @apartment_name
+  end
+
+  def number_of_occupants
+    @occupants.length
   end
 
   def set_occupant(person)
     @occupants << person
-    "#{person} has moved in. This apartment contains #{@occupants}"
+    person.set_apt_name(@apartment_name)
   end
 
   def move_out(person)
