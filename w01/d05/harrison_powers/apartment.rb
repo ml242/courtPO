@@ -1,5 +1,5 @@
 class Apartment
-	attr_accessor :sqft, :num_bedrooms, :num_baths, :price, :renter
+	attr_accessor :sqft, :num_bedrooms, :num_baths, :price, :renter, :number, :address
   attr_reader :is_occupied
 
   @count = 0

@@ -15,8 +15,10 @@ class Building
     self.class.count += 1
   end
 
-  def add_apartment(floor, apartment)
+  def add_apartment(floor, number, apartment)
     @apartments[floor] << apartment
+    apartment.number = number
+    apartment.address = self.address
   end
 
   def count_renters
@@ -31,4 +33,15 @@ class Building
     i
   end
 
+  def list_renters
+    i = Hash.new { |x,y| x[y] = [] }
+    @apartments.each do |x, y| y.each do |z| i[z.number] << z.renter.name if z.is_occupied? == true end end
+    i
+  end
+
+  def list_apartments_available
+    i = []
+    @apartments.each do |x, y| y.each do |z| i << z if z.is_occupied? == false end end
+    i
+  end
 end
