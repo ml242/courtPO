@@ -15,6 +15,7 @@ class Apartment
     @tenants.flatten!
   end
 
+
   def is_occupied?
     @tenants? true : false
     #!@tenants.empty?

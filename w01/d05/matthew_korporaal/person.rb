@@ -1,5 +1,5 @@
 class Person
-  attr_accessor :name, :age, :gender :apartmentID
+  attr_accessor :name, :age, :gender, :apartmentID
   def initialize(name, age, gender)
     @name = name
     @age = age
