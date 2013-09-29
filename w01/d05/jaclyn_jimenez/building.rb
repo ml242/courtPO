@@ -1,7 +1,7 @@
 require 'pry'
 
 class Building
-  attr_accessor :is_walkup
+  attr_accessor :is_walkup, :num_floors
 
   def initialize(address, floors)
     @num_floors = floors.to_i
