@@ -150,7 +150,12 @@ b2.apartments = {
   :floor_three => [a10, a11]
 }
 
-
 #binding.pry
+# p1.apartment = a1
+# puts p1.apartment
+puts b1.count_renters
+puts b2.count_renters
 #puts b1.inspect
 #puts b2.inspect
+
+

@@ -9,10 +9,16 @@ class Building
     @apartments = {}
   end
 
-
+# should  refactor this because it is reptative with count_apartments_available
   def count_renters
-
-
+    renters = 0
+    @apartments.each do |floor, apartments|
+      @apartments[floor].each do |apartment|
+        #binding.pry
+        renters += apartment.renters.count
+      end
+    end
+    renters     # why do i have to return this here?
   end
 
 def count_apartments_available
@@ -25,7 +31,7 @@ def count_apartments_available
       end
     end
   end
-  available_apartments
+  available_apartments  #why does this have to be returned here?
 end
 
 # added a method to count the total apartments in the building
@@ -34,10 +40,7 @@ end
     total_apartments = 0
     @apartments.each { |floor, apartments| total_apartments += @apartments[floor].count }
     total_apartments #why do i have to include this to get it to return total apartments as a number?
-
   end
-
-
 end
 
 
