@@ -1,3 +1,4 @@
+require 'faker'
 
 class Building
   attr_accessor :apartments, :has_doorman
@@ -11,7 +12,7 @@ class Building
     @floor_capacity = []
     @num_floors.times do
       @apartments.push []
-      @floor_capacity.push 4
+      @floor_capacity.push rand(3..5)
     end
   end
 
@@ -47,12 +48,13 @@ end
 class Apartment
   attr_accessor :price, :renters
   attr_reader :sqft, :num_bedrooms, :num_baths
-  def initialize (sqft, num_bedrooms, num_baths, price )
+
+  def initialize (sqft, num_bedrooms, num_baths )
     @sqft = sqft
     @num_bedrooms = num_bedrooms
     @num_baths = num_baths
     @renters = []
-    @price = price
+    @price = 1500*@num_bedrooms + 500*@num_baths
   end
 
   def add_renters renters
@@ -89,21 +91,32 @@ class Person
   end
 end
 
-coop = Person.new('cooper',26,'m')
-sam = Person.new('sam',30, 'm')
+def make_town( number_of_building )
+  #return an array containing all the buildings....
+  town = []
+  number_of_building.times do
+    #fill city with buildings
+    fake_address = Faker::Address::street_address
+    building = Building.new(fake_address,[true,false].sample,[true,false].sample, rand(3..10) )
+    town.push building
 
-apt = Apartment.new(600, 1, 1, 1800)
+    building.apartments.each_index do |i|
+      #fill floor with apartments
+      building.floor_capacity[i].times do
+        building.add_apartment(fake_apartment, i)
+      end
+    end
 
-building = Building.new('123 321 st, asdf, fdssa, USA',true,true,4)
+    #building.apartments.flatten.each do |apartment|
+      ##fill apartments with people
+      #rand(0..3).times do
+        ##how many people? and what are their names?
+      #end
+    #end
+  end
 
-apt.add_renters [coop,sam]
-building.add_apartment(apt, 2)
-building.add_apartment(apt, 2)
-building.add_apartment(apt, 2)
-building.add_apartment(apt, 2)
-building.add_apartment(apt, 2)
+  return town
 
-p building
-puts
-building.apartments
+end
 
+p make_town (2)
