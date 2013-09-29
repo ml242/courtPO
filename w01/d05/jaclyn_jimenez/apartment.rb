@@ -8,9 +8,13 @@ class Apartment
   attr_accessor :sqft, :num_bedrooms, :num_baths, :price
 
   def initialize
-    @renters = []
     self.class.count += 1
     @apartment_name = "Apartment #{self.class.count}"
+    @sqft = rand(100..700)
+    @num_bedrooms = rand(0..4)
+    @num_baths = rand(1..2)
+    @price = @sqft * (@num_bedrooms + @num_baths)
+    @renters = []
   end
 
   @@count =+ 1
@@ -21,6 +25,13 @@ class Apartment
 
   def number_of_occupants
     @renters.length
+  end
+
+  def new_price(sqft, num_bedrooms, num_baths)
+    @sqft = sqft
+    @num_bedrooms = num_bedrooms
+    @num_baths = num_baths
+    @price = @sqft * (@num_bedrooms + @num_baths)
   end
 
   def is_occupied?
