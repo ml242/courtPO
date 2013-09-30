@@ -6,8 +6,8 @@ class Apartment
   attr_accessor :apartment, :sqft, :num_bedrooms, :num_baths, :renters
   attr_reader :price
 
-  def initialize(apartment, sqft, num_bedrooms, num_baths)
-    @apartment = []
+  def initialize(apartment, sqft, num_bedrooms, num_baths, renters)
+    @apartment = apartment
     @sqft = sqft
     @num_bedrooms = num_bedrooms
     @num_baths = num_baths
@@ -15,6 +15,7 @@ class Apartment
     @is_occupied = false
     @renters = []
   end
+end
 
 a1 = Apartment.new('1A', 800, 2, 2, 2)
 a2 = Apartment.new('1B', 900, 3, 2, 3)
