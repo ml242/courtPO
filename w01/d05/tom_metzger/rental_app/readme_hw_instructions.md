@@ -10,7 +10,7 @@ Here are the specifications
 
 ##1. Rental App
 
-Create a class for each of the below(IN A SEPARATE FILE FOR EACH CLASS)
+Create a class for each of the below(IN A SEPARATE FILE FOR EACH CLASS) 
 
 |Atrributes of Building Class |Ruby Type|
 |:----------|:-----------|
@@ -40,13 +40,20 @@ Create a class for each of the below(IN A SEPARATE FILE FOR EACH CLASS)
 |apartment|hmmmmmm|
 
 ## Create Some Objects Now!
+<<<<<<< HEAD
+- 2 Apartment Building
+- Fill some rooms on at least 2 floors in each apartment building (just put a couple rooms on each floor)
+- Have a couple people living in each apartment.
+- Have a method in the building class that 
+=======
 - Create 2 Buildings
 - Fill those 2 Buildings with some apartments on at least 2 floors in each apartment building (just put a couple apartments on each floor)
 - Have a couple people living in each apartment.
-- Have a method in the building class that:
+- Have a method in the building class that 
 	- Calculates the number of tenants in the building
 	- The number of filled rooms
 	- The number of empty rooms
+>>>>>>> dev_w01d05
 
 
 ---
@@ -61,7 +68,7 @@ REMEMBER, BUILD THE LEAF, do this stuff AFTER, you have
 - Don't make price of an Apartment a fixed attribute but a dynamic method based on the attributes of the apartment
 	- ie Squarefootage
 	- number of bedrooms
-	- number of bathrooms
+	- number of bathrooms 
 - Create an apartment to figure out the gender ratio of an apartment.
 
 Remember, though! BUILD THE LEAF, don't do this first!
@@ -77,13 +84,13 @@ Extra Credit
     - r.rand(1..100) # => 35
 - And using the gem [Faker](http://faker.rubyforge.org/)
   - gem install [faker](http://faker.rubyforge.org/)
-    - run Faker::Name.name
+    - run Faker::Name.name 
       - to create a random name
     - run Faker::Internet.email
       - to create a random email
     - if you look at the library
       - you can create a whole bunch of random things
-- Populate an arbitrary number of apartment building given the number of apartment buildings, apartments and
+- Populate an arbitrary number of apartment building given the number of apartment buildings, apartments and 
 
 ###Front-End Bonus:
 - Include colors, i.e. using the `rainbow` gem
