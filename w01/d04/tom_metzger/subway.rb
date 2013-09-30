@@ -43,7 +43,7 @@ end_station = ""
 
 
 #didn't end up using these
-# transfer_stations = ["Union Square_L", "Union Square_N", "Union Square_6"]
+# transfer_stations = ["Union Square", "Union Square_N", "Union Square_6"]
 # transfer_station_positions = {"Union Square_L" => 2, "Union Square_N" => 4, "Union Square_6" => 4}
 
 #METHODS    ------------------------------------------
