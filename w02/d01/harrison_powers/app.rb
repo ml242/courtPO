@@ -98,11 +98,11 @@ while true
   user_input = gets.chomp
   break if user_input == "0"
   case user_input
-    while "1"
+    when "1"
       $animals.each do |x| puts x.to_s end
-    while "2"
+    when "2"
       $persons.each do |x| puts x.to_s end
-    while "3"
+    when "3"
       puts CREATE_ANIMAL_MENU_1
       name = gets.chomp
       puts CREATE_ANIMAL_MENU_2
@@ -113,7 +113,7 @@ while true
       species = gets.chomp
       Animal.new(name, age, gender, species)
       puts "Animal added."
-    while "4"
+    when "4"
       puts CREATE_PERSON_MENU_1
       name = gets.chomp
       puts CREATE_PERSON_MENU_2
@@ -126,16 +126,17 @@ while true
       looking_for_pet = gets.chomp
       Person.new(name, num_children, age, num_pets, looking_for_pet)
       puts "Person added."
-    while "5"
+    when "5"
       puts FACILITATE_ADOPTION_MENU_1
       person_name = gets.chomp
       puts FACILITATE_ADOPTION_MENU_2
       animal_name = gets.chomp
       $persons[person_name].adopt(animal_name)
-    while "6"
+    when "6"
       puts FACILITATE_PUT_ADOPTION_MENU_1
       person_name = gets.chomp
       puts FACILITATE_PUT_ADOPTION_MENU_2
       animal_name = gets.chomp
       $persons[person_name].put_up_for_adoption(animal_name)
+  end
 end
