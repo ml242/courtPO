@@ -44,6 +44,7 @@ def print_town (town)
   town.each do |building|
     population += building.count_renters
   end
+  
   puts "\t\tA SHORT DESCRIPTION OF THE TOWN:\n"
   puts "The town has #{population} residents.  There are #{town.count} buildings..."
   puts "The male to female ratio is #{town_mf_ration.round(2)}.\n\n"
@@ -52,6 +53,7 @@ def print_town (town)
     puts "\nBuilding Address is #{building.address}. It's #{building.apartments.count} stories high."
     puts "  There are #{building.apartments.flatten.count} apartments total.  #{building.count_apartments_available} units currently available to rent."
     puts "  There are #{building.count_renters} residents... ration of males to females is #{building.m_f_ratio.round(2)}."
+    puts "  Total rent collected: #{building.collect_rent}"
   end
   puts "\n"
   town.each do |building|

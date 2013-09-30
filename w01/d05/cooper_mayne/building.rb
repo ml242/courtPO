@@ -14,8 +14,7 @@ class Building
     end
   end
 
-  def add_apartment (apartment_object, floor)
-    # floor 1 is ground floor
+  def add_apartment (apartment_object, floor)  # note: ground floor is 1 -- but it is 0 in the array...
     if floor <= @apartments.size && floor > 0 && space_left?(floor)
       @apartments[floor-1].push (apartment_object)
     else
@@ -28,22 +27,17 @@ class Building
   end
 
   def count_apartments_available
-    count = 0
-    @apartments.flatten.each do |apartment|
-      count += 1 unless apartment.is_occupied?
-    end
-    count
+    @apartments.flatten.select{ |apt| !apt.is_occupied? }.count
   end
 
   def count_renters
-    count = 0
-    @apartments.flatten.each do |apartment|
-      count += apartment.renters.count
-    end
-    count
+    @apartments.flatten.map {|apt| apt.renters.count }.inject(:+)
   end
 
   def m_f_ratio
+    #males = @apartments.flatten.map {|apt| apt.renters}.flatten.select{|renter| renter.gender="male"}.count
+    #males/(self.count_renters-males)
+
     males = 0.0
     females = 0.0
     @apartments.flatten.each do |apartment|
@@ -56,10 +50,11 @@ class Building
   end
 
   def collect_rent
-    rent_collected = 0
-    @apartments.flatten.each do |apartment|
-      rent_collected += apartment.price if apartment.is_occupied?
-    end
-    rent_collected
+    @apartments.flatten.select{|apt| apt.is_occupied?}.map{|apt| apt.price}.inject(:+) #is there a way to make this more readable? 
+    #rent_collected = 0
+    #@apartments.flatten.each do |apartment|
+      #rent_collected += apartment.price if apartment.is_occupied?
+    #end
+    #rent_collected
   end
 end

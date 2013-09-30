@@ -20,7 +20,7 @@ class Apartment
   end
 
   def is_occupied?
-    @renters.count > 0
+    @renters.any?
   end
 end
 
