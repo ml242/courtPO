@@ -2,8 +2,8 @@ class Shelter
   attr_accessor :persons, :animals, :name, :location
 
   def initialize(name, location)
-    @name = name
-    @location = location
+    @name = name #string
+    @location = location #string
   end
 
   def add_animal(animal)
@@ -23,5 +23,5 @@ class Shelter
   def remove_person(person)
     @persons.delete(person)
   end
-  
+
 end

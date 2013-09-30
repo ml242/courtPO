@@ -8,8 +8,11 @@ class Animal
     @species = species #string
   end
 
-  # When we display the animal using puts or print, the
-  #   to_s method is called to pretty print an Animal
+  def add_toy(toy)
+    @toys ||= Array.new
+    @toys << toy
+  end
+
   def to_s
     "#{@name} is a #{@age} year old #{@gender} #{@species}."
   end
