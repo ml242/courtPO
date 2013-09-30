@@ -104,7 +104,7 @@ puts b2.show_building
 puts a9.show_apartment
 puts a9.get_gender_ratio.color(:yellow)
 
-binding.pry
+binding.prygit
 
 
 
