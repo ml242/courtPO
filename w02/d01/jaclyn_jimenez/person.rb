@@ -5,10 +5,11 @@
 class Person
   attr_accessor :name, :age, :number_of_children
 
-  def initialize(name, age)
+  def initialize(name, age, shelter)
     @name = name
     @age = age
     @my_pets = []
+    shelter.add_person(self)
   end
 
   def adopt_pet(pet)

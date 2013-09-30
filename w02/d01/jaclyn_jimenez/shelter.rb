@@ -10,7 +10,12 @@ class Shelter
     @animals = []
   end
 
+  def add_person(person)
+    @people << person
+  end
+
   def list_people
+    @people.to_s
   end
 
   def list_animals
