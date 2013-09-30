@@ -92,7 +92,7 @@ Extra Credit
 - Write a show_person method show a little person
 
 ####Example:
-```ruby
+```
 require 'rainbow'
 ...
 
