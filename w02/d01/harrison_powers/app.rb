@@ -3,7 +3,6 @@ $animals = Array.new
 
 require_relative 'animal'
 require_relative 'person'
-require_relative 'shelter'
 
 MAIN_MENU = "
 Welcome to the Ruby Animal Shelter and Adoption tracking system.
