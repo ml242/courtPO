@@ -1,4 +1,5 @@
-# Later: Person has number of animals, displays animals person has
+# Later: Person has number of animals
+# create method that displays animals person has & #
 
 
 class Person
@@ -7,6 +8,12 @@ class Person
   def initialize(name, age)
     @name = name
     @age = age
+    @my_pets = []
+  end
+
+  def adopt_pet(pet)
+    @my_pets << pet
+    @my_pets.last.set_adoption_status
   end
 
 end
