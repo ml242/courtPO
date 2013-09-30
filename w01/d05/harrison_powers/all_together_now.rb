@@ -64,9 +64,6 @@ To go back, press:
 
 "
 
-
-
-
 def mf
   ["male", "female"].sample
 end
