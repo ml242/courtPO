@@ -9,13 +9,9 @@
 ###1. Animal Shelter: Happi Tails
 - You are the manager at HappiTails animal shelter.
 - You need to manage your shelter by storing and manipulating information about persons and animals.
-- **COPY** the `animal_shelter` folder from ASSIGNMENT_FILES and place it in your OWN folder
-#### Do NOT move the animal_shelter from ASSIGNMENT_FILES, COPY it
 
-- Glance at the `spec` files.
-  - Do NOT worry about the syntax here.
-  - We will cover that.
-  - Just read them once.
+#### Do NOT move/edit files within ASSIGNMENT_FILES, COPY them to your own folder.
+
 
 ###Specification:
 - Animal:
