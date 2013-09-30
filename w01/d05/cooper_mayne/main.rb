@@ -17,8 +17,7 @@ class Building
   end
 
   def add_apartment (apartment_object, floor)
-    # floor 1 is ground floor
-    # NOTE: eventually...has to be able to fill up floors somehow...
+    # NOTE: floor 1 is ground floor
     if floor <= @apartments.size && floor > 0 && space_left?(floor)
       @apartments[floor-1].push (apartment_object)
     else
@@ -30,18 +29,28 @@ class Building
     @floor_capacity[floor-1] - @apartments[floor-1].size > 0
   end
 
-  def count_apartments_available(floor='all')
+  def count_apartments_available
     count = 0
     @apartments.flatten.each do |apartment|
-      count += 1 if apartment.renters.empty?
+      count += 1 unless apartment.is_occupied?
     end
     count
   end
 
   def count_renters
+    count = 0
     @apartments.flatten.each do |apartment|
-      apartment.renters.count
+      count += apartment.renters.count
     end
+    count
+  end
+
+  def collect_rent
+    rent_collected = 0
+    @apartments.flatten.each do |apartment|
+      rent_collected += apartment.price if apartment.is_occupied?
+    end
+    rent_collected
   end
 end
 
@@ -110,7 +119,7 @@ def make_town( number_of_building )
 
     building.apartments.flatten.each do |apartment|
       #fill apartments with people
-      renters = apartment.num_bedrooms * rand(0..2)
+      renters = 1
       renters.times do
         #how many people? and what are their names?
         fake_name = Faker::Name::name
@@ -124,5 +133,9 @@ def make_town( number_of_building )
 
 end
 
-town =  make_town (200)
-p town
+town =  make_town (20)
+p town[0]
+puts
+p town[0].count_renters
+p town[0].count_apartments_available
+p town[0].collect_rent
