@@ -3,6 +3,69 @@ load './apartment.rb'
 load './building.rb'
 
 require 'Faker'
+require 'rainbow'
+require 'json'
+require 'pp'
+require 'pry'
+
+MAIN_MENU = "
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+Welcome to Ruby SimCity
+
+To generate buildings, press:
+> 1
+
+To view real estate, press:
+> 2
+
+To save and quit, press:
+> 0
+
+"
+
+GENERATE_MENU_1 = "
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+Time to build stuff.
+
+How many buildings would you like
+to generate?
+> type a number and hit enter
+
+To go back, press:
+> 0
+
+"
+
+GENERATE_MENU_2 = "
+
+How many apartments would you like
+to generate per building?
+> type a number and hit enter
+
+"
+
+VIEW_MENU = "
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+Lets look at the hard work of
+this fine machine.
+
+To view a list of all
+your buildings, press:
+> 1
+
+To view a map of the city, press:
+> 2
+
+To go back, press:
+> 0
+
+"
+
+
+
 
 def mf
   ["male", "female"].sample
@@ -49,4 +112,33 @@ def populate_rand_bldgs(num_bldgs, num_apts)
   bldgs
 end
 
-nyc_uws = populate_rand_bldgs(30, 40)
+def list_city(city)
+  pp city.keys
+end
+
+def map_city(city)
+ city.values.each do |x| x.show_building end
+end
+
+simcity = {}
+
+while true
+  puts MAIN_MENU
+  user_input = gets.chomp
+  break if user_input == "0"
+  if user_input == "1"
+    puts GENERATE_MENU_1
+    user_input = gets.chomp
+    break if user_input == "0"
+    puts GENERATE_MENU_2
+    user_input2 = gets.chomp
+    simcity = populate_rand_bldgs(user_input.to_i, user_input2.to_i)
+    binding.pry
+  elsif user_input == "2"
+    puts VIEW_MENU
+    user_input = gets.chomp
+    break if user_input == "0"
+    puts list_city(simcity) if user_input == "1"
+    puts map_city(simcity) if user_input == "2"
+  end
+end

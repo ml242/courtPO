@@ -44,4 +44,16 @@ class Building
     @apartments.each do |x, y| y.each do |z| i << z if z.is_occupied? == false end end
     i
   end
+
+  def show_building
+    num_3_floors = self.num_floors / 3
+    puts "--------".color('ff00ff')
+    num_3_floors.times do
+      puts "|[]  []|".color('ff0000')
+      puts "|[]  []|".color('00ff00')
+      puts "|[]  []|".color('ff00ff')
+    end
+    puts "|  {}  |".color('f0f0f0')
+    puts "| _-_  |".color('ffff00')
+  end
 end
