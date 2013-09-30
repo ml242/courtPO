@@ -1,20 +1,30 @@
 require 'pry'
-require_relative 'car'
-require_relative 'person'
+# require_relative 'main'
+# require_relative 'person'
+# require_relative 'apartment'
 
 
 class Building
-  attr_accessor :address, :has_doorman, :is_walkup, :num_floors, :apartments
-  def initialize
-  @ct_people  = []
-  @ct_apt_available = []
-  end
-
-  def ct_people()
-    return_ct.to_i = @ct_people.full?
-    apt_pop = return_ct.to_i
+  attr_accessor :name, :number, :people, :ct_people, :apt_total, :apt_occ, :apt_empt
+end
+def initialize
+  def ct_people
+    "The building has #{people.length}"
   end
 end
 
+b1 = Building.new
+puts b1
 
-apt_pop = ct_people(@ct_people.lenght)
+b1.name = "The Factory",
+b1.number = "11",
+b1.apt_total = [12],
+b1.apt_occ = 12,
+b1.apt_empt = 0
+
+puts b1
+
+
+
+
+# (:name => "TheRubberStampFactoryLofts", :people => true )
