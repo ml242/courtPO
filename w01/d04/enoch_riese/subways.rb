@@ -52,7 +52,7 @@ def fetch_stop(leave_from, arrive_at, lines)
   end
   return stops
 end
-subways.each{|line, stops| puts "the available stops for #{line} are: #{stops}"}
+subways.each{|line, stops| puts "the available stops for #{line} are: #{gitstops}"}
 departure = request_input("Where are you leaving from?")
 arrival = request_input("and where are you going?")
 trip = fetch_stop(departure, arrival, subways)
