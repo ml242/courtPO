@@ -65,36 +65,6 @@ a10.renters = [p13, p14]
 a12.renters = [p15, p16]
   a12.occupy
 
-# Creating vars for each apartment ID
-# just to make it easier to add into buildings
-# a1_id = a1.apartment_id.to_sym
-# a2_id = a2.apartment_id.to_sym
-# a3_id = a3.apartment_id.to_sym
-# a4_id = a4.apartment_id.to_sym
-# a5_id = a5.apartment_id.to_sym
-# a6_id = a6.apartment_id.to_sym
-# a7_id = a7.apartment_id.to_sym
-# a8_id = a8.apartment_id.to_sym
-# a9_id = a9.apartment_id.to_sym
-# a10_id = a10.apartment_id.to_sym
-# a11_id = a11.apartment_id.to_sym
-# a12_id = a12.apartment_id.to_sym
-
-# # Creating vars for each apartment info
-# # just to make it easier to add into buildings
-# a1_info = a1.get_apartment_info
-# a2_info = a2.get_apartment_info
-# a3_info = a3.get_apartment_info
-# a4_info = a4.get_apartment_info
-# a5_info = a5.get_apartment_info
-# a6_info = a6.get_apartment_info
-# a7_info = a7.get_apartment_info
-# a8_info = a8.get_apartment_info
-# a9_info = a9.get_apartment_info
-# a10_info = a10.get_apartment_info
-# a11_info = a11.get_apartment_info
-# a12_info = a12.get_apartment_info
-
 # Adding apartments into the first building
 b1.add_apartment(a1)
 b1.add_apartment(a2)
@@ -133,5 +103,6 @@ puts p9.show_person
 puts b2.show_building
 puts a9.show_apartment
 puts a9.get_gender_ratio.color(:yellow)
+
 
 
