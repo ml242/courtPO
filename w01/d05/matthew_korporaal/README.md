@@ -1,6 +1,12 @@
 # Apartments
 
+Success and challenges
+Was able to get everything working including
+Classes and class methods
+Auto generate buildings, apartments and floors.
 
+challenges:
+keeping everything organized.  not sure if class hierarchy or structure is correct.  The main file definitely is not organized and kind of ugly, but less ugly than previous homework, i think.. 
 
 Generates # buildings based on user input.
 
