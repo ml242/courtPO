@@ -3,32 +3,24 @@ class Animal
 
   # Set up accessors and mutators for the attributes of an Animal
   # attr_accessor sets up both for you
-  attr_accessor :name, :age, :gender, :species, :toys
+  attr_accessor :name, :age, :species, :toys
 
   # Used when creating a new animal.
   #   Example:
   #       Animal.new('Timmy', 4, 'male', 'toad')
-  def initialize(name, age, species)
+  def initialize(name, age, species, shelter)
     @name = name
     @age = age
     @species = species
     @toys = []
+    shelter["animals"] << self
   end
 
   # When we display the animal using puts or print, the
   #   to_s method is called to pretty print an Animal
-  def to_s
+  # def to_s
 
-  end
+  # end
 end
 
-class Person
-  attr_accessor :name, :children, :age, :pets
 
-  def initialize(name, children, age, pets)
-    @name = name
-    @children = children
-    @age = age
-    @pets = pets
-  end
-end
