@@ -6,6 +6,7 @@ class Animal
     @age = age #integer
     @gender = gender #string
     @species = species #string
+    $animals << self
   end
 
   def add_toy(toy)
