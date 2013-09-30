@@ -17,7 +17,7 @@ class Building
   end
 
   def add_apartment (apartment_object, floor)
-    # NOTE: floor 1 is ground floor
+    # floor 1 is ground floor
     if floor <= @apartments.size && floor > 0 && space_left?(floor)
       @apartments[floor-1].push (apartment_object)
     else
@@ -43,6 +43,18 @@ class Building
       count += apartment.renters.count
     end
     count
+  end
+
+  def m_f_ratio
+    males = 0.0
+    females = 0.0
+    @apartments.flatten.each do |apartment|
+      apartment.renters.each do |renter|
+        males += 1.0 if renter.gender == 'male'
+        females += 1.0 if renter.gender == 'female'
+      end
+    end
+    males/females
   end
 
   def collect_rent
@@ -82,6 +94,7 @@ end
 
 class Person  
   attr_accessor :apartment
+  attr_reader :gender, :age, :name
   def initialize (name, age, gender)
     @name = name
     @age = age
@@ -121,7 +134,7 @@ def make_town( number_of_building )
       renters.times do
         #how many people? and what are their names?
         fake_name = Faker::Name::name
-        renter = Person.new(fake_name, rand(20..80), ['Male','Female'].sample)
+        renter = Person.new(fake_name, rand(20..80), ['male','female'].sample)
         apartment.add_renter renter
       end
     end
@@ -131,8 +144,42 @@ def make_town( number_of_building )
 
 end
 
-town =  make_town (1)
-p town[0]
-puts
-p 'renters ' + town[0].count_renters.to_s
-p 'avil ' + town[0].count_apartments_available.to_s
+def print_town (town)
+  ratio_sum = 0
+  town.each do |building|
+    ratio_sum += building.m_f_ratio
+  end
+  town_mf_ration = ratio_sum/town.count
+  population = 0
+  town.each do |building|
+    population += building.count_renters
+  end
+  puts "\t\tA SHORT DESCRIPTION OF THE TOWN:\n"
+  puts "The town has #{population} residents.  There are #{town.count} buildings..."
+  puts "The male to female ratio is #{town_mf_ration.round(2)}.\n\n"
+
+  town.each do |building|
+    puts "\nBuilding Address is #{building.address}. It's #{building.apartments.count} stories high."
+    puts "  There are #{building.apartments.flatten.count} apartments total.  #{building.count_apartments_available} units currently available to rent."
+    puts "  There are #{building.count_renters} residents... ration of males to females is #{building.m_f_ratio.round(2)}."
+  end
+  puts "\n"
+  town.each do |building|
+    puts '========================================='
+    puts "Address: #{building.address}"
+    puts '========================================='
+    building.apartments.each_with_index do |floor_apts, floor|
+      puts "\nFloor #{floor+1}:"
+      floor_apts.each do |apt|
+        puts "  -Apartment"
+        puts "    VACANT" unless apt.is_occupied?
+        apt.renters.each do |renter|
+          puts "    #{renter.name}"
+        end
+      end
+    end
+  end
+end
+
+town =  make_town (30)
+print_town(town)
