@@ -33,9 +33,10 @@ class Building
     @has_doorman
   end
 
-  def add_apartment(apartment_id, apartment_info)
-    @apartments[apartment_id] = apartment_info
+  def add_apartment(apartment)
+    @apartments[apartment.apartment_id] = apartment.get_apartment_info
     @num_floors = (@apartments.keys.length / @apartments_per_floor.to_f).ceil
+    apartment.building = self
   end
 
   def count_people
