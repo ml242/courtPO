@@ -6,11 +6,10 @@ class Building
     attr_accessor :count
   end
 
-  def initialize(address, has_doorman, is_walkup, num_floors)
+  def initialize(address, has_doorman, is_walkup)
     @address = address #string
     @has_doorman = has_doorman #boolean
     @is_walkup = is_walkup #boolean
-    @num_floors = num_floors #integer
     @apartments = Hash.new { |x,y| x[y] = [] }
     self.class.count += 1
   end
@@ -19,6 +18,12 @@ class Building
     @apartments[floor] << apartment
     apartment.number = number
     apartment.address = self.address
+  end
+
+  def count_floors
+    i = 0
+    @apartments.each do |x, y| i += 1 end
+    i
   end
 
   def count_renters

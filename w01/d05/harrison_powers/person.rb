@@ -1,15 +1,16 @@
 class Person
-	attr_accessor :name, :age, :gender, :apartment
+	attr_accessor :name, :age, :gender, :apartment, :email
 
   @count = 0
   class << self
     attr_accessor :count
   end
 
-	def initialize(name, age, gender)
+	def initialize(name, age, gender, email)
 		@name = name #string
 		@age = age #integer
 		@gender = gender #string
+    @email = email
     self.class.count += 1
 	end
 

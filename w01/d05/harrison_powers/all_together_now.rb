@@ -2,70 +2,41 @@ load './person.rb'
 load './apartment.rb'
 load './building.rb'
 
-dude001 = Person.new("Dude 1", 25, "male")
-dude002 = Person.new("Dude 2", 26, "male")
-dude003 = Person.new("Dude 3", 27, "male")
-dude004 = Person.new("Dude 4", 28, "male")
-dude005 = Person.new("Dude 5", 29, "male")
-dude006 = Person.new("Dude 6", 30, "male")
-dude007 = Person.new("Dude 7", 31, "male")
-dude008 = Person.new("Dude 8", 32, "male")
-dude009 = Person.new("Dude 9", 33, "male")
-dude010 = Person.new("Dude 10", 34, "male")
-dude011 = Person.new("Dude 11", 35, "male")
-dude012 = Person.new("Dude 12", 36, "male")
+require 'Faker'
 
+def mf
+  ["male", "female"].sample
+end
 
-apt_101_555_5th_ave = Apartment.new(400, 1, 1, 5000)
-apt_101_555_5th_ave.add_renter(dude001)
+def gen_rand_person
+  r = Random.new
+  Person.new(Faker::Name.name, r.rand(1..100), mf, Faker::Internet.email)
+end
 
-apt_102_555_5th_ave = Apartment.new(500, 1, 1, 5500)
-apt_102_555_5th_ave.add_renter(dude002)
+def gen_rand_apt
+  r = Random.new
+  Apartment.new(r.rand(500..2000), r.rand(1..4), r.rand(1..3))
+end
 
-apt_103_555_5th_ave = Apartment.new(600, 1, 1, 6000)
-apt_103_555_5th_ave.add_renter(dude003)
+def gen_rand_bldg
+  r = Random.new
+  Building.new(Faker::Address.street_address, r.rand(2) == 1, r.rand(2) == 1)
+end
 
-apt_201_555_5th_ave = Apartment.new(400, 1, 1, 5000)
-apt_201_555_5th_ave.add_renter(dude004)
+def populate_rand_bldgs(num_bldgs, num_apts)
+  r = Random.new
+  bldgs = Hash.new { |x,y| x[y] = [] }
+  num_bldgs.times do
+    bldg = gen_rand_bldg
+    num_apts.times do
+      apt = gen_rand_apt
+      bldg.add_apartment(r.rand(1..50), r.rand(1..20), apt)
+      person = gen_rand_person
+      apt.add_renter(person)
+    end
+    bldgs[bldg.address] = bldg
+  end
+  bldgs
+end
 
-apt_202_555_5th_ave = Apartment.new(500, 1, 1, 5500)
-apt_202_555_5th_ave.add_renter(dude005)
-
-apt_203_555_5th_ave = Apartment.new(600, 1, 1, 6000)
-apt_203_555_5th_ave.add_renter(dude006)
-
-
-apt_101_400_10th_ave = Apartment.new(400, 1, 1, 5000)
-apt_101_400_10th_ave.add_renter(dude007)
-
-apt_102_400_10th_ave = Apartment.new(500, 1, 1, 5500)
-apt_102_400_10th_ave.add_renter(dude008)
-
-apt_103_400_10th_ave = Apartment.new(600, 1, 1, 6000)
-apt_103_400_10th_ave.add_renter(dude009)
-
-apt_201_400_10th_ave = Apartment.new(400, 1, 1, 5000)
-apt_201_400_10th_ave.add_renter(dude010)
-
-apt_202_400_10th_ave = Apartment.new(500, 1, 1, 5500)
-apt_202_400_10th_ave.add_renter(dude011)
-
-apt_203_400_10th_ave = Apartment.new(600, 1, 1, 6000)
-apt_203_400_10th_ave.add_renter(dude012)
-
-bldg_555_5th_ave = Building.new("555 5th Ave", true, false, 5)
-bldg_400_10th_ave = Building.new("400 10th Ave", false, true, 5)
-
-bldg_555_5th_ave.add_apartment(1, 101, apt_101_555_5th_ave)
-bldg_555_5th_ave.add_apartment(1, 102, apt_102_555_5th_ave)
-bldg_555_5th_ave.add_apartment(1, 103, apt_103_555_5th_ave)
-bldg_555_5th_ave.add_apartment(2, 201, apt_201_555_5th_ave)
-bldg_555_5th_ave.add_apartment(2, 202, apt_202_555_5th_ave)
-bldg_555_5th_ave.add_apartment(2, 203, apt_203_555_5th_ave)
-
-bldg_400_10th_ave.add_apartment(1, 101, apt_101_400_10th_ave)
-bldg_400_10th_ave.add_apartment(1, 102, apt_102_400_10th_ave)
-bldg_400_10th_ave.add_apartment(1, 103, apt_103_400_10th_ave)
-bldg_400_10th_ave.add_apartment(2, 201, apt_201_400_10th_ave)
-bldg_400_10th_ave.add_apartment(2, 202, apt_202_400_10th_ave)
-bldg_400_10th_ave.add_apartment(2, 203, apt_203_400_10th_ave)
+nyc_uws = populate_rand_bldgs(30, 40)

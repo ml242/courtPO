@@ -7,11 +7,11 @@ class Apartment
     attr_accessor :count
   end
 
-  def initialize(sqft, num_bedrooms, num_baths, price)
+  def initialize(sqft, num_bedrooms, num_baths)
     @sqft = sqft #integer
     @num_bedrooms = num_bedrooms #integer
     @num_baths = num_baths #integer
-    @price = price #float
+    @price = sqft * num_bedrooms * num_baths * 2 #float
     self.class.count += 1
   end
 
