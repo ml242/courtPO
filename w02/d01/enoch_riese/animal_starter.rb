@@ -8,7 +8,7 @@ class Animal
   # Used when creating a new animal.
   #   Example:
   #       Animal.new('Timmy', 4, 'male', 'toad')
-  def initialize(name, age, species, shelter)
+  def initialize(name, age, species, toys, shelter)
     @name = name
     @age = age
     @species = species
@@ -19,7 +19,9 @@ class Animal
   # When we display the animal using puts or print, the
   #   to_s method is called to pretty print an Animal
   # def to_s
-
+  def show_specs
+    "#{@name} is a #{@age}-year-old #{@species} who has the following toys: #{@toys}"
+  end
   # end
 end
 

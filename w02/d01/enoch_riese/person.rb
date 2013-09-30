@@ -8,4 +8,9 @@ class Person
     @pets = [pets]
     shelter["people"] << self
   end
+
+  def show_specs
+    "#{@name} is a #{@age}-year-old with #{@children} children who has the following pets #{@tpets}"
+  end
+
 end
