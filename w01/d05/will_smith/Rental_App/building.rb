@@ -29,6 +29,6 @@ class Building
 end
 
 #Add 2 buildings
-b1 = Building.new('333 West End Avenue', 2, false, true, 6)
+b1 = Building.new('333 West End Ave', 2, false, true, 6)
 b2 = Building.new('118 East 1st Street', 2, true, false, 6)
 
