@@ -1,159 +1,182 @@
+require 'faker'
+require 'json'
 require 'pry'
 require 'pry-nav'
-require 'pry-remote'
-# require 'json'
-# require 'pp'
+require 'rainbow'
 
+require_relative 'person'
 require_relative 'building'
 require_relative 'apartment'
-require_relative 'person'
 
- # json = IO.read('rental_db.json')
- # obj = JSON.parse(json)
+# Create 1 to max_tenants and put into an array
+def create_tenants(max_tenants_per_apt)
+  r = Random.new
+  tenants_array = []
+  num_tenants = r.rand(1..max_tenants_per_apt)
+  num_tenants.times do |p_index|
+    tenant_hash = {
+     :name => Faker::Name.name,
+     :age => r.rand(1..99),
+     :gender => ["m","f"].sample
+    }
+    person = "person" + p_index.to_s
+    person = Person.new(tenant_hash)
 
-#pp obj
-binding.pry
-bldg1_hash = {
-  :address => "40 1st Ave NY NY 10008",
-  :has_doorman => false,
-  :is_walkup => true,
-  :num_floors => 2,
-  :num_apartments => 4,
-  :renters => [""]
-}
-bldg2_hash = {
-  :address => "400 W 77th St NY NY 10018",
-  :has_doorman => true,
-  :is_walkup => false,
-  :num_floors => 3,
-  :num_apartments => 3,
-  :renters => [""]
-}
-apt1 = {
-  :aptID => 010101,
-  :sqft => 300,
-  :num_bed => 2,
-  :num_bath => 1.5,
-  :price => 2200
-}
-apt2 = {
-  :aptID => 010102,
-  :sqft => 300,
-  :num_bed => 2,
-  :num_bath => 1.5,
-  :price => 2200
-}
-apt3 = {
-  :aptID => 010203,
-  :sqft => 300,
-  :num_bed => 2,
-  :num_bath => 1.5,
-  :price => 2200
-}
-apt4 = {
-  :aptID => 010204,
-  :sqft => 300,
-  :num_bed => 2,
-  :num_bath => 1.5,
-  :price => 2200
-}
-apt5 = {
-  :aptID => 020101,
-  :sqft => 300,
-  :num_bed => 2,
-  :num_bath => 1.5,
-  :price => 2200
-}
-apt6 = {
-  :aptID => 020202,
-  :sqft => 300,
-  :num_bed => 2,
-  :num_bath => 1.5,
-  :price => 2200
-}
-apt7 = {
-  :aptID => 020303,
-  :sqft => 300,
-  :num_bed => 2,
-  :num_bath => 1.5,
-  :price => 2200
-}
-
-# Create apartments
-apt1 = Apartment.new(apt1)
-apt2 = Apartment.new(apt2)
-apt3 = Apartment.new(apt3)
-apt4 = Apartment.new(apt4)
-apt_bldg1 = [apt1, apt2, apt3, apt4]
-apt5 = Apartment.new(apt5)
-apt6 = Apartment.new(apt6)
-apt7 = Apartment.new(apt7)
-apt_bldg2 = [apt5, apt6, apt7]
-
-# Create buildings
-bldg1 = Building.new(bldg1_hash, apt_bldg1)
-bldg2 = Building.new(bldg2_hash, apt_bldg2)
-
-# Create People
-p1 = Person.new("Roberta", 24, "f")
-p2 = Person.new("Jimmy", 12, "m")
-p3 = Person.new("George", 29, "m")
-p4 = Person.new("Jane", 39, "f")
-p5 = Person.new("Lauren", 33, "f")
-p6 = Person.new("Larry", 28, "m")
-p7 = Person.new("Simon", 77, "m")
-p8 = Person.new("Cynthia", 23, "f")
-p9 = Person.new("Jessica", 32, "f")
-p10 = Person.new("Luke", 54, "m")
-p11 = Person.new("Jordan", 25, "m")
-p12 = Person.new("Mary", 28, "f")
-p13 = Person.new("Sarita", 30, "f")
-p14 = Person.new("Bill", 43, "m")
-binding.pry
-
-if !apt1.is_occupied?
-  # Add tenants to building 1
-  apt1.add_tenants([p1.name, p2.name])
+    tenants_array << tenant_hash
+  end
+  tenants_array
 end
 
-# apt2 is going to stay empty
-#apt2.add_tenants([p3.name, p4.name])
-
-if !apt3.is_occupied?
-  apt3.add_tenants([p5.name])
+def create_apt(aptID)
+  # Create apartment sizes in sqft and base other apartment info from this
+  small_apt_size = 200
+  medium_apt_size = 500
+  large_apt_size = 900
+  sqft = [small_apt_size, medium_apt_size, large_apt_size].sample
+  case sqft
+    when small_apt_size
+      num_bed = 0
+      num_bath = 1
+      rent_price = 1500
+    when medium_apt_size
+      num_bed = 1
+      num_bath = 1.5
+      rent_price = 2000
+    when large_apt_size
+      num_bed = 2
+      num_bath = 2
+      rent_price = 3500
+    end
+  # Populate apartment info
+  apartment_info = {
+    :aptID => aptID,
+    :sqft => sqft,
+    :num_bed => num_bed,
+    :num_bath => num_bath,
+    :price => rent_price,
+    :tenants => []
+  }
 end
 
-if !apt4.is_occupied?
-  apt4.add_tenants([p6.name, p7.name, p8.name])
+def create_building_info_hash(num_floors, apts_per_floor, building_index)
+
+    num_apartments = num_floors * apts_per_floor
+    #Create a unique building id #
+    if building_index < 10
+      buildingID = "B0" + (building_index + 1).to_s
+    else
+      buildingID = "B" + (building_index + 1).to_s
+    end
+
+    # populate building hash
+    building_info = {
+      :buildingID => buildingID,
+      :address => String.new(Faker::Address.street_address(include_secondary = false) + ", " + Faker::Address.city + ", " + Faker::Address.state_abbr + " " + Faker::Address.zip_code),
+      :has_doorman => [true, false].sample,
+      :is_walkup => [true, false].sample,
+      :num_floors => num_floors,
+      :num_apartments => num_apartments,
+      :renters => [""]}
 end
-# Add apartments to building 1
-bldg1.add_apt(apt1)
-bldg1.add_apt(apt2)
-bldg1.add_apt(apt3)
-bldg1.add_apt(apt4)
 
-# Add tenants to building 2 if not occupied
-if !apt5.is_occupied?
-  apt5.add_tenants([p9.name])
+def fill_floor_with_apartments(num_floors, apts_per_floor, max_tenants_per_apt)
+    apartment_array = []
+    num_floors.times do |floor_index|
+      rand_instance = Random.new
+      # Going to fill each floor with a certain occupancy, setting up
+      #num_apts_to_fill = (percent_occupancy / 100) * apts_per_floor
+      apts_per_floor.times do |apt_index|
+      #Create apartment number, then create apartment
+        if floor_index < 10 && apt_index < 10
+          aptID = "F0#{floor_index+1}A0#{apt_index+1}"
+        elsif floor_index < 10 && apt_index > 10
+          aptID = "F0#{floor_index+1}A#{apt_index+1}"
+        elsif floor_index > 10 && apt_index < 10
+          aptID = "F#{floor_index+1}A0#{apt_index+1}"
+        else
+          aptID = "F#{floor_index+1}A#{apt_index+1}"
+        end
+        apartment_info = create_apt(aptID)
+     #     apartment_array << apartment_info
+
+        # Add people to apartments about 50% of the time
+        apt_instance = Apartment.new(apartment_info)
+        num_tenants_per_apartment = rand_instance.rand(1..max_tenants_per_apt)
+        print "Apartment \#".color("fedcba")
+        puts apartment_info[:aptID]
+        if [true, false].sample
+          tenants = create_tenants(num_tenants_per_apartment)
+          apt_instance.add_tenants(tenants)
+          apt_instance.show_tenants
+          apartment_info[:tenants] << tenants
+
+          puts apt_instance.tenants
+        end
+          apartment_array << apartment_info
+
+        print "Apartment is occupied? ".color("abcdef")
+        puts apt_instance.is_occupied?
+        puts ""
+      end
+      # number of apartments to fill based on occupancy argument
+      #
+      # num_apts_to_fill.times do
+      # end
+      #end
+    end
+    apartment_array
 end
 
-#apt6 will be empty for now
-#apt6.add_tenants([p10.name, p11.name])
+def create_buildings(num_buildings, max_num_floors, max_apts_per_floor, max_tenants_per_apt, percent_occupancy)
+  rand_instance = Random.new
+  building_array = []
+  # Create number of building specified by num_buildings
+  num_buildings.times do |b_index|
+    # Random create number of floors and apts/flr based on input
+    num_floors = rand_instance.rand(1..max_num_floors)
+    apts_per_floor = rand_instance.rand(1..max_apts_per_floor)
 
-# Add tenants to building 3 if not occupied
-if !apt7.is_occupied?
-  apt7.add_tenants([p12.name, p13.name, p14.name])
+    # Populate hash with building information and add to array of buildings
+    building_info = create_building_info_hash(num_floors, apts_per_floor, b_index)
+    building_array << building_info
+    # Populate each floor with apartments
+    apartment_array = fill_floor_with_apartments(num_floors, apts_per_floor, max_tenants_per_apt)
+
+    # Create the building instance and add apartments
+    bldg_instance = Building.new(building_info)
+    # Add apartments to building
+    bldg_instance.add_apts(building_info, apartment_array)
+    bldg_instance.show_building
+    print "\nNumber of apartments available:  ".color("abccba")
+    puts "#{bldg_instance.get_num_apt_avail(apartment_array)}".color("abccba")
+    print "Number of apartments occupied:  ".color("abccba")
+    puts "#{bldg_instance.get_num_apt_occupied(apartment_array)}".color("abccba")
+
+    puts "Total Apartments: #{bldg_instance.num_apartments}\n".color("abccba")
+  end
+  building_array
 end
 
-##add_renters??
-# Add apartments to building 2
-bldg2.add_apt(apt5)
-bldg2.add_apt(apt6)
-bldg2.add_apt(apt7)
+# constants
+num_of_bldgs = 2
+max_num_floors = 4
+max_apts_per_floor = 4
+max_tenants_per_apt = 4
+# not working yet. now just randomly choosing true or false
+percent_occupancy = 70
 
-# if !apt1.is_occupied?
-#   apt1.tenants([p1 p2 p3])
+print "How many buildings do want to generate?  "
+num_of_bldgs = gets.chomp.to_i
+
+# Create buildings and fill them
+bldg_db = create_buildings(num_of_bldgs, max_num_floors, max_apts_per_floor, max_tenants_per_apt, percent_occupancy)
+
+# Print apt info from data
+# num_of_bldgs.times do |bldg_ind|
+#   puts "\nBUILDING #{bldg_ind + 1} APARTMENTS".color("fa06b2")
+#   puts bldg_db[bldg_ind][:apartments]
+#   puts " "
 # end
 
 
-binding.pry
+

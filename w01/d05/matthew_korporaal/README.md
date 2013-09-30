@@ -1,5 +1,19 @@
 # Apartments
 
+
+
+Generates # buildings based on user input.
+
+Variable that can be set in main and default settings:
+######max_num_floors = 4
+######max_apts_per_floor = 4
+######max_tenants_per_apt = 4
+
+These are maximums, not necessarily what the buildings will look like.
+
+Tenant occupancy is random boolean, so it will be ~50% on average
+
+
 |Files: |Description
 |:----------|:-----------|
 | README.md | |
