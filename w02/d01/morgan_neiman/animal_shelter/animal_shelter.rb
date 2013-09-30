@@ -3,9 +3,12 @@ require_relative 'animal'
 require_relative 'shelter'
 
 happitails = Shelter.new
+run_menu = true
 
 puts "Welcome to HappiTails"
 
+
+while run_menu
 puts "What would you like to do? Please type: \n
 'all_animals' to see all of the animals \n
 'all_people' to see all of the people \n
@@ -26,7 +29,7 @@ when "create_animal"
   puts "What is the animal's name?"
   name = gets.chomp.downcase
   puts "What is the animal's age?"
-  age = gets.chomp
+  age = gets.chomp.to_i
   puts "What is the animal's gender?"
   gender = gets.chomp.downcase
   puts "What is the animal's species?"
@@ -36,9 +39,9 @@ when "create_person"
   puts "What is the person's name?"
   name = gets.chomp.downcase
   puts "How many children does the person have?"
-  num_children = gets.chomp
+  num_children = gets.chomp.to_i
   puts "How old is the person?"
-  age = gets.chomp
+  age = gets.chomp.to_i
   happitails.new_person(name, num_children, age)
 when "adopt_animal"
   puts "What is your name?"
@@ -57,4 +60,16 @@ when "put_up_for_adoption"
   happitails.give_up_animal(animal_name, name)
 else
   puts "I don't know what that means."
+end
+
+puts "Would you like to do something else? y/n"
+input = gets.chomp.downcase
+if input != "y" && input != "n"
+  puts "I don't understand that."
+elsif input == "n"
+  puts "bye!"
+  run_menu = false
+else
+  run_menu = true
+end
 end

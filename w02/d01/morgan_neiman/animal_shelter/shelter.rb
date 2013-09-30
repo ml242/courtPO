@@ -26,10 +26,10 @@ class Shelter
   end
   def adopt_animal(name, species, person_name)
     @people[person_name].pets[name] = @animals[name]
-    @animals[name].delete
+    @animals.delete(name)
   end
   def give_up_animal(animal_name, person_name)
     @animals[animal_name] = @people[person_name].pets[animal_name]
-    @people[person_name].pets[animal_name].delete
+    @people[person_name].pets.delete(animal_name)
   end
 end
