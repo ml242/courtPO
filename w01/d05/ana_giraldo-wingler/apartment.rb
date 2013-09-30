@@ -1,5 +1,5 @@
 class Apartment
-  attr_accessor :sqft, :num_bedrooms, :num_baths, :renters, :is_occupied, :price
+  attr_accessor :sqft, :num_bedrooms, :num_baths, :renters, :is_occupied, :price, :building
 
 def initialize
   r = Random.new
