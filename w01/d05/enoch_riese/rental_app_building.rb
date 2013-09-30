@@ -42,7 +42,7 @@ class Building
   def count_apartments_available
     apartments_list = @apartments.values.flatten
     empty_apartments = []
-    apartments_list.each {|apt| empty_apartments << apt if apt.is_occupied? == true}
+    apartments_list.each {|apt| empty_apartments << apt if apt.is_occupied? != true}
     empty_apartments.length
   end
 
