@@ -66,11 +66,9 @@ class Apartment
     @price = 1500*@num_bedrooms + 500*@num_baths
   end
 
-  def add_renters renters   #takes an array of renters
-    renters.each do |renter|
+  def add_renter renter  #takes an array of renters
       @renters.push renter
       renter.move_to self
-    end
   end
   
   def remove_renters
@@ -111,20 +109,20 @@ def make_town( number_of_building )
 
     building.apartments.each_index do |i|
       #fill floor with apartments
-      fake_apartment = Apartment.new(rand(500..1000), rand(1..3), rand(1..2))
       building.floor_capacity[i].times do
+        fake_apartment = Apartment.new(rand(500..1000), rand(1..3), rand(1..2))
         building.add_apartment(fake_apartment, i+1)
       end
     end
 
     building.apartments.flatten.each do |apartment|
       #fill apartments with people
-      renters = 1
+      renters = rand(0..3)
       renters.times do
         #how many people? and what are their names?
         fake_name = Faker::Name::name
         renter = Person.new(fake_name, rand(20..80), ['Male','Female'].sample)
-        apartment.add_renters [renter]
+        apartment.add_renter renter
       end
     end
   end
@@ -133,9 +131,8 @@ def make_town( number_of_building )
 
 end
 
-town =  make_town (20)
+town =  make_town (1)
 p town[0]
 puts
-p town[0].count_renters
-p town[0].count_apartments_available
-p town[0].collect_rent
+p 'renters ' + town[0].count_renters.to_s
+p 'avil ' + town[0].count_apartments_available.to_s
