@@ -13,16 +13,6 @@ animal_species = ["bunny", "cat", "dog"]
 
 s1 = Shelter.new
 
-# p1 = Person.new("John", 55)
-# p2 = Person.new("Tom", 40)
-# p3 = Person.new("Karen", 34)
-# p4 = Person.new("Wilma", 19)
-
-# s1.add_person(p1)
-# s1.add_person(p2)
-# s1.add_person(p3)
-# s1.add_person(p4)
-
 8.times.each do
   rand_num = (1..70).to_a.sample
   person = Person.new(Faker::Name.first_name, rand_num)
@@ -34,23 +24,6 @@ end
   animal = Animal.new(Faker::Name.first_name, rand_num, animal_gender.sample, animal_species.sample)
   s1.add_animal(animal)
 end
-
-# a1 = Animal.new("Spot", 2, "male", "dog")
-# a2 = Animal.new("Lucy", 1, "female", "dog")
-# a3 = Animal.new("Teddy", 3, "male", "bunny")
-# a4 = Animal.new("Lion", 2, "male", "cat")
-
-# s1.add_animal(a1)
-# s1.add_animal(a2)
-# s1.add_animal(a3)
-# s1.add_animal(a4)
-
-# found = s1.search_animals("bunny")
-# found = found[0]
-
-# person = s1.people[1]
-
-# s1.give_animal(p1, found)
 
 quit = false
   until quit
@@ -75,7 +48,7 @@ quit = false
     when "5"
       puts "Pick someone who will adopt from below:".color(:green)
       puts s1.people.join(", ").color(:blue)
-      person_selected = gets.chomp
+      person_selected = gets.chomp.capitalize
       s1.people.each do |person|
         if person.name == person_selected
           person_selected = person
@@ -83,7 +56,7 @@ quit = false
         person_selected
       end
       puts "What type of animal do you want: bunny, dog, cat".color(:green)
-      random_animal = gets.chomp
+      random_animal = gets.chomp.downcase
       case random_animal
         when "bunny" then random_animal = s1.search_animals("bunny")
         when "cat" then random_animal = s1.search_animals("cat")
@@ -101,7 +74,7 @@ quit = false
         end
       end
       puts people_with_animals.join(", ").color(:blue)
-      person_selected = gets.chomp
+      person_selected = gets.chomp.capitalize
       s1.people.each do |person|
         if person.name == person_selected
           person_selected = person
@@ -112,7 +85,7 @@ quit = false
       person_selected.pets.each do |pet|
         puts "#{pet.name}".color(:blue)
       end
-      animal_selected = gets.chomp
+      animal_selected = gets.chomp.capitalize
       person_selected.pets.each do |pet|
         if pet.name == animal_selected
           animal_selected = pet
@@ -133,7 +106,7 @@ quit = false
       puts "A new #{new_animal.species}, #{new_animal.name}, was created.".color(:green)
     when "9" then quit = true
     else
-      puts "ERROR!!! Pick one of the options from the menu by using 1-9.".color(:red)
+      puts "ERROR!!! Pick one of the options from the menu by using 1-9.".color(:red).blink
   end
 end
 
