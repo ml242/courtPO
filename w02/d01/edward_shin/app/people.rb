@@ -5,12 +5,11 @@ class Person
 		@name = name
 		@age = age
 		@number_of_children = number_of_children
-		@pets = {}
+		@pets = []
 	end
 
 	def adopt(animal)
-		name = animal.name
-		@num_of_pets << name
+		@pets << animal
 	end
 
 	def up_for_adoption(animal)

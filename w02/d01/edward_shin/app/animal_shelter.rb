@@ -11,7 +11,7 @@ class Shelter
 	end
 
 	def add_person(person)
-		@people << person
+		@people << person.name
 	end
 
 	def add_animal(animal)
@@ -20,8 +20,12 @@ class Shelter
 		array << animal.name
 	end 
 
-	def adopt_animal(animal)
-		
+	def adopt_animal(person, type, animal)
+		array = @animals[type]
+		adopted = array.delete(animal)
+		puts adopted
+		person.adopt(animal)
+		return person.pets
 	end
 
 end
