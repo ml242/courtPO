@@ -1,6 +1,7 @@
 #HW Week 1 - Day 2
 #WORK IN YOUR OWN FOLDER ONLY!
 ---
+## Brooklyn Lab
 Copy and Submit the Brooklyn Lab work that you did in class today. If you were able to finish the Brooklyn Lab during class, and are looking for an extra challenge, move on to the Sinatra MTA App below.
 ---
 ## Extra Work - Sinatra MTA App
