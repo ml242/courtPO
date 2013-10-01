@@ -13,10 +13,14 @@ require_relative 'person'
 # facilitate person puts an animal up for adoption
 # After selecting from the menu the task the user is prompted through the entire process
 
+happitails = Shelter.new
+
 def ask(string)
   puts string
   gets.chomp!
 end
+
+while true
 
 INSTRUCTIONS = "
 To display all animals, type: > display_animals
@@ -28,24 +32,35 @@ To create an animal, type: > create_animal
 To create a person, type: > create_person
 "
 
-while true
-
   input = ask(INSTRUCTIONS)
-  parameters = input.downcase
-  operator = parameters
+  choice = input.downcase.gets.chomp!
 
-  case operator
-  when "display_animals" then puts @all_animals
-  when "display_persons" then puts @all_persons
-  when "create_animal" then Animal.new
-  when "create_person" then Person.new
+
+  case choice
+  when "display_animals" then happitails.display_animals
+  when "display_persons" then happitails.display_persons
+  when "create_animal"
+    puts "Animal name?"
+    name = gets.chomp!
+    puts "Animal age?"
+    age = gets.chomp!
+    puts "Animal gender?"
+    gender = gets.chomp!
+    puts "Animal species?"
+    species = gets.chomp!
+    happitails.new_animal(name, age, gender, species)
+  when "create_person"
+    puts "Person name?"
+    name = gets.chomp!
+    puts "Person number of children?"
+    number_of_children = gets.chomp!
+    puts "Person age?"
+    age = gets.chomp!
+    happitails.new_person(name, number_of_children, age)
   else "ERROR! Please choose again."
   end
  end
 
-s1 = Shelter.new("HappiTails")
-s1.all_persons = [p1, p2, p3]
-s1.all_animals = [a7, a8]
 
 p1 = Person.new("Barbara", 4, 55)
 p2 = Person.new("Patty", 5, 50)

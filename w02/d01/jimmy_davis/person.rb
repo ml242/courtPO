@@ -4,11 +4,23 @@
 # A person should have a number of pets.
 
 class Person
-  attr_accessor :name, :number_of_children, :age
+  attr_accessor :name, :number_of_children, :age, :pets
 
   def initialize(name, number_of_children, age)
-    @number_of_pets = [].count
-    @display_persons = display_persons.name
-    @create_person = Person.new
+    @name = name
+    @number_of_children = number_of_children
+    @age = age
+    @pets = {}
   end
+
+  def create_person(name, number_of_children, age)
+    create_person = Person.new(name, number_of_children, age)
+    @persons[name] = new_person
+  end
+
+  def display_persons
+    @persons.each_value do |v|
+    p v
+  end
+
 end

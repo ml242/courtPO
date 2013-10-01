@@ -6,7 +6,8 @@ class Shelter
 
   def initialize(name)
     @name = name
-    @all_persons = []
-    @all_animals = []
+    @all_persons = {}
+    @all_animals = {}
   end
+
 end
