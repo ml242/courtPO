@@ -28,16 +28,14 @@ class Shelter
 
   def pet_adoption(human, animal)
     human.adopt_pet(animal)
-    animal.get_adopted
-    @humans << human
-    @animals << animal
+    animal.is_adopted(true)
     @animals_on_hand -= 1
   end
 
   def pet_abandon(human, animal)
     @animals_on_hand += 1
     human.abandon_pet(animal)
-    @animals << animal
+    animal.is_adopted(false)
   end
 
   def to_s

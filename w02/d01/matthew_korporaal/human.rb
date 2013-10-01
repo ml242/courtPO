@@ -20,9 +20,7 @@ class Human
 
   def to_s
     puts "#{name} is #{age} and has #{num_pets} pets.".color("E80C9B")
-
     # @pets.each do |pet|
-    # binding.pry
     #   puts "#{pet.name} ".color("E80C9B")
     # end
     return

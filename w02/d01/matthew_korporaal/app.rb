@@ -44,43 +44,46 @@ def create_animal(shelter)
 end
 
 def adopt(shelter)
-  puts "Choose who by number: ".color("E80C00")
-  #binding.pry
-  shelter.humans.each_with_index do |human, index|
-    print "#{index + 1}. ".color("E80C9B")
-    print "#{human.to_s}".color("E80C9B")
-  end
-  person_index = gets.chomp.to_i - 1
+  if !shelter.humans.empty? && !shelter.animals.empty?
+    puts "Choose who by number: ".color("E80C00")
+    shelter.humans.each_with_index do |human, index|
+      print "#{index + 1}. ".color("E80C9B")
+      print "#{human.to_s}".color("E80C9B")
+    end
+    person_index = gets.chomp.to_i - 1
 
-  puts "Choose who by number: ".color("E80C00")
-  shelter.animals.each_with_index do |animal, index|
-    print "#{index + 1}. ".color("E80C9B")
-    print "#{animal.to_s}".color("E80C9B")
+    puts "Choose who by number: ".color("E80C00")
+    shelter.animals.each_with_index do |animal, index|
+      print "#{index + 1}. ".color("E80C9B")
+      print "#{animal.to_s}".color("E80C9B")
+    end
+    animal_index = gets.chomp.to_i - 1
+    person = shelter.humans[person_index]
+    adoptee = shelter.animals[animal_index]
+    shelter.pet_adoption(person, adoptee)
+  else
+    puts "Must be at least one person and one animal to adopt"
   end
-  animal_index = gets.chomp.to_i - 1
-  person = shelter.humans[person_index]
-  adoptee = shelter.animals[animal_index]
-  shelter.pet_adoption(person, adoptee)
-end
+  end
 
-def abandon(shelter)
-  puts "Choose who by number: ".color("E80C00")
-  #binding.pry
-  shelter.humans.each_with_index do |human, index|
-    print "#{index + 1}. ".color("E80C9B")
-    print "#{human.to_s}".color("E80C9B")
-  end
-  person_index = gets.chomp.to_i - 1
-
-  puts "Choose who by number: ".color("E80C00")
-  shelter.animals.each_with_index do |animal, index|
-    print "#{index + 1}. ".color("E80C9B")
-    print "#{animal.to_s}".color("E80C9B")
-  end
-  animal_index = gets.chomp.to_i - 1
-  person = shelter.humans[person_index]
-  adoptee = shelter.animals[animal_index]
-  shelter.pet_abandon(person, adoptee)
+  def abandon(shelter)
+    puts "Choose who by number: ".color("E80C00")
+    shelter.humans.each_with_index do |human, index|
+      print "#{index + 1}. ".color("E80C9B")
+      print "#{human.to_s}".color("E80C9B")
+    end
+    person_index = gets.chomp.to_i - 1
+    # Need logic to only print out owners pets instead of all
+    #shelter.humans[person_index].pets
+    puts "Choose who by number: ".color("E80C00")
+    shelter.animals.each_with_index do |animal, index|
+      print "#{index + 1}. ".color("E80C9B")
+      print "#{animal.to_s}".color("E80C9B")
+    end
+    animal_index = gets.chomp.to_i - 1
+    person = shelter.humans[person_index]
+    adoptee = shelter.animals[animal_index]
+    shelter.pet_abandon(person, adoptee)
 end
 
 option = 0
@@ -107,24 +110,3 @@ while option != "8"
     abandon(shelter)
   end
 end
-
-
-# a1 = Animal.new("Spot", 3, "m", "dog")
-# a2 = Animal.new("Elly", 20, "f", "elephant")
-# s1 = Shelter.new
-# s1.add_animal(a1)
-# s1.add_animal(a2)
-
-
-
-
-# h1 = Human.new("Billy", 16, 0)
-# h2 = Human.new("Xavier", 30, 2)
-
-# s1.pet_adoption(h1, a1)
-
-# s1.pet_abandon(h1, a1)
-
-#h1.adopt_pet()
-#h1.give_up_pet()
-

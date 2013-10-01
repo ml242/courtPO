@@ -10,12 +10,11 @@ class Animal
     @has_owner = false
   end
 
-  def get_adopted
-    @has_owner = true
+  def is_adopted(owner_bool)
+    @has_owner = owner_bool
   end
   #   to_s method is called to pretty print an Animal
   def to_s
-    #binding.pry
     puts "Name: #{name} Age: #{age} years Gender: #{gender} Type: #{species}.".color("E80C9B")
     puts "I have a master and I love them.".color("E80C9B") if @has_owner
     puts "I am orphan, I want master.".color("E80C9B") if !@has_owner
