@@ -4,7 +4,7 @@
 
 class Shelter
   attr_accessor :person, :animal, :shelter_hash, :people, :animals
-    def initialize
+    def initialize   #WHY DON'T I NEED PEOPLE AND ANIMALS AS INPUTS?!
       #@shelter_hash = {} #Hash.new { |people, person| people[person] = [] }
       @people = {}
       @animals = {}
