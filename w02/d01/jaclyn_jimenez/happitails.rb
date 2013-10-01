@@ -10,7 +10,7 @@ require_relative 'shelter'
 
 
 s1 = Shelter.new("Happy Tails")
-puts "First please create people and animals.".foreground(:yellow)
+puts "First please create people and animals.".foreground(:red)
 puts "Person 1".foreground(:blue)
 p1 = Person.new(s1)
 puts "Person 2".foreground(:blue)

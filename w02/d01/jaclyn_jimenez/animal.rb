@@ -1,6 +1,6 @@
 class Animal
 
-  attr_accessor :name, :age, :sex, :species, :toys, :shelter
+  attr_accessor :name, :age, :sex, :species, :shelter
 
   def initialize(shelter)
     puts "What is this animal's name?"
@@ -12,7 +12,6 @@ class Animal
     puts "What species is the animal?"
     @species = gets.chomp
     @adopted = false
-    @toys = []
     shelter.add_animal(self)
   end
 

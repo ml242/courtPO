@@ -1,6 +1,6 @@
 class Person
 
-  attr_accessor :name, :age, :number_of_children
+  attr_accessor :name, :age
 
   def initialize(shelter)
     puts "What is this person's name?"

@@ -37,8 +37,8 @@ class Shelter
   end
 
   def shelter_info
-    "Name: #{@name}
-    People: #{list_people_string}
-    Animals: #{list_animals_string}"
+    "Name:  #{@name}
+    People:  #{list_people_string}
+    Animals:  #{list_animals_string}"
   end
 end
