@@ -66,34 +66,38 @@ quit = false
 
       puts "#{person_selected.name} now owns #{random_animal.name}, a #{random_animal.species}.".color(:red)
     when "6"
-      puts "Pick one of the pet-owners who will give away their pet from below:".color(:green)
       people_with_animals = []
       s1.people.each do |person|
         unless person.pets.size == 0
           people_with_animals << person
         end
       end
-      puts people_with_animals.join(", ").color(:blue)
-      person_selected = gets.chomp.capitalize
-      s1.people.each do |person|
-        if person.name == person_selected
-          person_selected = person
+      if people_with_animals.empty?
+        puts "Nobody own any animals".color(:red)
+      else
+        puts "Pick one of the pet-owners who will give away their pet from below:".color(:green)
+        puts people_with_animals.join(", ").color(:blue)
+        person_selected = gets.chomp.capitalize
+        s1.people.each do |person|
+          if person.name == person_selected
+            person_selected = person
+          end
+          person_selected
         end
-        person_selected
-      end
-      puts "Choose an animal from below:".color(:green)
-      person_selected.pets.each do |pet|
-        puts "#{pet.name}".color(:blue)
-      end
-      animal_selected = gets.chomp.capitalize
-      person_selected.pets.each do |pet|
-        if pet.name == animal_selected
-          animal_selected = pet
+        puts "Choose an animal from below:".color(:green)
+        person_selected.pets.each do |pet|
+          puts "#{pet.name}".color(:blue)
         end
-        animal_selected
+        animal_selected = gets.chomp.capitalize
+        person_selected.pets.each do |pet|
+          if pet.name == animal_selected
+            animal_selected = pet
+          end
+          animal_selected
+        end
+        person_selected.give_away_animal(animal_selected, s1)
+        puts "#{person_selected.name} gave away #{animal_selected.name}.".color(:red)
       end
-      person_selected.give_away_animal(animal_selected, s1)
-      puts "#{person_selected.name} gave away #{animal_selected.name}.".color(:red)
     when "7"
       rand_num = (1..70).to_a.sample
       new_person = Person.new(Faker::Name.first_name, rand_num)
