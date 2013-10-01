@@ -1,14 +1,17 @@
 class Animal
-  attr_accessor :name, :age, :sex, :species, :toys
+  attr_accessor :name, :age, :sex, :species, :toys, :shelter
 
-  def initialize(name, age, sex, species, shelter)
-    @name = name
-    @age = age
-    @sex = sex
-    @species = species
+  def initialize(shelter)
+    puts "What is this animal's name?"
+    @name = gets.chomp
+    puts "What is this animal's age?"
+    @age = gets.chomp
+    puts "What is this animal's sex?"
+    @sex = gets.chomp
+    puts "What species is the animal?"
+    @species = gets.chomp
     @adopted = false
     @toys = []
-    @shelter = shelter
     shelter.add_animal(self)
   end
 
@@ -18,6 +21,14 @@ class Animal
 
   def set_adoption_status
     @adopted = true
+  end
+
+  def reset_adoption_status
+    @adopted = false
+  end
+
+  def animal_info
+    "#{@name} is a #{@age} year old #{@sex}and is a #{@species}."
   end
 
 end

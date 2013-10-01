@@ -1,6 +1,3 @@
-#Later: Shelter should display all persons and animals
-# animal list changes based on adoption status
-
 class Shelter
   attr_accessor :name
 
@@ -14,29 +11,33 @@ class Shelter
 
   def add_person(person)
     @people << person
+    @people_names << person.name
   end
 
   def add_animal(animal)
     @animals << animal
+    @animal_names << animal.name
   end
 
   def list_people
-    @people.each do |person|
-      @people_names << person.name
-    end
-    @people_names.join ", "
+    @people
   end
 
   def list_animals
-    @animals.each do |animal|
-      @animal_names << animal.name
-    end
+    @animals
+  end
+
+  def list_people_string
+    @people_names.join ", "
+  end
+
+  def list_animals_string
     @animal_names.join ", "
   end
 
   def shelter_info
     "Name: #{@name}
-    People: #{list_people}
-    Animals: #{list_animals}"
+    People: #{list_people_string}
+    Animals: #{list_animals_string}"
   end
 end
