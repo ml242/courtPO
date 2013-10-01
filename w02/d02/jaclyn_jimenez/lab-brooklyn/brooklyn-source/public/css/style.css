@@ -16,4 +16,14 @@ body {
   line-height: 17px;
   font-family: "Times New Roman", serif;
   color: #656565;
+  width: 980px;
+  margin: 20px 10px;
+}
+
+p {
+
+}
+
+.logos img {
+  border: 3px solid #656565;
 }
