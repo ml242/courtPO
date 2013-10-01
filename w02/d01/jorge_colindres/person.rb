@@ -8,18 +8,6 @@ class Person
     @pets = []
   end
 
-  # def adopt_animal(animal, shelter)
-  #   species = shelter.animals[animal.species]
-  #   animal_to_adopt = nil
-  #   species.each do |individual|
-  #     if animal == individual
-  #       animal_to_adopt = individual
-  #     end
-  #   end
-  #   species.delete animal
-  #   @pets << animal_to_adopt
-  # end
-
   def adopt_animal(animal)
     @pets << animal
   end
