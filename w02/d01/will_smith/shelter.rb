@@ -18,13 +18,16 @@ class Shelter
       p v
     end
   end
-  def add_person
+  #add person
+  def add_person(name, age)
     add_person = Person.new(name, age)
+    @persons[name] = new_person
   end
-  def add_animal
+  #add person
+  def add_animal(name, age, gender, species)
     add_animal = Animal.new(name, age, gender, species)
+    @animals[name] = new_animal
   end
-
 end
 
 p1 = Person.new('Ace', 30)
