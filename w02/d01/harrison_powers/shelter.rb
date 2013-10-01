@@ -1,11 +1,12 @@
 class Shelter
   attr_accessor :password, :name, :location, :animals
 
-  def initialize(password, name, location)
+  def initialize(username, password, name, location)
     @password = password
     @name = name
     @location = location
     @animals = Array.new
+    $shelters[username] = self
   end
 
   def add_animal(animal)

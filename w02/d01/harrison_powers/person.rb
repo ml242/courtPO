@@ -1,14 +1,14 @@
 class Person
   attr_accessor :name, :children, :age, :num_pets, :pets, :looking_for_pet, :password
 
-  def initialize(password, name, children, age, num_pets, looking_for_pet)
+  def initialize(username, password, name, children, age, num_pets, looking_for_pet)
     @password = password #string
     @name = name #string
     @children = children #integer
     @age = age #integer
     @num_pets = num_pets #integer
     @looking_for_pet = looking_for_pet #boolean
-    $persons << self
+    $persons[username] = self
   end
 
   def adopt(animal)
@@ -27,9 +27,7 @@ class Person
   end
 
   def to_s
-    looking = ""
-    looking = "Is currently looking for a pet!" if self.is_looking == true
-    "#{@name} is a #{@age} year old, with #{@children} children. {looking}"
+    "#{@name} is a #{@age} year old, with #{@children} children."
   end
 
 end
