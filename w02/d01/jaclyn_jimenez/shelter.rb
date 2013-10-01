@@ -8,17 +8,35 @@ class Shelter
     @name = name
     @people = []
     @animals = []
+    @animal_names = []
+    @people_names = []
   end
 
   def add_person(person)
     @people << person
   end
 
+  def add_animal(animal)
+    @animals << animal
+  end
+
   def list_people
-    @people.to_s
+    @people.each do |person|
+      @people_names << person.name
+    end
+    @people_names.join ", "
   end
 
   def list_animals
+    @animals.each do |animal|
+      @animal_names << animal.name
+    end
+    @animal_names.join ", "
   end
 
+  def shelter_info
+    "Name: #{@name}
+    People: #{list_people}
+    Animals: #{list_animals}"
+  end
 end

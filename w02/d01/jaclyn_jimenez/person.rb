@@ -1,7 +1,3 @@
-# Later: Person has number of animals
-# create method that displays animals person has & #
-
-
 class Person
   attr_accessor :name, :age, :number_of_children
 
