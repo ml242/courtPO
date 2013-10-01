@@ -1,17 +1,14 @@
 require 'pry'
-<<<<<<< HEAD
-=======
+
 require 'faker'
 require 'rainbow'
->>>>>>> development
+
 
 require_relative 'animal'
 require_relative 'person'
 require_relative 'shelter'
 
-<<<<<<< HEAD
 
-=======
 s1 = Shelter.new("Happy Tails")
 puts "First please create people and animals.".foreground(:yellow)
 puts "Person 1".foreground(:blue)
@@ -69,6 +66,6 @@ answer = case input
         end
 
 start(s1)
->>>>>>> development
+
 
 binding.pry
