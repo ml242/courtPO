@@ -6,11 +6,11 @@ class Person
     @children = children
     @age = age
     @pets = [pets]
-    shelter["people"] << self
+    shelter.people[name] = self
   end
 
   def show_specs
-    "#{@name} is a #{@age}-year-old with #{@children} children who has the following pets #{@tpets}"
+    "#{@name} is a #{@age}-year-old with #{@children} children who has the following pets #{@pets}"
   end
 
 end

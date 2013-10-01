@@ -13,7 +13,7 @@ class Animal
     @age = age
     @species = species
     @toys = []
-    shelter["animals"] << self
+    shelter.animals[name] = self
   end
 
   # When we display the animal using puts or print, the
