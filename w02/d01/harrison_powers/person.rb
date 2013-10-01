@@ -11,15 +11,24 @@ class Person
     $persons[username] = self
   end
 
+  def add_animal(animal)
+    @pets ||= Array.new
+    @pets << animal
+    animal.shelter = nil
+    animal.owner = self
+  end
+
   def adopt(animal)
     @pets ||= Array.new
     @pets << animal
     animal.shelter.remove_animal(animal)
+    animal.owner = self
   end
 
   def put_up_for_adoption(animal, shelter)
     @pets.delete(animal)
     shelter.add_animal(animal)
+    animal.owner = nil
   end
 
   def is_looking?

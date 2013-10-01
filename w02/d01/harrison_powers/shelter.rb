@@ -12,6 +12,7 @@ class Shelter
   def add_animal(animal)
     @animals << animal
     animal.shelter = self
+    animal.owner = nil
   end
 
   def remove_animal(animal)

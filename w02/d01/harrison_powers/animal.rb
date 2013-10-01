@@ -1,5 +1,5 @@
 class Animal
-  attr_accessor :name, :age, :gender, :species, :toys, :shelter
+  attr_accessor :name, :age, :gender, :species, :toys, :shelter, :owner
 
   def initialize(name, age, gender, species)
     @name = name #string

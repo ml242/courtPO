@@ -6,13 +6,13 @@ require_relative 'person'
 require_relative 'shelter'
 require_relative 'menu_text'
 
-def load_json_file( filename )
-  JSON.parse( IO.read(filename) )
+def load_dump( filename )
+  dump_object = IO.read(filename)
+  Marshal.load(dump_object)
 end
 
-def write_json_file( object, filename )
-  json_object = object.to_json
-  File.open(filename, 'w'){ |file| JSON.dump( json_object, file) }
+def take_a_dump( object, filename )
+  File.open(filename, 'w'){ |file| Marshal.dump( object, file) }
 end
 
 def ask(string)
@@ -86,23 +86,23 @@ end
 
 def menu_login
   puts
-  username = ask('Please enter your username:')
+  $username = ask('Please enter your username:')
   password = ask('Please enter your password:')
   case $user_type
   when "person"
-    if $persons.has_key?(username) == true
-      $user_status = 'logged_in' if $persons[username]['password'] == password
+    if $persons.has_key?($username) == true
+      $user_status = 'logged_in' if $persons[$username].password == password
     end
   when "animal_shelter"
-    if $shelters.has_key?(username) == true
-      $user_status = 'logged_in' if $shelters[username]['password'] == password
+    if $shelters.has_key?($username) == true
+      $user_status = 'logged_in' if $shelters[$username].password == password
     end
   end
 end
 
-$shelters = Hash.new
-$persons = Hash.new
-$animals = Hash.new
+$shelters = load_dump( 'shelters.dump' )
+$persons = load_dump( 'persons.dump' )
+$animals = load_dump( 'animals.dump' )
 
 def menu_main
   user_input = ask(MAIN_MENU)
@@ -126,9 +126,9 @@ def menu_main
     puts CREATE_ANIMAL_MENU_4
     species = gets.chomp
     if $user_type == "person"
-      $persons[username].pets << Animal.new(name, age, gender, species)
+      $persons[$username].add_animal(Animal.new(name, age, gender, species))
     elsif $user_type == "animal_shelter"
-      $shelters[username].add_animal(Animal.new(name, age, gender, species))
+      $shelters[$username].add_animal(Animal.new(name, age, gender, species))
     end
     puts
     puts "Animal added."
@@ -180,8 +180,8 @@ while true
 
 end
 
-# write_json_file( $persons, 'persons_db.json')
-# write_json_file( $animals, 'animals_db.json')
-# write_json_file( $shelters, 'shelters_db.json')
+take_a_dump( $persons, 'persons.dump')
+take_a_dump( $animals, 'animals.dump')
+take_a_dump( $shelters, 'shelters.dump')
 
 puts "bye"
