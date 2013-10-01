@@ -7,7 +7,8 @@ require 'rainbow'
 require_relative 'animal'
 require_relative 'person'
 require_relative 'shelter'
-
+ANIMALS = {}
+PEOPLE = {}
 
 s1 = Shelter.new("Happy Tails")
 puts "First please create people and animals.".foreground(:red)
@@ -32,10 +33,10 @@ Exit [x]".foreground(:yellow)
 input = gets.chomp!
 answer = case input
            when 'da'
-            puts s1.list_animals_string
+            puts s1.list_animals_info
             start(s1)
            when 'dp'
-            puts s1.list_people_string
+            puts s1.list_people_info
             start(s1)
            when 'ca'
             Animal.new(s1)
@@ -46,16 +47,20 @@ answer = case input
            when 'a'
             puts "Which person?".foreground(:blue)
             person = gets.chomp
+            person = PEOPLE[person]
             puts "Which animal?".foreground(:blue)
             pet = gets.chomp
+            pet = ANIMALS[pet]
             puts person.adopt_pet(pet)
             start(s1)
           when 'pu'
             puts "Which person?".foreground(:blue)
             person = gets.chomp
+            person = PEOPLE[person]
             puts "Which animal?".foreground(:blue)
             pet = gets.chomp
-            puts person.giveup_pet(pet)
+            pet = ANIMALS[pet]
+            puts person.give_up_pet(pet)
             start(s1)
           when 'x'
             puts "Goodbye!".foreground(:red)
@@ -69,3 +74,12 @@ start(s1)
 
 
 binding.pry
+
+#USERS = { }
+#u1 = User.new("friendjonathan")
+#u2 = User.new("Kira")
+#then in the user.rb file for the class
+#  def initialize(username)
+#    @username = username
+#    USERS[self.username] = self
+#  end
