@@ -18,7 +18,7 @@ class Person
   end
 
   def put_up_for_adoption(animal, shelter)
-    @pets.delete
+    @pets.delete(animal)
     shelter.add_animal(animal)
   end
 
