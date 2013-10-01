@@ -58,23 +58,40 @@ def router(menu_selection, shelter)
   case menu_selection
     when 'animals'
       shelter.display_animals
+      binding.pry
 
     when 'persons'
       shelter.display_persons
 
     when 'give'
-      ask("What is your pets name")
-
+      pet_name = ask("What is your pets name")
+      pet_age = ask("What is your pets age?")
+      pet_gender = ask("What is your pets gender?")
+      pet_species = ask("What is your pets species")
+      shelter.accept_new_animal(pet_name, pet_age, pet_gender, pet_species)
+      binding.pry
 
     when 'apply'
+      person_name = ask("What is your name")
+      person_age = ask("What is your age?")
+      person_num_children = ask("How many chilldren do you have?")
+      person_num_pets = ask("How many pets do you have?")
+      shelter.accept_new_person(person_name, person_age, person_num_children, person_num_pets)
+      #binding.pry
 
     when 'adopt'
+      available_pets = shelter.display_animals
+      person_name = ask("What is your name?")
+      pet_chosen = ask("#{person_name} choose from the following pets #{available_pets}")
+      shelter.adopt_animal(person_name, pet_chosen)
+
 
 
     else
         puts "I'm sorry I don't know what you're asking for"
         puts "Please wait and a supervisor will be with you shortly"
         puts "Feel free to again"
+        prompt(shelter_one)
 
     end
 end

@@ -14,11 +14,12 @@ class Shelter
 # did not include person as a parameter
 # assumes animals can be given up for adoption without asking the
 # owner for personal information
-  def put_animal_up_for_adoption(animal)
-    #person.num_pets -= 1
-    @animals.push(animal)
-  end
+  # def put_animal_up_for_adoption(animal)
+  #   #person.num_pets -= 1
+  #   @animals.push(animal)
+  # end
 
+# same as put_animal up for adoption
   def accept_new_animal(name, age, gender, species)
     a = Animal.new
     a.name = name
@@ -27,6 +28,19 @@ class Shelter
     a.species = species
     @animals.push(a)
   end
+
+  def accept_new_person(name, age, num_children, num_pets)
+    p = Person.new
+    p.name = name
+    p.age = age
+    p.num_children = num_children
+    p.num_pets = num_pets
+    @persons.push(p)
+  end
+
+
+
+
 
 #should refactor display_persons and display_animals
 
@@ -43,7 +57,7 @@ class Shelter
 def display_animals
   animal_names = []
   animals.each { |animal| animal_names << animal.name}
-  puts "The following animals could be yours today! #{animal_names}"
+  "The following animals could be yours today! #{animal_names}"
 
 end
 
