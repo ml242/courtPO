@@ -1,7 +1,5 @@
 class Shelter
-<<<<<<< HEAD
 
-=======
   attr_accessor :name
 
   def initialize(name)
@@ -43,5 +41,4 @@ class Shelter
     People: #{list_people_string}
     Animals: #{list_animals_string}"
   end
->>>>>>> development
 end

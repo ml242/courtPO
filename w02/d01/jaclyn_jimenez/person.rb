@@ -1,6 +1,5 @@
 class Person
-<<<<<<< HEAD
-=======
+
   attr_accessor :name, :age, :number_of_children
 
   def initialize(shelter)
@@ -41,6 +40,5 @@ class Person
   def person_info
       "#{@name} is #{@age} years old and has #{number_of_pets.to_s}... #{my_pets_string}"
   end
->>>>>>> development
 
 end

@@ -1,6 +1,5 @@
 class Animal
-<<<<<<< HEAD
-=======
+
   attr_accessor :name, :age, :sex, :species, :toys, :shelter
 
   def initialize(shelter)
@@ -32,6 +31,5 @@ class Animal
   def animal_info
     "#{@name} is a #{@age} year old #{@sex}and is a #{@species}."
   end
->>>>>>> development
 
 end
