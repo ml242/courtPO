@@ -1,12 +1,12 @@
 class Animal
-  attr_accessor :name, :age, :gender, :species, :toys
+  attr_accessor :name, :age, :gender, :species, :toys, :shelter
 
   def initialize(name, age, gender, species)
     @name = name #string
     @age = age #integer
     @gender = gender #string
     @species = species #string
-    $animals << self
+    $animals[name] = self
   end
 
   def add_toy(toy)
