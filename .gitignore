@@ -27,7 +27,4 @@ thumbs.db
 # Ignore all logfiles and tempfiles.
 *.log
 /tmp
-
-# Ignore cohort directory function
-util/*
-roster.txt
+.swp

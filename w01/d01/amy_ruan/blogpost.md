@@ -1,13 +1,11 @@
-# Passion / Support / Freethink
+#Passion / Support / Free-think
 
-These values are important because it fosters an open environment for teamwork and learning. If individuals are passionate and supportive, everyone will push to do their best and help their teammates reach their potential as well. If freethink is promoted in the group, then individuals and teams will be comfortable with sharing different and new opinions and ideas. 
+These traits will foster an environment conducive to learning and growth. If individuals are passionate and supportive, everyone will work hard and help their teammmates reach their potential. If a community promotes free-thinking, then individuals and team will be open to sharing divergent and interesting opinions/ideas. 
 
-When the learning curve steepens, I have to remind myself daily why I decide to leave my comfort zone and do this course. I will try every weekend to organize my notes and share it with anyone who might be interested. I will encourage others to recap their notes on a weekly basis and share it with the team as well.  
+When the learning curve steepens, I have to remind myself to the reasons why I decided to leave my comfort zone and embark on this journey. I will organize my notes on a weekly basis and provide it to any family member who might want to share/view it for references. I will also try to encourage fellow family members to do the same. 
 
+#Embrace and learn from your failures or mistakes. 
 
-# Embrace and learn from your failures and mistakes
+The most important takeaway in the "growth-mindset" is to embrace and learn from your mistakes or failures. "Potential" is not measured by the initial efforts or failed attempts. It is measured by your willingness to go after challenges that will help you grow. I've been stuck in the "fixed mindset" for a very long time professionally and academically. I feared failures and avoided most things that I was not understand. I am still in progress with my conversion! 
 
-The most important idea from her "growth-mindset" concept is to embrace and learn from your failures and mistakes. "Potential" should not be measured by our initial effort levevl of failures. We should focus on challenges and work hard to overcome it, instead of just skipping over our failures and moving on to subjects/tasks that are easiest to us. We should always focus on our learning path and take on challenges to help us grow. Throughout most of my academic/professional career, I feel that I was stuck in a "fixed-mindset" because I feared risks and tried to minimize time spent on things that did not come "naturally" to me. I am still working in the process of working on that attitude!
-
-In order to help foster a community that embraces and learn from mistakes, I have to make sure I carry an optimistic and open attitude. If I don't understand a concept, I need to proactively find help and share my concerns. If I understand something well that my team members do not, I have to take the time to share, help and encourage them. 
-
+In order to help foster an environment that is open to embracing failures, I have to make sure I have an optimistic and open attitude. If I need help, I need to get over myself and ask more questions. I have to also take time to be aware of my fellow family members progress and help them if I am capable of it! 
