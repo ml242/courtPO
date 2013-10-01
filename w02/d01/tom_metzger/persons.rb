@@ -13,8 +13,8 @@ class Person
     @number_of_pets = @pets.length
   end
 
-  def number_of_pets
-    @pets.length
+  def number_of_pets(person)
+    person.pets.length
   end
 
 end
