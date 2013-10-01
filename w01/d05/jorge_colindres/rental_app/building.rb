@@ -13,8 +13,6 @@ class Building
     @has_doorman = false
     @num_floors = 0
     @apartments = {}
-    @available_apartments = 0
-    @people_counted = 0
   end
 
   def give_elevator
@@ -33,12 +31,14 @@ class Building
     @has_doorman
   end
 
-  def add_apartment(apartment_id, apartment_info)
-    @apartments[apartment_id] = apartment_info
+  def add_apartment(apartment)
+    @apartments[apartment.apartment_id.to_sym] = apartment.get_apartment_info
     @num_floors = (@apartments.keys.length / @apartments_per_floor.to_f).ceil
+    apartment.building = self
   end
 
   def count_people
+    @people_counted = 0
     people_in_apts = []
     @apartments.each_value do |apartment|
       if apartment[:renters].length > 0
@@ -52,6 +52,7 @@ class Building
   end
 
   def count_apartments_available
+    @available_apartments = 0
     @apartments.each_value do |apartment|
       if apartment[:is_occupied] == false
         @available_apartments += 1
