@@ -12,15 +12,4 @@ class Person
     @age = age
     @pets = {}
   end
-
-  def create_person(name, number_of_children, age)
-    create_person = Person.new(name, number_of_children, age)
-    @persons[name] = new_person
-  end
-
-  def display_persons
-    @persons.each_value do |v|
-    p v
-  end
-
 end

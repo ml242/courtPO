@@ -14,14 +14,4 @@ class Animal
     @gender = gender
     @species = species
   end
-
-  def create_animal(name, age, gender, species)
-    create_animal = Animal.new(name, age, gender, species)
-    @animals[name] = new_animal
-  end
-
-  def display_animals
-    @animals.each_value do |v|
-      p v
-  end
 end

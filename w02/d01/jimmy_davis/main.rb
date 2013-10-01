@@ -24,19 +24,16 @@ while true
 
 INSTRUCTIONS = "
 To display all animals, type: > display_animals
-
 To display all persons, type: > display_persons
-
 To create an animal, type: > create_animal
-
 To create a person, type: > create_person
 "
 
   input = ask(INSTRUCTIONS)
-  choice = input.downcase.gets.chomp!
+  user_choice = gets.chomp!
 
 
-  case choice
+case user_choice
   when "display_animals" then happitails.display_animals
   when "display_persons" then happitails.display_persons
   when "create_animal"
@@ -59,24 +56,24 @@ To create a person, type: > create_person
     happitails.new_person(name, number_of_children, age)
   else "ERROR! Please choose again."
   end
- end
+end
 
 
-p1 = Person.new("Barbara", 4, 55)
-p2 = Person.new("Patty", 5, 50)
-p3 = Person.new("Kathleen", 5, 48)
+# p1 = Person.new("Barbara", 4, 55)
+# p2 = Person.new("Patty", 5, 50)
+# p3 = Person.new("Kathleen", 5, 48)
 
-a1 = Animal.new("Sasha", 7, "f", "dog")
-a2 = Animal.new("Deuce", 8, "m", "dog")
-a3 = Animal.new("Lucky", 10, "f", "cat")
-a4 = Animal.new("Brody", 4, "m", "dog")
-a5 = Animal.new("Penny", 12, "f", "dog")
-a6 = Animal.new("Buddy", 2, "m", "dog")
-a7 = Animal.new("Dusty", 2, "f", "dog")
-a8 = Animal.new("Buster", 1, "m", "cat")
+# a1 = Animal.new("Sasha", 7, "f", "dog")
+# a2 = Animal.new("Deuce", 8, "m", "dog")
+# a3 = Animal.new("Lucky", 10, "f", "cat")
+# a4 = Animal.new("Brody", 4, "m", "dog")
+# a5 = Animal.new("Penny", 12, "f", "dog")
+# a6 = Animal.new("Buddy", 2, "m", "dog")
+# a7 = Animal.new("Dusty", 2, "f", "dog")
+# a8 = Animal.new("Buster", 1, "m", "cat")
 
-p1.number_of_pets = [a1, a2, a3]
+# p1.number_of_pets = [a1, a2, a3]
 
-p2.number_of_pets = [a4]
+# p2.number_of_pets = [a4]
 
-p3.number_of_pets = [a5, a6]
+# p3.number_of_pets = [a5, a6]
