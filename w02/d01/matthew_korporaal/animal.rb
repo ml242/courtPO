@@ -15,10 +15,9 @@ class Animal
   end
   #   to_s method is called to pretty print an Animal
   def to_s
-    puts "My name is #{name}."
-    puts "I am #{age} years old."
-    puts "I am a #{gender} #{species}."
-    puts "I have a master and I love them." if @has_owner
-    puts "I am an orphan, will you be my master?" if !@has_owner
+    #binding.pry
+    puts "Name: #{name} Age: #{age} years Gender: #{gender} Type: #{species}.".color("E80C9B")
+    puts "I have a master and I love them.".color("E80C9B") if @has_owner
+    puts "I am orphan, I want master.".color("E80C9B") if !@has_owner
   end
 end
