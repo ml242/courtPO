@@ -1,8 +1,5 @@
-# Later: An animal can have multiple toys
-# define a method 'add_toy'
-
 class Animal
-  attr_accessor :name, :age, :sex, :species
+  attr_accessor :name, :age, :sex, :species, :toys
 
   def initialize(name, age, sex, species)
     @name = name
@@ -10,6 +7,7 @@ class Animal
     @sex = sex
     @species = species
     @adopted = false
+    @toys = []
   end
 
   def is_adopted(owner)

@@ -17,4 +17,8 @@ class Person
     @my_pets.last.set_adoption_status
   end
 
+  def number_of_pets
+    @my_pets.length
+  end
+
 end
