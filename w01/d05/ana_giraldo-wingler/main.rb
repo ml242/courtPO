@@ -44,9 +44,11 @@ p18 = Person.new
   p18.apartment = "a41"
 
 ####
+
 a11 = Apartment.new
   a11.renters = [p1, p2, p3]
   a11.building = "b1"
+
 a12 = Apartment.new
   a12.renters = [p4, p5, p6]
   a12.building = "b1"

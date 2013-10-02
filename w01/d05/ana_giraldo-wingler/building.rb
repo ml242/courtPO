@@ -17,17 +17,21 @@ def count_renters
   @apartments.each do |apt|
     total_renters += apt.renters.length
   end
-  return total_renters
+  total_renters
 end
 
 def count_apartments_available
   apartments_available = 0
     @apartments.each do |apt|
-       if !apt.is_occupied?
-        apartments_available += 1
+        # ! before a method is called a "not-operator"
+        # it checks if the method is NOT true, i.e., false
+        # can also do unless apt.is_occupied? (= true)
+        apartments_available += 1 if !apt.is_occupied?
+        # OR
+        # @apartments.map { |apt| apt.renters.size }.inject(:+)
       end
+    return apartments_available
     end
-  return apartments_available
 end
 
 def count_apartments_occupied
@@ -38,6 +42,4 @@ def count_apartments_occupied
     end
   end
   return apartments_occupied
-end
-
 end
