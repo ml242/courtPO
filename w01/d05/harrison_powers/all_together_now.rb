@@ -1,12 +1,13 @@
-load './person.rb'
-load './apartment.rb'
-load './building.rb'
-
 require 'Faker'
 require 'rainbow'
 require 'json'
 require 'pp'
 require 'pry'
+require 'table_print'
+
+require_relative 'person'
+require_relative 'apartment'
+require_relative 'building'
 
 MAIN_MENU = "
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -19,8 +20,11 @@ To generate buildings, press:
 To view real estate, press:
 > 2
 
+To inspect with pry, press:
+> 3
+
 To save and quit, press:
-> 0
+> Q
 
 "
 
@@ -114,7 +118,10 @@ def list_city(city)
 end
 
 def map_city(city)
- city.values.each do |x| x.show_building end
+  $map = nil
+  city.values.each do |x| x.show_building end
+  $map.values.each do |x| puts x end
+  #tp for table_print
 end
 
 simcity = {}
@@ -122,7 +129,7 @@ simcity = {}
 while true
   puts MAIN_MENU
   user_input = gets.chomp
-  break if user_input == "0"
+  break if user_input.downcase == "q"
   if user_input == "1"
     puts GENERATE_MENU_1
     user_input = gets.chomp
@@ -130,12 +137,15 @@ while true
     puts GENERATE_MENU_2
     user_input2 = gets.chomp
     simcity = populate_rand_bldgs(user_input.to_i, user_input2.to_i)
-    binding.pry
+    
   elsif user_input == "2"
     puts VIEW_MENU
     user_input = gets.chomp
     break if user_input == "0"
     puts list_city(simcity) if user_input == "1"
     puts map_city(simcity) if user_input == "2"
+
+  elsif user_input == "3"
+    binding.pry
   end
 end
