@@ -19,12 +19,22 @@ p {
   display: inline-block;
 }
 
-.date {
-  color: #20222a;
+h3 {
+  font-family: Times New Roman, serif;
+  color: #656565;
+}
+
+span {
+  color: #3399FF;
+}
+
+.brooklyn {
+  margin: 20px;
 }
 
 .footer {
   display: inline-block;
+  border: 6px solid #C8C8C8;
 }
 
 #wrapper {
