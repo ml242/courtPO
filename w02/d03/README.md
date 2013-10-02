@@ -1,3 +1,7 @@
+# Hackathons
+
+[http://musichackday.org/](http://musichackday.org/)
+
 # Jobs!
 
 Let me know if you're interested [in the following jobs](https://docs.google.com/document/d/1QF-lhomIdL7jdWWz96xeHGY6j8P4cWvSMMUScIg6TRo/edit).
