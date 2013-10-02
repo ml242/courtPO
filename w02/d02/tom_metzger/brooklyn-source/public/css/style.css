@@ -55,8 +55,9 @@ a{
     line-height: 0
 }
 
-.border{
+.border_block{
   border: 1px solid white;
+  display: block;
 }
 
 .logo_container{
@@ -81,5 +82,4 @@ a{
 .zero_margin{
   margin: 0px;
 }
-
 
