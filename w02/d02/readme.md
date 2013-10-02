@@ -19,7 +19,7 @@ Build a Sinatra App for the MTA
 - `localhost:4567/plan` displays an unordered list (HTML `ul` and `li` elements) of all train lines
    - Each train line in this list is a link (`a` tag)
    - if you click on a train line link, you'll go to `localhost:4567/plan/[LINE]` and then see all of the stops on that line
-   - **example:** when you click the L line, you'll be taken to /journey/l_train and see all of the L train's stops
+   - **example:** when you click the L line, you'll be taken to /plan/l_train and see all of the L train's stops
 
  - **Style it with CSS!**
 
