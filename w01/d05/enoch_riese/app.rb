@@ -1,0 +1,5 @@
+require_relative 'rental_app_building.rb'
+require_relative 'rental_app_person.rb'
+require_relative 'rental_app_apartment.rb'
+require_relative 'rental_app.rb'
+require 'pry'

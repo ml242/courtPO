@@ -3,8 +3,8 @@ require 'pry-nav'
 require 'pry-remote'
 
 class Apartment
-  attr_accessor :apartment_id, :sqft, :num_bedrooms, :num_baths, :renters
-  attr_reader :price
+  attr_accessor :apartment_id, :sqft, :num_bedrooms, :num_baths, :building
+  attr_reader :price, :renters
 
   def initialize(apartment_id, sqft, num_bedrooms, num_baths)
     @apartment_id = apartment_id
@@ -21,6 +21,7 @@ class Apartment
     renters.each do |renter|
       @renters << renter.name
       @renter_genders << renter.gender
+      renter.apartment = self.apartment_id
     end
     @renters
   end

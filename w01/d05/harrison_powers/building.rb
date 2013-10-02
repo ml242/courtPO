@@ -1,5 +1,5 @@
 class Building
-	attr_accessor :address, :has_doorman, :is_walkup, :num_floors, :apartments
+	attr_accessor :address, :has_doorman, :is_walkup, :num_floors, :apartments, :map
 
   @count = 0
   class << self
@@ -23,7 +23,7 @@ class Building
 
   def count_renters
     i = 0
-    @apartments.each do |x, y| y.each do |z| i += 1 if z.is_occupied? == true end end
+    @apartments.each do |x, y| y.each do |z| i += z.renters.count if z.is_occupied? == true end end
     i
   end
 
@@ -35,7 +35,7 @@ class Building
 
   def list_renters
     i = Hash.new { |x,y| x[y] = [] }
-    @apartments.each do |x, y| y.each do |z| i[z.number] << z.renter.name if z.is_occupied? == true end end
+    @apartments.each do |x, y| y.each do |z| i[z.number] << z.renters.join(", ") if z.is_occupied? == true end end
     i
   end
 
@@ -46,14 +46,17 @@ class Building
   end
 
   def show_building
+    $map ||= Array.new
+    @map_item = ''
     num_3_floors = self.num_floors / 3
-    puts "--------".color('ff00ff')
+    @map_item += "'--------'.color('ff00ff')\n"
     num_3_floors.times do
-      puts "|[]  []|".color('ff0000')
-      puts "|[]  []|".color('00ff00')
-      puts "|[]  []|".color('ff00ff')
+      @map_item += "'|[]  []|'.color('ff0000')\n"
+      @map_item += "'|[]  []|'.color('00ff00')\n"
+      @map_item += "'|[]  []|'.color('ff00ff')\n"
     end
-    puts "|  {}  |".color('f0f0f0')
-    puts "| _-_  |".color('ffff00')
+    @map_item += "'|  {}  |'.color('f0f0f0')\n"
+    @map_item += "'| _-_  |'.color('ffff00')\n\n"
+    $map[self.address] = @map_item
   end
 end
