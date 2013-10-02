@@ -1,0 +1,54 @@
+/* 
+
+## Style Hints: 
+
+Body Font Size = 12px
+	 Line Height = 17px
+	 Font Family = "Times New Roman", serif
+	 Font Color = #656565
+
+Link Hover Color = #20222a
+
+*/
+
+body {
+line-height: 17px;
+font-family: "Times New Roman", serif;
+color: rgb(153, 153, 153);
+}
+
+
+a { color: rgb(78, 154, 203); }
+a:hover { color: #20222a; }
+p { font-size: 13px; line-height: 1.75;}
+p.blue { color: rgb(78, 154, 203); line-height: 1;}
+
+
+#container { margin: 20px auto; width: 1000px; }
+#main_content { margin: 0 20px; }
+
+
+.big_pic {
+background-position: left;
+background-repeat: no-repeat;
+width: 960px;
+height: 500px;
+
+}
+#big_pic_1 { background-image: url(../images/home-bloghero.png); }
+#big_pic_2 { margin-top: 5px; background-image: url(../images/home-rings.png); }
+
+
+.credibility {
+background-position: center;
+background-repeat: no-repeat;
+width: 226px;
+height: 145px;
+float: left;
+border: 4px solid rgb(204, 204, 204);
+margin: 5px 5px 5px 0;
+}
+#credibility_1 { background-image: url(../images/press-nbcnewyork.gif); }
+#credibility_2 { background-image: url(../images/press-huffpost.gif); }
+#credibility_3 { background-image: url(../images/press-logo_lucky.gif); }
+#credibility_4 { background-image: url(../images/press-marieclaire.gif); }

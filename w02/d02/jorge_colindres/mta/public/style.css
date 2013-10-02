@@ -1,0 +1,21 @@
+body {
+  text-transform: capitalize;
+  text-align: center;
+  font-family: sans-serif;
+  background-color: DarkSlateGrey;
+  color: white;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+ul {
+  padding: 0;
+}
+ul li {
+  display: inline;
+  padding: 0 10px;
+}
