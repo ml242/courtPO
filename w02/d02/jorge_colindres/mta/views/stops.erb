@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MTA Subway Lines</title>
+</head>
+<body>
+  <h1>This line stops at:</h1>
+  <ul>
+    <% @stops.each do |stop| %>
+      <li><%= stop %></li>
+    <% end %>
+  </ul>
+  <a href="/plan">Go Back</a>
+</body>
+</html>
