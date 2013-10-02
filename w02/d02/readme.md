@@ -26,7 +26,7 @@ Build a Sinatra App for the MTA
 ###Bonus: Journey planner
 Add more stops to your MTA hash, and using query string parameters, give commuters a way to plan out a journey.
 
- Navigating to `localhost:4567/journey?`start_train`=g_train&`stop1`=nassau&`end_train`=l_train&`stop2`=bedford` should display the total number of train stops that will occur in the journey
+ Navigating to `localhost:4567/journey?start_train=g_train&stop1=nassau&end_train=l_train&stop2=bedford` should display the total number of train stops that will occur in the journey
 
 
 ---
