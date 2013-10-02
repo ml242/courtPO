@@ -22,6 +22,7 @@ p {
 h3 {
   font-family: Times New Roman, serif;
   color: #656565;
+  margin: 10px 0 0 0;
 }
 
 span {
@@ -34,10 +35,11 @@ span {
 
 .footer {
   display: inline-block;
-  border: 6px solid #C8C8C8;
+  border: 4px solid rgba(198, 198, 198, 1);
+  margin: 0 auto;
 }
 
-#wrapper {
+#container {
   width: 1000px;
   margin: 0 auto;
 }
