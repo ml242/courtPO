@@ -26,19 +26,25 @@ Developer @GA in NYC
 	clear: both;
 }
 
-.body {
+body {
      background-color: #d6d6d6;
-     color: #000000;
+     margin: 0 auto;
 }
 
-a:link {
-     color: #cc6633;
-}
 
 .masthead {
-     height: 70px;
+     height: 200px;
      background: url(../images/background.jpg);
+     background-size: 20%;
      background-repeat: repeat-x;
+}
+
+.masthead img {
+     display: block;
+     height: 130px;
+     padding-top: 10px;
+     margin-left: auto;
+     margin-right: auto;
 }
 
 .container {
