@@ -1,15 +1,31 @@
 require 'sinatra'
 require 'sinatra/reloader' if development?
 
-MTA = {
-  :l_train => ['bedford', '1st ave'],
-  :g_train => ['greenpoint', 'nassau'],
-  :n_train => ['canal', '8th']
-}
 
-get "/plan" do
 
-end
+
+
+
+
+
+#commented out..
+
+
+# MTA = {
+#   :ltrain => ["8th_l", "6th", "union_square", "3rd", "1st"],
+#   :gtrain => ["greenpoint", "nassau", "metropolitan", "broadway"],
+#   :ntrain => ["times square", "34th", "28th_n", "23rd_n", "union square", "8th_n"],
+#   :6line => ["grand central", "33rd", "28th_6", "23rd_6", "union square", "astor place"]
+# }
+
+
+
+# get "plan.html?:start_train&:stop1&:stop2" do
+#   first_stop = MTA[:start_train].index(:stop1)
+#   second_stop = MTA[:start_train].index(:stop2)
+#   ans = first_stop - second_stop
+#   puts ans.to_s
+# end
 
 # def number_of_stops(stop1, stop2)   #this method calculates number of stops for stops on the same line.
 #   answer = stop1 - stop2
