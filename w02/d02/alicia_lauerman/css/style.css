@@ -1,0 +1,69 @@
+/* Global Styles */
+
+body {
+	background: #F3EBE9;
+	font-size: 14px;
+	line-height: 1.6;
+	font-family: "Times New Roman", serif;
+	color:#656565;
+}
+
+p  {
+	margin: 0 0 20px 0px;
+}
+
+a {
+	text-decoration:none;
+}
+
+/* Sections */
+
+#logo {
+	margin: 15px 0 10px;
+}
+
+.container {
+	width: 960px;
+	margin: 0 auto;
+	padding: 20px;
+	background: #FFF;
+}
+
+.page-footer {
+	padding: 15px 0;
+}
+
+/* Post */
+
+.post > header h1 {
+	font-size: 21px;
+	margin: 5px 0;
+}
+
+.post a, .post .post-pubdate {
+	color: #1783bb;
+}
+
+.post a:hover {
+	color: #000;
+}
+
+.post .post-pubdate {
+	font-size: 13px;
+}
+
+/* Press */
+
+.presslogo {
+	display: inline;
+}
+
+.presslogo img {
+	border: 5px #CCC solid;
+	padding: 1px;
+}
+
+.presslogo img:hover {
+	border-color: #656565;
+	transition: border .4s ease-in-out;
+}

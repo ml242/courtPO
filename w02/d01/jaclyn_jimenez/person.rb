@@ -9,12 +9,13 @@ class Person
     @age = gets.chomp
     @my_pets = []
     @my_pets_string = []
-    shelter.add_person(self)
+    #shelter.add_person(self)
+    PEOPLE[self.name] = self
   end
 
   def adopt_pet(pet)
-    @my_pets << pet
-    @my_pets.last.set_adoption_status
+    @my_pets << pet.name
+    pet.set_adoption_status
   end
 
   def number_of_pets
@@ -22,23 +23,20 @@ class Person
   end
 
   def give_up_pet(pet)
-    if @my_pets.include?(pet)
+    if @my_pets.include?(pet.name)
       pet.reset_adoption_status
-      @my_pets.delete(pet)
+      @my_pets.delete(pet.name)
     else
       "This person does not have #{pet} as one of their pets."
     end
   end
 
   def pets_list_string
-    @my_pets.each do |pet|
-      @my_pets_string << pet.name
-    end
-    @my_pets_string.join ", "
+    @my_pets.join ", "
   end
 
   def person_info
-      "#{@name} is #{@age} years old and has #{number_of_pets.to_s}... #{my_pets_string}"
+      puts "#{@name} is #{@age} years old and has #{number_of_pets} pets... #{pets_list_string}"
   end
 
 end

@@ -6,10 +6,15 @@ class Building
 		@has_doorman = true
 		@is_walkup = false
 		@num_floors = num_floors
-		@apartments = {} 
+		@apartments = {}
+		#  @apartments = {
+			:floor1 => {
+				:1b => ['jim', 'jen']
+			}
+		}
 	end 
 
-	def add_apt( floor, array)
+	def add_apt(floor, array)
 		@apartments[floor] = {}
 		i = 0
 		while i < array.count

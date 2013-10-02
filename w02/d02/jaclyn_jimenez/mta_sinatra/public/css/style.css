@@ -1,0 +1,42 @@
+body {
+  background-color: #FFB964;
+  color: #FFFFCC;
+  max-width: 800px;
+  font-family: 'Pathway Gothic One', sans-serif;
+  margin: auto;
+  padding: auto;
+  text-align: center;
+}
+
+h1 {
+  padding: 30px 0px 0px 0px;
+  margin: auto 0;
+  font-family: 'Indie Flower', cursive;
+  font-size: 50px;
+  color: #0A467E;
+}
+
+li {
+  display: inline-block;
+}
+li a {
+  background-color: #6EB9FF;
+  padding: 12px;
+  margin: 15px;
+  border-radius: 10px;
+  border: 3px solid #FFFFCC;
+  color: #FFFFCC;
+  text-decoration: none;
+  font-size: 26px;
+}
+
+p {
+  margin: auto;
+  padding: 30px;
+  font-size: 32px;
+}
+
+a:hover {
+border: 3px solid #0A467E;
+color: #0A467E;
+}
