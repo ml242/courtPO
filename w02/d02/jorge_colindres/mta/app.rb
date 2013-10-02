@@ -5,9 +5,9 @@ MTA = { :l_train => ['bedford', '1st ave'], :g_train => ['greenpoint', 'nassau']
 
 
 get '/plan' do
-  @l_train = MTA.keys[0]
-  @g_train = MTA.keys[1]
-  @n_train = MTA.keys[2]
+  @l_train = MTA.keys[0].to_s.sub("_", " ")
+  @g_train = MTA.keys[1].to_s.sub("_", " ")
+  @n_train = MTA.keys[2].to_s.sub("_", " ")
   erb :plan
 end
 
