@@ -18,6 +18,11 @@ h1 {
 }
 
 .stops {
-  padding: 20px;
+  border: 4px solid white;
+  color: white;
+  border-radius: 4px;
   display: block;
+  background-color: black;
+  padding: 20px;
+  margin: 10px 500px;
 }

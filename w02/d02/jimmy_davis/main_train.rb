@@ -5,6 +5,10 @@ require 'sinatra/reloader' if development?
 # MTA = { :l_train => ['bedford', '1st ave'], :g_train => ['greenpoint', 'nassau'], :n_train => ['canal', '8th'], }
 # the keys are train lines. the values are arrays of station name strings
 
+get '/' do
+
+end
+
 MTA = {
   :l_train => ['bedford', '1st ave'],
   :g_train => ['greenpoint', 'nassau'],
