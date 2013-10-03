@@ -1,7 +1,7 @@
 def game(input1, input2)
   if input1 == input2
     outcome = "It's a tie!"
-  if input1 == "rock"
+  elsif input1 == "rock"
     if input2 == "paper"
       outcome = "Paper covers rock. You lose!"
     elsif input2 == "scissors"
