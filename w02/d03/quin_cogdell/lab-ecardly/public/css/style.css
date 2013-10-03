@@ -59,19 +59,14 @@ a:link, span {
 
 }
 
-
-
 .logo {
-     max-height: 100px;
-     max-width: 100px;
+     max-height: 200px;
+     max-width: 150px;
      display: block;
      margin: 0 auto;
      position: absolute;
-     top: 0;
-     text-align: center;
-
-
-
+     top: 30px;
+     left: 650px;
 }
 
 .container section, aside {
