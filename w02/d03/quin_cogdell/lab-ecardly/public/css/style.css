@@ -26,13 +26,17 @@ Developer @GA in NYC
 	clear: both;
 }
 
+/*need to change the hyperlinks*/
+
+
+
 body {
      background-color: #d6d6d6;
      color: #000000;
 
 }
 
-a:link {
+a:link, span {
      color: #cc6633;
 }
 
@@ -41,6 +45,7 @@ a:link {
      margin: 0 auto;
      width: 1000px;
      height: 500px;
+
 }
 
 /*need to review how this works*/
@@ -53,11 +58,19 @@ a:link {
   height: 100px;
 
 }
+
+
+
 .logo {
      max-height: 100px;
      max-width: 100px;
      display: block;
      margin: 0 auto;
+     position: absolute;
+     top: 0;
+     text-align: center;
+
+
 
 }
 
@@ -75,19 +88,19 @@ a:link {
      width: 280px;
      float: right;
 }
-
+.sidedbar .ads {
+     text-align: center;
+}
 
 .foot {
      border-top: 1px dashed;
      border-bottom: 2px solid;
-
 }
 
 /*is padding really the only way to center this?*/
 footer {
      clear: both;
-     padding: 50px 400px;
-
+     text-align: center;
 }
 
 
