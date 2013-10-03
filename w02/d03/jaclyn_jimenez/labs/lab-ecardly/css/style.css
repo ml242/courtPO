@@ -30,6 +30,7 @@ body {
      color: #000000;
      font-family: "Helvetica", serif;
      font-size: 12px;
+     line-height: 20px;
 }
 
 header {
@@ -39,7 +40,7 @@ header {
      margin: 0 auto;
      position: relative;
      width: 0 auto;
-     top: 0;
+     padding: 15px 0 30px;
 }
 
 .logo {
@@ -69,6 +70,7 @@ ul {
      color: black;
      text-align: left;
      text-decoration: none;
+     font-weight: bold;
 }
 
 .side {
@@ -82,19 +84,40 @@ ul {
      text-decoration: none;
 }
 
+.side img {
+     padding: 10px 0 10px;
+}
+
 .post_info {
      border-top: 1px dotted black;
      border-bottom: 1px solid black;
-     padding: 10px;
+     padding: 7px;
      width: 600px;
 }
 
 article {
      padding-top: 25px;
+     padding-right: 10px;
 }
 
-a {
-     color: #cc6633;
+ a {
      text-decoration: none;
      font-weight: bold;
+}
+
+.blog a {
+     color: #cc6633;
+}
+
+footer {
+     height: 120px;
+     width: 400px;
+     position: relative;
+}
+
+footer img {
+     position: relative;
+     top: 40px;
+     left: 450px;
+
 }
