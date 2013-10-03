@@ -1,0 +1,177 @@
+/*
+Project Name: Ecard.ly
+Client: General Assembly
+Author: Alicia Lauerman | @tealtail
+Developer in Residence @GA in NYC
+Credit for Original Exercise: Christopher Castig | @castig
+*/
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+/*
+* Box-sizing: Border-box FTW
+* Apply a natural box layout model to all elements
+* http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+*/
+
+* {
+     -moz-box-sizing: border-box; /* Firexfox */
+     -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
+     box-sizing: border-box; /* IE */
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+ .clearfix:before,
+ .clearfix:after {
+     content: " "; /* 1 */
+     display: table; /* 2 */
+}
+
+.clearfix:after {
+     clear: both;
+}
+
+/*
+ * Header/Logo
+ */
+
+ /* Put the image on the <a> and not the <h1> itself so that the link works properly */
+.branding h1 > a {
+     display: block;
+     width: 216px;
+     height: 213px;
+     background: url('../images/logo.png');
+     margin: 0 auto;
+
+     /* Image Replacement Technique */
+     /* http://nicolasgallagher.com/another-css-image-replacement-technique/ */
+     font: 0/0 a;
+     text-shadow: none;
+     color: transparent;
+}
+
+.branding {
+     margin-bottom: 30px;
+}
+
+
+/* ==========================================================================
+   Base Ecardly Styles
+   ========================================================================== */
+
+   html {
+     background: url("../images/background.jpg") repeat-x #D6D6D6 fixed; /* add a fallback color of #d6d6d6 for everything the image doesn't cover, and keep it fixed */
+     font: 12px/1.7 sans-serif; /* Shorthand font declaration: font-size/line-height font-family*/
+     color: #000;
+}
+
+a {
+     color: #ff3300;
+     font-weight: bold;
+     text-decoration: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* ==========================================================================
+   Sections
+   ========================================================================== */
+
+   .container {
+     width: 940px;
+     margin: 0 auto;
+}
+
+.main {
+     width: 640px;
+}
+
+.secondary {
+     width: 280px;
+     margin-left: 20px;
+}
+
+.main, .secondary {
+     background: #fff;
+     float: left;
+     padding: 24px;
+}
+
+.social-links {
+     text-align: center;
+     padding: 20px;
+     margin-top: 10px;
+}
+.social-links a{
+     padding: 2px;
+}
+
+/* ==========================================================================
+   Elements/Modules
+   ========================================================================== */
+
+/*
+* Lists
+*/
+
+.list {
+     margin-bottom: 20px;
+}
+/* No bottom margin for the last .list element  */
+.list:last-child {
+     margin-bottom: 0;
+}
+
+.list h3 {
+     margin: 0;
+     text-transform: uppercase;
+}
+
+.list a {
+     color: #000;
+}
+
+.ad-list li {
+     margin: 20px 0;
+}
+
+/*
+* Posts
+*/
+.post {
+     margin-bottom: 30px;
+     border-bottom: 1px solid #000;
+}
+
+.post-header h1 {
+     font-size: 20px;
+     margin-bottom: 10px;
+}
+
+.post-body {
+     padding-bottom: 5px;
+}
+
+.post-body .download-link {
+     text-transform: uppercase;
+}
+
+.post-footer {
+     padding: 5px;
+     border-top: 1px dotted #000;
+}
