@@ -1,4 +1,4 @@
-require 'faker'
+ require 'faker'
 
 class MarketingDept
   def initialize()

@@ -47,6 +47,8 @@ end
 #===================================================
 get "/beverage_stock" do
 
+
+
     # Inside of this function, render an .erb template that you need to create inside of a 'views' folder
 
     @num_beverages = dist1.cellar.size.to_i# Here you need to create an instance variable '@num_beverages' based on the number of beverages currently in the distillery,
