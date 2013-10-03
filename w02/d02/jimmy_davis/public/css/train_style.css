@@ -1,0 +1,28 @@
+body {
+  background-color: #C0C0C0;
+  text-align: center;
+  font-family: Courier
+}
+
+h1 {
+  color: red;
+}
+
+.train {
+  border: 2px solid yellow;
+  border-radius: 4px;
+  display: block;
+  background-color: white;
+  padding: 20px;
+  margin: 10px 500px;
+}
+
+.stops {
+  border: 4px solid white;
+  color: white;
+  border-radius: 4px;
+  display: block;
+  background-color: black;
+  padding: 20px;
+  margin: 10px 500px;
+}

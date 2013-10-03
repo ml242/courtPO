@@ -12,7 +12,8 @@ class Animal
     puts "What species is the animal?"
     @species = gets.chomp
     @adopted = false
-    shelter.add_animal(self)
+    #shelter.add_animal(self)
+    ANIMALS[self.name] = self
   end
 
   def is_adopted(owner)
@@ -28,7 +29,11 @@ class Animal
   end
 
   def animal_info
-    "#{@name} is a #{@age} year old #{@sex}and is a #{@species}."
+    if @adopted == true
+      puts "#{@name} is a #{@age} year old #{@sex} and is a #{@species}. #{@name} is adopted."
+    else
+      puts "#{@name} is a #{@age} year old #{@sex} and is a #{@species}. #{@name} is not adopted."
+    end
   end
 
 end
