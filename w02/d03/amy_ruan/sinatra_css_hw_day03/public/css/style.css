@@ -1,0 +1,150 @@
+/*
+Project Name: Ecard.ly
+Client: General Assembly
+Author: Christopher Castig | @castig
+Developer @GA in NYC
+*/
+
+/* Box Model Hack */
+* {
+     -moz-box-sizing: border-box; /* Firexfox */
+     -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
+     box-sizing: border-box; /* IE */
+}
+
+body{
+     background-image:url('/images/background.jpg');
+     background-repeat:repeat-x;
+     background-color: rgb(220, 220, 220);
+}
+.container{
+     width:940px;
+     position: absolute;
+     left: 10%;
+     top: 60%;
+}
+
+.logo{
+     position: absolute;
+     right: 50%;
+     top: 3%;
+}
+
+.content{
+     position: relative;
+     width: 640px;
+     float: left;
+     background-color: white;
+     padding-left: 3%;
+     padding-right: 3%;
+     margin-bottom: 100px;
+}
+
+.sidebar {
+     position: relative;
+     width: 280px;
+     float: right;
+     background-color: white;
+     padding-left: 3%;
+     padding-right: 3%;
+     padding-bottom: 60px;
+}
+
+footer {
+     position: absolute;
+     right: 50%;
+     top: 1550px;
+}
+
+section {
+     position: relative;
+     width: 100%;
+     padding-top: 3%;
+     padding-bottom: 3%;
+}
+
+section img{
+     position: relative;
+     width: 100%;
+}
+
+header {
+     font-family: Arial;
+     font-size: 20px;
+     font-weight: bold;
+     margin-top: 10px;
+     margin-bottom: 10px
+}
+
+article {
+     font-family: Arial;
+     font-size: 12px;
+     line-height: 16px;
+     letter-spacing: 0.5px;
+     padding-top: 10px;
+     padding-bottom: 10px;
+}
+
+.author_date{
+     border-top: dotted 1px black;
+     font-size: 12px;
+     line-height: 26px;
+     letter-spacing: 0.5px;
+     padding: 3px;
+     border-bottom: solid 1px black;
+     margin-bottom: 15px;
+}
+
+.highlight{
+     color: orange;
+     font-weight: bold;
+     font-size: 12px;
+}
+
+.archive {
+     position: relative;
+     right: 15%;
+}
+
+.blogroll {
+     position: relative;
+     right: 15%;
+}
+
+ul {
+     font-size: 12px;
+     font-weight: bolder;
+     line-height:16px;
+     position: relative;
+}
+
+li {
+     color: black;
+     list-style-type:none;
+}
+
+.links{
+     color:black;
+     text-decoration:none;
+}
+
+.imglinks {
+     margin-bottom: 15px;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+
+
