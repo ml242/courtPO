@@ -1,0 +1,132 @@
+/*
+Project Name: Ecard.ly
+Client: General Assembly
+Author: Christopher Castig | @castig
+Developer @GA in NYC
+*/
+
+/* Box Model Hack */
+* {
+     -moz-box-sizing: border-box; /* Firexfox */
+     -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
+     box-sizing: border-box; /* IE */
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+     clear: both;
+}
+
+body {
+     background-image: url(../images/background.jpg);
+     background-repeat: repeat-x;
+     background-color: #d6d6d6;
+}
+
+a {
+  color: #cc6633;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+h1.main {
+  width: 216px;
+  height: 213px;
+  background: url(../images/logo.png);
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h2 {
+      font-family: arial;
+      font-size: 20px;
+      margin-left: 20px;
+      margin-bottom: 0px;
+      padding-top: 15px;
+
+}
+
+h3.main {
+  width: 600px;
+  height: 400px;
+  background: url(../images/ecard-nycstartups.jpg);
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h4.main {
+  width: 600px;
+  height: 400px;
+  background: url(../images/ecard-courage.jpg);
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+}
+div.container {
+     width: 940px;
+     height: 500px;
+     margin-left: auto;
+     margin-right: auto;
+     padding-top: 20px;
+}
+
+div.main {
+     width: 640px;
+     display: inline-block;
+     float: left;
+     background-color: white;
+    padding-bottom: 50px;
+}
+
+div.guts {
+     width: 640px;
+     font-size: 12px;
+     line-height: 150%;
+     padding-left: 20px;
+     padding-right: 20px;
+     background-color: white;
+
+}
+
+div.side {
+  width: 280px;
+  clear: both;
+  float: right;
+  background-color: white;
+  font-family: arial;
+  font-size: 12px;
+  padding-left: 20px;
+  padding-bottom: 50px;
+  padding-top: 20px;
+  line-height: 150%;
+  font-weight: bold;
+}
+
+footer {
+  margin-right: auto;
+  margin-left: auto;
+  clear: left;
+  float: left;
+  padding-top: 30px;
+  padding-left: 350px;
+}
+
+
+
