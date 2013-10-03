@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+<%=
+brewery = ""
+$num_beers.times do
+  brewery += "<img src=\"../images/beer.jpg\">"
+end
+$num_beers -= 1
+brewery
+%>
+
+
+</body>
+</html>
+
+<% `say take one down, pass it around, #{$num_beers} bottles of beer on the wall.` %>
