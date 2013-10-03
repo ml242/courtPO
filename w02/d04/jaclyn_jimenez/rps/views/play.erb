@@ -1,0 +1,39 @@
+<h2>Choose! </h2>
+<p> Rock, Paper, or Scissors</p>
+<form>
+  <label> I choose: </label> <input type= "text" name = "input" placeholder="Rock, Paper, Scissors...">
+  <input type= "submit" value="Shoot!">
+</form>
+
+
+<%if @input.nil? || @input == "" %>
+<p> Good Luck! </p>
+<% else %>
+<%  if @enemy.include?(@input) %>
+<%    if @input == @enemy_choice %>
+        <p>It's a draw!</p>
+<%    elsif @input == 'rock' %>
+<%      if @enemy_choice == 'paper' %>
+          <p> <%=@lose%> </p>
+<%      else %>
+          <p> <%=@win%> </p>
+<%      end %>
+<%    elsif @input == 'paper' %>
+<%      if @enemy_choice == 'rock' %>
+          <p> <%=@win%> </p>
+<%      else %>
+          <p> <%=@lose%> </p>
+<%      end %>
+<%    else %>
+<%      if @enemy_choice == 'rock' %>
+          <p> <%=@lose%> </p>
+<%      else %>
+          <p> <%=@win%> </p>
+<%      end %>
+<%    end %>
+<%  else %>
+    <p>Sorry, I do not understand that input. Please play again.</p>
+  <% end %>
+<% end %>
+
+

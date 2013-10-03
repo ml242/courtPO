@@ -1,0 +1,24 @@
+/*colors:
+light blue #48D2FF
+pink #FF80A2
+mediumblue #0488B2
+light copper #CCC561
+darkcopper #B2A704*/
+
+h1 {
+  color: #FF80A2;
+}
+
+body {
+  background-color: #0488B2;
+}
+
+a {
+  text-decoration: none;
+  color: #FF80A2;
+  font-family: sans-serif;
+}
+
+a:hover {
+  color: #CCC561;
+}
