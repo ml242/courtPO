@@ -29,8 +29,6 @@ body {
      background-color: #d6d6d6;
      color: #000000;
      font-family: "Helvetica", serif;
-     font-size: 12px;
-     line-height: 20px;
 }
 
 header {
@@ -39,19 +37,31 @@ header {
      text-align: center;
      margin: 0 auto;
      position: relative;
-     width: 0 auto;
-     padding: 15px 0 30px;
+     height: 260px;
+}
+
+.replace {
+     text-indent: 100%;
+     white-space: nowrap;
+     overflow: hidden;
+     height: 213px;
+     background-size: contain;
 }
 
 .logo {
      margin: 0 auto;
-     z-index: -10;
+     background-image: url(../images/logo.png);
+     width: 216px;
+     heigth: 213px;
      position: relative;
+     top: -200px;
 }
 
 .container {
      width: 940px;
      margin: 0 auto;
+     line-height: 20px;
+     font-size: 12px;
 }
 
 h2 {
