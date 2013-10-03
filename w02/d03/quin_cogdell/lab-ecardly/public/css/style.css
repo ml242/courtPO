@@ -28,24 +28,13 @@ Developer @GA in NYC
 
 /*need to change the hyperlinks*/
 
-
-
 body {
      background-color: #d6d6d6;
      color: #000000;
-
 }
 
 a:link, span {
      color: #cc6633;
-}
-
-.container {
-     width: 940px;
-     margin: 0 auto;
-     width: 1000px;
-     height: 500px;
-
 }
 
 /*need to review how this works*/
@@ -55,8 +44,8 @@ a:link, span {
   text-indent: 100%;
   white-space: nowrap;
   overflow: hidden;
-  height: 100px;
-
+  height: 125px;
+  margin: 0 5px 75px 5px;
 }
 
 .logo {
@@ -65,8 +54,15 @@ a:link, span {
      display: block;
      margin: 0 auto;
      position: absolute;
-     top: 30px;
+     top: 10px;
      left: 650px;
+}
+
+.container {
+     width: 940px;
+     margin: 0 auto;
+     width: 1000px;
+     height: 500px;
 }
 
 .container section, aside {
@@ -76,14 +72,25 @@ a:link, span {
 .main {
      width: 640px;
      float: left;
-     padding: 50px 50px;
+     padding: 5px 10px;
+}
+
+.subsection {
+     margin: 0;
+}
+.ecard {
+     display: block;
+     max-width: 100%;
+     margin: 0;
 }
 
 .sidebar  {
      width: 280px;
      float: right;
+
 }
-.sidedbar .ads {
+
+.sidebar .ads {
      text-align: center;
 }
 
@@ -92,10 +99,11 @@ a:link, span {
      border-bottom: 2px solid;
 }
 
-/*is padding really the only way to center this?*/
 footer {
      clear: both;
      text-align: center;
+     position: relative;
+     top: 50px;
 }
 
 
