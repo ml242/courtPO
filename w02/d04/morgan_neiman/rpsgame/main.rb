@@ -8,8 +8,9 @@ get '/single_player' do
   erb :single_player
 end
 
+
 get '/result' do
-  @user_choice = params[:choice]
+  @user_choice = $user_choice
   @second_choice = params[:choice2]
   if @user_choice != nil
     @user_choice.downcase!
@@ -31,4 +32,9 @@ end
 
 get '/multi_player' do
   erb :multi_player
+end
+
+get '/multi_player2' do
+  $user_choice = params[:choice]
+  erb :multi_player2
 end
