@@ -12,7 +12,7 @@ Developer @GA in NYC
      box-sizing: border-box; /* IE */
 }
 
-body{
+body {
      background-image:url('/images/background.jpg');
      background-repeat:repeat-x;
      background-color: rgb(220, 220, 220);
@@ -21,7 +21,7 @@ body{
      width:940px;
      position: absolute;
      left: 10%;
-     top: 60%;
+     top: 40%;
 }
 
 .logo{
