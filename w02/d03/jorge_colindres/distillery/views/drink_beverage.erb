@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>New Beverage</title>
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <h4><%= @person_name %> just drank a beverage!</h4>
+  <img src="http://www.beer100.com/images/beermug.jpg">
+  <% if @bal > 0.91 %>
+    <p class="drunk"> Blood alcohol level: <%= @bal %></p>
+  <% elsif @bal > 0.46 %>
+    <p class="tipsy">Blood alcohol level: <%= @bal %></p>
+  <% else %>
+    <p class="buzzed">Blood alcohol level: <%= @bal %></p>
+  <% end %>
+  <a href="/">Go back</a>
+</body>
+</html>
