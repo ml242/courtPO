@@ -1,0 +1,17 @@
+#logo{
+padding-bottom:10px;
+}
+
+body{
+    width:980px;
+    padding-left:60px;
+}
+
+#container1{
+  padding:20px;
+}
+
+.bottom_img{
+border:4px solid gray;
+
+  }
