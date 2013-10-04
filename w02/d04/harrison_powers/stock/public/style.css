@@ -52,10 +52,12 @@ button
 footer
 {
   font-family: 'Nova Square', cursive;
-  font-size: 20px;
+  font-size: 30px;
   color: #703030;
-  margin-top: 25px;
   text-align: right;
+  position: relative;
+  top: -45px;
+  margin: 0 30px 0 0;
 }
 
 .container {
