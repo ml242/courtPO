@@ -7,7 +7,6 @@
 - Move to your local `WDI_NYC_Hash_Work` folder
 - Pull from the upstream master
 - Checkout your development branch
-- Merge your master branch to the development branch
 - Do your work
 - Stage all your changed
 - Commit your changes
