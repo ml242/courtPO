@@ -1,0 +1,127 @@
+/*
+Project Name: Ecard.ly
+Client: General Assembly
+Author: Christopher Castig | @castig
+Developer @GA in NYC
+*/
+
+/* Box Model Hack */
+* {
+     -moz-box-sizing: border-box; /* Firexfox */
+     -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
+     box-sizing: border-box; /* IE */
+     -webkit-padding-start: 0px;
+}
+
+body {
+     background-color: rgb(214,214,214);
+}
+
+p { margin: 0 auto;}
+
+a {
+     color:rgb(248,77,62);
+     text-decoration:none;
+     font-weight:bold;
+}
+.header {
+     background:url('../images/background.jpg') repeat-x;
+     margin-bottom:50px;
+}
+
+.empty {
+     height: 50px;
+}
+
+.container {
+     width:960px;
+     overflow:hidden;
+     height:92%;
+     margin: 0 auto;
+     position:relative;
+}
+
+.article-column {
+     background-color: white;
+     float:left;
+     width:660px;
+     padding:28px;
+}
+
+.sidebar-column {
+     float:right;
+     background-color: white;
+     width:285px;
+     overflow:hidden;
+     padding:15px 15px 60px 15px;
+
+}
+
+.nav, .adspace {
+     width:220px;
+     margin:auto;
+     overflow:hidden;
+}
+
+.adspace img {
+     margin: 0 auto;
+}
+
+.adspace img:not(:last-child) {
+     margin-bottom: 20px;
+}
+
+.divider {
+     border-top: 1px dashed black;
+     border-bottom: 3px solid black;
+     margin: 20px 0 65px 0;
+     padding: 15px 0 15px 0;
+}
+
+.divider:first-child {
+     margin-left: 10px;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+.logo {
+     display:block;
+     margin: auto;
+}
+
+.bold {
+     font-weight:bold;
+}
+
+ul {
+     margin-bottom:25px;
+}
+
+.archive li, .blogroll li {
+     font-weight:bold;
+     text-align: left;
+     list-style-type: none;
+     position:relative;
+     left: -10px;
+}
+
+#icons {
+     width:200px;
+     margin:0 auto;
+}
+
+.footer {
+     margin: 40px 0 40px 0px;
+}
