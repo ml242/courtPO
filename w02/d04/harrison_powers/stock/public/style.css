@@ -61,6 +61,12 @@ footer
 }
 
 .container {
-  width: 600px;
+  width: 580px;
   margin: 0 auto;
+}
+
+#ticker {
+  font-family: 'Nova Square', cursive;
+  font-size: 30px;
+  color: #703030;
 }
