@@ -41,6 +41,7 @@ nav {
   max-width: 960px;
   text-align: center;
   margin: 0 auto;
+  border-radius: 20px;
 }
 nav li {
   display: inline;
@@ -60,6 +61,7 @@ a {
   text-align: center;
   margin: 0 auto;
   position: relative;
+  border-radius: 20px;
 }
 .content p {
   padding-top: 20px;
