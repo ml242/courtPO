@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+  <title>꒰⊛ᴥ⊛꒱</title>
+  <style>
+  body {
+    background-color: #0080FF;
+    font-family: "Helvetica", "Arial", sans-serif;
+    color: white;
+    font-size: 40px;
+    text-align: center;
+  }
+  h1 {
+  font-size: 80px;
+  }
+  .wrapper {
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+  .compliment {
+    font-weight: bold;
+    font-size: 50px;
+    margin-top: 50px;
+  }
+  img {
+    width: 200px;
+    height: auto;
+    border-radius: 20px;
+    border: 10px solid white;
+  }
+  input {
+    border:0;
+    padding:10px;
+    font-size:50px;
+    font-family:Arial, sans-serif;
+    color:#aaa;
+    border:solid 1px #ccc;
+    margin:0 0 20px;
+    width:350px;
+
+  }
+  .input {
+    width: 500px;
+  }
+  .pricespan {
+    color: <%= @price_color %>;
+  }
+  a {
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+  }
+.styled {  max-width: 80px;
+  height: 50px;
+  padding: 0 5px 0 0;
+  background: url(checkbox.png) no-repeat;
+  display: block;
+  clear: left;
+  float: left;
+}
+.styled {
+  background: url(radio.png) no-repeat;
+}
+#within {
+  width: 200px;
+  height: 60px;
+  padding: 0 24px 0 8px;
+  color: #fff;
+  font: 30px arial,sans-serif;
+  background: url(select.png) no-repeat;
+  overflow: hidden;
+}
+h2 {
+  font-size: 200px;
+}
+.noborder {
+  border: none;
+}
+.noborder:hover {
+  color: yellow;
+}
+
+  </style>
+</head>
+<body>
+ <div class="wrapper">
+  <h1>(っ♡_♡)っ search imdb with me (っ♡_♡)っ</h1>
+    <%= yield %>
+   <br><br> <a href="/">I wanna go home.</a>
+
+</div>
+</body>
+</html>
