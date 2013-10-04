@@ -7,7 +7,7 @@ body {
   div {
     display: inline-block;
     margin-top: 150px;
-    background-color: black;
+    background-color: rgba(0,0,0,0.8);
     color: white;
     text-align: center;
     z-index: 1;
