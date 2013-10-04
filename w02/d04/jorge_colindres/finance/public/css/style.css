@@ -1,41 +1,41 @@
 html {
+  font: 14px/150% 'Roboto Slab', serif;
+  background: #ecf0f1;
+  color: #2b3e51;
+}
+.stock-search-wrapper {
   text-align: center;
-  background-color: #dbe3db;
-  color: #424542;
-  font-family: 'Libre Baskerville', serif;
+  margin: 75px auto 0;
+  width: 50%;
 }
-h1, h2, h3 {
+h1 {
+  text-align: center;
+  margin: 25px 0;
+}
+h2 {
   margin: 0;
-}
-.container {
-  margin-top: 45px;
-}
-.rps-image {
-  background: url(../img/rps.png);
-  height: 80px;
-  width: 297px;
-  margin: 35px auto 55px;
-}
-.results {
-  min-height: 50px;
+  display: inline-block;
 }
 input {
-  font-family: inherit
+  margin: 0;
+}
+input:focus {
+  outline: 0;
 }
 input[type="text"] {
-  text-align: center;
-  width: 250px;
-  font-size: 1em;
-  padding: 8px;
+  width: 25%;
+  font-size: 1.25em;
+  font-family: inherit;
 }
 input[type="submit"] {
-  display: block;
-  margin: 2em auto 0;
+  vertical-align: top;
   width: 80px;
   height: 30px;
+  padding: 0;
   border: none;
   color: #fbfcfc;
-  background-color: #424542;
+  background-color: #00bd9c;
+  font-family: inherit;
   cursor: pointer;
   -webkit-transition: background-color .2s ease-out;
    -moz-transition: background-color .2s ease-out;
@@ -44,10 +44,25 @@ input[type="submit"] {
         transition: background-color .2s ease-out;
 }
 input[type="submit"]:hover {
-  background-color: #8b4a49;
+  background-color: #00b294;
   -webkit-transition: background-color .2s ease-in;
      -moz-transition: background-color .2s ease-in;
       -ms-transition: background-color .2s ease-in;
        -o-transition: background-color .2s ease-in;
           transition: background-color .2s ease-in;
+}
+span {
+  margin-left: .55em;
+}
+.stock-up {
+  color: #1aaf5d;
+}
+.stock-down {
+  color: #cc3d29;
+}
+
+@media screen and (max-width : 768px) {
+  input[type="text"] {
+    width: 45%;
+  }
 }
