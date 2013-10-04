@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		<%= @rat.name %> wants a drink!
+	</title>
+</head>
+<body>
+	<h1>
+		<%= @rat.name %> wants a drink!
+	</h1>
+	<a href="/">go home</a>
+	<br /><br />
+	select a beer to buy it!
+	<br />
+	<ol>
+		<%=
+			drinklist = ''
+			@dist.cellar.values.each do |drink|
+				drinklist += "<li><a href=\"/pay_for_drink/#{@rat.name}/#{drink.name}\">#{drink.name}</a></li>"
+			end
+			drinklist
+		%>
+	</ol>
+</body>
+</html>

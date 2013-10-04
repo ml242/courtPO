@@ -1,0 +1,48 @@
+body {
+      text-align: center;
+      background: white;
+      font-family: helvetica;
+    }
+    p {
+      font: 15px;
+      margin-top: 30px;
+    }
+    input {
+      border: 0;
+      padding: 10px;
+      font-size: 18px;
+      width: 200px;
+    }
+    input[type="submit"] {
+      margin-left: 30px;
+      background: red;
+      color: white;
+    }
+
+    .container {
+      width: 1000px;
+      margin: 0 auto;
+    }
+
+    .text_wrapper {
+     width: 960px;
+     margin: 0 auto;
+    }
+
+    img {
+      width: 25%;
+      height: 25%;
+      margin-top: 25px;
+    }
+
+  h1 {
+    font-size: 30px;
+  }
+    h3 {
+      color:  #3D3F42;
+          }
+
+    h4 {
+      color: #E93F36;
+
+    }

@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset = "utf-8">
+      <title>Welcome!</title>
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+<body>
+<div>
+  <h1>Rock, Paper, or Scissor?</h1>
+  <form>
+    <input type = "text" name = "r_p_s" >
+    <input type = "submit" placeholder = "submit">
+  </form>
+
+  <% if @player != nil && @player != "" %>
+  <h2>you played <%= @player %>.</h2>
+  <h2>computer played <%=@comp%>.</h2>
+  <h2>you <%=@win%>.</h2>
+  <% end %>
+</div>
+
+</body>
