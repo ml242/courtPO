@@ -1,0 +1,23 @@
+  <form>
+  <input type="text" placeholder="Type your option here" name="query">
+  <input type="submit" value="Play!">
+ </form>
+
+  <h4>You chose "<%= @user %>" and computer chose "<%= @computer %>"</h4>
+
+    <div class="text_wrapper">
+<% if @user == "papel" && @computer == "piedra" %>
+  Ganaste! <%= @positive_slang  %>
+<% elsif @user == "piedra"  && @computer == "tijera" %>
+    Ganaste! <%= @positive_slang  %>
+<%  elsif @user == "tijera"  && @computer == "papel" %>
+ Ganaste! <%= @positive_slang  %>
+<%  elsif @user == @computer %>
+  Empate (tie game). <%= @neutral_slang %>
+<% else %>
+  Perdiste! <%= @negative_slang %>
+<% end %>
+</div>
+
+
+
