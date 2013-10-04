@@ -12,13 +12,18 @@
 </p>
 
     <% if @choice == "paper" && @comp == "rock" %>
-        <%= "Player 1 wins!" %>
+        <%= "Player 1 wins!" %><br>
+        <%= @winner %>
     <% elsif @choice == "rock" && @comp == "scissors" %>
-        <%= "Player 1 wins!" %>
+        <%= "Player 1 wins!" %><br>
+        <%= @winner %>
     <% elsif @choice == "scissors" && @comp == "paper" %>
-        <%= "Player 1 wins!" %>
+        <%= "Player 1 wins!" %><br>
+        <%= @winner %>
     <% elsif @choice == @comp %>
-        <%= "It's a tie; Try again!" %>
+        <%= "It's a tie; Try again!" %><br>
+        <%= @tie %>
     <% else %>
-        <%= "Computer wins!" %>
+        <%= "Computer wins!" %><br>
+        <%= @loser %>
     <% end %>
