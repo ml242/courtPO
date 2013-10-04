@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>add a rat! or two</title>
+	<script>
+		function makeRats(){  
+			var num_rats = document.getElementById("num_rats").value;
+			var url = "create_rat/" + num_rats;
+			location.href=url;
+		}
+	</script>
+</head>
+<body>
+
+	<h1>add a rat! or two </h1>
+	
+	<a href="/">go home</a>
+	
+	<br /><br />
+
+	<input id="num_rats" placeholder="how many rats?">
+
+	<br /><br />
+
+	<div id="make_some_rats" onclick="makeRats()">click here to make rats</div>
+
+</body>
+</html>
