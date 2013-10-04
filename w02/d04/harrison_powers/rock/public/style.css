@@ -1,0 +1,91 @@
+@import url(http://fonts.googleapis.com/css?family=Nova+Square);
+@import url(http://fonts.googleapis.com/css?family=Julius+Sans+One);
+
+body
+{
+  background-color: #E3CDA4;
+  padding: 25px;
+}
+
+header
+{
+  font-family: 'Nova Square', cursive;
+  font-size: 100px;
+  color: #703030;
+  margin-bottom: 25px;
+}
+
+h3
+{
+  font-family: 'Nova Square', cursive;
+  font-size: 50px;
+  color: #703030;
+  margin-bottom: 25px;
+}
+
+a
+{
+  color: #703030;
+  text-decoration: none;
+}
+
+a:hover
+{
+  color: #501010;
+  text-decoration: underline;
+}
+
+input, button
+{
+  font-family: 'Julius Sans One', sans-serif;
+  font-size: 45px;
+  border: 1px solid #925252;
+  border-radius: 10px;
+}
+
+input
+{
+  color: #E3CDA4;
+  background-color: #2F343B;
+  padding: 10px;
+}
+
+button
+{
+  background-color: #703030;
+  color: #cccccc;
+  padding: 10px;
+}
+
+footer
+{
+  text-align: right;
+  font-family: 'Nova Square', cursive;
+  font-size: 20px;
+  color: #703030;
+  margin-top: 100px;
+  clear: both;
+}
+
+#rock {
+  background-image: url(../images/rock.jpg);
+  width: 316px;
+  height: 316px;
+  float: left;
+  margin-right: 20px
+}
+
+#paper {
+  background-image: url(../images/paper.png);
+  width: 333px;
+  height: 316px;
+  float: left;
+  margin-right: 20px
+}
+
+#scissor {
+  background-image: url(../images/scissor.jpg);
+  width: 420px;
+  height: 316px;
+  float: left;
+}
