@@ -8,9 +8,17 @@
   <footer>(C) GA WDI Corp</footer>
   <br />
   <br />
+
   <div id="ticker">
-  	<marquee behavior="scroll" direction="left">
-  		<%= @top_50 %>
-  	</marquee>
+    <marquee behavior="scroll" direction="left">
+      <%= @top_50 %>
+    </marquee>
   </div>
+
+  <div id="articles">
+    <marquee behavior="scroll" direction="up" scrollamount="3">
+      <%= @articles %>
+    </marquee>
+  </div>
+
 </div>

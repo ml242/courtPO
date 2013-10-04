@@ -70,3 +70,11 @@ footer
   font-size: 30px;
   color: #703030;
 }
+
+#articles {
+  font-family: 'Nova Square', cursive;
+  font-size: 30px;
+  color: #703030;
+  margin-top: 30px;
+  height: 100px;
+}
