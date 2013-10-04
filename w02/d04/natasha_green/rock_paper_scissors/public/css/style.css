@@ -1,0 +1,42 @@
+body{
+  background-color: brown ;
+  width: 800px;
+  height: 800px;
+  position: relative;
+}
+
+section{
+  text-align: center;
+}
+
+section img{
+    width: 100px;
+    height: 100px;
+}
+
+h1 {
+  color: yellow;
+}
+
+p {
+ font-color: yellow;
+font-size: 20px;
+
+}
+.div{
+    font-size: 20px;
+    border: 2px dashed green;
+    height: 150px;
+    width: 300px;
+    font-color: white;
+}
+
+button {
+  background-color: black:
+  -moz-border-radius: 200px;
+  -webkit-border-radius: 200px;
+  border: 5px dashed yellow;
+  width: 400px;
+  padding: 2px;
+}
+
