@@ -1,11 +1,14 @@
-<h2>Choose! </h2>
+<div class = "container">
+  <img src = "http://25.media.tumblr.com/tumblr_m0ckg0Iafy1qzvtljo1_500.gif" >
+  <h3>Choose:</h3>
 <p> Rock, Paper, or Scissors</p>
 <form>
-  <label> I choose: </label> <input type= "text" name = "input" placeholder="Rock, Paper, Scissors...">
+  <input type= "text" name = "input" placeholder="Rock, Paper, Scissors...">
   <input type= "submit" value="Shoot!">
 </form>
+</div>
 
-
+<div class = "play">
 <%if @input.nil? || @input == "" %>
 <p> Good Luck! </p>
 <% else %>
@@ -35,5 +38,9 @@
     <p>Sorry, I do not understand that input. Please play again.</p>
   <% end %>
 <% end %>
+</div>
 
+<div class ="back">
+<a href ="/">[Back to Rules]</a>
+</div>
 

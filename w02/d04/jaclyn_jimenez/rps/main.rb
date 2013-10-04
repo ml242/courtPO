@@ -9,7 +9,6 @@ get '/play' do
   @enemy = ["rock", "paper", "scissors"]
   @enemy_choice = @enemy.sample
   @input = params[:input]
-  @input = @input.downcase
   @win = "#{@input} beats #{@enemy_choice}. You win!"
   @lose = "#{@enemy_choice} beats #{@input}. You lose!"
   erb :play
