@@ -1,0 +1,11 @@
+<form>
+  <label> Input Ticker </label>
+  <input class= "enter" type= "text" name= "ticker" placeholder="eg: 'GOOG', 'JPM', 'AAPL' ">
+  <input type="submit" value="Submit">
+</form>
+
+<p> <%if @stock != nil && @stock != ""%>
+  <%=@date.class%>
+  <%=@stock%> stock price is <%=@price%> on <%=@date%>
+  <%end%>
+</p>
