@@ -7,17 +7,24 @@ require 'sinatra/reloader' if development?
 # * Have an input field where the user can enter 'rock' 'paper' or 'scissors'
 # * when a user click's on 'play' display "win", "lose" or "tie"
 # * Style it cool
+GUESSES = ['Rock', 'Paper', 'Scissors']
 
 get '/' do
-    @title="Rock Paper Scissors"
+    @title="Roshambo"
     result = params['query']
     if result == 'Rock'
         @Rock = result
     elsif result == 'Paper'
         @Paper = result
-    else
+    elsif result == 'Scissors'
         @Scissors = result
+    def tie(result)
+        GUESSES.sample
+        if GUESSES.sample == @Rock || GUESSES.sample == @Paper || GUESSES.sample == @Scissors
+            result = @tie
+        end
     end
+end
     erb :index
 end
 

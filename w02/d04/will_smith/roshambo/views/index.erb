@@ -1,15 +1,17 @@
-     <h1><%= @title %></h1>
-        <form action="">
-            <input type="submit" value="Rock" name="query">
-            <input type="submit" value="Paper" name="query">
-            <input type="submit" value="Scissors" name="query">
-        </form>
-        <% if @Rock %>
-        <h2>I guessed Rock</h2>
-        <% elsif @Paper %>
-        <h2>I guessed Paper</h2>
-        <% else @Scissors %>
-        <h2>I guessed Scissors</h2>
-        <% end %>
+    <div class="container">
+         <a href="/"><h1><%= @title %></h1></a>
+         <h2>Play the Man Behind the Curtain</h2>
+            <form action="">
+                <input class="button_blue" type="submit" value="Rock" name="query">
+                <input class="button_green" type="submit" value="Paper" name="query">
+                <input class="button_red" type="submit" value="Scissors" name="query">
+            </form>
+            <% if @tie %>
+            <h2>TIE</h2>
+            <% end %>
+            <h3>Doesn't work...</h3>
+            <h4>blerg</h4>
+
+    </div>
 
 <!-- The '=' sign is needed to render the ruby code. don't use it unless you want to render the code... -->
