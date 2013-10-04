@@ -1,0 +1,10 @@
+<form action="">
+  <input type="text" name='stock' placeholder="enter the stock symbol you're most interested in">
+  <input type="submit">
+</form>
+<% if @stock != 0 && @stock != nil %>  <!-- checking to make sure the user has made a choice -->
+    <% @stock.upcase! %>  <!--upcasing so that user input doesn't cause inconsistencies -->
+    <% @quote_symbol = @stock %>
+    <% @quote = YahooFinance::get_quotes( @quote_type, @quote_symbol ) %>
+    <h3><%= @quote %></h3>
+  <% end %>

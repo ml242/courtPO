@@ -1,0 +1,46 @@
+html {
+  color:white;
+}
+
+* {
+  margin: 0 auto;
+}
+/*================================================*/
+/*Layout Styling*/
+/*================================================*/
+body {
+  height:1000px;
+}
+
+.container {
+  width: 960px;
+  background-color: white;
+  height:1000px;
+  margin: 0 auto;
+  color:gray;
+  opacity: 0.85;
+}
+
+footer {
+  background-image:url('http://upload.wikimedia.org/wikipedia/commons/e/ed/HundredDollarBill.jpg') repeat-x;
+}
+
+
+input {
+  display:block;
+  margin-bottom: 30px;
+}
+
+input[type='text'] {
+  width: 30%;
+}
+/*===============================================*/
+/*Textual Styling*/
+/*===============================================*/
+h1 {
+  color:gray;
+  font-family: 'Libre Baskerville', serif;
+  font-size: 48px;
+  text-align: center;
+  margin-bottom: 30px;
+}
