@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>distill some new drinks</title>
+	<script>
+		function distill(){  
+			var num_drinks = document.getElementById("num_drinks").value;
+			var url = "distill/" + num_drinks
+			location.href=url;
+		}
+	</script>
+</head>
+<body>
+	<h1>lets make some magic!</h1>
+	<a href="/">go home</a>
+	<br /><br />
+	<input id="num_drinks" placeholder="how many drinks?">
+	<br /><br />
+	<div id="distill_button" onclick="distill()" style="width: 75px; align: center; border: 1px solid #000;">distill time!</div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Beverages</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h4>There are <%= @num_beverages %> beverages here.</h4>
+  <% @num_beverages.times do%>
+    <img src="http://www.beer100.com/images/beermug.jpg">
+  <% end %>
+  <br>
+  <a href="/brew_beverage">Brew a Beverage</a>
+  <h4>There are <%= @num_people %> people here.</h4>
+  <% @people_names_array.each_with_index do |person, index| %>
+    <li><%= person %> - <a href="people/<%=index %>/drink">Drink Beverage</a></li>
+  <% end %>
+  <br>
+  <a href="/people/create">Create a Person</a>
+</body>
+</html>
