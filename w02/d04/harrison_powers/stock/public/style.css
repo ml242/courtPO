@@ -55,4 +55,10 @@ footer
   font-size: 20px;
   color: #703030;
   margin-top: 25px;
+  text-align: right;
+}
+
+.container {
+  width: 600px;
+  margin: 0 auto;
 }
