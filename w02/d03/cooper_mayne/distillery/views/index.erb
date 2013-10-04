@@ -1,0 +1,23 @@
+<a href=/create>Create a person</a><br/>
+<a href=/brew>Brew a beer</a>
+
+<h1>
+  <%= @dist_name %>
+</h1>
+
+<h2>CELLAR:</h2>
+<div width="600px">
+<% @beer_count.times do %>
+  <img src='beer.jpeg'>
+<% end %>
+</div>
+
+<h2>
+  PEOPLE
+</h2>
+
+<% @people.each_with_index do |person, index|%>
+  <p style="background-color:rgb(255,<%= (255- 1020*person.BAL).to_i%>,<%= (255- 1020*person.BAL).to_i %>)"> <%= person.name %> <%= person.BAL.round(2) %>
+  <a href=/<%=index%>/drink>drink</a>
+  </p>
+<%end%>
