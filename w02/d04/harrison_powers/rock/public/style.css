@@ -1,27 +1,30 @@
 @import url(http://fonts.googleapis.com/css?family=Nova+Square);
 @import url(http://fonts.googleapis.com/css?family=Julius+Sans+One);
 
+/* POTENTIAL FONTS...
+rationale
+Walter Turncoat
+*/
+
 body {
-  background-color: #E3CDA4;
+  background-color: rgb(151, 147, 137);
   padding: 25px;
+  font-family: 'Nova Square', cursive;
+  color: rgb(230, 230, 230);
 }
 
 header {
-  font-family: 'Nova Square', cursive;
   font-size: 100px;
-  color: #703030;
   margin-bottom: 25px;
 }
 
 h3 {
-  font-family: 'Nova Square', cursive;
   font-size: 50px;
-  color: #703030;
   margin-bottom: 25px;
 }
 
 a {
-  color: #703030;
+  color: rgb(230, 230, 230);
   text-decoration: none;
 }
 
@@ -32,9 +35,7 @@ a:hover {
 
 footer {
   text-align: right;
-  font-family: 'Nova Square', cursive;
   font-size: 20px;
-  color: #703030;
   margin-top: 100px;
   clear: both;
 }

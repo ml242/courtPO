@@ -1,8 +1,8 @@
-<header><a href='/'><%= @outcome || 'Rocks, Paper, Scissor..' %></a></header><br />
+<header><a href='/'><%= "#{@outcome} against #{@enemy}" || 'Rocks, Paper, Scissor..' %></a></header><br />
+
 <% if @wins.to_i > 0 && @losses.to_i > 0 %>
 	<h3>Wins: <%= @wins.to_s %>  /  Losses: <%= @losses.to_s %>  ....  Luck Level: <%= luck = @wins.to_i / @losses.to_i; luck.to_s %></h3>
  <% end %>
-
 
 <div id="rock"></div>
 <div id="paper"></div>
