@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>the bar rats</title>
+</head>
+<body>
+	<h1>bar rats</h1>
+
+	<a href="/">go home</a>
+
+	<br /><br />
+
+	<ul>
+		<%=
+			ratlist = ''
+			@dist.rats.values.each do |x|
+				ratlist += "<li><a href=\"/rat/#{x.name}\">#{x.name}</a></li>"
+			end
+			ratlist
+		%>
+	</ul>
+
+	<br /><br />
+
+	<a href="/add_rat">add a rat</a>
+</body>
+</html>

@@ -1,0 +1,109 @@
+/*
+Project Name: Ecard.ly
+Client: General Assembly
+Author: Christopher Castig | @castig
+Developer @GA in NYC
+*/
+
+/* Box Model Hack */
+* {
+     -moz-box-sizing: border-box; /* Firexfox */
+     -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
+     box-sizing: border-box; /* IE */
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/*need to change the hyperlinks*/
+
+body {
+     background-color: #d6d6d6;
+     color: #000000;
+}
+
+a:link, span {
+     color: #cc6633;
+}
+
+/*need to review how this works*/
+.replace_image {
+  background-image: url("../images/background.jpg");
+  background-size: contain;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  height: 125px;
+  margin: 0 5px 75px 5px;
+}
+
+.logo {
+     max-height: 200px;
+     max-width: 150px;
+     display: block;
+     margin: 0 auto;
+     position: absolute;
+     top: 10px;
+     left: 650px;
+}
+
+.container {
+     width: 940px;
+     margin: 0 auto;
+     width: 1000px;
+     height: 500px;
+}
+
+.container section, aside {
+     background-color: white;
+}
+
+.main {
+     width: 640px;
+     float: left;
+     padding: 5px 10px;
+}
+
+.subsection {
+     margin: 0;
+}
+.ecard {
+     display: block;
+     max-width: 100%;
+     margin: 0;
+}
+
+.sidebar  {
+     width: 280px;
+     float: right;
+
+}
+
+.sidebar .ads {
+     text-align: center;
+}
+
+.foot {
+     border-top: 1px dashed;
+     border-bottom: 2px solid;
+}
+
+footer {
+     clear: both;
+     text-align: center;
+     position: relative;
+     top: 50px;
+}
+
+

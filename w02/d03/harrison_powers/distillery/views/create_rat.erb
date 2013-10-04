@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		<%=
+			if @num_rats == 1
+				"added rat"
+			else
+				"added rats"
+			end
+		%>
+	</title>
+</head>
+<body>
+	<h1>
+		<%=
+			if @num_rats == 1
+				"added rat"
+			else
+				"added rats"
+			end
+		%>
+	</h1>
+	<a href="/">go home</a>
+
+	<br /><br />
+	<ul>
+		<%=
+			rat_list = ''
+			@num_rats.times do
+				@dist.add_rat(Person.new) do |x|
+					rat_list += "<li>#{x}</li>"
+				end
+			end
+			rat_list
+		%>
+	</ul>
+</body>
+</html>
