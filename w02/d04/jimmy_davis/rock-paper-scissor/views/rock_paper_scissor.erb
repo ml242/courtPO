@@ -5,13 +5,20 @@
 </form>
 
     <% if @computer_choice == @user_choice %>
+            <p>The computer chose: <%= @computer_choice %></p>
             <p>The result is a tie!</p>
-    <% elsif @user_choice == "rock" && @computer_choice == "scissors" %>
+    <% elsif @user_choice == "rock" && @computer_choice == "scissor" %>
+            <p>The computer chose: <%= @computer_choice %></p>
             <p>You win!</p>
     <% elsif @user_choice == "paper" && @computer_choice == "rock" %>
+            <p>The computer chose: <%= @computer_choice %></p>
             <p>You win!</p>
-    <% elsif @user_choice == "scissors" && @computer_choice == "paper" %>
+    <% elsif @user_choice == "scissor" && @computer_choice == "paper" %>
+            <p>The computer chose: <%= @computer_choice %></p>
             <p>You win!</p>
+    <% elsif @user_choice.nil? %>
+            <p>Please choose rock, paper, or scissor to play</p>
     <% else %>
+            <p>The computer chose: <%= @computer_choice %></p>
             <p>You lose!</p>
 <% end %>
