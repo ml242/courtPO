@@ -1,0 +1,45 @@
+<% @opponent_selection = ['Rock', 'Paper', 'Scissors'].sample %>
+
+<% if @player_selection == @opponent_selection %>
+    <% @result = "It was a tie!" %>
+<% elsif%>
+
+  <% @player_selection == 'Rock' && @opponent_selection == 'Scissors' %>
+  <% @result = "Rock beats Scissors, you Win" %>
+<% elsif%>
+
+  <% @player_selection == 'Rock' && @opponent_selection == 'Paper' %>
+  <% @result = "Paper beats Rock, you loose" %>
+<% elsif%>
+
+  <% @player_selection == 'Paper' && @opponent_selection == 'Scissors' %>
+  <% @result = "Scissors beats Paper, you loose" %>
+<% elsif%>
+
+  <% @player_selection == 'Paper' && @opponent_selection == 'Rock' %>
+  <% @result = "Paper beats Rock, you Win" %>
+<% elsif%>
+
+  <% @player_selection == 'Scissors' && @opponent_selection == 'Rock' %>
+  <% @result = "Rock beats Scissors, you loose" %>
+<% elsif%>
+
+  <% @player_selection == 'Scissors' && @opponent_selection == 'Paper' %>
+  <% @result = "Scissors beats Paper, you loose" %>
+<% else%>
+  <% @result = "Please enter 'Rock' 'Paper' or 'Scissors'"%>
+
+<% end %>
+
+
+<div>
+  <ul>
+    <li>Your choice is <%= @player_selection %></li>
+    <li>Your opponent's choice is <%= @opponent_selection %></li>
+    <li><%= @result %></li>
+  </ul>
+</div>
+
+
+
+
