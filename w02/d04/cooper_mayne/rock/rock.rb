@@ -1,12 +1,10 @@
 class Rock
   OPTIONS = ['rock','paper','sissors']
-
   def play(choice)
     ai_choice = rand(0..2)
     pl_choice = OPTIONS.index choice
     return false if choice.nil?
     diff = (ai_choice - pl_choice).abs
-
     result = case diff
     when 0
       'its a tie'
