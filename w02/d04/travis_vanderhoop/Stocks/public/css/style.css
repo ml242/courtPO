@@ -1,5 +1,4 @@
 html {
-  color:white;
 }
 
 * {
@@ -21,8 +20,12 @@ body {
   opacity: 0.85;
 }
 
-footer {
-  background-image:url('http://upload.wikimedia.org/wikipedia/commons/e/ed/HundredDollarBill.jpg') repeat-x;
+
+
+
+.footer {
+  height: 100px;
+  background-image:url('http://img.izismile.com/img/img3/20100423/640/how_100dollar_bill_640_07.jpg') repeat-x;
 }
 
 

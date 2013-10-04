@@ -5,6 +5,10 @@
 <% if @stock != 0 && @stock != nil %>  <!-- checking to make sure the user has made a choice -->
     <% @stock.upcase! %>  <!--upcasing so that user input doesn't cause inconsistencies -->
     <% @quote_symbol = @stock %>
-    <% @quote = YahooFinance::get_quotes( @quote_type, @quote_symbol ) %>
-    <h3><%= @quote %></h3>
+    <% @quote = YahooFinance::get_quotes( @quote_type, @quote_symbol ) %> <!--retrieves hash with updated info -->
+    <% @quote = @quote[@quote_symbol] %> <!--formats quote so it won't print as an ugly hash -->
+    <% @quote = @quote.to_s %>
+
+
+    <h3><%=  @quote %></h3>
   <% end %>
