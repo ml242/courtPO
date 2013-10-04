@@ -6,51 +6,20 @@
 }
 
 
-
-
-
-/* Clear fix hack */
-.clearfix:after {
-     content: ".";
-     display: block;
-     clear: both;
-     visibility: hidden;
-     line-height: 0;
-     height: 0;
+section{
+  width: 800px;
+  margin: 0 auto;
+  text-align: center;
 }
 
-.clear {
-  clear: both;
+ul{
+  padding: 0px;
 }
 
+li{
+  list-style-type: none;
 
-/*-----------------------IMAGE REPLACEMENT-------------------------*/
-
-/*PREFERRED METHOD*/
-  /*image <img> should be imbedded into a <div> tag in the HTML and then this css should be added to the div*/
-.alt_image_replacement{
-  font: 0/0;
-  text-shadow: none;
-  color: transparent;
-  width: /*of image*/;
-  height: /*of image*/;
 }
-
-/*ALTERNATE METHOD*/
-.replace_image{
-  background-image: url('http://foo');
-  background-size: contain;
-  text-indent: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-
-
-/*-----------------------                 -------------------------*/
-
-
-
 
 
 
