@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Stock of Awesomeness</title>
+</head>
+<body>
+<h1>the cellar</h1>
+<a href="/">go home</a>
+<ul>
+	<%=
+		drinklist = ''
+		@dist.cellar.values.each do |drink|
+			drinklist += "<li>#{drink.name}</li>"
+		end
+		drinklist
+	%>
+</ul>
+</body>
+</html>

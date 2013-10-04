@@ -1,0 +1,141 @@
+/*
+Project Name: Ecard.ly
+Client: General Assembly
+Author: Christopher Castig | @castig
+Developer @GA in NYC
+*/
+
+/* Box Model Hack */
+* {
+     -moz-box-sizing: border-box; /* Firexfox */
+     -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
+     box-sizing: border-box; /* IE */
+}
+
+/*Global-------------------------------------------------------------*/
+
+body{
+  background-image: url('images/background.jpg') repeat-x;
+  background-color: #d6d6d6;
+  font-size: 12px;
+  color: #000000;
+}
+
+h1{
+  font-size: 20px;
+}
+
+ul
+{
+    list-style-type: none;
+    text-align: left;
+    font-weight: bold;
+    padding: 0px;
+    margin: 20px 0px;
+}
+
+li{
+  margin: 0px 0px 4px 0px;
+  font-weight: bolder;
+}
+
+article{
+  line-height: 20px;
+}
+
+span{
+  color: #cc6633;
+}
+
+
+/*Classes-------------------------------------------------------------*/
+
+.main_layout{
+  width: 940px;
+  margin: 0 auto;
+
+}
+
+.banner{
+  width: 940px;
+  margin: 0 auto;
+
+  /*text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;*/
+}
+
+.post_borders{
+  border-top: 1px dashed_line black;
+  border-bottom: 1px solid_line black;
+  padding: 5px;
+  margin: 10px 0px 30px;
+}
+
+.sidebar_image{
+  margin: 7px 0px;
+}
+
+.footer{
+  text-align: center;
+  margin: 40px auto;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+  clear: both;
+}
+
+
+
+.replace_image{
+  background-image: url('http://foo');
+  background-size: contain;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+
+/*IDs-------------------------------------------------------------------*/
+
+
+#logo{
+  background-image: url('images/logo.png');
+  background-size: contain;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+#main{
+  width: 640px;
+  padding: 25px 25px 10px 25px;
+  background-color: rgba(255,255,255,1);
+  display: inline-block;
+  /*float: left;*/
+}
+
+#sidebar{
+  width: 280px;
+  height: 700px;
+  padding: 25px;
+  background-color: rgba(255,255,255,1);
+  display: inline-block;
+  /*float: left;*/
+  margin: 0px 0px 0px 15px;
+  vertical-align: top;
+}
+
+/*Notes------------------------------------------------------------------*/
+
+

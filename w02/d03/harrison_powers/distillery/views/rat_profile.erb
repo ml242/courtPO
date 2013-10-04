@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		<%=
+			@rat.name
+		%>
+	</title>
+</head>
+<body>
+	<h1>
+		<%=
+			@rat.name
+		%>
+	</h1>
+	<h2>
+		BAC Level: <%= @rat.bac.to_s %>
+	</h2>
+	<a href="/">go home</a>
+	<br />
+	<br />
+	<ul>
+		<li><a href="/buy_drink/<%= @rat.name %>">buy a drink</a></li>
+	</ul>
+	<br />
+	<br />
+	<h2>
+		drink em if you got em!
+	</h2>
+	<ol>
+		<%=
+			drinklist = ''
+			@rat.drinks.values.each do |drink|
+				drinklist += "<li><a href=\"/drink_a_drink/#{@rat.name}/#{drink.name}\">#{drink.name}</a></li>"
+			end
+			drinklist
+		%>
+	</ol>
+</body>
+</html>

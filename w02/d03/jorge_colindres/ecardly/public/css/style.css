@@ -1,0 +1,158 @@
+/*
+Project Name: Ecard.ly
+Client: General Assembly
+Author: Christopher Castig | @castig
+Developer @GA in NYC
+*/
+
+/* Box Model Hack */
+* {
+  -moz-box-sizing: border-box; /* Firexfox */
+    -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
+    box-sizing: border-box; /* IE */
+}
+body {
+  background-color: #d6d6d6;
+  font-size: 14px;
+  line-height: 18px;
+}
+a {
+  color: #f83200;
+  font-weight: 800;
+  text-decoration: none;
+  transition: color .175s ease;
+}
+a:hover {
+  color: #bf3715;
+  transition: color .175s ease;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Header */
+header {
+  background: url(../images/background.jpg) center center;
+  height: 90px;
+  margin-bottom: 55px;
+  padding-top: 10px
+}
+  header h1 {
+    background: url(../images/logo.png) no-repeat center center;
+    background-size: contain;
+    width: 110px;
+    height: 110px;
+    display: block;
+    margin: 0 auto;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+/* Containers */
+.container {
+  min-width: 960px;
+}
+.content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  margin: 0 auto;
+}
+
+/* Main Content */
+.main {
+  flex: 2;
+  background-color: white;
+  padding: 15px;
+}
+  .main img {
+    display: block;
+    margin: 0 auto;
+  }
+  .blog-post a {
+    text-transform: uppercase;
+  }
+  .post-details {
+    margin-bottom: 45px;
+    padding: 5px 0;
+    border-top: 2px dotted #444;
+    border-bottom: 2px solid #444;
+  }
+    .post-details .comments:before {
+      content: "/ "
+    }
+
+/* Sidebar Content */
+.sidebar {
+  flex: 1;
+  max-height: 750px;
+  max-width: 250px;
+  margin-left: 25px;
+  background-color: white;
+  padding: 15px;
+}
+  .blog-archive h5, .blogroll h5 {
+    margin-bottom: 5px;
+    text-transform: uppercase;
+  }
+  .blog-archive a, .blogroll a {
+    color: black;
+    font-size: .85em;
+  }
+  .blog-archive ul, .blogroll ul {
+    margin: 0;
+    padding: 0;
+  }
+    .blog-archive ul li, .blogroll ul li {
+      list-style-type: none;
+    }
+  .ad-space {
+    margin-top: 20px;
+  }
+
+/* Footer */
+footer {
+  padding: 15px 0;
+}
+  footer ul {
+    text-align: center;
+  }
+    footer .social-links li {
+      display: inline-block;
+      height: 32px;
+      width: 32px;
+      background-size: contain;
+      text-indent: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    .social-link-twitter {
+      background: url(../images/social-icon-twitter.png) no-repeat center center;
+    }
+    .social-link-facebook {
+      background: url(../images/social-icon-facebook.png) no-repeat center center;
+    }
+    .social-link-pinterest {
+      background: url(../images/social-icon-pinterest.png) no-repeat center center;
+    }
+
+/* Clear fix hack */
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+.clear {
+  clear: both;
+}
+
+
+
+
+
