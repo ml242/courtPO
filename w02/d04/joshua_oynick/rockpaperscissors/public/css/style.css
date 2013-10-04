@@ -1,0 +1,26 @@
+html {
+  background-color: beige;
+  font-family: helvetica;
+}
+
+body {
+  width: 1000px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.logo {
+  height: 150px;
+  width: 150px;
+}
+
+.images {
+height: 100px;
+width: 150px;
+display: inline-block;
+padding: 20px;
+}
+
+.game_name {
+font-family: lucida sans;
+}

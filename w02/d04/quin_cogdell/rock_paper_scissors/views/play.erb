@@ -1,0 +1,15 @@
+<% require 'faker' %>
+<% @opponent = Faker::Name.first_name %>
+
+
+<section>
+  <div>
+    Hi <%= @player_name %>. You are playing <%= @opponent%> our Rock Paper Scissor Master?
+  </div>
+  <div>
+    <form action='/results'>
+      <input type="text" name="player_selection_input" placeholder = "'Rock' 'Paper' or 'Scissors'">
+      <input type="submit" value="Shoot!">
+    </form>
+  </div>
+</section>

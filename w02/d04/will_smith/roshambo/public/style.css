@@ -1,0 +1,8 @@
+body {
+    background: #fff url('img/bg_brick.png') 0 0 repeat;
+}
+
+.dad {
+    width: 100px;
+    height: 200px;
+}

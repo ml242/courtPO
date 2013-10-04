@@ -1,0 +1,47 @@
+<div class='spacer'></div>
+  <form action="">
+    <input type="text" name="user_choice" placeholder='choose rock/paper/scissors'>
+    <input type="submit" value='Submit choice'>
+  </form>
+
+  <% if @user_choice != 0 && @user_choice != nil %>  <!-- checking to make sure the user has made a choice -->
+    <% @user_choice.downcase! %>  <!--downcasing so that user input doesn't cause inconsistencies -->
+  <% end %>
+
+  <% if @user_choice == '' %>
+    <h1>You didn't give a valid answer, friendo. Try again.</h1>
+  <% elsif @user_choice == "rock" || @user_choice=='paper' || @user_choice=='scissors' %>
+    <h2>You chose <%= @user_choice %>, and I chose <%= @comp_choice %>.</h2>
+  <% end %>
+
+  <% if @user_choice == @comp_choice %>
+    <h3>Balls! I hate draws. Lets play again.</h3>
+    <% end %>
+
+  <% if @user_choice == 'rock' %>
+    <% if @comp_choice == 'paper' %>
+      <h3>I win.</h3>
+    <% else %>
+      <h3>The better man lost. Congratulations.</h3>
+    <% end %>
+  <% end %>
+
+  <% if @user_choice == 'paper' %>
+    <% if @comp_choice == 'scissors' %>
+      <h3>Not surprisingly, I win.</h3>
+    <% else %>
+      <h3>The victory is yours, this time.</h3>
+    <% end %>
+  <% end %>
+
+  <% if @user_choice == 'scissors' %>
+    <% if @comp_choice == 'rock' %>
+      <h3>I win, but don't feel bad about it. I rarely lose.</h3>
+    <% else %>
+      <h3>You know I hate to lose, but rules is rules.</h3>
+    <% end %>
+  <% end %>
+
+
+
+

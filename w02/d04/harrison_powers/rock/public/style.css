@@ -1,0 +1,64 @@
+@import url(http://fonts.googleapis.com/css?family=Nova+Square);
+@import url(http://fonts.googleapis.com/css?family=Julius+Sans+One);
+
+/* POTENTIAL FONTS...
+rationale
+Walter Turncoat
+*/
+
+body {
+  background-color: rgb(151, 147, 137);
+  padding: 25px;
+  font-family: 'Nova Square', cursive;
+  color: rgb(230, 230, 230);
+}
+
+header {
+  font-size: 100px;
+  margin-bottom: 25px;
+}
+
+h3 {
+  font-size: 50px;
+  margin-bottom: 25px;
+}
+
+a {
+  color: rgb(230, 230, 230);
+  text-decoration: none;
+}
+
+a:hover {
+  color: #501010;
+  text-decoration: underline;
+}
+
+footer {
+  text-align: right;
+  font-size: 20px;
+  margin-top: 100px;
+  clear: both;
+}
+
+#rock {
+  background-image: url(../images/rock.jpg);
+  width: 316px;
+  height: 316px;
+  float: left;
+  margin-right: 20px
+}
+
+#paper {
+  background-image: url(../images/paper.png);
+  width: 333px;
+  height: 316px;
+  float: left;
+  margin-right: 20px
+}
+
+#scissor {
+  background-image: url(../images/scissor.jpg);
+  width: 420px;
+  height: 316px;
+  float: left;
+}
