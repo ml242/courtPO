@@ -10,20 +10,22 @@ end
 
 
 get '/result' do
-  @user_choice = $user_choice
   @second_choice = params[:choice2]
-  if @user_choice != nil
-    @user_choice.downcase!
-  end
   if @second_choice == nil
-  @second_choice = play_options.sample
-  @player2 = "The computer"
+    @user_choice = params[:choice]
+    if @user_choice != nil
+      @user_choice.downcase!
+    end
+    @second_choice = play_options.sample
+    @player2 = "The computer"
   else
+    @user_choice = $user_choice
     @second_choice.downcase!
     @player2 = "Player 2"
   end
 
-  @outcome = game(@user_choice, @second_choice)
+
+@outcome = game(@user_choice, @second_choice)
   if @outcome == nil
     @outcome = "You chose a fake thing. You suck."
   end
