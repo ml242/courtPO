@@ -21,12 +21,12 @@ print "y/n "
 
 input = gets.downcase.chomp!
 
-
 while input == 'y' do
   puts "ok we're playing..."
 
   puts "What do you wanna do?!"
   awesome_thing = gets.chomp!
+
 
   awesome_things << awesome_thing
 

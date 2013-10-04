@@ -7,6 +7,7 @@
 - Move to your local `WDI_NYC_Hash_Work` folder
 - Pull from the upstream master
 - Checkout your development branch
+- Merge your master branch to the development branch
 - Do your work
 - Stage all your changed
 - Commit your changes
@@ -23,6 +24,7 @@
 cd ~/ga_wdi/WDI_NYC_Hash_Work
 git pull upstream master
 git checkout development
+git merge master
 ```
 
 #####You may need to `save` and `close` a merge/commit message
