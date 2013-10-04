@@ -1,0 +1,16 @@
+img {
+  max-width: 150px;
+  height: auto;
+}
+.buzzed {
+  background-color: LightGoldenRodYellow;
+  width: 33%;
+}
+.tipsy {
+  background-color: Orange;
+  width: 66%;
+}
+.drunk {
+  background-color: Crimson;
+  width: 100%;
+}

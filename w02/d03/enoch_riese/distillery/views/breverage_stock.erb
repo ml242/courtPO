@@ -1,0 +1,17 @@
+
+<style>
+ body {
+  background-color: rgb(255,<%= @red_v.to_i %>,<%= @red_v.to_i %>);
+/*<%= @red_v.to_i %>*/
+  }
+</style>
+<body>
+  <a href="/beverage_stock">Check the Cellar</a>
+  <a href="/brew_beverage">Brew more beer</a>
+  <a href="/drink_beverage">Drink a beer</a>
+  <br>
+<% @num_beverages.to_i.times.each do %>
+  <img src="http://i.imgur.com/hmksrEt.jpg">
+<% end %>
+<p><%= @text %></p>
+</body>
