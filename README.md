@@ -23,6 +23,7 @@
 cd ~/ga_wdi/WDI_NYC_Hash_Work
 git pull upstream master
 git checkout development
+git merge master
 ```
 
 #####You may need to `save` and `close` a merge/commit message

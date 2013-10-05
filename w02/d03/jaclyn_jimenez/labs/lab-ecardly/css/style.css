@@ -1,0 +1,133 @@
+/*
+Project Name: Ecard.ly
+Client: General Assembly
+Author: Christopher Castig | @castig
+Developer @GA in NYC
+*/
+
+/* Box Model Hack */
+* {
+     -moz-box-sizing: border-box; /* Firexfox */
+     -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
+     box-sizing: border-box; /* IE */
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+body {
+     background-color: #d6d6d6;
+     color: #000000;
+     font-family: "Helvetica", serif;
+}
+
+header {
+     background-image: url(../images/background.jpg);
+     background-repeat: repeat-x;
+     text-align: center;
+     margin: 0 auto;
+     position: relative;
+     height: 260px;
+}
+
+.replace {
+     text-indent: 100%;
+     white-space: nowrap;
+     overflow: hidden;
+     height: 213px;
+     background-size: contain;
+}
+
+.logo {
+     margin: 0 auto;
+     background-image: url(../images/logo.png);
+     width: 216px;
+     heigth: 213px;
+     position: relative;
+     top: -200px;
+}
+
+.container {
+     width: 940px;
+     margin: 0 auto;
+     line-height: 20px;
+     font-size: 12px;
+}
+
+h2 {
+     font-size: 20px;
+}
+
+.blog {
+     width: 640px;
+     background-color: white;
+     padding: 0 0 40px 18px;
+}
+
+
+ul {
+     list-style: none;
+     color: black;
+     text-align: left;
+     text-decoration: none;
+     font-weight: bold;
+}
+
+.side {
+     width: 280px;
+     float: right;
+     position: relative;
+     background-color: white;
+     text-align: center;
+     padding: 10px 0 30px;
+     color: black;
+     text-decoration: none;
+}
+
+.side img {
+     padding: 10px 0 10px;
+}
+
+.post_info {
+     border-top: 1px dotted black;
+     border-bottom: 1px solid black;
+     padding: 7px;
+     width: 600px;
+}
+
+article {
+     padding-top: 25px;
+     padding-right: 10px;
+}
+
+ a {
+     text-decoration: none;
+     font-weight: bold;
+}
+
+.blog a {
+     color: #cc6633;
+}
+
+footer {
+     height: 120px;
+     width: 400px;
+     position: relative;
+}
+
+footer img {
+     position: relative;
+     top: 40px;
+     left: 450px;
+
+}
