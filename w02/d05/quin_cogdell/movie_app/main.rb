@@ -2,8 +2,10 @@ require 'sinatra'
 require 'sinatra/reloader' if development?
 require 'pry'
 require 'httparty'
+require 'json'
 
 url = "http://www.omdbapi.com/?t=Rambo"
+#parsed_result = JSON.parse(response)
 
 get '/' do
   response = HTTParty.get("http://graph.facebook.com/quincogdell")
@@ -13,7 +15,9 @@ get '/' do
 end
 
 get '/movies/search' do
-  movie_data = HTTParty.get(url)
-  movie_data.to_s
+  response = HTTParty.get(url)
+  parsed_result = JSON.parse(response)
+  @results = parsed_result.to_s
+  erb :results
 end
 
