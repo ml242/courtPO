@@ -1,0 +1,135 @@
+/* Reset */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
+/* Border Box */
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+ }
+
+
+body {
+  color: #1d1200;
+  background: #e7b965 url(bg.png) repeat;
+  padding: 5px;
+  font: bold 12px/1.65em "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  letter-spacing: -.5px;
+}
+h1, h2 {
+  text-align: center;
+  margin: 15px 0;
+}
+h1 {
+  font-size: 2em;
+  text-transform: uppercase;
+}
+h2 {
+  font-size: 1.25em;
+}
+
+.postcard-container {
+  border: 2px solid #210d02;
+  padding: 15px 25px;
+  width: 720px;
+}
+.postcard-container::after {
+  content:"";
+  display:table;
+  clear:both;
+}
+.left-side, .right-side {
+  float: left;
+  width: 50%;
+  padding: 0 15px;
+}
+
+/* Left Side */
+.left-side {
+  border-right: 3px solid #1d1200;
+}
+.form-line {
+  overflow: hidden;
+  margin: 5px 0;
+}
+.form-line label, .form-block span {
+  text-transform: uppercase;
+}
+.form-line label {
+  float: left;
+  margin-right: 5px;
+  text-transform: uppercase;
+}
+.form-line label::after {
+  content: ': ';
+}
+.form-line span {
+  display: block;
+  overflow: hidden;
+}
+.form-line input {
+  font: bold 1.25em 'Special Elite', cursive;
+  width: 100%;
+  padding-left: 15px;
+  border: none;
+  border-bottom: 2px solid #1d1200;
+  background-color: transparent;
+}
+.form-line input:focus {
+  outline: none;
+}
+.form-block label {
+  text-transform: none;
+}
+.form-block label::after {
+  content: '';
+}
+.form-line .boxed-input {
+  border: 2px solid #1d1200;
+  padding: 0;
+  text-align: center;
+}
+.form-block span, .waiver {
+  font-size: .65em;
+}
+.waiver {
+  line-height: 1.45em;
+}
+.form-block label[for="signature"] {
+  width: 100%;
+}
+.form-block label[for="signature"] > span {
+  text-align: center;
+}
+#signature {
+  font: 1.25em "Homemade Apple", cursive;
+  color: #1d4641;
+}
+
+/* Right Side */
+.right-side img {
+  display: block;
+  margin: 0 auto;
+  padding: 15px;
+  background-color: #e2c598;
+  max-width: 100%;
+  -webkit-box-shadow: 0 1px 3px 1px rgba(0,0,0,.2);
+    box-shadow: 0 1px 3px 1px rgba(0,0,0,.2);
+  -webkit-transform: rotate(-1deg);
+    -ms-transform: rotate(-1deg);
+    transform: rotate(-1deg);
+}
+
+.date-area span:nth-of-type(1) {
+  text-transform: uppercase;
+}
+.date-area span:nth-of-type(2) {
+  font: bold 1.25em 'Special Elite', cursive;
+}
+.date-area span:nth-of-type(3) {
+  float: right;
+  font-size: .45em;
+}
+
+
+
+
+
+

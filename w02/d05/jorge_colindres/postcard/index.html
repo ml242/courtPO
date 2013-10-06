@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Postcard</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="http://fonts.googleapis.com/css?family=Special+Elite|Homemade+Apple" rel="stylesheet">
 </head>
 <body>
   <div class="postcard-container">
@@ -11,30 +13,46 @@
       <h2>Scout Registration Information</h2>
     </header>
     <section class="left-side">
-      <form>
-        <label for="name">Name</label>
-        <input type="text" id="name">
-        <label for="address">Address</label>
-        <input type="text" id="address">
-        <label for="tel">Telephone No.</label>
-        <input type="text" id="tel">
-        <label for="emContact">Emergency Contact</label>
-        <input type="text" id="emContact">
-        <label for="legacy">Does this applicant have siblings/relatives that are former or current Khaki Scouts?
-        <input type="text" id="legacy">
-        <span>Please use name and rank</span>
-        </label>
-        <label for="troopNo">Assigned to Khaki Scout Troop No.</label>
-        <input type="text" id="troopNo">
-        <p>I hereby grant permission to the Khaki Scouts of North America to act in <em>loco parentis</em> with regards to my son. The organization will be held harmless in the event of accident or injury.</p>
-        <input type="text" id="signature">
-        <label for="signature">Signature of parent or legal guardian</label>
+      <form class="registration-form">
+        <div class="form-line">
+          <label for="name">Name</label>
+          <span><input type="text" id="name" value="Sam Shakusky"></span>
+        </div>
+        <div class="form-line">
+          <label for="address">Address</label>
+          <span><input type="text" id="address" value="456 Oakdale Ave."></span>
+        </div>
+        <div class="form-line">
+          <label for="tel">Telephone No.</label>
+          <span><input type="text" id="tel" value="KL5-6702"></span>
+        </div>
+        <div class="form-line">
+          <label for="emContact">Emergency Contact</label>
+          <span><input type="text" id="emContact" value="None"></span>
+        </div>
+        <div class="form-line form-block">
+          <label for="legacy">Does this applicant have siblings/relatives that are former or current Khaki Scouts?</label>
+          <input type="text" id="legacy" value="None">
+          <span>Please list name and rank</span>
+        </div>
+        <div class="form-line">
+          <label for="troopNo">Assigned to Khaki Scout Troop No.</label>
+          <span><input class="boxed-input" type="text" id="troopNo" value="55"></span>
+        </div>
+        <p class="waiver">I hereby grant permission to the Khaki Scouts of North America to act in <em>loco parentis</em> with regards to my son. The organization will be held harmless in the event of accident or injury.</p>
+        <div class="form-line form-block">
+          <input type="text" id="signature" value="Herbert Billingsly">
+          <label for="signature"><span>Signature of parent or legal guardian</span></label>
+        </div>
       </form>
     </section>
     <section class="right-side">
-      <img src="http://placehold.it/350x350" alt="Picture">
-      <span>June 5, 1964</span>
-      <span>K.S.N.A. Form 12-987</span>
+      <img src="picture.png" alt="Picture">
+      <div class="date-area">
+        <span>Date: </span>
+        <span>June 5, 1964</span>
+        <span>K.S.N.A. Form 12-987</span>
+      </div>
     </section>
   </div>
 </body>
