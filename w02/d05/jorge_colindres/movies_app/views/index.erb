@@ -6,14 +6,22 @@
   </form>
 </div>
 
+<% unless @search_results || @movie %>
+  <h1 class="logo">Movies.</h1>
+<% end %>
+
 <!-- Search Results -->
 <% if @search_results %>
   <div class="search-results container">
-    <ul>
-      <% @search_results.each do |movie| %>
-      <li><a href="/<%= movie['imdbID'] %>"><%= movie["Title"] %> (<%= movie["Year"] %>)</a></li>
-      <% end %>
-    </ul>
+    <% unless @search_results == "No results found." %>
+      <ul>
+        <% @search_results.each do |movie| %>
+        <li><a href="/<%= movie['imdbID'] %>"><%= movie["Title"] %> (<%= movie["Year"] %>)</a></li>
+        <% end %>
+      </ul>
+    <% else %>
+      <%= @search_results %>
+    <% end %>
   </div>
 <% end %>
 
@@ -24,7 +32,7 @@
       <img src="<%= @movie['Poster'] %>" alt="<%= @movie['Title'] %>">
     </div>
     <div class="movie-details">
-      <h1><%= @movie['Title'] %></h1>
+      <h2><%= @movie['Title'] %></h2>
       <p class="genre"><%= @movie['Genre'] %></p><!--
       --><p class="runtime"><%= @movie['Runtime'] %></p>
       <p class="rated"><%= @movie['Rated'] %></p>
