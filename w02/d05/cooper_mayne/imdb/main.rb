@@ -18,13 +18,19 @@ get "/movies/search" do
   query = @query.gsub(" ","+")
   response = HTTParty.get("http://www.omdbapi.com/?s=#{query}")
   r = JSON.parse(response)
+  unless r.has_key? "Search"
+    erb :nores 
+  else
   @results =  r["Search"]
   erb :search
+  end
 end
 
 get "/movies/:id" do
   imdbid = params[:id]
   response = HTTParty.get("http://www.omdbapi.com/?i=#{imdbid}")
-  @result = JSON.parse(response)
+  results = JSON.parse(response)
+  l = %w(Title Year Actors Plot Director Genre imdbRating Released Runtime imdbRating Poster)
+  @results = results.select { |result| l.include? result }
   erb :display
 end

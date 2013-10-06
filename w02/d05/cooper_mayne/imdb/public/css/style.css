@@ -1,0 +1,37 @@
+* {
+  -moz-box-sizing: border-box; /* Firexfox */
+  -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
+  box-sizing: border-box; /* IE */
+}
+
+body {
+  font-family: "Sans-serif";
+}
+.nav {
+  text-align:right;
+}
+div.container {
+  margin: 0 auto;
+  width:750px;
+}
+
+table {
+  float: right;
+  width: 440;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+table, th, td {
+  padding: 5px;
+  border: 1px solid black;
+}
+
+img {
+  float:left;
+  width: 290;
+}
+
+ul {
+  list-style-image: url("");
+}
