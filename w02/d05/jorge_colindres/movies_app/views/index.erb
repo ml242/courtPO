@@ -29,8 +29,12 @@
 <% if @movie %>
   <div class="movie-container container">
     <div class="movie-poster">
-      <a href="https://www.google.com/#q=<%= "#{@movie['Title']}" %>">
-        <img src="<%= @movie['Poster'] %>" alt="<%= @movie['Title'] %>">
+      <a href="https://www.google.com/#q=<%= "#{@movie['Title']}" %>" target="_blank">
+        <% unless @movie['Poster'] == "N/A" %>
+          <img src="<%= @movie['Poster'] %>" alt="<%= @movie['Title'] %>">
+        <% else %>
+          <img src="http://placehold.it/330x450&text=No Poster" alt="No Poster">
+        <% end %>
       </a>
     </div>
     <div class="movie-details">

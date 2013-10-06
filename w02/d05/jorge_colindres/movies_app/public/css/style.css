@@ -99,12 +99,13 @@ h5 {
 }
 .genre, .runtime {
   color: #8a8a8a;
-  width: 50%;
   display: inline-block;
+  width: 80%;
   white-space: nowrap;
 }
 .runtime {
   text-align: right;
+  width: 20%;
 }
 .runtime::before {
   content: '\F017\00a0';

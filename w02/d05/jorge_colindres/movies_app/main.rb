@@ -20,7 +20,6 @@ get '/search' do
   if @search_results.nil?
     @search_results = "No results found."
   end
-  # binding.pry
   erb :index
 end
 
@@ -29,6 +28,7 @@ get '/:imdbID' do
   response = HTTParty.get("http://www.omdbapi.com/?i=#{movieID}")
   parsed_result = JSON.parse(response)
   @movie = parsed_result
+  # binding.pry
   erb :index
 end
 
