@@ -2,7 +2,7 @@ require 'sinatra'
 require 'sinatra/reloader' if development?
 require 'json'
 require 'httparty'
-require 'pry'
+require 'cgi'
 
 get '/' do
 	@title = 'RMDB'
@@ -11,7 +11,7 @@ end
 
 post '/movies/search' do
 	@title = "Search for #{params[:movie_search]}"
-	search_request = params[:movie_search].split(' ').join('+')
+	search_request = CGI::escape(params[:movie_search])
 	omdb_result = HTTParty.get("http://www.omdbapi.com/?i=&t=#{search_request}")
 	@parsed_result = JSON.parse(omdb_result)
 	erb :search_result
