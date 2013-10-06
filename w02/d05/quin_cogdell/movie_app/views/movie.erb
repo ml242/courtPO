@@ -1,10 +1,15 @@
 <h1><%= @results['Title'] %> Information</h1>
 
+<% if @results['Poster'] != 'N/A' %>
 
-<a href="http://www.google.com/search?q=<%= @title_search %>">
-  <img src="<%= @results['Poster'] %>">
-</a>
-
+  <a href="http://www.google.com/search?q=<%= @title_search %>">
+    <img src="<%= @results['Poster'] %>">
+  </a>
+<% else %>
+  <a href="http://www.google.com/search?q=<%= @title_search %>">
+    Search Google
+  </a>
+  <% end %>
 
 <table border="1">
   <tr> <% @results.each do |meta, info| %>
