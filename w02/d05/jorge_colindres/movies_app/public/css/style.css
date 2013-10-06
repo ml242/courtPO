@@ -1,0 +1,55 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  background: #f2f2f2;
+  color: #2e2222;
+}
+a {
+  color: #fd9900;
+  text-decoration: none;
+}
+a:hover {
+  color: #e69335;
+}
+
+/* Search Box */
+.search-box {
+  position: relative;
+  width: 75%;
+  background: white;
+  border: solid 1px #acacac;
+  margin: 25px auto;
+}
+.search-icon {
+  position: absolute;
+  top: 25%;
+  left: 15px;
+}
+.search-box input[role="search"] {
+  padding: 9px 0px 9px 75px;
+  font-size: 36px;
+  line-height: 36px;
+  border: none;
+  font-family: inherit;
+}
+.search-box input[role="search"]:focus {
+  outline: none;
+}
+.search-box input[role="search"]::-webkit-input-placeholder {
+   color: #2e2222;
+   line-height: 44px;
+}
+  .search-box input[role="search"]:-moz-placeholder {
+     color: #2e2222;
+     line-height: 44px;
+  }
+  .search-box input[role="search"]::-moz-placeholder {
+     color: #2e2222;
+     line-height: 44px;
+  }
+  .search-box input[role="search"]:-ms-input-placeholder {
+     color: #2e2222;
+     line-height: 44px;
+  }
+
+/* Individual Movie */
+

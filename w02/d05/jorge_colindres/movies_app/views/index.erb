@@ -1,26 +1,34 @@
-<form action="/search" method="get">
-  <label for="searchBox">Search Movies</label>
-  <input type="text" name="q" id="searchBox">
-</form>
+<div class="search-box">
+  <form action="/search" method="get">
+    <label class="search-icon" for="searchBox"><i class="icon-search icon-2x"></i></label>
+    <input type="text" name="q" id="searchBox" role="search" placeholder="Search Movies">
+  </form>
+</div>
 
 <% if @search_results %>
   <div class="results">
     <% @search_results.each do |movie| %>
-    <li><a href="/movies/<%= movie['imdbID'] %>"><%= movie["Title"] %> (<%= movie["Year"] %>)</a></li>
+    <li><a href="/<%= movie['imdbID'] %>"><%= movie["Title"] %> (<%= movie["Year"] %>)</a></li>
     <% end %>
   </div>
 <% end %>
 
 
 <% if @movie %>
-  <img src="<%= @movie['Poster'] %>" alt="<%= @movie['Title'] %>">
-  <div class="movie-details">
-    <h1><%= @movie['Title'] %></h1>
-    <p class="genre"><%= @movie['Genre'] %></p>
-    <p class="runtime"><%= @movie['Runtime'] %></p>
-    <p class="plot"><%= @movie['Plot'] %></p>
-    <p class="director"><%= @movie['Director'] %></p>
-    <p class="writer"><%= @movie['Writer'] %></p>
-    <p class="actors"><%= @movie['Actors'] %></p>
+  <div class="movie-container">
+    <div class="movie-poster">
+      <img src="<%= @movie['Poster'] %>" alt="<%= @movie['Title'] %>">
+    </div>
+    <div class="movie-details">
+      <h1><%= @movie['Title'] %></h1>
+      <p class="genre"><%= @movie['Genre'] %></p>
+      <p class="runtime"><%= @movie['Runtime'] %></p>
+      <p class="rated"><%= @movie['Rated'] %></p>
+      <p class="plot"><%= @movie['Plot'] %></p>
+      <p class="director"><%= @movie['Director'] %></p>
+      <p class="writer"><%= @movie['Writer'] %></p>
+      <p class="actors"><%= @movie['Actors'] %></p>
+      <p class="rating"><%= @movie['imdbRating'] %></p>
+    </div>
   </div>
 <% end %>

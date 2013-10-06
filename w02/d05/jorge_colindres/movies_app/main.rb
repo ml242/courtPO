@@ -20,7 +20,7 @@ get '/search' do
   erb :index
 end
 
-get '/movies/:imdbID' do
+get '/:imdbID' do
   movieID = params[:imdbID]
   response = HTTParty.get("http://www.omdbapi.com/?i=#{movieID}")
   parsed_result = JSON.parse(response)
