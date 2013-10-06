@@ -1,0 +1,26 @@
+<!-- released
+rating
+runtime
+genre
+director
+writer
+actors
+plot
+poster -->
+
+<h1><%= @title %></h1>
+
+<ul>
+  <li><strong>Release date:</strong> <%= @released %></li>
+  <li><strong>Rating:</strong> <%= @rating %></li>
+  <li><strong>Runtime:</strong> <%= @runtime %></li>
+  <li><strong>Genre:</strong> <%= @genre %></li>
+  <li><strong>Director:</strong> <%= @director %></li>
+  <li><strong>Writer:</strong> <%= @writer %></li>
+  <li><strong>Actors:</strong> <%= @actors %></li>
+  <li><strong>Plot:</strong> <%= @plot %></li>
+  <% if @poster != "N/A" %>
+  <strong>Poster:</strong><br>
+    <a href="https://www.google.com/#q=<%= CGI.escape(@title) %>" target="new"><img src="<%= @poster %>"></a>
+  <% end %>
+</ul>
