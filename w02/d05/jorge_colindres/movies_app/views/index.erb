@@ -21,14 +21,23 @@
     </div>
     <div class="movie-details">
       <h1><%= @movie['Title'] %></h1>
-      <p class="genre"><%= @movie['Genre'] %></p>
-      <p class="runtime"><%= @movie['Runtime'] %></p>
+      <p class="genre"><%= @movie['Genre'] %></p><!--
+      --><p class="runtime"><%= @movie['Runtime'] %></p>
       <p class="rated"><%= @movie['Rated'] %></p>
       <p class="plot"><%= @movie['Plot'] %></p>
+      <h5>Cast and Crew</h5>
       <p class="director"><%= @movie['Director'] %></p>
       <p class="writer"><%= @movie['Writer'] %></p>
       <p class="actors"><%= @movie['Actors'] %></p>
-      <p class="rating"><%= @movie['imdbRating'] %></p>
+      <div class="rating-container">
+        <% @movie['imdbRating'].to_i.times do %>
+          <i class="rating icon-star"></i>
+        <% end %>
+        <% if @movie['imdbRating'].to_f.modulo(1) > 0.25 %>
+          <i class="rating icon-star-half"></i>
+        <% end %>
+        <span class="rating-score"><%= @movie['imdbRating'] %></span>
+      </div>
     </div>
   </div>
 <% end %>

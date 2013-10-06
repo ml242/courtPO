@@ -1,6 +1,6 @@
 body {
   font-family: "Montserrat", sans-serif;
-  background: #f2f2f2;
+  background: #e9e9e9;
   color: #2e2222;
 }
 a {
@@ -9,6 +9,14 @@ a {
 }
 a:hover {
   color: #e69335;
+}
+h1 {
+  font-size: 1.25em;
+  border-bottom: 1px solid #d8d8d8;
+}
+h5 {
+  color: #fd9900;
+  text-transform: uppercase;
 }
 
 /* Search Box */
@@ -22,7 +30,7 @@ a:hover {
 .search-icon {
   position: absolute;
   top: 25%;
-  left: 15px;
+  left: 20px;
 }
 .search-box input[role="search"] {
   padding: 9px 0px 9px 75px;
@@ -52,4 +60,81 @@ a:hover {
   }
 
 /* Individual Movie */
-
+.movie-container {
+  display: flex;
+  padding: 0 50px;
+}
+.movie-poster {
+  flex: 1;
+}
+.movie-poster img {
+  width: 100%;
+  height: auto;
+}
+.movie-details {
+  flex: 2;
+  padding-left: 25px;
+  line-height: 1.65em;
+}
+.genre, .runtime {
+  color: #8a8a8a;
+  width: 50%;
+  display: inline-block;
+  white-space: nowrap;
+}
+.runtime {
+  text-align: right;
+}
+.runtime::before {
+  content: '\F017\00a0';
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  text-decoration: inherit;
+}
+.rated {
+  display: inline-block;
+  font-size: .65em;
+  line-height: 1em;
+  min-width: 15px;
+  text-align: center;
+  border: 1px solid #2e2222;
+  padding: 4px 2.5px;
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
+}
+.plot {
+  margin: 25px 0;
+}
+.director::before {
+  content: 'Director: ';
+}
+.writer::before {
+  content: 'Writer: ';
+}
+.actors::before {
+  content: 'Actors: ';
+}
+.rating-container {
+  margin-top: 25px;
+  color: #fd9900;
+}
+.rating-score {
+  color: #8a8a8a;
+  padding-left: 5px;
+  opacity: 0;
+    -webkit-transition: opacity .25s ease;
+     -moz-transition: opacity .25s ease;
+      -ms-transition: opacity .25s ease;
+       -o-transition: opacity .25s ease;
+          transition: opacity .25s ease;
+}
+.rating-container:hover .rating-score {
+  opacity: 1;
+  -webkit-transition: opacity .25s ease;
+     -moz-transition: opacity .25s ease;
+      -ms-transition: opacity .25s ease;
+       -o-transition: opacity .25s ease;
+          transition: opacity .25s ease;
+}
