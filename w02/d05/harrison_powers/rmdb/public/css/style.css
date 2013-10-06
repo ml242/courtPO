@@ -1,4 +1,38 @@
+@import url(http://fonts.googleapis.com/css?family=Monoton);
+@import url(http://fonts.googleapis.com/css?family=Baumans);
+
 * {
 	background-color: #000;
 	color: rgb(188, 211, 101);
+}
+
+a {
+	text-decoration: none;
+}
+
+img {
+	float: right;
+	margin-left: 20px;
+}
+
+header {
+	text-align: center;
+	font-family: 'Monoton'!important;
+	font-size: 80px;
+}
+
+.search {
+	text-align: center;
+}
+
+input {
+	font-family: 'Baumans';
+}
+
+label {
+	font-family: 'Baumans';
+}
+
+.page {
+	font-family: 'Baumans';
 }

@@ -1,0 +1,12 @@
+<% if @parsed_result.has_key?("Error") == true %>
+
+Sorry there are no results for that search.
+
+<% else %>
+
+Search results:<br />
+<a href="/movies/<%= @parsed_result["imdbID"] %>">
+<%= @parsed_result["Title"] %> - <%= @parsed_result["Year"] %>
+</a>
+
+<% end %>
