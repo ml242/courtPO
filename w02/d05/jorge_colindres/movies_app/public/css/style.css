@@ -51,7 +51,8 @@ h5 {
   left: 20px;
 }
 .search-box input[role="search"] {
-  padding: 9px 0px 9px 75px;
+  width: 100%;
+  padding: 9px 9px 9px 75px;
   font-size: 36px;
   line-height: 36px;
   border: none;
@@ -157,4 +158,38 @@ h5 {
       -ms-transition: opacity .25s ease;
        -o-transition: opacity .25s ease;
           transition: opacity .25s ease;
+}
+
+
+/* Media Queries */
+@media screen and (max-width: 960px) {
+  body {
+    font-size: 14px;
+    line-height: 1.5em;
+  }
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 16px;
+    line-height: 1.75em;
+  }
+ .movie-container {
+  display: block;
+ }
+ .movie-poster {
+   margin-bottom: 25px;
+ }
+}
+@media screen and (max-width: 500px) {
+  .search-box input[role="search"]::-webkit-input-placeholder {
+   font-size: 25px;
+  }
+    .search-box input[role="search"]:-moz-placeholder {
+       font-size: 25px;
+    }
+    .search-box input[role="search"]::-moz-placeholder {
+       font-size: 25px;
+    }
+    .search-box input[role="search"]:-ms-input-placeholder {
+       font-size: 25px;
+    }
 }
