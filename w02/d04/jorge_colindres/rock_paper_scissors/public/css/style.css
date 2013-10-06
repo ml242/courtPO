@@ -1,0 +1,53 @@
+html {
+  text-align: center;
+  background-color: #dbe3db;
+  color: #424542;
+  font-family: 'Libre Baskerville', serif;
+}
+h1, h2, h3 {
+  margin: 0;
+}
+.container {
+  margin-top: 45px;
+}
+.rps-image {
+  background: url(../img/rps.png);
+  height: 80px;
+  width: 297px;
+  margin: 35px auto 55px;
+}
+.results {
+  min-height: 50px;
+}
+input {
+  font-family: inherit
+}
+input[type="text"] {
+  text-align: center;
+  width: 250px;
+  font-size: 1em;
+  padding: 8px;
+}
+input[type="submit"] {
+  display: block;
+  margin: 2em auto 0;
+  width: 80px;
+  height: 30px;
+  border: none;
+  color: #fbfcfc;
+  background-color: #424542;
+  cursor: pointer;
+  -webkit-transition: background-color .2s ease-out;
+   -moz-transition: background-color .2s ease-out;
+    -ms-transition: background-color .2s ease-out;
+     -o-transition: background-color .2s ease-out;
+        transition: background-color .2s ease-out;
+}
+input[type="submit"]:hover {
+  background-color: #8b4a49;
+  -webkit-transition: background-color .2s ease-in;
+     -moz-transition: background-color .2s ease-in;
+      -ms-transition: background-color .2s ease-in;
+       -o-transition: background-color .2s ease-in;
+          transition: background-color .2s ease-in;
+}

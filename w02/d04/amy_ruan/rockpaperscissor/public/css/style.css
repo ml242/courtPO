@@ -1,0 +1,19 @@
+html {
+  background-image:url("http://4.bp.blogspot.com/-Ok6x2fVVbNo/TkLMXGma5bI/AAAAAAAAASc/DL6gdW1pqdI/s320/cartoons_01.jpg");
+  background-color: rgb(192,192,192);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+body{
+  color: #C80000;
+  font-family: Arial, sans-serif;
+  font-weight:bolder;
+  font-size:14px;
+  margin-left: 10%;
+}
+
+label {
+
+  font-size:14px;
+}

@@ -14,9 +14,8 @@ Developer @GA in NYC
 
 /*Global-------------------------------------------------------------*/
 
-body{
-  background-image: url('images/background.jpg') repeat-x;
-  background-color: #d6d6d6;
+body {
+  background: #d6d6d6 url('../images/background.jpg') repeat-x;
   font-size: 12px;
   color: #000000;
 }
@@ -110,11 +109,14 @@ span{
 
 
 #logo{
-  background-image: url('images/logo.png');
+  /*background-image: url();
   background-size: contain;
   text-indent: 100%;
   white-space: nowrap;
-  overflow: hidden;
+  overflow: hidden;*/
+  background-repeat:repeat-y;
+  text-align: center;
+  margin: 40px auto;
 }
 
 #main{

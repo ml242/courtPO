@@ -1,0 +1,14 @@
+html {
+  background: lightblue;
+  font-family: Arial, sans-serif;
+}
+header {
+  width: 100%;
+  margin: 0 auto;
+text-align: center;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+}

@@ -1,0 +1,17 @@
+html {
+  background-image:url("http://drstocktrader.com/wp-content/uploads/2013/08/buy-sell-stock-trading-dice.jpg");
+  background-repeat:no-repeat;
+  background-position: bottom;
+  background-color: rgb(230,230,230);
+}
+
+body{
+  font-family:Arial, sans-serif;
+  color: rgb(190,0,0);
+  margin-left: 10%;
+}
+
+.enter {
+  width:200px;
+}
+

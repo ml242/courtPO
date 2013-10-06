@@ -1,0 +1,48 @@
+<h2>One... Two... Three... </h2>
+<h3>(choose rock, paper, or scissors below)</h3>
+
+<ul>
+  <% @options.each do |item| %>
+   <!-- <input type="radio" name="rock"> -->
+   <li><%= item %></li>
+  <% end %>
+</ul>
+
+<form>
+  <input type="text" name="choice" placeholder="Choose rock, paper, or scissors">
+  <br/>
+  <input type="submit" value="Shoot!">
+</form>
+
+
+<% if @options.include?(@choice) %>
+  <p>You chose: </p>
+  <%= p @choice %>
+  <p>The computer chose: </p>
+  <%= p @computer_selection %>
+
+    <% if @choice == @computer_selection %>
+    <h2>Tie... Try again <a href="/index">Play again</a> </h2>
+
+    <% elsif @choice.downcase == "paper" && @computer_selection == "rock" %>
+      <h2>You WIN</h2>
+    <% elsif @choice.downcase == "paper" && @computer_selection == "scissors" %>
+      <h2> You Lose...<a href="/index">Play again</a></h2>
+
+    <% elsif @choice.downcase == "rock" && @computer_selection == "scissors" %>
+      <h2>You WIN</h2>
+    <% elsif @choice.downcase == "rock" && @computer_selection == "paper" %>
+      <h2> You Lose...<a href="/index">Play again</a></h2>
+
+    <% elsif @choice.downcase == "scissors" && @computer_selection == "paper" %>
+      <h2>You WIN</h2>
+    <% elsif @choice.downcase == "scissors" && @computer_selection == "rock" %>
+      <h2> You Lose...<a href="/index">Play again</a></h2>
+    <% end %>
+
+  <% else %>
+ <!--  <p> Choose rock, paper, or scissors to play </p> -->
+
+
+<% end %>
+

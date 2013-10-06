@@ -1,0 +1,17 @@
+<h1><%= @title %></h1>
+
+<form action="">
+  <input type="text" name="company_sym" placeholder="i.e. MSFT"> <!-- could put default value="default" -->
+  <input type="submit" value="Search">
+</form>
+
+<% if !@company_sym.nil? %>
+
+  <ul>
+    <li><p>Time: <%= @time %></p></li>
+    <li><p>Day High: <%= @day_high %></p></li>
+    <li><p>Change(pts): <%= @change_pts %></p></li>
+    <li><p>Change(pct): <%= @change_pct %></li>
+  </ul>
+
+<% end %>
