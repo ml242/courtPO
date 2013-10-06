@@ -18,8 +18,6 @@ class Movie
 
 
 
-
-
 end
 
 # {

@@ -1,7 +1,7 @@
 require 'sinatra'
 require 'sinatra/reloader' if development?
-require 'httparty'
-require 'json'
+# require 'httparty'
+# require 'json'
 require 'rainbow'
 require 'cgi'
 require 'pry'
@@ -25,8 +25,7 @@ get '/test' do
   url = "http://www.omdbapi.com/?"
   s = 's=' + query
   url += s
-
-  end
+end
 
 get '/movies/search' do
   erb :search
