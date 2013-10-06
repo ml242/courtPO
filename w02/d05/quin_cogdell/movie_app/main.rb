@@ -16,20 +16,13 @@ require 'cgi'
 # callback   name (optional)   JSONP callback name
 # tomatoes   true (optional)   adds rotten tomatoes data
 
-
-
-
-
-
 get '/' do
   erb :index
 end
 
 get '/movies/search' do
-  # t = params[:query]
   erb :search
 end
-
 
 get '/movies/results' do
   query = CGI::escape(params[:query])
@@ -44,6 +37,16 @@ get '/movies/results' do
   erb :results
 end
 
-
+get '/movies/:imdbID' do
+  url = "http://www.omdbapi.com/?"
+  imdbID = params[:imdbID]
+  i = 'i=' + imdbID
+  url += i
+  response = HTTParty.get(url)
+  parsed_result = JSON.parse(response)
+  @results = parsed_result
+  #binding.pry
+  erb :movie
+end
 
 

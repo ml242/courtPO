@@ -1,0 +1,20 @@
+<h1><%= @results['Title'] %> Information</h1>
+
+<img src="<%= @results['Poster'] %>">
+
+<ul>
+  <% @results.each do |meta| %>
+
+  <li><%= meta %></li>
+  <% end %>
+</ul>
+
+
+<table border="1">
+  <tr> <% @results.each do |meta| %>
+    <td><%= meta[0] %></td>
+    <td><%= meta[1] %></td>
+
+  </tr>
+  <% end %>
+</table>

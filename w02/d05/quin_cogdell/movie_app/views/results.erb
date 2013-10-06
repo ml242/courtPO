@@ -1,10 +1,7 @@
-<h1>Search Results</h1>
+<h1>Movie Search Results</h1>
 <ul>
-<% @results.each_with_index do |movie, index| %>
-  <li><a href=""><%= movie %></a>
-  </li>
+<% @results.each do |movie| %>
+  <li><a href="/movies/<%=movie['imdbID'] %>"><%= movie['Title'] %></a></li>
 <% end %>
-
-
 </ul>
 
