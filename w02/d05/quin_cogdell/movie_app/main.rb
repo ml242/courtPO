@@ -17,7 +17,7 @@ require 'cgi'
 # tomatoes   true (optional)   adds rotten tomatoes data
 
 get '/' do
-  erb :index
+  erb :search
 end
 
 get '/movies/search' do
@@ -32,8 +32,12 @@ get '/movies/results' do
   response = HTTParty.get(url)
   parsed_result = JSON.parse(response)
   puts parsed_result.to_s.color(:red)
-  @results = parsed_result['Search']
-  #binding.pry
+
+  if parsed_result.key?('Error')
+    @results = parsed_result['Error']
+  else
+    @results = parsed_result['Search']
+  end
   erb :results
 end
 
@@ -45,8 +49,9 @@ get '/movies/:imdbID' do
   response = HTTParty.get(url)
   parsed_result = JSON.parse(response)
   @results = parsed_result
-  #binding.pry
+  @title_search = CGI::escape(@results['Title'])
   erb :movie
 end
+
 
 
