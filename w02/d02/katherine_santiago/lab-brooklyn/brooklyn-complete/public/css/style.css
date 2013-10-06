@@ -22,7 +22,7 @@ body {
     line-height: 17px;
 }
 
-#container {
+.container {
     width: 960px;
     margin: 0 auto;
 }
