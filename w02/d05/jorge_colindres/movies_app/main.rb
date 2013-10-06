@@ -13,11 +13,10 @@ get '/' do
 end
 
 get '/search' do
-  search = params[:q]
+  search = params[:q].gsub(" ", "%20")
   response = HTTParty.get("http://www.omdbapi.com/?s=#{search}")
   parsed_result = JSON.parse(response)
   @search_results = parsed_result["Search"]
-  # binding.pry
   erb :index
 end
 
@@ -26,7 +25,6 @@ get '/movies/:imdbID' do
   response = HTTParty.get("http://www.omdbapi.com/?i=#{movieID}")
   parsed_result = JSON.parse(response)
   @movie = parsed_result
-  # binding.pry
   erb :index
 end
 

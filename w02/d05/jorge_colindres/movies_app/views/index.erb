@@ -14,4 +14,13 @@
 
 <% if @movie %>
   <img src="<%= @movie['Poster'] %>" alt="<%= @movie['Title'] %>">
+  <div class="movie-details">
+    <h1><%= @movie['Title'] %></h1>
+    <p class="genre"><%= @movie['Genre'] %></p>
+    <p class="runtime"><%= @movie['Runtime'] %></p>
+    <p class="plot"><%= @movie['Plot'] %></p>
+    <p class="director"><%= @movie['Director'] %></p>
+    <p class="writer"><%= @movie['Writer'] %></p>
+    <p class="actors"><%= @movie['Actors'] %></p>
+  </div>
 <% end %>
