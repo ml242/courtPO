@@ -1,2 +1,10 @@
-<h1>You searched for</h1>
-<%= @results %>
+<h1>Search Results</h1>
+<ul>
+<% @results.each_with_index do |movie, index| %>
+  <li><a href=""><%= movie %></a>
+  </li>
+<% end %>
+
+
+</ul>
+
