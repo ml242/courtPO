@@ -8,7 +8,11 @@ actors
 plot
 poster -->
 
-<h1><%= @title %></h1>
+<h2><%= @title %></h2>
+
+<% if @poster != "N/A" %>
+    <a href="https://www.google.com/#q=<%= CGI.escape(@title) %>" target="new"><img src="<%= @poster %>"></a>
+  <% end %>
 
 <ul>
   <li><strong>Release date:</strong> <%= @released %></li>
@@ -19,8 +23,6 @@ poster -->
   <li><strong>Writer:</strong> <%= @writer %></li>
   <li><strong>Actors:</strong> <%= @actors %></li>
   <li><strong>Plot:</strong> <%= @plot %></li>
-  <% if @poster != "N/A" %>
-  <strong>Poster:</strong><br>
-    <a href="https://www.google.com/#q=<%= CGI.escape(@title) %>" target="new"><img src="<%= @poster %>"></a>
-  <% end %>
 </ul>
+
+<a href="##" onClick="history.go(-1); return false;">Back to your search results</a>

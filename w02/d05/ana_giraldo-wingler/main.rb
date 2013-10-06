@@ -24,7 +24,7 @@ get '/movies/search' do
 end
 
 get '/movies/:imdbID' do
-  url = "http://www.omdbapi.com/?i=#{params[:imdbID]}&tomatoes=true"
+  url = "http://www.omdbapi.com/?i=#{params[:imdbID]}"
   response = HTTParty.get(url)
   parsed_response = JSON.parse(response)
   @title = parsed_response["Title"]
