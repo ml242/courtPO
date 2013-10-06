@@ -1,21 +1,21 @@
 body {
-  font-family: "Montserrat", sans-serif;
+  font: 16px/1.65em "Montserrat", sans-serif;
   background: #e9e9e9;
   color: #2e2222;
 }
 a {
-  color: #fd9900;
+  color: #ec604e;
   text-decoration: none;
 }
 a:hover {
-  color: #e69335;
+  color: #d3412c;
 }
 h1 {
   font-size: 1.25em;
   border-bottom: 1px solid #d8d8d8;
 }
 h5 {
-  color: #fd9900;
+  color: #ec604e;
   text-transform: uppercase;
 }
 
@@ -60,9 +60,12 @@ h5 {
   }
 
 /* Individual Movie */
+.container {
+  padding: 0 50px;
+}
 .movie-container {
   display: flex;
-  padding: 0 50px;
+  margin-bottom: 25px;
 }
 .movie-poster {
   flex: 1;
@@ -74,7 +77,6 @@ h5 {
 .movie-details {
   flex: 2;
   padding-left: 25px;
-  line-height: 1.65em;
 }
 .genre, .runtime {
   color: #8a8a8a;
@@ -118,7 +120,7 @@ h5 {
 }
 .rating-container {
   margin-top: 25px;
-  color: #fd9900;
+  color: #ec604e;
 }
 .rating-score {
   color: #8a8a8a;

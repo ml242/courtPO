@@ -1,3 +1,4 @@
+<!-- Serch Box -->
 <div class="search-box">
   <form action="/search" method="get">
     <label class="search-icon" for="searchBox"><i class="icon-search icon-2x"></i></label>
@@ -5,17 +6,20 @@
   </form>
 </div>
 
+<!-- Search Results -->
 <% if @search_results %>
-  <div class="results">
-    <% @search_results.each do |movie| %>
-    <li><a href="/<%= movie['imdbID'] %>"><%= movie["Title"] %> (<%= movie["Year"] %>)</a></li>
-    <% end %>
+  <div class="search-results container">
+    <ul>
+      <% @search_results.each do |movie| %>
+      <li><a href="/<%= movie['imdbID'] %>"><%= movie["Title"] %> (<%= movie["Year"] %>)</a></li>
+      <% end %>
+    </ul>
   </div>
 <% end %>
 
-
+<!-- Movie Info -->
 <% if @movie %>
-  <div class="movie-container">
+  <div class="movie-container container">
     <div class="movie-poster">
       <img src="<%= @movie['Poster'] %>" alt="<%= @movie['Title'] %>">
     </div>
