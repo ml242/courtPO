@@ -10,7 +10,7 @@ body {
   color: #1d1200;
   background: #e7b965 url(bg.png) repeat;
   padding: 5px;
-  font: bold 12px/1.65em "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  font: bold 12px/1.25em Futura, "Trebuchet MS", Arial, sans-serif;
   letter-spacing: -.5px;
 }
 h1, h2 {
@@ -27,8 +27,13 @@ h2 {
 
 .postcard-container {
   border: 2px solid #210d02;
-  padding: 15px 25px;
+  position: absolute;
   width: 720px;
+  height: 498px;
+  margin-top: -249px;
+  margin-left: -360px;
+  top: 50%;
+  left: 50%;
 }
 .postcard-container::after {
   content:"";
@@ -54,7 +59,7 @@ h2 {
 }
 .form-line label {
   float: left;
-  margin-right: 5px;
+  margin: 5px 5px 0 0;
   text-transform: uppercase;
 }
 .form-line label::after {
@@ -83,8 +88,39 @@ h2 {
 }
 .form-line .boxed-input {
   border: 2px solid #1d1200;
-  padding: 0;
+  padding: 5px 0 0;
   text-align: center;
+}
+.official-use {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid #1d1200;
+  padding: 5px;
+  margin: 1em auto;
+}
+.tick {
+  height: 25px;
+  position: relative;
+}
+.tick input {
+  display: none;
+}
+.tick span:nth-of-type(1) {
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  border: 2px solid #1d1200;
+  cursor: pointer;
+}
+.tick input:checked + span:nth-of-type(1) {
+  background: url(checks.png) no-repeat 0 center;
+  background-size: contain;
+}
+.tick span:nth-of-type(2) {
+  position: relative;
+  top: -5px;
+  right: 0;
+  font-size: 1.45em;
 }
 .form-block span, .waiver {
   font-size: .65em;
@@ -116,7 +152,9 @@ h2 {
     -ms-transform: rotate(-1deg);
     transform: rotate(-1deg);
 }
-
+.date-area {
+  margin-top: 3px;
+}
 .date-area span:nth-of-type(1) {
   text-transform: uppercase;
 }
