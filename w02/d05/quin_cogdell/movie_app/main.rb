@@ -1,10 +1,11 @@
 require 'sinatra'
 require 'sinatra/reloader' if development?
-require 'pry'
 require 'httparty'
 require 'json'
 require 'rainbow'
 require 'cgi'
+require 'pry'
+require_relative 'movie_app_methods'
 
 # http://www.omdbapi.com/
 # s (NEW!)   string (optional)   title of a movie to search for
@@ -20,6 +21,13 @@ get '/' do
   erb :search
 end
 
+get '/test' do
+  url = "http://www.omdbapi.com/?"
+  s = 's=' + query
+  url += s
+
+  end
+
 get '/movies/search' do
   erb :search
 end
@@ -29,15 +37,8 @@ get '/movies/results' do
   url = "http://www.omdbapi.com/?"
   s = 's=' + query
   url += s
-  response = HTTParty.get(url)
-  parsed_result = JSON.parse(response)
-  puts parsed_result.to_s.color(:red)
+  api_call_search(url)
 
-  if parsed_result.key?('Error')
-    @results = parsed_result['Error']
-  else
-    @results = parsed_result['Search']
-  end
   erb :results
 end
 
@@ -46,12 +47,32 @@ get '/movies/:imdbID' do
   imdbID = params[:imdbID]
   i = 'i=' + imdbID
   url += i
-  response = HTTParty.get(url)
-  parsed_result = JSON.parse(response)
-  @results = parsed_result
-  @title_search = CGI::escape(@results['Title'])
+  api_call_imdbID(url)
   erb :movie
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
