@@ -21,7 +21,6 @@ get '/movies/search' do
   else
     movie_name = params[:t]
   end
-  $movie_name = movie_name
   response = HTTParty.get("http://www.omdbapi.com/?s=" + movie_name + "&r=XML")
   if response != nil
     @movie_array = response["root"]["Movie"]
@@ -46,15 +45,27 @@ get '/movies/:id' do
     @writer = response["root"]["movie"]["writer"]
     @actors = response["root"]["movie"]["actors"]
     @plot = response["root"]["movie"]["plot"]
+    name_var = @name
+    @search_name = ""
+    if name_var.split(' ').length > 1
+      movie_name_array = name_var.split(' ')
+      movie_name_array.each do |word|
+        @search_name += word + "+" ## WHY IS THIS NIL
+      end
+    else
+      @search_name = @name
+    end
     if response["root"]["movie"]["poster"] != "N/A"
      @poster = response["root"]["movie"]["poster"]
     else
-      @poster = "http://www.findingbetteragencies.com/wp-content/uploads/HomerSimpsonDoh.png"
+    @poster = "http://www.findingbetteragencies.com/wp-content/uploads/HomerSimpsonDoh.png"
     end
-   @isfull = true
- else
+  @isfull = true
+  else
   @isfull = false
-end
-@search = "http://www.google.com/search?q=" + $movie_name
-erb :id_results
-end
+  end
+@search = "http://www.google.com/search?q=" +  @search_name
+   # @search_name
+   erb :id_results
+ end
+

@@ -1,3 +1,8 @@
+<% if @movie_array != nil %>
 <% @movie_array.each do |movie| %>
 <br><a href="/movies/<%=  movie["imdbID"] %>"><%= movie["Title"] %></a> <br>
+<% end %>
+<% else %>
+<img src="http://www.findingbetteragencies.com/wp-content/uploads/HomerSimpsonDoh.png">
+<p>Your search didn't return anything!</p>
 <% end %>
