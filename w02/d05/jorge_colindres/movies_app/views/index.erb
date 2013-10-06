@@ -1,0 +1,17 @@
+<form action="/search" method="get">
+  <label for="searchBox">Search Movies</label>
+  <input type="text" name="q" id="searchBox">
+</form>
+
+<% if @search_results %>
+  <div class="results">
+    <% @search_results.each do |movie| %>
+    <li><a href="/movies/<%= movie['imdbID'] %>"><%= movie["Title"] %> (<%= movie["Year"] %>)</a></li>
+    <% end %>
+  </div>
+<% end %>
+
+
+<% if @movie %>
+  <img src="<%= @movie['Poster'] %>" alt="<%= @movie['Title'] %>">
+<% end %>
