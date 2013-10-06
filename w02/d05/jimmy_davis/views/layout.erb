@@ -5,6 +5,47 @@
   <title>Movies</title>
 </head>
 <body>
+  <style>
+    body {
+      color: white;
+      font-family: Helvetica;
+      background-color: #1e94ff;
+      text-align: center;
+    }
+    header {
+       text-align: center;
+      background: url("http://3.bp.blogspot.com/-nxU_Ok1DPXY/TdQ25EHEXnI/AAAAAAAAASY/QihdL7wofiM/s1600/movie-reel.jpg");
+      background-size: 20%;
+      background-position: center;
+      color: white;
+      font-family: helvetica;
+      height: 200px;
+    }
+    a {
+      color: white;
+    }
+    input {
+      border: 1px solid black;
+      padding: 10px;
+      font-size: 18px;
+    }
+    input:hover {
+      border: 3px solid black;
+      padding: 10px;
+      font-size: 18px;
+    }
+    input[type="submit"] {
+      background: #ffb13c;
+      color: white;
+    }
+
+    input[type="submit"]:hover {
+      background: #ff8e06;
+      color: #white;
+    }
+  </style>
+  <header>
+  </header>
   <a href="/">Home</a>
   <%= yield %>
 </body>
