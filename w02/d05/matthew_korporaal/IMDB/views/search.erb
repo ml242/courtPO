@@ -1,0 +1,15 @@
+<h1>Results for "<%= @search_results[:name] %>"</h1>
+<% if @search_results[:title].nil? %>
+  <%= binding.pry %>
+<% else %>
+  <ol>
+    <% @search_results[:title].size.times do |i| %>
+      <% imdbID = @search_results[:imdbID][i] %>
+      <li><a href="/movies/<%= imdbID %>">
+      <%= @search_results[:year][i] %>
+      <%= "Title: " %>
+      <%= @search_results[:title][i] %></a>
+  </li>
+  <% end %>
+</ol>
+<% end %>

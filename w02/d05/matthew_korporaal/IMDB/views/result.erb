@@ -1,0 +1,19 @@
+<div>
+  <h1><%= @movie_info[:title] %> (<%= @movie_info[:year] %>)</h1>
+</div>
+
+<div>
+  <h2><%= @movie_info[:rated] %> - <%= @movie_info[:runtime] %> - <%= @movie_info[:genre] %> - <%= @movie_info[:released] %></h2>
+</div>
+
+<div><p><%= @movie_info[:plot] %></p></div>
+
+<ol>
+  <div><li><p><strong>Director: </strong><%= @movie_info[:director] %></p></li>
+  <li><p><strong>Writers: </strong><%= @movie_info[:writer] %></p></li>
+  <li><p><strong>Actors: </strong><%= @movie_info[:actors] %></p></li></div>
+</ol>
+
+<% imdbURL = @movie_info[:imdbURL] %>
+<div><a href="<%= imdbURL %>">
+<%= imdbURL %></a></div>
