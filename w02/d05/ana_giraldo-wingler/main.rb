@@ -14,13 +14,21 @@ get '/movies/search' do
   url = "http://www.omdbapi.com/?s=#{movie_title}"
   response = HTTParty.get(url)
   parsed_response = JSON.parse(response)
+  if parsed_response.has_key?("Response")
+    redirect to("/error")
   # get each movie title and match it to the imdbID
   # in a new hash called "movie_list"
-  @movie_list = {}
-  parsed_response["Search"].each do |movie|
-    @movie_list[movie["Title"]] = movie["imdbID"]
+  else
+    @movie_list = {}
+    parsed_response["Search"].each do |movie|
+      @movie_list[movie["Title"]] = movie["imdbID"]
+    end
+    erb :results
   end
-  erb :results
+end
+
+get '/error' do
+  erb :error
 end
 
 get '/movies/:imdbID' do
