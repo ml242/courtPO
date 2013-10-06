@@ -7,11 +7,11 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 
 
 body {
+  font: bold 12px/1.25em Futura, "Trebuchet MS", Arial, sans-serif;
+  letter-spacing: -.5px;
   color: #1d1200;
   background: #e7b965 url(bg.png) repeat;
   padding: 5px;
-  font: bold 12px/1.25em Futura, "Trebuchet MS", Arial, sans-serif;
-  letter-spacing: -.5px;
 }
 h1, h2 {
   text-align: center;
@@ -21,10 +21,12 @@ h1 {
   font-size: 2em;
   text-transform: uppercase;
 }
+h1 span {
+  text-transform: lowercase;
+}
 h2 {
   font-size: 1.25em;
 }
-
 .postcard-container {
   border: 2px solid #210d02;
   position: absolute;
@@ -36,9 +38,9 @@ h2 {
   left: 50%;
 }
 .postcard-container::after {
-  content:"";
-  display:table;
-  clear:both;
+  content: "";
+  display: table;
+  clear: both;
 }
 .left-side, .right-side {
   float: left;
