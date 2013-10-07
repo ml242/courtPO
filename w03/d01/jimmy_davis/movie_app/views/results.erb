@@ -1,0 +1,15 @@
+<h1>Movie Search Results</h1>
+
+<ol>
+
+  <% @movie_hashes.each do |movie_hash| %>
+    <li class="results">
+      <a class="movie_title" href="<%= movie_hash[:url] %>">
+        <h2><%= movie_hash[:title] %></h2>
+        </a>
+        <p>Year: <%= movie_hash[:year] %></p>
+        <p>Type: <%= movie_hash[:type] %></p>
+    </li>
+  <% end %>
+
+</ol>
