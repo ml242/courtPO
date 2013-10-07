@@ -9,8 +9,6 @@ Format
 =====================================*/
 * {
   display: block;
-  margin: 0 auto;
-  text-align: center;
 }
 
 html {
@@ -18,12 +16,8 @@ html {
 }
 
 .header {
-  height:300px;
+  height:100px;
   width: 100%;
-}
-
-.buffer {
-  margin-top:30px;
 }
 
 .container {
@@ -31,17 +25,6 @@ html {
   margin: 0 auto;
 }
 
-.copyright {
-  position:absolute;
-  bottom:0px;
-  margin: 0 auto;
-  width:30%;
-  font-size: 4px;
-}
-
-/*=================================================*/
-/*Form Stuff*/
-/*=================================================*/
 input {
   margin-top: 15px
 }
@@ -51,24 +34,64 @@ input[type="text"] {
   margin-bottom: 10px
 }
 
-input[type="submit"] {
-  height: 200px;
-  width: 200px;
+.movie_section {
+  position:relative;
 }
 
-h1.first-title {
-  font-family: 'Lily Script One', cursive;
+.text_info {
+  float:left;
+  width: 886px;
+  text-align: left;
+  position:relative;
+  left: 150px;
 }
+
+.photo {
+  float:right;
+  width: 500px;
+  position: relative;
+  right: 100px;
+}
+
+img {
+  margin: 0 auto;
+  height:52%;
+  box-shadow: 3px 3px 3px #888888
+
+}
+
+.footer {
+  height:300px;
+  width: 100%;
+}
+
+.copyright {
+  position:absolute;
+  bottom:0px;
+  margin: 0 auto;
+  width:30%;
+  font: 8px;
+}
+
+.page-title {
+  text-align: center;
+}
+
 h1 {
+  font-family: 'Lily Script One', cursive;
   font-size:48px;
 }
 
 h2 {
-  font-family: 'Lily Script One', cursive;
+
   font-size:36px;
 }
 
 h3 {
   font-family: 'Lily Script One', cursive;
   font-size:36px;
+}
+
+p {
+  font-size: 20px;
 }
