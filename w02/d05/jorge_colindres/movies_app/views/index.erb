@@ -29,7 +29,7 @@
 <% if @movie %>
   <div class="movie-container container">
     <div class="movie-poster">
-      <a href="https://www.google.com/#q=<%= "#{@movie['Title']}" %>" target="_blank">
+      <a href="https://www.google.com/#q=<%= "#{CGI::escape(@movie['Title'])}" %>" target="_blank">
         <% unless @movie['Poster'] == "N/A" %>
           <img src="<%= @movie['Poster'] %>" alt="<%= @movie['Title'] %>">
         <% else %>
