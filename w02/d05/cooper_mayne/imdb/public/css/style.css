@@ -3,35 +3,68 @@
   -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
   box-sizing: border-box; /* IE */
 }
-
 body {
+  background: white url("../images/ticketstub.png") repeat fixed left; 
   font-family: "Sans-serif";
 }
-.nav {
-  text-align:right;
+
+.container:before,
+.container:after {
+    content:"";
+    display:table;
 }
-div.container {
-  margin: 0 auto;
-  width:750px;
+.container:after {
+    clear:both;
+}
+/* For IE 6/7 (trigger hasLayout) */
+.container {
+    zoom:1;
 }
 
+input {
+  border: 0px;
+  font-size: 20px;
+  text-align: left;
+  border: 1px solid grey;
+  box-shadow: 5px 5px 5px grey;
+}
+input[type="text"] {
+  width: 300px;
+  margin: 50px auto 20px 150px;
+}
+div.container {
+  padding: 2px 20px 20px 20px;
+  margin: 0 auto;
+  width:790px;
+  background-color:#C2C2C2;
+  border: 5px solid grey;
+  box-shadow: -5px -5px 5px white;
+  box-shadow: 5px 5px 5px white;
+  border-radius: 5px;
+}
 table {
   float: right;
   width: 440;
   border-collapse: collapse;
   text-align: left;
 }
-
-table, th, td {
+th, td {
   padding: 5px;
-  border: 1px solid black;
+  border-bottom: 1px solid black;
 }
-
 img {
   float:left;
   width: 290;
 }
-
 ul {
-  list-style-image: url("");
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+}
+li {
+  background: url("../images/list_icon.png") no-repeat 0 3px;
+  padding-left: 25px;
+}
+a {
+  font: 20px Arial,sans-serif;
 }

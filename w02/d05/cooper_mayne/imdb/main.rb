@@ -3,7 +3,6 @@ require 'sinatra/reloader' if development?
 require 'httparty'
 require 'json'
 require 'pry'
-#after httpary i'll have to JSON.parse(response)
 
 get "/" do
   #search form
