@@ -5,16 +5,16 @@ require 'json'
 require 'cgi'
 require 'pry'
 
-#later: do if title.nil? display page that says no results were found.
+search_results = []
+movie_info = []
 
-movie_titles = []
 
 get '/movies' do
   erb :movies
 end
 
 get '/movies/search' do
-  @movie_titles = movie_titles
+  @search_results = search_results
   erb :search
 end
 
@@ -23,11 +23,16 @@ post '/movies/search' do
   url = "http://www.omdbapi.com/?s=" + @encoded_title
   response = HTTParty.get(url)
   parsed_result = JSON.parse(response)
-  search_results = parsed_result["Search"]
-  movie_titles.clear
-  search_results.each do |hash|
-    @movie_title = hash["Title"]
-    movie_titles.push(@movie_title.to_s)
-  end
+  @search_results = parsed_result["Search"]
+  search_results = @search_results
   redirect to ("/movies/search")
+end
+
+get '/movies/:id' do
+  id = params[:id]
+  post_info = "http://www.omdbapi.com/?i=#{id}"
+  response = HTTParty.get(post_info)
+  @parsed_result = JSON.parse(response)
+  @movie_info = @parsed_result
+  erb :id
 end

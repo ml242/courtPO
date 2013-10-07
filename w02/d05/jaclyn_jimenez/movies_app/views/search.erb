@@ -1,6 +1,15 @@
-<h3><% @movie_titles.each do |title| %>
-<li><%= title %></li>
-<% end %>
-</h3>
+<div class = "results box">
+<h2> Movie Search Results </h2>
 
-<a href="/movies"> Back to Search </a>
+<%  @search_results.each do |hash|   %>
+<%    @title = hash["Title"]   %>
+<%    @year = hash["Year"]   %>
+<%    @id = hash["imdbID"]   %>
+<%    @type = hash["Type"]   %>
+  <li> <%= "#{@type.capitalize}:" %> <a href ="<%="/movies/#{@id}" %>"> <%= "#{@title}" %></a><%=", #{@year}"%> </li>
+  <% end %>
+</div>
+
+<footer>
+<a class= "back" href="/movies"> Back to Search </a>
+</footer>
