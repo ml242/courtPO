@@ -1,0 +1,73 @@
+<% @results.each_with_index do | movie, index | %>
+<li><%= index %><img src=<%= @results["Poster"] %>><%= movie %></li>
+<% end %>
+
+
+Bugs: no multiple titles
+Can't link back to movie detail page
+
+result = HTTParty.get("http://www.omdbapi.com/?s=Excalibur")
+
+parsed_new = JSON.parse(result.body)
+
+parsed_result.map do |hash|
+  hash.select do |key, value|
+    ["title", "year"].include? key
+  end
+end
+
+
+        <h2><a href="movies/<% p movie_list["imdbID"]%>"><%= movie_list["Title"] %></a></h2>
+        </div>
+        <div class="right">
+        <img src=<%= movie_list["Title"] %> >
+
+
+                <div class="movie_page">
+        <div class="left">
+        <%= @results["title"] %>
+        <h2><a href="movies/<% p @results["imdbID"]%>"><%= p @results["Title"] %></a></h2>
+        </div>
+        <div class="right">
+        <img src=<%= @results["Poster"] %> >
+        </div>
+        </div>
+
+
+
+  <% @movie_list["Search"].each do |movie| %>
+  <%= p @movie_list[movie["Title"]] %>
+  <% end %>s
+
+
+
+@movie_list = {}
+  parsed_result["Search"].each do |movie|
+    @movie_list[movie["Title"]] = movie["imdbID"]
+  end
+
+
+<%  @search_results.each do |hash|  %>
+<%    @title = hash["Title"]  %>
+<%    @year = hash["Year"]  %>
+<%    @id = hash["imdbID"]  %>
+<%    @type = hash["Type"]  %>
+<li> <%= "#{@type.capitalize}:" %>
+  <a href ="<%="/movies/#{@id}" %>"> <%= "#{@title}" %></a> </li>
+  <% end %>
+
+     <% @movie_list1.each_with_index do | name, index| %>
+        <li><% index %><img src=<% @movie_poster %>><% @movie_list1 %></li>
+        <% end %>
+
+
+
+
+<%  @search_results.each do |hash|  %>
+<%    @title = hash["Title"]  %>
+<%    @year = hash["Year"]  %>
+<%    @id = hash["imdbID"]  %>
+<%    @type = hash["Type"]  %>
+<li> <%= "#{@type.capitalize}:" %>
+  <a href ="<%="/movies/#{@id}" %>"> <%= "#{@title}" %></a> </li>
+  <% end %>
