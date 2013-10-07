@@ -8,7 +8,7 @@ require 'httparty'
 @titles = []
 @id = []
 
-@attributes = ["Title", "Year", "Rated", "Released", "Runtime", "Genre", "Director", "Writer", "Actors", "Plot"]
+# @attributes = ["Title", "Year", "Rated", "Released", "Runtime", "Genre", "Director", "Writer", "Actors", "Plot"]
 
 
 
@@ -18,23 +18,24 @@ end
 
 
 get '/movies' do
-  title = params[:query]
-  result = HTTParty.get("http://www.omdbapi.com/?s=#{title}")
-  parsed_result = JSON.parse(result.body)
-  @parsed = parsed_result["Search"]
-  # binding.pry
-  # @parsed.each {|movie| @titles << movie["Title"]}
-  # @parsed.each {|movie| @id << movie["imdbID"]}
-  erb :imdbID
+#   title = params[:query]
+#   result = HTTParty.get("http://www.omdbapi.com/?s=#{title}")
+#   parsed_result = JSON.parse(result.body)
+#   @parsed = parsed_result["Search"]
+#   # binding.pry
+#   # @parsed.each {|movie| @titles << movie["Title"]}
+#   # @parsed.each {|movie| @id << movie["imdbID"]}
+  erb :results
 end
 
 
 
-# get '/search' do
+get '/search/:imdb_ID' do
+  "this works"
 #   @movie = params[:i]
 #     @poster =
-#   # erb :results
-# end
+#   # erb :imdbID
+end
 
 
 
