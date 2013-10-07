@@ -1,13 +1,14 @@
-
-<!-- action= should be changed to /search -->
-
-<form action="/movies" method="get">
-  <input type="text" name="query" placeholder="search movie title">
-  <input type="submit" name="Search">
-</form>
+<h1>If you see this movies.erb is working</h1>
 
 
 
+
+<ul>
+  <% @parsed.each do |movie| %>
+  <li> <%= movie["Title"]%> </li>
+  <% end %>
+
+</ul>
 
 
 
