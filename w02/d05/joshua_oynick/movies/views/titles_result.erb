@@ -1,0 +1,8 @@
+<% if @movie_array != nil %>
+<% @movie_array.each do |movie| %>
+<br><a href="/movies/<%=  movie["imdbID"] %>"><%= movie["Title"] %></a> <br>
+<% end %>
+<% else %>
+<img src="http://www.americanhumanefilmtv.org/wp-content/uploads/2011/11/genericMoviePoster-202x300.jpg">
+<p>Search did not return any movies.</p>
+<% end %>

@@ -13,9 +13,6 @@ shelter = Shelter.new
 shelter.name = "Happi Tails"
 shelter.manager = "Ana G-W"
 
-
-binding.pry
-
 puts "Welcome to the #{shelter.name} Pet Management System. Please choose from the menu:"
 puts "(1) Display all animals"
 puts "(2) Display all owners"
@@ -31,9 +28,13 @@ while answer != "7"
 
   case answer
     when "1"
-      puts "#{shelter.pets.to_s}"
+      shelter.pets.each do |pet|
+        puts "#{pet.name} the #{pet.species}"
+      end
     when "2"
-      puts "#{shelter.owners.to_s}"
+      shelter.owners.each do |owner|
+        puts "#{owner.name}, #{owner.age}"
+      end
     when "3"
       # create a new pet
       # add it to the @pets array in the shelter object
@@ -45,18 +46,38 @@ while answer != "7"
       # help someone adopt an animal
       # list all animals with has_owner? => false
       need_adopting = shelter.find_homeless_pets
-      need_adopting.each_with_index do |pet, index|
       puts "These pets need a home:"
-      puts "#{index} #{pet}"
+      need_adopting.each_with_index do |pet, index|
+      puts "(#{index}) #{pet.name.capitalize} the #{pet.species}"
          end
-      loved_pet = ask("Which would you like to place?")
-      binding.pry
-      owner
-      shelter.owners.WHOEVER WANTS THIS PET<< need_adopting[loved_pet.to_i]
+      loved_pet_index = ask("Which would you like to place?")
+      loved_pet = need_adopting[loved_pet_index.to_i]
+      puts "Who is adopting #{loved_pet.name.capitalize} the #{loved_pet.species}?"
+      new_owner = ask("#{shelter.owners.each_with_index {|pets, index| puts index}}")
+        shelter.owners[new_owner.to_i].pets << loved_pet
+        puts "#{shelter.owners[new_owner.to_i].name.capitalize} has adopted #{loved_pet.name.capitalize}!"
+        loved_pet.owner << shelter.owners[new_owner.to_i]
+        need_adopting.delete_at(loved_pet_index.to_i)
+      # shelter.owners.<< need_adopting[loved_pet.to_i]
       # prompt user to select one
       # prompt user for desired adopter
       # call 'adopt' method on adopter
     when "6"
+      puts "Here are all the owners and their pets:"
+      shelter.owners.each_with_index do |owner, index|
+        puts "#{index} #{owner.name} owns #{owner.pets}"
+      end
+      disowner_index = ask("Who wants to give up a pet?")
+      disowner = shelter.owners[disowner.to_i]
+      puts "#{disowner.name}'s pets are:"
+      disowner.pets.each_with_index do |pet, index|
+        puts "#{index} #{pet.name} the #{pet.species}"
+      end
+      disowned = ask("Which would #{disowner.name} like to give up?")
+      puts "#{disowner.name} has left #{disowner.pets[disowned.to_i].name} at the shelter."
+      shelter.pets << disowner.pets[disowned.to_i]
+      disowner.pets[disowned.to_i].owner.pop
+      disowner.pets.delete_at(disowned.to_i)
       # put an animal up for adoption:
       # print array of pets with index values
       # prompt user to select a pet
