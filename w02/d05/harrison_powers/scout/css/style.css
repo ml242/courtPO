@@ -1,0 +1,214 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* 	apply a natural box layout model to all elements 
+		http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+*/
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+ }
+
+/* MY CSS STARTS NOW */
+
+@font-face {
+  font-family: 'Veteran_Typewriter';
+  src: url('veteran_typewriter.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'HoneyScript';
+  src: url('HoneyScript-Light.ttf') format('truetype');
+}
+
+.card {
+	background-color: rgb(227, 175, 91);
+	width: 730px;
+	height: 511px;
+	font-family: Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 10px;
+	color: rgb(29, 9, 5);
+}
+
+.card_inner {
+	width: 710px;
+	height: 491px;
+	border: 2px solid rgb(29, 9, 5);
+}
+
+.card .title {
+	text-align: center;
+	font-size: 30px;
+	font-weight: bold;
+	padding: 20px 0 10px 0;
+}
+
+.card .subtitle {
+	text-align: center;
+	font-size: 18px;
+	padding: 0 0 20px 0;
+	font-weight: normal;
+}
+
+.left_side {
+	width: 345px;
+	float: left;
+	border-right: 4px solid rgb(29, 9, 5);
+	padding: 0 10px 0 35px;
+}
+
+.card input {
+	padding-left: 17px;
+	background-color: rgb(227, 175, 91);
+	border-top: 0;
+	border-right: 0;
+	border-left: 0;
+	border-bottom: 2px solid rgb(29, 9, 5);
+	font-family: 'Veteran_Typewriter';
+	font-size: 20px;
+	position:relative;
+	top:-7px;
+}
+
+input.name {
+	width: 247px;
+	padding-left: 38px;
+}
+
+input.address {
+	width: 222px;
+}
+
+input.telephone {
+	width: 190px;
+}
+
+input.emergency {
+	width: 142px;
+}
+
+input.relatives {
+	top: 0;
+	width: 288px;
+}
+
+input.official_box {
+	width: 22px;
+	height: 22px;
+	border: 2px solid rgb(29, 9, 5);
+	top: 1px;
+	padding-left: 4px;
+	padding-bottom: 0;
+	padding-top: 0;
+
+}
+
+input.number {
+	border: 2px solid rgb(29, 9, 5);
+	width: 40px;
+	height: 30px;
+	top: 0px;
+	padding-left: 8px;
+}
+
+input.signature {
+	top:2px;
+	font-family: 'HoneyScript';
+	font-size: 30px;
+	color: rgb(25, 52, 55);
+}
+
+.left_side .official_boxes {
+	border: 2px solid rgb(29, 9, 5);
+	padding: 2px 4px;
+	vertical-align: center;
+	font-size: 20px;
+	font-weight: normal;
+	width: 280px;
+}
+
+p.subtext {
+	font-size: 10px;
+}
+
+p.supertext {
+	font-size: 8px;
+}
+p.subsupertext {
+	font-size: 9px;
+}
+p.center {
+	text-align: center;
+}
+.right_side {
+	width: 350px;
+	float: left;
+	padding: 0 0 0 15px;
+}
+
+.right_side img {
+	transform:rotate(-1deg);
+	-ms-transform:rotate(-1deg); /* IE 9 */
+	-webkit-transform:rotate(-1deg); /* Safari and Chrome */
+  /* Wish this looked good...
+  -moz-box-shadow:    1px 1px 1px 1px #000;
+  -webkit-box-shadow: 1px 1px 1px 1px #000;
+  box-shadow:         1px 1px 1px 1px #000;
+  */
+}
+
+input.date {
+	top: 0;
+	border: 0;
+}
+
+p.form_number {
+	text-align: right;
+	position: relative;
+	top: -10px;
+}
