@@ -2,6 +2,7 @@ require 'sinatra'
 require 'sinatra/reloader' if development?
 require 'httparty'
 require 'json'
+require 'cgi'
 
 require 'pry'
 require 'pry-nav'
@@ -13,8 +14,8 @@ get '/' do
 end
 
 get '/search' do
-  search = params[:q].gsub(" ", "%20")
-  response = HTTParty.get("http://www.omdbapi.com/?s=#{search}")
+  search = params[:q]
+  response = HTTParty.get("http://www.omdbapi.com/?s=#{CGI::escape(search)}")
   parsed_result = JSON.parse(response)
   @search_results = parsed_result["Search"]
   if @search_results.nil?
