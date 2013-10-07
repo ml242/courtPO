@@ -1,5 +1,5 @@
 <% if @parsed_result["Poster"] != "N/A" %>
-<a href="https://www.google.com/search?q=<%= CGI::escape(@parsed_result["Title"]) %>">
+<a href="https://www.google.com/search?q=<%= URI::encode(@parsed_result["Title"]) %>">
 	<img src="<%= @parsed_result["Poster"] %>" />
 </a>
 <% end %>

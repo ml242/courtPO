@@ -1,12 +1,21 @@
-<% if @parsed_result.has_key?("Error") == true %>
+<% if @parsed_result.length == 0 %>
 
 Sorry there are no results for that search.
 
 <% else %>
 
-Search results:<br />
-<a href="/movies/<%= @parsed_result["imdbID"] %>">
-<%= @parsed_result["Title"] %> - <%= @parsed_result["Year"] %>
-</a>
+	Search results:
+
+	<% @parsed_result.each do |movie| %>
+
+		<br />
+		
+			<a href="/movies/<%= movie['imdbID'] %>">
+
+			<%= movie["Title"] %> - <%= movie["Year"] %>
+
+		</a>
+
+	<% end %>
 
 <% end %>
