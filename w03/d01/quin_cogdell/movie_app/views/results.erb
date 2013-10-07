@@ -6,6 +6,7 @@
   <% else %>
 
   <ul>
+
   <% @results.each do |movie| %>
     <li><a href="/movies/<%=movie['imdbID'] %>"><%= movie['Title'] %></a></li>
   <% end %>

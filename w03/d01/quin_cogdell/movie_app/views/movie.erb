@@ -13,8 +13,10 @@
 
 <table border="1">
   <tr> <% @results.each do |meta, info| %>
+    <% unless meta == 'Type' || meta == 'Response' %>
     <td><%= meta %></td>
     <td><%= info %></td>
+    <% end %>
   </tr>
   <% end %>
 </table>

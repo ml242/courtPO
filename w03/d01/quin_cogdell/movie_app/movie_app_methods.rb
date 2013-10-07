@@ -19,23 +19,22 @@ def api_call(url)
   parsed_result = JSON.parse(response)
 end
 
-def api_call_search(parsed_result)
-  api_call(url)
+def api_call_search(url)
+  parsed_result = api_call(url)
   puts parsed_result.to_s.color(:red)
 
   if parsed_result.key?('Error')
-    @results = parsed_result['Error']
+    results = parsed_result['Error']
   else
-    @results = parsed_result['Search']
+    results = parsed_result['Search']
   end
 
 end
 
 def api_call_imdbID(url)
-  api_call(url)
+  parsed_result = api_call(url)
   puts parsed_result.to_s.color(:red)
-  @results = parsed_result
-  @title_search = CGI::escape(@results['Title'])
+  results = parsed_result
 end
 
 

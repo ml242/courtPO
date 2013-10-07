@@ -6,8 +6,8 @@ require 'rainbow'
 require 'cgi'
 require 'pry'
 require 'pg'
-
 require_relative 'movie_app_methods'
+
 
 get '/' do
   erb :search
@@ -22,8 +22,7 @@ get '/movies/results' do
   url = "http://www.omdbapi.com/?"
   s = 's=' + query
   url += s
-  api_call_search(url)
-
+  @results = api_call_search(url)
   erb :results
 end
 
@@ -32,7 +31,10 @@ get '/movies/:imdbID' do
   imdbID = params[:imdbID]
   i = 'i=' + imdbID
   url += i
-  api_call_imdbID(url)
+  #binding.pry
+  @results = api_call_imdbID(url)
+  @title_search = CGI::escape(@results['Title'])
+  #binding.pry
   erb :movie
 end
 
