@@ -1,0 +1,57 @@
+<% # Search Box %>
+<div class="search-box">
+  <form action="/search" method="get">
+    <label class="search-icon" for="searchBox"><i class="icon-search icon-2x"></i></label>
+    <input type="search" name="q" id="searchBox" role="search" placeholder="Search Movies">
+  </form>
+</div>
+
+<% unless @movies|| @movie %>
+  <h1 class="logo">Movies.</h1>
+<% end %>
+
+<% # Search Results %>
+<% if @movies %>
+  <div class="search-results container">
+    <% unless @movies.empty? %>
+      <ul>
+        <% @movies.each do |movie| %>
+        <li><a href="/<%= movie[:imdb_id] %>"><%= movie[:title] %> (<%= movie[:year] %>)</a></li>
+        <% end %>
+      </ul>
+    <% else %>
+      No movies found.
+    <% end %>
+  </div>
+<% end %>
+
+<% # Movie Info %>
+<% if @movie %>
+  <div class="movie-container container">
+    <div class="movie-poster">
+      <a href="https://www.google.com/#q=<%= "#{CGI::escape(@movie[:title])}" %>" target="_blank">
+        <img src="<%= @movie[:poster] %>" alt="<%= @movie[:poster_alt] %>">
+      </a>
+    </div>
+    <div class="movie-details">
+      <h2><%= @movie[:title] %></h2>
+      <p class="genre"><%= @movie[:genre] %></p><!--
+      --><p class="runtime"><%= @movie[:runtime] %></p>
+      <p class="rated"><%= @movie[:rated] %></p>
+      <p class="plot"><%= @movie[:plot] %></p>
+      <h5>Cast and Crew</h5>
+      <p class="director"><%= @movie[:director] %></p>
+      <p class="writer"><%= @movie[:writer] %></p>
+      <p class="actors"><%= @movie[:actors] %></p>
+      <div class="rating-container">
+        <% @movie[:imdb_rating].to_i.times do %>
+          <i class="rating icon-star"></i>
+        <% end %>
+        <% if @movie[:imdb_rating].to_f.modulo(1) > 0.29 %>
+          <i class="rating icon-star-half"></i>
+        <% end %>
+        <span class="rating-score"><%= @movie[:imdb_rating] %></span>
+      </div>
+    </div>
+  </div>
+<% end %>
