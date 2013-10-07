@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>drinks we just distilled</h1>
+	<a href="/">go home</a>
+	<br /><br />
+	<ol>
+		<%=
+			drink_list = ''
+			@num_drinks.times do
+				@dist.brew_beverage do |name|
+					drink_list += "<li>#{name}</li>"
+				end
+			end
+			drink_list
+		%>
+	</ol>
+</body>
+</html>

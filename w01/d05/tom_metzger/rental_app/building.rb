@@ -84,10 +84,62 @@ Building2 = Building.new ("1 Beacon Court", true, false, 55)
 # B3 = Apartment.new(2500, 5, 4, 6100, 5)
 
 
+####------------------------------------------------------
+# Phil's code from app.rb
+
+require'pry'
+require_relative "building"
+require_relative "apartment"
+require_relative "tenant"
 
 
 
 
+####------------------------------------------------------
+# Phil's code from building
+
+class Building
+  attr_accessor :name, :apartments
+  #using attr_accessor
+    # def apartments
+      # @apartments
+    # end
+    #def apartments=(apt)
+      # @apartments = apt
+    # end
+  def initialize
+    @apartments = []
+  end
+
+  def count_people
+    #set counter
+    total_renters = 0
+    #loop through the apartment array
+    @apartments.each do |apartment|
+    #count the number of people in each array
+    total_renters += apartment.tenants.count
+    #return the total number of renters
+    end
+  end
+
+  def count_apartments_available
+    #set a counter
+    total_available = 0
+    #loop through the apartment array
+    @apartments.each do |apt|
+    #count the number of apartments that aren't occupied
+      total_available += 1 if !apt.occupied?
+        #alternate:  total_available += 1 unless apt.occupied?
+    #return the total number
+  end
+
+  def inquiry_string
+    "There are #{count_apartments_available} apartments available."
+  end
+
+  def to_s
+    "#{name} is a cozy building with charm. #{inquiry_string}"
+  end
 
 
 

@@ -1,0 +1,38 @@
+<% if @parsed_result["Poster"] != "N/A" %>
+<a href="https://www.google.com/search?q=<%= URI::encode(@parsed_result["Title"]) %>">
+	<img src="<%= @parsed_result["Poster"] %>" />
+</a>
+<% end %>
+
+<h1><%= @parsed_result["Title"] %></h1>
+
+<% if @parsed_result["Year"] != "N/A" %>
+<h4>Came out in <%= @parsed_result["Year"] %></h4>
+<% end %>
+<% if @parsed_result["Released"] != "N/A" %>
+Released <%= @parsed_result["Released"] %>
+<% end %>
+<% if @parsed_result["Rated"] != "N/A" %>
+<h4>Rated: <%= @parsed_result["Rated"] %></h4>
+<% end %>
+<% if @parsed_result["Runtime"] != "N/A" %>
+<h4>Runtime: <%= @parsed_result["Runtime"] %></h4>
+<% end %>
+<% if @parsed_result["Genre"] != "N/A" %>
+<h4>Genre: <%= @parsed_result["Genre"] %></h4>
+<% end %>
+<% if @parsed_result["Director"] != "N/A" %>
+<h4>Director: <%= @parsed_result["Director"] %></h4>
+<% end %>
+<% if @parsed_result["Writer"] != "N/A" %>
+<h4>Writer: <%= @parsed_result["Writer"] %></h4>
+<% end %>
+<% if @parsed_result["Actors"] != "N/A" %>
+<h4>Actors: <%= @parsed_result["Actors"] %></h4>
+<% end %>
+<br />
+
+<% if @parsed_result["Plot"] != "N/A" %>
+<h4>Plot: <%= @parsed_result["Plot"] %></h4>
+
+<% end %>

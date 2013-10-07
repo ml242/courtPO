@@ -1,6 +1,6 @@
-require_relative 'rental_app_building'
-require_relative 'rental_app_person'
-require_relative 'rental_app_apartment'
+require_relative 'rental_app_building.rb'
+require_relative 'rental_app_person.rb'
+require_relative 'rental_app_apartment.rb'
 
 b1 = Building.new("140 Franklin St", true, false, 3)
 b2 = Building.new("141 Prince St.", false, true, 2)
@@ -21,7 +21,5 @@ b2a1 = Apartment.new(2000, 2, 1, 2000, b2, 1)
 b2a2 = Apartment.new(2000, 2, 1, 2000, b2, 2)
 june = Person.new("June", 24, b2a1)
 jordan = Person.new("Jordan", 24, b2a1)
-puts b1.count_people
-puts b1.count_apartments_available
-puts b2.count_people
-puts b2.count_apartments_available
+b1_apts = b1.apartments.values.flatten
+b1_apts.each {|apt| puts apt.renters }

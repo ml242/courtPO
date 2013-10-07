@@ -1,0 +1,85 @@
+/*
+
+## Style Hints:
+
+Body Font Size = 12px
+	 Line Height = 17px
+	 Font Family = "Times New Roman", serif
+	 Font Color = #656565
+
+Link Hover Color = #20222a
+
+*/
+
+body{
+  font-size: 12px;
+  line-height: 17px;
+  font-family: "Times New Roman", serif;
+  color: #656565;
+}
+
+h1{
+  font-size: 36px;
+  line-height: 36px;
+  padding: 0px;
+  margin: 10px 0px;
+  color: rgba(155,155,155,1);
+}
+
+a{
+  text-decoration: none;
+}
+
+.justify{
+  text-align: justify;
+}
+
+#container{
+  width: 960px;
+  margin: 0px auto;
+}
+
+.logo_blocks{
+  display: inline-block;
+  border: 3px solid rgba(204, 204, 204, 1);
+  /*
+  padding: 3px 3px 3px 3px;
+  background-color: ;
+  */
+}
+
+.stretch {
+    width: 100%;
+    display: inline-block;
+    font-size: 0;
+    line-height: 0
+}
+
+.border_block{
+  border: 1px solid white;
+  display: block;
+}
+
+.logo_container{
+  width: 960px;
+  margin: 0px auto;
+  text-align: justify;
+}
+
+.left_image{
+  float: left;
+}
+
+.blue_text{
+  color: rgba(52,140,192,1);
+}
+
+.date{
+  font-size: 14px;
+  margin: 0px;
+}
+
+.zero_margin{
+  margin: 0px;
+}
+

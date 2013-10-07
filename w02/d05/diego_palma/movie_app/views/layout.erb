@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Movie App!</title>
+  <style>
+      html {
+        font-family: helvetica;
+      }
+
+      .container {
+        margin-top: 20px;
+        margin-left: 30px;
+
+      }
+
+      .results {
+        background-color: rgba(255,255,255, 0.8);
+        margin-top: 40px;
+        width: 453px;
+        font: 12px;
+        list-style: none;
+      }
+
+      .results a {
+        text-decoration: none;
+        font: 13px/2 red;
+      }
+
+
+      .movie_wrapper {
+        margin-top: 40px;
+        font-size: 12px;
+      }
+
+      .title h1 {
+        font-size: 16px;
+      }
+
+      input {
+      border: 1px solid grey;
+      padding: 10px;
+      font-size: 18px;
+      width: 200px;
+    }
+
+      input[type="submit"] {
+      margin-left: 30px;
+      background: #3498db;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+<%= yield %>
+
+</body>
+</html>

@@ -1,0 +1,9 @@
+
+<h2> Your results pulled up: </h2>
+<% @results %>
+
+
+<%@movies.each{|movie| %>
+ <br>
+<a href="http://localhost:4567/movies/<%=movie["imdbID"] %>"> <%=movie["Title"] %></a>
+<%} %>
