@@ -1,0 +1,20 @@
+<div class="information">
+  <div class="title"><%=@title%> </div>
+  <ul>
+    <li>Year: <%=@year%></li>
+    <li>Rated: <%=@rated%></li>
+    <li>Release: <%=@released%></li>
+    <li>Runtime: <%=@runtime%></li>
+    <li>Genre: <%=@genre%></li>
+    <li>Director: <%=@director%></li>
+    <li>Writer: <%=@writer%></li>
+    <li>Actors: <%=@actors%></li>
+    <li>Plot: <%=@plot%></li>
+    <li> <%if @poster != nil?%>
+          <a class= "poster" href= <%='/movies/'+@id+'/poster_link'%>>Click for poster</a>
+          <%else%>
+        No Available Poster
+        <%end%>
+    </li>
+  </ul>
+</div>
