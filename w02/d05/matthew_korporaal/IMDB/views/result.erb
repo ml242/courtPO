@@ -1,19 +1,30 @@
+
+<link rel="stylesheet" href="../css/style.css">
 <div>
   <h1><%= @movie_info[:title] %> (<%= @movie_info[:year] %>)</h1>
 </div>
-
+<!-- If poster available print -->
 <div>
-  <h2><%= @movie_info[:rated] %> - <%= @movie_info[:runtime] %> - <%= @movie_info[:genre] %> - <%= @movie_info[:released] %></h2>
+  <% imdbURL = @movie_info[:imdbURL] %>
+  <% if @movie_info[:poster] != "N/A" %>
+    <div>
+      <a href="<%= imdbURL %>"><img src="<%= @movie_info[:poster] %>" class="poster_img" alt=""></a>
+    </div>
+    <div class="more_info">
+  <% else %>
+    <!-- If no poster print movie info across container -->
+    <div>
+  <% end %>
+  <!-- Print movie info -->
+    <h2><br>[<%= @movie_info[:rated] %>] - <%= @movie_info[:runtime] %> - <%= @movie_info[:genre] %></h2>
+    <h3><%= @movie_info[:released] %></h3>
+  </div>
+  <div class="more_info"><p><%= @movie_info[:plot] %></p></div>
+  <div>
+    <ol>
+      <div><li><p><strong>Director: </strong><%= @movie_info[:director] %></p></li>
+      <li><p><strong>Writers: </strong><%= @movie_info[:writer] %></p></li>
+      <li><p><strong>Actors: </strong><%= @movie_info[:actors] %></p></li></div>
+    </ol>
+  </div>
 </div>
-
-<div><p><%= @movie_info[:plot] %></p></div>
-
-<ol>
-  <div><li><p><strong>Director: </strong><%= @movie_info[:director] %></p></li>
-  <li><p><strong>Writers: </strong><%= @movie_info[:writer] %></p></li>
-  <li><p><strong>Actors: </strong><%= @movie_info[:actors] %></p></li></div>
-</ol>
-
-<% imdbURL = @movie_info[:imdbURL] %>
-<div><a href="<%= imdbURL %>">
-<%= imdbURL %></a></div>

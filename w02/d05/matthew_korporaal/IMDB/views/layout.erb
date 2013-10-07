@@ -2,11 +2,17 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/style.css">
-  <title>OMDB SEARCH</title>
+  <link rel="shortcut icon" href="/img/reel.ico" >
+  <title><%= @tab_name %></title>
 </head>
 <body>
+  <div class="wrapper">
+  <nav>
+    <ul class="home_ul">
+      <li class="home_li"><a href="/" class="home_a">Home</a></li>
+    </ul>
+  </nav>
   <%= yield %>
+</div>
 </body>
 </html>
