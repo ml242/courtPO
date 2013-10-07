@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+  <title>Movie Database Search</title>
+  <style>
+  body {
+    background-color: #3d5cb1;
+    font-family: "Calibri", "Helvetica", sans-serif;
+    color: white;
+    font-size: 40px;
+    text-align: center;
+  }
+
+  h1 {
+  font-size: 50px;
+  }
+
+  .wrapper {
+    max-width: 1700px;
+    margin: 0 auto;
+  }
+
+
+  img {
+    width: 200px;
+    height: auto;
+    border-radius: 20px;
+    border: 10px solid white;
+  }
+
+  input {
+    border:0;
+    padding:7px;
+    font-size:25px;
+    font-family:Calibri, sans-serif;
+    color:#aaa;
+    border:solid 3px gray;
+    margin:0 0 15px;
+    width:250px;
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+  }
+
+.styled {  max-width: 80px;
+  height: 50px;
+  padding: 0 5px 0 0;
+  background: url(checkbox.png) no-repeat;
+  display: block;
+  clear: left;
+  float: left;
+}
+
+.styled {
+  background: url(radio.png) no-repeat;
+}
+
+#within {
+  width: 200px;
+  height: 60px;
+  padding: 0 24px 0 8px;
+  color: #fff;
+  font: 30px arial,sans-serif;
+  background: url(select.png) no-repeat;
+  overflow: hidden;
+}
+
+h2 {
+  font-size: 150px;
+}
+
+.nowrap {
+  border: none;
+}
+
+.noborder {
+  border: none;
+}
+
+.noborder:hover {
+  color: yellow;
+}
+
+
+  </style>
+</head>
+
+<body>
+
+ <div class="wrapper">
+  <a href="/" class="nowrap"><h1>Let's Find a Movie</h1></a>
+    <%= yield %>
+   <br><br> <a href="/">Home</a>
+
+</div>
+</body>
+</html>

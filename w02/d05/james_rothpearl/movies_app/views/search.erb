@@ -1,0 +1,16 @@
+<h1>Search Results with Links:</h1>
+
+<ul>
+  <% @response_array.each do |key| %>
+
+
+    <li><a href="/movies/<%=key['imdbID'] %>"><%= key["Title"] %></a></li>
+    <% @imdbID = key['imdbID'] %>
+  <% end %>
+</ul>
+
+
+
+
+
+

@@ -59,7 +59,7 @@ TOP_50 = [
 
 get '/' do
 	@top_50 = ''
-  TOP_50.each do |x| @top_50 << "#{x} : <strong>#{YahooFinance::get_quotes(YahooFinance::StandardQuote, x)[x].lastTrade}</strong>  |  " end
+  TOP_50.each do |x| @top_50 << "<a href=\"?symbol=#{x}\">#{x} : #{YahooFinance::get_quotes(YahooFinance::StandardQuote, x)[x].lastTrade}</a>  |  " end
   if params[:symbol].present?
     @symbol = params[:symbol].upcase
     @quote = YahooFinance::get_quotes(YahooFinance::StandardQuote, @symbol)[@symbol].lastTrade
