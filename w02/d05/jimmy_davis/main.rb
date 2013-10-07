@@ -12,44 +12,49 @@ get '/' do
   erb :index
 end
 
-# from matt:
+
+## THIS WORKS _ TESTING BELOW
 # get '/:movie_title' do
 #   movie_title = params[:movie_title]
 #   movie_title = CGI::escape(movie_title)
-#   url = ("http://www.omdbapi.com/?s=")
-#   result = HTTParty.get(url+movie_title)
-#   parsed_result = JSON.parse(result.body)
-#   results = parsed_result
-#   movie_list1 = []
-#   results["Search"].each do |movie|
-#     movie_list1 << movie["Title"]
-#     @movie_list1 = movie_list1
-#   end
-#     erb :movie
+#   url = "http://www.omdbapi.com/?s=#{movie_title}"
+#   response = HTTParty.get(url)
+#   parsed_result = JSON.parse(response)
+#   title = parsed_result["Search"["Title"]]
+#   year = parsed_result["Search"["Year"]]
+#   result = parsed_result["Search"][0]
+#   title = result["Title"]
+#   year = result["Year"]
+#   # result = response["Search"]
+#   # title = result["Title"]
+#   # year = result["Year"]
+#   @title = title
+#   @year = year
+#   erb :movie
 # end
-
 
 get '/:movie_title' do
   movie_title = params[:movie_title]
-  movie_title = CGI::escape(movie_title)
   url = "http://www.omdbapi.com/?s=#{movie_title}"
   response = HTTParty.get(url)
-  parsed_result = JSON.parse(response.body)
-  # movie_list = []
-  # title = parsed_result["Search"][0]["Title"]
-  # year = parsed_result["Search"][0]["Year"]
-  result = parsed_result["Search"][0]
-  title = result["Title"]
-  year = result["Year"]
-  @title = title
-  @year = year
+  parsed_result = JSON.parse(response)
+  search_results = parsed_result["Search"][0]
+  @title = search_results["Title"]
+  @year = search_results["Year"]
+  @movieid = params[:imdbid]
   erb :movie
 end
 
-# get 'movie/:imdbid' do
-#   imdid = params[:imdbID]
-#   url = url = "http://www.omdbapi.com/?s=#{movie_title}"
-#   response = HTTparty.get(url)
-#   parsed_result = JSON.parse(response.body)
-#   @imdbid = "www.imdb.com/title/#{imdbid}"
+# get '/:imdbid' do
+#   movieid= params[:imdbID]
+#   movie_title = CGI::escape(movie_title)
+#   url = "http://www.omdbapi.com/?i=#{movieid}"
+#   response = HTTParty.get(url)
+#   parsed_result = JSON.parse(response)
+#   imdbid = parsed_result["Search"["imdbID"]]
+#   result = parsed_result["Search"][0]
+#   imdbid = result["imdbid"]
+
+#   @imdbid = imdbid
+#   erb :imdb
 # end
