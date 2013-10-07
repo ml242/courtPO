@@ -1,6 +1,7 @@
 CREATE TABLE movies (
   id SERIAL PRIMARY KEY,
-  title VARCHAR NOT NULL,
+  imdbID VARCHAR,
+  title VARCHAR,
   year INTEGER,
   rated VARCHAR,
   genre VARCHAR,

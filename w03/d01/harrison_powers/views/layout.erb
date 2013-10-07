@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title><%= @title %></title>
+	<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+	<header><a href="/">the Ruby Movie Database</a></header>
+	<div class="search">
+		<form action="/movies/search" method="post">
+			<label id="movie_search">Search for a movie!</label>
+			<input type="text" id="movie_search" name="movie_search">
+			<input type="submit" value="Click to Search">
+		</form>
+		<br /><a href="/movies/faves">Faves</a>
+	</div>
+	<br /><br />
+	<div class="page">
+		<%= yield %>
+	</div>
+</body>
+</html>
