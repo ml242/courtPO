@@ -1,0 +1,8 @@
+ <% if @movie_array != nil %>
+ <% @movie_array.each do |movie_hash| %>
+ <br><a href="/movies/<%= movie_hash[:id] %>"><%= movie_hash[:title] %></a><br>
+ <% end %>
+ <% else %>
+ <img src="http://www.findingbetteragencies.com/wp-content/uploads/HomerSimpsonDoh.png">
+ <p>You don't have any favorites!</p>
+ <% end %>
