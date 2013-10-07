@@ -20,17 +20,35 @@ body {
 .container {
     zoom:1;
 }
-
+img.logo {
+  display:block;
+  margin: 0 auto;
+}
+form {
+  display: inline;
+}
 input {
+  display:inline;
   border: 0px;
-  font-size: 20px;
+  font-size: 25px;
   text-align: left;
-  border: 1px solid grey;
   box-shadow: 5px 5px 5px grey;
+  position: relative;
+  bottom: 65px;
 }
 input[type="text"] {
-  width: 300px;
-  margin: 50px auto 20px 150px;
+  width: 270px;
+  margin-left: 40px;
+}
+input[type="submit"] {
+  margin-right: 40px;
+  width:130px;
+}
+img.face {
+  position:relative;
+  bottom:40px;
+  width: 120px;
+  display:inline;
 }
 div.container {
   padding: 2px 20px 20px 20px;
@@ -52,7 +70,8 @@ th, td {
   padding: 5px;
   border-bottom: 1px solid black;
 }
-img {
+
+img.poster {
   float:left;
   width: 290;
 }
