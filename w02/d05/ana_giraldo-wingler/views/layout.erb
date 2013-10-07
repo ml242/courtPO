@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700' rel='stylesheet' type='text/css'>
+  <title>Movie Lookup</title>
+</head>
+<body>
+  <header>
+    <h1>Movie Lookup</h1>
+
+    <form action="/movies/search" method="get">
+      <input type="text" name="movie_title">
+      <input type="submit" value="search">
+    </form>
+  </header>
+
+  <div class="container">
+  <%= yield %>
+  </div>
+
+</body>
+</html>

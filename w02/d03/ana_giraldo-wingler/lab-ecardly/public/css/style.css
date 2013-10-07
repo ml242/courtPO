@@ -28,7 +28,7 @@ Developer @GA in NYC
 
 body {
      font-family: "Helvetica Neue";
-     background: url(/images/background.jpg);
+     background: url(../images/background.jpg);
      background-repeat: repeat-x;
      background-color: #d6d6d6;
      text-color: #000000;
@@ -42,11 +42,12 @@ h1 {
      display: block;
      height: 216px;
      width: 216px;
-     background: url(/images/logo.png);
+     background: url(../images/logo.png);
      background-repeat: no-repeat;
      margin: 0 auto;
      text-align: center;
-     font-size: 2px;
+     font-size: 0/0 a;
+     color: transparent;
 }
 
 h2 {
@@ -54,16 +55,17 @@ h2 {
 }
 
 footer {
-     margin: 0 auto;
-     position: relative;
-     display: block;
      padding-top: 20px;
-     padding-left: 45%;
-     padding-bottom: 20px;
+     text-align: center;
 }
 
 article {
      text-align: justify;
+
+}
+
+article a {
+     text-transform: uppercase;
 }
 
 aside {
@@ -71,6 +73,17 @@ aside {
      background-color: #FFFFFF;
      padding: 25px;
      float: right;
+}
+
+ul {
+     list-style-type: none;
+     padding: 0;
+     margin-left: 0;
+}
+
+ul a {
+     text-decoration: none;
+     color: #000000;
 }
 
 .container {
@@ -90,4 +103,9 @@ aside {
      border-top: 1px dotted black;
      border-bottom: 1px solid black;
      padding: 10px;
+}
+
+aside > a > img {
+     padding-top: 10%;
+     padding-bottom: 3%;
 }
