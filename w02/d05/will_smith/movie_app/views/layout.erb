@@ -3,16 +3,27 @@
 <head>
   <meta charset="utf-8">
   <title>Movie Search</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
     <body>
-        <div id="wrapper">
-            <nav>
-                <ul>
-                    <a href="/"><li>Home</li></a>
-                    <a href="/movies"><li>Movies</li></a>
-                </ul>
-            </nav>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="navbar navbar-default navbar-fixed-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <ul class="nav nabar-nav">
+                                <li class="col-lg-6">
+                                    <a href="/" style="padding-top:15px; padding-bottom:15px">Home</a>
+                                </li>
+                                <li class="col-lg-6">
+                                    <a href="/movies/search" style="padding-top:15px; padding-bottom:15px">Search</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
       <%= yield %>
         </div>
     </body>
