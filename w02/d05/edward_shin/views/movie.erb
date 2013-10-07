@@ -1,0 +1,17 @@
+<h3><%= @title %></h3>
+<p>Year of  release: <%= @year %></p>
+<p>Rated: <%= @rated %></p>
+<p>Date of release: <%= @released %></p>
+<p>Runtime: <%= @runtime %></p>
+<p>Genre: <%= @genre %></p>
+<p>Directed by: <%= @director %></p>
+<p>Written by: <%= @writer %></p>
+<p>Actors include: <%= @actors %></p>
+<p>Plot Summary: <%= @plot %></p>
+
+<% if @new_data.has_key?("Poster") %>
+<% title = @title.gsub(/\s/, '+') %>
+<% @poster = @new_data["Poster"] %>
+<a href="http://google.com/#q=<%=title%>"><img src="<%= @poster %>"></a>
+<% end %>
+
