@@ -1,26 +1,27 @@
-# Homework!
+# Week 3 Day 1 Homework!
 
 ## Whitespace Kills
 
-Update your sublime user settings to include the following:
-https://gist.github.com/phlco/6871610
+Make **sure** that your sublime user settings (`⌘`-`+,`) include the following settings, which target and normalize many white-space inconsistencies:
+[https://gist.github.com/phlco/6871610](https://gist.github.com/phlco/6871610)
 
-## Refactor
+## Refactor the Movies App
 
-Make your movies app use a database!
+##### Make your movies app use a database!
 
-Create a database called `movies_db`
+- Create a database called `movies_db`
 
-Create a `movies.sql` file that creates a movies table
+- Create a `movies.sql` file that will create a new table, `movies`, in `movies_db`, and run it.
 
-The movies table should include all the attributes you display in your movies show page.
+    - Today we learned to execute .sql files with this command: `psql -d DATABASE_NAME -f FILENAME.sql`
 
-Add a `save` button to your movie's show page.
+- The `movies` table should contain all of the attributes that display in your movie's show page.
 
-When a user clicks `save` send a `post` request back to your server that saves your movie to your database.
+- Add a `save` button to your movie's show page.
 
-Hint use a hidden field to send back the movie's imdb rating.
+    - When a user clicks the `save` button, send a `post` request back to your server that saves that particular movie into the `movies` table of your `movies_db` database.
+    - **Hint:** use a hidden field to send back the movie's imdb rating.
 
-Add a `faves` link to your movies index page.
+- Add a `faves` link to your movies index page.
 
-When a user clicks `faves` display all the movies saved to your database.
+    - When a user clicks `faves`, display all the movies that have been saved to your database.
