@@ -1,0 +1,26 @@
+<html><!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Movies</title>
+<style>
+    body{background-color: <%=@color%>;}
+  </style>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <h1>Movie App</h1>
+  <h2>Find all the information you want about your movie</h2>
+  <%=yield%>
+  <div class="sidebar">
+    <div class="big_size">KEEP</div>
+    <div class="big_size2">CALM</div>
+    <div class="small_size">AND FIND YOUR</div>
+    <div class="big_size3">MOVIE</div>
+  </div>
+  <nav>
+    <a class= "nav1" href="/movies">Home</a>
+    <a class= "nav1" href="/favorites">Favorites</a>
+  </nav>
+</body>
+</html>

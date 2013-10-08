@@ -1,0 +1,13 @@
+<h1><%= @movie[:title]%></h1>
+<p><%= @movie[:year]%></p>
+<p><%= @movie[:genre]%></p>
+
+<% if @movie[:poster] != "Search Google" %>
+<img src=" <%= @movie[:poster] %>">
+<% else %>
+<p>Go search google for the movie poster</p>
+<% end %>
+
+<form method="post" action="/movies/faves">
+  <input type="submit" value="Save">
+</form>

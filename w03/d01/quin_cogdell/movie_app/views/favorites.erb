@@ -1,0 +1,10 @@
+<h1>Favorite Movies</h1>
+<ul>
+
+  <% @results.each do |movie| %>
+
+    <li><a href="/movies/<%=movie['imdbid'] %>"><%= movie['title'] %></a></li>
+  <% end %>
+  </ul>
+
+
