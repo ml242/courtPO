@@ -45,8 +45,8 @@ end
 post '/movies/:imdbiD' do
   @color = COLOR.sample
   @id = params[:imdbiD].to_s
-  response = HTTParty.get("http://www.omdbapi.com/?i=" + @imdbID)
-  @title = JSON.parse(response)["Title"]
+  response = HTTParty.get("http://www.omdbapi.com/?i=" + @id)
+  @title = JSON.parse(response)["Title"].gsub("/","//")
   @year = JSON.parse(response)["Year"]
   @rated = JSON.parse(response)["Rated"]
   @released = JSON.parse(response)["Released"]
@@ -67,7 +67,7 @@ post '/movies/:imdbiD' do
   runtime, genre, director, writer, actors, plot, poster_link)
   VALUES ('#{@id}','#{@title}','#{@year}','#{@rated}','#{@released}',
     '#{@runtime}','#{@genre}','#{@director}','#{@writer}',
-    '#{@actors}','#{@plot}','#{@poster}')"
+    '#{@actors}','#{'@plot'}','#{@poster}')"
   response = db_connection.exec(sql)
   # @results = response.entries[0].to_s
   erb :post_movies_info
@@ -90,8 +90,20 @@ get '/favorites' do
   sql = "SELECT * FROM movies"
   response = db_connection.exec(sql)
   db_connection.close
-  response.entries
-  response.entries[0].each do |x,y| puts "#{x} : #{y}" end
+  results = response.entries
+
+
+  results_whole = []
+  i = 0
+    while i < results.length
+      results_list = []
+      results[i].each do |x,y|
+      results_list << "#{x} : #{y}"
+    end
+    results_whole << results_list
+    i += 1
+    end
+    p results_whole.to_s
 end
 
 
