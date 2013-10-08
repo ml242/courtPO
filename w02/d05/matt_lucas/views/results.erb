@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="normalize.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Results Page</title>
+  <h1>You searched for</h1>
+        <div class="movie_page">
+        <div class="left">
+        <%= @results["title"] %>
+        <h2><a href="movies/<% p @results["imdbID"]%>"><%= p @results["Title"] %></a></h2>
+        </div>
+        <div class="right">
+        <img src=<%= @results["Poster"] %> >
+        </div>
+        </div>
+
+<% @results.each_with_index do | movie, index | %>
+<li><%= index %> <img src=<%= @results["Poster"] %></li>
+<% end %>
+
+
+
+
+
+</head>
+<body>
+
+</body>
+</html>
