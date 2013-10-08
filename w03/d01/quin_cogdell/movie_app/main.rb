@@ -43,10 +43,17 @@ post '/movies' do
   url += i
   @results = api_call_imdbID(url)
 
+  #binding.pry
+
+
   db_connection = PG.connect(
     :dbname => 'movies_db',
     :host => 'localhost'
     )
+
+  @results.each do |k, v|                                                                                                    #takes all the params and formats (escapes) the apostrophes)
+    @results[k] = db_connection.escape(v)
+  end
   sql = "INSERT INTO movies (
       title,
       year,
@@ -75,12 +82,8 @@ post '/movies' do
         '#{@results["imdbVotes"].to_i}',
         '#{@results["imdbID"]}'
         )"
-  #binding.pry
   db_connection.exec(sql)
   db_connection.close
-
-
-  #erb :index
   redirect to ("/favorites")
 
 end
