@@ -5,34 +5,58 @@ require 'json'
 require 'cgi'
 require 'pry'
 
-search_results = []
-movie_info = []
-
-
-get '/movies' do
+get '/' do
   erb :movies
 end
 
-get '/movies/search' do
-  @search_results = search_results
-  erb :search
-end
 
-post '/movies/search' do
-  @encoded_title = CGI::escape(params["title"])
-  url = "http://www.omdbapi.com/?s=" + @encoded_title
+get '/movies/search' do
+  encoded_title = CGI::escape(params[:q])
+  url = "http://www.omdbapi.com/?s=#{encoded_title}"
   response = HTTParty.get(url)
   parsed_result = JSON.parse(response)
-  @search_results = parsed_result["Search"]
-  search_results = @search_results
-  redirect to ("/movies/search")
+  @movie_hashes = []
+
+  parsed_result["Search"].each do |movie|
+    imdb_id = movie["imdbID"]
+    url = "/movies/#{imdb_id}"
+
+    movie_hash = {
+    :title => movie["Title"],
+    :year => movie["Year"],
+    :type => movie["Type"],
+    :url => url
+    }
+    @movie_hashes << movie_hash
+  end
+  erb :search
 end
 
 get '/movies/:id' do
   id = params[:id]
   post_info = "http://www.omdbapi.com/?i=#{id}"
   response = HTTParty.get(post_info)
-  @parsed_result = JSON.parse(response)
-  @movie_info = @parsed_result
+  @movie_info = JSON.parse(response)
+
+  if @movie_info["Poster"] == "N/A"
+    poster_url = nil
+  else
+    poster_url = @movie_info["Poster"]
+  end
+
+  @movie = {
+    :title => @movie_info["Title"],
+    :year => @movie_info["Year"],
+    :parental_rating => @movie_info["Rated"],
+    :released => @movie_info["Released"],
+    :runtime => @movie_info["Runtime"],
+    :genre => @movie_info["Genre"],
+    :director => @movie_info["Director"],
+    :writer => @movie_info["Writer"],
+    :actors => @movie_info["Actors"],
+    :plot => @movie_info["Plot"],
+    :poster => poster_url,
+    :type => @movie_info["Type"],
+  }
   erb :id
 end
