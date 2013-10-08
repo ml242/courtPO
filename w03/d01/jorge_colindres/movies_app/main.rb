@@ -15,7 +15,21 @@ get '/' do
 end
 
 get '/favorites' do
-  "works"
+  db_connection = PG.connect :dbname => 'movies_db', :host=> 'localhost'
+  sql = "SELECT * FROM movies"
+  response = db_connection.exec sql
+  db_connection.close
+  saved_favs = response.entries
+  @favs = []
+  saved_favs.each do |movie|
+    movie_hash = {
+      :title => movie['title'],
+      :poster => movie['poster'],
+      :poster_alt => movie['posteralt']
+    }
+    @favs << movie_hash
+  end
+  @favs.to_s
 end
 
 get '/search' do
