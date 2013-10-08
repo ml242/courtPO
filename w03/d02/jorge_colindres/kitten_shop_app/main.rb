@@ -21,7 +21,11 @@ post '/kittens' do
 end
 
 get '/kittens' do
-
+  db_connec = PG.connect :dbname => 'kitten_shop_db', :host => 'localhost'
+  sql = "SELECT * FROM kittens"
+  kittens = db_connec.exec sql
+  db_connec.close
+  kittens.entries.to_s
 end
 
 get '/kittens/:id' do
