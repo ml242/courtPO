@@ -6,11 +6,8 @@ CREATE TABLE movies (
   genre VARCHAR,
   runtime VARCHAR,
   release_date VARCHAR,
-  director VARCHAR,
-  writer VARCHAR,
-  actors VARCHAR,
+  director TEXT,
+  writer TEXT,
+  actors TEXT,
   plot TEXT
 );
-
--- http://www.omdbapi.com/?i=tt0087451
--- psql -d movies_db -f movies.sql

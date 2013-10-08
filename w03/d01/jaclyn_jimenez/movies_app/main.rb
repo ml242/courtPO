@@ -73,11 +73,16 @@ post "/save/:id" do
     :host => 'localhost')
   sql = "INSERT INTO movies (title, year, type, genre, runtime,
          release_date, director, writer, actors, plot)
-        VALUES ('#{@movie_info["Title"]}', #{@movie_info["Year"]},
-        '#{@movie_info["Type"]}', '#{@movie_info["Genre"]}',
-          '#{@movie_info["Runtime"]}', '#{@movie_info["Released"]}',
-          '#{@movie_info["Director"]}', '#{@movie_info["Writer"]}',
-          '#{@movie_info["Actors"]}', '#{@movie_info["Plot"]}' )"
+        VALUES ('#{@movie_info["Title"]}',
+                #{@movie_info["Year"]},
+                '#{@movie_info["Type"]}',
+                '#{@movie_info["Genre"]}',
+                '#{@movie_info["Runtime"]}',
+                '#{@movie_info["Released"]}',
+                '#{@movie_info["Director"]}',
+                '#{@movie_info["Writer"]}',
+                '#{@movie_info["Actors"]}',
+                '#{@movie_info["Plot"]}' )"
   response = db_connection.exec(sql)
   db_connection.close
   redirect to("/faves")
@@ -90,5 +95,6 @@ get '/faves' do
   sql = "SELECT * FROM movies"
   response = db_connection.exec(sql)
   db_connection.close
-  response.entries.to_s
+  @favorites = response.entries
+  erb :faves
 end
