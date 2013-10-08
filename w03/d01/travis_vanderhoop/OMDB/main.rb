@@ -8,6 +8,7 @@ require 'sinatra/reloader' if development?
 require 'httparty'
 require 'pry'
 require 'json'
+require 'pg'
 
 #============================
 get '/search' do
@@ -33,9 +34,11 @@ end
 #============================
 get '/movies/:imdbID' do
   imdb_id = params[:imdbID]                                                      #saves imdbID as a string. Using the string we can access more information about the selected films
+  @imdb_id = imdb_id                                                                  #for later use: must append to the URL for /favs/:imdbID
   movie_url = "http://www.omdbapi.com/?i=" + imdb_id          #saves a url that pulls in the desired imdb_id
   movie_hash = HTTParty.get(movie_url)                                 #grabs movie info from the imdb API
-  @movie_hash = JSON.parse(movie_hash)                               #parses the text sent from imdb and turns it into a hash we can access and pull values from
+  movie_hash = JSON.parse(movie_hash)                                 #parses the text sent from imdb and turns it into a hash we can access and pull values from
+  @movie_hash = movie_hash
   @title = @movie_hash["Title"]
   @year = @movie_hash["Year"]
   @rated = @movie_hash["Rated"]
@@ -48,4 +51,37 @@ get '/movies/:imdbID' do
   @plot = @movie_hash["Plot"]
   @poster_url = @movie_hash["Poster"]
   erb :movie_info
+end
+
+get '/favs' do
+  db_connection = PG.connect(:dbname => 'movies_db', :host => 'localhost')        #establishes connection to movies_db so I can retrieve the favorite
+  sql = "SELECT * FROM movies"
+  response = db_connection.exec(sql)
+  db_connection.close
+  @movies = response.entries
+  erb :favs
+end
+
+post '/favs' do
+  title = params[:title]
+  year = params[:year]
+  rated = params[:rated]
+  released = params[:released]
+  runtime = params[:runtime]
+  genre = params[:genre]
+  director = params[:director]
+  writer = params[:writer]
+  actors = params[:actors]
+  plot_test = params[:plot]
+  plot = plot_test.gsub("'","")
+
+  db_connection = PG.connect(:dbname => 'movies_db', :host => 'localhost')        #establishes connection to movies_db
+  sql = "INSERT INTO movies (title, year, rated, released, runtime, genre, director, writer, actors, plot) VALUES ('#{title}', #{year}, '#{rated}', '#{released}', '#{runtime}', '#{genre}', '#{director}', '#{writer}', '#{actors}', '#{plot}')"
+  response = db_connection.exec(sql)
+
+
+
+  #always remember to close
+  db_connection.close
+  redirect back
 end

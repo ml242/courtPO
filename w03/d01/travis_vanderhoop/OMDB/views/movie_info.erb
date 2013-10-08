@@ -12,7 +12,18 @@
       <p><strong>Writer:</strong> <%= @writer %></p>
       <p><strong>Actors:</strong> <%= @actors %></p>
       <p><strong>Plot: </strong><%= @plot %></p>
+
       <form action="/favs" method="post">
+        <input type="hidden" name="title" value="<%= @title %>">
+        <input type="hidden" name="year" value=<%= @year %>>
+        <input type="hidden" name="rated" value="<%= @rated %>">
+        <input type="hidden" name="released" value="<%= @released %>">
+        <input type="hidden" name="runtime" value="<%= @runtime %>">
+        <input type="hidden" name="genre" value="<%= @genre %>">
+        <input type="hidden" name="director" value="<%= @director %>">
+        <input type="hidden" name="writer" value="<%= @writer %>">
+        <input type="hidden" name="actors" value="<%= @actors %>">
+        <input type="hidden" name="plot" value="<%= @plot %>">
         <input type="submit" value='SAVE TO FAVS'>
       </form>
     </section>
