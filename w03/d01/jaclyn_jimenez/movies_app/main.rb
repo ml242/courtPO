@@ -4,6 +4,7 @@ require 'httparty'
 require 'json'
 require 'cgi'
 require 'pry'
+require 'pg'
 
 get '/' do
   erb :movies
@@ -57,6 +58,37 @@ get '/movies/:id' do
     :plot => @movie_info["Plot"],
     :poster => poster_url,
     :type => @movie_info["Type"],
+    :id => id
   }
   erb :id
+end
+
+post "/save/:id" do
+  id = params[:id]
+  post_info = "http://www.omdbapi.com/?i=#{id}"
+  response = HTTParty.get(post_info)
+  @movie_info = JSON.parse(response)
+  db_connection = PG.connect(
+    :dbname => 'movies_db',
+    :host => 'localhost')
+  sql = "INSERT INTO movies (title, year, type, genre, runtime,
+         release_date, director, writer, actors, plot)
+        VALUES ('#{@movie_info["Title"]}', #{@movie_info["Year"]},
+        '#{@movie_info["Type"]}', '#{@movie_info["Genre"]}',
+          '#{@movie_info["Runtime"]}', '#{@movie_info["Released"]}',
+          '#{@movie_info["Director"]}', '#{@movie_info["Writer"]}',
+          '#{@movie_info["Actors"]}', '#{@movie_info["Plot"]}' )"
+  response = db_connection.exec(sql)
+  db_connection.close
+  redirect to("/faves")
+end
+
+get '/faves' do
+  db_connection = PG.connect(
+    :dbname => 'movies_db',
+    :host => 'localhost')
+  sql = "SELECT * FROM movies"
+  response = db_connection.exec(sql)
+  db_connection.close
+  response.entries.to_s
 end

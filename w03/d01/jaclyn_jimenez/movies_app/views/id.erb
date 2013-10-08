@@ -15,8 +15,13 @@
   <li><%= "Actors: #{@movie[:actors]}" %></li>
   <li><%= "Plot: #{@movie[:plot]}" %></li>
 </ul>
+<div class ="save_button">
+  <form action = <%= "/save/#{@movie[:id]}" %> method ="post">
+    <input type = "Submit" value ="Save"></input>
+  </form>
+  </div>
 </div>
 
 <footer>
-<a class= "back" href="/movies"> Back to Search </a>
+<a class= "back" href="/"> Back to Search </a>
 </footer>
