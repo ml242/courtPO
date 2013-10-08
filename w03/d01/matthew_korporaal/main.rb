@@ -91,7 +91,26 @@ get '/movies/:imdbID' do
   erb :result
 end
 
+post '/:imdbID' do
 
+  url = "http://www.omdbapi.com/?i=#{params[:imdbID]}&t="
+  response = HTTParty.get(url)
+  parsed_result = JSON.parse(response.body)
+  @tab_name = parsed_result["Title"]
+  title = parsed_result["Title"]
+  imdbID = "#{params[:imdbID]}"
+  year = parsed_result["Year"]
+
+  db_connection = PG.connect(
+    :dbname => 'omdb',
+    :host => 'localhost')
+  sql = "INSERT INTO bookmarks (title, year, imdbID) VALUES ('#{title}', '#{year}','#{params['imdbID']}')"
+
+  response = db_connection.exec(sql)
+  response.entries.to_s
+  db_connection.close
+  redirect to("/movies/#{imdbID}")
+end
 
 post '/movies/search' do
   # create search url and submit to omdb api
@@ -122,25 +141,4 @@ post '/movies/search' do
     end
     redirect to("/movies/search")
   end
-end
-
-post '/movies/:imdbID' do
-
-  url = "http://www.omdbapi.com/?i=#{params[:imdbID]}&t="
-  response = HTTParty.get(url)
-  parsed_result = JSON.parse(response.body)
-  @tab_name = parsed_result["Title"]
-  title = parsed_result["Title"]
-  imdbID = "#{params[:imdbID]}"
-  year = parsed_result["Year"]
-
-  db_connection = PG.connect(
-    :dbname => 'omdb',
-    :host => 'localhost')
-  sql = "INSERT INTO bookmarks (title, year, imdbID) VALUES ('#{title}', '#{year}','#{params['imdbID']}')"
-
-  response = db_connection.exec(sql)
-  response.entries.to_s
-  db_connection.close
-  redirect to("/movies/#{imdbID}")
 end
