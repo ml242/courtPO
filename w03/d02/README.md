@@ -53,7 +53,7 @@ GET  /kittens/:id
 
 # EVERYTHING AFTER IS EXTRA CREDIT
 
-POST /kittens:/id/delete
+POST /kittens/:id/delete
 - Removes a kitten from the database
 - returns `true` if it was able to remove the kitten
 
@@ -148,5 +148,7 @@ GET /kittens/new
 - the form itself should look like this:
  	<form method="post" action"/kittens">…</form> to post 	
 ```
+
+Then, if you happen to get here, change your really boring looking hashes to actual HTML pages that display the info / photo of the kitten!
 
 ### Extra Credit: Create all the other necessary views
