@@ -29,7 +29,7 @@ get '/favorites' do
     }
     @favs << movie_hash
   end
-  @favs.to_s
+  erb :favs
 end
 
 get '/search' do
@@ -71,7 +71,7 @@ get '/:imdbID' do
     @movie[:poster] = "http://placehold.it/330x450&text=No Poster"
     @movie[:poster_alt] = "No Poster"
   end
-  erb :index
+  erb :movie
 end
 
 post '/favorites' do

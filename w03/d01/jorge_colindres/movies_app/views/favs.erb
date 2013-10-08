@@ -1,0 +1,14 @@
+<div class="search-results container">
+  <% unless @favs.empty? %>
+    <ul class="favorites">
+      <% @favs.each do |movie| %>
+      <li>
+        <img src="<%= movie[:poster] %>" alt="<%= movie[:poster_alt] %>">
+        <span><%= movie[:title] %></span>
+      </li>
+      <% end %>
+    </ul>
+  <% else %>
+    No movies favorited yet.
+  <% end %>
+</div>

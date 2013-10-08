@@ -9,6 +9,12 @@
   <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
 </head>
 <body>
+  <div class="search-box">
+    <form action="/search" method="get">
+      <label class="search-icon" for="searchBox"><i class="icon-search icon-2x"></i></label>
+      <input type="search" name="q" id="searchBox" role="search" placeholder="Search Movies">
+    </form>
+  </div>
   <%= yield %>
 </body>
 </html>
