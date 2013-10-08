@@ -1,0 +1,6 @@
+CREATE TABLE movies (
+id SERIAL PRIMARY KEY,
+title VARCHAR NOT NULL,
+year VARCHAR
+)
+
