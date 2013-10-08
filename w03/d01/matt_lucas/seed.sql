@@ -1,1 +1,1 @@
-INSERT INTO movies (imdb) VALUES ('tt0154789');
+INSERT INTO movies (title, id) VALUES ('Lord of the Rings', 'tt0154789');
