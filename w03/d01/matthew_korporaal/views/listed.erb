@@ -1,0 +1,15 @@
+<link rel="stylesheet" href="../css/style.css">
+<!-- Result list page -->
+<!--<h1>Results for "<%= @listings[:name] %>"</h1>-->
+<h1><%= @listings[:header] %></h1>
+
+<ol>
+  <% @listings[:title].size.times do |i| %>
+    <% imdbID = @listings[:imdbID][i] %>
+    <li><a href="/movies/<%= imdbID %>">
+      <%= @listings[:year][i] %>
+      <%= " - " %>
+      <%= @listings[:title][i] %></a>
+    </li>
+  <% end %>
+</ol>
