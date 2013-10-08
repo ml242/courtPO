@@ -24,4 +24,4 @@ Make **sure** that your sublime user settings (`⌘`-`+,`) include the following
 
 - Add a `faves` link to your movies index page.
 
-    - When a user clicks `faves`, display all the movies that have been saved to your database.
+    - When a user clicks `faves`, display all the movies md that have been saved to your database.
