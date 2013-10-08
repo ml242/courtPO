@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" href="/img/reel.ico" >
+  <title><%= @tab_name %></title>
+</head>
+<body>
+  <div class="wrapper">
+  <nav>
+    <ul class="home_ul">
+      <div><li class="home_li"><a href="/" class="home_a">Home</a></li></div>
+      <div><li class="home_li book_button"><a href="/movies/saved" class="home_a">Bookmarks</a></li></div>
+      <div><li class="home_li"><a href="/login" class="home_a">Login</a></li></div>
+    </ul>
+  </nav>
+  <%= yield %>
+</div>
+</body>
+</html>

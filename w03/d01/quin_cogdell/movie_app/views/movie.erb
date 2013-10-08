@@ -1,0 +1,30 @@
+<h1><%= @results['Title'] %> Information</h1>
+
+<% if @results['Poster'] != 'N/A' %>
+
+  <a href="http://www.google.com/search?q=<%= @title_search %>">
+    <img class="poster" src="<%= @results['Poster'] %>">
+  </a>
+<% else %>
+  <a href="http://www.google.com/search?q=<%= @title_search %>">
+    Search Google
+  </a>
+  <% end %>
+
+<table border="1">
+  <tr> <% @results.each do |meta, info| %>
+    <% unless meta == 'Type' || meta == 'Response' %>
+    <td><%= meta %></td>
+    <td><%= info %></td>
+    <% end %>
+  </tr>
+  <% end %>
+</table>
+
+
+<form action="/movies" method="post">
+  <input type="hidden" name="imdbID" value=<%="#{@results['imdbID']}" %>>
+
+  <input type="submit" value="Add to Favorites">
+</form>
+

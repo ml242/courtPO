@@ -1,0 +1,14 @@
+<h1><%= @title %></h1>
+<% if @poster != nil then %>
+<a href=<%="https://www.google.com/#newwindow=1&q=#{@title.gsub(" ", "+")}&safe=off"%>><img src=<%=@poster%> alt="Poster"></a>
+<% end %>
+<ul>
+  <% @parsed_result.each_pair do |key, value| %>
+  <li><%= "#{key}: #{value}" %></li>
+  <% end %>
+</ul>
+
+<form method="post">
+<input type="submit" value="Save">
+</form>
+<a href="/favorites">Your Favorites</a>
