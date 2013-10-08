@@ -94,20 +94,22 @@ post '/favorites' do
   fav_movieID = params[:imdb_id]
   response = HTTParty.get("http://www.omdbapi.com/?i=#{fav_movieID}")
   fav_movie_parsed_result = JSON.parse(response)
-  title = fav_movie_parsed_result['Title']
-  poster = fav_movie_parsed_result['Poster']
-  poster_alt = fav_movie_parsed_result['Title']
-  genre = fav_movie_parsed_result['Genre']
-  runtime = fav_movie_parsed_result['Runtime']
-  rated = fav_movie_parsed_result['Rated']
-  plot = fav_movie_parsed_result['Plot'].gsub!("'", "")
-  director = fav_movie_parsed_result['Director']
-  writer = fav_movie_parsed_result['Writer']
-  actors = fav_movie_parsed_result['Actors']
-  imdb_rating = fav_movie_parsed_result['imdbRating']
-  imdb_id = fav_movie_parsed_result['imdbID']
 
   db_connection = PG.connect :dbname => 'movies_db', :host=> 'localhost'
+
+  title = db_connection.escape(fav_movie_parsed_result['Title'])
+  poster = db_connection.escape(fav_movie_parsed_result['Poster'])
+  poster_alt = db_connection.escape(fav_movie_parsed_result['Title'])
+  genre = db_connection.escape(fav_movie_parsed_result['Genre'])
+  runtime = db_connection.escape(fav_movie_parsed_result['Runtime'])
+  rated = db_connection.escape(fav_movie_parsed_result['Rated'])
+  plot = db_connection.escape(fav_movie_parsed_result['Plot'])
+  director = db_connection.escape(fav_movie_parsed_result['Director'])
+  writer = db_connection.escape(fav_movie_parsed_result['Writer'])
+  actors = db_connection.escape(fav_movie_parsed_result['Actors'])
+  imdb_rating = db_connection.escape(fav_movie_parsed_result['imdbRating'])
+  imdb_id = db_connection.escape(fav_movie_parsed_result['imdbID'])
+
   sql = "INSERT INTO movies (title, poster, posteralt, genre, runtime, rated, plot, director, writer, actors, imdbrating, imdbid)
   VALUES ('#{title}', '#{poster}', '#{poster_alt}', '#{genre}', '#{runtime}', '#{rated}', '#{plot}', '#{director}', '#{writer}', '#{actors}', '#{imdb_rating}', '#{imdb_id}')"
   db_connection.exec sql

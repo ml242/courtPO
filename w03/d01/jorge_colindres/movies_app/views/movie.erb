@@ -26,10 +26,12 @@
     <% unless @favs_ids.include?(@movie[:imdb_id]) %>
       <form action="/favorites" method="post">
         <input type="hidden" name="imdb_id" value="<%= @movie[:imdb_id] %>">
-        <input type="submit" value="Add to Favorites">
+        <input class="favorite-button" type="submit" value="♥">
+        <span>Favorite!</span>
       </form>
     <% else %>
-      Already in favorites
+        <button class="favorite-button already-favorite">♥</button>
+        <span>Already in Favorites!</span>
     <% end %>
   </div>
 </div>
