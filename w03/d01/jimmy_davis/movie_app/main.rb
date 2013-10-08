@@ -11,7 +11,6 @@ get "/" do
 end
 
 
-
 get "/movies/search" do
   query = params[:q]
   query = CGI::escape(query)
@@ -67,19 +66,30 @@ get "/movies/:imdb_id" do
   erb :movie
 end
 
+# MINE
+# get '/movies/faves/' do
+#   db_connection = PG.connect(
+#     :dbname => 'movies_db',
+#     :host => 'localhost')
 
-get '/movies/faves/' do
+#   sql = "SELECT * FROM movies"
+#   response = db_connection.exec(sql)
+#   response.entries
+
+# db_connection.close
+# end
+
+get '/movies/faves' do
   db_connection = PG.connect(
     :dbname => 'movies_db',
     :host => 'localhost')
 
   sql = "SELECT * FROM movies"
   response = db_connection.exec(sql)
-  response.entries
-
-db_connection.close
+  db_connection.close
+  @movies = response.entries
+  erb :search
 end
-
 
 
 post '/movies/faves' do
@@ -87,14 +97,20 @@ post '/movies/faves' do
     :dbname => 'movies_db',
     :host => 'localhost')
 
+# for HW will need: VALUES ('#{params['name']}')
+
+
 sql = "INSERT INTO movies (title, year, rated, released, runtime, genre, director, writer, actors, plot) VALUES ('#{params[:title]}', #{params[:year]}, '#{params[:rated]}', '#{params[:released]}', '#{params[:runtime]}', '#{params[:genre]}', '#{params[:director]}', '#{params[:writer]}', '#{params[:actors]}', '#{params[:plot]}')"
 
-# response = db_connection.exec(sql)
-# response.entries
+# sql = "INSERT INTO movies (title, year, rated, released, runtime, genre, director, writer, actors, plot) VALUES ('#{params["Title"]}', #{params["Year"]}, '#{params["Rated"]}', '#{params["Released"]}', '#{params["Runtime"]}', '#{params["Genre"]}', '#{params["Director"]}', '#{params["Writer"]}', '#{params["Actors"]}', '#{params["Plot"]}')"
 
+
+response = db_connection.exec(sql)
+response.entries
 db_connection.close
 redirect to '/'
 end
+
 
 
 
