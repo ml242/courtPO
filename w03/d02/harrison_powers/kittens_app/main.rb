@@ -32,6 +32,13 @@ get '/kittens' do
   results = db_connect.exec(sql)
   db_connect.close
   @kittens = results.entries
+  kitten_string = ''
+  @kitten.each do |x|
+    x.each do |x, y|
+      kitten_string << "#{x} => #{y}, "
+    end
+  end
+  kitten_string
 end
 
 get '/kittens/:id' do
@@ -41,4 +48,9 @@ get '/kittens/:id' do
   results = db_connect.exec(sql)
   db_connect.close
   @kitten = results.entries
+  kitten_string = ''
+  @kitten[0].each do |x, y|
+    kitten_string << "#{x} => #{y}, "
+  end
+  kitten_string
 end
