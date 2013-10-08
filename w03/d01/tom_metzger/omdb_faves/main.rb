@@ -5,6 +5,7 @@ require 'pry'
 require 'json'
 require 'httparty'
 require 'cgi'
+require 'pg'
 
 @titles = []
 @id = []
@@ -49,8 +50,6 @@ get '/movies' do
   erb :results
 end
 
-
-
 get '/search/:imdb_ID' do
   "this works"
   movie_number = params[:imdb_ID]
@@ -67,3 +66,44 @@ get '/search/:imdb_ID' do
   @google = google_query.join("+")
   erb :imdbID
 end
+
+post '/add/favorite' do
+  params
+  # connects to the psql database
+  db_connection = PG.connect(:dbname => 'movies_db', :host => 'localhost')
+    params_as_symbols = {}
+    params.keys.each do |key|
+      params_as_symbols[key.to_sym] = params[key]
+    end
+      sql = "INSERT INTO movies
+            (title, year, rated, released, runtime, genre, director, writer, actors, plot, poster)
+            VALUES ('#{params_as_symbols[:title]}',
+                    '#{params_as_symbols[:year]}',
+                    '#{params_as_symbols[:rated]}',
+                    '#{params_as_symbols[:released]}',
+                    '#{params_as_symbols[:runtime]}',
+                    '#{params_as_symbols[:genre]}',
+                    '#{params_as_symbols[:director]}',
+                    '#{params_as_symbols[:writer]}',
+                    '#{params_as_symbols[:actors]}',
+                    '#{params_as_symbols[:plot]}',
+                    '#{params_as_symbols[:poster]}')"
+      response = db_connection.exec(sql)
+    # params_as_symbols.keys.each do |key|
+    #   sql = "INSERT INTO movies (#{key}) VALUES ('#{params_as_symbols[key]}')"
+    #   response = db_connection.exec(sql)
+    #   binding.pry
+    # end
+  db_connection.close
+  redirect to ('/')
+end
+
+get '/faves' do
+  db_connection = PG.connect(:dbname => 'movies_db', :host => 'localhost')
+  sql = "SELECT title FROM movies"
+  response = db_connection.exec(sql)
+  db_connection.close
+  @movies = response.entries
+  erb :faves
+end
+

@@ -1,0 +1,11 @@
+<h2>I ♥ these movies!</h2>
+
+<ul>
+  <% @movies.each do |movie| %>
+  <li><%=movie["title"]%></li>
+  <%end%>
+</ul>
+
+<form method="get" action="/">
+  <input type="submit" value="back to the top">
+</form>
