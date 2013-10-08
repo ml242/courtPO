@@ -1,0 +1,14 @@
+<link rel="stylesheet" href="../css/style.css">
+<!-- Result list page -->
+<h1>Bookmarks</h1>
+<ol>
+
+  <% @bookmarks[:title].size.times do |i| %>
+    <% imdbID = @bookmarks[:imdbID][i] %>
+    <li><a href="/movies/<%= imdbID %>">
+      <%= @bookmarks[:year][i] %>
+      <%= " - " %>
+      <%= @bookmarks[:title][i] %></a>
+    </li>
+  <% end %>
+</ol>
