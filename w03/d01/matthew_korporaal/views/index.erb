@@ -1,0 +1,12 @@
+<link rel="stylesheet" href="css/normalize.css">
+<link rel="stylesheet" href="css/style.css">
+<!-- Home page. Search field and button -->
+<h1>Movie Search</h1>
+<form action="/movies/search" class="search_action" method="post">
+  <input type="text" class="movie_search text_box" name="movie_name">
+  <input type="submit" class="movie_search search_button" value="Search">
+</form>
+<!-- Error reporting -->
+<% if !@error.nil? %>
+  <p style="color:red"><%= @error %></p>
+<% end %>

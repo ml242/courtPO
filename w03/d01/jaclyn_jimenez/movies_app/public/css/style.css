@@ -1,0 +1,95 @@
+body {
+  background:url("../images/blue_film_bg.jpg") #323347 bottom left no-repeat fixed;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  color: white;
+  display: block;
+  font-family: 'News Cycle', sans-serif;
+}
+
+h1 {
+  text-align: center;
+  font-size: 60px;
+  margin: 20px;
+  font-family: 'Cabin Sketch', cursive;
+  color: #F8FCFB;
+}
+
+h2 {
+  color: #A5A9EB;
+  font-size: 40px;
+  text-align: center;
+}
+
+img.poster {
+  float: right;
+  height: 400px;
+  margin-left: 3px;
+  margin-bottom: 3px;
+}
+
+.search, .results {
+  padding: 8px 30px;
+  overflow: auto;
+}
+
+.box {
+  position: relative;
+  max-width: 900px;
+  min-height: 400px;
+  width: 70%;
+  margin: 0 auto;
+  padding-left: 25px;
+  background-color: rgba(89,92,147,0.7);
+  font-size: 18px;
+  border: 1px dashed #A5A9EB;
+
+}
+
+.search {
+  text-align: center;
+  height: 250px;
+  font-size: 25px;
+}
+
+.box li {
+    list-style: none;
+    padding: 1px;
+    overflow: auto;
+}
+
+
+
+input {
+  display: block;
+  height: 25px;
+  width: 220px;
+  margin: 0 auto;
+  background: #F8FCFB;
+  color: #323347;
+  border: 2px solid #000000;
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: bolder;
+}
+
+a {
+  text-decoration: none;
+  color: #A5A9EB;
+}
+
+a:hover {
+  color: #323347;
+}
+
+footer {
+  text-align: center;
+  margin: 0 auto;
+  bottom: 0;
+  font-size: 18px;
+  color: white;
+}
+
+a.back {
+  color: white;
+}
