@@ -73,16 +73,16 @@ post "/save/:id" do
     :host => 'localhost')
   sql = "INSERT INTO movies (title, year, type, genre, runtime,
          release_date, director, writer, actors, plot)
-        VALUES ('#{@movie_info["Title"]}',
-                #{@movie_info["Year"]},
-                '#{@movie_info["Type"]}',
-                '#{@movie_info["Genre"]}',
-                '#{@movie_info["Runtime"]}',
-                '#{@movie_info["Released"]}',
-                '#{@movie_info["Director"]}',
-                '#{@movie_info["Writer"]}',
-                '#{@movie_info["Actors"]}',
-                '#{@movie_info["Plot"]}' )"
+        VALUES ('#{@movie_info["Title"].gsub(/'/, "")}',
+                #{@movie_info["Year"].gsub(/'/, "")},
+                '#{@movie_info["Type"].gsub(/'/, "")}',
+                '#{@movie_info["Genre"].gsub(/'/, "")}',
+                '#{@movie_info["Runtime"].gsub(/'/, "")}',
+                '#{@movie_info["Released"].gsub(/'/, "")}',
+                '#{@movie_info["Director"].gsub(/'/, "")}',
+                '#{@movie_info["Writer"].gsub(/'/, "")}',
+                '#{@movie_info["Actors"].gsub(/'/, "")}',
+                '#{@movie_info["Plot"].gsub(/'/, "")}' )"
   response = db_connection.exec(sql)
   db_connection.close
   redirect to("/faves")
