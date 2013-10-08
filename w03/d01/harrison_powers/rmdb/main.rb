@@ -39,6 +39,15 @@ get '/movies/:imdbID' do
 end
 
 post '/movies/add' do
+	db_connection = PG.connect(
+		:dbname => 'movies_db',
+		:host => 'localhost'
+	)
+
+	params.each do |k, v|
+		params[k] = db_connection.escape(v)
+	end
+
 	imdbID = params[:imdbID]
 	title = params[:title]
 	year = params[:year]
@@ -48,10 +57,8 @@ post '/movies/add' do
 	writer = params[:writer]
 	actors = params[:actors]
 	plot = params[:plot]
-	db_connection = PG.connect(
-		:dbname => 'movies_db',
-		:host => 'localhost'
-	)
+
+
 	sql = "INSERT INTO movies (imdbID, title, year, rated, genre, director, writer, actors, plot)
 		VALUES ('#{imdbID}','#{title}','#{year}','#{rated}','#{genre}','#{director}','#{writer}','#{actors}','#{plot}')"
 	db_connection.exec(sql)

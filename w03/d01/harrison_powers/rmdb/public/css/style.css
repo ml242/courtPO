@@ -36,3 +36,7 @@ label {
 .page {
 	font-family: 'Baumans';
 }
+
+form {
+	display: inline;
+}
