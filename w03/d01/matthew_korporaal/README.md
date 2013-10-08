@@ -13,9 +13,8 @@ main.rb
 style.css
 layout.erb
 index.erb
-search.erb
+listed.erb
 result.erb
-saved.erb
 omdb_setup.sql
 
 Working.  Bug. if bookmark is made then bookmarks page chosen, everything is printed vertical.  It fixes itself after a refresh.
