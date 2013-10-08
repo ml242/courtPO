@@ -1,0 +1,4 @@
+CREATE TABLE movies (
+  id SERIAL PRIMARY KEY,
+  imdbID VARCHAR NOT NULL
+  );
