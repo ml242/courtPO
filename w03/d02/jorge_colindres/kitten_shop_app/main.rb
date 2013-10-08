@@ -45,3 +45,32 @@ post '/kittens/:id/delete' do
   db_connec.close
 end
 
+post '/kittens/:id' do
+  kitten_id = params[:id]
+  name = params[:name]
+  age = params[:age]
+  is_cute = params[:is_cute]
+  image_url = params[:image_url]
+
+  db_connec = PG.connect :dbname => 'kitten_shop_db', :host => 'localhost'
+
+  unless params[:name].nil?
+    sql = "UPDATE kittens SET name = '#{name}' WHERE id = #{kitten_id}"
+    kitten = db_connec.exec sql
+  end
+  unless params[:age].nil?
+    sql = "UPDATE kittens SET age = #{age} WHERE id = #{kitten_id}"
+    kitten = db_connec.exec sql
+  end
+  unless params[:is_cute].nil?
+    sql = "UPDATE kittens SET is_cute = #{is_cute} WHERE id = #{kitten_id}"
+    kitten = db_connec.exec sql
+  end
+  unless params[:image_url].nil?
+    sql = "UPDATE kittens SET image_url = '#{image_url}' WHERE id = #{kitten_id}"
+    kitten = db_connec.exec sql
+  end
+
+  db_connec.close
+end
+
