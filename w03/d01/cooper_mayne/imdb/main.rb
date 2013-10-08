@@ -25,6 +25,22 @@ get "/movies/search" do
   end
 end
 
+post "/movies/:id/delete" do
+  imdb_id = params[:imdb_id]
+  db_conn = PG.connect(:host => 'localhost',
+                       :dbname => 'movie_db',
+                       :user => 'postgres',
+                       :password => 'home3232'
+                      )
+  sql = "DELETE FROM movies WHERE imdb_id = '#{imdb_id}'"
+  res = db_conn.exec(sql)
+
+  db_conn.close()
+
+  redirect "/movies"
+
+end
+
 get "/movies/:id" do
   @imdbid = params[:id]
   response = HTTParty.get("http://www.omdbapi.com/?i=#{@imdbid}")
@@ -35,6 +51,24 @@ get "/movies/:id" do
     @img_url = "../images/sadface.png"
   else
     @img_url = @results["Poster"]
+  end
+
+  db_conn = PG.connect(:host => 'localhost',
+                       :dbname => 'movie_db',
+                       :user => 'postgres',
+                       :password => 'home3232'
+                      )
+  sql = "SELECT imdb_id FROM movies"
+  res = db_conn.exec(sql)
+  #p res.entries.to_s
+  @imdb_ids = []
+  res.entries.each { |entry| @imdb_ids << entry["imdb_id"] }
+  db_conn.close
+  @movies = []
+  @imdb_ids.each do |imdb_id|
+    response = HTTParty.get("http://www.omdbapi.com/?i=#{imdb_id}")
+    r = JSON.parse(response)
+    @movies << r
   end
   erb :display
 end

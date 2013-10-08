@@ -13,10 +13,19 @@
 </table>
 
 <div class="add">
-  <form action="/movies" method="post" accept-charset="utf-8">
-    <input type="text" name="imdb_id" value="<%= @imdbid %>">
-    <label for="add_movie">add movie to your collection</label><input type="submit" name="add_movie" value="" id="add_movie">
-  </form>
-</div>
+  <% if @imdb_ids.include? @imdbid %>
 
+    <form action="/movies/<%= @imdbid %>/delete" method="post" accept-charset="utf-8">
+      <input type="text" name="imdb_id" value="<%= @imdbid %>">
+      <label for="rem_movie">remove from library</label><input type="submit" name="rem_movie" value="" id="rem_movie">
+    </form>
+  <% else %>
+
+    <form action="/movies" method="post" accept-charset="utf-8">
+      <input type="text" name="imdb_id" value="<%= @imdbid %>">
+      <label for="add_movie">add movie to your collection</label><input type="submit" name="add_movie" value="" id="add_movie">
+    </form>
+
+  <% end %>
+</div>
 </div>
