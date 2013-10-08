@@ -1,6 +1,6 @@
-<h1>Welcome to favs</h1>
+<h1>Your Fav Escapes</h1>
 
 <% @movies.each do |movie_hash| %>
-
-        <h1><a href=><%= movie_hash["title"] %></a></h1>
+        <% @url = "movies/" + movie_hash["imdb"] %>
+        <h1><a href=<%= @url %> ><%= movie_hash["title"] %></a></h1>
       <% end %>

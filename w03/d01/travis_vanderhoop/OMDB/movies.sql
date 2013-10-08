@@ -1,4 +1,4 @@
-CREATE TABLE movies(
+CREATE TABLE movies_2 (
   id SERIAL PRIMARY KEY,
   title VARCHAR NOT NULL,
   year INTEGER NOT NULL,
@@ -9,6 +9,7 @@ CREATE TABLE movies(
   director VARCHAR,
   writer VARCHAR,
   actors VARCHAR,
-  plot TEXT
+  plot TEXT,
+  imdb VARCHAR
 
 );

@@ -32,6 +32,7 @@ get '/results' do
   erb :results
 end
 #============================
+#============================
 get '/movies/:imdbID' do
   imdb_id = params[:imdbID]                                                      #saves imdbID as a string. Using the string we can access more information about the selected films
   @imdb_id = imdb_id                                                                  #for later use: must append to the URL for /favs/:imdbID
@@ -52,17 +53,29 @@ get '/movies/:imdbID' do
   @poster_url = @movie_hash["Poster"]
   erb :movie_info
 end
-
+#============================
+#============================
 get '/favs' do
   db_connection = PG.connect(:dbname => 'movies_db', :host => 'localhost')        #establishes connection to movies_db so I can retrieve the favorite
-  sql = "SELECT * FROM movies"
-  response = db_connection.exec(sql)
-  db_connection.close
-  @movies = response.entries
+  params.each do |k, v|
+    params[k] = db_connection.escape(v)
+  end
+  sql = "SELECT * FROM movies_2"                                                                                      #postgres command  string for remote/removed execution
+  response = db_connection.exec(sql)                                                                            #execute the SQL outlined above
+  db_connection.close                                                                                                       #always be closing
+  @movies = response.entries                                                                                          #converts the response into an accessible array of hashes                                      #create an instance variable for url, so we can link the favorite movies back to a movie view page
   erb :favs
 end
-
+#============================
+#============================
 post '/favs' do
+
+  db_connection = PG.connect(:dbname => 'movies_db', :host => 'localhost')        #establishes connection to movies_db
+
+  params.each do |k, v|
+    params[k] = db_connection.escape(v)
+  end
+
   title = params[:title]
   year = params[:year]
   rated = params[:rated]
@@ -72,11 +85,11 @@ post '/favs' do
   director = params[:director]
   writer = params[:writer]
   actors = params[:actors]
-  plot_test = params[:plot]
-  plot = plot_test.gsub("'","")
+  plot = params[:plot]
+  imdb = params[:imdb]
 
-  db_connection = PG.connect(:dbname => 'movies_db', :host => 'localhost')        #establishes connection to movies_db
-  sql = "INSERT INTO movies (title, year, rated, released, runtime, genre, director, writer, actors, plot) VALUES ('#{title}', #{year}, '#{rated}', '#{released}', '#{runtime}', '#{genre}', '#{director}', '#{writer}', '#{actors}', '#{plot}')"
+  sql = "INSERT INTO movies_2 (title, year, rated, released, runtime, genre, director, writer, actors, plot, imdb)
+  VALUES ('#{title}', #{year}, '#{rated}', '#{released}', '#{runtime}', '#{genre}', '#{director}', '#{writer}', '#{actors}', '#{plot}', '#{imdb}')"
   response = db_connection.exec(sql)
 
 
