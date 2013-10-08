@@ -9,17 +9,17 @@ require 'pry'
 require 'pry-nav'
 require 'pry-remote'
 
+require_relative 'connections'
 
 get '/' do
   erb :index
 end
 
 get '/favorites' do
-  db_connection = PG.connect :dbname => 'movies_db', :host=> 'localhost'
-  sql = "SELECT * FROM movies"
-  response = db_connection.exec sql
+  db_connection = connect_to_db 'movies_db', 'localhost'
+  saved_favs = execute_sql db_connection, "SELECT * FROM movies"
   db_connection.close
-  saved_favs = response.entries
+
   @favs = []
   saved_favs.each do |movie|
     movie_hash = {
@@ -36,8 +36,7 @@ end
 
 get '/search' do
   search = params[:q]
-  response = HTTParty.get("http://www.omdbapi.com/?s=#{CGI::escape(search)}")
-  parsed_result = JSON.parse(response)
+  parsed_result = get_json "http://www.omdbapi.com/?s=#{CGI::escape(search)}"
   @search_results = parsed_result["Search"]
   @movies = []
   unless @search_results.nil?
@@ -50,13 +49,13 @@ get '/search' do
       @movies << movie_hash
     end
   end
+
   erb :index
 end
 
 get '/:imdbID' do
   movieID = params[:imdbID]
-  response = HTTParty.get("http://www.omdbapi.com/?i=#{movieID}")
-  movie_parsed_result = JSON.parse(response)
+  movie_parsed_result = get_json "http://www.omdbapi.com/?i=#{movieID}"
   @movie = {
     :title => movie_parsed_result['Title'],
     :poster => movie_parsed_result['Poster'],
@@ -76,11 +75,10 @@ get '/:imdbID' do
     @movie[:poster_alt] = "No Poster"
   end
 
-  db_connection = PG.connect :dbname => 'movies_db', :host=> 'localhost'
-  sql = "SELECT * FROM movies"
-  response = db_connection.exec sql
+  db_connection = connect_to_db 'movies_db', 'localhost'
+  saved_favs = execute_sql db_connection, "SELECT * FROM movies"
   db_connection.close
-  saved_favs = response.entries
+
   @favs_ids = []
   saved_favs.each do |movie|
     @favs_ids << movie['imdbid']
@@ -92,10 +90,9 @@ end
 
 post '/favorites' do
   fav_movieID = params[:imdb_id]
-  response = HTTParty.get("http://www.omdbapi.com/?i=#{fav_movieID}")
-  fav_movie_parsed_result = JSON.parse(response)
+  fav_movie_parsed_result = get_json "http://www.omdbapi.com/?i=#{fav_movieID}"
 
-  db_connection = PG.connect :dbname => 'movies_db', :host=> 'localhost'
+  db_connection = connect_to_db('movies_db', 'localhost')
 
   title = db_connection.escape(fav_movie_parsed_result['Title'])
   poster = db_connection.escape(fav_movie_parsed_result['Poster'])
@@ -112,7 +109,8 @@ post '/favorites' do
 
   sql = "INSERT INTO movies (title, poster, posteralt, genre, runtime, rated, plot, director, writer, actors, imdbrating, imdbid)
   VALUES ('#{title}', '#{poster}', '#{poster_alt}', '#{genre}', '#{runtime}', '#{rated}', '#{plot}', '#{director}', '#{writer}', '#{actors}', '#{imdb_rating}', '#{imdb_id}')"
-  db_connection.exec sql
+  execute_sql db_connection, sql
+  db_connection.close
 
   redirect '/favorites'
 end

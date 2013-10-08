@@ -124,19 +124,17 @@ img {
   }
 
 /* Favorites */
-.favorites::after {
-  content: "";
-  display: table;
-  clear: both;
+.favorites {
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  justify-content: flex-start;
 }
-.favorites li {
-  overflow: hidden;
-  float: left;
+.favorites div {
   width: 25%;
   margin: 20px 0;
   text-align: center;
 }
-.favorites li img {
+.favorites div img {
   display: block;
   width: 75%;
   margin: 0 auto 10px;
@@ -303,7 +301,7 @@ img {
  .movie-details {
    padding: 0;
  }
- .favorites li {
+ .favorites div {
    width: 50%;
  }
 }
@@ -320,7 +318,7 @@ img {
     .search-box input[role="search"]:-ms-input-placeholder {
        font-size: 25px;
     }
-  .favorites li {
+  .favorites div {
    width: 100%;
  }
 }
