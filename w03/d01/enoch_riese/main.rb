@@ -3,6 +3,7 @@ require "sinatra/reloader"
 require "json"
 require "HTTParty"
 require "PG"
+require "pry"
 
 get "/" do
   @header = "Search by Title"
@@ -44,16 +45,16 @@ post "/movies/:imdbID" do
   movie = params[:imdbID]
   response = HTTParty.get("http://www.omdbapi.com/?i=#{movie}")
   @parsed_result = JSON.parse(response.body)
-  title = @parsed_result["Title"]
+  title = @parsed_result["Title"].delete('\'')
   poster = @parsed_result["Poster"]
   year = @parsed_result["Year"]
-  rated = @parsed_result["Rated"]
-  released = @parsed_result["Released"]
-  runtime = @parsed_result["Runtime"]
-  genre = @parsed_result["Genre"]
-  writer = @parsed_result["Writer"]
-  actors = @parsed_result["Actors"]
-  plot = @parsed_result["Plot"]
+  rated = @parsed_result["Rated"].delete('\'')
+  released = @parsed_result["Released"].delete('\'')
+  runtime = @parsed_result["Runtime"].delete('\'')
+  genre = @parsed_result["Genre"].delete('\'')
+  writer = @parsed_result["Writer"].delete('\'')
+  actors = @parsed_result["Actors"].delete('\'')
+  plot = @parsed_result["Plot"].delete('\'')
   db_connection = PG.connect(:dbname => 'movies_db', :host => 'localhost')
   sql = "INSERT INTO movies (title, year, rated, released, runtime, genre, writer, actors, plot, poster) VALUES ('#{title}', #{year}, '#{rated}', '#{released}', '#{runtime}', '#{genre}', '#{writer}', '#{actors}', '#{plot}', '#{poster}');"
   db_connection.exec(sql)
@@ -66,5 +67,6 @@ get "/favorites" do
   sql = "SELECT * FROM movies"
   response = db_connection.exec(sql)
   db_connection.close
-  response.entries.to_s
+  @movies = response.entries
+  erb :favorites
 end
