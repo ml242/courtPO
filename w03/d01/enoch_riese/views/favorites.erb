@@ -1,0 +1,16 @@
+<h1>Your Favorite Movies</h1>
+
+<ul>
+  <% @movies.each do |movie| %>
+    <li><% movie.each do |key, value| %>
+      <% if key == "poster" %>
+        <img src=<%=value%> alt=<%=key%>>
+      <% elsif key != "id"%>
+        <strong> <%= "#{key.capitalize}:"%></strong> <%="#{value}" %> <br>
+      <% end %>
+    <% end %></li>
+    <br>
+  <% end %>
+</ul>
+
+<a href="/">Search for more</a>

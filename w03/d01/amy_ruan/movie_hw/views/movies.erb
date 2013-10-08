@@ -1,0 +1,9 @@
+  <div class="response">
+      <div class= "direction" > Click on the movie title for more information or click search again. </div>
+      <ul>
+      <%@results_parsed.each do |x|%>
+        <li class="movie_list"><a class="movie_info" href="/movies/<%=x["imdbID"]%>"><%= x["Title"] + " (" + x["Year"] + ")"%></a></li>
+      <%end%>
+    </ul>
+  </div>
+

@@ -1,7 +1,7 @@
 CREATE TABLE movies (
   id SERIAL PRIMARY KEY,
   title VARCHAR NOT NULL,
-  imdb VARCHAR DEFAULT,
-  year INTEGER DEFAULT,
-  type VARCHAR DEFAULT
+  imdb VARCHAR,
+  year INTEGER,
+  type VARCHAR
 );
