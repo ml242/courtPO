@@ -1,31 +1,52 @@
-<h2><%= @results["Title"] %></h2>
+<h2><%= @results[:title] %></h2>
 
 <img class="poster" src="<%= @img_url %>">
 
 <div class="goright">
 <table>
-  <% @results.reject {|k,v| k=="Poster" }.each do |k,v|%>
     <tr>
-      <th><%= k %></th>
-      <th><%= v %></th>
+      <th>Title:</th> <th><%= @results[:title] %></th>
     </tr>
-  <% end %>
+    <tr>
+      <th>Year:</th> <th><%= @results[:year] %></th>
+    </tr>
+    <tr>
+      <th>Director:</th> <th><%= @results[:director] %></th>
+    </tr>
+    <tr>
+      <th>Actors:</th> <th><%= @results[:actors] %></th>
+    </tr>
+    <tr>
+      <th>Plot:</th> <th><%= @results[:plot] %></th>
+    </tr>
+    <tr>
+      <th>Length:</th> <th><%= @results[:runtime] %></th>
+    </tr>
+    <tr>
+      <th>Genre:</th> <th><%= @results[:genre] %></th>
+    </tr>
+    <tr>
+      <th>Rating:</th> <th><%= @results[:imdb_rating] %></th>
+    </tr>
 </table>
 
 <div class="add">
-  <% if @imdb_ids.include? @imdbid %>
 
-    <form action="/movies/<%= @imdbid %>/delete" method="post" accept-charset="utf-8">
-      <input type="text" name="imdb_id" value="<%= @imdbid %>">
+  <% if @stored %>
+
+    <form action="/movies/<%= @results[:imdb_id] %>/delete" method="post" accept-charset="utf-8">
+      <input type="text" name="imdb_id" value="<%= @results[:imdb_id] %>">
       <label for="rem_movie">remove from library</label><input type="submit" name="rem_movie" value="" id="rem_movie">
     </form>
+
   <% else %>
 
     <form action="/movies" method="post" accept-charset="utf-8">
-      <input type="text" name="imdb_id" value="<%= @imdbid %>">
+      <input type="text" name="imdb_id" value="<%= @results[:imdb_id] %>">
       <label for="add_movie">add movie to your collection</label><input type="submit" name="add_movie" value="" id="add_movie">
     </form>
 
   <% end %>
+
 </div>
 </div>
