@@ -23,9 +23,13 @@
       <% end %>
       <span class="rating-score"><%= @movie[:imdb_rating] %></span>
     </div>
-    <form action="/favorites" method="post">
-      <input type="hidden" name="imdb_id" value="<%= @movie[:imdb_id] %>">
-      <input type="submit" value="Add to Favorites">
-    </form>
+    <% unless @favs_ids.include?(@movie[:imdb_id]) %>
+      <form action="/favorites" method="post">
+        <input type="hidden" name="imdb_id" value="<%= @movie[:imdb_id] %>">
+        <input type="submit" value="Add to Favorites">
+      </form>
+    <% else %>
+      Already in favorites
+    <% end %>
   </div>
 </div>

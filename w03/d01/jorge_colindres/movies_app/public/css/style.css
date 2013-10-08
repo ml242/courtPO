@@ -36,6 +36,14 @@ h5 {
   color: #ec604e;
   text-transform: uppercase;
 }
+img {
+-webkit-box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.3);
+}
+.container {
+  padding: 0 50px;
+}
 
 /* Search Box */
 .search-box {
@@ -78,10 +86,25 @@ h5 {
      line-height: 44px;
   }
 
-/* Individual Movie */
-.container {
-  padding: 0 50px;
+/* Favorites */
+.favorites::after {
+  content: "";
+  display: table;
+  clear: both;
 }
+.favorites li {
+  float: left;
+  width: 25%;
+  margin: 20px 0;
+  text-align: center;
+}
+.favorites li img {
+  display: block;
+  width: 75%;
+  margin: 0 auto 10px;
+}
+
+/* Individual Movie */
 .movie-container {
   display: flex;
   margin-bottom: 25px;

@@ -25,9 +25,11 @@ get '/favorites' do
     movie_hash = {
       :title => movie['title'],
       :poster => movie['poster'],
-      :poster_alt => movie['posteralt']
+      :poster_alt => movie['posteralt'],
+      :imdb_id => movie['imdbid']
     }
     @favs << movie_hash
+    @favs.uniq!
   end
   erb :favs
 end
@@ -38,13 +40,15 @@ get '/search' do
   parsed_result = JSON.parse(response)
   @search_results = parsed_result["Search"]
   @movies = []
-  @search_results.each do |movie|
-    movie_hash = {
-      :imdb_id => movie['imdbID'],
-      :title => movie["Title"],
-      :year => movie["Year"]
-    }
-    @movies << movie_hash
+  unless @search_results.nil?
+    @search_results.each do |movie|
+      movie_hash = {
+        :imdb_id => movie['imdbID'],
+        :title => movie["Title"],
+        :year => movie["Year"]
+      }
+      @movies << movie_hash
+    end
   end
   erb :index
 end
@@ -71,6 +75,18 @@ get '/:imdbID' do
     @movie[:poster] = "http://placehold.it/330x450&text=No Poster"
     @movie[:poster_alt] = "No Poster"
   end
+
+  db_connection = PG.connect :dbname => 'movies_db', :host=> 'localhost'
+  sql = "SELECT * FROM movies"
+  response = db_connection.exec sql
+  db_connection.close
+  saved_favs = response.entries
+  @favs_ids = []
+  saved_favs.each do |movie|
+    @favs_ids << movie['imdbid']
+    @favs_ids.uniq!
+  end
+
   erb :movie
 end
 
@@ -84,17 +100,18 @@ post '/favorites' do
   genre = fav_movie_parsed_result['Genre']
   runtime = fav_movie_parsed_result['Runtime']
   rated = fav_movie_parsed_result['Rated']
-  plot = fav_movie_parsed_result['Plot']
+  plot = fav_movie_parsed_result['Plot'].gsub!("'", "")
   director = fav_movie_parsed_result['Director']
   writer = fav_movie_parsed_result['Writer']
   actors = fav_movie_parsed_result['Actors']
   imdb_rating = fav_movie_parsed_result['imdbRating']
+  imdb_id = fav_movie_parsed_result['imdbID']
 
   db_connection = PG.connect :dbname => 'movies_db', :host=> 'localhost'
-  sql = "INSERT INTO movies (title, poster, posteralt, genre, runtime, rated, plot, director, writer, actors, imdbrating)
-  VALUES ('#{title}', '#{poster}', '#{poster_alt}', '#{genre}', '#{runtime}', '#{rated}', '#{plot}', '#{director}', '#{writer}', '#{actors}', '#{imdb_rating}')"
+  sql = "INSERT INTO movies (title, poster, posteralt, genre, runtime, rated, plot, director, writer, actors, imdbrating, imdbid)
+  VALUES ('#{title}', '#{poster}', '#{poster_alt}', '#{genre}', '#{runtime}', '#{rated}', '#{plot}', '#{director}', '#{writer}', '#{actors}', '#{imdb_rating}', '#{imdb_id}')"
   db_connection.exec sql
-  db_connection.close
+
   redirect '/favorites'
 end
 

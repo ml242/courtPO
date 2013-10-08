@@ -1,9 +1,11 @@
-<div class="search-results container">
+<div class="favs container">
   <% unless @favs.empty? %>
     <ul class="favorites">
       <% @favs.each do |movie| %>
       <li>
-        <img src="<%= movie[:poster] %>" alt="<%= movie[:poster_alt] %>">
+        <a href="/<%= movie[:imdb_id] %>">
+          <img src="<%= movie[:poster] %>" alt="<%= movie[:poster_alt] %>">
+        </a>
         <span><%= movie[:title] %></span>
       </li>
       <% end %>
