@@ -31,6 +31,11 @@ get "/movies/:id" do
   results = JSON.parse(response)
   l = %w(Title Year Actors Plot Director Genre imdbRating Released Runtime imdbRating Poster)
   @results = results.select { |result| l.include? result }
+  if @results["Poster"]=="N/A"
+    @img_url = "../images/sadface.png"
+  else
+    @img_url = @results["Poster"]
+  end
   erb :display
 end
 

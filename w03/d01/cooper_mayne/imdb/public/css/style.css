@@ -33,7 +33,7 @@ input.search {
   border: 0px;
   font-size: 25px;
   text-align: left;
-  box-shadow: 5px 5px 5px grey;
+  box-shadow: 5px 5px 5px #565656;
   position: relative;
   bottom: 65px;
 }
@@ -57,13 +57,12 @@ div.container {
   width:790px;
   background-color:#C2C2C2;
   border: 3px solid grey;
-  box-shadow: -5px -5px 5px white;
-  box-shadow: 5px 5px 5px white;
+  box-shadow: -5px -5px 5px #565656;
+  box-shadow: 5px 5px 5px #565656;
   border-radius: 3px;
 }
 table {
-  float: right;
-  width: 440;
+  margin-bottom:15px;
   border-collapse: collapse;
   text-align: left;
 }
@@ -85,15 +84,25 @@ li {
   background: url("../images/list_icon.png") no-repeat 0 3px;
   padding-left: 25px;
 }
+
 a {
   font: 20px Arial,sans-serif;
 }
 
-input.add[type="text"] {
-  display: none;
+.add input {
+  display:none;
 }
-input.add[type="submit"] {
+
+div.add {
+  display:inline;
+  background-color:#C2C2C2;
+  border: 3px solid grey;
+  box-shadow: -5px -5px 5px #565656;
+  box-shadow: 5px 5px 5px #565656;
+  border-radius: 3px;
+  padding: 2px;
 }
+
 a.header {
   background-color: grey;
 }
@@ -102,8 +111,8 @@ div.header {
   display: inline;
   background-color:#C2C2C2;
   border: 3px solid grey;
-  box-shadow: -5px -5px 5px white;
-  box-shadow: 5px 5px 5px white;
+  box-shadow: -5px -5px 5px #565656;
+  box-shadow: 5px 5px 5px #565656;
   border-radius: 3px;
   margin-right: 4px;
   padding: 2px;
@@ -117,4 +126,7 @@ div.header-c a {
   color: #304230;
   text-decoration: none;
 }
-
+div.goright {
+  float: right;
+  width: 440;
+}

@@ -1,7 +1,8 @@
 <h2><%= @results["Title"] %></h2>
 
-<img class="poster" src="<%= @results["Poster"] %>">
+<img class="poster" src="<%= @img_url %>">
 
+<div class="goright">
 <table>
   <% @results.reject {|k,v| k=="Poster" }.each do |k,v|%>
     <tr>
@@ -10,7 +11,12 @@
     </tr>
   <% end %>
 </table>
-<form action="/movies" method="post" accept-charset="utf-8">
-  <input class="add" type="text" name="imdb_id" value="<%= @imdbid %>">
-  <input class="add" type="submit" value="add to collection">
-</form>
+
+<div class="add">
+  <form action="/movies" method="post" accept-charset="utf-8">
+    <input type="text" name="imdb_id" value="<%= @imdbid %>">
+    <label for="add_movie">add movie to your collection</label><input type="submit" name="add_movie" value="" id="add_movie">
+  </form>
+</div>
+
+</div>
