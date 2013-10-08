@@ -29,5 +29,10 @@ get '/kittens' do
 end
 
 get '/kittens/:id' do
-
+  kitten_id = params[:id]
+  db_connec = PG.connect :dbname => 'kitten_shop_db', :host => 'localhost'
+  sql = "SELECT * FROM kittens WHERE id = #{kitten_id}"
+  kitten = db_connec.exec sql
+  db_connec.close
+  kitten.entries.to_s
 end
