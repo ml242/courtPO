@@ -1,4 +1,5 @@
 <h1><%= @movie[:title] %></h1>
+<p><%= @movie[:imdbID] %></p>
 <p><%= @movie[:year] %></p>
 <p><%= @movie[:genre] %></p>
 
@@ -7,3 +8,8 @@
 <% else %>
   <p>Go Search Google for the Movie Poster</p>
 <% end %>
+  <form action="/favorites" name="imdbID" method="get">
+  <input type="submit" value="make a favorite">
+  </form>
+
+<% sql = "INSERT INTO movies (title, imdbID) VALUES ([':title.to_s'], [':imdbID.to_s']);" %>
