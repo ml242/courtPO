@@ -1,5 +1,5 @@
 <% unless @movies %>
-  <h1 class="logo">Movies.</h1>
+  <h1 class="logo letterpress">Movies.</h1>
 <% else %>
 <% # Search Results %>
   <div class="search-results container">
@@ -10,7 +10,7 @@
         <% end %>
       </ul>
     <% else %>
-      No movies found.
+      <p class="no-movies letterpress">No movies found.</p>
     <% end %>
   </div>
 <% end %>

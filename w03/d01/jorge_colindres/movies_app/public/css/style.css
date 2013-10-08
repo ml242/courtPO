@@ -20,13 +20,6 @@ h1.logo {
   margin-top: -20px;
   margin-left: -77px;
   position: absolute;
-  color: transparent;
-  background-color: rgba(0,0,0,.3);
-  text-shadow: 0px 2px 3px rgba(255,255,255,0.4);
-  -webkit-background-clip: text;
-    -moz-background-clip: text;
-    -o-background-clip: text;
-     background-clip: text;
 }
 h2 {
   font-size: 1.25em;
@@ -43,6 +36,50 @@ img {
 }
 .container {
   padding: 0 50px;
+}
+.letterpress {
+  height: 40px;
+  width: 200px;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  margin-top: -20px;
+  margin-left: -100px;
+  position: absolute;
+  color: transparent;
+  background-color: rgba(0,0,0,.3);
+  text-shadow: 0px 2px 3px rgba(255,255,255,0.4);
+  -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -o-background-clip: text;
+     background-clip: text;
+}
+.menu-icon {
+  top: 43px;
+  right: 2%;
+  position: absolute;
+  background-color: #e9e9e9;
+  border: 1px solid #d190b9;
+  padding: 2px 5px;
+  -webkit-border-radius: 15px;
+          border-radius: 15px;
+}
+.menu-icon a {
+  color: #d190b9;
+  -webkit-transition: all .25s ease;
+     -moz-transition: all .25s ease;
+      -ms-transition: all .25s ease;
+       -o-transition: all .25s ease;
+          transition: all .25s ease;
+}
+.menu-icon:hover, .menu-icon:hover a {
+  color: #c23824;
+  border-color: #c23824;
+  -webkit-transition: all .25s ease;
+     -moz-transition: all .25s ease;
+      -ms-transition: all .25s ease;
+       -o-transition: all .25s ease;
+          transition: all .25s ease;
 }
 
 /* Search Box */
@@ -249,11 +286,25 @@ img {
     font-size: 16px;
     line-height: 1.75em;
   }
+  .menu-icon {
+    top: 1em;
+    right: 50%;
+    margin-right: -42px;
+  }
+  .search-box {
+    margin-top: 4em;
+  }
  .movie-container {
   display: block;
  }
  .movie-poster {
    margin-bottom: 25px;
+ }
+ .movie-details {
+   padding: 0;
+ }
+ .favorites li {
+   width: 50%;
  }
 }
 @media screen and (max-width: 500px) {
@@ -269,4 +320,7 @@ img {
     .search-box input[role="search"]:-ms-input-placeholder {
        font-size: 25px;
     }
+  .favorites li {
+   width: 100%;
+ }
 }
