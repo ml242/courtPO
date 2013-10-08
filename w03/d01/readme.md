@@ -19,9 +19,9 @@ Make **sure** that your sublime user settings (`⌘`-`+,`) include the following
 
 - Add a `save` button to your movie's show page.
 
-    - When a user clicks the `save` button, send a `post` request back to your server that *INSERTS* that particular movie *INTO* the `movies` table of your `movies_db` database.
+    - When a user clicks the `save` button, send a `post` request back to your server that saves that particular movie into the `movies` table of your `movies_db` database.
     - **Hint:** use a hidden field to send back the movie's imdb rating.
 
 - Add a `faves` link to your movies index page.
 
-    - When a user clicks `faves`, display all the movies md that have been saved to your database.
+    - When a user clicks `faves`, display all the movies that have been saved to your database.
