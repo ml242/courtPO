@@ -1,0 +1,10 @@
+<div class = "results box">
+<h2> Movie Search Results </h2>
+  <% @movie_hashes.each do |movie| %>
+  <li> <%= "#{movie[:type].capitalize}:" %> <a href ="<%="#{movie[:url]}" %>"> <%= "#{movie[:title]}" %></a><%=", #{movie[:year]}"%> </li>
+  <% end %>
+</div>
+
+<footer>
+<a class= "back" href="/"> Back to Search </a>
+</footer>
