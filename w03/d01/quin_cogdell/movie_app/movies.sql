@@ -1,21 +1,16 @@
 CREATE TABLE movies (
     id SERIAL PRIMARY KEY,
     title VARCHAR,
-    year,
-    rated,
-    released,
-    runtime,
-    genre,
-    writer,
-    actors,
-    plot,
-    poster,
-    imdbRating,
-    imdbVotes,
-    imdbID,
-    type,
-    response
-
-
-
+    year INTEGER,
+    rated VARCHAR,
+    released DATE,
+    runtime VARCHAR,
+    genre VARCHAR,
+    writer VARCHAR,
+    actors VARCHAR,
+    plot TEXT,
+    poster VARCHAR,
+    imdbRating NUMERIC,
+    imdbVotes INTEGER,
+    imdbID VARCHAR UNIQUE
 );

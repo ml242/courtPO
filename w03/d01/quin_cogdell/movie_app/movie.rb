@@ -15,9 +15,6 @@ class Movie
                         :type,
                         :response
 
-
-
-
 end
 
 # {

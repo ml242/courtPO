@@ -20,3 +20,11 @@
   </tr>
   <% end %>
 </table>
+
+
+<form action="/movies" method="post">
+  <input type="hidden" name="imdbID" value=<%="#{@results['imdbID']}" %>>
+
+  <input type="submit" value="Add to Favorites">
+</form>
+
