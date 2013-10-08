@@ -1,4 +1,24 @@
+<h1>imdbID link works</h1>
 
+<!-- this unordered list pulls values from the @result_symbols_hash and displays them -->
+<ul>
+  <li>Title: <%= @result_symbols_hash[:title] %> </li>
+  <li>Year: <%= @result_symbols_hash[:year] %> </li>
+  <li>Rated: <%= @result_symbols_hash[:rated] %> </li>
+  <li>Released: <%= @result_symbols_hash[:released] %> </li>
+  <li>Runtime: <%= @result_symbols_hash[:runtime] %> </li>
+  <li>Genre: <%= @result_symbols_hash[:genre] %> </li>
+  <li>Director: <%= @result_symbols_hash[:director] %> </li>
+  <li>Writer: <%= @result_symbols_hash[:writer] %> </li>
+  <li>Actors: <%= @result_symbols_hash[:actors] %> </li>
+  <li>Plot: <%= @result_symbols_hash[:plot] %> </li>
+</ul>
 
+  <!-- this line pulls the image url for the movie's poster from the HTTParty request that was converted to the @result_symbols_hash -->
+  <div>
+    <a href="http://google.com/#q=<%= @google %>">
+      <img src="<%= @result_symbols_hash[:poster] %>">
+    </a>
+  </div>
 
 <!-- These links should print on the search.erb page -->

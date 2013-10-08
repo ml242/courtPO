@@ -1,4 +1,13 @@
-<form action="/movies" method="get">
+<!-- this form is pointed to by the get '/' method in main.rb -->
+
+<!-- this form tag makes a GET request to the /movies path when the form is submitted and requests/looks for '/movies' in the main.erb because that is the action specified -->
+<form method="get" action="/movies">
+
+  <!-- this input tag is a TEXT type, the name of the input (which will be the key of the params) is 'query', and the placeholder is what specifies what text will display in the text box -->
   <input type="text" name="query" placeholder="search movie title">
+
+  <!-- this input tag is a SUBMIT type and will create a button to submit the form, the text on the button is specified by NAME and in this case the button will say 'Search' -->
   <input type="submit" name="Search">
 </form>
+
+<!-- when the Search button is clicked the form will be submitted and the content in the text box will be "sent" to the main.rb file and will look for a GET path that matches the content in action= (line4) in this case it looks for GET movie with '/movies' and the contents of the form will be the "params" -->

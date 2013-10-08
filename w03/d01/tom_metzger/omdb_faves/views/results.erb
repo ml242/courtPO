@@ -1,3 +1,12 @@
-<h1>movies sends to results</h1>
+<h2>Click on the movie title for more information</h2>
 
+
+this list iterates over the @movie_hash array and works over each element
+<ol>
+  <% @movie_hash.each do |movie| %>
+  <li><a href= "<%= movie[:url] %>" > <h3><%= movie[:title] %> </a></h3></li>
+  <li> <%= movie[:year]%> </li>
+  <li> <%= movie[:type]%> </li>
+  <% end %>
+</ol>
 
