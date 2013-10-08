@@ -1,0 +1,6 @@
+<h2 id="heading">YOUR MOVIES</h2>
+<ul>
+<% @movies.each do |movie|%>
+  <li><a href="/movies/<%= movie["imdbID"] %>"><%= movie["Title"] %></a>&nbsp;(<%= movie["Year"] %>)</li>
+<% end %>
+</ul>

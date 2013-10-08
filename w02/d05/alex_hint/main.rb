@@ -3,6 +3,10 @@ require 'sinatra/reloader' if development?
 require 'httparty'
 require 'pry'
 require 'json'
+require 'cgi'
+
+#Jonathan's code:
+#https://github.com/ga-students/WDI_NYC_Hash/tree/master/week_03/d01/movies
 
 
 #parsed_result = JSON.parse(response)
@@ -28,7 +32,9 @@ end
 
 get '/movies/search' do
 
-  @movie_search_input = params[:movie_search_input]
+  #escaping the spaces in the URL
+  #CGI::escape(query)
+  @movie_search_input = CGI::escape(params[:movie_search_input])
 
   response = HTTParty.get("http://www.omdbapi.com/?s=#{@movie_search_input}&r=json")
   #p response
@@ -57,7 +63,7 @@ get '/movies/:id' do
   @this_year = @movie["Year"]
   @this_id = @movie["imdbID"]
   @this_type = @movie["Type"]
-
+  #still need to display more information
 
   erb :movies_id
 end

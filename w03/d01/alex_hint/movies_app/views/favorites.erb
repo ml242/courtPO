@@ -1,0 +1,14 @@
+<h1>Your Favorites</h1>
+
+
+<% @movies_array.each do |movie_hash| %>
+    <li>
+        <h2><%= movie_hash["title"] %></h2>
+        <p><%= movie_hash["year"] %></p>
+
+    </li>
+  <% end %>
+
+
+
+<h4><a href="/">Go Back to Search</a></h4>

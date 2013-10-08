@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Movies</title>
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+  <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+</head>
+<body>
+  <span class="menu-icon"><a href="/favorites">Favorites</a></span>
+  <div class="search-box">
+    <form action="/search" method="get">
+      <label class="search-icon" for="searchBox"><i class="icon-search icon-2x"></i></label>
+      <input type="search" name="q" id="searchBox" role="search" placeholder="Search Movies">
+    </form>
+  </div>
+  <%= yield %>
+</body>
+</html>

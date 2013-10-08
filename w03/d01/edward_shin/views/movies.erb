@@ -1,0 +1,11 @@
+<h3>SEARCH RESULTS</h3>
+
+
+<ul>
+<% @array_of_movies.each do |movie| %>
+<% title = movie["Title"] %>
+<% id = movie["imdbID"] %>
+<li><a href="<%="/movies/#{id}" %>"><%= title %></a></li>
+<% end %>
+</ul>
+

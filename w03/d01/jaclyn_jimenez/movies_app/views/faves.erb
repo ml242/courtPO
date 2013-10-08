@@ -1,0 +1,17 @@
+<div class = "profile box">
+<h2>FAVORITES</h2>
+
+<% @favorites.each do |movie| %>
+<h3> <%= "#{movie["title"]}, #{movie["year"]} " %></h3>
+<ul>
+  <li><%= "Type: #{movie["type"]}" %></li>
+  <li><%= "Genre: #{movie["genre"]}" %></li>
+  <li><%= "Runtime: #{movie["runtime"]}" %></li>
+  <li><%= "Release Date: #{movie["released"]}" %></li>
+  <li><%= "Director: #{movie["director"]}" %></li>
+  <li><%= "Writer: #{movie["writer"]}" %></li>
+  <li><%= "Actors: #{movie["actors"]}" %></li>
+  <li><%= "Plot: #{movie["plot"]}" %></li>
+</ul>
+<% end %>
+</div>

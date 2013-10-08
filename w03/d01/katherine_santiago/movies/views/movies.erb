@@ -1,0 +1,9 @@
+<h1><%= @movie[:title] %></h1>
+<p><%= @movie[:year] %></p>
+<p><%= @movie[:genre] %></p>
+
+<% if @movie[:poster] != "Search Google"  %>
+  <img src="<%= @movie[:poster] %>">
+<% else %>
+  <p>Go Search Google for the Movie Poster</p>
+<% end %>

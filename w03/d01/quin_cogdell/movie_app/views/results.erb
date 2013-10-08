@@ -1,0 +1,16 @@
+<h1>Movie Search Results</h1>
+
+<% if @results.class == String %>
+  <h1> <%= @results %> </h1>
+
+  <% else %>
+
+  <ul>
+
+  <% @results.each do |movie| %>
+    <li><a href="/movies/<%=movie['imdbID'] %>"><%= movie['Title'] %></a></li>
+  <% end %>
+  </ul>
+
+<% end %>
+
