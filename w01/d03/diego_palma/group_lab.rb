@@ -1,3 +1,12 @@
+require 'rainbow'
+require 'pry'
+
+def ask(question)
+  puts question
+  answer = gets.chomp
+  answer.to_i
+end
+
 students = [
 "Alex Hint",
 "Amy Ruan",
@@ -24,32 +33,66 @@ students = [
 "Yaritza Rodriguez"
 ]
   nicknames = [
-  "Aliento infernal",
-  "Los reventados",
-  "Drogones",
-  "Miley Cyrus Fan Group",
-  "Crazy Eyes",
+  "nickname1",
+  "nickname2",
+  "nickname3",
+  "nickname4",
+  "nickname5",
+  "nickname6",
+  "nickname7",
+  "nickname8",
+  "nickname9",
+  "nickname10",
+  "nickname11",
+  "nickname12",
+  "nickname13",
+  "nickname14",
+  "nickname15"
   ]
+
+system("clear")
 
 # Intro
 puts "Welcome!"
-puts "Just Group It! let's you organize your class and students into random groups"
+puts "Just Group It! let's you organize your class and students into random groups".color("#cc0033")
 
-#User's input
-puts  "How many students per group would you like? "
-students_per_group_str = gets.chomp!
-students_per_group = students_per_group_str.to_i
+# User's input
+group_size = ask("\nHow many students per group?".color("#2ecc71"))
+puts "\nEach group will have #{group_size} students.".color("#2ecc71")
 
-#Makes a random list of the student's array
+# shuffle the array of students
+students.shuffle!
 
-students_random = students.shuffle!
-student_groups = students_random.each_slice(students_per_group).to_a
+# creates new groups of students
 
-student_groups.each do |x|
-  group_name = nicknames.sample
-  puts "#{group_name} : #{x}"
+groups = students.each_slice(group_size).to_a
+
+# Identify if last group in the array is smaller than the group number requested by user. If the if statement is true then renames that last group as smaller_group and delete it from the original array.
+
+if groups.last != group_size
+ smaller_group = groups.last
+ groups.pop
 end
 
+# Pushes the smaller_group to the last group in the array
+
+smaller_group.each do |name|
+  groups.last << name
+end
+
+
+# Each groups gets a random nickname
+groups.each do |x|
+  nickname = nicknames.sample
+  puts "\nGroup #{nickname} is: #{x}"
+  nicknames.delete(nickname)
+end
+
+
+# Ask the instructor how use a hash for the nicknames (where each nickname is a key and the each array with a group is a value)
+
+# kickhash = Hash[nicknames.shuffle.zip(groups)]  # I saw this online
+# p kickhash
 
 
 

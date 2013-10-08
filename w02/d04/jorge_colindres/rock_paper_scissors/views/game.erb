@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>Rock, Paper, Scissors</h1>
+  <div class="rps-image"></div>
+  <div class="results">
+    <% unless @params.empty? %>
+      <% if @choice == "rock" || @choice == "paper" || @choice == "scissors" %>
+        <h2><%= @game_outcome %></h2>
+      <% else %>
+        <h2>Choose only Rock, Paper or Scissors.</h2>
+      <% end %>
+    <% end %>
+  </div>
+  <form>
+    <input type="text" name="choice" placeholder="Rock..Paper..Scissors">
+    <input type="submit" value="Shoot!">
+  </form>
+</div>

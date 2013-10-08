@@ -1,0 +1,13 @@
+<% if @movies_array == nil %>
+    <h1 class='first-title'> Sorry, but your search didn't yield any results.</h1>
+<% else %>
+    <h1 class='first'>Search results for</h1>
+    <h3>'<%= @movie_title %>'</h3>
+    <!-- <h1><%= @movie_titles %></h1> -->
+    <div class='buffer'></div>
+      <% @movies_array.each do |movie_hash| %>
+      <% @url = "movies/" + movie_hash["imdbID"] %>                  <!--Prints each search result to the page, with an anchor tag that takes then to a page about the movie. -->
+        <h1><a href=<%= @url %> ><%= movie_hash["Title"] %></a></h1>
+      <% end %>
+<% end %>
+

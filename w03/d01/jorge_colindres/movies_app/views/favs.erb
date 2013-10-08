@@ -1,0 +1,16 @@
+<div class="favs container">
+  <% unless @favs.empty? %>
+    <div class="favorites">
+      <% @favs.each do |movie| %>
+      <div>
+        <a href="/<%= movie[:imdb_id] %>">
+          <img src="<%= movie[:poster] %>" alt="<%= movie[:poster_alt] %>">
+        </a>
+        <span><%= movie[:title] %></span>
+      </div>
+      <% end %>
+    </div>
+  <% else %>
+    <p class="no-favs letterpress">No movies favorited yet.</p>
+  <% end %>
+</div>

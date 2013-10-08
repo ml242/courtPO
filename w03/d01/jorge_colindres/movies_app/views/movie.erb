@@ -1,0 +1,37 @@
+<div class="movie-container container">
+  <div class="movie-poster">
+    <a href="https://www.google.com/#q=<%= "#{CGI::escape(@movie[:title])}" %>" target="_blank">
+      <img src="<%= @movie[:poster] %>" alt="<%= @movie[:poster_alt] %>">
+    </a>
+  </div>
+  <div class="movie-details">
+    <h2><%= @movie[:title] %></h2>
+    <p class="genre"><%= @movie[:genre] %></p><!--
+    --><p class="runtime"><%= @movie[:runtime] %></p>
+    <p class="rated"><%= @movie[:rated] %></p>
+    <p class="plot"><%= @movie[:plot] %></p>
+    <h5>Cast and Crew</h5>
+    <p class="director"><%= @movie[:director] %></p>
+    <p class="writer"><%= @movie[:writer] %></p>
+    <p class="actors"><%= @movie[:actors] %></p>
+    <div class="rating-container">
+      <% @movie[:imdb_rating].to_i.times do %>
+        <i class="rating icon-star"></i>
+      <% end %>
+      <% if @movie[:imdb_rating].to_f.modulo(1) > 0.29 %>
+        <i class="rating icon-star-half"></i>
+      <% end %>
+      <span class="rating-score"><%= @movie[:imdb_rating] %></span>
+    </div>
+    <% unless @favs_ids.include?(@movie[:imdb_id]) %>
+      <form action="/favorites" method="post">
+        <input type="hidden" name="imdb_id" value="<%= @movie[:imdb_id] %>">
+        <input class="favorite-button" type="submit" value="♥">
+        <span>Favorite!</span>
+      </form>
+    <% else %>
+        <button class="favorite-button already-favorite">♥</button>
+        <span>Already in Favorites!</span>
+    <% end %>
+  </div>
+</div>

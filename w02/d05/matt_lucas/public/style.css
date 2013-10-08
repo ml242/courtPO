@@ -1,0 +1,43 @@
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+  clear: both;
+}
+
+.global {
+     width: 940px;
+     margin: 0 auto;
+}
+
+html {
+  background-color: #CCC;
+}
+
+.main {
+  padding-top: 5%;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+}
+
+.main img {
+  width: 40%;
+  height: 40%;
+}
+
+.search_bar {
+padding-top: 20px;
+}
+
+.movie_page {
+  margin: 0 auto;
+  text-align: center;
+}

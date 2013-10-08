@@ -9,6 +9,10 @@ class Shelter
       @people = {}
       @animals = {}
     end
+
+    def do_something
+
+    end
 end
 
 

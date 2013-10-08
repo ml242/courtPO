@@ -1,0 +1,31 @@
+<% @title = @movie_info["Title"] %>
+<% @year = @movie_info["Year"] %>
+<% @parental_rating = @movie_info["Rated"] %>
+<% @released = @movie_info["Released"] %>
+<% @runtime = @movie_info["Runtime"] %>
+<% @genre = @movie_info["Genre"] %>
+<% @director = @movie_info["Director"] %>
+<% @writer = @movie_info["Writer"] %>
+<% @actors = @movie_info["Actors"] %>
+<% @plot = @movie_info["Plot"] %>
+<% @poster = @movie_info["Poster"] %>
+<% @type = @movie_info["Type"] %>
+
+<div class = "profile box">
+<img class = "poster" src = '<%="#{@poster}"%>' />
+<h2> <%= "#{@title}, #{@year} " %></h2>
+<ul>
+  <li><%= "Type: #{@type}" %></li>
+  <li><%= "Genre: #{@genre}" %></li>
+  <li><%= "Runtime: #{@runtime}" %></li>
+  <li><%= "Release Date: #{@released}" %></li>
+  <li><%= "Director: #{@director}" %></li>
+  <li><%= "Writer: #{@writer}" %></li>
+  <li><%= "Actors: #{@actors}" %></li>
+  <li><%= "Plot: #{@plot}" %></li>
+</ul>
+</div>
+
+<footer>
+<a class= "back" href="/movies"> Back to Search </a>
+</footer>

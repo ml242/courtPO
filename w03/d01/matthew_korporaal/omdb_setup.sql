@@ -1,0 +1,8 @@
+CREATE DATABASE omdb
+
+CREATE TABLE bookmarks (
+id SERIAL PRIMARY KEY,
+title VARCHAR,
+year VARCHAR,
+imdbID VARCHAR,
+);

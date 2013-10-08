@@ -1,0 +1,8 @@
+<header><a href='/'><%= @symbol || 'Stock' %></a></header>
+
+<form action='/' method='get'>
+  <input type='text' name='symbol' autofocus>
+  <button><%= @quote || 'Get Quote' %></button>
+</form>
+
+<footer>(C) GA WDI Corp</footer>

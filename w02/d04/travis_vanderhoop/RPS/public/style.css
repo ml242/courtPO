@@ -1,0 +1,47 @@
+* {
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;
+}
+
+html {
+  background-image:url('http://dev.bowdenweb.com/a/i/style/textures/purty-wood-pack/purty-wood-2.png');
+}
+
+* {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+input[type="text"] {
+  width: 25%;
+  margin-bottom: 10px
+}
+
+.spacer {
+  height: 150px;
+}
+
+.copyright {
+  position:fixed;
+  bottom:0px;
+  margin: 0 auto;
+  width:30%;
+  font: 8px;
+}
+
+h1 {
+  font-family: 'Lily Script One', cursive;
+  font-size:48px;
+}
+
+h2 {
+  font-family: 'Lily Script One', cursive;
+  font-size:36px;
+}
+
+h3 {
+  font-family: 'Lily Script One', cursive;
+  font-size:36px;
+}

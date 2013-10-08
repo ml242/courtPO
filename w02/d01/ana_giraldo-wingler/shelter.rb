@@ -14,16 +14,16 @@ class Shelter
   end
 
   def add_owner
-    name = ask("Name:")
+    name = ask("Name:").capitalize
     age = ask("Age:")
     new_owner = Owner.new(name, age)
     @owners << new_owner
   end
 
   def add_pet
-    name = ask("Name:")
+    name = ask("Name:").capitalize
     age = ask("Age:")
-    gender = ask("Gender:")
+    gender = ask("Gender:").capitalize
     species = ask("Species:")
     new_pet = Pet.new(name, age, gender, species)
     @pets << new_pet
@@ -31,8 +31,8 @@ class Shelter
 
   def find_homeless_pets
     homeless_pets = []
-    @pets.map do |pet|
-      if !has_owner?
+    @pets.each do |pet|
+      if pet.has_owner? == false
         homeless_pets << pet
       end
       homeless_pets

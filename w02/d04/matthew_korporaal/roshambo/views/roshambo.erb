@@ -1,0 +1,20 @@
+<h1><%= @heading %></h1>
+
+<!-- Buttons -->
+<form action="">
+  <input type="image" src="img/rock.png" name="rps" value="rock" width="60" height="60">
+  <input type="image" src="img/paper.png" name="rps" value="paper" width="60" height="60">
+  <input type="image" src="img/scissor.png" name="rps" value="scissor" width="60" height="60">
+</form>
+
+<!-- Results -->
+<% if @result == "win" %>
+  <p><%= @user_pick %> BEATS <%= @comp_pick %></p>
+  <p>You Win!</p>
+<% elsif @result == "lose" %>
+  <p><%= @comp_pick %> BEATS <%= @user_pick %></p>
+  <p>You Lose!</p>
+<% else %>
+  <p><%= @comp_pick %> TIES <%= @user_pick %></p>
+  <p>You Tie!</p>
+<% end %>

@@ -1,0 +1,46 @@
+similar routing to:
+
+get "/" do
+  url = "http://dev.markitondemand.com/Api/Quote/json?symbol=goog"
+  response = HTTParty.get(url)
+  data_hash = response["Data"]
+  last_price = data_hash["LastPrice"]
+  name = data_hash["Name"]
+  "#{name} is currently at the last price #{last_price}"
+end
+
+get "/:stock_symbol" do
+  stock_symbol = params[:stock_symbol]
+  url = "http://dev.markitondemand.com/Api/Quote/json?symbol=#{stock_symbol}"
+  response = HTTParty.get(url)
+  data_hash = response["Data"]
+  last_price = data_hash["LastPrice"]
+  name = data_hash["Name"]
+  "#{name} is currently at the last price #{last_price}"
+
+Main Page Google Style Form,
+
+Enter Movie title
+(make a rollover for title, year, actor, whatever)
+
+results page is movies/search which should display title and year | in another column show the poster with a google link
+
+Make title a route to our own local movies/:imdbID
+
+response = HTTParty.get "http://www.omdbapi.com/?s=True%20Grit"
+
+link = #{search[:IMDBid]}
+<&= <a href="http://www.imdb.com/title/#{link}">title</a> %>
+
+
+
+
+
+
+
+
+
+
+
+
+

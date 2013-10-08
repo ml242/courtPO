@@ -1,0 +1,12 @@
+    body {
+      background-color: #FFDC83;
+      font-family: "Helvetica", "Arial", sans-serif;
+      color: white;
+      width: 960px;
+      margin: 0 auto;
+    }
+    div {
+      font-weight: bold;
+      font-size: 72px;
+      margin-top: 50px;
+    }

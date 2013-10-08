@@ -1,0 +1,10 @@
+<% if @isfull %>
+<br><%= @name %> was released <%= @year %>, was rated <%= @rating %>, was released <%= @released %>, is a <%= @genre %> film, is <%= @runtime %> long, was directed by <%= @director %>, written by <%= @writer %>, and starred <%= @actors %>. <br>Synopsis: <%= @plot %>
+<br><br>
+<a href=<%= @search %> class="nowrap">
+<img src=<%= @poster %>></a>
+<br>
+<br><% else %>
+<img src="http://www.findingbetteragencies.com/wp-content/uploads/HomerSimpsonDoh.png">
+<% end %>
+
