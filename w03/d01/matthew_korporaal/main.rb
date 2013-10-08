@@ -41,29 +41,31 @@ get '/movies/saved' do
     year << index["year"]
     imdbID << index["imdbid"]
   end
-  @bookmarks = {}
-  @bookmarks[:title] = title
-  @bookmarks[:year] = year
-  @bookmarks[:imdbID] = imdbID
+  @tab_name = "Bookmarks"
+  @listings = {}
+  @listings[:header] = "OMDB: Bookmarks"
+  @listings[:title] = title
+  @listings[:year] = year
+  @listings[:imdbID] = imdbID
   title = []
   year = []
   imdbID = []
-  erb :saved
+  erb :listed
 end
 
 get '/movies/search' do
   @tab_name = "OMDB: Search"
-  @search_results = {}
-  @search_results[:name] = movie_name
-  @search_results[:title] = title
-  @search_results[:year] = year
-  @search_results[:imdbID] = imdbID
+  @listings = {}
+  @listings[:header] = "Results for \'#{movie_name}\'"
+  @listings[:title] = title
+  @listings[:year] = year
+  @listings[:imdbID] = imdbID
   # Reset variables so they don't show up in next search results
   title = []
   year = []
   imdbID = []
   movie_name = String
-  erb :search
+  erb :listed
 end
 
 get '/movies/:imdbID' do
