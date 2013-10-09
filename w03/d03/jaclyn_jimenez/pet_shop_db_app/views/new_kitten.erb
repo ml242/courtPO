@@ -2,6 +2,7 @@
 <a href="/">Home</a>
 <a href="/new_kitten">Add Kitten</a>
 <a href="/kittens">View All Kittens</a>
+<a href="/owners">View All Owners</a>
 <a href="/new_owner">Add Owner</a>
 </div>
 
@@ -15,6 +16,11 @@
   <option value = 'true'> Yes</option>
   <option value = 'false'> No </option>
   </select><br> <br>
+  OWNER? <select name = owner_id>
+   <% @owners.each do |owner| %>
+  <option value = '<%=owner['id']%>' > <%=owner['name']%> </option>
+  <% end %>
+  </select> <br> <br>
   <input type = submit value='Add Kitten'>
 </form>
 </div>

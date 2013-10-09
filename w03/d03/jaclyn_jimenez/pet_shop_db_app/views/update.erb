@@ -16,6 +16,11 @@
   <option value = 'true'> Yes</option>
   <option value = 'false'> No </option>
   </select><br> <br>
+  OWNER? <select name = owner_id>
+   <% @owners.each do |owner| %>
+  <option value = '<%=owner['id']%>' > <%=owner['name']%> </option>
+  <% end %>
+  </select> <br> <br>
   <input type = submit value='Update Kitten'>
 </form>
 
