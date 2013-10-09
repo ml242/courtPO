@@ -2,8 +2,10 @@
 <a href="/">Home</a>
 <a href="/new_kitten">Add Kitten</a>
 <a href="/kittens">View All Kittens</a>
+<a href="/owners">View All Owners</a>
+<a href="/new_owner">Add Owner</a>
 </div>
-<div class = "kittens">
+<div class = "list">
 <% @kittens.each do |kitty| %>
 <p> <%=    "Name: #{kitty['name'].upcase}" %>
     <a href="/kittens/<%=kitty['id']%>" /> View Profile </a>

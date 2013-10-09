@@ -64,3 +64,25 @@ get '/kittens/:id/update' do
   @kitten_before_update = kitten.entries
   erb :update
 end
+
+get '/new_owner' do
+  # link to form to add owner name. form posts to /owners
+  erb :new_owner
+end
+
+post '/owners' do
+  @name = params["name"]
+  response = db_exec("INSERT INTO owners (name) VALUES ('#{@name}')")
+  redirect to '/owners'
+end
+
+get '/owners' do
+  response = db_exec("SELECT * FROM owners")
+  @owners = response.entries
+  erb :owners
+end
+
+
+
+
+
