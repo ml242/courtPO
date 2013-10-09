@@ -1,0 +1,6 @@
+Here's all the kittens: <br>
+<ul>
+<% @kitten_list.each do |kitten| %>
+  <li><a href="/kittens/<%= kitten['id'] %>"><%= "#{kitten['name']}" %></a></li>
+<% end %>
+</ul>
