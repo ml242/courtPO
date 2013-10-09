@@ -72,5 +72,12 @@ end
 
 
 get '/kittens/:id/update' do
+  @id = params[:id]
+  db_connect = PG.connect(
+    :host => 'localhost',
+    :dbname => 'pet_shop_db')
+  sql = "SELECT name FROM kitten WHERE id = #{@id}"
+  kitten = db_connect.exec(sql)
+  @kitten_before_update = kitten.entries
   erb :update
 end

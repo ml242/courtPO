@@ -6,6 +6,10 @@ body {
   font-family: 'Sniglet', cursive;
 }
 
+header h1 {
+  margin: 0;
+}
+
 a {
   display: inline-block;
   font-style: normal;
