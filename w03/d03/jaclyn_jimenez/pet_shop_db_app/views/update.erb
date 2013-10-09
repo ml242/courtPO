@@ -1,0 +1,20 @@
+<div class = 'links'>
+<a href="/">Home</a>
+<a href="/new_kitten">Add Kitten</a>
+<a href="/kittens">View All Kittens</a>
+</div>
+<h3>Update Kitten: <%= "#{@kitten_before_update[0]['name'].upcase}" %></h3>
+<div class = form>
+  <% @id = params[:id]%>
+<form method = 'post' action = '/kittens/<%=@id%>/update'>
+  NAME: <input name = 'name' type = 'text'><br>
+  AGE: <input name = 'age' type = 'text'><br>
+  IMG URL: <input name = 'img_url' type = 'text'> <br>
+  CUTE? <select name = is_cute>
+  <option value = 'true'> Yes</option>
+  <option value = 'false'> No </option>
+  </select><br> <br>
+  <input type = submit value='Update Kitten'>
+</form>
+
+</div>
