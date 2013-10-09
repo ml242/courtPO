@@ -45,7 +45,16 @@ post '/kittens/edit/:id' do
   id = params[:id]
   name = params[:name]
   age = params[:age].to_i
-  is_cute = params[:is_cute]
+  case params[:is_cute]
+  when "f"
+    is_cute = false
+  when "false"
+    is_cute = false
+  when "t"
+    is_cute = true
+  when "true"
+    is_cute = true
+  end
   image_url = params[:image_url]
   db_connect = PG.connect(:dbname => 'kittens_db', :host => 'localhost')
   sql = "UPDATE kittens SET name = '#{name}', age = #{age}, is_cute = #{is_cute}, image_url = '#{image_url}' WHERE id = #{id}"

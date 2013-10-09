@@ -61,6 +61,14 @@ table {
   font-family: helvetica;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 header {
   text-align: center;
   font-size: 50px;
@@ -76,4 +84,6 @@ header {
   text-align: center;
   float:left;
   margin: 20px;
+  padding: 5px;
+  border: 2px dotted #4A3BD3;
 }
