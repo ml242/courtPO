@@ -1,0 +1,36 @@
+body {
+    background-color: #facade;
+    font-family: "Helvetica", "Arial", sans-serif;
+    color: white;
+    font-size: 80px;
+    text-align: center;
+  }
+  .wrapper {
+    width: 960px;
+    margin: 0 auto;
+  }
+  .compliment {
+    font-weight: bold;
+    font-size: 72px;
+    margin-top: 50px;
+  }
+  img {
+    width: 200px;
+    height: auto;
+    border-radius: 20px;
+    border: 10px solid white;
+  }
+  input {
+    border:0;
+    padding:10px;
+    font-size:50px;
+    font-family:Arial, sans-serif;
+    color:#aaa;
+    border:solid 1px #ccc;
+    margin:0 0 20px;
+    width:300px;
+
+  }
+  .input {
+    width: 500px;
+  }
