@@ -20,7 +20,7 @@ post '/kittens' do
   sql = "SELECT * FROM kittens ORDER BY id DESC LIMIT 1"
   results = db_connect.exec(sql)
   @kitten = results.entries[0]
-  erb :kittens_add
+  slim :kittens_add
 end
 
 get '/kittens' do
@@ -29,7 +29,7 @@ get '/kittens' do
   results = db_connect.exec(sql)
   db_connect.close
   @kittens = results.entries
-  erb :kittens_list
+  slim :kittens_list
 end
 
 get '/kittens/edit/:id' do
@@ -39,7 +39,8 @@ get '/kittens/edit/:id' do
   results = db_connect.exec(sql)
   db_connect.close
   @kitten = results.entries[0]
-  erb :kitten_edit
+  @title = "#{@kitten['name']}"
+  slim :kitten_edit
 end
 
 post '/kittens/edit/:id' do
@@ -71,5 +72,5 @@ get '/kittens/:id' do
   results = db_connect.exec(sql)
   db_connect.close
   @kitten = results.entries[0]
-  erb :kitten_profile
+  slim :kitten_profile
 end
