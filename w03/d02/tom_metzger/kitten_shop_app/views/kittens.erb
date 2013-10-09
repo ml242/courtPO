@@ -1,0 +1,10 @@
+<h1>this is kittens.erb</h1>
+<ul>
+  <% @result.each do |kitten| %>
+  <li>ID: <%= kitten["id"] %> <br/>
+      Name:  <%= kitten["name"] %> <br/>
+      Age:  <%= kitten["name"] %> <br/>
+      <%= "#{kitten["name"]} is very cute <br>" if kitten["is_cute"] == "t" %>
+      <img src="<%= kitten["url"] %>">
+    </li>
+</ul>
