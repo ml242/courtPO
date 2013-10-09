@@ -7,10 +7,23 @@ get '/' do
   "/ Works"
 end
 
+get '/kittens/new' do
+
+  erb :form
+end
+
+
+
+# GET /kittens/new
+# - this returns an erb page that has the form to create a new kitten
+# - the form itself should look like this:
+#     <form method="post" action"/kittens">…</form> to post
+
 post '/kittens' do
   name = params[:name]
   is_cute = params[:is_cute]
   image_url = params[:image_url]
+  binding.pry
   db_conn = PG.connect(:dbname => 'kitten_shop_db', :host => 'localhost')
   sql = "INSERT INTO kittens (name, is_cute, image_url) VALUES ('#{name}', '#{is_cute}', '#{image_url}')"
   db_conn.exec(sql)                 # creates a new kitten in the database
@@ -22,7 +35,6 @@ post '/kittens' do
   end
 
 get '/kittens' do
-
   db_conn = PG.connect(:dbname => 'kitten_shop_db', :host => 'localhost')
   sql = "SELECT * FROM kittens"
   response = db_conn.exec(sql)
