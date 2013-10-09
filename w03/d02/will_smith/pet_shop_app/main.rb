@@ -3,9 +3,6 @@ require 'sinatra/reloader' if development?
 require 'pry'
 require 'pg'
 
-# GET  /kittens/:id
-# - Asks the database for a single kitten
-# - returns a single hash representing a single kitten
 get '/' do
   erb :index
 end
@@ -40,6 +37,20 @@ post '/kittens' do
   # execute sql
   #close db
   redirect to '/kittens'
+
+# GET  /kittens/:id
+# - Asks the database for a single kitten
+# - returns a single hash representing a single kitten
+
+get '/kittens/:id' do
+  id = params[:id]
+  db_connect = PG.connect(:dbname => 'kittens_inventory_db', :host => 'localhost')
+  sql = "SELECT * FROM kittens WHERE id = #{id}"
+  results = db_connect.exec(sql)
+  db_connect.close
+  @kitten = results.entries[0]
+  erb :profile
+  end
 end
 
 
