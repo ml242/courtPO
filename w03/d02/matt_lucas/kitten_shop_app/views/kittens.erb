@@ -1,7 +1,4 @@
-
-<h1>These people have signed the guestbook</h1>
+<h1>Available Cats.</h1>
 <% @cats.each do |cat| %>
-<div class="petshop">
-<li><div class="name"><%= cat["name"] %></div><div class="message"><%= cat["age"] %></li></div>
-</div>
+<%= p cat %>
 <% end %>
