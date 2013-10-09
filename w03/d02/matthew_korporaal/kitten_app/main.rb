@@ -30,7 +30,6 @@ post '/kittens' do
   if message.nil?
     message = ''
   end
-  binding.pry
   db_connect = PG.connect(
   :dbname => 'kittens_db',
   :host => 'localhost')
@@ -55,7 +54,6 @@ get '/kittens' do
   if message.nil?
     message = ''
   end
-  binding.pry
   db_connect = PG.connect(
   :dbname => 'kittens_db',
   :host => 'localhost')
@@ -92,17 +90,25 @@ end
 get  '/kittens/:id' do
 # - Asks the database for a single kitten
 # - returns a single hash representing a single kitten
-
   db_connect = PG.connect(
     :dbname => 'kittens_db',
     :host => 'localhost')
-  sql = "SELECT * FROM kittens"
+  sql = "SELECT * FROM kittens WHERE id = #{params[:id]}"
   answer = db_connect.exec(sql)
   db_connect.close
+  @id = answer.entries[0]["id"].to_i
+  @name = answer.entries[0]["name"]
+  @age = answer.entries[0]["age"].to_i
+  if answer.entries[0]["is_cute"] == 't'
+    @is_cute = true
+  else
+    @is_cute = false
+  end
+  @img_url = answer.entries[0]["img_url"]
   if message.nil?
     message = ''
   end
-  erb :find_kitty
+  erb :show_kitty
 end
 
 # EVERYTHING AFTER IS EXTRA CREDIT
@@ -113,6 +119,8 @@ post '/kittens/:id/delete' do
 end
 
 post '/kittens/:id' do
+    binding.pry
+
 # - takes any of the passed in parameters
 # - updates only those parameters for a single kitten
 end
