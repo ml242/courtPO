@@ -1,0 +1,8 @@
+<% @kittens.each do |kittyhash| %>
+  <div class="kitten">
+    <a href="/kittens/<%= kittyhash['id'] %>">
+      <img src= "/kittens/<%= kittyhash['img_url'] %>" />
+      <br /><%= kittyhash["name"] %>
+    </a>
+  </div>
+<% end %>
