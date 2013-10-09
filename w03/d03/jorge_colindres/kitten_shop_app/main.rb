@@ -4,16 +4,22 @@ require 'slim'
 require 'pry'
 require 'pg'
 
+helpers do
+  def db_exec(sql)
+    conn = PG.connect(:dbname =>'kitten_shop_db', :host => 'localhost')
+    result = conn.exec sql
+    conn.close
+    result
+  end
+end
 
 get '/' do
   slim :index
 end
 
 get '/kittens' do
-  db_connec = PG.connect :dbname => 'kitten_shop_db', :host => 'localhost'
   sql = "SELECT * FROM kittens"
-  @kittens = db_connec.exec sql
-  db_connec.close
+  @kittens = db_exec sql
 
   slim :all_kittens
 end
@@ -26,20 +32,16 @@ post '/kittens' do
 
   is_cute == 'true' ? is_cute = 'true' : is_cute = 'false'
 
-  db_connec = PG.connect :dbname => 'kitten_shop_db', :host => 'localhost'
   sql = "INSERT INTO kittens (name, age, is_cute, image_url) VALUES ('#{name}', #{age}, #{is_cute}, '#{image_url}')"
-  db_connec.exec sql
-  db_connec.close
+  db_exec sql
 
   redirect '/kittens'
 end
 
 get '/kittens/:id' do
   kitten_id = params[:id]
-  db_connec = PG.connect :dbname => 'kitten_shop_db', :host => 'localhost'
   sql = "SELECT * FROM kittens WHERE id = #{kitten_id}"
-  @kitten = db_connec.exec sql
-  db_connec.close
+  @kitten = db_exec sql
 
   slim :single_kitten
 end
@@ -75,10 +77,8 @@ end
 
 post '/kittens/:id/delete' do
   kitten_id = params[:id]
-  db_connec = PG.connect :dbname => 'kitten_shop_db', :host => 'localhost'
   sql = "DELETE FROM kittens WHERE id = #{kitten_id}"
-  db_connec.exec sql
-  db_connec.close
+  db_exec sql
 
   redirect '/kittens'
 end
