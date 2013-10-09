@@ -34,11 +34,28 @@ get '/kittens' do
 end
 
 get '/kittens/:id' do
-  @kitten = params[:id]
-  "get /kittens/:id works"
+  kitten = params[:id]
+  sql = "SELECT * FROM kittens WHERE id=#{kitten}"
+  db_conn = PG.connect(:dbname => 'kitten_shop_db', :host => 'localhost')
+  response = db_conn.exec(sql)
+  @kittens = response.entries
+  @kitten = @kittens[0]                         #returns a hash with the proper kitten in it.
+  erb :kitty_profile
 # - Asks the database for a single kitten
 # - returns a single hash representing a single kitten
 end
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # # EVERYTHING AFTER IS EXTRA CREDIT
