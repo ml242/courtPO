@@ -3,6 +3,15 @@ require 'sinatra/reloader' if development?
 require 'pg'
 require 'pry'
 
+helpers do
+  def db_exec(sql)
+    conn = PG.connect(:dbname =>'pet_shop_db', :host => 'localhost')
+    result = conn.exec(sql)
+    conn.close
+    result
+  end
+end
+
 get '/' do
   erb :index
 end
@@ -13,23 +22,13 @@ post '/kittens' do
   @age = params["age"]
   @img = params["img_url"]
   @cute = params["is_cute"]
-  db_connect = PG.connect(
-    :host => 'localhost',
-    :dbname => 'pet_shop_db')
-  sql = "INSERT INTO kitten (name, age, img_url, is_cute) VALUES ('#{@name}', '#{@age}', '#{@img}', '#{@cute}')"
-  response = db_connect.exec(sql)
-  db_connect.close
+  response = db_exec("INSERT INTO kitten (name, age, img_url, is_cute) VALUES ('#{@name}', '#{@age}', '#{@img}', '#{@cute}')")
   redirect to '/kittens'
 end
 
 get '/kittens' do
-  db_connect = PG.connect(
-    :host => 'localhost',
-    :dbname => 'pet_shop_db')
-  sql = "SELECT * FROM kitten"
-  kittens = db_connect.exec(sql)
+  kittens = db_exec("SELECT * FROM kitten")
   @kittens = kittens.entries
-  db_connect.close
   erb :kittens
 end
 
@@ -39,14 +38,9 @@ end
 
 get '/kittens/:id' do
    @id = params[:id]
-    db_connect = PG.connect(
-    :host => 'localhost',
-    :dbname => 'pet_shop_db')
-  sql = "SELECT * FROM kitten WHERE id = '#{@id}'"
-  kitten = db_connect.exec(sql)
+  kitten = db_exec("SELECT * FROM kitten WHERE id = '#{@id}'")
   kitten = kitten.entries[0]
   @kitten = kitten
-  db_connect.close
   erb :kitten_profile
 end
 
@@ -56,28 +50,17 @@ post '/kittens/:id/update' do
     @age = params["age"]
     @img = params["img_url"]
     @cute = params["is_cute"]
-    db_connect = PG.connect(
-    :host => 'localhost',
-    :dbname => 'pet_shop_db')
-  sql = "UPDATE kitten SET name = '#{@name}' WHERE id = #{@id}"
-  kitten = db_connect.exec(sql)
-  sql = "UPDATE kitten SET age = #{@age} WHERE id = #{@id}"
-  kitten = db_connect.exec(sql)
-  sql = "UPDATE kitten SET img_url = '#{@img}' WHERE id = #{@id}"
-  kitten = db_connect.exec(sql)
-  sql = "UPDATE kitten SET is_cute = '#{@cute}' WHERE id = #{@id}"
-  kitten = db_connect.exec(sql)
+  response = db_exec("UPDATE kitten SET name = '#{@name}' WHERE id = #{@id}")
+  response = db_exec("UPDATE kitten SET age = #{@age} WHERE id = #{@id}")
+  response = db_exec("UPDATE kitten SET img_url = '#{@img}' WHERE id = #{@id}")
+  response = db_exec("UPDATE kitten SET is_cute = '#{@cute}' WHERE id = #{@id}")
   redirect to "/kittens/#{@id}"
 end
 
 
 get '/kittens/:id/update' do
   @id = params[:id]
-  db_connect = PG.connect(
-    :host => 'localhost',
-    :dbname => 'pet_shop_db')
-  sql = "SELECT name FROM kitten WHERE id = #{@id}"
-  kitten = db_connect.exec(sql)
+  kitten = db_exec("SELECT name FROM kitten WHERE id = #{@id}")
   @kitten_before_update = kitten.entries
   erb :update
 end
