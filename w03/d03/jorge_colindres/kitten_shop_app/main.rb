@@ -67,9 +67,6 @@ post '/kittens/:id' do
   image_url = params[:image_url]
   owner_id = params[:owner_id]
 
-  # binding.pry
-
-
   db_connec = PG.connect :dbname => 'kitten_shop_db', :host => 'localhost'
 
   unless params[:name].empty?
@@ -91,6 +88,7 @@ post '/kittens/:id' do
     sql = "UPDATE kittens SET image_url = '#{image_url}' WHERE id = #{kitten_id}"
     db_connec.exec sql
   end
+
   sql = "UPDATE kittens SET owner_id = '#{owner_id}' WHERE id = #{kitten_id}"
   db_connec.exec sql
 
