@@ -53,6 +53,9 @@ get '/kittens/:id' do
   owner = db_exec sql
   @owner = owner.entries[0]['name']
 
+  sql = "SELECT * FROM owners"
+  @owners = db_exec sql
+
   slim :single_kitten
 end
 
@@ -62,28 +65,38 @@ post '/kittens/:id' do
   age = params[:age]
   is_cute = params[:is_cute]
   image_url = params[:image_url]
+  owner_id = params[:owner_id]
+
+  # binding.pry
 
 
   db_connec = PG.connect :dbname => 'kitten_shop_db', :host => 'localhost'
 
-  unless params[:name].nil?
+  unless params[:name].empty?
     sql = "UPDATE kittens SET name = '#{name}' WHERE id = #{kitten_id}"
     db_connec.exec sql
   end
-  unless params[:age].nil?
+  unless params[:age].empty?
     sql = "UPDATE kittens SET age = #{age} WHERE id = #{kitten_id}"
     db_connec.exec sql
   end
   unless params[:is_cute].nil?
     sql = "UPDATE kittens SET is_cute = #{is_cute} WHERE id = #{kitten_id}"
     db_connec.exec sql
+  else
+    sql = "UPDATE kittens SET is_cute = false WHERE id = #{kitten_id}"
+    db_connec.exec sql
   end
-  unless params[:image_url].nil?
+  unless params[:image_url].empty?
     sql = "UPDATE kittens SET image_url = '#{image_url}' WHERE id = #{kitten_id}"
     db_connec.exec sql
   end
+  sql = "UPDATE kittens SET owner_id = '#{owner_id}' WHERE id = #{kitten_id}"
+  db_connec.exec sql
 
   db_connec.close
+
+  redirect "/kittens/#{kitten_id }"
 end
 
 post '/kittens/:id/delete' do
