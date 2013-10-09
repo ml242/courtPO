@@ -1,0 +1,9 @@
+
+<ol>
+  <% @kittens.each do |kitten|  %>
+  <li>name: <%= kitten["name"] %><br>
+  age: <%= kitten["age"] %><br>
+  is_cute: <%= kitten["is_cute"] %><br>
+  image_url: <%= kitten["image_url"] %></li><br>
+      <% end %>
+</ol>

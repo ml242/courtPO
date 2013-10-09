@@ -1,0 +1,8 @@
+CREATE DATABASE animals_db;
+
+CREATE TABLE kittens(
+  id SERIAL PRIMARY KEY,
+  name VARCHAR NOT NULL,
+  age INTEGER,
+  is_cute BOOLEAN,
+  image_url VARCHAR);

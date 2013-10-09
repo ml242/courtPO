@@ -1,0 +1,15 @@
+<h1>These are all of the kittens in kitten_shop</h1>
+<h3>Click on an ID to search that specific kitten</h3>
+<ul>
+  <% @records.each do |kitten| %>
+  <li><a href="/kittens/<%= kitten["id"] %>">ID: <%= kitten["id"] %> </a><br/>
+      Name:  <%= kitten["name"] %> <br/>
+      Age:  <%= kitten["age"] %> <br/>
+      <%= "#{kitten["name"]} is very cute <br>" if kitten["is_cute"] == "t" %>
+      <img src="<%= kitten["image_url"] %>">
+    </li>
+    <% end %>
+</ul>
+
+<a href="/">Home</a>
+

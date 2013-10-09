@@ -1,0 +1,21 @@
+<ol>
+<%@kittens_array.each do |hash|%>
+<%id = hash["id"]%>
+<%name = hash["name"]%>
+<%age = hash["age"]%>
+<%description =hash["description"]%>
+<a href="/kittens/<%=id%>"><li><%=name%></li></a>
+  <ul>
+  <li>Age: <%=age%></li>
+  <li>Description: <%=description%></li>
+  </ul>
+  <% end%>
+</ol>
+
+<p>Please input the name of a kitten you would like to purchase.</p>
+<form action="/kittens/:id/delete" method="post">
+<input type="text" name = "id">
+<input type="submit" value="PURCHASE">
+</form>
+
+
