@@ -3,13 +3,10 @@
 <a href="/new_kitten">Add Kitten</a>
 <a href="/kittens">View All Kittens</a>
 </div>
-
+<div class = "kittens">
 <% @kittens.each do |kitty| %>
-<% kitty['is_cute'] == 't' ? @cute = 'CUTE' : @cute = 'NOT CUTE' %>
-<p> <%=    "Name: #{kitty['name'].upcase}" %><br>
-    <%=    "Age: #{kitty['age']}" %> <br>
-    <%=    "Cute? #{@cute}"  %> <br>
-    <%=    "PIC: #{kitty['img_url']}" %></p>
+<p> <%=    "Name: #{kitty['name'].upcase}" %>
+    <a href="/kittens/<%=kitty['id']%>" /> View Profile </a>
+    <a href="/kittens/<%=kitty['id']%>/update" /> Update </a>
 <% end %>
-
-
+</div>

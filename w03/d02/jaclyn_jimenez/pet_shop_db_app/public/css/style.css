@@ -19,6 +19,11 @@ a {
   width: 200px;
 }
 
+input.kittens {
+  position: absolute;
+  float: right;
+}
+
 input {
   height: 16px;
   width: 200px;
@@ -26,5 +31,13 @@ input {
   margin: 0 auto;
   text-align: center;
 }
+
+.kittens {
+  display: inline-table;
+  margin: 0 auto;
+  width: 800px;
+  text-align: left;
+}
+
 
 
