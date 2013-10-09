@@ -1,0 +1,11 @@
+<h1>List of kittens</h1>
+
+<% @response_entries.each do |entry| %>
+  <li>
+    <a href="kitten/<%=entry["id"] %>">
+    <h3><%= entry["name"] %></h3>
+    </a>
+  </li>
+<% end %>
+
+<h3><a href="/">Go back home</a></h3>
