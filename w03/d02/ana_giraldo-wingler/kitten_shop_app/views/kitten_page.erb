@@ -1,10 +1,10 @@
 <img src="<%= "#{@img_url}" %>">
 
-<%= "#{@name}" %> is a
+<strong><%= "#{@name}" %></strong> is a
 <% if @is_cute == "t" %>
   cute
 <% else %>
-  not-so-cute
+  pretty ugly
 <% end %>
 <%= "#{@age}" %>-year-old kitten.
 
@@ -12,3 +12,7 @@
   <input type="hidden">
   <input type="submit" value="Delete <%= "#{@name}" %>">
 </form>
+
+<br>
+
+<a href="/kittens">Click here to view all the kittens</a>.
