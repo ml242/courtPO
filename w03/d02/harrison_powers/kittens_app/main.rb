@@ -5,7 +5,7 @@ require 'pg'
 require 'json'
 
 get '/' do
-  #nothing
+  redirect to('/kittens')
 end
 
 post '/kittens' do
@@ -18,12 +18,8 @@ post '/kittens' do
   db_connect.exec(sql)
   sql = "SELECT * FROM kittens ORDER BY id DESC LIMIT 1"
   results = db_connect.exec(sql)
-  @kitten = results.entries
-  kitten_string = ''
-  @kitten[0].each do |x, y|
-    kitten_string << "#{x} => #{y}, "
-  end
-  kitten_string
+  @kitten = results.entries[0]
+  erb :kittens_add
 end
 
 get '/kittens' do
@@ -32,13 +28,30 @@ get '/kittens' do
   results = db_connect.exec(sql)
   db_connect.close
   @kittens = results.entries
-  kitten_string = ''
-  @kitten.each do |x|
-    x.each do |x, y|
-      kitten_string << "#{x} => #{y}, "
-    end
-  end
-  kitten_string
+  erb :kittens_list
+end
+
+get '/kittens/edit/:id' do
+  id = params[:id]
+  db_connect = PG.connect(:dbname => 'kittens_db', :host => 'localhost')
+  sql = "SELECT * FROM kittens WHERE id = #{id}"
+  results = db_connect.exec(sql)
+  db_connect.close
+  @kitten = results.entries[0]
+  erb :kitten_edit
+end
+
+post '/kittens/edit/:id' do
+  id = params[:id]
+  name = params[:name]
+  age = params[:age].to_i
+  is_cute = params[:is_cute]
+  image_url = params[:image_url]
+  db_connect = PG.connect(:dbname => 'kittens_db', :host => 'localhost')
+  sql = "UPDATE kittens SET name = '#{name}', age = #{age}, is_cute = #{is_cute}, image_url = '#{image_url}' WHERE id = #{id}"
+  db_connect.exec(sql)
+  db_connect.close
+  redirect to("/kittens/#{id}")
 end
 
 get '/kittens/:id' do
@@ -47,10 +60,6 @@ get '/kittens/:id' do
   sql = "SELECT * FROM kittens WHERE id = #{id}"
   results = db_connect.exec(sql)
   db_connect.close
-  @kitten = results.entries
-  kitten_string = ''
-  @kitten[0].each do |x, y|
-    kitten_string << "#{x} => #{y}, "
-  end
-  kitten_string
+  @kitten = results.entries[0]
+  erb :kitten_profile
 end
