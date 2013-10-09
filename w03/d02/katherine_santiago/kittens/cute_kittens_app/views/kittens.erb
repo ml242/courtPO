@@ -1,0 +1,10 @@
+<h2>Here are a list of your kittens info:</h2>
+
+<ol>
+  <% @cats.each do |kitten| %>
+  <li><%= kitten["name"] %><br>
+    <%= kitten["age] %> years old<br>
+    <%= kitten["is_cute"] %><br>
+    <%= kitten["image"] %><br><br>
+    <% end %>
+  </ol>
