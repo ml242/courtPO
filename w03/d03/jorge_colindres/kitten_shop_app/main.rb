@@ -43,6 +43,11 @@ get '/kittens/:id' do
   sql = "SELECT * FROM kittens WHERE id = #{kitten_id}"
   @kitten = db_exec sql
 
+  owner_id = @kitten.entries[0]['owner_id']
+  sql = "SELECT * FROM owners WHERE id = #{owner_id}"
+  owner = db_exec sql
+  @owner = owner.entries[0]['name']
+
   slim :single_kitten
 end
 

@@ -4,6 +4,6 @@
       .kitten-profile
         img src='#{kitten['image_url']}'
         - kitten['is_cute'] == 't' ? cute = 'cute' : cute = 'not so cute'
-        p #{kitten['name']} is a #{cute} #{kitten['age']} year old kitten
+        p #{kitten['name']} is a #{cute} #{kitten['age']} year old kitten. #{@owner} owns this kitten.
         form action='/kittens/#{kitten['id']}/delete' method='post'
           input type='submit' value='Get rid of this kitten'
