@@ -1,0 +1,19 @@
+<div class = 'links'>
+<a href="/">Home</a>
+<a href="/new_kitten">Add Kitten</a>
+<a href="/kittens">View All Kittens</a>
+</div>
+
+<div class = form>
+
+  <form method = 'post' action = '/kittens'>
+  NAME: <input name = 'name' type = 'text'><br>
+  AGE: <input name = 'age' type = 'text'><br>
+  IMG URL: <input name = 'img_url' type = 'text'> <br>
+  CUTE? <select name = is_cute>
+  <option value = 'true'> Yes</option>
+  <option value = 'false'> No </option>
+  </select><br> <br>
+  <input type = submit value='Add Kitten'>
+</form>
+</div>

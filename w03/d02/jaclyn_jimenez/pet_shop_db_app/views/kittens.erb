@@ -1,0 +1,15 @@
+<div class = 'links'>
+<a href="/">Home</a>
+<a href="/new_kitten">Add Kitten</a>
+<a href="/kittens">View All Kittens</a>
+</div>
+
+<% @kittens.each do |kitty| %>
+<% kitty['is_cute'] == 't' ? @cute = 'CUTE' : @cute = 'NOT CUTE' %>
+<p> <%=    "Name: #{kitty['name'].upcase}" %><br>
+    <%=    "Age: #{kitty['age']}" %> <br>
+    <%=    "Cute? #{@cute}"  %> <br>
+    <%=    "PIC: #{kitty['img_url']}" %></p>
+<% end %>
+
+
