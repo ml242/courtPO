@@ -3,6 +3,7 @@ require 'sinatra/reloader' if development?
 require 'pry'
 require 'pg'
 require 'json'
+require 'slim'
 
 get '/' do
   redirect to('/kittens')
