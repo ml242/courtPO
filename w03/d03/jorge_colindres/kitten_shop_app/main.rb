@@ -14,6 +14,10 @@ helpers do
 end
 
 get '/' do
+  sql = "SELECT * FROM owners"
+  @owners = db_exec sql
+  # binding.pry
+
   slim :index
 end
 
@@ -29,10 +33,11 @@ post '/kittens' do
   age = params[:age]
   is_cute = params[:is_cute]
   image_url = params[:image_url]
+  owner_id = params[:owner_id]
 
   is_cute == 'true' ? is_cute = 'true' : is_cute = 'false'
 
-  sql = "INSERT INTO kittens (name, age, is_cute, image_url) VALUES ('#{name}', #{age}, #{is_cute}, '#{image_url}')"
+  sql = "INSERT INTO kittens (name, age, is_cute, image_url, owner_id) VALUES ('#{name}', #{age}, #{is_cute}, '#{image_url}', '#{owner_id}')"
   db_exec sql
 
   redirect '/kittens'
@@ -57,6 +62,7 @@ post '/kittens/:id' do
   age = params[:age]
   is_cute = params[:is_cute]
   image_url = params[:image_url]
+
 
   db_connec = PG.connect :dbname => 'kitten_shop_db', :host => 'localhost'
 
