@@ -1,5 +1,3 @@
-Will Smith
-
 # TODO
 - add drills
 - add extra credit (encapsulte into object code)

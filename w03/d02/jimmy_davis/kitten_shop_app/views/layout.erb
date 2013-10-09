@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kitten Shop</title>
+</head>
+<body>
+  <style>
+    body {
+      background-color: #d8d8d8;
+      text-align: center;
+      font-family: Comic sans ms;
+    }
+    header {
+      /*background-color: #acacac;*/
+      background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF_X4ewEE_HobgE-P_IrHWFSKC98f8XY-1ExQ7bG8mIfrIp55d");
+      text-align: center;
+      height: 100px;
+    }
+    a {
+      margin: 0 auto;
+      padding: 50px;
+      color: white;
+      font-size: 20px;
+    }
+    a:hover {
+      color: yellow;
+    }
+
+    h1 {
+      font-family: Desdemona;
+    }
+
+    .create {
+      width: 50px;
+      background-color: #acacac;
+      color: yellow;
+      border: 1px solid yellow;
+      border-radius: 50px;
+      top: 100px;
+    }
+
+   input {
+      border: 0;
+      padding: 10px;
+      font-size: 18px;
+    }
+
+    input[type="submit"] {
+      background: yellow;
+      color: red;
+    }
+
+  </style>
+  <header>
+    <h1>Welcome to the Kitten Shop</h1>
+  </header>
+     <div class="links">
+      <a href="/">Home</a>
+      <a href="/kittens">View Kittens</a>
+    </div>
+<%= yield %>
+</body>
+</html>

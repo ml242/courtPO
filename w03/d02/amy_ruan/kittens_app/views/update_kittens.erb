@@ -1,0 +1,33 @@
+<div class="list"> Kittens currently in database
+  <ul class= "kittens">
+    <%@list.each do |kittens|%>
+      <li> <%=p kittens%> </li>
+    <%end%>
+  </ul>
+</div>
+<form action="/kittens/update" method="post">
+  Which kitten id do you want to change? Input ID #
+  <input type="text" name="update_id">
+  <br>
+  What do you want to update? (Select and input update)
+  <br>
+  <label>Name</label>
+  <input type="radio" name="factor" value="name">
+    <input type="text" name="update_name" id="name_value">
+  <br>
+  <label>Age</label>
+  <input type="radio" name="factor" value="age">
+  <input type="text" name="update_age" id="age_value">
+  <br>
+  <label>Cute</label>
+  <input type="radio" name="factor" value="is_cute">
+    <label>Input True/False</label>
+    <input type="text" name="update_cute" id="cute_value">
+  <br>
+  <label>Image_URL</label>
+  <input type="radio" name="factor" value="image_url">
+    <label>Updated URL</label>
+    <input type="text" name="update_image" id="image_value">
+  <br>
+  <input type="submit" value="Submit">
+</form>
