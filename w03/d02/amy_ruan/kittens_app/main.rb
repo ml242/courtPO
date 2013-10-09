@@ -51,7 +51,8 @@ post '/kittens' do
   response = db_conn.exec(sql)
   kittens = response.entries
   db_conn.close
-  kittens = response.entries.to_s
+  @kittens = response.entries.to_s
+  erb :created_kitten_post
 end
 
 #create
@@ -89,17 +90,27 @@ db_conn = PG.connect(:dbname => 'kitten_db',
     @kitten_group[:Cute] = kitten["is_cute"]
     @kitten_group[:Image_url] = kitten["image_url"]
     @list  << @kitten_group
-    end
-
+  end
+  db_conn.close
+  erb :delete_kittens
 # display list of kittens
 # "Which kitten do you want to delete enter id"
 # number = gets.chomp
 # SQL = "DELETE FROM kittens WHERE id = '#{number}'"
 end
 
+post '/kittens/delete' do
+  @id = params[:delete_id]
+  db_conn = PG.connect(:dbname => 'kitten_db',
+    :host => 'localhost')
+  sql = "DELETE FROM kittens WHERE id = #{@id}"
+  deleted_kitten = db_conn.exec(sql)
+  db_conn.close
+  erb :delete_kittens_post
+end
 #update
 get '/kittens/update' do
-  erb :delete_kittens
+  erb :update_kittens
 # display list of kittens
 # which kitten do you want to modify? enter id
 # number = gets.chomp
