@@ -7,8 +7,6 @@ get '/' do
   erb :index
 end
 
-# #CRUD
-
 # #read
 get '/kittens' do
   @id = params[:id].to_i
@@ -110,6 +108,24 @@ post '/kittens/delete' do
 end
 #update
 get '/kittens/update' do
+  db_conn = PG.connect(:dbname => 'kitten_db',
+   :host =>'localhost')
+  sql = "SELECT * FROM kittens"
+  response = db_conn.exec(sql)
+  kittens = response.entries
+  @list = []
+  kittens.each do
+    |kitten|
+    @kitten_group= {}
+    @kitten_group[:ID] = kitten["id"]
+    @kitten_group[:Name] = kitten["name"].capitalize
+    @kitten_group[:Age] = kitten["age"]
+    @kitten_group[:Cute] = kitten["is_cute"]
+    @kitten_group[:Image_url] = kitten["image_url"]
+    @list  << @kitten_group
+  end
+  db_conn.close
+
   erb :update_kittens
 # display list of kittens
 # which kitten do you want to modify? enter id
@@ -127,3 +143,29 @@ get '/kittens/update' do
 #   p kittens.to_s
 end
 
+post "/kittens/update" do
+  @id = params[:update_id]
+  @factor = params[:factor]
+  @name = params[:update_name]
+  @age = params[:update_age]
+  @cute = params[:update_cute]
+  @image = params[:update_image]
+  db_conn = PG.connect(:dbname=>'kitten_db',
+    :host => 'localhost')
+    case
+      when @factor == "age"
+      sql = "UPDATE kittens SET #{@factor} = #{@age}
+      WHERE id = #{@id}"
+      when @factor == "is_cute"
+      sql = "UPDATE kittens SET #{@factor} = #{@cute}
+      WHERE id = #{@id}"
+      when @factor == "name"
+      sql = "UPDATE kittens SET #{@factor} = '#{@name}'
+      WHERE id = #{@id}"
+      when @factor == "image_url"
+      sql = "UPDATE kittens SET #{@factor} = '#{@image}'
+      WHERE id = #{@id}"
+    end
+  updates = db_conn.exec(sql)
+  erb :update_kittens_post
+end
