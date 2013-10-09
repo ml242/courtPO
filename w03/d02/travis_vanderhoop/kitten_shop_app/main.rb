@@ -23,9 +23,14 @@ post '/kittens' do
 
 get '/kittens' do
 
-# - Asks the database for all of the kittens
-# - returns an array of hashes where each hash represents the properties of the kitten
-
+  db_conn = PG.connect(:dbname => 'kitten_shop_db', :host => 'localhost')
+  sql = "SELECT * FROM kittens"
+  response = db_conn.exec(sql)
+  @kittens = response.entries            # - Asks the database for all of the kittens
+  @kittens.to_s                                     # - (last line needs to be a string if no erb) returns an array of hashes where each hash represents the properties of the kitten
+  db_conn.close                                   #always be closing
+  "balls"
+  erb :kitten_list
 end
 
 get '/kittens/:id' do
