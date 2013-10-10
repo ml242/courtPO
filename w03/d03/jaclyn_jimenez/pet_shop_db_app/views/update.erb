@@ -2,6 +2,8 @@
 <a href="/">Home</a>
 <a href="/new_kitten">Add Kitten</a>
 <a href="/kittens">View All Kittens</a>
+<a href="/owners">View All Owners</a>
+<a href="/new_owner">Add Owner</a>
 </div>
 <h3>Update Kitten: <%= "#{@kitten_before_update[0]['name'].upcase}" %></h3>
 <div class = form>
@@ -14,6 +16,11 @@
   <option value = 'true'> Yes</option>
   <option value = 'false'> No </option>
   </select><br> <br>
+  OWNER? <select name = owner_id>
+   <% @owners.each do |owner| %>
+  <option value = '<%=owner['id']%>' > <%=owner['name']%> </option>
+  <% end %>
+  </select> <br> <br>
   <input type = submit value='Update Kitten'>
 </form>
 
