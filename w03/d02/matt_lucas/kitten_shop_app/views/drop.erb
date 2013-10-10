@@ -1,8 +1,16 @@
-<form name="input" action="/kittens" method="post"> <br>
-name: <input type="text" name="name"> <br>
+<form action="/kittens" method="post"> <br>
+name: <input type="text" name="kitten_name"> <br>
 age: <input type="number" name="age"> <br>
 Is the kitten cute (please leave unselected if not)
-<input type="radio" name="cute" value="true"><br>
+<input type="radio" name="is_cute" value="true"><br>
 Do you have a picture <input type="text" name="url"> <br>
+<select>
+
+  <% @owners.each do |x| %>
+ <option value="owner_name"> <%= "#{x["name"]}" %>  </option>
+    <% end %>
+
+</select>
+
 <input type="submit" value="Submit"> <br>
 </form>
