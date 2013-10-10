@@ -1,0 +1,15 @@
+<h1>Please add a kitten</h1>
+
+<form action="/kittens" method="post">
+  <input type="text" name="name" placeholder="Name of the kitten"><br>
+  <input type="text" name="age" placeholder="Age of the kitten"><br>
+  <input type="text" name="is_cute" placeholder="Cute: true or false?"><br>
+  <input type="text" name="image_url" placeholder="Image url of kitten"><br>
+  <select name="foreign_key">
+  <% @response_entries.each do |entry| %>
+    <option value="<%= entry["id"] %>"><%= entry["name"] %>
+    </option>
+  <% end %>
+  </select>
+  <input type="submit" value="Submit">
+</form>

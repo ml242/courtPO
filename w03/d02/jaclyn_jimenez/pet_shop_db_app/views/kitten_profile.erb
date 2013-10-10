@@ -9,6 +9,6 @@
     <%=    "Name: #{@kitten['name'].upcase}" %><br>
     <%=    "Age: #{@kitten['age']}" %> <br>
     <%=    "Cute? #{@cute}"  %> <br>
-    <%=    "PIC: #{@kitten['img_url']}" %><br>
+    <%= "PIC: <img src = 'http://#{@kitten['img_url']}' />" %> <br>
     <a href="/kittens/<%=@kitten['id']%>/update" /> Update </a>
 

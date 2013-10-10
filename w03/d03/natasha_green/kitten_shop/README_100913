@@ -1,0 +1,19 @@
+Steps towards creating a database.
+Two options in order to create database and tables
+I. In psql
+1. Go into PSQL and create database with the CREATE DATABASE kittens;
+2. Go into PSQL and then press *cl* \c kittens *cl*and then *cl* CREATE TABLE name_table ( id SERIAL PRIMARY KEY, ....); *cl*
+
+II. By using files
+1. In the command line you can type: *cl* createdb hogwarts_db *cl*   [in this case you don't need to have a semi-colon at the end]
+2. Create a file name having it end with .sql example 'kittens.sql' we learned today that you might want to name the document with the table in it  'kittens_schema.sql'
+3. To insert values you can create a file called 'kittens_seed.sql' in here you will type:
+INSERT INTO kittens (name, age, is_cute, image_url) VALUES ('Tim', 8, false, 'http://www.bubblews.com/assets/images/news/803864926_1375572583.jpg ');
+4. You will then go back into the command line and type:
+psql -d kittens_db -f kittens_schema.sql
+
+psql -d kittens_db -f kittens_seed.sql
+
+
+
+

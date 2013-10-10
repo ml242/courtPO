@@ -37,6 +37,7 @@ post '/kittens' do
   # execute sql
   #close db
   redirect to '/kittens'
+end
 
 # GET  /kittens/:id
 # - Asks the database for a single kitten
@@ -51,7 +52,6 @@ get '/kittens/:id' do
   @kitten = results.entries[0]
   erb :profile
   end
-end
 
 
 

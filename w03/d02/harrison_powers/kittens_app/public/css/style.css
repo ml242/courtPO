@@ -74,10 +74,19 @@ header {
   font-size: 50px;
 }
 
+.subheader {
+  text-align: center;
+  font-size: 30px;
+}
+
+.subheader a{
+  margin: 10px 15px;
+}
+
 .container {
   text-align: center;
   width: 400px;
-  margin: 75px auto;
+  margin: 40px auto;
 }
 
 .kitten {

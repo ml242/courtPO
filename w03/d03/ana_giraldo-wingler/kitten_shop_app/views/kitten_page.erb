@@ -1,0 +1,19 @@
+<img src="<%= "#{@img_url}" %>">
+
+<strong><%= "#{@name}" %></strong> is a
+<% if @is_cute == "t" %>
+  cute
+<% else %>
+  rather ugly
+<% end %>
+<%= "#{@age}" %>-year-old kitten. Her owner's name is <strong><%= "#{@owner}" %></strong>.
+
+<form action="/kittens/<%= "#{@id}" %>/delete" method="post">
+  <input type="hidden">
+  <input type="submit" value="Delete <%= "#{@name}" %>">
+</form>
+
+<form action="/kittens/<%= @id %>/update" method="get">
+  <input type="hidden">
+  <input type="submit" value="update <%= "#{@name}" %>">
+</form>

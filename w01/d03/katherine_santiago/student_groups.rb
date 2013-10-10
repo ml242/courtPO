@@ -1,3 +1,5 @@
+require 'pry'
+
 students = [
 "Alex Hint",
 "Amy Ruan",
@@ -24,19 +26,22 @@ students = [
 "Yaritza Rodriguez"
 ]
 
-# TEAM = [
-#   :funny1,
-#   :funny2,
-#   :funny3,
-#   :funny4,
-#   :funny5,
-#   :funny6,
-#   :funny7,
-#   :funny8,
-#   :funny9,
-#   :funny10,
-#   :funny11
-# ]
+group_names = ["The Mountain Crunchers",
+"Testy Summit",
+"The City Militia",
+"Stomping Roast Femmes",
+"Unfair Hoops",
+"Dramatic Diggers",
+"Indigo Freedom Bitches",
+"Former Endzone Fairies",
+"Lingering Red Thunderballs",
+"Watery Stucco Beaters",
+"Thick Fallout",
+"Wise Court Ramblers",
+"East Honkers",
+"Stumbling Steel Buzzards",
+"Horny Bayside Pandas"
+]
 
 
 # ask for desired group size
@@ -51,6 +56,7 @@ groups = students.shuffle.each_slice(group_size).to_a
 
 #check if last group only has 1 person
 if groups.last.length == 1
+  binding.pry
   last = groups[-1]
   # prints last person
     # puts "#{last}"
@@ -68,6 +74,7 @@ else
   puts "The randomized groups will be: #{groups}"
 
 end
+
 
     # name groups
     # divide class size by desired group size to

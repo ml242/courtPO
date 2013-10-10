@@ -3,6 +3,17 @@ require 'sinatra/reloader' if development?
 require 'pry'
 require 'pg'
 require 'json'
+require 'slim'
+
+
+helpers do
+  def db_exec(sql)
+    conn = PG.connect(:dbname =>'kittens_db', :host => 'localhost')
+    result = conn.exec(sql)
+    conn.close
+    result
+  end
+end
 
 get '/' do
   redirect to('/kittens')
@@ -13,32 +24,39 @@ post '/kittens' do
   age = params[:age].to_i
   is_cute = params[:is_cute]
   image_url = params[:image_url]
-  db_connect = PG.connect(:dbname => 'kittens_db', :host => 'localhost')
-  sql = "INSERT INTO kittens (name, age, is_cute, image_url) VALUES ('#{name}', #{age}, #{is_cute}, '#{image_url}')"
-  db_connect.exec(sql)
+  owner = params[:owner]
+  sql = "INSERT INTO kittens (name, age, is_cute, image_url, owner) VALUES ('#{name}', #{age}, #{is_cute}, '#{image_url}', '#{owner}')"
+  db_exec(sql)
   sql = "SELECT * FROM kittens ORDER BY id DESC LIMIT 1"
-  results = db_connect.exec(sql)
+  results = db_exec(sql)
   @kitten = results.entries[0]
-  erb :kittens_add
+  slim :kittens_add
 end
 
 get '/kittens' do
-  db_connect = PG.connect(:dbname => 'kittens_db', :host => 'localhost')
   sql = 'SELECT * FROM kittens'
-  results = db_connect.exec(sql)
-  db_connect.close
+  results = db_exec(sql)
   @kittens = results.entries
-  erb :kittens_list
+  slim :kittens_list
+end
+
+get '/kittens/create' do
+  sql = "SELECT * FROM owners"
+  results = db_exec(sql)
+  @owners = results.entries
+  slim :kittens_create
 end
 
 get '/kittens/edit/:id' do
   id = params[:id]
-  db_connect = PG.connect(:dbname => 'kittens_db', :host => 'localhost')
   sql = "SELECT * FROM kittens WHERE id = #{id}"
-  results = db_connect.exec(sql)
-  db_connect.close
+  results = db_exec(sql)
   @kitten = results.entries[0]
-  erb :kitten_edit
+  @title = "#{@kitten['name']}"
+  sql = "SELECT * FROM owners"
+  results = db_exec(sql)
+  @owners = results.entries
+  slim :kitten_edit
 end
 
 post '/kittens/edit/:id' do
@@ -56,19 +74,27 @@ post '/kittens/edit/:id' do
     is_cute = true
   end
   image_url = params[:image_url]
-  db_connect = PG.connect(:dbname => 'kittens_db', :host => 'localhost')
-  sql = "UPDATE kittens SET name = '#{name}', age = #{age}, is_cute = #{is_cute}, image_url = '#{image_url}' WHERE id = #{id}"
-  db_connect.exec(sql)
-  db_connect.close
+  owner = params[:owner]
+  sql = "UPDATE kittens SET name = '#{name}', age = #{age}, is_cute = #{is_cute}, image_url = '#{image_url}', owner = '#{owner}' WHERE id = #{id}"
+  db_exec(sql)
   redirect to("/kittens/#{id}")
 end
 
 get '/kittens/:id' do
   id = params[:id]
-  db_connect = PG.connect(:dbname => 'kittens_db', :host => 'localhost')
   sql = "SELECT * FROM kittens WHERE id = #{id}"
-  results = db_connect.exec(sql)
-  db_connect.close
+  results = db_exec(sql)
   @kitten = results.entries[0]
-  erb :kitten_profile
+  slim :kitten_profile
+end
+
+get '/owners/create' do
+  slim :owners_create
+end
+
+post '/owners/add' do
+  name = params[:name]
+  sql = "INSERT INTO owners (name) VALUES ('#{name}')"
+  db_exec(sql)
+  redirect to('/kittens')
 end
