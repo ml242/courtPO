@@ -13,6 +13,16 @@ helpers do
 end
 
 get '/kittens/new' do
+  @owners_array = []
+  sql = "SELECT * FROM owners"
+  response = db_exec(sql)
+  response.entries.each do |entry|
+    owner_hash = {
+      :name => entry["name"],
+      :id => entry["id"]
+    }
+    @owners_array << owner_hash
+  end
   erb :make_kitten
 end
 
@@ -21,7 +31,8 @@ post '/kittens' do
   age = params[:age].to_i
   is_cute = params[:is_cute]
   image_url = params[:image_url]
-  sql = "INSERT INTO kittens (name, age, is_cute, image_url) VALUES ('#{name}', #{age}, #{is_cute}, '#{image_url}')"
+  owner_id = params[:owner].to_i
+  sql = "INSERT INTO kittens (name, age, is_cute, image_url, owner_id) VALUES ('#{name}', #{age}, #{is_cute}, '#{image_url}', #{owner_id})"
   db_exec(sql)
   redirect to '/kittens'
 end
@@ -56,7 +67,6 @@ get '/kittens' do
     @kittyarray << kitten_string
     i += 1
   end
-
   erb :kittens
 end
 
@@ -93,4 +103,14 @@ get '/kittens/:id' do
   erb :kittens
 end
 
+get '/newowner' do
+  erb :newowner
+end
+
+post '/newowner' do
+  name = params[:ownername]
+  sql = "INSERT INTO owners (name) VALUES ('#{name}')"
+  db_exec(sql)
+  redirect to '/kittens'
+end
 

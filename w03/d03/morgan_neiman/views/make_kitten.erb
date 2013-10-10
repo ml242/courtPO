@@ -1,7 +1,13 @@
 <form action="/kittens" method="post">
+  <select name="owner" id="owner">
+  <% @owners_array.each do |owner| %>
+  <option value=<%= owner[:id] %>><%= owner[:name] %></option>
+  <% end %>
+  </select>
+  <br>
   <input type="text" placeholder="name" name="name">
   <br><input type="text" placeholder="age" name="age">
   <br><input type="text" placeholder="is cute?" name="is_cute">
-  <br><input type="text" placeholder="image url" name="image_url">
+  <br><input type="text" placeholder="image url" name="image_url" />
   <br><input type="submit" value="Make kitteh!">
 </form>
