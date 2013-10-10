@@ -1,3 +1,5 @@
-- @entries.each do |entry|
-  a href="/instagram/entries/#{entry['id']}"
-    img src="#{entry['photo_url']}"
+#container
+  - @entries.each do |entry|
+    .item
+      a href="/instagram/entries/#{entry['id']}"
+        img src="#{entry['photo_url']}"
