@@ -1,0 +1,33 @@
+body {
+  background: #efefef;
+  color: #999999;
+}
+
+a {
+  color: #3c82ab;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #1c5e83;
+}
+
+.logo, .container {
+  text-align: center;
+}
+
+form {
+  width: 30%;
+  margin: 0 auto;
+}
+
+form > * {
+  text-align: left;
+  display: block;
+  width: 100%;
+  /*margin: 10px auto;*/
+}
+
+form [type='checkbox'] {
+  display: inline-block;
+}
