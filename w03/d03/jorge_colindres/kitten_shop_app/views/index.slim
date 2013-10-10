@@ -1,0 +1,17 @@
+div.container
+  a href='/kittens' View Kittens
+  h3 Add New Kitten
+  form action='/kittens' method='post'
+    label Name
+    input type='text' name='name'
+    label Age
+    input type='text' name='age'
+    label for='cute' Cute?
+    input type='checkbox' name='is_cute' value='true' id='cute'
+    label for='owners' Owner
+    select name='owner_id' id='owners'
+      - @owners.each do |owner|
+        option value='#{owner['id']}' #{owner['name']}
+    label Image URL
+    input type='text' name='image_url'
+    input type='submit' value='submit'

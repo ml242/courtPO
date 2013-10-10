@@ -1,0 +1,21 @@
+.container
+  form action="/kittens/edit/#{@kitten['id']}" method="post"
+    label for="name"
+    input name="name" value="#{@kitten['name']}"
+    br/
+    label for="age"
+    input name="age" value="#{@kitten['age']}"
+    br/
+    label for="is_cute"
+    input name="is_cute" value="#{@kitten['is_cute']}"
+    br/
+    label for="image_url"
+    input name="image_url" value="#{@kitten['image_url']}"
+    br/
+    select name="owner"
+        option name="" Up for adoption!
+        - @owners.each do |owner|
+         option name="#{owner['id']}" #{owner['name']}
+    br/
+    br/
+    input type="submit"

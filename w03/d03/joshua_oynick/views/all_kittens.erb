@@ -1,0 +1,12 @@
+<div>
+ <% unless @kittens.entries.empty? %>
+    <% @kittens.each do |kitten| %>
+    <div class="kitten">
+    <a href='/kittens/#{kitten['id']}'><img src='#{kitten['image_url']}'></a>
+    <a href='/kittens/#{kitten['id']}'></a>
+      <h4>#{kitten['name']}</h4>
+      <% end %>
+    <% else %>
+      <h1>No kittens in Ye Olde Kitten Shoppe</h1>
+  <% end %>
+</div>

@@ -54,7 +54,8 @@ get '/kitten/:id' do
 end
 
 post '/kitten/delete/:id' do
-  id = params[:name] #will unlock the id number inside from @response_entry
+  id = params[:id] #will unlock the id number inside from @response_entry
+  p id
    db_conn = PG.connect(:dbname => 'kittens_db', :host => 'localhost')
   sql = "DELETE FROM kittens WHERE id = #{id}"
   db_conn.exec(sql)

@@ -1,0 +1,19 @@
+<h1>Delete Kitten</h1>
+<div class="list"> These are the kittens currently in the database
+    <ul class= "kittens">
+    <%@kittens.each do |group|%>
+      <br>
+      <%=p "Cat #{group["name"]}"%>
+        <%group.each do |traits, values|%>
+      <li><%=p "#{traits.capitalize} : #{values}"%></li>
+        <%end%>
+    <%end%>
+  </ul>
+    <div class="form area">
+    <form action="/kittens/delete" method="post">
+      Input ID of the kitten you want to delete
+      <input type="text" name="delete_id">
+      <input type="submit" name="Submit">
+  <div>
+
+</div>

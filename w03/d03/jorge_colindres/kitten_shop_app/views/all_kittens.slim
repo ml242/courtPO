@@ -1,0 +1,11 @@
+.container
+  .kittens-container
+    - unless @kittens.entries.empty?
+      - @kittens.each do |kitten|
+        .kitten
+          a href='/kittens/#{kitten['id']}'
+            img src='#{kitten['image_url']}'
+          a href='/kittens/#{kitten['id']}'
+            h4 #{kitten['name']}
+    - else
+      | No kittens to see here.

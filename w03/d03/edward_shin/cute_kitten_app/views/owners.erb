@@ -1,0 +1,14 @@
+<h5>The below is a list of the owners at the Cute Kitten Shop</h5>
+<ol>
+<% @owners.each do |hash| %>
+<% name = hash["name"]%>
+<% id = hash["id"]%>
+  <li>Name: <%=name%> - ID: <%=id%></li>
+<%end%>
+</ol>
+
+<h6>Would you like to create an owner?</h6>
+<form action="/owners" method ="post">
+  <input type="text" name = "name" value="name">
+  <input type="submit" value ="submit">
+</form>

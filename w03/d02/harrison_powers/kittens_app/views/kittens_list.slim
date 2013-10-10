@@ -1,0 +1,6 @@
+- @kittens.each do |kittyhash|
+  .kitten
+    a href= "/kittens/#{kittyhash['id']}"
+      img src="#{kittyhash['image_url']}"
+      br/
+      = kittyhash["name"]

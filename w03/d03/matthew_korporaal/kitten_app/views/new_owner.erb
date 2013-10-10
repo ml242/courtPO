@@ -1,0 +1,8 @@
+<% require 'faker' %>
+<a href="/">Home</a>
+<h1>New Owner Form</h1>
+
+<form action="/kittens/owner" class="owner-info" method="post">
+  <a><input type="text" class="owner-info" value="<%= Faker::Name.name %>" name="owner-name">name</a>
+  <input type="submit" class="owner-info" value="Search">
+</form>
