@@ -1,0 +1,15 @@
+<h1>My Kittens</h1>
+
+<% @kittens.each do |kitten| %>
+  <h3><%= "#{kitten["name"]}" %></h3>
+  <li><%= "#{kitten["age"]}" %> years old</li>
+  <li>Cute?
+      <% if "is_cute" != 'true' %>
+        <% @cute = "YES" %>
+      <% else %>
+        <% @cute = "NO" %>
+      <% end %>
+    <%= "#{@cute}" %></li>
+    <li></li>
+  <img src="<%= "#{kitten["image_url"]}" %>">
+<% end %>
