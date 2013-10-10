@@ -43,6 +43,8 @@ end
 class User < ActiveRecord::Base
 end
 
+@message = ""
+
 get '/' do
   before
   @entries_array = Entry.order("id DESC").all
@@ -77,8 +79,17 @@ get '/sign_up' do
   erb :sign_up
 end
 
-post 'sign_up' do
+post '/sign_up' do
   before
-
+  username = params[:username]
+  if User.exists?(username: username)
+    @message = "Sorry, that username is taken. Please try again."
+    redirect to '/sign_up'
+  else
+    user = User.new
+    user.username = username
+    user.save
+    redirect to '/'
+  end
   after
 end
