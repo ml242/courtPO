@@ -20,18 +20,33 @@ class Entry < ActiveRecord::Base
 end
 
 get '/' do
-
   "works"
 end
 
 get '/gallery' do
-  "gallery works"
+
+  erb :gallery
 end
 
 get '/entry/new' do
-  "new entry works"
+
+  erb :new_entry_form
 end
 
 get '/entry/:entry_id' do
-  "entry display of particular entry_id works"
+
+  erb :entry_spotlight
+end
+
+post '/gallery' do
+  author = params[:author]
+  photo_url = params[:photo_url]
+  date_taken = params[:date_taken]
+  # e1 = Entry.new
+  # e1.author= author
+  # e1.photo_url = photo_url
+  # e1.date_taken = date_taken
+  Entry.create({author: "#{author}", photo_url: "#{photo_url}", date_taken: "#{date_taken}"})
+  binding.pry
+  redirect to ('/gallery')
 end
