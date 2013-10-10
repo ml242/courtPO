@@ -6,6 +6,7 @@
 
 <p><%= @kitten_info["name"] %> is <%= @kitten_info["age"] %> years old.
 it is super <%= @kitten_info["is_cute"]=='t' ? "cute" : "ugly" %>.
+it is owned by <%= @owner %>.
 </p>
 
 <img src="<%= @kitten_info["image_url"] %>" width=200 alt="no image">

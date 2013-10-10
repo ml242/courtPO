@@ -1,0 +1,8 @@
+<h1 id="heading">Meet <%= @owner_info["name"] %></h1>
+
+<% @pets.each do |pet|%>
+  <li><%= pet["name"] %>&#x21E5;<a href=/kittens/<%= pet["id"] %>>info</a></li>  
+<% end %>
+
+<a href=/owners>back to owners</a>
+<br>
