@@ -1,0 +1,13 @@
+.container
+  = @kitten["name"]
+  br/
+  = @kitten["age"]
+  br/
+  - if @kitten["is_cute"] == "t"
+    = "is cute!"
+    br/
+  img src="#{@kitten['image_url']}"
+  br/
+  br/
+  a href="/kittens/edit/#{@kitten["id"]}"
+    | Edit this Kitty
