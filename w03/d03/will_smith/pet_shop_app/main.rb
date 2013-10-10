@@ -8,7 +8,7 @@ require 'pg'
 # Owners will need an id and a name --> Done
 # Give your kittens owners --> Done
 
-# When you display a kitten, list their owner's name
+# When you display a kitten, list their owner's name --> Done
 
 # Create a form to create new owners
 
@@ -30,6 +30,12 @@ get '/kittens' do
   results = db_connect.exec(sql)
   db_connect.close
   @kittens = results.entries
+
+  db_connect = PG.connect(:dbname => 'kittens_inventory_db', :host => 'localhost')
+  sql = "SELECT * FROM owners"
+  results = db_connect.exec(sql)
+  db_connect.close
+  @owner = results.entries
   erb :kittens
 end
 
@@ -42,13 +48,11 @@ post '/kittens' do
   age = params[:age]
   is_cute = params[:is_cute]
   image_url = params[:image_url]
+  owner_id = params[:owner_id]
   db_conn = PG.connect(:dbname => 'kittens_inventory_db', :host => 'localhost')
-  sql = "INSERT into kittens (name, age, is_cute, image_url) VALUES ('#{name}', '#{age}', '#{is_cute}', '#{image_url}' )"
+  sql = "INSERT into kittens (name, age, is_cute, image_url, owner_id) VALUES ('#{name}', '#{age}', '#{is_cute}', '#{image_url}', '#{owner_id}' )"
   db_conn.exec(sql)
   db_conn.close
-  # create sql command
-  # execute sql
-  #close db
   redirect to '/kittens'
 end
 
@@ -70,6 +74,19 @@ get '/kittens/:id' do
   db_connect.close
   @owners = results.entries[0]
   erb :profile
+  end
+
+  post '/owners' do
+    name = params[:name]
+    db_conn = PG.connect(:dbname => 'kittens_inventory_db', :host => 'localhost')
+    sql = "INSERT into owners (name) VALUES ('#{name}' )"
+    db_conn.exec(sql)
+    db_conn.close
+    redirect to '/owners'
+  end
+
+  get '/owners' do
+    erb :owners
   end
 
 
