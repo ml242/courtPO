@@ -1,0 +1,19 @@
+<h2>Make a new kitten:</h2>
+<form action="/kittens" method="post">
+  <input type="text" name="name" placeholder="name">
+  <input type="text" name="age" placeholder="age">
+<br>
+  <label for="is_cute">Is it cute?</label>
+  <input type="radio" name="is_cute" value="true">Yes
+  <input type="radio" name="is_cute" value="false">No
+<br>
+  <label for="owner_id">Owner</label>
+  <select name="owner_id">
+  <% @owners.each do |owner| %>
+    <option value="<%= owner['id'] %>"><%= owner['name'] %></option>
+  <% end %>
+  </select>
+<br>
+  <input type="text" name="img_url" placeholder="paste image URL here">
+  <input type="submit" value="make">
+</form>
