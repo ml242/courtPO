@@ -43,12 +43,13 @@ get '/kittens' do
   # where each hash represents properties of the kitten
 end
 
-get 'kittens/:id' do
-  @id = params[:id].to_i
+# GET /kittens/1
+get '/kittens/:id' do
+  id = params[:id]
 
   sql = "SELECT * FROM kittens WHERE id = #{id}"
   result = db_exec(sql)
-  @kitten = result
+  @kitten = result[0]
 
   # asks the db for a single kitten
   # returns a single hash representing a single kitten
@@ -57,9 +58,9 @@ end
 
 post '/kittens/delete/:id' do
   id = params[:id]
-  sql = "DELETE FROM kittens WHERE id = #{id}"
-  bye_cat = db_exec(sql)
-  @bye_cat = bye_cat
+  sql = "DELETE FROM kittens WHERE id = #{id};"
+  result = db_exec(sql)
+  @kittens = result.entries
 
   redirect to '/kittens'
 end
