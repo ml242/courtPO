@@ -10,5 +10,14 @@
   <label for="image_url">image_url</label><input type="text" name="image_url" value="" id="image_url">
   <br>
 
+  choose owner:
+  <select name="owner_id">
+    <% @owners.each do |owner| %>
+      <option value="<%= owner["id"] %>">
+      <%= owner["name"] %>
+      </option>
+    <% end %>
+  </select>
+
 <input type="submit" value="Continue &rarr;">
 </form>
