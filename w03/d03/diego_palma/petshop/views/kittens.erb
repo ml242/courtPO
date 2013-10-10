@@ -1,0 +1,11 @@
+<h1>List of all the kittens in the store</h1>
+<ul>
+  <% @kittens.each do |kitten| %>
+      <li><a href="/kittens/<%= kitten['id'] %>"><%= "#{kitten['name']}" %></a></li>
+  <% end %>
+</ul>
+
+<p>Click on the kitten's name to see detailed infomation</p>
+<p>Click <a href="/kittens/new">here</a> if you would like to add more kittens to the database</p>
+
+
