@@ -3,7 +3,22 @@ require "pry"
 require "sinatra"
 require "sinatra/reloader"
 
+helpers do
+  def db_exec(sql)
+    conn = PG.connect(:dbname =>'kitten_shop_db', :host => 'localhost')
+    result = conn.exec(sql)
+    conn.close
+    result
+  end
+end
+post "/kittens/new" do
+  db_exec("INSERT INTO owners (name) VALUES ('#{params[:name]}');")
+  redirect to "/kittens/new"
+end
+
 get "/kittens/new" do
+  owners_r = db_exec("SELECT * FROM owners;")
+  @owners = owners_r.entries
   erb :new
 end
 
@@ -12,27 +27,30 @@ post "/kittens" do
   age = params[:age]
   is_cute = params[:is_cute]
   image_url = params[:image_url]
-  db_conn = PG.connect(:dbname => 'kitten_shop_db', :host => 'localhost')
-  sql = "INSERT INTO kittens (name, age, is_cute, image_url) VALUES ('#{name}', #{age}, #{is_cute}, '#{image_url}');"
-  db_conn.exec(sql)
+  owner_id = params[:owner]
+  db_exec("INSERT INTO kittens (name, age, is_cute, image_url, owner_id) VALUES ('#{name}', #{age}, #{is_cute}, '#{image_url}', #{owner_id});")
   redirect to "/kittens"
 end
 
 get "/kittens" do
-  db_conn = PG.connect(:dbname => 'kitten_shop_db', :host => 'localhost')
-  sql = "SELECT * FROM kittens;"
-  response = db_conn.exec(sql)
-  db_conn.close
+  response = db_exec("SELECT * FROM kittens;")
   @kittens = response.entries
+  owners = db_exec("SELECT * FROM owners").entries
+  @owner_hsh = {}
+  owners.each do |owner|
+    @owner_hsh[owner['id']] = owner['name']
+  end
   erb :kittens
 end
 
 get  "/kittens/:id" do
   id = params[:id]
-  db_conn = PG.connect(:dbname => 'kitten_shop_db', :host => 'localhost')
-  sql = "SELECT * FROM kittens WHERE id = '#{id}';"
-  response = db_conn.exec(sql)
-  db_conn.close
+  response = db_exec("SELECT * FROM kittens WHERE id = '#{id}';")
   @kittens = response.entries
+  owners = db_exec("SELECT * FROM owners").entries
+  @owner_hsh = {}
+  owners.each do |owner|
+    @owner_hsh[owner['id']] = owner['name']
+  end
   erb :kittens
 end
