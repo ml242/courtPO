@@ -1,0 +1,10 @@
+<h1 id="heading">owners! yea eya1</h1>
+
+<a href=/>home</a>
+<br>
+<% @owners.each do |owner|%>
+  <li><%= owner["name"] %>&#x21E5;<a href=owners/<%= owner["id"] %>>info</a></li>  
+<% end %>
+
+<br>
+<a href=/owners/new>add a owner</a>

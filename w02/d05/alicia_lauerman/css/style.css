@@ -1,0 +1,180 @@
+@import url(http://fonts.googleapis.com/css?family=Special+Elite|Cedarville+Cursive);
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font: 14px/1.5 Futura, 'Century Gothic', AppleGothic, sans-serif;
+  background: url(http://blogbackgrounds.freeiz.com/wp-content/uploads/2012/05/wooden-strips-texture-background-wallpaper-image-joint.jpg) no-repeat center center fixed;
+}
+
+.wrapper {
+  width: 760px;
+  margin: 40px auto;
+  background: url(http://subtlepatterns.com/patterns/ricepaper_v3.png);
+  padding: 20px;
+  box-sizing: content-box;
+  box-shadow: 0 0 2px 1px rgba(0,0,0,.3);
+}
+
+.info-text,
+.small-text {
+  font-size: 11px;
+}
+
+input[type="text"],
+input[type="tel"],
+.image-datestamp span {
+  font-family: "Special Elite";
+  font-size: 16px;
+  font-weight: bold;
+}
+
+p {
+  margin: 10px 0;
+}
+
+p input {
+  margin-top: 5px;
+}
+
+.scout-form {
+  padding: 15px 0;
+  border: 2px solid black;
+}
+.scout-form header {
+  text-align: center;
+}
+.scout-form header h1 {
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+.scout-form header h2 {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.scout-form:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+form {
+  width: 50%;
+  float: left;
+  padding: 0 25px;
+  border-right: 3px solid #222222;
+}
+
+form label {
+  display: block;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  vertical-align: bottom;
+}
+
+label input {
+  margin: 0;
+  padding: 0 0 0 8px;
+}
+
+input[type="text"],
+input[type="tel"] {
+  background: transparent;
+  border-color: #222;
+  border-width: 0;
+  box-shadow: inset 0 -2px #222;
+  width: 100%;
+}
+
+input[type="text"]:focus,
+input[type="tel"]:focus {
+  outline: none;
+}
+
+input[name="name"] {
+  width: 81%;
+}
+
+input[name="address"] {
+  width: 72%;
+}
+
+input[name="phone"] {
+  width: 58%;
+}
+
+input[name="emergency"] {
+  width: 42%;
+}
+
+input.input-square {
+  display: inline-block;
+  max-width: 55px;
+  padding: 4px 12px;
+  margin-left: 3px;
+  border-width: 2px;
+  box-shadow: none;
+}
+
+.info-text {
+  text-transform: uppercase;
+  position: relative;
+  top: -1px;
+}
+.info-text.above {
+  font-size: 9px;
+  position: static;
+}
+
+.signature-block {
+  text-align: center;
+}
+.signature-block [type="text"] {
+  font-size: 28px;
+  height: 40px;
+  font-family: Cedarville Cursive;
+  color: #34495e;
+}
+
+.official-use {
+  border: 2px solid black;
+  padding: 5px;
+  font-size: 18px;
+}
+.official-use [type="text"] {
+  display: inline-block;
+  position: relative;
+  text-transform: uppercase;
+  padding: 3px 0;
+  border-width: 2px;
+  box-shadow: none;
+  max-width: 26px;
+  margin: 0 6px;
+}
+.official-use [type="text"]:nth-child(even) {
+  top: 1px;
+}
+
+.image-display {
+  float: left;
+  width: 50%;
+  padding: 15px 15px 0;
+}
+
+.polaroid {
+  background: #eeeeee;
+  height: 319px;
+  margin-bottom: 9px;
+  padding: 15px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.35), 0 -2px 1px rgba(255, 255, 255, 0.65);
+  -webkit-transform: rotate(-1.3deg);
+}
+.polaroid img {
+  max-width: 100%;
+  height: auto;
+}

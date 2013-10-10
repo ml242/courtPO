@@ -1,0 +1,4 @@
+<% @owners.each do |owner| %>
+  <h3> <%= owner['name']  %> </h3> <!--  This line needed to have the params key passed as a string, not as a symbol, which halted me hardcore.   -->
+
+  <% end %>

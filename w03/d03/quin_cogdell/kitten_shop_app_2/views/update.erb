@@ -1,0 +1,15 @@
+<h2>Kitten Info</h2>
+
+
+<form action="/kittens/<%= @kitten['id'] %>" method="post">
+  <input type="text" name="name" placeholder="Name" value="<%= @kitten['id']%>">
+  <input type="text" name="age" placeholder="Age" value="<%= @kitten['age']%>>
+  <input type="text" name="image_url" placeholder="Pic URL" value="<%= @kitten['image_url']%>>
+
+  <label for="is_cute">Is the kitten cute?</label>
+  <input type="radio" name="is_cute" id="is_cute"value ="true" >Yes
+  <input type="radio" name="is_cute" id="is_cute"value ="false" >No
+
+  <input type="submit" value="Submit">
+
+</form>

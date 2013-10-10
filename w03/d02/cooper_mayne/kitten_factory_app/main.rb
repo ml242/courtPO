@@ -9,7 +9,6 @@ def db_query(sql)
                        :user => 'postgres',
                        :password => 'home3232'
                       )
-
   res = db_conn.exec(sql)
   db_conn.close
   res
@@ -51,4 +50,22 @@ get '/kittens/:id' do
   @kitten_info = info.entries[0]
   #@kitten_info.to_s
   erb :display
+end
+
+get '/kittens/:id/update' do
+  id = params[:id]
+  kitten = db_query("SELECT * FROM kittens WHERE id=#{id}")
+  @kitten_info = kitten.entries[0]
+  erb :update
+end
+
+post '/kittens/:id' do
+  id = params[:id]
+  name = params["name"]
+  age = params["age"]
+  is_cute = false
+  is_cute = true if params["is_cute"]=="true"
+  image_url = params["image_url"]
+  db_query("UPDATE kittens SET name = '#{name}', age = #{age}, is_cute = #{is_cute}, image_url = '#{image_url}' WHERE id=#{id}")
+  redirect '/kittens/#{id}'
 end
