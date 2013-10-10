@@ -1,0 +1,11 @@
+<h2><%= @kitten['name'] %></h2>
+
+<p>Age: <%= @kitten['age'] %></p>
+<p>Is cute? <%= @kitten['is_cute'] %></p>
+<p> <%= @kitten['image_url'] %></p>
+
+<form action="/kittens/delete/:id" method="post">
+  <input type="hidden" name="name" value="<%= @cat_id['id'] %>">
+  <input type="submit" value="Delete">
+</form>
+
