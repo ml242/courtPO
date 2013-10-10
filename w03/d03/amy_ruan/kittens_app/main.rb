@@ -17,6 +17,18 @@ get '/' do
   erb :index
 end
 
+get '/owner' do
+  erb :add_owners
+end
+
+post '/owner' do
+  @name = params[:add_owner]
+  sql = "INSERT INTO owners(name)
+  VALUES('#{@name}')"
+  db_exec(sql)
+  "You have successfully add owner #{@name}"
+end
+
 get '/kittens' do
   @id = params[:id].to_i
   if @id > 0
@@ -26,6 +38,10 @@ get '/kittens' do
   end
   response = db_exec(sql)
   @kittens = response.entries
+  # sql = "SELECT * FROM owners"
+  # response = db_exec(sql)
+  # @owners = response.entries
+
   erb :get_kittens
 end
 
@@ -38,13 +54,13 @@ post '/kittens' do
   sql = "INSERT INTO kittens(name, age, is_cute, image_url, owners_id)
   VALUES('#{@name}',#{@age},#{@is_cute},'#{@image}',#{@owner})"
   response = db_exec(sql)
-  sql = "SELECT * FROM kittens WHERE name = '#{@name}'"
-  response = db_exec(sql)
-  kittens = response.entries
   erb :created_kitten_post
 end
 
 get '/kittens/add' do
+  sql = "SELECT * FROM owners"
+  response = db_exec(sql)
+  @owners = response.entries
 erb :create_kittens
 end
 
@@ -89,7 +105,7 @@ post "/kittens/update" do
       sql = "UPDATE kittens SET #{factor} = #{cute}
       WHERE id = #{id}"
       when factor == "name"
-      sql = "UPDATE kittens SET #{factor} = '#{<@></@>name}'
+      sql = "UPDATE kittens SET #{factor} = '#{@name}'
       WHERE id = #{id}"
       when factor == "image_url"
       sql = "UPDATE kittens SET #{factor} = '#{image}'
@@ -101,3 +117,5 @@ post "/kittens/update" do
   updates = db_exec(sql)
   erb :update_kittens_post
 end
+
+

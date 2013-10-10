@@ -21,8 +21,16 @@
   <br>
   <input type="text" name="new_image">
   <br>
-  Input owner id for kitten
+  Select owner
   <br>
-  <input type="text" name="new_owner">
+  <select name="new_owner">
+    <%@owners.each do |owner|%>
+    <%happy = owner["id"]%>
+  <option value="#{happy}">
+    <%=owner["name"]%></option>
+      <%end%>
+  </select>
   <input type="submit" value="Submit">
 </form>
+
+
