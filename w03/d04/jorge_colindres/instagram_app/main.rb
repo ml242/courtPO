@@ -1,13 +1,16 @@
 require 'sinatra'
 require 'sinatra/reloader' if development?
 require 'pry'
+require 'slim'
 
 require_relative 'entry'
 
 
 get '/instagram' do
-  # display all entries
-  "works"
+  @entries = Entry.all
+
+  slim :index
+  # binding.pry
 end
 
 get '/instagram/entries/new' do
