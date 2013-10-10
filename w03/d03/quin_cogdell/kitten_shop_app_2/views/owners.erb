@@ -1,0 +1,21 @@
+<h2>Owners</h2>
+
+<table border="1">
+<tr>  <% @owners.each do |owner| %>
+  <td>
+    <a href="/owner/<%= owner['id'] %>"><%= owner %></a>
+  </td>
+  <td>
+    <form action="/owner/<%= owner['id'] %>/update" method="get">
+      <input type="submit" value="Update">
+    </form>
+  </td>
+  <td>
+    <form action="/owner/<%= owner['id'] %>/delete" method="post">
+        <input type="submit" value="Delete">
+    </form>
+  </td>
+</tr>
+
+  <% end %>
+</table>
