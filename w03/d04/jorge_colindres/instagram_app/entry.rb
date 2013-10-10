@@ -14,4 +14,3 @@ ActiveRecord::Base.establish_connection(
 class Entry < ActiveRecord::Base
 end
 
-ActiveRecord::Base.connection.close

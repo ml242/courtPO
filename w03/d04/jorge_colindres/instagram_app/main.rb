@@ -8,13 +8,11 @@ require_relative 'entry'
 
 get '/instagram' do
   @entries = Entry.all
-
   slim :index
-  # binding.pry
 end
 
 get '/instagram/entries/new' do
-  # form to create new entry
+  slim :new
 end
 
 post '/instagram/entries/new' do
@@ -23,8 +21,11 @@ post '/instagram/entries/new' do
   photo_url = params[:photo_url]
   # create a new entry and save to DB
   Entry.create :author => author, :date_taken => date_taken, :photo_url => photo_url
+  redirect to '/instagram'
 end
 
-get 'instagram/entries/:id' do
-  # dispaly a particular entry
+get '/instagram/entries/:id' do
+  image_id = params[:id]
+  @entry = Entry.find image_id
+  slim :entry
 end
