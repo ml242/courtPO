@@ -1,0 +1,23 @@
+<h1>My Kittens List</h1>
+<div class="list">
+  <ul class= "kittens">
+    <%@kittens.each do |group|%>
+      <br>
+      <%=p "Cat #{group["name"]}"%>
+        <%group.each do |traits, values|%>
+      <li><%=p "#{traits.capitalize} : #{values}"%></li>
+        <%end%>
+    <%end%>
+  </ul>
+  <form action="/kittens" method="get">
+    Want to only view one kitten? Input ID
+    <input type="type" name="id">
+    <input type="submit" value="Submit">
+  </form>
+  <p>Click on the navigation links below if you want to change your list</p>
+<ul class="links_for_changes">
+  <li><a href="/kittens/add">Add</a></li>
+  <li><a href="/kittens/delete">Delete</a></li>
+  <li><a href="/kittens/update">Update</a></li>
+</ul>
+</div>
