@@ -67,9 +67,9 @@ get '/kittens/:id' do
   results = db_connect.exec(sql)
   db_connect.close
   @kitten = results.entries[0]
-
+  owner_id = results.entries[0]['owner_id']
   db_connect = PG.connect(:dbname => 'kittens_inventory_db', :host => 'localhost')
-  sql = "SELECT * FROM owners WHERE id = #{id}"
+  sql = "SELECT * FROM owners WHERE id = #{owner_id}"
   results = db_connect.exec(sql)
   db_connect.close
   @owners = results.entries[0]
