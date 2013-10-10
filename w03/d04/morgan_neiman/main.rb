@@ -130,3 +130,22 @@ post '/update/:id' do
   after
   redirect to '/'
 end
+
+get '/delete/:id' do
+  before
+  id = params[:id].to_i
+  @entry = Entry.find(id)
+  after
+  erb :delete_confirmation
+end
+
+post '/delete/:id' do
+  before
+  choice = params[:delete]
+  user_id = params[:id].to_i
+  if choice == "yes"
+    Entry.find(user_id).destroy
+  end
+  after
+  redirect to '/'
+end

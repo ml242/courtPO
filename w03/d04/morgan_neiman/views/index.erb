@@ -2,5 +2,6 @@
 <% author = User.find(entry.author_id) %>
 <br><a href="/show/<%= entry.id %>"><img src="<%= entry['photo'] %>"></a>
 <br>taken by <a href="/<%= author['username'] %>"><%= author['username'] %></a> on <%= entry['date_taken'] %>
-<br><a href="/update/<%= entry.id %>">update photo</a>
+<br><br><a href="/update/<%= entry.id %>">update photo</a>
+<br><a href="/delete/<%= entry.id %>">delete photo</a>
 <% end %>
