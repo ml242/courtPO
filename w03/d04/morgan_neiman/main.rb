@@ -43,7 +43,6 @@ end
 class User < ActiveRecord::Base
 end
 
-@message = ""
 
 get '/' do
   before
@@ -53,13 +52,16 @@ get '/' do
 end
 
 get '/new' do
+  before
+  @user_array = User.all
+  after
   erb :new
 end
 
 post '/new' do
   before
   e1 = Entry.new
-  e1.author = params[:author]
+  e1.author_id = params[:username]
   e1.photo = params[:photo]
   e1.date_taken = params[:date_taken]
   e1.save
@@ -83,8 +85,7 @@ post '/sign_up' do
   before
   username = params[:username]
   if User.exists?(username: username)
-    @message = "Sorry, that username is taken. Please try again."
-    redirect to '/sign_up'
+    redirect to '/username_error'
   else
     user = User.new
     user.username = username
@@ -92,4 +93,40 @@ post '/sign_up' do
     redirect to '/'
   end
   after
+end
+
+get '/username_error' do
+  erb :username_error
+end
+
+get '/:username' do
+  before
+  username = params[:username]
+  user = User.where("username = '#{username}'")
+  user_id = user.first.id.to_i
+  @author = user.first.username
+  @user_photos = Entry.where(author_id: user_id)
+  after
+  erb :username
+end
+
+get '/update/:id' do
+  before
+  id = params[:id].to_i
+  @user_array = User.all
+  @photo = Entry.find(id)
+  after
+  erb :update_photo
+end
+
+post '/update/:id' do
+  before
+  id = params[:id].to_i
+  e1 = Entry.find(id)
+  e1.author_id = params[:username]
+  e1.photo = params[:photo]
+  e1.date_taken = params[:date_taken]
+  e1.save
+  after
+  redirect to '/'
 end

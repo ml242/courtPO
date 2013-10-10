@@ -1,2 +1,3 @@
 <img src="<%= @entry.photo %>">
-<br>taken by <%= @entry.author %> on <%= @entry.date_taken %>
+<% author = User.find(@entry.author_id) %>
+<br>taken by <%= author['username'] %> on <%= @entry.date_taken %>

@@ -1,10 +1,10 @@
-<form action="/new" method="post">
+<form action="/update/<%= @photo.id %>" method="post">
   <select name="username" id="username">
   <% @user_array.each do |user| %>
   <option value=<%= user[:id] %>><%= user[:username] %></option>
   <% end %>
   </select>
-  <br><input type="text" placeholder="image url" name="photo" />
-  <br><input type="text" placeholder="date taken year-month-day" name="date_taken">
+  <br><input type="text" value=<%= @photo.photo %> name="photo" />
+  <br><input type="text" value=<%= @photo.date_taken %> name="date_taken">
   <br><input type="submit" value="submit">
 </form>
