@@ -1,0 +1,35 @@
+<h2>New Kitten</h2>
+
+
+<form action="/kittens" method="post">
+  <input type="text" name="name" placeholder="Name">
+  <input type="text" name="age" placeholder="Age">
+  <input type="text" name="image_url" placeholder="Pic URL">
+
+  <label for="is_cute">Is the kitten cute?</label>
+  <input type="radio" name="is_cute" id="is_cute"value ="true" >Yes
+  <input type="radio" name="is_cute" id="is_cute"value ="false" >No
+
+  <label for="owners">Select Owner</label>
+
+  <select name="owner" id="owner">
+
+  <% @owners.each do |owner| %>
+    <option value=<%= owner['id'] %>><%= owner['name'] %></option>
+  <% end %>
+
+  </select>
+
+
+  <input type="submit" value="Submit">
+
+</form>
+
+<h2>New Owner</h2>
+<form action="/owners" method="post">
+  <input type="text" name="name" placeholder="Name">
+  <input type="submit" value="Submit">
+
+</form>
+
+
