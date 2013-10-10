@@ -1,0 +1,11 @@
+<h1>KITTENS</h1>
+<ul>
+<% @kittens.each do |kit| %>
+  <% if kit['is_cute'] == 't' then is_cute = "is cute" %>
+  <% else is_cute = "isn't cute" %>
+  <% end %>
+  <li><a href=<%="/kittens/#{kit['id']}"%>><%= "#{kit['name']} is #{kit['age']} years old, #{is_cute}, and belongs to #{@owner_hsh[kit['owner_id']]}." %></a></li>
+<% end %>
+</ul>
+<a href="/kittens/new">Add a kitten or owner</a>
+
