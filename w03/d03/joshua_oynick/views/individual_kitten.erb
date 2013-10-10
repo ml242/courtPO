@@ -1,0 +1,37 @@
+<div>
+ <div class="individual-kitten">
+  <% @kitten.each do |kitten|%>
+      <div class="kitten-profile">
+        <img src='#{kitten['image_url']}'>
+        <% if kitten['is_cute'] == 't' %>
+            <% cute = 'cute'%>
+          <% else %>
+            <% cute = 'not cute' %>
+          <% end %>
+        <p> #{kitten['name']} is a #{cute} #{kitten['age']} year old kitten. #{@owner} owns this kitten.</p>
+        <form action='/kittens/#{kitten['id']}/delete' method='post'>
+        <input type='submit' value='Remove kitten'>
+        </form>
+        <br>
+        <br>
+        <h3> Edit Kitten </h3>
+        <form action="/kittens/#{kitten['id']}" method='post'>
+          <label> New Name </label>
+          <input type='text' name='name'>
+          <label> New Age </label>
+          <input type='text' name='age'>
+          <label for='cute'> Cute? </label>
+          <input type='checkbox' name='is_cute' value='true' id='cute'>
+          <label for='owners'> New Owner </label>
+          <select name='owner_id' id='owners'>
+            <% @owners.each do |owner| %>
+              <option value='#{owner['id']}'> #{owner['name']}</option>
+            <% end %>
+          </select>
+          <label>New Image URL</label>
+          <input type='text' name='image_url'>
+          <input type='submit' value='edit'>
+        </form>
+        <br>
+        <br>
+      </div>
