@@ -1,0 +1,4 @@
+CREATE TABLE owner (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR
+);
