@@ -4,22 +4,40 @@ body {
   font-size: 20px;
   max-width: 960px;
   display: block;
-  margin: 0 auto;
+  text-align: left;
 }
 header {
   font-size: 80px;
+  position: fixed;
+  right: 20px;
+  text-align: right;
+  padding: 20px;
+  border: 2px dashed rgba(256, 195, 253, .9);
 }
 a {
   text-decoration: none;
   color: rgba(256, 195, 253, .9);
 }
 
+#container {
+  margin-left: 10px;
+
+}
 #container img {
-  border-radius: 20px;
+  border-radius: 200px;
   margin-top: 10px;
-  border: 10px solid rgba(256, 195, 253, .9);
+    border: 10px solid rgba(256, 195, 253, .9);
+  max-width: 300px;
+  height: auto;
 }
 
 a:hover {
   color: yellow;
 }
+
+#container .show img {
+  max-width: 900px;
+}
+#container .show {
+  font-size: 50px;
+  max-width: 300px;}
