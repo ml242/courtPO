@@ -1,0 +1,11 @@
+<% require 'faker' %>
+<a href="/">Home</a>
+<h1>New Kitten Form</h1>
+
+<form action="/kittens" class="kitty-info" method="post">
+  <a><input type="text" class="kitty-info" value="<%= Faker::Name.name %>" name="kitty-name">name</a>
+  <a><input type="text" class="kitty-info" value="<%= rand(1..30) %>" name="kitty-age">age</a>
+  <a><input type="text" class="kitty-info" value="<%= [true, false].sample %>" name="kitty-cute">cute?</a>
+  <a><input type="text" class="kitty-info" value="http://placekitten.com/200/200" name="kitty-url">URL</a>
+  <input type="submit" class="guest-info" value="Search">
+</form>

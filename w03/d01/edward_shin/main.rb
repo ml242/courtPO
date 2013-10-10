@@ -38,25 +38,25 @@ erb :movie
 end
 
 post '/faves' do
-movie_id = params[:imdbID]
-new_url = "http://www.omdbapi.com/?i=#{movie_id}"
-new_response = HTTParty.get(new_url)
-@new_data = JSON.parse(new_response)
-title_new = @new_data["Title"]
-year_new = @new_data["Year"]
-sql = "INSERT INTO movies (title, year) VALUES ('highlander', '1995')"
-db_connection = PG.connect(:dbname => 'movies_db', :host => 'localhost')
-response = db_connection.exec(sql)
-entires_size = response.entries.size
-binding.pry
-db_connection.close
-redirect to('/faves')
+  movie_id = params[:imdbID]
+  new_url = "http://www.omdbapi.com/?i=#{movie_id}"
+  new_response = HTTParty.get(new_url)
+  @new_data = JSON.parse(new_response)
+  title_new = @new_data["Title"]
+  year_new = @new_data["Year"]
+  sql = "INSERT INTO movies (title, year) VALUES ('#{title_new}', '#{year_new}')"
+  db_connection = PG.connect(:dbname => 'movies_db', :host => 'localhost')
+  db_connection.exec(sql)
+  db_connection.close
+  redirect to('/faves')
 end
 
 get '/faves' do
-db_connection = PG.connect(:dbname => 'movies_db', :host => 'localhost')
-sql2 = "SELECT * FROM movies"
-@response = db_connection.exec(sql2)
-db_connection.close
-erb :faves
+  db_connection = PG.connect(:dbname => 'movies_db', :host => 'localhost')
+  sql2 = "SELECT * FROM movies"
+  binding.pry
+  response = db_connection.exec(sql2)
+  @info = response.entries
+  db_connection.close
+  erb :faves
 end
