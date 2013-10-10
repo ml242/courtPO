@@ -1,0 +1,21 @@
+<h2> Look at all the Cute Kittens</h2>
+
+<table border="1">
+<tr>  <% @kittens.each do |kitten| %>
+  <td>
+    <a href="/kittens/<%= kitten['id'] %>"><%= kitten %></a>
+  </td>
+  <td>
+    <form action="/kittens/<%= kitten['id'] %>/update" method="get">
+      <input type="submit" value="Update">
+    </form>
+  </td>
+  <td>
+    <form action="/kittens/<%= kitten['id'] %>/delete" method="post">
+        <input type="submit" value="Delete">
+    </form>
+  </td>
+</tr>
+
+  <% end %>
+</table>

@@ -1,0 +1,44 @@
+<div class="list"> Kittens currently in database
+    <ul class= "kittens">
+    <%@kittens.each do |group|%>
+      <br>
+      <%=p "Cat #{group["name"]}"%>
+        <%group.each do |traits, values|%>
+      <li><%=p "#{traits.capitalize} : #{values}"%></li>
+        <%end%>
+    <%end%>
+  </ul>
+
+
+  <form action="/kittens/update" method="post">
+    Which kitten id do you want to change? Input ID #
+    <input type="text" name="update_id">
+    <br>
+    What do you want to update? (Select and input update)
+    <br>
+    <label>Name</label>
+    <input type="radio" name="factor" value="name">
+      <input type="text" name="update_name" id="name_value">
+    <br>
+    <label>Age</label>
+    <input type="radio" name="factor" value="age">
+    <input type="text" name="update_age" id="age_value">
+    <br>
+    <label>Cute</label>
+    <input type="radio" name="factor" value="is_cute">
+      <label>Input True/False</label>
+      <input type="text" name="update_cute" id="cute_value">
+    <br>
+    <label>Image_URL</label>
+    <input type="radio" name="factor" value="image_url">
+      <label>Updated URL</label>
+      <input type="text" name="update_image" id="image_value">
+    <br>
+    <label>Owner ID</label>
+    <input type="radio" name="factor" value="owners_id">
+      <label>Updated Owner ID</label>
+      <input type="text" name="update_owner" id="owner_value">
+    <br>
+
+    <input type="submit" value="Submit">
+  </form>

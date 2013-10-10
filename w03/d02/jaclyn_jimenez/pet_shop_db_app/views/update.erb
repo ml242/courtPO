@@ -3,7 +3,7 @@
 <a href="/new_kitten">Add Kitten</a>
 <a href="/kittens">View All Kittens</a>
 </div>
-<h3>Update Kitten</h3>
+<h3>Update Kitten: <%= "#{@kitten_before_update[0]['name'].upcase}" %></h3>
 <div class = form>
   <% @id = params[:id]%>
 <form method = 'post' action = '/kittens/<%=@id%>/update'>

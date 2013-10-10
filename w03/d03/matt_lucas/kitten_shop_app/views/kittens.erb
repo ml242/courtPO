@@ -1,0 +1,5 @@
+<h1>Available Cats.</h1>
+
+<% @cats.each do |x| %>
+<li><%= "#{x["name"]} #{x["age"]} #{x["owner"]}" %></li>
+<% end %>

@@ -1,17 +1,17 @@
 
-loop do
+while (num1 != "q") || (num2 != "q") || (operation != "q")
 
-puts "CALCULATOR"
-
-puts "Balance = 0"
-puts " + - * /"
-
-puts "Enter first number or enter 'q' to quit"
-num1 = gets.chomp!
-
+def menu
+  puts "CALCULATOR"
+  puts "Balance = 0"
+  puts " + - * /"
+  puts "Enter first number or enter 'q' to quit"
+  num1 = gets.downcase.chomp!
+end
 
 if num1 == "q"
   puts "Thanks, bye!"
+
 elsif
   num1 = num1.to_f
   puts "type '+' to add"
@@ -51,6 +51,9 @@ elsif calculator == '/'
 end
 
 end
+
+end
+
 
 
 

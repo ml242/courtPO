@@ -1,7 +1,7 @@
 <div class="container">
   <%= @kitten["name"] %><br />
   <%= @kitten["age"] %><br />
-  <% if @kitten["is_cute"] == "t" %>
+  <% if @kitten["is_cute"] == "true" %>
       "is cute!"<br />
   <% end  %>
   <img class="polaroid" src="<%= @kitten['image_url'] %>" />

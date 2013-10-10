@@ -3,8 +3,8 @@
 <h3>Age: <%= @response_entry["age"] %></h3>
 <h3>Is cute? <%= @response_entry["is_cute"] %></h3>
 <h3>Image Url: <a href="<%= @response_entry["image_url"] %>"><%= @response_entry["image_url"] %></a></h3>
-<form action="/kitten/delete/:id" method="post">
-  <input type="hidden" name="name" value="<%= @response_entry["id"] %>">
+<form action="/kitten/delete/<%= @response_entry["id"] %>" method="post">
+  <input type="hidden" name="id" value="<%= @response_entry["id"] %>">
   <input type="submit" value="Delete">
 </form>
 
