@@ -18,22 +18,34 @@ get '/kittens' do
   response = db_conn.exec(sql)
   @cats = response.entries
   db_conn.close
-  # @cats.to_s
   erb :kittens
 end
 
 post '/kittens' do
-  name = params["name"]
+  kitten_name = params["kitten_name"]
   age = params["age"]
   is_cute = params["is_cute"]
   img_url = params["img_url"]
+  email = params["email"]
   db_conn = PG.connect(:dbname => 'pet_shop_db', :host => 'localhost')
-  sql = "INSERT INTO kittens (name, age, is_cute, img_url) VALUES ('#{name}', '#{age}', '#{is_cute}, '#{img_url}');"
+  sql = "INSERT INTO kittens (name, age, is_cute, img_url) VALUES ('#{kitten_name}', #{age}, '#{is_cute}', '#{img_url}');"
+  db_conn.exec(sql)
+  db_conn.close
+  owner_name = params["owner_name"]
+  owner_email = params["owner_email"]
+  db_conn = PG.connect(:dbname => 'pet_shop_db', :host => 'localhost')
+  sql = "INSERT INTO owners (name, email) VALUES ('#{owner_name}', '#{owner_email}');"
+  db_conn.exec(sql)
   db_conn.close
   redirect to '/kittens'
 end
 
 get '/drop' do
+  db_conn = PG.connect(:dbname => 'pet_shop_db', :host => 'localhost')
+  sql = "Select * FROM owners;"
+  response = db_conn.exec(sql)
+  @owners = response.entries
+  db_conn.close
   erb :drop
 end
 
