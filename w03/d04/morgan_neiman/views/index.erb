@@ -1,0 +1,5 @@
+<% @entries_array.each do |entry| %>
+<% author = User.find(entry.author_id) %>
+<br><a href="/show/<%= entry.id %>"><img src="<%= entry['photo'] %>"></a>
+<br>taken by <%= author['username'] %> on <%= entry['date_taken'] %>
+<% end %>

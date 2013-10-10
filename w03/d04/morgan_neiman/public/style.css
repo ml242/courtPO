@@ -1,0 +1,25 @@
+body {
+  background-color: white;
+  font-family: 'Helvetica';
+  font-size: 20px;
+  max-width: 960px;
+  display: block;
+  margin: 0 auto;
+}
+header {
+  font-size: 80px;
+}
+a {
+  text-decoration: none;
+  color: rgba(256, 195, 253, .9);
+}
+
+#container img {
+  border-radius: 20px;
+  margin-top: 10px;
+  border: 10px solid rgba(256, 195, 253, .9);
+}
+
+a:hover {
+  color: yellow;
+}
