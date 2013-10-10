@@ -1,0 +1,31 @@
+<h1>Add a Kitten to the Database</h1>
+<form action="/kittens" method="post">
+  <input type="text" name="name" placeholder="name">
+  <input type="text" name="age" placeholder="age">
+  <label for="is_cute">Cute</label>
+  <input type="radio" name="is_cute" value="true">
+  <label for="is_cute">Not Cute</label>
+  <input type="radio" name="is_cute" value="false" id="expensive_food">
+  <input type="text" name="image_url" placeholder="link to picture">
+  <h2>Select Kitten's New Owner</h2>
+  <select name="owner_id">
+  <% @owner.each do |owner| %>
+  <option name="owner_id" value="<%= owner['id'] %>"><%= owner['name'] %></option>
+  <% end %>
+  </select>
+  <h2>Select Add When You're Finished</h2>
+  <input type="submit" value="Add">
+</form>
+<h3>Don't see an owner who's up to the job? <br>Add an owner to the database</h3>
+<button><a href="/owners">Go</a></button>
+<h3>Kittens Database</h3>
+<% @kittens.each do |kittens| %>
+  <div class="kitten">
+    <a href="/kittens/<%= kittens['id'] %>">
+      <img class="polaroid" src= "<%= kittens['image_url'] %>" />
+      <br><%= kittens["name"] %>
+<% end %>
+
+    </a>
+  </div>
+
