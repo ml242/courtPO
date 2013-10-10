@@ -1,0 +1,18 @@
+<h1 id="heading">Meet <%= @kitten_info["name"] %></h1>
+
+<a href=/kittens>back to kittens</a>
+<a href=/kittens/<%= @kitten_info["id"] %>/update>edit this kitty</a>
+
+
+<p><%= @kitten_info["name"] %> is <%= @kitten_info["age"] %> years old.
+it is super <%= @kitten_info["is_cute"]=='t' ? "cute" : "ugly" %>.
+</p>
+
+<img src="<%= @kitten_info["image_url"] %>" width=200 alt="no image">
+
+<br>
+<br>
+<form action="/kittens/<%= @kitten_info["id"] %>/delete" method="post" accept-charset="utf-8">
+  <input style="display:none" type="text" name="id" value="<%= @kitten_info["id"] %>" id="delete">
+<input id="submit" type="submit" value="deletethis kitten">
+</form>
