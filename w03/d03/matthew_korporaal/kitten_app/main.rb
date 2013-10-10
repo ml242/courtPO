@@ -14,12 +14,6 @@ helpers do
   end
 end
 
-ids = []
-names = []
-ages = []
-are_cute = []
-img_urls = []
-owner_name = []
 message = ''
 
 get '/' do
@@ -32,6 +26,7 @@ get '/' do
 end
 get '/kittens/new' do
   # get owners and id's pass to new_kitty
+  owner_name = []
   owner_id = []
   sql = "SELECT * FROM owners"
   answer = db_exec(sql)
@@ -41,7 +36,6 @@ get '/kittens/new' do
   end
   @owner_id = owner_id
   @owner_name = owner_name
-  owner_name = []
   erb :new_kitty
 end
 
@@ -70,6 +64,12 @@ end
 get '/kittens' do
 # - Asks the database for all of the kittens
 # - returns an array of hashes where each hash represents the properties of the kitten
+  names = []
+  ages = []
+  ids = []
+  are_cute = []
+  img_urls = []
+  owner_name = []
   if message.nil?
     message = ''
   end
@@ -97,12 +97,6 @@ get '/kittens' do
   @are_cute = are_cute
   @img_urls = img_urls
   @owner_name = owner_name
-  names = []
-  ages = []
-  ids = []
-  are_cute = []
-  img_urls = []
-  owner_name = []
   if message.nil?
     message = ''
   end
@@ -125,7 +119,6 @@ end
 get  '/kittens/:id' do
 # - Asks the database for a single kitten
 # - returns a single hash representing a single kitten
-
   sql = "SELECT * FROM kittens WHERE id = #{params[:id]}"
   answer = db_exec(sql)
   kitten = answer.entries[0]
@@ -149,7 +142,6 @@ get  '/kittens/:id' do
 end
 
 # EVERYTHING AFTER IS EXTRA CREDIT
-
 post '/kittens/:id/delete' do
 # - Removes a kitten from the database
 # - returns `true` if it was able to remove the kitten
@@ -157,7 +149,6 @@ end
 
 post '/kittens/:id' do
     binding.pry
-
 # - takes any of the passed in parameters
 # - updates only those parameters for a single kitten
 end
