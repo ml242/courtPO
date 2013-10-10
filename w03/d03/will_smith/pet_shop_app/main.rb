@@ -3,6 +3,19 @@ require 'sinatra/reloader' if development?
 require 'pry'
 require 'pg'
 
+# Add an owners table to app database --> Done
+
+# Owners will need an id and a name --> Done
+# Give your kittens owners --> Done
+
+# When you display a kitten, list their owner's name
+
+# Create a form to create new owners
+
+# In the create kitten form, add a dropdown to choose which Owner owns the kitten
+
+# The dropdown form should display all the owners names from your owners table
+
 get '/' do
   erb :index
 end
@@ -50,6 +63,12 @@ get '/kittens/:id' do
   results = db_connect.exec(sql)
   db_connect.close
   @kitten = results.entries[0]
+
+  db_connect = PG.connect(:dbname => 'kittens_inventory_db', :host => 'localhost')
+  sql = "SELECT * FROM owners WHERE id = #{id}"
+  results = db_connect.exec(sql)
+  db_connect.close
+  @owners = results.entries[0]
   erb :profile
   end
 
