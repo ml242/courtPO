@@ -14,6 +14,3 @@ ActiveRecord::Base.establish_connection(
 class Entry < ActiveRecord::Base
 
 end
-
-
-binding.pry

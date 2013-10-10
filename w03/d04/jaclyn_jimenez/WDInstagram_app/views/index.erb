@@ -1,0 +1,6 @@
+<% info = [] %>
+<% @post.each do |e| %>
+<%=  %>
+<a href = "/show/<%=e['id']%>" ><img src ="<%= e['photo'] %>" /></a>
+Posted by: <%= e['name']%> on <%= e['date_taken'] %>
+<% end %>
