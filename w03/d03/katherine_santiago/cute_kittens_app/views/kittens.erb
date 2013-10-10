@@ -1,0 +1,11 @@
+<h2>All the kittens</h2>
+
+<ol>
+  <% @kittens.each do |kitten| %>
+
+    <a href="/kittens/<%= kitten["id"] %>">
+      <li><%= kitten["name"] %></li>
+    </a>
+
+  <% end %>
+  </ol>
