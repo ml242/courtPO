@@ -1,10 +1,12 @@
 <h1>welcome to the Pet Shop Boys Pet Shop!</h1>
 
-Please register below if you own a cat, would like to <a href="kittens">adopt</a>, or would like to give a cat up for <a href="drop">adoption</a>.
+If you would like to find a kitten, look below. Or, <a href="kittens">browse</a> for a kitten, or <a href="drop">drop</a> off a kitten to be adopted?
 
-
-<form name="input" action="/kittens" method="post"> <br>
-<label>name :</label><input type="text" name="owner_name"> <br>
-<label>email:</label> <input type="email" name="owner_email"> <br>
-<input type="submit" value="submit"> <br>
+<form name="input" action="/kittens" method="get"> <br>
+name: <input type="text" name="name"> <br>
+age: <input type="number" name="age"> <br>
+Is the kitten cute (please leave unselected if not)
+<input type="radio" name="cute" value="true"><br>
+Do you have a picture <input type="text" name="url"> <br>
+<input type="submit" value="Submit"> <br>
 </form>
