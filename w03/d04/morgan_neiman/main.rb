@@ -2,8 +2,9 @@ require 'active_record'
 require 'pry'
 require 'sinatra'
 require 'sinatra/reloader' if development?
+require_relative 'active_record'
 
-# before '/*' do
+before  do
   ActiveRecord::Base.logger = Logger.new( STDOUT )
 
   ActiveRecord::Base.establish_connection(
@@ -13,29 +14,12 @@ require 'sinatra/reloader' if development?
   :password => "",
   :database => "instagram_db"
   )
-# # end
-
-helpers do
-  def before
-  ActiveRecord::Base.logger = Logger.new( STDOUT )
-  ActiveRecord::Base.establish_connection(
-  :adapter => "postgresql",
-  :host => "localhost",
-  :username => "Ducky",
-  :password => "",
-  :database => "instagram_db"
-  )
-  end
-  def after
-    ActiveRecord::Base.connection.close
-  end
 end
 
 
-# after '/*' do
-#   puts "RARFACE"
-#   ActiveRecord::Base.connection.close
-# end
+after do
+  ActiveRecord::Base.connection.close
+end
 
 class Entry < ActiveRecord::Base
 end
