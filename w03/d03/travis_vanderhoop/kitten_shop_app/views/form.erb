@@ -1,0 +1,17 @@
+<form action="/kittens" method='post'>
+  <input type="text" name='name' placeholder='type kitty name'>
+  <input type="text" name='is_cute' placeholder='type t or f'>
+
+<label for="owner">Owner: </label>
+  <select name='owner'>
+
+      <% @owners.each do |owner| %>
+      <option value=' <%= owner['name']  %> '> <%= owner['name']  %> </option> <!--  This line needed to have the params key passed as a string, not as a symbol, which halted me hardcore.   -->
+
+      <% end %>
+  </select>
+
+  <!--<input type="text" name='owner' placeholder='owner name'>-->
+  <input type="text" name='image_url' placeholder='enter url of kitty pic'>
+  <input type="submit" value='SUBMIT'>
+</form>
