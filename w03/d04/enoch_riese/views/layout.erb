@@ -1,0 +1,53 @@
+<!doctype html>
+<style>
+  body {
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+    font-family: Baskerville, serif;
+  }
+  img {
+    width: 550px;
+    box-shadow: 4px 4px rgba(0,0,0,.7);
+  }
+  li {
+    list-style: none;
+    margin-bottom: 50px;
+  }
+  div {
+    display: block;
+    height: 100px;
+  }
+  header {
+    background-color: rgba(255,255,255,.7);
+    width: 100%;
+    text-align: center;
+    margin: 0 auto 0 20px;
+    display: block;
+    position: fixed;
+  }
+  header li {
+    display: inline-block;
+    padding: 5px 50px;
+    margin-bottom: 5px;
+  }
+  form {
+    margin-top: 100px;
+  }
+</style>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>WDInstagram</title>
+</head>
+<body>
+  <header>
+    <h1>WDINSTAGRAM</h1>
+      <li><a href="/">Home</a></li>
+      <li><a href="/new">Add a photo</a></li>
+    </ul>
+  </header>
+  <div> &nbsp </div>
+  <%= yield %>
+</body>
+</html>

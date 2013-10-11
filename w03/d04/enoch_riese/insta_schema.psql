@@ -1,0 +1,5 @@
+create table photos (
+id SERIAL PRIMARY KEY,
+author VARCHAR,
+date_taken DATE,
+url VARCHAR);
