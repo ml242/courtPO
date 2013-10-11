@@ -1,0 +1,12 @@
+<h1>This page will show you all photos, and link you to the page where there is a form to add a new entry
+</h1>
+
+<ul>
+  <% @photos_list.each do |photo| %>
+    <a href="/show/<%= photo['id'] %>">
+      <li>
+        <%= photo['author'] %><img src="<%= photo['img_url'] %>">
+      </li>
+    </a>
+  <% end %>
+</ul>
