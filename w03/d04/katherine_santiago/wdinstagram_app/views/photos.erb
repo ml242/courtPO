@@ -1,0 +1,15 @@
+<h2>This is the list of all my entries</h2>
+
+<h4><a href="/photos/new">Click here to submit your photo</a></h4>
+
+<ol>
+    <% @entries.each do |entry| %>
+  <li>
+    <a href="/photos/<%= entry['id'] %>">
+    By <%= entry['author'].upcase %> on <%= entry['date_taken'] %>
+    <img src="<%= entry['photo'] %>">
+    </a>
+  </li>
+    <% end %>
+  </li>
+</ol>
