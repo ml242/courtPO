@@ -4,3 +4,7 @@ $('#container').imagesLoaded(function(){
     layoutMode : 'masonry'
   });
 });
+$('.datepicker').pickadate({
+  formatSubmit: 'yyyy/mm/dd'
+});
+$('.timeago').timeago();

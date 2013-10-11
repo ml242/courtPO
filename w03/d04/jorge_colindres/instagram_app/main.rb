@@ -21,7 +21,6 @@ helpers do
   end
 end
 
-
 get '/instagram' do
   db_connect
   @entries = Entry.all

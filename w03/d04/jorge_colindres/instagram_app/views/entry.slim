@@ -1,3 +1,3 @@
 .single-picture
   img src="#{@entry['photo_url']}"
-  h3 #{@entry['author']} took this photo on #{@entry['date_taken']}
+  h3 #{@entry['author']} took this photo <abbr class="timeago" title="#{@entry['date_taken']}"></abbr>
