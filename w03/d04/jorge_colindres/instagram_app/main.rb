@@ -33,16 +33,17 @@ get '/instagram/entries/new' do
   slim :new
 end
 
-post '/instagram/entries/new' do
+post '/instagram/entries' do
   db_connect
   author = params[:author]
   date_taken = params[:date_taken]
   photo_url = params[:photo_url]
   # create a new entry and save to DB
   Entry.create :author => author, :date_taken => date_taken, :photo_url => photo_url
+  current_id = Entry.last['id']
   db_disconnect
 
-  redirect to '/instagram'
+  redirect to "/instagram/entries/#{current_id}"
 end
 
 get '/instagram/entries/:id' do

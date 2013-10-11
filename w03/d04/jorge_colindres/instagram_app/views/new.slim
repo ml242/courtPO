@@ -1,12 +1,12 @@
 .add-new
   h2 Add a Photo
-  form action="/instagram/entries/new" method="post"
+  form action="/instagram/entries" method="post"
     .row
       label for="author" Author Name
-      input type="text" name="author" id="author" placeholder="Johnny Appleseed"
+      input type="text" name="author" id="author" placeholder="Johnny Appleseed"  autocomplete="off"
       label for="date_taken" Date Taken
       input class="datepicker" type="text" name="date_taken" id="date_taken" placeholder="1 January, 2013"
     .row
       label for="photo_url" Photo URL
-      input type="text" name="photo_url" id="photo_url" placeholder="http://placekitten.com/200/200"
+      input type="text" name="photo_url" id="photo_url" placeholder="http://placekitten.com/200/200"  autocomplete="off"
       input type="submit" value="Add Photo"
