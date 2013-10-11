@@ -2,7 +2,7 @@ require 'sinatra'
 require 'sinatra/reloader' if development?
 require 'pry'
 require 'active_record'
-
+require_relative 'active_record'
 
 helpers do
   def db_connect
