@@ -1,0 +1,27 @@
+body {
+  color: #000000;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+header {
+  text-align: center;
+}
+
+.container {
+  width: 50%;
+  margin: 0 auto;
+  padding: 5%;
+}
+
+input {
+  padding: 3px;
+  margin: 3px;
+}
+
+img {
+  width: 30%;
+}
+
+.photo img {
+  width: 50%;
+}
