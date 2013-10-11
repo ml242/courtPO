@@ -1,0 +1,20 @@
+<div id="navbar" class="fixedattop">
+  <a href="/">Home</a>
+  <a href="/pics">All Pictures</a>
+  <a href="/users/new">Add User</a>
+</div>
+<h1>Add a Picture</h1>
+<form action="/pics/upload" method="post">
+  <input type="text" name="img_url" placeholder="link to picture">
+<h2>Who took this picture?</h2>
+<p>Select a name from the user list</p>
+  <select name="user_id">
+  <% @users.each do |users| %>
+  <option name="user_id" value="<%= users['id'] %>"><%= users['name'] %></option>
+  <% end %>
+  </select>
+  <p>or enter a <a class="myButton" href="/users/new">new user</a></p>
+  <h2>When was this picture taken?</h2>
+  <input type="date" name="date_created">
+  <input class="myButton" type="submit" value="Enter">
+</form>
