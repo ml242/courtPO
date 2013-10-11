@@ -1,0 +1,9 @@
+<h1 id="heading">photos</h1>
+<% @photos.each do |photo|%>
+  <img src="<%= photo.photo_url %>">
+  <br><a href=/photos/<%= photo.id %>>deets</a>
+  <p><b>by</b>: <%= photo.author %>
+  &nbsp;&nbsp;&nbsp;
+  <b>comments:</b> <%= @comment_count.where(photo_id: photo.id).count %></p>
+<% end %>
+
