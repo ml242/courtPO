@@ -1,6 +1,13 @@
+<h1>Pics</h1>
+<% @pics.each do |pics| %>
+  <div class="pics">
+    <a href="/pics/<%= pics['id'] %>">
+      <img class="polaroid" src= "<%= pics['img_url'] %>" />
+    </a>
+<% end %>
+  </div>
 <div id="navbar" class="fixedbottom">
   <a href="/">Home</a>
   <a href="/pics">All Pictures</a>
   <a href="/pics/upload">Upload</a>
 </div>
-<h1>Pics</h1>

@@ -66,4 +66,13 @@ post '/users/new' do
   redirect to('/pics/upload')
 end
 
+get '/pics/:id' do
+  id = params[:id]
+  @pic = Pics.find(id)
+  user_id = @pic['user_id']
+  @user = Users.find(user_id)
+  erb :single_pic
+end
+
+
 

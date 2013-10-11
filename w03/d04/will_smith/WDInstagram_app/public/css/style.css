@@ -1,7 +1,37 @@
-require 'sinatra'
-require 'sinatra/reloader' if development?
-require 'pg'
-require 'pry'
+#navbar.fixedatbottom {
+  position: fixed; bottom: 0px;
+}
 
-get '/' do
-end
+#navbar a {
+  display: inline-block;
+  margin: 12px 15px; padding: 5px 0px;
+  background: #999;
+  background: linear-gradient(#999, #333);
+  color: #FFF;
+  font: 14px 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+  text-decoration: none;
+  border-radius: 3px;
+  box-shadow: 0px 0px 10px rgba(0,0,0, 0.5) inline;
+  width: 100px;
+}
+
+#navbar a:hover {
+  background: #333;
+  background: linear-gradient(#222, #333);
+}
+
+#content {
+  text-align: center;
+  margin: 0px;
+}
+
+img.polaroid {
+    background:#000; /*Change this to a background image or remove*/
+    border:solid #fff;
+    border-width:6px 6px 20px 6px;
+    box-shadow:1px 1px 5px #333; /* Standard blur at 5px. Increase for more depth */
+    -webkit-box-shadow:1px 1px 5px #333;
+    -moz-box-shadow:1px 1px 5px #333;
+    max-width: 500px;
+    max-height: 500px;
+}
