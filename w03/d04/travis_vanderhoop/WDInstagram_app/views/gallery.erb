@@ -1,2 +1,6 @@
-<p>"erb works"</p>
-<h1></h1>
+<%  @entries.each do |entry| %>
+
+  <img src="<%= entry['photo_url'] %>" alt="Beautiful photo">
+  <h2><%= entry['author'] %>, <%= entry['date_taken'] %></h2>
+
+<% end %>
