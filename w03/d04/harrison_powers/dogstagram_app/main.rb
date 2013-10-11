@@ -35,12 +35,11 @@ post '/photos/add' do
   author = params[:author]
   photo = params[:photo]
   date = params[:date]
-  entry = Entry.new({
+  Entry.create({
     :author => author,
     :photo => photo,
     :date => date
     })
-  entry.save
   redirect to('/photos')
 end
 
