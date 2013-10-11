@@ -1,5 +1,5 @@
 #container
   - @entries.each do |entry|
     .item
-      a href="/instagram/entries/#{entry['id']}"
+      a class="popup" href="/instagram/entries/#{entry['id']}"
         img src="#{entry['photo_url']}"
