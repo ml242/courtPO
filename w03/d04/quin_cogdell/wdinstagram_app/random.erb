@@ -1,0 +1,22 @@
+<% @results.each do |result| %>
+<% binding.pry %>
+<section class="photo">
+  <header class="author">
+    <%= result.name%>
+  </header>
+  <div class="photo">
+    <%= result.image_url%>
+  </div>
+  <div class="date">
+    <%= result.date_taken %><br>
+    <%= result.id%>
+  </div>
+<% end %>
+</section>
+
+
+<ul>
+<% @results.each do |result| %>
+  <li><%= result.to_xml %> </li>
+<% end %>
+</ul>
