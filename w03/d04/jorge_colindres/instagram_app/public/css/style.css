@@ -9,6 +9,11 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 body {
   background: #ebeced;
   font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+  color: #383d48;
+}
+a {
+  color: #383d48;
+  text-decoration: none;
 }
 
 header {
@@ -56,6 +61,7 @@ header a {
   padding: 55px 15px 15px;
   border: 1px solid #d9dadb;
   border-radius: 5px;
+  position: relative;
 }
 .item {
   width: 24.97%;
@@ -81,7 +87,6 @@ header a {
     box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.3);
 }
 .single-picture h3 {
-  color: #383d48;
   margin-top: 30px;
 }
 
@@ -111,7 +116,7 @@ header a {
   padding: 5px 10px;
   border-radius: 3px;
   white-space: nowrap;
-  color: white;
+  color: #fff;
   cursor: pointer;
 }
 

@@ -2,19 +2,15 @@ doctype html
 html
   head
     title Instagram
-
     link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet'
     link href='//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css' rel='stylesheet'
     link href='/css/style.css' rel='stylesheet'
-
   body
     header
-      .logo
-        a href='/instagram'
+      .logo: a href='/instagram'
           h1 Instagram
       a href='/instagram/entries/new'
-        .add
-          i.icon-plus
+        .add: i.icon-plus
     .wrapper
       == yield
     script src='/js/jquery.min.js'
