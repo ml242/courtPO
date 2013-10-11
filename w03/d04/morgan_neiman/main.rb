@@ -2,6 +2,7 @@ require 'active_record'
 require 'pry'
 require 'sinatra'
 require 'sinatra/reloader' if development?
+require 'execjs'
 require_relative 'active_record'
 
 before  do
@@ -29,35 +30,27 @@ end
 
 
 get '/' do
-  before
   @entries_array = Entry.order("id DESC").all
-  after
   erb :index
 end
 
 get '/new' do
-  before
   @user_array = User.all
-  after
   erb :new
 end
 
 post '/new' do
-  before
   e1 = Entry.new
   e1.author_id = params[:username]
   e1.photo = params[:photo]
   e1.date_taken = params[:date_taken]
   e1.save
-  after
   redirect to '/'
 end
 
 get '/show/:id' do
-  before
   id = params[:id].to_i
   @entry = Entry.find(id)
-  after
   erb :single_photo
 end
 
@@ -66,7 +59,6 @@ get '/sign_up' do
 end
 
 post '/sign_up' do
-  before
   username = params[:username]
   if User.exists?(username: username)
     redirect to '/username_error'
@@ -76,7 +68,6 @@ post '/sign_up' do
     user.save
     redirect to '/'
   end
-  after
 end
 
 get '/username_error' do
@@ -84,22 +75,18 @@ get '/username_error' do
 end
 
 get '/:username' do
-  before
   username = params[:username]
   user = User.where("username = '#{username}'")
   user_id = user.first.id.to_i
   @author = user.first.username
   @user_photos = Entry.where(author_id: user_id)
-  after
   erb :username
 end
 
 get '/update/:id' do
-  before
   id = params[:id].to_i
   @user_array = User.all
   @photo = Entry.find(id)
-  after
   erb :update_photo
 end
 
