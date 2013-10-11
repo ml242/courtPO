@@ -25,14 +25,6 @@ class Entry < ActiveRecord::Base
 end
 
 
-# get '/' do
-#   # db_connect
-#   # @entries = Entry.all
-#   # db_disconnect
-#   # slim :index
-#   redirect to '/wdinstagram'
-# end
-
 get '/' do
   redirect to '/photos'
 end
@@ -58,7 +50,7 @@ post '/photos' do
   photo = params[:photo]
   date_taken = params[:date_taken]
 
-  #this should redirect to '/wdinstagram' listing all entries
+  #this should redirect to '/photos' listing all entries
   db_connect
   photo_entry = Entry.create({ :author => "#{author}", :photo => "#{photo}", :date_taken => "#{date_taken}" })
   db_disconnect
