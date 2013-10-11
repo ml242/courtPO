@@ -1,13 +1,18 @@
-<h1>Pics</h1>
-<% @pics.each do |pics| %>
-  <div class="pics">
-    <a href="/pics/<%= pics['id'] %>">
-      <img class="polaroid" src= "<%= pics['img_url'] %>" />
-    </a>
-<% end %>
-  </div>
-<div id="navbar" class="fixedbottom">
-  <a href="/">Home</a>
-  <a href="/pics">All Pictures</a>
-  <a href="/pics/upload">Upload</a>
-</div>
+   <div id="navbar" class="fixedattop">
+      <a href="/">Home</a>
+      <a href="/pics/upload">Upload</a>
+      <a href="/users/new">Add User</a>
+    </div>
+<!--Main Wrapper-->
+  <div id="Wrapper">
+    <h1>Gallery</h1>
+        <!--Image Gallery Begins-->
+    <% @pics.each do |pics| %>
+    <div id="Images">
+          <ul>
+                <li><a href="/pics/<%= pics['id'] %>"><img src= "<%= pics['img_url'] %>" /></a></li>
+            </ul>
+        <!--Image Gallery Ends-->
+        </div>
+    <% end %>
+    </div>
