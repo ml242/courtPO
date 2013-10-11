@@ -7,16 +7,17 @@ html
     link href='/css/style.css' rel='stylesheet'
   body
     header
-      .logo: a href='/instagram'
-          h1 Instagram
+      .logo: h1
+          a href='/instagram' Instagram
+      a href='#'
+        #shuffle.nav-icon: i.icon-random
       a href='/instagram/entries/new'
-        .add: i.icon-plus
+        .nav-icon.add: i.icon-plus
     .wrapper
       == yield
     script src='/js/jquery.min.js'
     script src='/js/isotope.min.js'
     script src='/js/imageLoad.min.js'
     script src='/js/picker.min.js'
-    script src='/js/age.min.js'
     script src= '/js/date.min.js'
     script src='/js/app.js'
