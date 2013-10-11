@@ -1,5 +1,75 @@
-img {
-  max-width: 300px;
-  height: auto;
-  margin: 5px;
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+ }
+
+body {
+  background: #ebeced;
 }
+
+header {
+  font-family: 'Cookie', cursive;
+  text-align: center;
+  line-height: 2.75em;
+  margin-bottom: 2em;
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+  box-shadow: 0 2px 10px rgba(0,0,0,.25);
+  background-image: -webkit-linear-gradient(rgba(61,67,77,255) 0%, rgba(63,69,79,255) 50%, rgba(65,71,82,255) 100%);
+    background-image: -moz-linear-gradient(rgba(61,67,77,255) 0%, rgba(63,69,79,255) 50%, rgba(65,71,82,255) 100%);
+    background-image: -o-linear-gradient(rgba(61,67,77,255) 0%, rgba(63,69,79,255) 50%, rgba(65,71,82,255) 100%);
+    background-image: linear-gradient(rgba(61,67,77,255) 0%, rgba(63,69,79,255) 50%, rgba(65,71,82,255) 100%);
+ }
+header a {
+  color: #fafafa;
+  text-decoration: none;
+}
+.logo, .add {
+  display: inline-block;
+}
+.logo {
+  width: 90%;
+  margin-left: 5%;
+}
+.logo a {
+  font-size: 1.85em;
+}
+.add {
+  font-size: 1.25em;
+  width: 5%;
+  border-left: 1px solid #2f3033;
+}
+
+/*--------------------
+---- All pictures ----
+--------------------*/
+
+.wrapper {
+  width: 85%;
+  background: #fff;
+  margin: 0 auto 55px;
+  padding: 55px 15px 15px;
+  border: 1px solid #d9dadb;
+  border-radius: 5px;
+}
+.item {
+  width: 24.97%;
+  padding: 1.5px 3px;
+}
+.item img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*--------------------
+--- Single Picture ---
+--------------------*/
+
+.single-picture img {
+  display: block;
+  margin: 0 auto;
+  max-width: 80%;
+}
+
+
