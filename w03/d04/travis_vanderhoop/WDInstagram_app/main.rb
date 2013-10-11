@@ -25,6 +25,7 @@ end
 
 get '/gallery' do
 
+
   erb :gallery
 end
 
@@ -34,7 +35,9 @@ get '/entry/new' do
 end
 
 get '/entry/:entry_id' do
-
+  entry_id = params[:entry_id]
+  @entry = Entry.find(entry_id)
+  #binding.pry
   erb :entry_spotlight
 end
 
@@ -47,6 +50,5 @@ post '/gallery' do
   # e1.photo_url = photo_url
   # e1.date_taken = date_taken
   Entry.create({author: "#{author}", photo_url: "#{photo_url}", date_taken: "#{date_taken}"})
-  binding.pry
   redirect to ('/gallery')
 end
