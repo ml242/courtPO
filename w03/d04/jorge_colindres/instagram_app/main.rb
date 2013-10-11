@@ -39,8 +39,8 @@ post '/instagram/entries' do
   date_taken = params[:date_taken]
   photo_url = params[:photo_url]
   # create a new entry and save to DB
-  Entry.create :author => author, :date_taken => date_taken, :photo_url => photo_url
-  current_id = Entry.last['id']
+  entry = Entry.create :author => author, :date_taken => date_taken, :photo_url => photo_url
+  current_id = entry.id
   db_disconnect
 
   redirect to "/instagram/entries/#{current_id}"
