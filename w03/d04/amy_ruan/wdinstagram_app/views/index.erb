@@ -1,0 +1,10 @@
+<h2> View our photos directory </h2>
+<div class= "viewphoto">
+  <ul> <%@entries.each do |content|%>
+      </li><img class= "photo" src=<%=content[:photo_url]%>
+                <label="photolabel">Author:  <%=content[:author]%>
+                <%=content[:date_taken]%></li></label>
+                <%end%>
+  </ul>
+</div>
+  <nav><a href="/photos/new">Store new photo</nav>

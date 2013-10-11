@@ -1,0 +1,11 @@
+
+
+.photo{
+  max-height: 400px;
+  max-width: 400px;
+  display: block;
+}
+.photolabel {
+  position: relative;
+  font-family: Arial, sans-serif;
+}
