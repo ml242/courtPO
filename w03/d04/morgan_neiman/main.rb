@@ -44,6 +44,7 @@ post '/new' do
   e1.author_id = params[:username]
   e1.photo = params[:photo]
   e1.date_taken = params[:date_taken]
+  e1.filter = params[:filter]
   e1.save
   redirect to '/'
 end
@@ -91,32 +92,28 @@ get '/update/:id' do
 end
 
 post '/update/:id' do
-  before
   id = params[:id].to_i
   e1 = Entry.find(id)
   e1.author_id = params[:username]
   e1.photo = params[:photo]
   e1.date_taken = params[:date_taken]
+  e1.filter = params[:filter]
   e1.save
-  after
   redirect to '/'
 end
 
 get '/delete/:id' do
-  before
   id = params[:id].to_i
   @entry = Entry.find(id)
-  after
   erb :delete_confirmation
 end
 
 post '/delete/:id' do
-  before
   choice = params[:delete]
   user_id = params[:id].to_i
   if choice == "yes"
     Entry.find(user_id).destroy
   end
-  after
   redirect to '/'
 end
+
