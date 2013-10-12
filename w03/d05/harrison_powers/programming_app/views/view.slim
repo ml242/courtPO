@@ -1,0 +1,13 @@
+.container
+  img src="#{@programmer.twitter_pic}"
+  br/
+  br/
+  h1 = @programmer.name
+  a href="https://twitter.com/#{@programmer.twitter_username}"
+    h3 twitter
+  - if @programmer.github_username
+    a href="https://github.com/#{@programmer.github_username}"
+      h3 github
+  br/
+  br/
+  a href="/programmers/#{@programmer.id}/edit" Edit My Profile
