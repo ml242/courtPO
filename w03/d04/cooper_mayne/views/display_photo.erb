@@ -1,0 +1,13 @@
+<h1 id="heading">photo</h1>
+<img src="<%= @photo.photo_url %>">
+<p><%= @photo.author %></p>
+<% @comments.each do |comment|%>
+  <li><%= comment.text %></li>
+<% end %>
+<br>
+
+<a href=/photos/<%= @photo.id %>/comments/new>leave a comment</a>
+<form action="/photos/<%= @photo.id %>/delete" method="post" accept-charset="utf-8">
+<input style="display:none" type="text" name="id" value="<%= @photo.id %>">
+<p><input type="submit" value="Delete"></p>
+</form>

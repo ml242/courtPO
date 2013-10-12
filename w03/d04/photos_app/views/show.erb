@@ -1,0 +1,9 @@
+<h1>ID: <%= @pid %></h1>
+  <img src=<%= @url %> alt="">
+  <p><%= @date %> - <%= @author %></p>
+  <form name="input" action="/photos/<%= @pid %>/delete" method="post">
+    <input type="button" class="ind-button" value="Delete by ID">
+  </form>
+  <form name="input" action="/photos/<%= @pid %>/edit" method="get">
+    <input type="button" class="ind-button" value="Edit by ID">
+  </form>

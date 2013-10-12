@@ -1,0 +1,7 @@
+<a href="/new">Post A Photo</a>
+
+<% @entries.each do |entry| %>
+  <%= entry['author'] %>
+  <%= entry['photo_url'] %>
+  <img src="<%= entry['date_taken'] %>">
+<% end %>

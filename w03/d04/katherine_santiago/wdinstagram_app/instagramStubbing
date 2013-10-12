@@ -1,0 +1,38 @@
+get /photos/new
+
+# when a user goes, here they get a form to create a new photo
+  - has a post method
+  - and an action = "/photos"
+
+  -
+
+post /photos
+
+  this will be called when a user submits a form (which is from /photos/new)
+
+  The values of the form will be accessible from the params that are
+    - Author = params["author"]
+    - Photo = params["photo"]
+    - Date Taken = params["date_taken"]
+  I need to take each value in the params
+  And then construct a new ActiveRecord Object for an Entry
+
+user1 = User.create({name: 'Phil', age: 30})
+
+Entry.create({ author: "#{author}",
+  photo: "#{photo}",
+  date_taken: "#{date_taken}" })
+
+  And then save it to the database
+  Then I need to redirect to GET /entries
+
+get '/photos/:id'
+
+  this will be called when a user clicks on a specific photo entry from '/photos' page
+  It will display: all information about the photo
+  - Author
+  - Photo
+  - Date Taken
+
+  This will also have a link that allows people to go back to the page listing all the photos
+

@@ -1,0 +1,8 @@
+Welcome to home page
+
+<% for entry in @entries %>
+  <h1><%= entry.author %><h1>
+ <h1><%= entry.photo %><h1>
+  <h1>  <%= entry.photo_taken%><h1>
+  <% end %>
+

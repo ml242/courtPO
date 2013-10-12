@@ -1,0 +1,6 @@
+<ul>
+  <% @photos.each do |photo| %>
+    <li><%= "Taken by #{photo.author} at #{photo.date_taken}" %><br>
+      <a href=<%= "/show?id=#{photo.id}"%>><img src=<%=photo.url%> alt=""></a></li>
+      <% end %>
+</ul>
