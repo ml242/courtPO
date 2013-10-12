@@ -19,7 +19,7 @@ location = gets.chomp
 file = File.open(location, 'r')
 
 csv_array = file.map do |line|
-  line.split("'")
+  line.chomp.split(",")
 end
 
 csv_array.map! do |line|
