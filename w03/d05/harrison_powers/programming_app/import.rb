@@ -19,7 +19,7 @@ location = gets.chomp
 file = File.open(location, 'r')
 
 csv_array = file.map do |line|
-  line.chomp.split(",")
+  line.chomp.split(',')
 end
 
 csv_array.map! do |line|
@@ -30,4 +30,11 @@ csv_array.map! do |line|
   }
 end
 
-binding.pry
+csv_array.each do |programmer|
+  p1 = Programmer.create(
+    :name => programmer[:name],
+    :twitter_username => programmer[:twitter_username],
+    :twitter_pic => programmer[:twitter_pic]
+  )
+  puts "Added #{p1.name} to database with ID: #{p1.id}"
+end
