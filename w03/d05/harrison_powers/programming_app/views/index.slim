@@ -1,0 +1,12 @@
+.container
+  - @programmers.each do |programmer|
+    .programmer_container
+      a href="/programmers/#{programmer.id}"
+        = #{programmer.name}
+        br/
+        img src="#{programmer.twitter_pic}"
+        br/
+        a href="https://twitter.com/#{programmer.twitter_username}" twitter | #{programmer.twitter_username}
+        - if programmer.github_username
+          br /
+          a href="https://github.com/#{programmer.github_username}" github | #{programmer.github_username}
