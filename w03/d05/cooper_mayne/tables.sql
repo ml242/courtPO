@@ -4,3 +4,5 @@ CREATE TABLE programmers (
   twitter_pic TEXT,
   twitter_username VARCHAR
 );
+
+ALTER TABLE programmers ADD COLUMN github_username VARCHAR;
