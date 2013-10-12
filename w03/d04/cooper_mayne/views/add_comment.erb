@@ -1,0 +1,6 @@
+<form action="/photos/<%= @photo_id %>/comments" method="post" accept-charset="utf-8">
+
+  <input style="display:none" type="text" name="photo_id" value="<%= @photo_id %>">
+  <label for="text">leave a commento</label><input type="text" name="text" value="" id="text">
+<p><input type="submit" value="Continue &rarr;"></p>
+</form>

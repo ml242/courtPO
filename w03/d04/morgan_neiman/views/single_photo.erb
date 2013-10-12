@@ -1,0 +1,5 @@
+<div class="show">
+<img src="/<%= @entry['photo'] %>" class=<%= @entry['filter'] %>>
+<% author = User.find(@entry.author_id) %>
+<br>taken by <%= author['username'] %> on <%= @entry.date_taken %>
+</div>
