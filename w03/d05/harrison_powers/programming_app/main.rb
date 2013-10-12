@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'sinatra/reloader' if development?
+require 'slim'
 require 'pry'
 require 'pg'
 require 'active_record'
