@@ -1,0 +1,22 @@
+  .h1 {
+  position:relative;
+  right: 1;
+}
+
+.entire_photo{
+  max-height: 600px;
+  max-width: 600px;
+}
+
+.photo{
+  max-height: 400px;
+  max-width: 400px;
+  padding: 8px;
+  border: solid black 4px;
+  margin: 15px;
+}
+.photolabel {
+  position: relative;
+  font-family: Arial, sans-serif;
+  float:left;
+}

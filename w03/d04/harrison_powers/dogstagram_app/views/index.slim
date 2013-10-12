@@ -1,0 +1,8 @@
+.container
+  - @entries.each do |entry|
+    a href="/photos/#{entry.id}"
+      .photo_container
+        .photo
+          img src="#{entry.photo}"
+        .subtitle
+          = "#{entry.author}  —  #{entry.date}"

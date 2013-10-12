@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    title Instagram
+    link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet'
+    link href='//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css' rel='stylesheet'
+    link href='/css/style.css' rel='stylesheet'
+  body
+    header
+      .logo: h1
+          a href='/instagram' Instagram
+      a href='#'
+        #shuffle.nav-icon: i.icon-random
+      a href='/instagram/entries/new'
+        .nav-icon.add: i.icon-plus
+    .wrapper
+      == yield
+    script src='/js/jquery.min.js'
+    script src='/js/isotope.min.js'
+    script src='/js/imageLoad.min.js'
+    script src='/js/picker.min.js'
+    script src= '/js/date.min.js'
+    script src='/js/app.js'
