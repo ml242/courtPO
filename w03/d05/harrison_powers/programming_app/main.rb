@@ -57,6 +57,21 @@ get '/programmers/:id' do
   slim :view
 end
 
+post '/programmers/:id' do
+  id = params[:id].to_i
+  name = params[:name]
+  twitter_pic = params[:twitter_pic]
+  twitter_username = params[:twitter_username]
+  github_username = params[:github_username]
+  programmer = Programmer.find(id)
+  programmer.name = name
+  programmer.twitter_pic = twitter_pic
+  programmer.twitter_username = twitter_username
+  programmer.github_username = github_username
+  programmer.save
+  redirect to("/programmers/#{id}")
+end
+
 get '/programmers/:id/edit' do
   id = params[:id].to_i
   @programmer = Programmer.find(id)

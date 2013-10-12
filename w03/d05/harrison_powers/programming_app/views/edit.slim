@@ -1,6 +1,6 @@
 .container
 
-  form action="/programmers" method="post"
+  form action="/programmers/#{@programmer.id}" method="post"
 
     label for="name" Name
     input type="text" id="name" name="name" value="#{@programmer.name}"
