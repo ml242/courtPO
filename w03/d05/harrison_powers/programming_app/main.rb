@@ -4,16 +4,22 @@ require 'slim'
 require 'pry'
 require 'pg'
 require 'active_record'
+require_relative 'programmer'
 
-ActiveRecord::Base.logger = Logger.new( STDOUT )
+before do
+  ActiveRecord::Base.logger = Logger.new( STDOUT )
+  ActiveRecord::Base.establish_connection(
+    :adapter => "postgresql",
+    :host => "localhost",
+    :username => "fijimunkii",
+    :password => "",
+    :database => "programming_db"
+  )
+end
 
-ActiveRecord::Base.establish_connection(
-  :adapter => "postgresql",
-  :host => "localhost",
-  :username => "fijimunkii",
-  :password => "",
-  :database => "programming_db"
-)
+after do
+  ActiveRecord::Base.connection.close
+end
 
 get '/' do
   redirect to('/programmers')
