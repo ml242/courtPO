@@ -4,3 +4,5 @@ CREATE TABLE programmers (
   twitter_pic VARCHAR,
   twitter_username VARCHAR
   );
+
+COPY programmers(name, twitter_username, twitter_pic) FROM 'programmers.csv' DELIMITER ',' CSV;
