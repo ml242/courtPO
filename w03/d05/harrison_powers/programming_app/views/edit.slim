@@ -1,0 +1,17 @@
+.container
+
+  form action="/programmers" method="post"
+
+    label for="name" Name
+    input type="text" id="name" name="name" value="#{@programmer.name}"
+
+    label for="twitter_username" Twitter Username
+    input type="text" id="twitter_username" name="twitter_username" value="#{@programmer.twitter_username}"
+
+    label for="twitter_pic" Twitter Picture Link
+    input type="text" id="twitter_pic" name="twitter_pic" value="#{@programmer.twitter_pic}"
+
+    label for="github_username" Github Username
+    input type="text" id="github_username" name="github_username" value="#{@programmer.github_username}"
+
+    input type="submit" value="Save Changes!"
