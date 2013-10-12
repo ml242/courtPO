@@ -42,7 +42,7 @@ end
 get '/programmers/add' do
   @title = "Add a Programmer"
   slim :add
-do
+end
 
 get '/programmers/:id' do
   id = params[:id].to_i
