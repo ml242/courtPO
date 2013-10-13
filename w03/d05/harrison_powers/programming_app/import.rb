@@ -3,14 +3,25 @@ require 'pg'
 require 'active_record'
 require_relative 'programmer'
 
-ActiveRecord::Base.logger = Logger.new( STDOUT )
+# ActiveRecord::Base.logger = Logger.new( STDOUT )
+
+# ActiveRecord::Base.establish_connection(
+#   :adapter => "postgresql",
+#   :host => "localhost",
+#   :username => "fijimunkii",
+#   :password => "",
+#   :database => "programming_db"
+# )
+
+db = URI.parse(ENV['DATABASE_URL'] || 'postgres:///programming_db')
 
 ActiveRecord::Base.establish_connection(
-  :adapter => "postgresql",
-  :host => "localhost",
-  :username => "fijimunkii",
-  :password => "",
-  :database => "programming_db"
+  :adapter  => db.scheme == 'postgres' ? 'postgresql' : db.scheme,
+  :host     => db.host,
+  :username => db.user,
+  :password => db.password,
+  :database => db.path[1..-1],
+  :encoding => 'utf8'
 )
 
 file = File.open('programmers.csv', 'r')
