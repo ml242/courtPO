@@ -1,0 +1,14 @@
+doctype html
+html
+  head
+    link rel="stylesheet" href="/css/style.css"
+  body
+    header
+      form action="/photos/add" method="post"
+        input type="text" name="author" placeholder="ur name"
+        input type="text" name="photo" placeholder="link to img"
+        input type="text" name="date" placeholder="date of photo"
+        input type="submit" value="add a dogstagram!"
+    == yield
+    footer
+
