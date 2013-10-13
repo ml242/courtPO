@@ -51,10 +51,10 @@ end
 get '/programmers/:id/edit' do
   id = params[:id]
   data = Programmer.find(id)
-  @id = data["id"]
-  @name = data["name"]
-  @twitter = data["twitter"]
-  @img_url = data["img_url"]
+  @id = data.id
+  @name = data.name
+  @twitter = data.twitter
+  @img_url = data.img_url
   response = HTTParty.get("https://api.github.com/users/#{@twitter}/repos")
   @github = response
   erb :edit
