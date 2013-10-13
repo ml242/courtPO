@@ -4,15 +4,9 @@ require 'active_record'
 require 'pry'
 require_relative 'programmer'
 
-ActiveRecord::Base.logger = Logger.new( STDOUT )
-
-ActiveRecord::Base.establish_connection(
-  :adapter => "postgresql",
-  :host => "localhost",
-  :username => "Jaclyn",
-  :password => "",
-  :database => "programming_db"
-)
+after do
+  ActiveRecord::Base.connection.close
+end
 
 get '/' do
   "Welcome!"

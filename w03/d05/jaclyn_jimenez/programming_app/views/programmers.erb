@@ -2,9 +2,12 @@
 <%    @name = programmer['name'] %>
 <%    @image = programmer['twitter_pic'] %>
 <%    @username = programmer['twitter_username'] %>
+<%    @id = programmer['id'] %>
+<div class = 'each_programmer'>
+  <a href = '/programmers/<%= "#{@id}" %>'> <img src = '<%= "#{@image}" %>' /> </a>
   <h2><%= "#{@name}" %></h2>
-  <h3> Username: <%= "#{@username}" %>
-  <img src = '<%= "#{@image}" %>' />
+  <h3> Twitter: <a href = "http://twitter.com/<%= "#{@username}" %>" > @<%= "#{@username}" %> </a> </h3>
+  </div>
 <%  end %>
 
 
