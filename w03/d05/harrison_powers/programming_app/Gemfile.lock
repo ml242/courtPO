@@ -57,6 +57,9 @@ GEM
       rack (~> 1.4)
       rack-protection (~> 1.4)
       tilt (~> 1.3, >= 1.3.4)
+    sinatra-activerecord (1.2.3)
+      activerecord (>= 3.0)
+      sinatra (~> 1.0)
     slim (2.0.1)
       temple (~> 0.6.6)
       tilt (>= 1.3.3, < 2.1)
@@ -78,5 +81,6 @@ DEPENDENCIES
   github_api
   pg
   sinatra
+  sinatra-activerecord
   slim
   twitter
