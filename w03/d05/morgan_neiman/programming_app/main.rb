@@ -2,9 +2,9 @@ require 'active_record'
 require 'pry'
 require 'sinatra'
 require 'sinatra/reloader' if development?
-# require_relative 'active_record'
+require_relative 'active_record'
 
-class Programmer < ActiveRecord::Base
+class Person < ActiveRecord::Base
 end
 
 before  do
@@ -15,7 +15,7 @@ before  do
   :host => "localhost",
   :username => "Ducky",
   :password => "",
-  :database => "instagram_db"
+  :database => "programming_db"
   )
 end
 
@@ -25,7 +25,8 @@ after do
 end
 
 get '/programmers' do
-  programmers = Programmer.all
+  programmers = Person.all
+  # binding.pry
   @programmer_names = []
   programmers.entries.each do |programmer|
     @programmer_names << programmer.name
