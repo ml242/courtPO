@@ -1,0 +1,9 @@
+<form action = '/photos' method = 'post'>
+  <lable for = 'name'>Name</lable><br>
+    <input type = 'text' name = 'name' id = 'name' value = <%=@entry['name']%> > <br>
+  <lable for = 'date'>Date Taken</lable><br>
+    <input type = 'text' name = 'date' id = 'date' value = <%=@entry['date_taken']%> > <br>
+  <lable for = 'image'> Image URL</lable><br>
+    <input type = 'text' name = 'photo' id = 'date' value = <%=@entry['photo']%> > <br>
+    <input type = 'submit' value = 'Post Photo'>
+</form>
