@@ -4,9 +4,17 @@ require 'slim'
 require 'pry'
 require 'pg'
 require 'pp'
+require 'twitter'
 require 'github_api'
 require 'active_record'
 require_relative 'programmer'
+
+Twitter.configure do |config|
+  config.consumer_key = 'JSPEHTHsmt8SPOo09PljcQ'
+  config.consumer_secret = 'roMNGuN4ATZAkXxNLNb5WrwQPhiL8j9oRP11058jNvE'
+  config.oauth_token = '1464668084-ZSyGijIqzDyjq9ORjyjsNKChdxzZ6qSvLmviHaW'
+  config.oauth_token_secret = '8GUUXS4yhARX1KLWoUH8H2Bq3YIAKXlttXcLS2zM'
+end
 
 before do
   ActiveRecord::Base.logger = Logger.new( STDOUT )
@@ -49,6 +57,8 @@ end
 
 get '/programmers/add' do
   @title = "Add a Programmer"
+  @programmers = Programmer.all
+  @header = "The #{@programmers.count} Programmers"
   slim :add
 end
 
@@ -56,7 +66,10 @@ get '/programmers/:id' do
   id = params[:id].to_i
   @programmer = Programmer.find(id)
   @github = Github.repos.list user: "#{@programmer.github_username}"
+  @twitter = Twitter.user_timeline("#{@programmer.twitter_username}")
   @title = "#{@programmer.name}"
+  @programmers = Programmer.all
+  @header = "The #{@programmers.count} Programmers"
   slim :view
 end
 
@@ -79,6 +92,8 @@ get '/programmers/:id/edit' do
   id = params[:id].to_i
   @programmer = Programmer.find(id)
   @title = "Edit #{@programmer.name}"
+  @programmers = Programmer.all
+  @header = "The #{@programmers.count} Programmers"
   slim :edit
 end
 

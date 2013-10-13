@@ -1,17 +1,19 @@
 .container
-  img src="#{@programmer.twitter_pic}"
-  br/
-  br/
   h1 = @programmer.name
-  a href="https://twitter.com/#{@programmer.twitter_username}"
-    h3 twitter
+  .edit
+    a href="/programmers/#{@programmer.id}/edit" Edit My Profile
+  - if @programmer.twitter_username
+    .twitter
+      a href="https://twitter.com/#{@programmer.twitter_username}"
+        h3 twitter
+      - @twitter.each do |tweet|
+        a href="https://twitter.com/#{tweet.attrs[:user][:screen_name]}/status/#{tweet.attrs[:id]}"
+          #{tweet.attrs[:text]}
+        br/
   - if @programmer.github_username
-    a href="https://github.com/#{@programmer.github_username}"
-      h3 github
-    - @github.each do |git|
-      a href="https://github.com/#{git["full_name"]}"
-        #{git["name"]}
-
-  br/
-  br/
-  a href="/programmers/#{@programmer.id}/edit" Edit My Profile
+    .github
+      a href="https://github.com/#{@programmer.github_username}"
+        h3 github
+      - @github.each do |git|
+        a href="https://github.com/#{git["full_name"]}"
+          #{git["name"]}
