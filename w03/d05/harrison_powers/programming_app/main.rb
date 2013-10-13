@@ -1,9 +1,6 @@
 require 'sinatra'
-require 'sinatra/reloader' if development?
 require 'slim'
-require 'pry'
 require 'pg'
-require 'pp'
 require 'twitter'
 require 'github_api'
 require 'active_record'
