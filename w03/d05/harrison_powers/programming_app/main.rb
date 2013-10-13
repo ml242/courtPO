@@ -3,6 +3,8 @@ require 'sinatra/reloader' if development?
 require 'slim'
 require 'pry'
 require 'pg'
+require 'pp'
+require 'github_api'
 require 'active_record'
 require_relative 'programmer'
 
@@ -53,6 +55,7 @@ end
 get '/programmers/:id' do
   id = params[:id].to_i
   @programmer = Programmer.find(id)
+  @github = Github.repos.list user: "#{@programmer.github_username}"
   @title = "#{@programmer.name}"
   slim :view
 end

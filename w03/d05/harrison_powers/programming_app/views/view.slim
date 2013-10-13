@@ -8,6 +8,10 @@
   - if @programmer.github_username
     a href="https://github.com/#{@programmer.github_username}"
       h3 github
+    - @github.each do |git|
+      a href="https://github.com/#{git["full_name"]}"
+        #{git["name"]}
+
   br/
   br/
   a href="/programmers/#{@programmer.id}/edit" Edit My Profile

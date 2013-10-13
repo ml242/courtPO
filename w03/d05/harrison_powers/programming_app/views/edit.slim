@@ -15,3 +15,7 @@
     input type="text" id="github_username" name="github_username" value="#{@programmer.github_username}"
 
     input type="submit" value="Save Changes!"
+  br /
+  br /
+  form action="/programmers/#{@programmer.id}/delete" method="post"
+    input type="submit" value="Delete!"
