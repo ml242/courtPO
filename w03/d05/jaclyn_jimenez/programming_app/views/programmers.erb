@@ -1,0 +1,10 @@
+<%  @programmers_array.each do |programmer| %>
+<%    @name = programmer['name'] %>
+<%    @image = programmer['twitter_pic'] %>
+<%    @username = programmer['twitter_username'] %>
+  <h2><%= "#{@name}" %></h2>
+  <h3> Username: <%= "#{@username}" %>
+  <img src = '<%= "#{@image}" %>' />
+<%  end %>
+
+
