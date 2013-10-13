@@ -33,3 +33,12 @@ get '/programmers' do
   end
   erb :programmers
 end
+
+get '/programmers/:id' do
+  id = params[:id].to_i
+  person = Person.find(id)
+  @name = person.name
+  @twitter_pic = person.twitter_pic
+  @twitter_username = person.twitter_username
+  erb :programmer
+end
