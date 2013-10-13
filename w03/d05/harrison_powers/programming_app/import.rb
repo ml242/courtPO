@@ -13,10 +13,7 @@ ActiveRecord::Base.establish_connection(
   :database => "programming_db"
 )
 
-puts "Please direct me to the Programmers CSV file so I can process it into the database."
-location = gets.chomp
-
-file = File.open(location, 'r')
+file = File.open('programmers.csv', 'r')
 
 csv_array = file.map do |line|
   line.chomp.split(',')
@@ -25,14 +22,16 @@ end
 csv_array.map! do |line|
   line = {
     :name => line[0],
-    :twitter_username => line[1],
-    :twitter_pic => line[2]
+    :github_username => line[1],
+    :twitter_username => line[2],
+    :twitter_pic => line[3]
   }
 end
 
 csv_array.each do |programmer|
   p1 = Programmer.create(
     :name => programmer[:name],
+    :github_username => programmer[:github_username],
     :twitter_username => programmer[:twitter_username],
     :twitter_pic => programmer[:twitter_pic]
   )

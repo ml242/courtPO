@@ -55,13 +55,6 @@ post '/programmers' do
   redirect to("/programmers/#{programmer.id}")
 end
 
-get '/programmers/add' do
-  @title = "Add a Programmer"
-  @programmers = Programmer.all
-  @header = "The #{@programmers.count} Programmers"
-  slim :add
-end
-
 get '/programmers/:id' do
   id = params[:id].to_i
   @programmer = Programmer.find(id)

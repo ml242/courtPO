@@ -1,0 +1,14 @@
+namespace :programmer do
+
+  desc "This sets up the programmer app (WARNING-- WILL DELETE PREXISTING DATA)"
+  task :setup do
+    puts "creating database.."
+    `createdb programming_db`
+    `psql -d programming_db -c 'DROP TABLE programmers'`
+    puts "creating table.."
+    `psql -d programming_db -f programming_schema.sql`
+    load 'import.rb'
+    puts "all set up. now run main.rb"
+  end
+
+end
