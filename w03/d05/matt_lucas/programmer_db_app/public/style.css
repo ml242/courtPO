@@ -1,0 +1,151 @@
+/*
+Project Name: Ecard.ly
+Client: General Assembly
+Author: Christopher Castig | @castig
+Developer @GA in NYC
+*/
+
+Box Model Hack {
+     -moz-box-sizing: border-box; /* Firexfox */
+     -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
+     box-sizing: border-box; /* IE */
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+body {
+     background-color: #FFFFC0;
+}
+
+.pname {
+  font-family: Serif;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/*
+.main_logo {
+     margin: 0 auto;
+     margin-left: 410px;
+     margin-top: -190px;
+     position: relative;
+     float: left;
+}
+
+.main_logo img {
+     max-width: 95%;
+     max-height: 95%;
+}
+
+
+
+.masthead {
+     height: 162px;
+     background-image: url(../images/background.jpg);
+     background-position: center top;
+     background-repeat: repeat-x;
+     position: relative;
+     padding-bottom: 25px;
+}
+
+
+.global {
+     width: 940px;
+     margin: 0 auto;
+}
+
+.space {
+     height: 20px;
+}
+
+article {
+     width: 575px;
+     background-color: white;
+}
+
+aside {
+     margin: 0 auto;
+     float: left;
+     position: absolute;
+     top: 183px;
+     margin-top: 25px;
+     margin-left: 600px;
+}
+
+article h1 {
+     padding-top: 30px;
+     margin-left: 15px;
+
+}
+
+article img {
+     width: 545px;
+     margin-left: 15px;
+}
+
+article p {
+     margin: 10px 15px;
+     padding-bottom: 15px;
+}
+
+
+.endbar {
+     padding-top: 8px;
+     border-top: 1px dotted;
+     border-bottom: 1px solid;
+}
+
+.orange {
+     color: orange;
+}
+
+.orange a:link {
+     color: orange;
+}
+
+.sidebar {
+     width: 300px;
+     height: 715px;
+     background-color: white;
+     list-style-type: none;
+}
+
+.side_text li {
+     text-align: left;
+     font-size: 12px;
+     font-family: "Arial", "sans serif";
+     font-weight: bolder;
+     margin-left: 15px;
+     display: block;
+     list-style-type: none;
+     padding: 4px;
+}
+
+.side_ads li {
+      list-style-type: none;
+      padding: 5px;
+}
+
+.footer {
+     margin: 0 auto;
+     position: relative;
+     float: left;
+     height: 200px;
+     width: 202px;
+     padding: 50px;
+     margin-bottom: 100px;
+     margin-left: 410px;
+}
+*/

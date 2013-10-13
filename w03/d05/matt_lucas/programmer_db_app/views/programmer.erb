@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+<div class="name"><%= @name %></div>
+<div class="twitter"><%= @twitter %></div>
+<div class="imgage"><img src="<%= @img_url %>"></div>
+<div class="feed">
+<a href="https://twitter.com/<%= @twitter %>">Tweets by <%= @twitter %></a></div>
+<% break if @github == "false" %>
+<div class="feed">
+ <a href= <%= @github[0]["owner"]["html_url"] %> ><%= @twitter %> github</a>
+</div>
+
+</body>
+</html>

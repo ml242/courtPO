@@ -1,0 +1,11 @@
+<% @id %>
+<ul>
+<li><div class="name"><%= @name %></div></li>
+<li><div class="twitter"><%= @twitter %></div></li>
+<li><div class="image"><img src="<%= @img_url %>"></div></li>
+
+<form method="post" action="/programmers/:id<% @id %>">
+<input type="hidden" value="<% @id %>">
+<input type="text" value="github_url" placeholder="github_url">
+<input type="submit" value="submit">
+</form>

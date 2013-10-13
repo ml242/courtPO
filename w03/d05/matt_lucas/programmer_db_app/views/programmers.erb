@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+<% @data.each do |x| puts x %>
+<div class="programmer">
+<a href=programmers/<%= x["id"] %>>
+<div class="pname"><%= x["name"] %></div><a>
+<div class="twitter"><%= x["twitter"] %></div>
+<div class="img_url"><img src="<%= x["img_url"] %>"><% end %></div></div>
+
+</body>
+</html>
