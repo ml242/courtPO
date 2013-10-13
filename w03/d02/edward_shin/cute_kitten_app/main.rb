@@ -3,54 +3,72 @@ require 'sinatra/reloader' if development?
 require 'pry'
 require 'pg'
 
+helpers do
+  def db_exec(sql)
+    conn = PG.connect(:dbname =>'kittens_db', :host => 'localhost')
+    result = conn.exec(sql)
+    conn.close
+    result
+  end
+end
+
 get '/' do
-  #name, age, description, is_cute
   erb :index
 end
 
+get '/owners' do
+sql5 = "SELECT * FROM owners"
+result = db_exec(sql5)
+@owners = result.entries
+  erb :owners
+end
+
+post '/owners' do
+  name = params[:name]
+  sql6 = "INSERT INTO owners (name) VALUES ('#{name}')"
+  result = db_exec(sql6)
+  binding.pry
+  redirect to ('/owners')
+end
+
 get '/kittens' do
-#asks database for all kittens
-db_conn = PG.connect(:dbname => 'kittens_db', :host => 'localhost')
-sql = "SELECT * FROM kittens"
-response = db_conn.exec(sql)
-@kittens_array = response.entries
-db_conn.close
-erb :kittens
+  sql = "SELECT * FROM kittens"
+  result = db_exec(sql)
+  @kittens_array = result.entries
+  erb :kittens
 end
 
 post '/kittens' do
   name = params[:name]
   age = params[:age]
   description = params[:description]
-  db_conn = PG.connect(:dbname => 'kittens_db', :host =>'localhost')
-  sql2 = "INSERT INTO kittens (name, age, description) VALUES ('#{name}', #{age}, '#{description}')"
- db_conn.exec(sql2)
- db_conn.close
-redirect to ('/kittens')
+  owner = params[:owner]
+  sql2 = "INSERT INTO kittens (name, age, owner, description) VALUES ('#{name}', #{age}, '#{owner}', '#{description}')"
+  result = db_exec(sql2)
+  redirect to ('/kittens')
 end
 
 get '/kittens/:id' do
   id = params[:id]
-  db_conn = PG.connect(:dbname => 'kittens_db', :host => 'localhost')
   sql3 = "SELECT * FROM kittens WHERE id = #{id}"
-  kitten = db_conn.exec(sql3)
+  kitten = db_exec(sql3)
   @kitten_hash = kitten.entries
-  db_conn.close
   erb :kitten
 end
 
-post '/kittens/:id/delete' do
-delete_id = params[:name]
-db_conn = PG.connect(:dbname => 'kittens_db', :host => 'localhost')
-sql4 = "DELETE FROM kittens WHERE name = '#{delete_id}'"
-remove_kitten = db_conn.exec(sql4)
-@removed_kitten = remove_kitten.entries
-db_conn.close
-erb :removed
+get '/kittens/:id/delete' do
+  id_remove = params[:id]
+  sql4 = "DELETE FROM kittens WHERE id = #{id_remove}"
+  result = db_exec(sql4)
+  sql = "SELECT * FROM kittens"
+  result = db_exec(sql)
+  new_kittens_array = result.entries
+  id_array=Array.new
+  new_kittens_array.each do |hash|
+    id_array << hash["id"]
+  end
+  if id_array.include?(id_remove) == false
+    @message = "Your kitten has been removed!"
+  end
+  erb :removed
 end
-=begin
-post '/kittens/:id' do
-#take any of the passed in parameters
-#updates only those parameters for a single kitten
-end
-=end

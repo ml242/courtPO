@@ -1,7 +1,7 @@
 <div class = "container">
 <ol>
   <%@display.reverse.each do |entry|%>
-    <li>This picture was taken by <%=entry.author%> on  <%=entry.date_taken%><br><a href='/show/<%=entry.id%>'><img src="<%=entry.photo%>"></a></li>
+    <li>This picture was taken by <%=entry.author%> on  <%=entry.date_taken%><br><a href='/photo/<%=entry.id%>'><img src="<%=entry.photo%>"></a></li>
   <%end%>
 </ol>
 </div>
