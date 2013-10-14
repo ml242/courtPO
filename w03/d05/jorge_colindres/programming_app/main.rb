@@ -3,5 +3,10 @@ require 'sinatra/reloader' if development?
 require 'pg'
 require 'pry'
 
-get '/' do
+get '/programmers' do
+
+end
+
+get '/programmers/:id' do
+
 end
