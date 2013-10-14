@@ -1,6 +1,12 @@
 <h2><%= @programmer.name %></h2>
 
-<p>
-  <%= @programmer.twitter_username %><br>
-  <img src="<%= @programmer.twitter_pic %>">
+<p class="profile">
+
+  <img src="<%= @programmer.twitter_pic %>"><br>
+
+  Twitter: <a href="http://twitter.com/<%= @programmer.twitter_username %>">
+    <%= @programmer.twitter_username %></a><br>
+
+  Github: <a href="http://github.com/<%= @programmer.github %>"><%= @programmer.github %></a>
+
 </p>

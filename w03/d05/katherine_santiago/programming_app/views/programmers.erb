@@ -1,12 +1,18 @@
-<h2>Profiles</h2>
+<h2>profiles</h2>
 
+<div class="person"
 <ul>
     <% @people.each do |person| %>
+  <div class="person_name"
   <li>
       <a href="/programmers/<%= person['id'] %>">
-    <%= person['name'].upcase %>
+    <img src="<%= person['twitter_pic'] %>">
+    <%= person['name'].downcase %>
     </a>
   </li>
+</div>
     <% end %>
   </li>
+
 </ul>
+</div>

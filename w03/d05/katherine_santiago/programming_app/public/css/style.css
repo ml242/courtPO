@@ -1,0 +1,72 @@
+body {
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  display: block;
+  margin-top: 0;
+  margin-left: 0 auto;
+  margin-right: auto;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+
+body .header {
+  margin: 0 auto;
+  border-bottom: solid 1px;
+  color: #FF0000;
+}
+
+.header a:link {
+  color: black;
+}
+
+.header a:hover {
+  color: #FF0000;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+
+li {
+  list-style-type: none;
+  line-height: 200%;
+}
+
+.full_list {
+  margin: 0 auto;
+  display: block;
+}
+
+.full_list a:hover {
+  color: #FF0000;
+}
+
+.add_to_list {
+  margin: 0 auto;
+  display: block;
+}
+
+.add_to_list a:hover {
+  color: #FF0000;
+}
+
+.person img {
+  width: 50px;
+  height: auto;
+}
+
+.person .name {
+  font-size: 10px;
+}
+
+.profile {
+  font-size: 10px;
+}
+
+.profile img {
+  width: 73px;
+  height: auto;
+}
