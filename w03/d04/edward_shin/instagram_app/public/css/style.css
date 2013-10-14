@@ -1,0 +1,41 @@
+body {
+  background-color: #F5DEB3;
+}
+
+.header {
+  text-align: center;
+}
+
+.links {
+  text-align: center;
+}
+
+.links li {
+  margin: 15px;
+  display: inline-block;
+}
+
+.container {
+  width: 600px;
+  margin:0 auto;
+  background-color: #00FA9A;
+  border-radius: 10px;
+}
+
+.container img {
+  padding: 15px;
+  width: 500px;
+  padding left:50px;
+}
+
+.container li {
+  padding-top: 20px;
+  color: white;
+}
+
+form {
+  text-align: center;
+}
+p {
+  text-align: center;
+}

@@ -1,0 +1,7 @@
+<h1>Photos</h1>
+  <%= @photos %>
+  <% @photos.each do |photo| %>
+  <div><a href="/photos/<%= photo['id'] %>"><img src=<%= photo['url'] %> alt=""></a><br></div>
+  <p><%= photo['date'] %> - <%= photo['author'] %></p>
+
+ <% end %>
