@@ -1,0 +1,36 @@
+<h2>Programmers</h2>
+
+<table border="1">
+<tr>
+  <th>Name</th>
+  <th>Twitter Username</th>
+  <th>Twitter Pic</th>
+  <th>Github Name</th>
+</tr>
+<tr>  <% @results.each do |result| %>
+  <td>
+    <a href="/programmers/<%= result['id'] %>"><%= result.name %></a>
+  </td>
+   <td>
+    <%= result.twitter_username %>
+  </td>
+   <td>
+    <%= result.twitter_pic %>
+  </td>
+  <td>
+    <%= result.github_username %>
+  </td>
+  <td>
+    <form action="/programmers/<%= result['id'] %>/edit" method="get">
+      <input type="submit" value="Edit">
+    </form>
+  </td>
+  <td>
+    <form action="/programmers/<%= result['id'] %>/delete" method="post">
+        <input type="submit" value="Delete">
+    </form>
+  </td>
+</tr>
+
+  <% end %>
+</table>
