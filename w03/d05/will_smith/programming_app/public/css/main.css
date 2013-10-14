@@ -394,18 +394,15 @@ a:hover {
 
 
 .one {
-  background: url(../img/header1.jpg) no-repeat center center;
-  background-size: cover;
+  background: #3498db;
 }
 
 .two {
-  background: url(../img/header2.jpg) no-repeat center center;
-  background-size: cover;
+  background: #27ae60;
 }
 
 .three {
-  background: url(../img/header3.jpg) no-repeat center center;
-  background-size: cover;
+  background: #2c3e50;
 }
 
 

@@ -7,27 +7,30 @@
         <div class="item one active">
           <div class="container animated fadeInUp">
             <div class="carousel-caption">
-              <h1>Twitter Programmers</h1>
-              <p class="lead margin-40"><em>Meet</em></p>
-              <a class="btn-main" href="about.html"><i class="icon-chevron-right"></i> More</a>
+               <% @programmer = @programmers.sample %>
+              <h1>Meet <%= @programmer.name %></h1>
+              <p class="lead margin-40"><em>Follow him @<%= @programmer.twitter_username %></em></p>
+              <a class="btn-main" href="/programmers/<%= @programmer.id %>"><i class="icon-chevron-right"></i> More</a>
             </div>
           </div>
         </div>
         <div class="item two">
           <div class="container">
             <div class="carousel-caption">
-              <h1>Built With Bootstrap</h1>
-              <p class="lead margin-40"><em>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</em></p>
-              <a class="btn-main" href="services.html"><i class="icon-chevron-right"></i> More</a>
+              <% @programmer = @programmers.sample %>
+              <h1>Meet <%= @programmer.name %></h1>
+              <p class="lead margin-40"><em>Follow him @<%= @programmer.twitter_username %></em></p>
+              <a class="btn-main" href="/programmers/<%= @programmer.id %>"><i class="icon-chevron-right"></i> More</a>
             </div>
           </div>
         </div>
         <div class="item three">
           <div class="container">
             <div class="carousel-caption">
-              <h1>100% Responsive</h1>
-              <p class="lead margin-40"><em>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</em></p>
-              <a class="btn-main" href="pricing.html"><i class="icon-chevron-right"></i> More</a>
+              <% @programmer = @programmers.sample %>
+              <h1>Meet <%= @programmer.name %></h1>
+              <p class="lead margin-40"><em>Follow him @<%= @programmer.twitter_username %></em></p>
+              <a class="btn-main" href="/programmers/<%= @programmer.id %>"><i class="icon-chevron-right"></i> More</a>
             </div>
           </div>
         </div>
@@ -54,7 +57,7 @@
     <% @twitter_pic = programmer['twitter_pic'] %>
     <% @twitter_username = programmer['twitter_username'] %>
 
-          <!--Project Thumbnail Two-->
+          <!-- Thumbnail Two-->
           <div class="span4">
             <div class="thumbs">
               <img src="<%= @twitter_pic %>" alt="profile pic">
