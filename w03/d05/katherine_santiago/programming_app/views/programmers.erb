@@ -1,0 +1,12 @@
+<h2>Profiles</h2>
+
+<ul>
+    <% @people.each do |person| %>
+  <li>
+      <a href="/programmers/<%= person['id'] %>">
+    <%= person['name'].upcase %>
+    </a>
+  </li>
+    <% end %>
+  </li>
+</ul>
