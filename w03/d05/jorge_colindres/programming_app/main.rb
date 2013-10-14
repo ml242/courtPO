@@ -44,7 +44,6 @@ get '/programmers/:id' do
 
   github_response = Github.repos.list user: "#{@github_username}"
   @repos = github_response.body
-  # binding.pry
 
   slim :single_programmer
 end
