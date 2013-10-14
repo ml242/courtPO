@@ -4,6 +4,7 @@ require 'pg'
 require 'pry'
 require 'pry-nav'
 require 'active_record'
+require_relative 'programmer.rb'
 
 helpers do
   def db_connect
@@ -13,7 +14,7 @@ helpers do
       :host => "localhost",
       :username => "KS",
       :password => "",
-      :database => "wdinstagram_db"
+      :database => "programming_db"
     )
   end
   def db_disconnect
@@ -26,10 +27,20 @@ get '/' do
 end
 
 get '/programmers' do
+  db_connect
+  @people = Programmer.all
   # list all programmers' names
+  db_disconnect
+  erb :programmers
 end
 
 get '/programmers/:id' do
+  id = params[:id]
   # display programmer name, twitterpic, username
+  db_connect
+  @programmer = Programmer.find("#{id}")
+  db_disconnect
+
+  erb :programmers_id
 end
 
