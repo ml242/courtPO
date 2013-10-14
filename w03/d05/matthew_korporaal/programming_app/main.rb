@@ -30,7 +30,20 @@ get '/programmers/:id' do
   @programmer = Programmer.find(params[:id])
   erb :print
 end
-post '/programmers/:id' do
-#Display programmer
 
+post '/programmers/:id' do
+#Edit programmer
+  id = params[:id].to_i
+  @programmer = Programmer.find(id)
+  @programmer.name = params["prog-name"]
+  @programmer.handle = params["prog-twitter"]
+  @programmer.github = params["prog-github"]
+  @programmer.twitter_pic = params["prog-url"]
+  @programmer.save
+  redirect to("/programmers/#{id}")
+end
+
+get '/programmers/edit/:id' do
+  @programmer = Programmer.find(params[:id])
+  erb :edit
 end

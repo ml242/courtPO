@@ -1,7 +1,10 @@
 <h1><%= @programmer.name %></h1>
-<h2>@<%= @programmer.handle %></h2>
+<h2>Twitter: @<%= @programmer.handle %></h2>
+<h2>Github: <%= @programmer.github %></h2>
 
 <div>
 <img src="<%=@programmer.twitter_pic %>" width=73 height=73 alt="">
 </div>
-
+<form action="/programmers/edit/<%=@programmer.id.to_s %>" method="get">
+<div><input type="submit" value="Edit"></div>
+</form>
