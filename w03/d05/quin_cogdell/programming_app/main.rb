@@ -3,6 +3,7 @@ require 'sinatra/reloader' if development?
 require 'pg'
 require 'pry'
 require 'active_record'
+require 'github_api'
 require_relative 'programmer'
 
 helpers do
@@ -20,6 +21,10 @@ helpers do
 
   after do
     ActiveRecord::Base.connection.close
+  end
+
+  def github_call(github_username)
+      Github.repos.list(user: github_username)
   end
 
 end
@@ -41,6 +46,10 @@ end
 
 get '/programmers/:id' do
   @results = Programmer.find(params[:id])
+  #binding.pry
+  if @results.github_username !=nil
+    @github = github_call(@results.github_username)
+  end
   erb :programmers_single
 end
 

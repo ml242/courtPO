@@ -3,21 +3,22 @@
 <% result = @results%>
 <table border="1">
   <tr>
+  <th>Twitter Pic</th>
   <th>Name</th>
   <th>Twitter Username</th>
-  <th>Twitter Pic</th>
   <th>Github Name</th>
 </tr>
 <tr>
+  <td>
+    <img src="<%= result.twitter_pic %>">
+  </td>
   <td>
     <a href="/programmers/<%= result['id'] %>"><%= result.name %></a>
   </td>
    <td>
     <a href="http://www.twitter.com/<%= result.twitter_username %>"><%= result.twitter_username %></a>
   </td>
-   <td>
-    <img src="<%= result.twitter_pic %>">
-  </td>
+
   <td>
     <a href="http://www.github.com/<%= result.github_username %>"><%= result.github_username %></a>
   </td>
@@ -35,4 +36,26 @@
 
 </table>
 
-<% binding.pry %>
+
+
+
+
+<h3> Github Repos </h3>
+<% if @github != nil %>
+<table border = "1">
+  <tr>
+    <th>Repos</th>
+    <th>Description</th>
+  </tr>
+
+  <tr> <% @github.each do |repo| %>
+    <td><a href="<%= repo.url %>"><%= repo.name %></a>
+    </td>
+      <td><%= repo.description %>
+    </td>
+  </tr>
+  <% end %>
+<% else %>
+</table>
+<%= "Edit user to include github username to see repos." %>
+<% end %>
