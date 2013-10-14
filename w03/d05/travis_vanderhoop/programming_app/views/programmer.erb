@@ -1,3 +1,4 @@
+<%   @twitter_url = "http://twitter.com/#{@twitter_username}"    %>
 <h1>Say hello to <%= @name %></h1>
 <img src=<%= @twitter_pic %>>
-<h3>Reach out via twitter at <%= @twitter_username %></h3>
+<h3>Reach out via twitter at <a href=<%= @twitter_url %>><%= @twitter_username %></a></h3>
