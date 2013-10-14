@@ -31,11 +31,51 @@ get '/programmers' do
 end
 
 get '/programmers/:id' do
-  id = params[:id]
-  programmer = Programmer.find id
+  @id = params[:id]
+
+  before
+  programmer = Programmer.find @id
   @name = programmer.name
   @twitter_username = programmer.twitter_username
   @twitter_pic = programmer.twitter_pic
+  @github_username = programmer.github_username
+  after
 
   slim :single_programmer
 end
+
+get '/programmers/:id/edit' do
+  @id = params[:id]
+
+  before
+  programmer = Programmer.find @id
+  @name = programmer.name
+  @twitter_username = programmer.twitter_username
+  @twitter_pic = programmer.twitter_pic
+  @github_username = programmer.github_username
+  after
+
+  slim :edit_programmer
+end
+
+post '/programmers/:id' do
+  id = params[:id]
+  name = params[:name]
+  twitter_username = params[:twitter_username]
+  twitter_pic = params[:twitter_pic]
+  github_username = params[:github_username]
+
+  before
+  programmer = Programmer.find id
+  programmer.name = name
+  programmer.twitter_username = twitter_username
+  programmer.twitter_pic = twitter_pic
+  programmer.github_username = github_username
+  programmer.save
+  after
+
+  redirect to "/programmers/#{id}"
+end
+
+
+
