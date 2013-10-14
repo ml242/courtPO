@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'sinatra/reloader' if development?
 require 'active_record'
+require 'github_api'
 require 'pg'
 require 'pry'
 require_relative 'programmer'
@@ -28,6 +29,10 @@ end
 get '/programmers/:id' do
 #Display programmer
   @programmer = Programmer.find(params[:id])
+  if gh_handle = @programmer.github
+    @gh_repo = Github.repos.list user: gh_handle
+  end
+
   erb :print
 end
 

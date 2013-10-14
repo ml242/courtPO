@@ -14,7 +14,9 @@ ActiveRecord::Base.establish_connection(
 
 Programmer.delete_all
 
-file = File.open('programmers.csv', 'r')
+puts "Enter CSV file to open: "
+filename = gets.chomp
+file = File.open(filename, 'r')
 
 file.each do |entry|
   user = entry.chomp.split(",")
