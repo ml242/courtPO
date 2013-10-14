@@ -12,13 +12,13 @@
     <a href="/programmers/<%= result['id'] %>"><%= result.name %></a>
   </td>
    <td>
-    <%= result.twitter_username %>
+    <a href="http://www.twitter.com/<%= result.twitter_username %>"><%= result.twitter_username %></a>
   </td>
    <td>
-    <%= result.twitter_pic %>
+    <img src="<%= result.twitter_pic %>">
   </td>
   <td>
-    <%= result.github_username %>
+    <a href="http://www.github.com/<%= result.github_username %>"><%= result.github_username %></a>
   </td>
   <td>
     <form action="/programmers/<%= result['id'] %>/edit" method="get">

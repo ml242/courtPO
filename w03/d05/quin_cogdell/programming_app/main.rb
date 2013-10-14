@@ -35,7 +35,9 @@ get '/programmers' do
   erb :programmers
 end
 
-
+get '/programmers/new' do
+  erb :programmers_new
+end
 
 get '/programmers/:id' do
   @results = Programmer.find(params[:id])
@@ -47,6 +49,15 @@ get '/programmers/:id/edit' do
   erb :programmers_edit
 end
 
+post '/programmers' do
+  name = params[:name]
+  twitter_pic = params[:twitter_pic]
+  twitter_username = params[:twitter_username]
+  github_username = params[:github_username]
+  programmer = Programmer.new(name: name, twitter_pic: twitter_pic, twitter_username: twitter_username, github_username: github_username)
+  programmer.save
+  redirect to '/programmers'
+end
 
 post '/programmers/:id' do
   id = params[:id]

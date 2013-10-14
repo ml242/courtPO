@@ -1,3 +1,5 @@
+#DROP TABLE programmers;
+
 CREATE TABLE programmers (
   id SERIAL PRIMARY KEY,
   name VARCHAR,
