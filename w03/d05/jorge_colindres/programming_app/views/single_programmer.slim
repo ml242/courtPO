@@ -1,5 +1,6 @@
 .programmer
   img src="#{@twitter_pic}"
+  a href="/programmers/#{@id}/edit" Edit Info
   p #{@name}
   - unless @twitter_username.nil?
     h5 Twitter username:
@@ -7,7 +8,6 @@
   - unless @github_username.nil?
     h5 Github username:
     p: a href="https://github.com/#{@github_username}" target="_blank" @#{@github_username}
-    a href="/programmers/#{@id}/edit" Edit Info
     h5 Github Repos:
     ul
     - @repos.each do |repo|
