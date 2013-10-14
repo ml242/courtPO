@@ -22,13 +22,13 @@ programmers = Programmer.all.to_a #grabs all programmer profiles from the progra
 
 get '/' do
 
-erb :hello
+  erb :hello
 end
 
 get '/programmers' do
   # @programmers = programmers.to_a
   @programmers = programmers
-erb :programmers
+  erb :programmers
 end
 
 get '/programmers/:id' do
