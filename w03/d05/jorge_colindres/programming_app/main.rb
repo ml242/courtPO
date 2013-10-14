@@ -3,6 +3,7 @@ require 'sinatra/reloader' if development?
 require 'pry'
 require 'active_record'
 require 'slim'
+require 'github_api'
 
 require_relative 'programmer'
 
@@ -40,6 +41,10 @@ get '/programmers/:id' do
   @twitter_pic = programmer.twitter_pic
   @github_username = programmer.github_username
   after
+
+  github_response = Github.repos.list user: "#{@github_username}"
+  @repos = github_response.body
+  # binding.pry
 
   slim :single_programmer
 end
