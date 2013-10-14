@@ -4,6 +4,16 @@ require 'active_record'
 require 'pry'
 require_relative 'programmer'
 
+before do
+  ActiveRecord::Base.establish_connection(
+    :adapter => "postgresql",
+    :host => "localhost",
+    :username => "jamesmdavis5",
+    :password => "",
+    :database => "programming_db"
+  )
+end
+
 after do
   ActiveRecord::Base.connection.close
 end

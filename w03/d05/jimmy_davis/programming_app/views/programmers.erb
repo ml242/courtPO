@@ -3,11 +3,9 @@
 <% @twitter_username = programmer['twitter_username'] %>
 <% @twitter_pic = programmer['twitter_pic'] %>
 <% @id = programmer['id'] %>
-
 <div>
   <a href = '/programmers/<%= "#{@id}" %>'> <img src = '<%= "#{@twitter_pic}" %>' /> </a>
   <h2><%= "#{@name}" %></h2>
   <h3> Twitter: <a href = "http://twitter.com/<%= "#{@twitter_username}" %>" > @<%= "#{@twitter_username}" %> </a> </h3>
   </div>
-
 <%  end %>
