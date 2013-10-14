@@ -1,7 +1,7 @@
 require "pry"
 require 'active_record'
 require 'pg'
-
+before do
 ActiveRecord::Base.logger = Logger.new( STDOUT )
 
 ActiveRecord::Base.establish_connection(
@@ -11,7 +11,10 @@ ActiveRecord::Base.establish_connection(
   :password => "",
   :database => "programming_db"
 )
-
+end
+after do
+  ActiveRecord::Base.close
+end
 class Programmer < ActiveRecord::Base
 end
 
