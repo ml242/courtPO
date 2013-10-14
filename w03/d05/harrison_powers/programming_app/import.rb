@@ -1,4 +1,5 @@
 require 'pg'
+require 'uri'
 require 'active_record'
 require_relative 'programmer'
 

@@ -4,6 +4,7 @@ require 'pg'
 require 'twitter'
 require 'github_api'
 require 'active_record'
+require 'uri'
 require_relative 'programmer'
 
 Twitter.configure do |config|
