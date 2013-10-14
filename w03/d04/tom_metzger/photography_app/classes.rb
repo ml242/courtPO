@@ -19,5 +19,5 @@ helpers do
 end
 
 
-class Models < ActiveRecord::Base
+class Photo < ActiveRecord::Base
 end

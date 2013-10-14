@@ -1,10 +1,9 @@
-<h1>show.erb works</h1>
-<a href="/">Home</a>
+
+<a href="/photos">Home</a>
 
 <ul>
-  <li><%= @author %><br/>
-      <%= @photo_url %><br/>
-      <%= @date_taken %>
+  <li><%= @result[:author] %><br/>
+      <img src="<%= @result[:photo_url] %>"> <br/>
+      <%= @result[:date_taken] %>
   </li>
-  <%end%>
 </ul>
