@@ -1,0 +1,4 @@
+ul
+  - @all_programmers.each do |programmer|
+    li
+      a href="programmers/#{programmer.id}" #{programmer.name}
