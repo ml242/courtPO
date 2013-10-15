@@ -1,0 +1,8 @@
+<h1>Programmers</h1>
+<br>
+<% @programmers.each do |programmer| %>
+<%= programmer.name %>
+@<%= programmer.twitter_username %>
+<a href="<%= programmer.twitter_pic %>">PHOTO</a>
+<br>
+<% end %>
