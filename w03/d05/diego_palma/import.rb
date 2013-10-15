@@ -13,17 +13,20 @@ ActiveRecord::Base.establish_connection(
   :database => "programming_db"
 )
 
-class Programmer <ActiveRecord::Base
+class Programmer < ActiveRecord::Base
 end
 
 people = CSV.parse(File.read('programmers.csv'))
 
 people.each do |person|
-name = person[0]
-twitter_username = person[1]
-twitter_pic = person[2]
-entry = Programmer.create({:name =>name, :twitter_username => twitter_username, :twitter_pic => twitter_pic})
+  name = person[0]
+  twitter_username = person[1]
+  twitter_pic = person[2]
+  entry = Programmer.create({:name =>name, :twitter_username => twitter_username, :twitter_pic => twitter_pic})
 end
+
+# Modify your import.rb file so that when it runs, it asks or prompts for the location of a .csv file that it should read in to the database.
+
 
 
 
