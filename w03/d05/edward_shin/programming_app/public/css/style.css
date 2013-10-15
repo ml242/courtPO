@@ -1,3 +1,56 @@
-header {
+body {
+  background-color: #56A6D7;
+}
+
+.header {
   text-align: center;
+  background-color: #2E2E2E;
+  color: white;
+  border-radius: 10px;
+}
+
+h1 {
+
+}
+
+.programmer_list {
+  width: 200px;
+  background-color: #2E2E2E;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+li {
+  padding: 5px;
+}
+
+a:link {
+  color: white;
+}
+
+a:hover {
+  color: blue;
+}
+
+a:visited {
+  color: orange;
+}
+
+.profile {
+  width: 500px;
+  text-align: center;
+  background-color: #CCCCCC;
+  margin: 0 auto;
+  border-radius: 8px;
+  padding:; 10px;
+}
+.profile p {
+  padding:10px;
+}
+
+.profile img {
+  margin: 10px;
+  border:1px solid #86BC27;
+  height: 200px;
+  width: auto;
 }
