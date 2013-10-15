@@ -1,0 +1,25 @@
+h1 {
+  margin-left: 100px;
+  margin-top: 30px;
+}
+
+h2 {
+  margin-left: 100px;
+}
+
+.nav{
+  margin-top: 50px;
+  margin-left:100px;
+}
+.programmers_list {
+  margin-left: 100px;
+}
+
+.programmer {
+  height: 100px;
+  width: 100px;
+}
+
+.individual {
+  margin-left: 100px;
+}
