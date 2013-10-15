@@ -24,7 +24,7 @@ puts "Do you have a new CSV to add to the Database?"
 answer = gets.chomp
   if answer == "yes"
     puts "what is the name of the file"
-    new_csv = gets chomp
+    new_csv = gets.chomp
     people = CSV.parse(File.read('new_csv'))
     people.each do |person|
       name = person[0]

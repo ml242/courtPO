@@ -28,6 +28,10 @@ get '/' do
   erb :index
 end
 
+get '/programmers/new' do
+  # "welcome to the insert" works
+  erb :new #works
+end
 
 get '/programmers' do
   # get all info
@@ -43,29 +47,49 @@ get '/programmers/:id' do
   @name = data["name"]
   @twitter = data["twitter"]
   @img_url = data["img_url"]
+  @githubs = data["githubs"]
   response = HTTParty.get("https://api.github.com/users/#{@twitter}/repos")
-  @github = response
   erb :programmer
 end
 
 get '/programmers/:id/edit' do
   id = params[:id]
-  data = Programmer.find(id)
-  @id = data.id
-  @name = data.name
-  @twitter = data.twitter
-  @img_url = data.img_url
-  response = HTTParty.get("https://api.github.com/users/#{@twitter}/repos")
-  @github = response
+  @data = Programmer.find(id)
   erb :edit
 end
 
 post '/programmers/:id' do
-id = params[:id]
-binding.pry
-# Programmer.find(:id)
-#retrieve the post data and input it into DB
-#redirect to next
-redirect to('/programmers')
+  id = params[:id]
+  gitinput = params["githubs"]
+  twitter = params["twitter"]
+  img_url = params["img_url"]
+  name = params["name"]
+  data = Programmer.find(id)
+  #retrieve the post data and input it into DB
+  data.twitter = twitter
+  data.name = name
+  data.img_url = img_url
+  data.githubs = gitinput
+  data.save
+#   # save the url
+#   url = programmers/"#{data.id}"
+# #redirect to next
+#   binding.pry
+  redirect to('/programmers')
 end
 
+post '/programmers' do
+  data = Programmer.create
+  twitter = params["twitter"]
+  img_url = params["img_url"]
+  name = params["name"]
+  gitinput = params["githubs"]
+  #retrieve the post data and input it into DB
+  data.twitter = twitter
+  data.name = name
+  data.img_url = img_url
+  data.githubs = gitinput
+  data.save
+  binding.pry
+  redirect to('/programmers/id')
+end

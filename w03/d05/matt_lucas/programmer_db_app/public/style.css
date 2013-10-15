@@ -21,18 +21,157 @@ Box Model Hack {
      height: 0;
 }
 
+.topper {
+background-image: url("http://www.stevemiller4lasvegas.com/EntertainersYellowPageAd.jpg");
+height: 48px;
+}
+
 .clear {
-	clear: both;
+clear: both;
 }
 
 body {
-     background-color: #FFFFC0;
+background-color: #FFFFC0;
+max-width: 800px;
+margin: 0 auto;
 }
 
 .pname {
-  font-family: Serif;
+  font-family: sans-serif;
   font-weight: bold;
   text-decoration: none;
+}
+
+.header {
+background-color: white;
+border: 3px solid blue;
+border-radius: 15px;
+max-width: 750px;
+margin-top: 15px;
+padding-left: 15px;
+}
+
+.header h1 {
+color: black;
+font-size: 48px;
+}
+
+.header h2 {
+color: black;
+font-size: 36px;
+}
+
+.browse_bar {
+color: blue;
+font-family: sans-serif;
+font-weight:
+}
+
+ul {
+text-decoration: none;
+list-style-type: none;
+}
+
+ul a:link {
+text-decoration: none;
+font-weight: bold;
+background-color: white;
+}
+
+ul a:hover {
+color: red;
+}
+
+.box {
+height: 250px;
+width: 200px;
+text-align: center;
+background-color: white;
+display:inline-block;
+border: black 1px solid;
+border-radius: 20px;
+padding: 10px;
+margin: 20px;
+position: float;
+word-wrap: break-word;
+text-align: center;
+/*background-image: url("http://www.stevemiller4lasvegas.com/EntertainersYellowPageAd.jpg");
+*/}
+
+.box .a {
+word-wrap: break-word;
+max-width: 50px;
+}
+.box .twitter .a {
+max-width: 50px;
+word-wrap: break-word;
+text-align: center;
+}
+
+.twitter {
+height: 40px;
+padding: 12px;
+}
+
+.picturez img {
+max-width: 75px;
+max-height: 75px;
+text-align: center;
+}
+
+.picturez img:hover {
+width: 200%;
+height: 200%;
+}
+
+.pname {
+height: 50px;
+padding-bottom: 12px
+padding-top: 12px;
+}
+
+
+.pname a:link {
+height: 40px;
+}
+
+.phone {
+margin: 0 auto;
+float: left;
+position: absolute;
+}
+
+.phone img {
+postition: relative;
+margin-top: -235px;
+margin-left: 275px;
+
+}
+
+.detail {
+margin: 0 auto;
+display: block;
+border: 1px solid black;
+max-width: 200px;
+border-radius: 15px;
+text-align: center;
+padding: 50px;
+margin: 15px;
+background-color: white;
+}
+
+.detail img {
+max-width: 150px;
+max-height: 150px;
+}
+
+.feed {
+padding: 15px;
+}
+
+.detail {
+margin: 0 auto;
+margin-top: 50px;
 }
 
 /*

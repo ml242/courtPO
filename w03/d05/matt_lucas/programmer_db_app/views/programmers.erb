@@ -5,13 +5,13 @@
   <title>Document</title>
 </head>
 <body>
+<div class="topper"></div>
 
 <% @data.each do |x| puts x %>
-<div class="programmer">
-<a href=programmers/<%= x["id"] %>>
+<div class="box">
 <div class="pname"><%= x["name"] %></div><a>
 <div class="twitter"><%= x["twitter"] %></div>
-<div class="img_url"><img src="<%= x["img_url"] %>"><% end %></div></div>
+<div class="picturez"><a href=programmers/<%= x["id"] %>><img src="<%= x["img_url"] %>"></a></div></div><% end %>
 
 </body>
 </html>

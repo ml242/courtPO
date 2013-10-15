@@ -5,14 +5,19 @@
   <title>Document</title>
 </head>
 <body>
-<div class="name"><%= @name %></div>
-<div class="twitter"><%= @twitter %></div>
-<div class="imgage"><img src="<%= @img_url %>"></div>
+<div class="topper"></div>
+<div class="detail">
+<div class="name">name: <%= @name %></div>
+<div class="twitter">twitter: <%= @twitter %></div>
+<div class="image"><img src="<%= @img_url %>"></div>
 <div class="feed">
-<a href="https://twitter.com/<%= @twitter %>">Tweets by <%= @twitter %></a></div>
-<% break if @github == "false" %>
-<div class="feed">
- <a href= <%= @github[0]["owner"]["html_url"] %> ><%= @twitter %> github</a>
+<a href="https://twitter.com/<%= @twitter %>">Twitter</a><br><br>
+<a href="<%= @githubs %>">github</a>
+</div>
+
+
+<a href="/programmers/<%= @id %>/edit">edit my profile</a>
+
 </div>
 
 </body>
