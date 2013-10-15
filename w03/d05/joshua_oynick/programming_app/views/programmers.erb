@@ -1,0 +1,22 @@
+<div class = "profile box">
+<head>
+<link href='http://fonts.googleapis.com/css?family=The+Girl+Next+Door' rel='stylesheet' type='text/css'>
+</head>
+<h2>Programmers</h2>
+
+<% @programmers.each do |programmer| %>
+<h3>
+  <% id = programmer["id"]%>
+  <% name = programmer["name"]%>
+
+  <a href = "/programmers/<%="#{id}"%>">
+  <%= "#{name}" %>
+  </a>
+
+  <a href = "/programmers/<%="#{id}"%>/edit">
+  Edit
+  </a>
+
+</h3>
+<% end %>
+</div>

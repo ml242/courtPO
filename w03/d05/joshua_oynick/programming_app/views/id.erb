@@ -1,0 +1,18 @@
+<div class = "profile box">
+  <h2>
+    <%= "#{@programmer[0]["name"]}" %>
+  </h2>
+  <ul>
+    <li>
+      <img class = "profile_pic" src = '<%="#{@programmer[0]["twitter_pic"]}"%>' />
+    </li>
+    <li><%= "Twitter Username: #{@programmer[0]["twitter_username"]}" %></li>
+  </ul>
+
+  <footer>
+    <a class= "back" href="/programmers"> Programmers </a>
+  </footer>
+
+</div>
+
+
