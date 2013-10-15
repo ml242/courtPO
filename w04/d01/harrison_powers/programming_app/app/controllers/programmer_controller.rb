@@ -30,7 +30,7 @@ class ProgrammerController < ApplicationController
   end
 
   def edit
-    id = params[:id]
+    id = params[:id].to_i
     if request.post?
       new_info = Hash.new
       new_info[name] = params[:name] if params[:name]
@@ -50,7 +50,7 @@ class ProgrammerController < ApplicationController
 
   def delete
     if request.post?
-      id = params[:id]
+      id = params[:id].to_i
       Programmer.find(id).destroy
     end
     redirect_to('/programmers')
