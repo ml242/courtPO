@@ -18,7 +18,6 @@ ActiveRecord::Base.establish_connection(
 
 # programmers = Programmer.all
 
-programmers = Programmer.all.to_a #grabs all programmer profiles from the programmers table in the programming_db, and converts them to a data-retrievable array.
 
 get '/' do
 
@@ -26,6 +25,7 @@ get '/' do
 end
 
 get '/programmers' do
+  programmers = Programmer.all.to_a #grabs all programmer profiles from the programmers table in the programming_db, and converts them to a data-retrievable array.
   # @programmers = programmers.to_a
   @programmers = programmers
   erb :programmers
@@ -68,9 +68,7 @@ post '/programmers/:id' do
   programmer.twitter_username = new_twitter_username
   programmer.github_username = new_github_handle
   programmer.save
-  binding.pry
-
-
+  redirect to '/programmers'
 end
 
 
