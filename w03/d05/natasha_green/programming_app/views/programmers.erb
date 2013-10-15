@@ -1,0 +1,11 @@
+
+  <% @programmers.each do |programmer| %>
+  <div>
+    <p>id = <%= programmer["id"] %></p>
+    <p>name = <%= programmer["name"] %></p>
+    <p>twitter name = <%= programmer["twitter_username"] %></p>
+    <p>twitter pic = <%= programmer["twitter_pic"] %></p>
+  </div>
+<% end %>
+
+
