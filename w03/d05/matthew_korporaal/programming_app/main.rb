@@ -16,6 +16,10 @@ ActiveRecord::Base.establish_connection(
   :database => "programming_db"
 )
 
+after do
+  ActiveRecord::Base.connection.close
+end
+
 get '/' do
   redirect to('/programmers')
 end
