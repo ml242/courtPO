@@ -13,7 +13,7 @@ namespace :programmer do
     `psql -d programming_db -c 'DROP TABLE programmers'`
     puts "creating table.."
     `psql -d programming_db -f programming_schema.sql`
-    load 'import.rb'
+    load 'import_localhost.rb'
     puts "all set up. now run main.rb"
   end
 

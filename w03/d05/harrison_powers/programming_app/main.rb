@@ -40,6 +40,10 @@ configure :production do
   )
 end
 
+after do
+  ActiveRecord::Base.connection.close
+end
+
 get '/' do
   redirect to('/programmers')
 end

@@ -3,16 +3,6 @@ require 'uri'
 require 'active_record'
 require_relative 'programmer'
 
-# ActiveRecord::Base.logger = Logger.new( STDOUT )
-
-# ActiveRecord::Base.establish_connection(
-#   :adapter => "postgresql",
-#   :host => "localhost",
-#   :username => "fijimunkii",
-#   :password => "",
-#   :database => "programming_db"
-# )
-
 db = URI.parse(ENV['DATABASE_URL'] || 'postgres:///programming_db')
 
 ActiveRecord::Base.establish_connection(
