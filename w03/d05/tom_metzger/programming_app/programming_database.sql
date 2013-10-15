@@ -7,5 +7,5 @@ CREATE TABLE programmers(
   twitter_username VARCHAR
 );
 
-
+ALTER TABLE programmers ADD COLUMN github VARCHAR;
 
