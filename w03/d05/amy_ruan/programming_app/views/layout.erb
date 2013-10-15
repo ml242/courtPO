@@ -1,0 +1,27 @@
+<html><!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Programmers</title>
+<style>
+    body{
+      background-color: <%=@color%>;
+      background-image: url("http://imgs.xkcd.com/comics/duty_calls.png");
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      font-family: Arial, sans-serif;
+      max-height:1000px;
+    }
+
+  </style>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <h1>Famous Programmers</h1>
+  <%=yield%>
+  <nav>
+    <a class= "nav1" href="/">Home</a>
+  </nav>
+</body>
+</html>

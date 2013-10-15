@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Programmer_app</title>
+</head>
+<body>
+  <ol>
+    <% @list.each do |prog| %>
+    <li><%= prog.name %>
+      <br><a href=<%="/programmers/#{prog.id}"%>><img src=<%=prog.twitter_pic%> alt=""></a>
+      <br><a href=<%="http://www.twitter.com/#{prog.twitter_username}"%>><%= prog.twitter_username %></a>
+    </li>
+    <% end %>
+  </ol>
+</body>
+</html>
