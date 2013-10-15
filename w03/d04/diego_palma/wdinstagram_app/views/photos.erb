@@ -1,0 +1,7 @@
+<h1>Photos</h1>
+
+<% @entries.each do |entry| %>
+ <div class="image"><img src="<%= entry['photo_url'] %>">
+  By <%= entry['author'] %></div>
+
+<% end %>
