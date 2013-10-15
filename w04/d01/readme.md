@@ -50,3 +50,16 @@ Make your routes
 `/programmers` should display all your programmers. Call that action `index`
 
 `/programmers/:id` should show a particular programmer.  Call that action `show`
+
+## Extras
+
+`/programmers/new` should display a new programmers form. Call that action `new`
+
+Post the new programmer back to `/programmers` and call that action `create`
+
+Add an `edit` link to the `/programmers/:id` show page
+
+`/programmers/:id/edit` should display a pre-populated form with the programmer's information.
+Post the updated form to `/programmers/:id` and call that action `update`
+
+Add a `delete` button to the `/programmers/:id` show page.  A post to `/programmers/:id/delete` should point to an action called `destroy`
