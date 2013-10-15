@@ -17,14 +17,22 @@ require_relative 'programmer'
 
     ActiveRecord::Base.connection.close
 
+COLOR = ["#FFBF00", "#FACADE","#0080FF","#01DF3A","#FF0080"]
+
 get "/" do
   redirect ('/programmers')
 end
 
 get "/programmers" do
-  programmers = Programmer.all
+  @color = COLOR.sample
+  @programmers = Programmer.all
+  erb :programmers
 end
 
 get "/programmers/:id" do
-end
+  @color = COLOR.sample
+  @id = params[:id].to_i
+  @programmer = Programmer.find(@id)
+  erb :programmers_id
 
+end
