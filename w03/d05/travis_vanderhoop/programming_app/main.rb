@@ -31,14 +31,26 @@ get '/programmers' do
   erb :programmers
 end
 
+get '/programmers/:id/edit' do
+  id = params[:id]                                      #NOTE: id may need to be converted to an integer using .to_i
+  programmer = Programmer.all.find(id)
+  @name = programmer[:name]
+  @twitter_username= programmer[:twitter_username]
+  @twitter_pic = programmer[:twitter_pic]
+  erb :edit_programmer
+end
+
 get '/programmers/:id' do
-  id = params[:id]              #NOTE: id may need to be converted to an integer using .to_i
+  id = params[:id]                                      #NOTE: id may need to be converted to an integer using .to_i
+  @id = id                                                   #converted to instance variable so I could use it for the link to the edit page
   programmer = Programmer.all.find(id)
   @name = programmer[:name]
   @twitter_username= programmer[:twitter_username]
   @twitter_pic = programmer[:twitter_pic]
   erb :programmer
 end
+
+
 
 
 
