@@ -23,8 +23,10 @@ end
 
 
 
-get '/' do
-end
+# get '/' do
+#   "Welcome to the Programmers database"
+#   # erb :landing
+# end
 
 
 get '/programmers' do
@@ -33,39 +35,47 @@ get '/programmers' do
   # pull all names & ids from database
   # send names (to be displayed as text) and ids (to be used in links) to .erb file
   db_connect
+  # optimize by ONLY choosing the name & ID
   @result = Programmer.all.order("name ASC")
   db_disconnect
-  binding.pry
   erb :programmers
 end
 
 
 get '/programmers/:id' do
-  "will display all information for one (the selected) programmers"
+  # will display all information for one (the selected) programmers
   # connect to database
   # pull all data associated with selected id
   # send name, username & image to .erb file to be displayes
-  photo_id = params["id"]
+  programmer_id = params["id"]
   db_connect
-  @result = Programmer.find(photo_id)
+  @result = Programmer.find(programmer_id)
   db_disconnect
+  erb :id
 end
 
+get '/programmers/:id/edit' do
+  programmer_id = params["id"]
+  db_connect
+  @result = Programmer.find(programmer_id)
+  db_disconnect
+  erb :id_edit
+end
 
+post '/programmers/:id' do
+  programmer_id = params["id"]
+  db_connect
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+  # ADD COMMENT ABOUT UPDATING
+  user = Programmer.find(programmer_id)
+  user.update(
+    name: params["name"],
+    twitter_username: params["username"],
+    twitter_pic: params["img_url"],
+    github: params["github"])
+  db_disconnect
+  redirect to ("/programmers/#{programmer_id}")
+end
 
 
 

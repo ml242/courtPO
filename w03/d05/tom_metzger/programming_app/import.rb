@@ -5,7 +5,11 @@
 require_relative 'programmer'
 require 'csv'
 
-file = File.open("programmers.csv","r")
+puts "What file would you like to import? (insert path)"
+file_path = gets.chomp
+
+# file = File.open("programmers.csv","r")     my original code
+file = File.open("#{file_path}","r")
 file_str = file.read
 
 CSV.parse(file_str, :headers => false) do |row|
