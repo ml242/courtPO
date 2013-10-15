@@ -18,14 +18,4 @@ class ProgrammerController < ApplicationController
     end
   end
 
-  end
-
-  post '/programmers' => 'programmer#create'
-
-  get '/programmers/:id' => 'programmer#view'
-
-  get '/programmers/:id/edit' => 'programmer#edit'
-  post '/programmers/:id' => 'programmer#edit'
-
-  post '/programmers/:id/delete' => 'programmer#delete'
 end

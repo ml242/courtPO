@@ -26,7 +26,7 @@ csv_array.each do |programmer|
     :name => programmer[:name],
     :github_username => programmer[:github_username],
     :twitter_username => programmer[:twitter_username],
-    :img_url => programmer[:twitter_pic]
+    :img_url => programmer[:img_url]
   )
   puts "Added #{p1.name} to database with ID: #{p1.id}"
 end
