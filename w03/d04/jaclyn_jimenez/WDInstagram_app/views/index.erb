@@ -1,7 +1,7 @@
 <% info = [] %>
 <div class = "main">
-<% @post.each do |e| %>
-  <a href = "/show/<%=e['id']%>" >
+<% @post.reverse.each do |e| %>
+  <a href = "/photos/<%=e['id']%>" >
   <img src ="<%= e['photo'] %>" /></a>
   <div class = 'author'>Posted by: <%= e['name']%> on <%= e['date_taken'] %> </div>
 <% end %>

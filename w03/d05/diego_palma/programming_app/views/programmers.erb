@@ -1,0 +1,12 @@
+<div class="container_programmers">
+<% @programmers.each do |programmer| %>
+
+<div class="avatar">
+  <a href="/programmers/<%=programmer.id%>" title="<%= programmer.name %>">
+    <img src="<%= programmer.twitter_pic  %>"><%= programmer.name %></a>
+</div>
+
+<% end %>
+</div>
+
+

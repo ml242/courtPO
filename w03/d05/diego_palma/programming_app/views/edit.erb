@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="profile">
+    <h2>Profile</h2>
+
+    <div class="name">Name: <%= @profile.name %></div>
+
+    <div class="twitter">Twitter: <%= @profile.twitter_username %></div>
+
+    <div class="github">Github: <%= @profile.github_username %></div> <br />
+
+    <div class="image"><img src="<%= @profile.twitter_pic  %>"></div><br />
+
+
+    <form action="/programmers/<%= @profile.id%>/delete" method="post">
+      <input type="hidden">
+      <input type="submit" value="Delete profile">
+    </form> <br />
+
+    <a href="/programmers/<%= @profile.id%>/edit">Update profile</a> <br />
+
+    <a href="/programmers">Go back</a>
+  </div>
+
+  <div class="edit">
+    <fieldset class="auto_width">
+      <legend>Edit</legend>
+      <form action="/programmers/<%=@profile.id%>" method="post">
+        <label>Name</label><br />
+        <input type="text" name="name" value="<%= @profile.name%>" required="required"  /><br />
+        <label>Twitter username</label><br />
+        <input type="text" name="twitter_username" value="<%= @profile.twitter_username%>" required="required" /><br />
+        <label>Twitter picture</label><br />
+        <input type="text" name="twitter_pic" value="<%= @profile.twitter_pic%>" required="required" /><br />
+        <label>Github account</label><br />
+        <input type="text" name="github_username"/><br />
+        <input type="submit" value="Submit" />
+      </form>
+    </fieldset>
+  </div>
+</div>
+

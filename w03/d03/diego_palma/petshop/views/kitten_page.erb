@@ -1,0 +1,21 @@
+<h1>Kitten information</h1>
+<img src="<%= "#{@image_url}" %>"><br>
+
+<%= "#{@name}" %> is a
+<% if @is_cute == "t" %>
+  cute
+<% else %>
+   ugly
+<% end %>
+<%= "#{@age}" %>-year-old kitten
+
+<br><br>
+
+<form action="/kittens/<%= "#{@id}" %>/delete" method="post">
+  <input type="hidden">
+  <input type="submit" value="Delete">
+</form>
+
+<br>
+
+<p>Click <a href="/kittens">here</a> to see the full list of kittens</p>
