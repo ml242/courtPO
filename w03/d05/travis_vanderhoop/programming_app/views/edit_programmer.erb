@@ -1,1 +1,12 @@
-<h1>Edit page</h1>
+<% @link_page = "/programmers/#{@id}/edit" %>
+<h1>Update <%= @name %>'s information:</h1>
+<img src=<%= @twitter_pic %>>
+
+<form action="/programmers" method='post'>
+  <input type="text" name='new_name' value="<%= @name %>">
+  <input type="text" name='new_twitter_pic' value='<%= @twitter_pic %>'>
+  <input type="text" name='new_twitter_username' value=' <%= @twitter_username %> '>
+  <input type="submit" value='submit'>
+</form>
+
+<p><a href="<%= @link_page %>">Edit</a></p>

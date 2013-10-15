@@ -33,6 +33,7 @@ end
 
 get '/programmers/:id/edit' do
   id = params[:id]                                      #NOTE: id may need to be converted to an integer using .to_i
+  @id = id                                                   #converted to instance variable for use in linking back to the profile page
   programmer = Programmer.all.find(id)
   @name = programmer[:name]
   @twitter_username= programmer[:twitter_username]
