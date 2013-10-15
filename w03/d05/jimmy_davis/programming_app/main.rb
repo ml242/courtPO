@@ -2,7 +2,9 @@ require 'sinatra'
 require 'sinatra/reloader' if development?
 require 'active_record'
 require 'pry'
+require 'pg'
 require_relative 'programmer'
+require_relative 'active_record'
 
 before do
   ActiveRecord::Base.establish_connection(
@@ -30,8 +32,11 @@ end
 get '/programmers/:id' do
   id = params[:id]
   programmer = Programmer.find(id)
-  @name = programmer['name']
-  @twitter_username = programmer['twitter_username']
-  @twitter_pic = programmer['twitter_pic']
+  @name = programmer.name
+  @username = programmer.twitter_username
+  @pic = programmer.twitter_pic
+  # @name = programmer['name']
+  # @username = programmer['twitter_username']
+  # @pic = programmer['twitter_pic']
   erb :view_programmer
 end
