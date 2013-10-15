@@ -1,5 +1,4 @@
 require 'active_record'
-require 'pry'
 
 ActiveRecord::Base.logger = Logger.new( STDOUT )
 
@@ -8,10 +7,8 @@ ActiveRecord::Base.establish_connection(
   :host => "localhost",
   :username => "JC",
   :password => "",
-  :database => "instagram_db"
+  :database => "programming_db"
 )
 
-class Entry < ActiveRecord::Base
+class Programmer < ActiveRecord::Base
 end
-
-require 'active_record'

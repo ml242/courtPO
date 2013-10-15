@@ -1,0 +1,14 @@
+.programmer
+  img src="#{@twitter_pic}"
+  a href="/programmers/#{@id}/edit" Edit Info
+  p #{@name}
+  - unless @twitter_username.nil?
+    h5 Twitter username:
+    p: a href="https://twitter.com/#{@twitter_username}" target="_blank" @#{@twitter_username}
+  - unless @github_username.nil?
+    h5 Github username:
+    p: a href="https://github.com/#{@github_username}" target="_blank" @#{@github_username}
+    h5 Github Repos:
+    ul
+    - @repos.each do |repo|
+      li: a href="#{repo["html_url"]}" target="_blank" #{repo["name"]}
