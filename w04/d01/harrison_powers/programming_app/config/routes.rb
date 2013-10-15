@@ -7,8 +7,8 @@ ProgrammingApp::Application.routes.draw do
 
   get '/programmers/:id' => 'programmer#view'
 
-  get '/programmers/:id/edit' => 'programmer#view_edit'
-  post '/programmers/:id' => 'programmer#do_edit'
+  get '/programmers/:id/edit' => 'programmer#edit'
+  post '/programmers/:id' => 'programmer#edit'
 
   post '/programmers/:id/delete' => 'programmer#delete'
 
