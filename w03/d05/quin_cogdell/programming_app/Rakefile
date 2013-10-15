@@ -1,0 +1,7 @@
+namespace :programmers do
+  desc "This drops any prior information and imports the programmers csv file"
+  task :import do
+    ruby "import.rb"
+  end
+
+end

@@ -24,26 +24,30 @@ helpers do
     new_entry.photo = entry_hash[:photo]
     new_entry.date_taken = entry_hash[:date_taken]
     new_entry.save
+    new_entry
   end
 end
 
-get '/' do
+get '/photos' do
   show = Entry.all
   @display=show.entries
   erb :index
 end
 
-get '/new' do
+get '/photos/new' do
   erb :new
 end
 
-post '/create' do
+post '/photos' do
   entry_hash = params
-  add_new(entry_hash)
-  redirect to ('/')
+  new_entry = add_new(entry_hash)
+  url = "/photos/#{new_entry.id}"
+  binding.pry
+
+  redirect to (url)
 end
 
-get '/show/:id' do
+get '/photos/:id' do
   selected_image = Entry.where(id:params[:id])
   @image_info = selected_image.entries[0]
   erb :show

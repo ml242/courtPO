@@ -1,0 +1,9 @@
+<%= @photo.author %><br>
+<img src="<%= @photo.img_url %>" style="photo"><br>
+<%= @photo.date_taken %><br>
+<a href="/photos/update/<%= @photo.id %>">Update this photo</a>
+
+<form action="/photos/delete/<%= @photo.id %>" method="post">
+  <input type="hidden">
+  <input type="submit" value="delete">
+</form>

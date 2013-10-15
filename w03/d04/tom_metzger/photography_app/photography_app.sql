@@ -1,8 +1,8 @@
 
-CREATE DATABASE models_db;
+CREATE DATABASE photos_db;
 
 
-CREATE TABLE models(
+CREATE TABLE photos(
   id SERIAL PRIMARY KEY,
   author VARCHAR,
   photo_url TEXT,
@@ -10,4 +10,4 @@ CREATE TABLE models(
 
 
 
-INSERT INTO models(author, photo_url, date_taken) VALUES ('dr.foo', 'http://placekitten.com/200/300', '2013-10-09');
+INSERT INTO photos(author, photo_url, date_taken) VALUES ('dr.foo', 'http://placekitten.com/200/300', '2013-10-09');

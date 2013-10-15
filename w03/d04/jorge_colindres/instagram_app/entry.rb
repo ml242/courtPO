@@ -14,3 +14,4 @@ ActiveRecord::Base.establish_connection(
 class Entry < ActiveRecord::Base
 end
 
+require 'active_record'

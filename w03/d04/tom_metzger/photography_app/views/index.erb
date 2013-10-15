@@ -3,13 +3,13 @@
 <ul>
   <% @entries.each do |entry| %>
   <li><%=entry["author"]%><br/>
-      <%=entry["photo_url"]%><br/>
+      <img src="<%= entry["photo_url"] %>"> <br/>
       <%=entry["date_taken"]%>
   </li>
   <%end%>
 </ul>
 
 
-<a href="/new">Add a Photo</a>
+<a href="/photos/new">Add a Photo</a>
 <br/>
-<a href="/show/:id">Find a Photo</a>
+<a href="/photos/:id">Find a Photo</a>

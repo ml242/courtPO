@@ -1,0 +1,11 @@
+<form action="/programmers/<%= @id %>" method="post" accept-charset="utf-8">
+
+  <p><b>name:&nbsp;</b><%= @programmer.name %></p>
+
+  <input style="display:none;" type="text" name="id" value="<%= @id %>">
+
+  <label for="github_username">github username: </label>
+  <input type="text" name="github_username" value="<%= @programmer.github_username %>" id="github_username">
+
+  <p><input type="submit" value="Continue &rarr;"></p>
+</form>

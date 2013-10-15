@@ -1,0 +1,21 @@
+
+<h2><%= @header %></h2>
+
+<% @results.each do |result| %>
+
+<section class="photo">
+
+  <div class="author">
+    <%= result.author %>
+  </div>
+  <div class="image">
+    <%= result.photo_url %>
+  </div>
+  <div class="date">
+    <%= result.date %>
+  </div>
+  <div class="id">
+    <a href="/<%= result.id %>">Check Out Picture</a>
+  </div>
+</section>
+<% end %>

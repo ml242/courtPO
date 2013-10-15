@@ -1,0 +1,5 @@
+<ul>
+<% @output.each do |programmer| %>
+<li><a href="/programmers/<%= programmer.id %>"><%= programmer.name %></a></li>
+<% end %>
+</ul>

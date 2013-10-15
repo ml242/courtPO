@@ -1,0 +1,8 @@
+gem 'sinatra'
+gem 'pg'
+gem 'active_record'
+
+# A sample Gemfile
+source "https://rubygems.org"
+
+# gem "rails"

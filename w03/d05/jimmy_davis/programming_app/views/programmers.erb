@@ -1,0 +1,12 @@
+<% @programmers_array.each do |programmer| %>
+<%  @name = programmer['name'] %>
+<%  @username = programmer['twitter_username'] %>
+<%  @pic = programmer['twitter_pic'] %>
+<%  @id = programmer['id'] %>
+<div>
+  <a href = '/programmers/<%= "#{@id}" %>'> <img src = '<%= "#{@pic}" %>' /> </a>
+  <h2><%= "#{@name}" %></h2>
+  <h3> Twitter: <a href = "http://twitter.com/<%= "#{@username}" %>" > @<%= "#{@username}" %> </a> </h3>
+  </div>
+<%  end %>
+

@@ -1,4 +1,4 @@
-# Adventures in Programming
+f# Adventures in Programming
 
 In this assignment we're going to create a simple Sinatra App that display's some programmers' names, profile pic and a link to their twitter pages.
 
