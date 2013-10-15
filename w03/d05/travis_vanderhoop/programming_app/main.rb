@@ -48,7 +48,29 @@ get '/programmers/:id' do
   @name = programmer[:name]
   @twitter_username= programmer[:twitter_username]
   @twitter_pic = programmer[:twitter_pic]
+  #========================
+  #Update Parameters below
+  #========================
+  @new_name = params[:new_name]
+
   erb :programmer
+end
+
+post '/programmers/:id' do
+  id = params[:id]                                                    #find id so we can seek out and edit the entry in question
+  programmer = Programmer.all.find(id)                    #=================================
+  new_name = params[:new_name]
+  new_twitter_pic = params[:new_twitter_pic]
+  new_twitter_username = params[:new_twitter_username]
+  new_github_handle = params[:new_github_username]
+  programmer.name=new_name
+  programmer.twitter_pic = new_twitter_pic
+  programmer.twitter_username = new_twitter_username
+  programmer.github_username = new_github_handle
+  programmer.save
+  binding.pry
+
+
 end
 
 
