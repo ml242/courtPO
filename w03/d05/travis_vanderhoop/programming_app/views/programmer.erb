@@ -1,0 +1,6 @@
+<%   @twitter_url = "http://twitter.com/#{@twitter_username}"    %>
+<% @link_page = "/programmers/#{@id}/edit" %>
+<h1>Say hello to <%= @name %></h1>
+<img src=<%= @twitter_pic %>>
+<h3>Reach out via twitter at <a href=<%= @twitter_url %>><%= @twitter_username %></a></h3>
+<p><a href="<%= @link_page %>">Edit</a></p>
