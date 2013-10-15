@@ -1,0 +1,8 @@
+<div class="programmer_list">
+<ol>
+<% @programmers_table.each do |programmer| %>
+  <a href='/programmers/<%=programmer.id%>'><li><%= programmer.name%></li></a>
+  <%end%>
+</ol>
+</div>
+
