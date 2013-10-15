@@ -13,15 +13,12 @@ get '/' do
 end
 
 get '/programmers' do
-  @programmers_array = Programmer.all
+  @programmers = Programmer.all
   erb :programmers
 end
 
 get '/programmers/:id' do
   id = params[:id]
-  programmer = Programmer.find(id)
-  @name = programmer['name']
-  @image = programmer['twitter_pic']
-  @username = programmer['twitter_username']
+  @programmer = Programmer.find(id)
   erb :show_programmer
 end
