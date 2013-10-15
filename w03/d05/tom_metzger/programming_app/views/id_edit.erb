@@ -1,0 +1,13 @@
+<h1>Edit <%= @result[:name] %>'s Profile</h1>
+
+<form method="post" action="/programmers/<%= @result[:id]%>">
+<label>Name:</label>
+  <input type="text" name="name"      value="<%= @result[:name]%>" placeholder="name">
+<label>Twitter Username:</label>
+  <input type="text" name="username"  value="<%= @result[:twitter_username]%>" placeholder="twitter username">
+<label>Profile Pic URL:</label>
+  <input type="text" name="img_url"   value="<%= @result[:twitter_pic]%>"placeholder="twitter pofile pic url">
+<label>Github Username:</label>
+  <input type="text" name="github"    value="<%= @result[:github]%>" placeholder="github username">
+  <input type="submit" value="Update">
+</form>
