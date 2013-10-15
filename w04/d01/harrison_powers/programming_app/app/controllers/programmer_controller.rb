@@ -15,11 +15,18 @@ class ProgrammerController < ApplicationController
       redirect_to('/programmers')
     elsif request.get?
       @programmers = Programmer.all
+      @title = "The #{@programmers.count} Programmers"
     end
   end
 
   def view
-
+    id = params[:id].to_i
+    @programmer = Programmer.find(id)
+    @github = Github.repos.list user: "#{@programmer.github_username}"
+    @twitter = Twitter.user_timeline("#{@programmer.twitter_username}")
+    @title = "#{@programmer.name}"
+    @programmers = Programmer.all
+    @header = "The #{@programmers.count} Programmers"
   end
 
   def edit
@@ -49,16 +56,4 @@ class ProgrammerController < ApplicationController
     redirect_to('/programmers')
   end
 
-
-
 end
-
-
-
-
-  get '/programmers/:id' => 'programmer#view'
-
-  get '/programmers/:id/edit' => 'programmer#edit'
-  post '/programmers/:id' => 'programmer#edit'
-
-  post '/programmers/:id/delete' => 'programmer#delete'
