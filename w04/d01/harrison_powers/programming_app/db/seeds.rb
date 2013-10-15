@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-file = File.open('programmers.csv', 'r')
+file = File.open("#{Rails.root}/db/programmers.csv", 'r')
 
 csv_array = file.map do |line|
   line.chomp.split(',')
