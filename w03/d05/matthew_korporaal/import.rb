@@ -1,4 +1,4 @@
-require 'pg's
+require 'pg'
 require 'active_record'
 require_relative 'programmer'
 
