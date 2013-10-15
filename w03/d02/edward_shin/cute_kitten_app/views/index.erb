@@ -1,7 +1,16 @@
-<h4>Would you like to donate a kitten?</h4>
+<h4>Would you like to create a kitten?</h4>
 <form action="/kittens" method ="post">
   <input type="text" name = "name" value="name">
   <input type="text" name = "age" value ="age">
   <input type="text" name = "description" value ="description">
-  <input type="submit" value ="submit">
+  <select name="owner">
+    <% sql = "SELECT * FROM owners" %>
+    <% result = db_exec(sql) %>
+    <%owner_array = result.entries%>
+    <%owner_array.each do |hash|%>
+      <%name = hash["name"]%>
+      <option value=<%=name%>><%=name%></option>
+    <%end%>
+    </select>
+ <input type="submit" value ="submit">
 </form>

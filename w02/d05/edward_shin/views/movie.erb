@@ -1,4 +1,12 @@
 <h3><%= @title %></h3>
+
+
+<form method="post" action ="/faves">
+  <input type="hidden"  name ="imdbID" value ="<%=@id%>" >
+  <input type ="submit">
+</form>
+
+
 <p>Year of  release: <%= @year %></p>
 <p>Rated: <%= @rated %></p>
 <p>Date of release: <%= @released %></p>
