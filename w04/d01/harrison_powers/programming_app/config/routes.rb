@@ -2,7 +2,7 @@ ProgrammingApp::Application.routes.draw do
 
   get '/' => 'index#redirect'
 
-  get '/programers' => 'programmer#index'
+  get '/programmers' => 'programmer#index'
   post '/programmers' => 'programmer#create'
 
   get '/programmers/:id' => 'programmer#view'
