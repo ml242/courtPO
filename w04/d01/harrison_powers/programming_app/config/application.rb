@@ -58,5 +58,9 @@ module ProgrammingApp
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    # Besides the standard assets/* paths, additional (fully qualified) paths can be added to the
+    # pipeline in config/application.rb. For example:
+    # config.assets.paths << Rails.root.join("lib", "videoplayer", "flash")
   end
 end
