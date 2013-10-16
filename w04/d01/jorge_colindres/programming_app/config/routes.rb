@@ -1,18 +1,18 @@
 ProgrammingApp::Application.routes.draw do
 
-  get '/programmers' => 'programmer#index'
+  get '/programmers' => 'programmers#index'
 
-  get '/programmers/new' => 'programmer#new'
+  get '/programmers/new' => 'programmers#new'
 
-  get '/programmers/:id' => 'programmer#individual'
+  get '/programmers/:id' => 'programmers#show'
 
-  get '/programmers/:id/edit' => 'programmer#edit'
+  get '/programmers/:id/edit' => 'programmers#edit'
 
-  post '/programmers' => 'programmer#create'
+  post '/programmers' => 'programmers#create'
 
-  post '/programmers/:id' => 'programmer#update'
+  post '/programmers/:id' => 'programmers#update'
 
-  post '/programmers/:id/delete' => 'programmer#destroy'
+  post '/programmers/:id/delete' => 'programmers#destroy'
 
 
 

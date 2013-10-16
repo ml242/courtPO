@@ -1,4 +1,4 @@
-class ProgrammerController < ApplicationController
+class ProgrammersController < ApplicationController
 
   # GET from '/programmers'
   def index
@@ -10,7 +10,7 @@ class ProgrammerController < ApplicationController
   end
 
   # GET from '/programmers/:id'
-  def individual
+  def show
     @id = params[:id]
 
     programmer = Programmer.find @id
