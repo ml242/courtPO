@@ -6,7 +6,7 @@ ProgrammingApp::Application.routes.draw do
 
   post '/programmers' => 'programmers#create'
 
-  get '/programmers/new' => 'programmers#new'
+  get '/programmers/new' => 'programmers#add'
 
   get '/programmers/:id' => 'programmers#show'
 
