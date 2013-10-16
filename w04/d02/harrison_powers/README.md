@@ -1,3 +1,2 @@
-Harrison Powers
-
-https://www.codeschool.com/users/fijimunkii
+Name: Harrison Powers
+codeschool: https://www.codeschool.com/users/fijimunkii
