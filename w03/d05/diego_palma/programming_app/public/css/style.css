@@ -1,0 +1,92 @@
+@import url(http://fonts.googleapis.com/css?family=Lato);
+
+html {
+  font-family: Lato;
+}
+
+#header {
+z-index: 1;
+top: 0px;
+margin-left: 60px;
+background-color: white;
+position: fixed;
+height: 80px;
+}
+
+#header h1, h1 {
+  line-height: 0.5;
+  border: 0;
+}
+
+.avatar {
+  margin-top: 75px;
+  margin-left: 60px;
+  height: 80px;
+  width:80px;
+  float: left;
+  font-size: 10px;
+  text-decoration: none;
+}
+
+.profile {
+/*margin-top: 70px;*/
+float:left;
+width: 300px
+margin-left: 60px;
+}
+
+.container {
+  margin-top: 90px;
+  margin-left: 60px;
+  width: 900px;
+  float: left;
+}
+
+.container_programmers {
+  margin-top: 40px;
+
+}
+
+img {
+  height: 100%;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+.image img{
+  height: 73px;
+  width: 73px;
+  border-top: 10px;
+}
+
+
+.twitter {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 10px;
+}
+
+
+.auto_width {
+  display: inline-block;
+  margin-left: 90px;
+  margin-top: 60px;
+    }
+
+.auto_width_add {
+  display: inline-block;
+
+}
+
+.edit {
+float: left;
+width: 300px;
+}
+

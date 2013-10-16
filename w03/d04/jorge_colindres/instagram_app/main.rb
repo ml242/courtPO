@@ -39,7 +39,7 @@ post '/instagram/entries' do
   date_taken = params[:date_taken]
   photo_url = params[:photo_url]
   # create a new entry and save to DB
-  entry = Entry.create :author => author, :date_taken => date_taken, :photo_url => photo_url
+  entry = Entry.create(:author => author, :date_taken => date_taken, :photo_url => photo_url)
   current_id = entry.id
   db_disconnect
 

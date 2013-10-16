@@ -65,7 +65,7 @@ get '/' do
     @quote = YahooFinance::get_quotes(YahooFinance::StandardQuote, @symbol)[@symbol].lastTrade
   	symbol_name = HTTParty.get("http://dev.markitondemand.com/Api/Quote/json?symbol=#{@symbol}")["Data"]["Name"]
   	@articles = ''
-  	nyt_hash = HTTParty.get("http://api.nytimes.com/svc/search/v1/article?query=#{@symbol}&api-key=92bd131613a30627da3598919e05551e:10:68215279")["results"]
+  	nyt_hash = HTTParty.get("http://api.nytimes.com/svc/search/v1/article?query=#{@symbol}&sort=newest&api-key=92bd131613a30627da3598919e05551e:10:68215279")["results"]
   	nyt_hash.each do |x| @articles << "<a href=\"#{x["url"]}\">#{x["title"]}</a><br /><br />" end
   end
   erb :quote

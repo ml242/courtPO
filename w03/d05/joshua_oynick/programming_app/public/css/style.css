@@ -1,0 +1,99 @@
+body {
+  background:url(http://yourtwitterbackground.com/wp-content/uploads/2012/04/Halo-4-Twitter-Background-Pre-640x360.jpg) left repeat fixed;
+  background-repeat: repeat-y;
+  background-size: 100%;
+  color: white;
+  display: block;
+  font-family: 'News Cycle', sans-serif;
+  list-style: none;
+}
+
+h1 {
+  text-align: center;
+  font-size: 50px;
+  margin: 20px;
+  font-family: 'The Girl Next Door' cursive;
+  color: #A7E9FF;
+}
+
+h2 {
+  color: #A7E9FF;
+  font-size: 30px;
+  text-align: center;
+}
+
+img.profile_pic {
+  /*float: left;*/
+  height: 100px;
+  margin-left: 3px;
+  margin-bottom: 3px;
+}
+
+.search, .results {
+  padding: 9px 20px;
+  overflow: auto;
+}
+
+.box {
+  position: relative;
+  max-width: 900px;
+  min-height: 400px;
+  width: 70%;
+  margin: 0 auto;
+  padding-left: 25px;
+  background-color: rgba(8,99,143,0.6);
+  font-size: 18px;
+  border: 1px dashed #A5A9EB;
+  list-style: none;
+
+}
+
+.search {
+  text-align: center;
+  height: 250px;
+  font-size: 25px;
+}
+
+.box li {
+    list-style: none;
+    padding: 1px;
+    overflow: auto;
+}
+
+input {
+  display: block;
+  height: 25px;
+  width: 220px;
+  margin: 0 auto;
+  background: #020101;
+  color: #020101;
+  border: 2px solid #000000;
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: bolder;
+}
+
+a {
+  text-decoration: none;
+  color: #A7E9FF;
+}
+
+a:hover {
+  color: #323347;
+}
+
+footer {
+  text-align: center;
+  vertical-align: text-bottom;
+  margin: 0 auto;
+  bottom: 0;
+  font-size: 18px;
+  color: white;
+}
+
+a.back {
+  color: white;
+  display: block;
+}
+
+

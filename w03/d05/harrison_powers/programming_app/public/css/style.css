@@ -1,0 +1,61 @@
+@font-face {
+   font-family: "Delicious";
+   src: url("Glass_TTY_VT220.ttf");
+}
+
+*{
+  background-color: #000;
+  color: rgb(89, 209, 33);
+  font-family: "Delicious";
+  font-size: 40px;
+}
+
+a{
+  text-decoration: none;
+  color: rgb(89, 209, 33);
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
+.container {
+  padding-top: 20px;
+}
+
+.programmer_container {
+  float:left;
+  margin: 10px;
+  width: 150px;
+}
+
+.programmer_container img {
+  width: 73px;
+  height: 73px;
+}
+
+.twitter {
+  float: left;
+  width: 65%;
+}
+
+.github {
+  float: right;
+  text-align: right;
+  margin: 0 10px;
+  width: 30%;
+}
+
+.edit {
+  position:relative;
+  top: -20px;
+}
+
+input {
+  color: rgb(89, 209, 33);
+  background-color: #000;
+  border: 0;
+  padding: 5px;
+  font-size: 40px;
+  font-family: "Delicious";
+}

@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'sinatra/reloader' if development?
 require 'httparty'
+require 'pg'
 require 'json'
 require 'pry'
 # parsed_result_JSON.parse(response)
@@ -10,7 +11,7 @@ erb :index
 end
 
 get '/movies/search' do
-movie = params[:movie].gsub(/\s/, '+')
+movie = params[:movie].gsub(/\s/, '+') if params[:movie]
 url = "http://www.omdbapi.com/?s=#{movie}"
 response = HTTParty.get(url)
 data = JSON.parse(response)
@@ -19,8 +20,8 @@ erb :movies
 end
 
 get '/movies/:id' do
-id = params[:id]
-movie_url = "http://www.omdbapi.com/?i=#{id}"
+@id = params[:id]
+movie_url = "http://www.omdbapi.com/?i=#{@id}"
 new_response = HTTParty.get(movie_url)
 @new_data = JSON.parse(new_response)
 @title = @new_data["Title"]
@@ -36,4 +37,26 @@ new_response = HTTParty.get(movie_url)
 erb :movie
 end
 
+post '/faves' do
+movie_id = params[:imdbID]
+new_url = "http://www.omdbapi.com/?i=#{movie_id}"
+new_response = HTTParty.get(new_url)
+@new_data = JSON.parse(new_response)
+title_new = @new_data["Title"]
+year_new = @new_data["Year"]
+sql = "INSERT INTO movies (title, year) VALUES ('highlander', '1995')"
+db_connection = PG.connect(:dbname => 'movies_db', :host => 'localhost')
+response = db_connection.exec(sql)
+entires_size = response.entries.size
+binding.pry
+db_connection.close
+redirect to('/faves')
+end
 
+get '/faves' do
+db_connection = PG.connect(:dbname => 'movies_db', :host => 'localhost')
+sql2 = "SELECT * FROM movies"
+@response = db_connection.exec(sql2)
+db_connection.close
+erb :faves
+end

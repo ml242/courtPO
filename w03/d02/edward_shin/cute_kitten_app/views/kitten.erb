@@ -1,1 +1,10 @@
-<%= @kitten_hash%>
+<% @kitten_hash.each do |hash| %>
+<% id = hash["id"]%>
+<% name = hash["name"]%>
+<% description = hash["description"]%>
+<% owner = hash["owner"]%>
+<p>ID#: <%=id%></p>
+<p>Name: <%=name%></p>
+<p>Owner: <%=owner%></p>
+<p>Description: <%=description%></p>
+<% end %>

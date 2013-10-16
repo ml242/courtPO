@@ -3,3 +3,14 @@
 <img src ="<%= @post['photo'] %>" />
 <div class = "author">Posted by: <%= @post['name']%> on <%= @post['date_taken'] %> </div>
 </div>
+
+<div class = 'update'>
+  <form method="get" action = "/photos/<%=@id%>/edit">
+  <input type = "submit" value = "Update This Photo">
+</form>
+
+<form method="post" action = "/photos/<%=@id%>/delete">
+  <input type = "submit" value = "Delete This Photo">
+</form>
+
+</div>
