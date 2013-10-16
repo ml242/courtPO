@@ -3,6 +3,7 @@ class CreateCompanies < ActiveRecord::Migration
     create_table :companies do |t|
       t.string :name
       t.timestamps
+    end
   end
 
   def down
