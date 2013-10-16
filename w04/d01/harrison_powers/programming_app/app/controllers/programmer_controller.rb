@@ -45,6 +45,7 @@ class ProgrammerController < ApplicationController
       redirect_to("/programmers/#{id}")
     elsif request.get?
       @programmer = Programmer.find(id)
+      @programmers = Programmer.all
       @header = "The #{@programmers.count} Programmers"
     end
   end
