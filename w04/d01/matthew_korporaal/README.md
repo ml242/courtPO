@@ -5,6 +5,7 @@
 
 - config/routes.rb
 - app/models/programmer.rb - class model
+- app/assets/stylesheets/style.css - CSS
 - app/views/index.html.erb - Show all Programmers
 - app/views/edit.html.erb - Edit Programmer
 - app/views/list.html.erb - Programmer profile
