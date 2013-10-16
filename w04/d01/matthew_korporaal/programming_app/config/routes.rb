@@ -1,6 +1,7 @@
 ProgrammingApp::Application.routes.draw do
 
 # GET - Show all programmers
+get '/' => 'profile#index'
 get '/programmers' => 'profile#index'
 # GET - Show individual programmer
 get '/programmers/:id' => 'profile#list'
