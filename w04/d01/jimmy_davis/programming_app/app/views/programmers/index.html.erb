@@ -1,8 +1,3 @@
-<h1>Programmers</h1>
-<br>
-<% @programmers.each do |programmer| %>
-<%= programmer.name %>
-@<%= programmer.twitter_username %>
-<a href="<%= programmer.twitter_pic %>">PHOTO</a>
-<br>
-<% end %>
+<h1>Curated Twitter Accounts of Top Developers</h1>
+
+<%= link_to('View All Programmers', '/programmers') %>
