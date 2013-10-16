@@ -8,4 +8,9 @@
 <% unless @github_username.nil? %>
   <h5>Github:</h5>
   <a href="https://github.com/<%= @github_username %>" target="_blank">@<%= @github_username %></a>
+  <ul>
+    <% @repos.each do |repo| %>
+      <li><a href="<%= repo.html_url %>" target="_blank"><%= repo.name %></a></li>
+    <% end %>
+  </ul>
 <% end %>
