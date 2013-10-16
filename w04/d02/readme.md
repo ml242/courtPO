@@ -1,5 +1,5 @@
 ## Rails For Zombies (Ch 1 & Ch 2)
-Complete chapters 1 & 2 of Rails for Zombies.
+Complete chapters 1 & 2 of Rails for Zombies by [Code School](http://codeschool.com).
 ####Make sure that you're signed in, so you get the badges!
 
 * When you're logged into Code School, go to "My Account" and copy the link to your "Report Card".
