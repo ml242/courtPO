@@ -1,0 +1,13 @@
+<h1>Programmers</h1>
+<br>
+<% @programmers.each do |programmer| %>
+<div class="pics">
+  <h2><%= programmer.name %></h2>
+  <a href = "http://twitter.com/<%= programmer.twitter_username %>"> @<%= programmer.twitter_username %></a> </h3>
+  <br>
+  <br>
+  <img src="<%= programmer.twitter_pic %>"/>
+  <br>
+</div>
+<br>
+<% end %>
