@@ -1,17 +1,19 @@
 ProgrammingApp::Application.routes.draw do
 
-  get '/' => 'index#redirect'
+  get '/' => redirect('/programmers')
 
-  get '/programmers' => 'programmer#index'
-  post '/programmers' => 'programmer#create'
+  get '/programmers' => 'programmers#index'
 
-  get '/programmers/new' => 'programmer#new'
+  post '/programmers' => 'programmers#create'
 
-  get '/programmers/:id' => 'programmer#view'
+  get '/programmers/new' => 'programmers#new'
 
-  get '/programmers/:id/edit' => 'programmer#edit'
-  post '/programmers/:id' => 'programmer#edit'
+  get '/programmers/:id' => 'programmers#show'
 
-  post '/programmers/:id/delete' => 'programmer#delete'
+  get '/programmers/:id/edit' => 'programmers#edit'
+
+  post '/programmers/:id' => 'programmers#update'
+
+  post '/programmers/:id/delete' => 'programmers#delete'
 
 end
