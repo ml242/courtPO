@@ -1,0 +1,8 @@
+<form action="/programmers/edit" method="post">
+  <input type="hidden" name="id" value=<%= @person.id %>>
+  <input type="text" name="name" value=<%= @person.name %>>
+  <br><input type="text" name="twitter_pic" value=<%= @person.twitter_pic %>>
+  <br><input type="text" name="twitter_username" value=<%=@person.twitter_username %>>
+  <br><input type="text" name="github_username" placeholder="github username">
+  <br><input type="submit" value="submit">
+</form>
