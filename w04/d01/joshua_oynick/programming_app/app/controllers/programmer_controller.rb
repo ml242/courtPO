@@ -1,3 +1,0 @@
-class ProgrammerController < ApplicationController
-
-  def
