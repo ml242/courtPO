@@ -4,7 +4,7 @@ class ProgrammersController < ApplicationController
     @programmers = Programmer.all
   end
 
-  def programmer
+  def show
     id = params["id"]
     @programmer_info = Programmer.find(id)
   end
