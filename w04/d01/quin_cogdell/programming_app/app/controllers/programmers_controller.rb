@@ -1,7 +1,7 @@
 class ProgrammersController < ApplicationController
 
   def index
-    @results = Programmer.all
+    @results = Programmer.order('id ASC')
   end
 
   def new
@@ -26,11 +26,11 @@ class ProgrammersController < ApplicationController
     twitter_username = params[:twitter_username]
     github_username = params[:github_username]
     p = Programmer.find(id)
-    #p.update(name: name, twitter_pic_url: twitter_pic_url, twitter_username: twitter_username, github_username: github_username )
-    p.name = name
-    p.twitter_pic_url = twitter_pic_url
-    p.twitter_username = twitter_username
-    p.github_username = github_username
+    p.update(id, name: name, twitter_pic_url: twitter_pic_url, twitter_username: twitter_username, github_username: github_username )
+    # p.name = name
+    # p.twitter_pic_url = twitter_pic_url
+    # p.twitter_username = twitter_username
+    # p.github_username = github_username
     p.save
     redirect_to("/programmers")
 
