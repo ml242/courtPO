@@ -15,6 +15,22 @@ class ProgrammerController < ApplicationController
     @github_username = programmer.github_username
   end
 
+  def new
+  end
+
+  def create
+    id = params[:id]
+    name = params[:name]
+    twitter_username = params[:twitter_username]
+    twitter_pic = params[:twitter_pic]
+    github_username = params[:github_username]
+
+    programmer = Programmer.create :name => name, :twitter_username => twitter_username, :twitter_pic => twitter_pic, :github_username => github_username
+    id = programmer.id
+
+    redirect_to "/programmers/#{id}"
+  end
+
   def edit
     @id = params[:id]
 
