@@ -1,9 +1,10 @@
-require_relative 'programmer'
 require 'pry'
 require 'active_record'
 require 'pg'
 require 'csv'
+require_relative 'programmer'
 require_relative 'active_record'
+
 
 # programmers.csv contains the information you need, but you want these entries inserted into your database -- automate it!
 

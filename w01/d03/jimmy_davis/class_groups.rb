@@ -78,10 +78,6 @@ def choose_a_group()
   end
 end
 
-#### tested with this method below, not sure if it is working
-# def add_students()
-#   students = STUDENTS.sample
-# end
 
 # add a funny team name for each
 # make different array of funny names to assign each group

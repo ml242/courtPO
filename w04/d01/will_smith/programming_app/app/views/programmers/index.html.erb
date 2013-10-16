@@ -1,0 +1,74 @@
+
+    <!-- Carousel
+    Change your images in the main.css file.
+    ================================================== -->
+    <div id="header" class="carousel slide animated fadeIn">
+      <div class="carousel-inner">
+        <div class="item one active">
+          <div class="container animated fadeInUp">
+            <div class="carousel-caption">
+               <% @programmer = @programmers.sample %>
+              <h1>Meet <%= @programmer.name %></h1>
+              <p class="lead margin-40"><em>Follow him @<%= @programmer.twitter_username %></em></p>
+              <a class="btn-main" href="/programmers/<%= @programmer.id %>"><i class="icon-chevron-right"></i> More</a>
+            </div>
+          </div>
+        </div>
+        <div class="item two">
+          <div class="container">
+            <div class="carousel-caption">
+              <% @programmer = @programmers.sample %>
+              <h1>Meet <%= @programmer.name %></h1>
+              <p class="lead margin-40"><em>Follow him @<%= @programmer.twitter_username %></em></p>
+              <a class="btn-main" href="/programmers/<%= @programmer.id %>"><i class="icon-chevron-right"></i> More</a>
+            </div>
+          </div>
+        </div>
+        <div class="item three">
+          <div class="container">
+            <div class="carousel-caption">
+              <% @programmer = @programmers.sample %>
+              <h1>Meet <%= @programmer.name %></h1>
+              <p class="lead margin-40"><em>Follow him @<%= @programmer.twitter_username %></em></p>
+              <a class="btn-main" href="/programmers/<%= @programmer.id %>"><i class="icon-chevron-right"></i> More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control hidden-phone" href="#header" data-slide="prev"><i class="icon-angle-left"></i></a>
+      <a class="right carousel-control hidden-phone" href="#header" data-slide="next"><i class="icon-angle-right"></i></a>
+    </div><!-- /.carousel -->
+
+
+    <!--Programmers-->
+    <section id="programmers">
+      <div class="container text-center">
+        <div class="row">
+          <div class="span12 margin-40">
+            <h3>Programmers</h3>
+          </div>
+        </div>
+
+        <div class="row margin-40">
+
+  <% @programmers.each do |programmer| %>
+    <% @id = programmer['id'] %>
+    <% @name = programmer['name'] %>
+    <% @twitter_pic = programmer['twitter_pic'] %>
+    <% @twitter_username = programmer['twitter_username'] %>
+
+          <!-- Thumbnail Two-->
+          <div class="span4">
+            <div class="thumbs">
+                <img src="<%= @twitter_pic %>" alt="profile pic">
+                <a href="/programmers/<%= @id %>"></a>
+            </div>
+
+            <div class="project-title margin-30">
+              <h4><%= @name %></h4>
+              <p><%= @twitter_username %></p>
+            </div>
+          </div>
+          <% end %>
+
+        </div><!--End Row of Work-->
