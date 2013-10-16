@@ -1,5 +1,9 @@
-<ol>
+<h1>Programmers</h1>
+
+<ul>
 <%@programmers.each do |programmer|%>
-  <li><%=programmer.name%></li>
+  <li>
+    <%= link_to(programmer.name, "/programmers/#{programmer.id}")%>
+  </li>
 <%end%>
-</ol>
+</ul>
