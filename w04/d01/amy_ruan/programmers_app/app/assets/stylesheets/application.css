@@ -11,3 +11,38 @@
  *= require_self
  *= require_tree .
  */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #01DF3A;
+  background-image: url("http://imgs.xkcd.com/comics/duty_calls.png");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+h1 {
+  margin-left: 100px;
+}
+
+
+h2 {
+  margin-left: 100px;
+}
+
+/*.nav{
+  margin-top: 50px;
+  margin-left:100px;
+}*/
+.programmers_list {
+  margin-left: 100px;
+}
+
+.programmer {
+  height: 100px;
+  width: 100px;
+}
+/*
+.individual {
+  margin-left: 100px;
+}*/
