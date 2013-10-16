@@ -5,6 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
 programmers_file = File.open('programmers.csv', 'r')
 
 programmers_file.each_line do |line|
