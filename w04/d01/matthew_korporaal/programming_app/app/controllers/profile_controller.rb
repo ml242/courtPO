@@ -12,9 +12,10 @@ class ProfileController < ApplicationController
     @programmers = Programmer.all
   end
   # GET '/programmers/:id' - Individual programmer info
-  def list
+  def show
     @programmer = Programmer.find(params[:id])
     @twitter = Twitter.user_timeline("#{@programmer.twitter_acct}")
+    # Does not check if valid!!
     if gh_handle = @programmer.github_acct
       @gh_repo = Github.repos.list user: gh_handle
     end
@@ -24,14 +25,14 @@ class ProfileController < ApplicationController
     @programmer = Programmer.find(params[:id])
   end
   # POST '/programmers/:id' - info received, save and redirect to Ind. listing
-  def edited
+  def update
     id = params[:id].to_i
     @programmer = Programmer.find(id)
-    @programmer.name = params["prog-name"]
-    @programmer.twitter_acct = params["prog-twitter"]
-    @programmer.github_acct = params["prog-github"]
-    @programmer.avatar_url = params["prog-url"]
-    @programmer.save
+    @programmer.update_attributes(
+      :name => params["prog-name"],
+      :twitter_acct => params["prog-twitter"],
+      :github_acct => params["prog-github"],
+      :avatar_url => params["prog-url"])
     redirect_to("/programmers/#{id}")
   end
 end

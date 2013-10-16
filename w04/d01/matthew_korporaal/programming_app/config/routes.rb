@@ -1,12 +1,12 @@
 ProgrammingApp::Application.routes.draw do
 
 # GET - Show all programmers
-get '/' => 'profile#index'
+get '/' => redirect('/programmers')
 get '/programmers' => 'profile#index'
 # GET - Show individual programmer
-get '/programmers/:id' => 'profile#list'
+get '/programmers/:id' => 'profile#show'
 # POST - Receive Info and save to DB
-post '/programmers/:id' => 'profile#edited'
+post '/programmers/:id' => 'profile#update'
 # GET - Edit form
 get '/programmers/edit/:id' => 'profile#edit'
 
