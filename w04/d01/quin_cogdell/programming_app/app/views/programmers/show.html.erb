@@ -1,0 +1,61 @@
+<h2>Programmer Info</h2>
+
+<% result = @results%>
+<table border="1">
+  <tr>
+  <th>Twitter Pic</th>
+  <th>Name</th>
+  <th>Twitter Username</th>
+  <th>Github Name</th>
+</tr>
+<tr>
+  <td>
+    <img src="<%= result.twitter_pic_url %>">
+  </td>
+  <td>
+    <a href="/programmers/<%= result['id'] %>"><%= result.name %></a>
+  </td>
+   <td>
+    <a href="http://www.twitter.com/<%= result.twitter_username %>"><%= result.twitter_username %></a>
+  </td>
+
+  <td>
+    <a href="http://www.github.com/<%= result.github_username %>"><%= result.github_username %></a>
+  </td>
+  <td>
+    <form action="/programmers/<%= result['id'] %>/edit" method="get">
+      <input type="submit" value="Edit">
+    </form>
+  </td>
+  <td>
+    <form action="/programmers/<%= result['id'] %>/delete" method="post">
+        <input type="submit" value="Delete">
+    </form>
+  </td>
+</tr>
+
+</table>
+
+
+
+
+
+<h3> Github Repos </h3>
+<% if @github != nil %>
+<table border = "1">
+  <tr>
+    <th>Repos</th>
+    <th>Description</th>
+  </tr>
+
+  <tr> <% @github.each do |repo| %>
+    <td><a href="<%= repo.url %>"><%= repo.name %></a>
+    </td>
+      <td><%= repo.description %>
+    </td>
+  </tr>
+  <% end %>
+<% else %>
+</table>
+<%= "Edit user to include github username to see repos." %>
+<% end %>
