@@ -1,0 +1,37 @@
+body {
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  display: block;
+  margin-top: 0;
+  margin-left: 0 auto;
+  margin-right: auto;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+h2 {
+  color: black;
+  border-bottom: 1px solid;
+  border-color: #FF0000;
+  margin: 20px auto 25px;
+  padding: 20px;
+}
+
+a: link {
+  color: black;
+}
+
+a:hover {
+  color: #FF0000;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+
+li {
+  list-style-type: none;
+  line-height: 200%;
+}
