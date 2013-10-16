@@ -1,4 +1,21 @@
-<form action="/programmers/<%= @id %>" method="post">
+<%= form_tag "/programmers/#{@id}" do %>
+
+  <%= label_tag 'name', 'Name: ' %>
+  <%= text_field_tag 'name', @name %>
+
+  <%= label_tag 'twitter_username', 'Twitter Username: ' %>
+  <%= text_field_tag 'twitter_username', @twitter_username %>
+
+  <%= label_tag 'twitter_pic', 'Twitter Pic URL: ' %>
+  <%= text_field_tag 'twitter_pic', @twitter_pic %>
+
+  <%= label_tag 'github_username', 'Github Username: ' %>
+  <%= text_field_tag 'github_username', @github_username %>
+
+  <%= submit_tag 'Update' %>
+<% end %>
+
+<!-- <form action="/programmers/<%= @id %>" method="post">
   <label for="name">Name:</label>
   <input type="text" name="name" value="<%= @name %>" id="name">
 
@@ -19,3 +36,12 @@
 <form action="/programmers/<%= @id %>/delete" method="post">
   <input type="submit" value="Delete Programmer">
 </form>
+ -->
+
+<br>
+
+<%= form_tag "/programmers/#{@id}", method: :delete do %>
+  <%= submit_tag 'Delete' %>
+<% end %>
+
+

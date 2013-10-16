@@ -70,7 +70,7 @@ class ProgrammersController < ApplicationController
     redirect_to "/programmers/#{id}"
   end
 
-  # POST from '/programmers/:id/delete'
+  # DELETE from '/programmers/:id'
   def destroy
     id = params[:id]
 
