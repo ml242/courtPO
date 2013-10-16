@@ -427,7 +427,7 @@ a:hover {
 }
 
 #content2 {
-  background: url(../img/grid_noise.png) repeat;
+  background: url('http://f.cl.ly/items/2J403r4738430C2z3p3M/grid_noise.png') repeat;
   background-color: #ebebeb;
   padding-top: 120px;
   padding-bottom: 120px;
@@ -926,7 +926,7 @@ ul.social-icons-signup li a:hover {
    Latest Work and Portfolio Styles
    ========================================================================== */
 #programmers {
-  background: url(../img/grid_noise.png) repeat;
+  background: url('http://f.cl.ly/items/2J403r4738430C2z3p3M/grid_noise.png') repeat;
   background-color: #ebebeb;
   padding-top: 120px;
   padding-bottom: 120px;
