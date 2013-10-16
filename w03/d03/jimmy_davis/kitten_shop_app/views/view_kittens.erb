@@ -10,6 +10,6 @@
         <% @cute = "NO" %>
       <% end %>
     <%= "#{@cute}" %></li>
-    <li></li>
+    <li>Owner: <%= "#{kitten["owner_id"]}" %></li>
   <img src="<%= "#{kitten["image_url"]}" %>">
 <% end %>

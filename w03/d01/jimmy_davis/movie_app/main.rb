@@ -60,6 +60,7 @@ get "/movies/:imdb_id" do
     :writer => response["Writer"],
     :actors => response["Actors"],
     :plot => response["Plot"],
+    :imdbid => response["imdbID"],
     :poster => poster_url
   }
 
@@ -99,7 +100,8 @@ post '/movies/faves' do
 
 # for HW will need: VALUES ('#{params['name']}')
 
-
+binding.pry
+# new http.get(url) url =omdp i= #{imdbid}
 sql = "INSERT INTO movies (title, year, rated, released, runtime, genre, director, writer, actors, plot) VALUES ('#{params[:title]}', #{params[:year]}, '#{params[:rated]}', '#{params[:released]}', '#{params[:runtime]}', '#{params[:genre]}', '#{params[:director]}', '#{params[:writer]}', '#{params[:actors]}', '#{params[:plot]}')"
 
 # sql = "INSERT INTO movies (title, year, rated, released, runtime, genre, director, writer, actors, plot) VALUES ('#{params["Title"]}', #{params["Year"]}, '#{params["Rated"]}', '#{params["Released"]}', '#{params["Runtime"]}', '#{params["Genre"]}', '#{params["Director"]}', '#{params["Writer"]}', '#{params["Actors"]}', '#{params["Plot"]}')"

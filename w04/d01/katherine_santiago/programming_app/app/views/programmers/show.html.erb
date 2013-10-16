@@ -1,0 +1,12 @@
+<h2>profile name</h2>
+
+<%= @programmer.name %><br>
+<img src="<%= @programmer.twitter_pic %>"><br>
+Twitter: <%= @programmer.twitter_username %><br>
+Github: <%= @programmer.github %><br>
+
+<form action="/programmers/<%= @programmer[:id] %>" method="post">
+  <input type="hidden">
+  <input type="submit" value="Delete">
+</form>
+
