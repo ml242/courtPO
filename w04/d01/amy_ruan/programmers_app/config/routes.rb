@@ -1,12 +1,13 @@
 ProgrammersApp::Application.routes.draw do
 
-
+  get '/' => 'programmers#index'
   get '/programmers' => 'programmers#index'
   post '/programmers' => 'programmers#create'
   get '/programmers/new' => 'programmers#new'
 
   get '/programmers/:id' => 'programmers#show'
   post '/programmers/:id' => 'programmers#update'
+  post '/programmers/:id/delete' => 'programmers#delete'
   get '/programmers/:id/edit' => 'programmers#edit'
 
   # The priority is based upon order of creation:

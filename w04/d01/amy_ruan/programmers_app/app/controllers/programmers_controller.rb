@@ -43,5 +43,11 @@ class ProgrammersController < ApplicationController
      redirect_to ("/programmers/#{id}")
   end
 
+  def delete
+    @id = params[:id]
+    programmer = Programmer.find(@id)
+    programmer.destroy
+    redirect_to ("/programmers")
+  end
 
 end

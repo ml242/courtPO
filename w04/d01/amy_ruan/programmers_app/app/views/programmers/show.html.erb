@@ -6,6 +6,10 @@
           <img src=<%=@programmer.twitter_pic%>>
       </li>
     </ul>
-    <div><%=link_to("Edit Programmer","/programmers/#{@programmer.id}/edit")%></div>
-    <div><%=link_to("Delete Programmer","/programmers/#{@programmer.id}")%></div>
   </div>
+    <form action= <%="/programmers/#{@programmer.id}/delete"%> method= "post">
+      Press to delete programmer
+    <input type="submit" value="Delete"%>
+    </form>
+  <div class="editor"><%=link_to("Edit Programmer","/programmers/#{@programmer.id}/edit")%></div>
+
