@@ -19,6 +19,11 @@ class ProgrammerController < ApplicationController
     end
   end
 
+  def new
+    @header = "Go back"
+    @title = "Add a new programmer!"
+  end
+
   def view
     id = params[:id].to_i
     @programmer = Programmer.find(id)

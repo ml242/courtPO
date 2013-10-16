@@ -5,6 +5,8 @@ ProgrammingApp::Application.routes.draw do
   get '/programmers' => 'programmer#index'
   post '/programmers' => 'programmer#create'
 
+  get '/programmers/new' => 'programmer#new'
+
   get '/programmers/:id' => 'programmer#view'
 
   get '/programmers/:id/edit' => 'programmer#edit'

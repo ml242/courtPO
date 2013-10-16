@@ -1,4 +1,4 @@
-.container
+.container.cf
   - @programmers.each do |programmer|
     .programmer_container
       a href="/programmers/#{programmer.id}"
@@ -6,3 +6,5 @@
         br/
         img src="#{programmer.img_url}"
         br/
+footer
+  a href="/programmers/new" Add a programmer!
