@@ -1,4 +1,4 @@
-class ProgrammerController < ApplicationController
+class ProgrammersController < ApplicationController
 
   def index
     @programmers = Programmer.all
@@ -46,6 +46,7 @@ class ProgrammerController < ApplicationController
   end
 
   def edit
+    id = params[:id].to_i
     @programmer = Programmer.find(id)
     @programmers = Programmer.all
     @header = "The #{@programmers.count} Programmers"
