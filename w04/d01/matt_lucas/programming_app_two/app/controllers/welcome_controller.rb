@@ -7,23 +7,18 @@ class WelcomeController < ApplicationController
     if request.get?
       @list = Programmer.all
     elsif request.post?
-      gitinput = params["githubs"]
-      twitter = params["twitter"]
-      img_url = params["img_url"]
-      name = params["name"]
-      data = Programmer.create
-      #retrieve the post data and input it into DB
-      data.twitter = twitter
-      data.name = name
-      data.img_url = img_url
-      data.githubs = gitinput
-      data.save
+      @programmer = Programmer.create
+      @programmer.github = params["github"]
+      @programmer.twitter = params["twitter"]
+      @programmer.img_url = params["img_url"]
+      @programmer.name = params["name"]
+      Programmer.save
       redirect_to('/programmers')
     end
   end
 
   def new
-    "welcome to the insert"
+    @programmer = Programmer.create
   end
 
   def id

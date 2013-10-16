@@ -2,6 +2,7 @@ ProgrammingAppTwo::Application.routes.draw do
 
 get '/' => 'welcome#index'
 get '/programmers' => 'welcome#programmers'
+post '/programmers' => 'welcome#programmers'
 get '/programmers/new' => 'welcome#new'
 get '/programmers/:id' => 'welcome#id'
 get '/programmers/:id/edit' => 'welcome#edit'
