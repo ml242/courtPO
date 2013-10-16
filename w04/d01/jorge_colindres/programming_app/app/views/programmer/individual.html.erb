@@ -3,10 +3,9 @@
 <a href="/programmers/<%= @id %>/edit">Edit</a>
 <% unless @twitter_username.nil? %>
   <h5>Twitter:</h5>
-  <a href="<%= @twitter_username %>" target="_blank">@<%= @twitter_username %></a>
+  <a href="https://twitter.com/<%= @twitter_username %>" target="_blank">@<%= @twitter_username %></a>
 <% end %>
 <% unless @github_username.nil? %>
   <h5>Github:</h5>
-  <a href="<%= @github_username %>" target="_blank">@<%= @github_username %></a>
-  <h5>Github Repos:</h5>
+  <a href="https://github.com/<%= @github_username %>" target="_blank">@<%= @github_username %></a>
 <% end %>

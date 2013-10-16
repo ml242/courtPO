@@ -26,7 +26,7 @@ class ProgrammerController < ApplicationController
     @github_username = programmer.github_username
   end
 
-  def edited
+  def update
     id = params[:id]
     name = params[:name]
     twitter_username = params[:twitter_username]
@@ -42,6 +42,15 @@ class ProgrammerController < ApplicationController
     programmer.save
 
     redirect_to "/programmers/#{id}"
+  end
+
+  def destroy
+    id = params[:id]
+
+    programmer = Programmer.find id
+    programmer.delete
+
+    redirect_to "/programmers"
   end
 
 end
