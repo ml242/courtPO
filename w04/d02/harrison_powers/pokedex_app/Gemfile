@@ -9,6 +9,7 @@ gem 'pg'
 
 group :development do
   gem 'annotate'
+  gem 'json'
 end
 
 
