@@ -65,7 +65,7 @@ Read More About Relations before class tomorrow (skim and don't worry about the 
 
 If you want to incorperate more information about Pokemon, checkout:
 
-- https://github.com/Matheus28/Pokemmo/blob/master/server/data/pokemon.json
+- [https://github.com/Matheus28/Pokemmo/blob/master/server/data/pokemon.json](https://github.com/Matheus28/Pokemmo/blob/master/server/data/pokemon.json)
 (note reading about relations above will let you do more advanced things if you like to model some of these relationships)
 
 Also all the code from class is pushed up.
