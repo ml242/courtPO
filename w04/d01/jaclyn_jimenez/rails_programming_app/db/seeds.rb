@@ -26,7 +26,6 @@ programmers_array =
   [Aaron Patterson,tenderlove,http://si0.twimg.com/profile_images/378800000325798111/ca48276f8ebbbbac9c6ce83aac3c8548_bigger.jpeg]
 ]
 
-# reads in each line of string
 programmers_array.each do |array|
   added_name = array[0]
   added_username = array[1]
