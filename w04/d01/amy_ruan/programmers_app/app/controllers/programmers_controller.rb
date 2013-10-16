@@ -3,6 +3,18 @@ class ProgrammersController < ApplicationController
     @programmers = Programmer.all
   end
 
+  def new
+  end
+
+  def create
+    name = params[:create_name]
+    twitter_username = params[:create_twitter_username]
+    twitter_pic = params[:create_twitter_pic]
+    programmer = Programmer.create(:name => name, :twitter_username => twitter_username, :twitter_pic => twitter_pic)
+    redirect_to ("/programmers")
+  end
+
+
   def show
     id = params[:id]
     @programmer = Programmer.find(id)
@@ -28,7 +40,7 @@ class ProgrammersController < ApplicationController
     when factor == "twitter_pic"
       programmer.update_attributes(twitter_pic: twitter_pic)
     end
-    redirect_to ("/programmers/#{id}")
+     redirect_to ("/programmers/#{id}")
   end
 
 
