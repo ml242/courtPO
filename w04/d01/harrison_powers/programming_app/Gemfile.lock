@@ -54,9 +54,6 @@ GEM
       i18n (~> 0.5)
     faraday (0.8.8)
       multipart-post (~> 1.2.0)
-    figaro (0.7.0)
-      bundler (~> 1.0)
-      rails (>= 3, < 5)
     github_api (0.10.2)
       addressable
       faraday (~> 0.8.7)
@@ -176,7 +173,6 @@ DEPENDENCIES
   binding_of_caller
   coffee-rails (~> 3.2.1)
   faker
-  figaro
   github_api
   jquery-rails
   meta_request
