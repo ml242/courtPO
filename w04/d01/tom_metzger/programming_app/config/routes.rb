@@ -2,7 +2,14 @@ ProgrammingApp::Application.routes.draw do
 
   get '/programmers' => "programmers#index"
 
+  get '/programmers/new' => "programmers#new_programmer"
+
   get '/programmers/:id' => "programmers#programmer"
+
+  post '/programmers' => "programmers#new"
+
+  get   '/programmers/:id/edit' => "programmers#edit_form"
+  post  '/programmers/:id'      => "programmers#edit"
 
 
   # The priority is based upon order of creation:
