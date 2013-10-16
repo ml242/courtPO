@@ -9,12 +9,14 @@ class ProgrammersController < ApplicationController
 
   def show
     @results = Programmer.find(params[:id])
+    if @results.github_username !=nil
+      @github = github_call(@results.github_username)
+    end
   end
 
   def edit
     @results = Programmer.find(params[:id])
   end
-
 
 
   def update
@@ -39,7 +41,11 @@ class ProgrammersController < ApplicationController
     programmer = Programmer.find(id)
     programmer.destroy
     redirect_to '/programmers'
-
   end
+
+  def github_call(github_username)
+      Github.repos.list(user: github_username)
+  end
+
 
 end
