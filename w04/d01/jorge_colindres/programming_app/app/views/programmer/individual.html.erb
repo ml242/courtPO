@@ -1,5 +1,6 @@
 <img src="<%= @twitter_pic %>">
 <p><%= @name %></p>
+<a href="/programmers/<%= @id %>/edit">Edit</a>
 <% unless @twitter_username.nil? %>
   <h5>Twitter:</h5>
   <a href="<%= @twitter_username %>" target="_blank">@<%= @twitter_username %></a>
