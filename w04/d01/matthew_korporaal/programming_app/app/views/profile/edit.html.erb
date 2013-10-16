@@ -1,9 +1,9 @@
 <h1>Edit <%= @programmer.name %><h1>
 
-<form action="/programmers/<%= @programmer.id.to_s %>" method="post">
-<a><input type="text" class="prog-info" value="<%= @programmer.name %>" name="prog-name">Name</a><br>
-  <a><input type="text" class="prog-info" value="<%= @programmer.twitter_acct %>" name="prog-twitter">Twitter Account</a><br>
-  <a><input type="text" class="prog-info" value="<%= @programmer.github_acct %>" name="prog-github">GitHub Account</a><br>
-  <a><input type="text" class="prog-info" value="<%= @programmer.avatar_url %>" name="prog-url">Avatar URL</a>
-  <input type="submit" class="guest-info" value="Update Programmer">
-</form>
+<%= form_tag("/programmers/#{@programmer.id.to_s}", method: "post") do %>
+  <%= text_field_tag("prog-name", "#{@programmer.name}") %>Name<br>
+  <%= text_field_tag("prog-twitter", "#{@programmer.twitter_acct}") %>Twitter Account<br>
+  <%= text_field_tag("prog-github", "#{@programmer.github_acct}") %>GitHub Account<br>
+  <%= text_field_tag("prog-url", "#{@programmer.avatar_url}") %>Pic URL<br>
+  <%= submit_tag("Update") %>
+<% end %>

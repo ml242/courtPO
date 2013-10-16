@@ -1,8 +1,12 @@
 ProgrammingApp::Application.routes.draw do
 
+# GET - Show all programmers
 get '/programmers' => 'profile#index'
+# GET - Show individual programmer
 get '/programmers/:id' => 'profile#list'
+# POST - Receive Info and save to DB
 post '/programmers/:id' => 'profile#edited'
+# GET - Edit form
 get '/programmers/edit/:id' => 'profile#edit'
 
   # The priority is based upon order of creation:

@@ -1,21 +1,20 @@
+<!-- Display Individual Programmer -->
 <h1><%= @programmer.name %></h1>
 
-<div>
-  <img src="<%=@programmer.avatar_url %>" width=73 height=73 alt="">
-</div>
+<div><%= image_tag("#{@programmer.avatar_url}", :size => "73x73") %></div>
 
 <h2>Twitter: @<%= @programmer.twitter_acct %></h2>
 <h2>Github: <%= @programmer.github_acct %></h2>
+<!-- Print GH repos -->
 <% if @gh_repo %>
-  <h3>Repositories
+  <h3>Repositories</h3>
   <ul>
   <% @gh_repo.each do |repo| %>
-    <li><a href="<%= repo["svn_url"] %>">
-      <%= repo["svn_url"].split("/").last %></li></a>
-<% end %>
+    <li><%= link_to(repo["svn_url"].split("/").last, "#{repo["svn_url"]}") %></li>
+  <% end %>
   </ul>
 <% end %>
-
-<form action="/programmers/edit/<%=@programmer.id.to_s %>" method="get">
-<div><input type="submit" value="Edit"></div>
-</form>
+<!-- Option to Edit programmer -->
+<%= form_tag("/programmers/edit/#{@programmer.id.to_s}", method: "get") do %>
+  <%= submit_tag("Edit") %>
+<% end %>
