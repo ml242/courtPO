@@ -11,13 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131015224718) do
+ActiveRecord::Schema.define(:version => 20131016191006) do
+
+  create_table "companies", :force => true do |t|
+    t.string "name"
+  end
 
   create_table "programmers", :force => true do |t|
-    t.string "name"
-    t.string "twitter"
-    t.string "github"
-    t.string "img_url"
+    t.string  "name"
+    t.string  "twitter"
+    t.string  "github"
+    t.string  "img_url"
+    t.integer "company_id"
   end
 
 end
