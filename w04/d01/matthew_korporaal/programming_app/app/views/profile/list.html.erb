@@ -1,0 +1,21 @@
+<h1><%= @programmer.name %></h1>
+
+<div>
+  <img src="<%=@programmer.avatar_url %>" width=73 height=73 alt="">
+</div>
+
+<h2>Twitter: @<%= @programmer.twitter_acct %></h2>
+<h2>Github: <%= @programmer.github_acct %></h2>
+<% if @gh_repo %>
+  <h3>Repositories
+  <ul>
+  <% @gh_repo.each do |repo| %>
+    <li><a href="<%= repo["svn_url"] %>">
+      <%= repo["svn_url"].split("/").last %></li></a>
+<% end %>
+  </ul>
+<% end %>
+
+<form action="/programmers/edit/<%=@programmer.id.to_s %>" method="get">
+<div><input type="submit" value="Edit"></div>
+</form>
