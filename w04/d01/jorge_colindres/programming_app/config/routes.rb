@@ -1,4 +1,11 @@
 ProgrammingApp::Application.routes.draw do
+
+  get '/programmers' => 'programmer#index'
+
+  get '/programmers/:id' => 'programmer#individual'
+
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
