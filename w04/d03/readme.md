@@ -50,12 +50,13 @@ The root path of your application should render `articles#index`
 * The article show path should display the article, as well as all of its `Comments`
 * There should be links to `edit` and `delete`
 
-EXTRA
+#EXTRA
+## Add the ability to tag Articles.
+
 `Articles` can have multiple `Tags`, and `Tags` can also have many `Articles`. This is a direct many-to-many relationship.
 
----
 `Articles` both *have* and *belong to many* `Tags`
----
+
 `Tags` both *have* and *belong to many* `Articles`
 
 Tags have:
