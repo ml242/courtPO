@@ -40,6 +40,7 @@ get '/kittens' do
   sql = "SELECT * FROM kittens"
   response = db_connect.exec(sql)
   db_connect.close
+  # response.entries.to_s will just print out array of hash of kittens
   @kittens = response.entries
   erb :view_kittens
 end
@@ -49,7 +50,11 @@ end
 # - returns a single hash representing a single kitten
 
 get '/kittens/:id' do
-
+  id = params[:id]
+  db_connect = PG.connect(:dbname => 'kitten_shop_db', :host => 'localhost')
+  sql = "SELECT id FROM kittens WHERE id = #{id}"
+  response = db_connect.exec(sql)
+  db_connect.close
 end
 
 # # EVERYTHING AFTER IS EXTRA CREDIT

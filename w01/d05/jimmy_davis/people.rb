@@ -12,4 +12,6 @@ class Person
     @age = age
     @gender = gender
     @apartment = []
+    @building = []
   end
+end

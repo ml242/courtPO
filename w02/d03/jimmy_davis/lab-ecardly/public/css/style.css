@@ -102,19 +102,19 @@ header {
   background-color: white;
   padding: 15px;
 }
-  .blog-archive h5, .blogroll h5 {
+  .blog_list h5, .blogroll h5 {
     margin-bottom: 5px;
     text-transform: uppercase;
   }
-  .blog-archive a, .blogroll a {
+  .blog_list a, .blogroll a {
     color: black;
     font-size: .85em;
   }
-  .blog-archive ul, .blogroll ul {
+  .blog_list ul, .blogroll ul {
     margin: 0;
     padding: 0;
   }
-    .blog-archive ul li, .blogroll ul li {
+    .blog_list ul li, .blogroll ul li {
       list-style-type: none;
     }
   .ads {
