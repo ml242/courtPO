@@ -1,0 +1,12 @@
+<h1><%= @pokemon.name %> </h1>
+
+<%= @pokemon.name %>
+<%= @pokemon.nickname %>
+<%if @pokemon.trainer_id.to_i > 0 %>
+  <% owner = Trainer.find(@pokemon.trainer_id) %>
+  belongs to: <a href = "/trainers/<%=owner.id%>"><%= owner.name %></a><br>
+<%else%>
+does not have an owner.
+<%end%>
+<a href = "/pokemon/<%=@pokemon.id%>/edit"> Update <%= @pokemon.name %></a>
+<a href = "/pokemon/<%=@pokemon.id%>/delete"> Free <%= @pokemon.name %> Forever</a>

@@ -2,6 +2,15 @@ PokemonApp::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
+get '/pokemon' => 'pokemon#index'
+get '/pokemon/new' => 'pokemon#new'
+get '/pokemon/:id' => 'pokemon#show'
+post '/pokemon' => 'pokemon#create'
+get '/pokemon/:id/edit' => 'pokemon#edit'
+post '/pokemon/:id' => 'pokemon#update'
+get '/pokemon/:id/delete' => 'pokemon#delete'
+
+
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action

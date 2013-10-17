@@ -1,0 +1,12 @@
+<h2>Edit <%=@pokemon.name%></h2>
+<%= form_tag("/pokemon/#{@id}") do %>
+<%= label_tag 'name' %>
+<%= text_field_tag('name', @pokemon.name) %><br>
+<%= label_tag 'nickname' %>
+<%= text_field_tag('nickname', @pokemon.nickname) %> <br>
+<% Trainer.all.each do |t| %>
+  <%=radio_button_tag 'trainer', t.id %>
+  <%=label_tag 'trainer', "#{t.name}" %>
+<% end %>
+<%= submit_tag('Update Pokemon') %>
+<% end %>
