@@ -21,14 +21,14 @@ ActiveRecord::Schema.define(:version => 20131016201346) do
 
   create_table "pokemons", :force => true do |t|
     t.string   "name"
-    t.string   "trainer_id"
+    t.integer  "trainer_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   create_table "trainers", :force => true do |t|
     t.string   "name"
-    t.string   "gym_id"
+    t.integer  "gym_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

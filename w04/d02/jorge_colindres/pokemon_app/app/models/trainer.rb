@@ -1,5 +1,5 @@
 class Trainer < ActiveRecord::Base
-  attr_accessible :name, :trainer_id
-  has_many :pokemon
+  attr_accessible :name, :gym_id
+  has_many :pokemons
   belongs_to :gym
 end

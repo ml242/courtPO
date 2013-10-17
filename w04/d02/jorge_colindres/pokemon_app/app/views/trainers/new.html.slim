@@ -4,4 +4,6 @@
   = label_tag 'name', 'Trainer Name: '
   = text_field_tag 'name'
 
+  = select_tag 'gym', options_from_collection_for_select(@gyms, 'id', 'name')
+
   = submit_tag 'Create Trainer'

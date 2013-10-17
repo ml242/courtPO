@@ -7,6 +7,7 @@ class TrainersController < ApplicationController
 
   # GET from '/trainers/new'
   def new
+    @gyms = Gym.all
   end
 
   # GET from '/trainers/:id'
@@ -19,13 +20,15 @@ class TrainersController < ApplicationController
   def edit
     id = params[:id]
     @trainer = Trainer.find id
+    @gyms = Gym.all
   end
 
   # POST from '/trainers'
   def create
     name = params[:name]
+    gym_id = params[:gym]
 
-    trainer = Trainer.create :name => name
+    trainer = Trainer.create :name => name, :gym_id => gym_id
     id = trainer.id
 
     redirect_to "/trainers/#{id}"
@@ -35,9 +38,10 @@ class TrainersController < ApplicationController
   def update
     id = params[:id]
     name = params[:name]
+    gym_id = params[:gym]
 
     trainer = Trainer.find id
-    trainer.update_attributes :name => name
+    trainer.update_attributes :name => name, :gym_id => gym_id
 
     redirect_to "/trainers/#{id}"
   end

@@ -1,4 +1,6 @@
 - content_for :title do
   = "#{@trainer.name}"
 h1 #{@trainer.name}
+- unless @trainer.gym.nil?
+  p Belongs to: #{@trainer.gym.name}
 a href="/trainers/#{@trainer.id}/edit" Edit Trainer
