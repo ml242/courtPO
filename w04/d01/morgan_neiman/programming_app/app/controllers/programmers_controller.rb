@@ -26,7 +26,22 @@ def show
   end
 end
 def edit
-    id = params[:id].to_i
+  id = params[:id].to_i
   @person = Person.find(id)
+  @id = id
+end
+def update
+  id = params[:id].to_i
+  name = params[:name]
+  twitter_pic = params[:twitter_pic]
+  twitter_username = params[:twitter_username]
+  github_username = params[:github_username]
+  person = Person.find(id)
+  person.name = name
+  person.twitter_pic = twitter_pic
+  person.twitter_username = twitter_username
+  person.github_username = github_username
+  person.save
+  redirect("/programmers/#{id}")
 end
 end

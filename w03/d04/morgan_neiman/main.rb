@@ -28,38 +28,43 @@ end
 class User < ActiveRecord::Base
 end
 
-
 get '/' do
+  redirect to '/photos'
+end
+
+get '/photos' do
   @entries_array = Entry.order("id DESC").all
   erb :index
 end
 
-get '/new' do
+get '/photos/new' do
   @user_array = User.all
   erb :new
 end
 
-post '/new' do
+post '/photos' do
   e1 = Entry.new
   e1.author_id = params[:username]
   e1.photo = params[:photo]
   e1.date_taken = params[:date_taken]
   e1.filter = params[:filter]
   e1.save
-  redirect to '/'
+  id = e1.id.to_s
+  url = '/photos/' + id
+  redirect to url
 end
 
-get '/show/:id' do
+get '/photos/:id' do
   id = params[:id].to_i
   @entry = Entry.find(id)
   erb :single_photo
 end
 
-get '/sign_up' do
+get '/users/new' do
   erb :sign_up
 end
 
-post '/sign_up' do
+post '/users' do
   username = params[:username]
   if User.exists?(username: username)
     redirect to '/username_error'
@@ -67,7 +72,7 @@ post '/sign_up' do
     user = User.new
     user.username = username
     user.save
-    redirect to '/'
+    redirect to '/photos'
   end
 end
 
@@ -84,14 +89,14 @@ get '/:username' do
   erb :username
 end
 
-get '/update/:id' do
+get '/photos/:id/edit' do
   id = params[:id].to_i
   @user_array = User.all
   @photo = Entry.find(id)
   erb :update_photo
 end
 
-post '/update/:id' do
+post '/photos/:id' do
   id = params[:id].to_i
   e1 = Entry.find(id)
   e1.author_id = params[:username]
@@ -99,21 +104,23 @@ post '/update/:id' do
   e1.date_taken = params[:date_taken]
   e1.filter = params[:filter]
   e1.save
-  redirect to '/'
+  id = e1.id.to_s
+  url = 'photos/' + id
+  redirect to url
 end
 
-get '/delete/:id' do
+get '/photos/:id/delete' do
   id = params[:id].to_i
   @entry = Entry.find(id)
   erb :delete_confirmation
 end
 
-post '/delete/:id' do
+post '/photos/:id/delete' do
   choice = params[:delete]
   user_id = params[:id].to_i
   if choice == "yes"
     Entry.find(user_id).destroy
   end
-  redirect to '/'
+  redirect to '/photos'
 end
 
