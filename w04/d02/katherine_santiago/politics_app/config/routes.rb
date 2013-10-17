@@ -6,9 +6,10 @@ PoliticsApp::Application.routes.draw do
   get '/states/:id' => 'states#show'
 
   get '/senators' => 'senators#index'
+  get '/senators/new' => 'senators#new'
   get '/senators/:id' => 'senators#show'
 
-  get '/senators/new' => 'senators#new'
+
   post '/senators' => 'senators#create'
 
 

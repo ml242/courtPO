@@ -5,8 +5,10 @@ class StatesController < ApplicationController
   end
 
   def show
-    id = params[:id]
-    @state = State.find(id)
+    state_id = params[:id]
+    @state = State.find(state_id)
+    @state_name = @state.name
+    @senators = Senator.where(state_id: state_id)
   end
 
 end
