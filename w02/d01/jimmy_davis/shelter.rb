@@ -1,9 +1,11 @@
 # The shelter should display all the persons.
 # The shelter should display all the animals.
+require 'pry'
 require_relative 'animal'
 require_relative 'person'
 
 class Shelter
+  attr_accessor :people, :animals
 
   def initialize
     @persons = {}
