@@ -25,10 +25,9 @@ class TrainersController < ApplicationController
 
   # POST from '/trainers'
   def create
-    name = params[:name]
-    gym_id = params[:gym]
+    trainer_atts = params[:trainer]
 
-    trainer = Trainer.create :name => name, :gym_id => gym_id
+    trainer = Trainer.create name: trainer_atts[:name], gym_id: trainer_atts[:gym]
     id = trainer.id
 
     redirect_to "/trainers/#{id}"
@@ -37,11 +36,10 @@ class TrainersController < ApplicationController
   # PUT from '/trainers/:id'
   def update
     id = params[:id]
-    name = params[:name]
-    gym_id = params[:gym]
+    trainer_atts = params[:trainer]
 
     trainer = Trainer.find id
-    trainer.update_attributes :name => name, :gym_id => gym_id
+    trainer.update_attributes name: trainer_atts[:name], gym_id: trainer_atts[:gym]
 
     redirect_to "/trainers/#{id}"
   end

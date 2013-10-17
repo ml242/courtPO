@@ -25,7 +25,7 @@ class GymsController < ApplicationController
   def create
     name = params[:name]
 
-    gym = Gym.create :name => name
+    gym = Gym.create name: name
     id = gym.id
 
     redirect_to "/gyms/#{id}"
@@ -37,7 +37,7 @@ class GymsController < ApplicationController
     name = params[:name]
 
     gym = Gym.find id
-    gym.update_attributes :name => name
+    gym.update_attributes name: name
 
     redirect_to "/gyms/#{id}"
   end

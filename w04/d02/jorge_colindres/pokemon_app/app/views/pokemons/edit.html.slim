@@ -2,11 +2,11 @@
   = "Edit #{@pokemon.name}"
 
 = form_tag "/pokemons/#{@pokemon.id}", method: :put do
-  = label_tag 'name', 'Pokemon Name: '
-  = text_field_tag 'name', @pokemon.name
+  = label_tag 'pokemon[name]', 'Pokemon Name: '
+  = text_field_tag 'pokemon[name]', @pokemon.name
 
-  = label_tag 'trainer', 'Trainer: '
-  = select_tag 'trainer', options_from_collection_for_select(@trainers, 'id', 'name', selected = @pokemon.trainer.id)
+  = label_tag 'pokemon[trainer]', 'Trainer: '
+  = select_tag 'pokemon[trainer]', options_from_collection_for_select(@trainers, 'id', 'name', selected = @pokemon.trainer.id)
 
   = submit_tag 'Update Pokemon'
 

@@ -25,10 +25,9 @@ class PokemonsController < ApplicationController
 
   # POST from '/pokemons'
   def create
-    name = params[:name]
-    trainer_id = params[:trainer]
+    pokemon_atts = params[:pokemon]
 
-    pokemon = Pokemon.create :name => name, :trainer_id => trainer_id
+    pokemon = Pokemon.create name: pokemon_atts[:name], trainer_id: pokemon_atts[:trainer]
     id = pokemon.id
 
     redirect_to "/pokemons/#{id}"
@@ -37,11 +36,10 @@ class PokemonsController < ApplicationController
   # PUT from '/pokemons/:id'
   def update
     id = params[:id]
-    name = params[:name]
-    trainer_id = params[:trainer]
+    pokemon_atts = params[:pokemon]
 
     pokemon = Pokemon.find id
-    pokemon.update_attributes :name => name, :trainer_id => trainer_id
+    pokemon.update_attributes name: pokemon_atts[:name], trainer_id: pokemon_atts[:trainer]
 
     redirect_to "/pokemons/#{id}"
   end

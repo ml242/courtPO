@@ -2,11 +2,11 @@
   = "Edit #{@trainer.name}"
 
 = form_tag "/trainers/#{@trainer.id}", method: :put do
-  = label_tag 'name', 'Trainer Name: '
-  = text_field_tag 'name', @trainer.name
+  = label_tag 'trainer[name]', 'Trainer Name: '
+  = text_field_tag 'trainer[name]', @trainer.name
 
-  = label_tag 'gym', 'Trains at: '
-  = select_tag 'gym', options_from_collection_for_select(@gyms, 'id', 'name', selected = @trainer.gym.id)
+  = label_tag 'trainer[gym]', 'Trains at: '
+  = select_tag 'trainer[gym]', options_from_collection_for_select(@gyms, 'id', 'name', selected = @trainer.gym.id)
 
   = submit_tag 'Update Trainer'
 
