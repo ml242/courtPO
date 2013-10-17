@@ -1,1 +1,6 @@
-"some form or whatever"
+"New countries 2"
+
+<%= form_tag("/countries") do %>
+<%= text_field_tag 'name', nil, placeholder: "Country Name" %>
+<%= submit_tag "Create Country" %>
+<% end %>

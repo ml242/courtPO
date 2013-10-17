@@ -1,15 +1,26 @@
 CountryApp::Application.routes.draw do
 
+#If you type in /countries/5 it goes in order to match
+
   get '/' => 'countries#index'
   get '/countries' => 'countries#index'
   get '/countries/new' => 'countries#new'
+  post '/countries' => 'countries#create'
   get '/countries/:id' => 'countries#show'
   get '/countries/:id/edit' => 'countries#edit'
-  post '/countries' => 'countries#create'
   post '/countries/:id' => 'countries#update'
   post '/countries/:id/delete' => 'countries#destroy'
 
 end
+
+# #from jbear
+# get '/countries' => 'countries#index' #
+#   get '/countries/new' => 'countries#new' #
+#   post '/countries' => 'countries#create' #
+#   get '/countries/:id' => 'countries#show' #
+#   get '/countries/:id/edit' => 'countries#edit' #
+#   post '/countries/:id' => 'countries#update' #
+#   post '/countries/:id/delete' => 'countries#destroy' #
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
