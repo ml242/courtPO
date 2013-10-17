@@ -1,7 +1,9 @@
 Blog::Application.routes.draw do
   root to: 'articles#index'
 
-  resources :articles, :comments
+  resources :articles, :comments do
+    resources :comments
+  end
 end
 
 #== Route Map
