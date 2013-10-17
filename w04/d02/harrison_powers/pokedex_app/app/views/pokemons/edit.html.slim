@@ -1,70 +1,68 @@
-.container
+= form_tag("/pokemons/#{@pokemon.id}") do
 
-    = form_tag("/pokemons/#{@pokemon.id}") do
+    = label_tag 'name', 'Name:'
+    = text_area_tag 'name', @pokemon.name, :required => true
+    br/
 
-        = label_tag 'name', 'Name:'
-        = text_area_tag 'name', @pokemon.name, :required => true
-        br/
+    = label_tag 'type1', 'Type 1:'
+    = text_area_tag 'type1', @pokemon.type1, :required => true
+    br/
 
-        = label_tag 'type1', 'Type 1:'
-        = text_area_tag 'type1', @pokemon.type1, :required => true
-        br/
+    = label_tag 'type2', 'Type 2:'
+    = text_area_tag 'type2', @pokemon.type2, :required => true
+    br/
 
-        = label_tag 'type2', 'Type 2:'
-        = text_area_tag 'type2', @pokemon.type2, :required => true
-        br/
+    = label_tag 'ability1', 'Ability 1:'
+    = text_area_tag 'ability1', @pokemon.ability1, :required => true
+    br/
 
-        = label_tag 'ability1', 'Ability 1:'
-        = text_area_tag 'ability1', @pokemon.ability1, :required => true
-        br/
+    = label_tag 'gender_ratio', 'Gender Ratio:'
+    = text_area_tag 'gender_ratio', @pokemon.gender_ratio, :required => true
+    br/
 
-        = label_tag 'gender_ratio', 'Gender Ratio:'
-        = text_area_tag 'gender_ratio', @pokemon.gender_ratio, :required => true
-        br/
+    = label_tag 'experience_curve', 'Experience Curve:'
+    = text_area_tag 'experience_curve', @pokemon.experience_curve, :required => true
+    br/
 
-        = label_tag 'experience_curve', 'Experience Curve:'
-        = text_area_tag 'experience_curve', @pokemon.experience_curve, :required => true
-        br/
+    = label_tag 'catch_rate', 'Catch Rate:'
+    = text_area_tag 'catch_rate', @pokemon.catch_rate, :required => true
+    br/
 
-        = label_tag 'catch_rate', 'Catch Rate:'
-        = text_area_tag 'catch_rate', @pokemon.catch_rate, :required => true
-        br/
+    = label_tag 'base_exp', 'Base Exp:'
+    = text_area_tag 'base_exp', @pokemon.base_exp, :required => true
+    br/
 
-        = label_tag 'base_exp', 'Base Exp:'
-        = text_area_tag 'base_exp', @pokemon.base_exp, :required => true
-        br/
+    = label_tag 'base_stats_hp', 'Base Stats - HP:'
+    = text_area_tag 'base_stats_hp', @pokemon.base_stats_hp, :required => true
+    br/
 
-        = label_tag 'base_stats_hp', 'Base Stats - HP:'
-        = text_area_tag 'base_stats_hp', @pokemon.base_stats_hp, :required => true
-        br/
+    = label_tag 'base_stats_atk', 'Base Stats - ATK:'
+    = text_area_tag 'base_stats_atk', @pokemon.base_stats_atk, :required => true
+    br/
 
-        = label_tag 'base_stats_atk', 'Base Stats - ATK:'
-        = text_area_tag 'base_stats_atk', @pokemon.base_stats_atk, :required => true
-        br/
+    = label_tag 'base_stats_def', 'Base Stats - DEF:'
+    = text_area_tag 'base_stats_def', @pokemon.base_stats_def, :required => true
+    br/
 
-        = label_tag 'base_stats_def', 'Base Stats - DEF:'
-        = text_area_tag 'base_stats_def', @pokemon.base_stats_def, :required => true
-        br/
+    = label_tag 'base_stats_speed', 'Base Stats - SPEED:'
+    = text_area_tag 'base_stats_speed', @pokemon.base_stats_speed, :required => true
+    br/
 
-        = label_tag 'base_stats_speed', 'Base Stats - SPEED:'
-        = text_area_tag 'base_stats_speed', @pokemon.base_stats_speed, :required => true
-        br/
+    = label_tag 'evolve_to', 'Evolve To:'
+    = text_area_tag 'evolve_to', @pokemon.evolve_to, :required => true
+    br/
 
-        = label_tag 'evolve_to', 'Evolve To:'
-        = text_area_tag 'evolve_to', @pokemon.evolve_to, :required => true
-        br/
+    = label_tag 'evolve_level', 'Evolve Level:'
+    = text_area_tag 'evolve_level', @pokemon.evolve_level, :required => true
+    br/
 
-        = label_tag 'evolve_level', 'Evolve Level:'
-        = text_area_tag 'evolve_level', @pokemon.evolve_level, :required => true
-        br/
+    = label_tag 'learnabletm', 'LearnableTM:'
+    = text_area_tag 'learnabletm', @pokemon.learnabletm, :required => true
+    br/
 
-        = label_tag 'learnabletm', 'LearnableTM:'
-        = text_area_tag 'learnabletm', @pokemon.learnabletm, :required => true
-        br/
+    = label_tag 'spatk', 'Spatk:'
+    = text_area_tag 'spatk', @pokemon.spatk, :required => true
+    br/
+    br/
 
-        = label_tag 'spatk', 'Spatk:'
-        = text_area_tag 'spatk', @pokemon.spatk, :required => true
-        br/
-        br/
-
-        = submit_tag "Edit #{@pokemon.name}!"
+    = submit_tag "Edit #{@pokemon.name}!"
