@@ -9,7 +9,7 @@ class CreateProgrammersTable < ActiveRecord::Migration
   end
 
   def down
-    drop table :programmers
+    drop_table :programmers
   end
 
 end

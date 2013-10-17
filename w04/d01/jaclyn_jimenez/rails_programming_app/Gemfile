@@ -6,7 +6,10 @@ gem 'rails', '3.2.14'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
-gem 'pry-rails'
+
+group :development do
+  gem 'pry-rails'
+end
 
 
 # Gems used only for assets and not required

@@ -3,7 +3,11 @@ RailsProgrammingApp::Application.routes.draw do
   # first created -> highest priority.
 
   get '/programmers' => 'programmers#index'
+  get '/programmers/new' => 'programmers#new'
   get '/programmers/:id' => 'programmers#show'
+  get '/programmers/:id/edit' => 'programmers#edit'
+  post '/programmers' => 'programmers#create'
+  post '/programmers/:id' => 'programmers#update'
 
 
   # Sample of regular route:
