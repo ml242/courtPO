@@ -1,14 +1,16 @@
-ProgrammingApp::Application.routes.draw do
+PoliticsApp::Application.routes.draw do
 
-  get '/' => redirect("/programmers")
+  get '/' => redirect("/states")
 
-  get '/programmers' => 'programmers#index'
-  # get({'/programmers' => 'programmers#index'})
-  get '/programmers/:id/edit' => 'programmers#edit'
-  get '/programmers/:id' => 'programmers#show'
+  get '/states' => 'states#index'
+  get '/states/:id' => 'states#show'
 
-  post '/programmers/:id' => 'programmers#update'
-  post '/programmers/:id/delete' => 'programmers#delete'
+  get '/senators' => 'senators#index'
+  get '/senators/new' => 'senators#new'
+  get '/senators/:id' => 'senators#show'
+
+
+  post '/senators' => 'senators#create'
 
 
   # The priority is based upon order of creation:
