@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ProgrammingApp</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<header>
+  <div class="header">
+    <h1>Programmers on Twitter</h1>
+    <div class="links">
+      <ul>
+        <li><%= link_to("Home", "/")%></li>
+      </ul>
+    </div>
+  </div>
+</header>
+<%= yield %>
+</body>
+</html>

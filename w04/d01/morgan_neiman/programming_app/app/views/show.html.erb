@@ -1,0 +1,9 @@
+<%= @name %>
+<br><img src=<%= @twitter_pic %>>
+<br><%= @twitter_username %>
+<br><%= @github %>
+<% if @repos_array != nil %>
+<% @repos_array.each do |repo| %>
+<br> <a href=<%= repo[:url] %>> <%= repo[:name] %></a>
+<% end %>
+<% end %>

@@ -29,11 +29,11 @@ get '/' do
   erb :index
 end
 
-get '/new' do
+get '/photos/new' do # form page to post a new photo
   erb :new
 end
 
-post '/new' do
+post '/photos' do #posts a new photo
   author = params[:author]
   photo_url = params[:photo_url]
   date_taken = params[:date_taken]

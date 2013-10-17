@@ -24,5 +24,6 @@ Hint: use a hidden field to send back the movie's imdb rating. -->
 <% end %>
 
 <form action="/movies/faves" method="post">
+    <input type="hidden" value="<%= @movie[:imdbid] %>" name="imdbid">
     <input class="save" type="submit" value="SAVE">
 </form>

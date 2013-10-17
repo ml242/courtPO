@@ -13,29 +13,12 @@ get '/' do
 end
 
 
-## THIS WORKS _ TESTING BELOW
-# get '/:movie_title' do
-#   movie_title = params[:movie_title]
-#   movie_title = CGI::escape(movie_title)
-#   url = "http://www.omdbapi.com/?s=#{movie_title}"
-#   response = HTTParty.get(url)
-#   parsed_result = JSON.parse(response)
-#   title = parsed_result["Search"["Title"]]
-#   year = parsed_result["Search"["Year"]]
-#   result = parsed_result["Search"][0]
-#   title = result["Title"]
-#   year = result["Year"]
-#   @title = title
-#   @year = year
-#   erb :movie
-# end
-
 get '/:movie_title' do
   movie_title = params[:movie_title]
   url = "http://www.omdbapi.com/?s=#{movie_title}"
   response = HTTParty.get(url)
   parsed_result = JSON.parse(response)
-  search_results = parsed_result["Search"][0]
+  search_results = parsed_result["Search"]
   @title = search_results["Title"]
   @year = search_results["Year"]
   erb :movie
