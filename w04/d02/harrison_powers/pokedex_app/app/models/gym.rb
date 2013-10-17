@@ -10,6 +10,6 @@
 #
 
 class Gym < ActiveRecord::Base
-  attr_accessible :name, :location
+  attr_accessible :name, :game_version
   has_many :trainers
 end
