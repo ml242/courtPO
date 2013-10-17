@@ -52,7 +52,7 @@ trainer_hash = {
     "May" => 15,
     "Dawn" => 16,
     "Hilda" => 19,
-    "Rosa" => 17
+    "Rosa" => 17,
     "Serena" => 18
 
 }
@@ -62,7 +62,7 @@ trainer_hash.each do |k, v|
         :name => k,
         :age => v
     )
-    puts "Added Trainer ID #{t1.id} - #{t1.name}"
+    puts "Added Trainer ID: #{t1.id} - #{t1.name}"
 end
 
 gym_hash = {
@@ -82,6 +82,6 @@ gym_hash.each do |k, v|
         :name => k,
         :game_version => v
     )
-    puts "Added Gym ID #{g1.id} - #{g1.name}"
+    puts "Added Gym ID: #{g1.id} - #{g1.name}"
 end
 
