@@ -1,0 +1,12 @@
+<h1>Welcome to Pokemon!</h1>
+
+<% Pokemon.all.each do |pokemon| %>
+<a href = "/pokemon/<%=pokemon.id%>"><%= pokemon.name %></a>
+"<%= pokemon.nickname %>"
+<%if pokemon.trainer_id.to_i > 0 %>
+  <% owner = Trainer.find(pokemon.trainer_id) %>
+  belongs to: <a href = "/trainers/<%=owner.id%>"><%= owner.name %></a><br>
+<%else%>
+does not have an owner.
+<%end%>
+<%end%>
