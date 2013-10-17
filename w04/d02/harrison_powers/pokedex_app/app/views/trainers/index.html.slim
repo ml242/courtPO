@@ -3,7 +3,7 @@ a href='/trainers/new' Add a new trainer!
 br/
 br/
 
-- @trainer.each do |trainer|
+- @trainers.each do |trainer|
   .trainer_container
     a href="/trainers/#{trainer.id}"
       = trainer.name
