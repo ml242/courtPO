@@ -1,0 +1,12 @@
+= form_tag("/gyms/#{@gym.id}")
+
+  = label_tag 'name', 'Name:'
+  = text_area_tag 'name', @gym.name, :required => true
+  br/
+
+  = label_tag 'game_version', 'Game Version:'
+  = text_area_tag 'game_version', @gym.game_version, :required => true
+  br/
+  br/
+
+  = submit_tag "Update #{@gym.name}!"
