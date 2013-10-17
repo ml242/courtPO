@@ -1,0 +1,18 @@
+<h1 id="heading"><%= @article.title %></h1>
+<h3 id="heading"><%= @article.author %></h3>
+<p><%= @article.body %></p>
+
+<h3 id="heading">comments</h3>
+<ul>
+<% @article.comments.each do |comment|%>
+  <li><%= comment.body %>&nbsp;
+  <%= link_to('edit', "/articles/#{@article.id}/comments/#{comment.id}") %>
+  </li>
+<% end %>
+</ul>
+
+<%= form_tag("/comments") do %>
+  <input style="display: none;" type="text" name="article_id" value="<%= @article.id %>">
+  <%= text_field_tag "body", nil, placeholder: 'your comment' %>
+  <%= submit_tag 'add comment' %>
+<% end %>
