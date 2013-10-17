@@ -30,4 +30,19 @@ PokemonApp::Application.routes.draw do
 
   delete '/trainers/:id' => 'trainers#destroy'
 
+  # Pokemon Routes
+  get '/pokemons' => 'pokemons#index'
+
+  get '/pokemons/new' => 'pokemons#new'
+
+  get '/pokemons/:id' => 'pokemons#show'
+
+  get '/pokemons/:id/edit' => 'pokemons#edit'
+
+  post '/pokemons' => 'pokemons#create'
+
+  put '/pokemons/:id' => 'pokemons#update'
+
+  delete '/pokemons/:id' => 'pokemons#destroy'
+
 end

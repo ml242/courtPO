@@ -54,4 +54,5 @@ class TrainersController < ApplicationController
 
     redirect_to '/trainers'
   end
+
 end
