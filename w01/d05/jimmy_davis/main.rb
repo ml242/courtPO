@@ -1,11 +1,11 @@
 require 'pry'
 require 'pry-nav'
-
 require_relative 'building'
-
 require_relative 'apartment'
-
 require_relative 'people'
+
+# just need to go to pry and type: load 'main.rb'
+# this will load all files
 
 b1 = Building.new
 b2 = Building.new
@@ -93,10 +93,11 @@ a3b2.price = 1300
 a3b2.is_occupied = true
 a3b2.renters = [p2]
 
-a3b2.num_bedrooms = 3
-a3b2.num_baths = 1
-a3b2.floor = 2
-a3b2.price = 4000
-a3b2.is_occupied = true
-a3b2.renters = [p7, p8, p9]
+a4b2.num_bedrooms = 3
+a4b2.num_baths = 1
+a4b2.floor = 2
+a4b2.price = 4000
+a4b2.is_occupied = true
+a4b2.renters = [p7, p8, p9]
 
+binding.pry

@@ -1,0 +1,14 @@
+<h1 id="heading">GitHub Repos</h1>
+<% @repos.each do |repo|%>
+  <div style="
+    border: 5px solid black;
+    width: 225px; 
+    display:inline-block; 
+    margin: 0 2px 8px 0;
+    padding: 5px 10px 5px 10px;
+    " class="programmer">
+    <p><b><%= repo[:name] %></b></p>
+    <p><%= repo[:description] %></p>
+    <a href="<%= repo[:url] %>">check it out on github</a>
+  </div>
+<% end %>

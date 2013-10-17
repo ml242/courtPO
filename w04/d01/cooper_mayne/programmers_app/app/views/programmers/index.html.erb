@@ -1,0 +1,30 @@
+<h2 id="heading">Programmers</h2>
+<% @programmers.each do |programmer|%>
+  <div style="
+    border: 5px solid black;
+    width: 225px; 
+    display:inline-block; 
+    margin: 0 2px 8px 0;
+    padding: 5px 10px 5px 10px;
+    " class="programmer">
+
+    <p><b>name:&nbsp;</b><%= programmer.name %></p>
+    <p><b>twit:&nbsp;</b><%= programmer.twitter_username %></p>
+
+    <% unless programmer.github_username.nil? %>
+      <p><b>git:&nbsp;</b><%= programmer.github_username %></p>
+    <% end %>
+
+    <img width=200px src="<%= programmer.picture_url %>">
+    <br>
+
+    <% if programmer.github_username.nil? %>
+      <a href=/programmers/<%= programmer.id %>/edit>add github username</a>
+      &nbsp;&nbsp;
+    <% else %>
+
+      <a href=/programmers/<%= programmer.id %>/repos>repos</a>
+    <% end %>
+  </div>
+<% end %>
+
