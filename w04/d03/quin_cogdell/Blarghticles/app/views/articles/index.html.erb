@@ -1,0 +1,17 @@
+<h1>Articles</h1>
+
+<%= link_to('New Article', '/article/new') %>
+
+
+<% @articles.each do |article| %>
+  <ul>
+    <h3>Title</h3>
+    <%= article.title %>
+    <li><%= article.body %></li>
+    <h4>Comments</h4>
+    <% article.comments.each do |comment| %>
+    <li> <%= comment.body %> </li>
+    <% end %>
+  </ul>
+
+  <% end %>
