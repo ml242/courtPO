@@ -6,8 +6,13 @@
 
   = label_tag 'age', 'Age:'
   = text_area_tag 'age', @trainer.age, :required => true
-
-  br/
   br/
 
   = submit_tag "Update #{@trainer.name}!"
+
+br/
+br/
+
+= form_tag("/trainers/#{@trainer.id}/delete")
+
+  = submit_tag "Delete #{@trainer.name}.", data: { confirm: "Are you sure?" }

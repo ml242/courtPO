@@ -7,6 +7,12 @@
   = label_tag 'game_version', 'Game Version:'
   = text_area_tag 'game_version', @gym.game_version, :required => true
   br/
-  br/
 
   = submit_tag "Update #{@gym.name}!"
+
+br/
+br/
+
+= form_tag("/gyms/#{@gym.id}/delete")
+
+  = submit_tag "Delete #{@gym.name}", data: { confirm: "Are you sure?" }

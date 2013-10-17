@@ -63,6 +63,12 @@
     = label_tag 'spatk', 'Spatk:'
     = text_area_tag 'spatk', @pokemon.spatk, :required => true
     br/
-    br/
 
     = submit_tag "Update #{@pokemon.name}!"
+
+br/
+br/
+
+= form_tag("/pokemons/#{@pokemon.id}/delete")
+
+    = submit_tag "Delete #{@pokemon.name}.", data: { confirm: "Are you sure?" }
