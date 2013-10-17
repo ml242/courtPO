@@ -1,4 +1,4 @@
-<form action="/new" method="post">
+<form action="/photos" method="post">
   <select name="username" id="username">
   <% @user_array.each do |user| %>
   <option value=<%= user[:id] %>><%= user[:username] %></option>
@@ -8,6 +8,7 @@
   <br><input type="text" placeholder="date taken year-month-day" name="date_taken">
   <br><label for="select">Filter?</label>
   <br><select name="filter" id="filter">
+  <option value="">None</option>
   <option value="filter-blur">Blur</option>
   <option value="filter-edges">Edges</option>
   <option value="filter-emboss">Emboss</option>

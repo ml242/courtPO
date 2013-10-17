@@ -1,0 +1,9 @@
+<%= form_tag "/trainers/#{@id}", method: :put do %>
+<br><%= label_tag 'name' %><br>
+<%= text_field_tag 'name', @trainer.name %>
+<br><%= label_tag 'gym_id' %><br>
+<%= text_field_tag 'gym_id', @trainer.gym_id %>
+<br>
+
+<%= submit_tag 'Save Changes' %>
+<% end -%>
