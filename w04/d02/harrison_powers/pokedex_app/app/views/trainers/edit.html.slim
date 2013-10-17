@@ -1,0 +1,13 @@
+= form_tag("/trainers/#{@trainer.id}")
+
+  = label_tag 'name', 'Name:'
+  = text_area_tag 'name', @trainer.name, :required => true
+  br/
+
+  = label_tag 'age', 'Age:'
+  = text_area_tag 'age', @trainer.age, :required => true
+
+  br/
+  br/
+
+  = submit_tag "Update #{@trainer.name}!"
