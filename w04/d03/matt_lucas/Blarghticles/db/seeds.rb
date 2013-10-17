@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+a1 = Article.new(:title => "Ford to City, Drop Dead")
+a2 = Article.new(:title => "The Shot Heard 'Round the World")
+
+c1 = Comment.new(:username => "SmileyMcBirdFace")
