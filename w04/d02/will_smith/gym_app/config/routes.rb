@@ -1,9 +1,15 @@
-ProgrammingApp::Application.routes.draw do
-  get '/' => 'programmers#index'
-  get '/programmers' => 'programmers#index'
-  get '/programmers/:id' => 'programmers#show'
-  get '/programmers/:id/edit' => 'programmers#edit'
-  post '/programmers/:id' => 'programmers#update'
+GymApp::Application.routes.draw do
+
+get '/' => redirect("/gyms")
+
+get '/gyms' => 'gyms#index'
+get '/gyms/new' => 'gyms#new'
+post '/gyms/create' => 'gyms#create'
+delete '/gyms/:id' => 'gyms#show'
+get '/gyms/:id' => 'gyms#show'
+get '/gyms/:id/edit' => 'gyms#edit'
+post '/gyms/:id' => 'gyms#update'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

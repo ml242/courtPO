@@ -1,0 +1,3 @@
+<%= @gym.name %>
+<button><%= link_to "Edit", "/gyms/#{@gym.id}/edit" %></button>
+<button><%= link_to "Delete", "/gyms/#{@gym.id}", :confirm => "Are you sure?", :method => :destroy %></button>
