@@ -1,0 +1,8 @@
+<h2>programmers</h2>
+
+<p>Click to view each profile</p>
+<ul>
+<% @profiles.each do |profile| %>
+<li><a href="/programmers/<%= profile[:id] %>"><%= profile[:name] %></a></li>
+<% end %>
+</ul>

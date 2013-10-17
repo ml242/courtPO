@@ -1,0 +1,11 @@
+  <h2>Click twitter username to go to their page</h2>
+  <h3><%=@programmer.name%></h3>
+  <div class= "individual">
+    <ul>
+      <li><%=link_to(@programmer.twitter_username,"https://twitter.com/#{@programmer.twitter_username}")%><br>
+          <img src=<%=@programmer.twitter_pic%>>
+      </li>
+    </ul>
+    <div><%=link_to("Edit Programmer","/programmers/#{@programmer.id}/edit")%></div>
+    <div><%=link_to("Delete Programmer","/programmers/#{@programmer.id}")%></div>
+  </div>
