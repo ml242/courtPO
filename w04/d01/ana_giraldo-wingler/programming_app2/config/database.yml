@@ -1,0 +1,26 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: programming_app2_development
+  pool: 5
+  username: anagiraldo-w
+  password:
+  host: localhost
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: programming_app2_test
+  pool: 5
+  username: anagiraldo-w
+  password:
+  host: localhost
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: programming_app2_production
+  pool: 5
+  username: anagiraldo-w
+  password:
+  host: localhost
