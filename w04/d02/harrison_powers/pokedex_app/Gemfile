@@ -7,9 +7,12 @@ gem 'rails', '3.2.14'
 
 gem 'pg'
 
+gem 'slim-rails'
+
 group :development do
   gem 'annotate'
   gem 'json'
+  gem 'pry-rails'
 end
 
 
