@@ -2,7 +2,7 @@
 <br><%= @article.body %>
 <br><%= @article.time %>
 <br><% @article.comments.entries.each do |comment| %>
-<a href="/articles/<%= @article.id %>/comments/<%= comment.id %>/edit"><%= comment.body %></a>
+<a href="/articles/<%= @article.id %>/comments/<%= comment.id %>"><%= comment.body %></a>
 <% end %>
 <br>
 <a href="/articles/<%= @article.id %>/comments/new">Comment</a>
