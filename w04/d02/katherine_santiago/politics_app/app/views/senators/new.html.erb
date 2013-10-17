@@ -1,0 +1,6 @@
+<h1>Add new senator</h1>
+
+<% form_tag "/programmers/#{@senator.id}" do %>
+<%= text_field_tag('Name', @senator.name) %>
+
+<% end %>

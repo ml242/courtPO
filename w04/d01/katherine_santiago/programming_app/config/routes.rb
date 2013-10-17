@@ -1,12 +1,15 @@
 ProgrammingApp::Application.routes.draw do
 
-  get '/programmers' => 'programmers#index'
+  get '/' => redirect("/programmers")
 
+  get '/programmers' => 'programmers#index'
+  # get({'/programmers' => 'programmers#index'})
+  get '/programmers/:id/edit' => 'programmers#edit'
   get '/programmers/:id' => 'programmers#show'
 
-  post '/programmer/:id' => 'programmers#edit'
+  post '/programmers/:id' => 'programmers#update'
+  post '/programmers/:id/delete' => 'programmers#delete'
 
-  post '/programmer/:id/delete' => 'programmers#delete'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

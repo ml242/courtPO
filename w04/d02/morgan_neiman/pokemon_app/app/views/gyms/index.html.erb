@@ -1,0 +1,5 @@
+<a href="/gyms/new">New Gym</a>
+<br>
+<% @gyms.each do |gym| %>
+<br> <a href="/gyms/<%= gym.id %>"><%= gym.name %></a>
+<% end %>

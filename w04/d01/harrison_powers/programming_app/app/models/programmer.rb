@@ -12,5 +12,6 @@
 #
 
 class Programmer < ActiveRecord::Base
-  attr_accessible :name, :github_username, :twitter_username, :img_url
+  attr_accessible :name, :github_username, :twitter_username, :img_url, :company_id
+  belongs_to :company
 end

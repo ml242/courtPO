@@ -5,8 +5,4 @@
 Twitter: <%= @programmer.twitter_username %><br>
 Github: <%= @programmer.github %><br>
 
-<form action="/programmers/<%= @programmer[:id] %>" method="post">
-  <input type="hidden">
-  <input type="submit" value="Delete">
-</form>
-
+<%= link_to("Edit", "/programmers/#{@programmer.id}/edit") %>

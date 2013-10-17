@@ -1,0 +1,17 @@
+<%= form_tag "/pokemons/#{@mon.id}" do %>
+  <%= label_tag "name", "Name" %>
+  <%= text_field_tag "name", @mon.name %>
+  <%= label_tag "level", "Level" %>
+  <%= text_field_tag "level", @mon.level%>
+  <%= label_tag "moves" "Moves" %>
+  <%= text_field_tag "moves", @mon.moves%>
+  <%= label_tag "types", "Types" %>
+  <%= text_field_tag "types", @mon.types%>
+  <%= hidden_field_tag "id", @mon.id %>
+  <%= select_tag "trainer_id", options_from_collection_for_select(@trainers, "id", "name", "#{@mon.trainer_id}")%>
+  <%= submit_tag "Update" %>
+<% end %>
+<%= form_tag "/pokemons/#{@mon.id}/delete" do %>
+  <%= hidden_field_tag "id", @mon.id %>
+  <%= submit_tag "Delete" %>
+<% end  %>

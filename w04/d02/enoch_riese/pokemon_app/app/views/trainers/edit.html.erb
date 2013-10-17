@@ -1,0 +1,11 @@
+<%= form_tag "/trainers/#{@mon.id}" do %>
+  <%= label_tag "name", "Name" %>
+  <%= text_field_tag "name", @mon.name %>
+<%= select_tag "gym_id", options_from_collection_for_select(@gyms, "id", "name", "#{@mon.gym_id}")%>
+  <%= hidden_field_tag "id", @mon.id %>
+  <%= submit_tag "Update" %>
+<% end %>
+<%= form_tag "/trainers/#{@mon.id}/delete" do %>
+  <%= hidden_field_tag "id", @mon.id %>
+  <%= submit_tag "Delete" %>
+<% end  %>

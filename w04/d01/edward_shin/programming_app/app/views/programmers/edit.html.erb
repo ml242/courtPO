@@ -1,0 +1,10 @@
+<h1>Edit</h1>
+<%= form_tag("/programmers/#{@programmer.id}") do %>
+<%= label_tag('name') %>
+<%= text_field_tag('name', @programmer.name) %>
+<%= label_tag('Username') %>
+<%= text_field_tag('twitter_username', @programmer.twitter_username) %>
+<%= label_tag('Pic_URL') %>
+<%= text_field_tag('twitter_pic', @programmer.twitter_pic) %>
+<%= submit_tag('Update') %>
+<% end %>
