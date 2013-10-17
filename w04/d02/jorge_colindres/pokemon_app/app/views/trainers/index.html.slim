@@ -1,0 +1,13 @@
+- content_for :title do
+  | All Trainers
+.gyms-container
+  h1 Trainers
+  a href='/trainers/new' New Trainer
+  br
+  - unless @all_trainers.entries.empty?
+  ul
+    - @all_trainers.each do |trainer|
+      li: a href='/trainers/#{trainer.id}'
+        h4 #{trainer['name']}
+- else
+  | No trainers to see here.
