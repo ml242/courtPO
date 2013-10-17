@@ -1,0 +1,9 @@
+<h1>Edit Trainer <%= @trainer.id %></h1>
+
+<%= form_tag "/trainers/#{@trainer.id}" do %>
+  <%= label_tag 'name:' %>
+  <%= text_field_tag 'name', @trainer.name %>
+  <%= label_tag 'Gym ID:' %>
+  <%= text_field_tag 'gym_id', @trainer.gym.id %>
+  <%= submit_tag('Update') %>
+<% end %>

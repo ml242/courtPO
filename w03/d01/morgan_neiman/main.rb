@@ -95,6 +95,7 @@ get '/faves' do
    # binding.pry
    title = movie_info["root"]["movie"]["title"]
     # binding.pry
+
     movie_hash = {
       :title => title,
       :id => id

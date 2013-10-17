@@ -1,0 +1,16 @@
+<div class="row" style="padding-top: 100px">
+  <div class="container">
+    <h1>Edit</h1>
+    <%= form_tag "/programmers/#{@programmer.id}" do %>
+    <%= label_tag 'name', 'Programmer Name' %>
+    <%= text_field_tag('name', @programmer.name) %>
+    <%= label_tag 'twitter_pic', 'Profile Picture Url' %>
+    <%= text_field_tag 'twitter_pic', @programmer.twitter_pic %>
+    <%= label_tag 'twitter_username', 'Twitter Username' %>
+    <%= text_field_tag 'twitter_username', @programmer.twitter_username %>
+    <%= label_tag 'github_username', 'Github Username' %>
+    <%= text_field_tag 'github_username', @programmer.github_username %>
+    <%= submit_tag('Update') %>
+    <% end %>
+  </div>
+</div>

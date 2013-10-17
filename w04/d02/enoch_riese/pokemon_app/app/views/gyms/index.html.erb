@@ -1,0 +1,4 @@
+<% @mons.each do |mon| %>
+<a href=<%= "/gyms/#{mon.id}" %>><%= mon.name %></a><br>
+<% end %>
+<a href="/gyms/new">Make another gym</a>

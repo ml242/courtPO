@@ -1,0 +1,13 @@
+- content_for :title do
+  | All Pokemons
+.gyms-container
+  h1 Pokemons
+  a href='/pokemons/new' New Pokemon
+  br
+  - unless @all_pokemons.entries.empty?
+  ul
+    - @all_pokemons.each do |pokemon|
+      li: a href='/pokemons/#{pokemon.id}'
+        h4 #{pokemon['name']}
+- else
+  | No pokemons to see here.

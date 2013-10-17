@@ -1,0 +1,8 @@
+<h1>Edit Pokemon #<%= @pokemon.id %></h1>
+<%= form_tag "/pokemons/#{@pokemon.id}" do %>
+  <%= label_tag 'Pokemon Name:' %>
+  <%= text_field_tag 'name', @pokemon.name %>
+  <%= label_tag 'Trainer ID:' %>
+  <%= text_field_tag 'trainer_id', @pokemon.trainer_id %>
+  <%= submit_tag 'Update' %>
+<% end %>

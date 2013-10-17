@@ -1,0 +1,7 @@
+<h2>Gyms</h2>
+<p><%= link_to "Add a New Gym", "/gyms/new" %></p>
+<% @gyms.each do |gym| %>
+<% @id = gym['id'] %>
+<% @name = gym['name'] %>
+<a href="/gyms/<%= @id %>"><p><%= @name %></p></a>
+<% end %>

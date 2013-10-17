@@ -1,0 +1,8 @@
+<h2>Create a new Pokemon!</h2>
+<%= form_tag '/pokemons' do %>
+  <%= label_tag 'Pokemon name:' %>
+  <%= text_field_tag 'name' %>
+  <%= label_tag 'Trainer ID:' %>
+  <%= text_field_tag 'trainer_id' %>
+  <%= submit_tag 'Create' %>
+<% end %>

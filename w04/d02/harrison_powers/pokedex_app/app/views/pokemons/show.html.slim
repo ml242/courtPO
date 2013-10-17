@@ -1,0 +1,22 @@
+h1 = @pokemon.name
+ul
+    li = "Type 1: #{@pokemon.type1}"
+    li = "Type 2: #{@pokemon.type2}"
+    li = "Ability 1: #{@pokemon.ability1}"
+    li = "Gender Ratio: #{@pokemon.gender_ratio}"
+    li = "Experience Curve: #{@pokemon.experience_curve}"
+    li = "Catch Rate: #{@pokemon.catch_rate}"
+    li = "Base Exp: #{@pokemon.base_exp}"
+    li = "Base Stats - HP: #{@pokemon.base_stats_hp}"
+    li = "Base Stats - ATK: #{@pokemon.base_stats_atk}"
+    li = "Base Stats - DEF: #{@pokemon.base_stats_def}"
+    li = "Base Stats - SPEED: #{@pokemon.base_stats_speed}"
+    li = "Evolve To: #{@pokemon.evolve_to}"
+    li = "Evolve Level: #{@pokemon.evolve_level}"
+    li = "LearnableTM: #{@pokemon.learnabletm}"
+    li = "spatk: #{@pokemon.spatk}"
+
+br/
+br/
+
+a href="/pokemons/#{@pokemon.id}/edit" Edit #{@pokemon.name}!

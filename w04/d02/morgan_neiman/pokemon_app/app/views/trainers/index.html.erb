@@ -1,0 +1,5 @@
+<a href="/trainers/new">New Trainer</a>
+<br>
+<% @trainers.each do |trainer| %>
+<br><a href="/trainers/<%= trainer.id %>"><%= trainer.name %></a>
+<% end %>

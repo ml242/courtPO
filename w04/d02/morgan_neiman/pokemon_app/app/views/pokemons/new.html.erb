@@ -1,0 +1,8 @@
+<%= form_tag '/pokemons', method: :post do %>
+<br><%= label_tag 'name' %><br>
+<%= text_field_tag 'name', nil, placeholder: 'name' %>
+<br><%= label_tag 'trainer_id' %><br>
+<%= text_field_tag 'trainer_id', nil, placeholder: 'trainer id' %>
+<br>
+<%= submit_tag 'Save Changes' %>
+<% end -%>

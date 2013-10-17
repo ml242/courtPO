@@ -1,0 +1,25 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: pokemon_app_development
+  pool: 5
+  username: anagiraldo-w
+  password:
+  host: localhost
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: pokemon_app_test
+  pool: 5
+  username: anagiraldo-w
+  password:
+  host: localhost
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: pokemon_app_production
+  pool: 5
+  username: pokemon_app
+  password:
