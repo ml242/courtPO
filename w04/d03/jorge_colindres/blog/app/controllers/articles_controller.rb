@@ -18,6 +18,7 @@ class ArticlesController < ApplicationController
       id = params[:id]
       @article = Article.find id
       @comment = Comment.new
+      @comments = Comment.where article_id: @article.id
     end
 
     def edit
