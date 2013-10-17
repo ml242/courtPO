@@ -1,10 +1,17 @@
-ProgrammingApp::Application.routes.draw do
+PokemonApp::Application.routes.draw do
 
-  get '/' => 'programmers#index'
+  #homepage redirects to pokemon
+  get '/' => redirect('/pokemons')
 
-  get '/programmers/:id' => 'programmers#show'
-
-  get '/programmers/:id/edit' => 'programmers#edit'
+  #this route shows a list of all pokemon
+  get '/pokemons' => 'pokemon#index'
+  get '/pokemons/:id' => 'pokemon#pokemon'
+  #this route shows a list of all trainers
+  get '/trainers' => 'trainer#index'
+  get '/trainers/:id' => 'trainer#trainer'
+  #this route shows a list of all gyms
+  get '/gyms' => 'gym#index'
+  get '/gyms/:id' => 'gym#gym'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
