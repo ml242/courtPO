@@ -34,5 +34,54 @@ pokemon_json.each do |k, v|
     :evolve_level => v["evolveLevel"],
     :learnabletm => v["learnableTM"],
   )
-  puts "Added ID: #{p1.id} - #{p1.name}"
+  puts "Added Pokemon ID: #{p1.id} - #{p1.name}"
 end
+
+
+trainer_hash = {
+    "Red" => 16,
+    "Gold" => 17,
+    "Brendan" => 15,
+    "Lucas" => 18,
+    "Hilbert" => 17,
+    "Nate" => 15,
+    "Calem" => 18,
+    "Green" => 17,
+    "Kris" => 17,
+    "Lyra" => 19,
+    "May" => 15,
+    "Dawn" => 16,
+    "Hilda" => 19,
+    "Rosa" => 17
+    "Serena" => 18
+
+}
+
+trainer_hash.each do |k, v|
+    t1 = Trainer.create(
+        :name => k,
+        :age => v
+    )
+    puts "Added Trainer ID #{t1.id} - #{t1.name}"
+end
+
+gym_hash = {
+    "Pewter Gym" => "OG",
+    "Cerulean Gym" => "OG",
+    "Vermilion Gym" => "OG",
+    "Celadon Gym" => "OG",
+    "Fuchsia Gym" => "OG",
+    "Saffron Gym" => "OG",
+    "Cinnabar Gym" => "OG",
+    "Viridian Gym" => "OG",
+    "Indigo Plateau" => "OG"
+}
+
+gym_hash.each do |k, v|
+    g1 = Gym.create(
+        :name => k,
+        :game_version => v
+    )
+    puts "Added Gym ID #{g1.id} - #{g1.name}"
+end
+
