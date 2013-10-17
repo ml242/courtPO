@@ -1,0 +1,14 @@
+<%= @article.title %>
+<br><%= @article.body %>
+<br><%= @article.time %>
+<br><% @article.comments.entries.each do |comment| %>
+<a href="/articles/<%= @article.id %>/comments/<%= comment.id %>/edit"><%= comment.body %></a>
+<% end %>
+<br>
+<a href="/articles/<%= @article.id %>/comments/new">Comment</a>
+<br>
+<a href="/articles/<%= @article.id %>/edit">edit article</a>
+<%= form_tag "/articles/#{@article.id}", method: :delete do %>
+<br>
+<%= submit_tag 'Delete Article' %>
+<% end %>
