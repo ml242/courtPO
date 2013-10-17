@@ -5,13 +5,15 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
+Pokemon.delete_all
+Gym.delete_all
+Trainer.delete_all
 Gym.create(name: 'Water')
 Gym.create(name: 'Rock')
-Trainer.create(name: 'Misty',gym_id:1)
-Trainer.create(name: 'Rocky', gym_id:2)
-Trainer.create(name: 'Superman', gym_id:1)
-Pokemon.create(name: 'Squirtle', trainer_id:1)
-Pokemon.create(name: 'Pikachu', trainer_id:3)
-Pokemon.create(name: 'Bulbasaur', trainer_id:1)
-Pokemon.create(name: 'Charizard', trainer_id:2)
+Trainer.create(name: 'Misty',gym_id: 1)
+Trainer.create(name: 'Rocky', gym_id: 2)
+Trainer.create(name: 'Superman', gym_id: 1)
+Pokemon.create(name: 'Squirtle', trainer_id: 1)
+Pokemon.create(name: 'Pikachu', trainer_id: 3)
+Pokemon.create(name: 'Bulbasaur', trainer_id: 1)
+Pokemon.create(name: 'Charizard', trainer_id: 2)
