@@ -1,0 +1,11 @@
+<h1><%= @country.name %></h1>
+  <!-- Option to Edit country -->
+<%= form_tag("/countries/edit/#{@country.id.to_s}", method: "get") do %>
+    <%= submit_tag("Edit") %>
+<% end %>
+<div>
+  <% @country.states.each do |state| %>
+    <%= label_tag "#{state['name']} : #{state['motto']}" %><br>
+  <% end %>
+
+</div>
