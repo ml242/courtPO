@@ -24,11 +24,12 @@ a {
 
 }
 #container img {
-  border-radius: 200px;
+  border-radius: 900px;
   margin-top: 10px;
     border: 10px solid rgba(256, 195, 253, .9);
-  max-width: 300px;
-  height: auto;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
 }
 
 a:hover {

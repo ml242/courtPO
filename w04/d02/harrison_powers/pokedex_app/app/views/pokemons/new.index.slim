@@ -1,0 +1,68 @@
+= form_tag('/pokemons') do
+
+    = label_tag 'name', 'Name:'
+    = text_field_tag 'name', :required => true
+    br/
+
+    = label_tag 'type1', 'Type 1:'
+    = text_field_tag 'type1', :required => true
+    br/
+
+    = label_tag 'type2', 'Type 2:'
+    = text_field_tag 'type2', :required => true
+    br/
+
+    = label_tag 'ability1', 'Ability 1:'
+    = text_field_tag 'ability1', :required => true
+    br/
+
+    = label_tag 'gender_ratio', 'Gender Ratio:'
+    = text_field_tag 'gender_ratio', :required => true
+    br/
+
+    = label_tag 'experience_curve', 'Experience Curve:'
+    = text_field_tag 'experience_curve', :required => true
+    br/
+
+    = label_tag 'catch_rate', 'Catch Rate:'
+    = text_field_tag 'catch_rate', :required => true
+    br/
+
+    = label_tag 'base_exp', 'Base Exp:'
+    = text_field_tag 'base_exp', :required => true
+    br/
+
+    = label_tag 'base_stats_hp', 'Base Stats - HP:'
+    = text_field_tag 'base_stats_hp', :required => true
+    br/
+
+    = label_tag 'base_stats_atk', 'Base Stats - ATK:'
+    = text_field_tag 'base_stats_atk', :required => true
+    br/
+
+    = label_tag 'base_stats_def', 'Base Stats - DEF:'
+    = text_field_tag 'base_stats_def', :required => true
+    br/
+
+    = label_tag 'base_stats_speed', 'Base Stats - SPEED:'
+    = text_field_tag 'base_stats_speed', :required => true
+    br/
+
+    = label_tag 'evolve_to', 'Evolve To:'
+    = text_field_tag 'evolve_to', :required => true
+    br/
+
+    = label_tag 'evolve_level', 'Evolve Level:'
+    = text_field_tag 'evolve_level', :required => true
+    br/
+
+    = label_tag 'learnabletm', 'LearnableTM:'
+    = text_area_tag 'learnabletm', :required => true
+    br/
+
+    = label_tag 'spatk', 'Spatk:'
+    = text_field_tag 'spatk', :required => true
+    br/
+    br/
+
+    = submit_tag 'Add new Pokemon!'

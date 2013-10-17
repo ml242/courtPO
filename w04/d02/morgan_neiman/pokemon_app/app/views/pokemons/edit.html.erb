@@ -1,0 +1,9 @@
+<%= form_tag "/pokemons/#{@id}", method: :put do %>
+<br><%= label_tag 'name' %><br>
+<%= text_field_tag 'name', @pokemon.name %>
+<br><%= label_tag 'trainer_id' %><br>
+<%= text_field_tag 'trainer_id', @pokemon.trainer_id %>
+<br>
+
+<%= submit_tag 'Save Changes' %>
+<% end -%>

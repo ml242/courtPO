@@ -1,0 +1,12 @@
+- content_for :title do
+  = "#{@gym.name}"
+h1 #{@gym.name}
+a href="/gyms/#{@gym.id}/edit" Edit Gym
+br
+- unless @gym.trainers.empty?
+  h4 Trainers
+  ul
+  - @gym.trainers.each do |trainer|
+    li #{trainer.name}
+- else
+  | Nobody trains here yet.

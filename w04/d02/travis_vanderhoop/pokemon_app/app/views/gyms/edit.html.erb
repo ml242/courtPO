@@ -1,0 +1,7 @@
+<h1>Edit Gym <%= @gym.id %></h1>
+
+<%= form_tag "/gyms/#{@gym.id}" do %>
+  <%= label_tag 'name:' %>
+  <%= text_field_tag 'name', @gym.name %>
+  <%= submit_tag('Update') %>
+<% end %>

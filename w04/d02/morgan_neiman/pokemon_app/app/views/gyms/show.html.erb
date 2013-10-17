@@ -1,0 +1,14 @@
+<%= @gym.name %>
+<br><br>
+<% @trainers.each do |trainer| %>
+Trainer: <a href="/trainers/<%= trainer.id %>"><%= trainer.name %></a>
+<br>
+Pokemon: <%trainer.pokemons.each do |pokemon| %>
+  <%= pokemon.name %>
+<% end %>
+<% end %>
+<br><a href="/gyms/<%= @gym.id %>/edit">Edit Gym</a>
+<%= form_tag "/gyms/#{@gym.id}", method: :delete do %>
+<br>
+<%= submit_tag 'Delete Gym' %>
+<% end %>

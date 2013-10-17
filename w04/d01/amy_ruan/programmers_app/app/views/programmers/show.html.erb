@@ -1,0 +1,15 @@
+  <h2>Click twitter username to go to their page</h2>
+  <h3><%=@programmer.name%></h3>
+  <div class= "individual">
+    <ul>
+      <li><%=link_to(@programmer.twitter_username,"https://twitter.com/#{@programmer.twitter_username}")%><br>
+          <img src=<%=@programmer.twitter_pic%>>
+      </li>
+    </ul>
+  </div>
+    <form action= <%="/programmers/#{@programmer.id}/delete"%> method= "post">
+      Press to delete programmer
+    <input type="submit" value="Delete"%>
+    </form>
+  <div class="editor"><%=link_to("Edit Programmer","/programmers/#{@programmer.id}/edit")%></div>
+
