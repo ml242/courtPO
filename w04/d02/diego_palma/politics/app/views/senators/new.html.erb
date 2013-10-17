@@ -1,0 +1,12 @@
+<h1>Add a new Senator</h1>
+
+<%= form_tag "/senators/#{@programmer.id}" do %>
+<%= label_tag 'name', 'Name' %>
+<%= text_field_tag 'name' %>
+
+<%= label_tag 'state_id', 'State ID' %>
+<%= text_field_tag 'state_id' %>
+
+<%= submit_tag('Submit') %>
+
+<% end %>
