@@ -8,12 +8,11 @@
 
 #
 
+# Pokemon JSON Source
+# https://github.com/Matheus28/Pokemmo/blob/master/server/data/pokemon.json
 file = File.open("#{Rails.root}/db/pokemon.json", 'r')
-
 json_data = file.read
-
 pokemon_json = JSON.parse(json_data)
-
 pokemon_json.each do |k, v|
   p1 = Pokemon.create(
     :name => v["name"],
@@ -65,6 +64,8 @@ trainer_hash.each do |k, v|
     puts "Added Trainer ID: #{t1.id} - #{t1.name}"
 end
 
+# Pokemon Gym Source
+# http://bulbapedia.bulbagarden.net/wiki/Gym_guide
 gym_hash = {
     "Pewter Gym" => "OG",
     "Cerulean Gym" => "OG",
