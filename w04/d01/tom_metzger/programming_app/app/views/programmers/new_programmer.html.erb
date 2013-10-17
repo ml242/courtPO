@@ -1,22 +1,29 @@
 <h1>Add a new programmer</h1>
 <a href="/programmers">Home</a>
 
-<form method="post" action="/programmers">
+<%= form_tag "/programmers" do %>
+<!-- <form method="post" action="/programmers"> -->
   <div>
     <label name="name">Name:</label>
-    <input type="text" name="name" placeholder="Name">
+    <%= text_field_tag :name, nil, {placeholder: 'Name', :class => 'photo', id: 'frog'} %>
+    <!-- <input type="text" name="name" placeholder="Name"> -->
   </div>
   <div>
   <label name="twitter_img_url">Profile Picture URL:</label>
-  <input type="text" name="twitter_img_url" placeholder="Profile Picture URL">
+  <%= text_field_tag :twitter_img_url, nil, {placeholder: "Profile Picture URL"}%>
+  <!-- <input type="text" name="twitter_img_url" placeholder="Profile Picture URL"> -->
   <div>
   <div>
     <label name="twitter_username">Twitter Username:</label>
-    <input type="text" name="twitter_username" placeholder="Twitter Username">
+    <%= text_field_tag :twitter_username, nil, {placeholder: "Twitter Username"} %>
+    <!-- <input type="text" name="twitter_username" placeholder="Twitter Username"> -->
   <div>
   <div>
     <label name="github_username">Github Username:</label>
-    <input type="text" name="github_username" placeholder="Github Username">
+    <%= text_field_tag :github_username, nil, {placeholder: "Github Username"} %>
+    <!-- <input type="text" name="github_username" placeholder="Github Username"> -->
   <div>
-  <input type="submit" value="Add Programmer">
-</form>
+  <%= submit_tag "Add Programmer" %>
+  <!-- <input type="submit" value="Add Programmer"> -->
+<% end %>
+<!-- </form> -->

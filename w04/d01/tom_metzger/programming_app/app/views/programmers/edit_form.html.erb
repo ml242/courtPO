@@ -1,14 +1,30 @@
 <h1>Edit <%= @result.name %>'s Information</h1>
 <a href="/programmers">Home</a>
 
-<form method="post" action="/programmers/<%= @result[:id]%>">
-<label>Name:</label>
-  <input type="text" name="name"      value="<%= @result[:name]%>" placeholder="name">
-<label>Twitter Username:</label>
-  <input type="text" name="username"  value="<%= @result[:twitter_username]%>" placeholder="twitter username">
-<label>Profile Pic URL:</label>
-  <input type="text" name="img_url"   value="<%= @result[:twitter_pic_url]%>"placeholder="twitter pofile pic url">
-<label>Github Username:</label>
-  <input type="text" name="github"    value="<%= @result[:github_username]%>" placeholder="github username">
-  <input type="submit" value="Update">
-</form>
+<%= form_tag "/programmers/#{@result[:id]}" do %>
+<!-- <form method="post" action="/programmers/<%= @result[:id]%>"> -->
+<div>
+  <%= label(:post, :name) %>
+  <!-- <label>Name:</label> -->
+  <%= text_field_tag :name, @result[:name], {placeholder: "name"} %>
+    <!-- <input type="text" name="name"      value="<%#= @result[:name]%>" placeholder="name"> -->
+</div>
+<div>
+  <label>Twitter Username:</label>
+  <%= text_field_tag :twitter_username, @result[:twitter_username], {placeholder: "twitter username"} %>
+    <!-- <input type="text" name="username"  value="<%#= @result[:twitter_username]%>" placeholder="twitter username"> -->
+</div>
+<div>
+  <label>Profile Pic URL:</label>
+  <%= text_field_tag :twitter_pic_url, @result[:twitter_pic_url], {placeholder: "twitter profile pic url"} %>
+    <!-- <input type="text" name="img_url"   value="<%#= @result[:twitter_pic_url]%>"placeholder="twitter pofile pic url"> -->
+</div>
+<div>
+  <label>Github Username:</label>
+  <%= text_field_tag :github_username, @result[:github_username], {placeholder: "github username"} %>
+    <!-- <input type="text" name="github"    value="<%#= @result[:github_username]%>" placeholder="github username"> -->
+</div>
+<%= submit_tag "Update Profile" %>
+  <!-- <input type="submit" value="Update"> -->
+<% end %>
+<!-- </form> -->

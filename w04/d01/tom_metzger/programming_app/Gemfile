@@ -8,7 +8,7 @@ gem 'rails', '3.2.14'
 gem 'pg'
 
 group :development do
-  gem 'rails-pry'
+  gem 'pry-rails'
   gem 'annotate'
 end
 
