@@ -1,3 +1,6 @@
+- content_for :title do
+  = "Edit #{@gym.name}"
+
 = form_tag "/gyms/#{@gym.id}", method: :put do
   = label_tag 'name', 'Gym Name: '
   = text_field_tag 'name', @gym.name

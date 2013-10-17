@@ -1,0 +1,13 @@
+- content_for :title do
+  = "Edit #{@trainer.name}"
+
+= form_tag "/trainers/#{@trainer.id}", method: :put do
+  = label_tag 'name', 'Trainer Name: '
+  = text_field_tag 'name', @trainer.name
+
+  = submit_tag 'Update Trainer'
+
+br
+
+= form_tag "/trainers/#{@trainer.id}", method: :delete do
+  = submit_tag 'Delete Trainer'

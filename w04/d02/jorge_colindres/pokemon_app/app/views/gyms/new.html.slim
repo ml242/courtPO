@@ -1,3 +1,5 @@
+- content_for :title do
+  | New Gym
 = form_tag "/gyms" do
   = label_tag 'name', 'Gym Name: '
   = text_field_tag 'name'

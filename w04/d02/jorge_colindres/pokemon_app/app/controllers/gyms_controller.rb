@@ -1,17 +1,27 @@
 class GymsController < ApplicationController
 
+  # GET from '/gyms'
   def index
     @all_gyms = Gym.all
   end
 
+  # GET from '/gyms/new'
+  def new
+  end
+
+  # GET from '/gyms/:id'
   def show
     id = params[:id]
     @gym = Gym.find id
   end
 
-  def new
+  # GET from 'gyms/:id/edit'
+  def edit
+    id = params[:id]
+    @gym = Gym.find id
   end
 
+  # POST from '/gyms'
   def create
     name = params[:name]
 
@@ -21,11 +31,7 @@ class GymsController < ApplicationController
     redirect_to "/gyms/#{id}"
   end
 
-  def edit
-    id = params[:id]
-    @gym = Gym.find id
-  end
-
+  # PUT from '/gyms/:id'
   def update
     id = params[:id]
     name = params[:name]
@@ -36,6 +42,7 @@ class GymsController < ApplicationController
     redirect_to "/gyms/#{id}"
   end
 
+  # DELETE from '/gyms/:id'
   def destroy
     id = params[:id]
 

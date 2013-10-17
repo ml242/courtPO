@@ -15,7 +15,7 @@ head
   / Set the viewport width to device width for mobile
   meta name="viewport" content="width=device-width, initial-scale=1.0"
 
-  title= content_for?(:title) ? yield(:title) : "Untitled App"
+  title= content_for?(:title) ? yield(:title) : "Untitled"
 
   / Included CSS Files
   = stylesheet_link_tag "application"
@@ -26,5 +26,10 @@ head
   = csrf_meta_tag
 
 body
+  header
+    nav: ul
+      li: a href="/gyms" Gyms
+      li: a href="/trainers" Trainers
+      li: a href="/pokemons" Pokemons
   .container
     == yield
