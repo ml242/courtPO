@@ -1,0 +1,10 @@
+- content_for :title do
+  | New Pokemon
+= form_tag "/pokemons" do
+  = label_tag 'name', 'Pokemon Name: '
+  = text_field_tag 'name'
+
+  = label_tag 'trainer', 'Trainer: '
+  = select_tag 'trainer', options_from_collection_for_select(@trainers, 'id', 'name')
+
+  = submit_tag 'Create Pokemon'
