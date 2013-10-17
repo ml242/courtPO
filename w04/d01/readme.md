@@ -1,4 +1,4 @@
-f# Homework!
+# Homework!
 
 Refactor your Sinatra Programming app in Rails
 
