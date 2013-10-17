@@ -1,4 +1,15 @@
 CountryApp::Application.routes.draw do
+
+  get '/' => 'countries#index'
+  get '/countries' => 'countries#index'
+  get '/countries/new' => 'countries#new'
+  get '/countries/:id' => 'countries#show'
+  get '/countries/:id/edit' => 'countries#edit'
+  post '/countries' => 'countries#create'
+  post '/countries/:id' => 'countries#update'
+  post '/countries/:id/delete' => 'countries#destroy'
+
+end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -55,4 +66,4 @@ CountryApp::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
-end
+
