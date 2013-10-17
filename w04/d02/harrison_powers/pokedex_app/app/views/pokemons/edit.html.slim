@@ -39,7 +39,7 @@
         br/
 
         = label_tag 'base_stats_atk', 'Base Stats - ATK:'
-        = text_area_tag 'base_stats_atk' @pokemon.base_stats_atk, :required => true
+        = text_area_tag 'base_stats_atk', @pokemon.base_stats_atk, :required => true
         br/
 
         = label_tag 'base_stats_def', 'Base Stats - DEF:'
@@ -64,3 +64,7 @@
 
         = label_tag 'spatk', 'Spatk:'
         = text_area_tag 'spatk', @pokemon.spatk, :required => true
+        br/
+        br/
+
+        = submit_tag "Edit #{@pokemon.name}!"
