@@ -7,7 +7,7 @@
 # price Float
 
 class Apartment
-  attr_accessor :num_bedrooms, :num_baths, :price
+  attr_accessor :num_bedrooms, :num_baths, :price, :building
 
   def initialize
     @renters = []
@@ -15,6 +15,12 @@ class Apartment
     @floor = floor
   end
 
-  def is_occupied
-    @is_occupied = true
+  def is_occupied?
+    @renters.any?
   end
+
+  def move_in(tenant)
+    @renters.push(tenant)
+    tenant.apartment = self
+  end
+end

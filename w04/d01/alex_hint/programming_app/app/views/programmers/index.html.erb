@@ -1,0 +1,9 @@
+<h1>Wazzzzuuppppp</h1>
+
+<ul>
+<% @programmers.each do |programmer| %>
+  <li>
+    <%= link_to(programmer.name, "/programmers/#{programmer.id}") %>
+  </li>
+<% end %>
+</ul>

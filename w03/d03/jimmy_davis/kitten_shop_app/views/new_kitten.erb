@@ -15,11 +15,11 @@
   <br>
   <br>
   <p>Choose owner</p>
-<% @owners.each do |owner| %>
   <select class="choose_owner" name="owner_id">
-    <option value="1"><%= "#{owner["name"]}" %></option>
+    <% @owners.each do |owner| %>
+    <option value=<%= "#{owner["id"]}" %>><%= "#{owner["name"]}" %></option>
+    <% end %>
   </select>
-<% end %>
   <br>
   <br>
   <input type="submit" value="MEOW!">

@@ -1,0 +1,95 @@
+/**
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    contenteditable attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that are clearfixed.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+    *zoom: 1;
+}
+
+@font-face {
+   font-family: "Delicious";
+   src: url("/fonts/Glass_TTY_VT220.ttf");
+}
+
+*{
+  background-color: #000;
+  color: rgb(89, 209, 33);
+  font-family: "Delicious";
+  font-size: 40px;
+}
+
+a{
+  text-decoration: none;
+  color: rgb(89, 209, 33);
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
+.container {
+  padding-top: 20px;
+}
+
+.programmer_container {
+  float:left;
+  margin: 10px;
+  width: 150px;
+}
+
+.programmer_container img {
+  width: 73px;
+  height: 73px;
+}
+
+.twitter {
+  float: left;
+  width: 65%;
+}
+
+.github {
+  float: right;
+  text-align: right;
+  margin: 0 10px;
+  width: 30%;
+}
+
+.edit {
+  position:relative;
+  top: -20px;
+}
+
+input {
+  color: rgb(89, 209, 33);
+  background-color: #000;
+  border: 0;
+  padding: 5px;
+  font-size: 40px;
+  font-family: "Delicious";
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 0 20px 20px 0;
+}
