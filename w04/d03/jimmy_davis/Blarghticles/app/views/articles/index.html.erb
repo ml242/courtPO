@@ -1,0 +1,14 @@
+<h1>Articles</h1>
+<!-- link_to first parameter is link text, second parameter is link href -->
+<%= link_to 'Post New Article', '/articles/new' %>
+<br>
+<br>
+<% @articles.each do |article| %>
+  <% @title = article.title %>
+  <% @id = article.id %>
+  <%= link_to "#{@title}", "/articles/#{@id}" %>
+  <br>
+  <%= @created = article.created_at %>
+<br>
+<br>
+<% end %>
