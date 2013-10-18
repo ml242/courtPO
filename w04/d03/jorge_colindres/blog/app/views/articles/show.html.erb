@@ -13,6 +13,8 @@
 <% end %>
 <br>
 <br>
+<ul>
 <% @comments.each do |comment| %>
-  <%= comment.body %>
+  <li><%= comment.body %></li>
 <% end %>
+</ul>
