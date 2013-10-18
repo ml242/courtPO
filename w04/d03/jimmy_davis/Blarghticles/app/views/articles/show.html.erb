@@ -1,0 +1,26 @@
+  <h1><%= @article.title %></h1>
+  <p><%= @article.created_at %></p>
+
+<div>
+  <p><%= @article.body %></p>
+</div>
+
+<h2>Comments</h2>
+<% @article.comments.each do |comment| %>
+<ul>
+  <li><%= comment.body %></li>
+</ul>
+<% end %>
+
+<h2>Post a comment about <%= @article.title %></h2>
+<%= form_tag ("/comments") do %>
+  <%= text_field_tag "body", nil, placeholder: "Comment" %>
+  <%= hidden_field_tag "article_id", @article.id %>
+  <%= submit_tag "Post New Comment" %>
+<% end %>
+<br>
+<br>
+<br>
+<%= form_tag ("/articles/#{@article.id}/delete") do %>
+  <%= submit_tag "Delete #{@article.title}" %>
+<% end %>

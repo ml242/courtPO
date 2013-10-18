@@ -16,3 +16,9 @@ Fusce ac congue lectus, non scelerisque quam. Integer ornare quis sapien id pulv
 
 Nunc iaculis tortor metus, a placerat enim euismod a. Nullam vulputate auctor risus, eu dignissim nulla consequat non. In hac habitasse platea dictumst. Nulla semper leo erat, dictum pulvinar tortor pellentesque eu. Pellentesque ac commodo mauris. Suspendisse potenti. Integer at ligula vitae odio elementum ultrices suscipit vel tortor. In ornare mauris et ligula aliquam tincidunt ac at nisi. Sed et semper est. Nulla vel lorem vitae turpis commodo ornare. Pellentesque et porta lorem, a malesuada ipsum. Integer nec ligula nec sapien blandit varius eu ac ante. Maecenas aliquet pharetra neque, non eleifend magna condimentum ac. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce facilisis urna quis mi pretium, ut hendrerit turpis pharetra. Etiam eget eleifend enim."
   )
+
+c1 = Comment.new
+c1.body = "This is a great article!"
+c1.save
+
+a1.comments << c1

@@ -18,7 +18,6 @@ class ArticlesController < ApplicationController
   def show
     id = params[:id]
     @article = Article.find(id)
-    @comments = @article.comments
   end
 
   def edit
@@ -38,7 +37,7 @@ class ArticlesController < ApplicationController
 
   def destroy
     id = params[:id]
-    Article.delete(id)
+    @delete_article = Article.delete(id)
     redirect_to('/articles')
   end
 
