@@ -1,7 +1,0 @@
-<h2> Comment on "<%= @article.title %>"</h2>
-
-<%= form_for [@article, @comment] do |f| %>
-  <%= f.text_area :body, size: "60x12" %>
-  <%= f.submit "Comment" %>
-  <%= link_to "Back to the Article", @article %>
-<% end %>

@@ -1,9 +1,12 @@
-<h1> New Article </h1>
+<section>
+<h2> New Article </h2>
+
 <%= form_for @article do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %>
   <%= f.label :body %>
   <%= f.text_area :body, size: "60x12" %>
   <%= f.submit "Create Article" %>
-  <%= link_to "Back to Articles", articles_path %>
+  <%= link_to "Cancel", articles_path %>
 <% end %>
+</section>

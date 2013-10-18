@@ -1,10 +1,13 @@
 Blarghticles::Application.routes.draw do
-  resources :articles do
-    resources :comments
-  end
-
   # get '/articles/:article_id/comments/new' => 'comments#new'
   # post '/articles/:article_id/comments' => 'comments#create'
+
+  # nested resource routing for comments
+  # owned by articles
+  resources :articles do
+    resources :comments, :only => [:create]
+  end
+
 
   root :to => 'articles#index'
   # The priority is based upon order of creation:
