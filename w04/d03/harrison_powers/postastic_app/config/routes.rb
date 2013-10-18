@@ -4,7 +4,7 @@ PostasticApp::Application.routes.draw do
 
   resources :articles, :comments, :authors
 
-  get '/comments/new/:id' => 'comments#new'
+  get '/articles/:id/comments/new' => 'comments#new'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
