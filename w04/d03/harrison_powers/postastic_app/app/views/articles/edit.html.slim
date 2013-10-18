@@ -1,2 +1,7 @@
-h1 Articles#edit
-p Find me in app/views/articles/edit.html.slim
+h1 Edit = @article.title
+
+  = form_for @article do |f|
+     = f.select :author_id, options_from_collection_for_select(@authors, :id, :name, @article.author_id)
+    = f.text_field :title
+    = f.text_area :body
+    = f.submit

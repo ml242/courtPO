@@ -1,2 +1,7 @@
-h1 Articles#new
-p Find me in app/views/articles/new.html.slim
+h1 New Article
+
+= form_for @article do |f|
+  = f.select :author_id, options_from_collection_for_select(@authors, :id, :name)
+  = f.text_field :title
+  = f.text_area :body
+  = f.submit

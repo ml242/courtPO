@@ -1,6 +1,8 @@
 h1 Articles
+
   - @articles.each do |article|
     .article_container
-      = article.title
+      a href="/articles/#{article.id}"
+        = article.title
       = article.author
       = article.body

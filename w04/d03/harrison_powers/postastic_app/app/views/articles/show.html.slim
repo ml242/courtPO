@@ -1,2 +1,8 @@
-h1 Articles#show
-p Find me in app/views/articles/show.html.slim
+h1 = @article.title
+
+= @article.author
+= @article.body
+
+br/
+
+= link_to 'Edit Article', "/articles/#{@article.id}/edit"

@@ -1,5 +1,7 @@
 class ArticlesController < ApplicationController
   def new
+    @article = Article.new
+    @authors = Author.all
   end
 
   def create
