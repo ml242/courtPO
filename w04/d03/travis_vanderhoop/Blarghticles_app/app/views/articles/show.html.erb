@@ -1,0 +1,16 @@
+<h1><%= @article.title %></h1>
+<p><%= @article.body %></p>
+<h3>User-Submitted Comments</h3>
+<% @article.comments.each do |comment| %>
+<p><%= comment.body %></p>
+<p> <%= comment.created_at %></p>
+<% end %>
+<h3>submit a comment</h3>
+<%= form_for (Comment.new) do |f| %>
+  <%= f.text_area :body %>
+  <%= f.hidden_field :article_id, :value => @article.id  %>   <!-- @article.id returns a value of 1 -->
+  <!-- I want to add comments to the page and have it reload with the new comment displayed. To do this, I need to actually save the comment. -->
+  <%= f.submit %>
+<% end %>
+
+
