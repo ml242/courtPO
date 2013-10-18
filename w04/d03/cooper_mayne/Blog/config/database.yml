@@ -1,26 +1,25 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: Blog_development
+  database: <%= File.basename(Rails.root) %>_development
   pool: 5
-  username: postgres
-  password: home3232
   host: localhost
+  username:  <%= ENV['PG_USERNAME'] %>
+  password: <%= ENV['PG_PASSWORD'] %>
 
 test:
   adapter: postgresql
   encoding: unicode
-  database: Blog_test
+  database: <%= File.basename(Rails.root) %>_test
   pool: 5
-  username: postgres
-  password: home3232
   host: localhost
+  username: <%= ENV['PG_USERNAME'] %>
+  password: <%= ENV['PG_PASSWORD'] %>
 
 production:
   adapter: postgresql
   encoding: unicode
-  database: Blog_production
+  database: <%= File.basename(Rails.root) %>_production
   pool: 5
-  username: postgres
-  password: home3232
-  host: localhost
+  username: <%= ENV['PG_USERNAME'] %>
+  password: <%= ENV['PG_PASSWORD'] %>
