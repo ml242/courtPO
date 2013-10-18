@@ -10,11 +10,12 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    Article.find(params[:id]).update params[:article]
+    Article.find(params[:id]).update_attributes params[:article]
     redirect_to "/articles/#{params[:id]}"
   end
 
   def edit
+    @authors = Author.all
     @article = Article.find params[:id]
   end
 

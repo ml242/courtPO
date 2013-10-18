@@ -1,8 +1,8 @@
 h1 Edit Comment
 
 = form_for @comment do |f|
-  = f.text_field :author, @comment.author, :required => true
-  = f.text_field :content, @comment.content, :required => true
+  = f.text_field :author, :value => @comment.author, :required => true
+  = f.text_field :content, :value => @comment.content, :required => true
   = f.submit
 
 br/

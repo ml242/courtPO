@@ -2,6 +2,6 @@ h1 Comments
 
 - @comments.each do |comment|
   .comment_controller
-    a href="/comments/#{comment.id}"
-      = comment.author
+    a href="/comments/#{comment.id}" = comment.author
+    = "  -  "
     = comment.content

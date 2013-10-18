@@ -1,22 +1,10 @@
 PostasticApp::Application.routes.draw do
 
-  get "authors/new"
-
-  get "authors/create"
-
-  get "authors/update"
-
-  get "authors/edit"
-
-  get "authors/destroy"
-
-  get "authors/index"
-
-  get "authors/show"
-
   root to: 'articles#index'
 
-  resources :articles, :comments
+  resources :articles, :comments, :authors
+
+  get '/comments/new/:id' => 'comments#new'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

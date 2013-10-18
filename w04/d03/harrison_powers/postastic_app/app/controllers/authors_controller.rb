@@ -9,7 +9,7 @@ class AuthorsController < ApplicationController
   end
 
   def update
-    Author.find(params[:id]).update params[:author]
+    Author.find(params[:id]).update_attributes params[:author]
     redirect_to "/authors/#{params[:id]}"
   end
 

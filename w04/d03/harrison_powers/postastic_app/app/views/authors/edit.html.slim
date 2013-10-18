@@ -1,8 +1,8 @@
 h1 Edit = @author.name
 
   = form_for @author do |f|
-    = f.text_field :name, @author.name
-    = f.text_field :email, @author.email
+    = f.text_field :name, :value => @author.name, :required => true
+    = f.text_field :email, :value => @author.email, :required => true
     = f.submit
 
 br/

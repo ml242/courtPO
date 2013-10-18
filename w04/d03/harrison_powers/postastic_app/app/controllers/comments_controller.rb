@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
   end
 
   def update
-    c1 = Comment.find(params[:id]).update params[:comment]
+    c1 = Comment.find(params[:id]).update_attributes params[:comment]
     redirect_to "/articles/#{c1.article.id}"
   end
 
