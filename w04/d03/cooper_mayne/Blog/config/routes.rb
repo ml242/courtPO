@@ -1,8 +1,7 @@
 Blog::Application.routes.draw do
   resources :articles do
-    resources :comments, only: [:destroy, :update]
   end
-  resources :comments, only: [:create]
+  resources :comments, only: [:create, :edit, :destroy, :update]
 end
 
 #== Route Map

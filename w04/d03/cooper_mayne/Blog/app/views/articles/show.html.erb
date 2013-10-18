@@ -6,7 +6,7 @@
 <ul>
 <% @article.comments.each do |comment|%>
   <li><%= comment.body %>&nbsp;
-  <%= link_to('edit', "/articles/#{@article.id}/comments/#{comment.id}") %>
+  <%= link_to('edit', "/comments/#{comment.id}/edit") %>
   </li>
 <% end %>
 </ul>
