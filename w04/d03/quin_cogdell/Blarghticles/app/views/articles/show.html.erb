@@ -1,0 +1,24 @@
+<%= link_to('Articles', '/articles') %>
+
+
+
+  <section>
+    <h3>Title</h3>
+    <%= @article.title %>
+
+    <h4>Body</h4>
+    <p><%= @article.body %></p>
+
+    <div>
+
+    </div>
+
+
+    <h5>Comments</h5>
+    <article class="comment">
+    <% @article.comments.each do |comment| %>
+      <p class="comments"><%= comment.body %> </p>
+    <% end %>
+    </article>
+
+  </section>

@@ -1,0 +1,10 @@
+h1 Comment
+
+= @comment.author
+= "  -  "
+= @comment.content
+
+br/
+br/
+
+= link_to 'Edit Comment', "/comments/#{@comment.id}/edit"
