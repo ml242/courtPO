@@ -1,2 +1,6 @@
-h1 Articles#index
-p Find me in app/views/articles/index.html.slim
+h1 Articles
+  - @articles.each do |article|
+    .article_container
+      = article.title
+      = article.author
+      = article.body

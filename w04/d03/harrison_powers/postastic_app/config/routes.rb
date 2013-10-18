@@ -1,5 +1,19 @@
 PostasticApp::Application.routes.draw do
 
+  get "authors/new"
+
+  get "authors/create"
+
+  get "authors/update"
+
+  get "authors/edit"
+
+  get "authors/destroy"
+
+  get "authors/index"
+
+  get "authors/show"
+
   root to: 'articles#index'
 
   resources :articles, :comments

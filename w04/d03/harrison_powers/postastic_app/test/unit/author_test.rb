@@ -1,17 +1,18 @@
 # == Schema Information
 #
-# Table name: articles
+# Table name: authors
 #
 #  id         :integer          not null, primary key
 #  name       :string(255)
-#  author     :string(255)
-#  content    :text
+#  email      :string(255)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  author_id  :integer
 #
 
-class Article < ActiveRecord::Base
-  attr_accessible :title, :body
-  has_many :comments
+require 'test_helper'
+
+class AuthorTest < ActiveSupport::TestCase
+  # test "the truth" do
+  #   assert true
+  # end
 end
