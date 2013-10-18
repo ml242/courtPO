@@ -1,0 +1,8 @@
+<%= link_to('Create New Article','/articles/new') %><br>
+<h1>list of articles</h1>
+
+<% @articles.each do |article| %>
+<%= link_to("#{article.title}", "/articles/#{article.id}") %> created on <%= article.created_at %><br>
+<% end %>
+
+
