@@ -1,0 +1,25 @@
+<body>
+  <%= link_to 'Home', '/articles' %>
+  <article>
+    <h1><%= @article.title %></h1>
+    <h2><%= @article.created_at %></h2>
+    <section class="section-body">
+      <%= @article.body %><br>
+    </section>
+    <section class="section-comments">
+      <% @article.comments.each do |comment| %>
+      <div>
+        <%= comment[:created_at] %>
+        <%= comment[:body] %>
+      </div>
+      <% end %>
+    </section>
+    <!-- Add comment here -->
+    <%= form_tag "/articles/#{@article.id}/edit", method: "get"  do %>
+    <%= submit_tag("Edit") %>
+    <% end %>
+    <%= form_tag "/articles/#{@article.id}", method: "delete"  do %>
+    <%= submit_tag "Delete" %>
+    <% end %>
+  </article>
+</body>
