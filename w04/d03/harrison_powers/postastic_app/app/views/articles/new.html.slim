@@ -2,6 +2,6 @@ h1 New Article
 
 = form_for @article do |f|
   = f.select :author_id, options_from_collection_for_select(@authors, :id, :name)
-  = f.text_field :title
-  = f.text_area :body
+  = f.text_field :title, :placeholder => 'Post title..', :required => true
+  = f.text_area :body, :placeholder => 'Your post here..', :required => true
   = f.submit

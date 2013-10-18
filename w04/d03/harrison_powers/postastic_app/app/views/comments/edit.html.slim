@@ -1,2 +1,12 @@
-h1 Comments#edit
-p Find me in app/views/comments/edit.html.slim
+h1 Edit Comment
+
+= form_for @comment do |f|
+  = f.text_field :author, @comment.author, :required => true
+  = f.text_field :content, @comment.content, :required => true
+  = f.submit
+
+br/
+br/
+
+= form_tag "/comments/#{@comment.id}/delete"
+  = submit_tag 'Delete', data: { confirm: "Are you sure?" }

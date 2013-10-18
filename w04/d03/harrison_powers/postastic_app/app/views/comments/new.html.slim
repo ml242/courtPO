@@ -1,2 +1,6 @@
-h1 Comments#new
-p Find me in app/views/comments/new.html.slim
+h1 New Comment
+
+= form_for @comment do |f|
+  = f.text_field :author, placeholder => 'Your name..', :required => true
+  = f.text_field :content, placeholder => 'Your comment..', :required => true
+  = f.submit

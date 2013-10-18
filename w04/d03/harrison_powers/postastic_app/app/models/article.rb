@@ -12,7 +12,7 @@
 #
 
 class Article < ActiveRecord::Base
-  attr_accessible :title, :body
+  attr_accessible :name, :content, :author_id
   has_many :comments
   belongs_to :author
 end

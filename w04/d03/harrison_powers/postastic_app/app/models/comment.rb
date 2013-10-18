@@ -11,6 +11,6 @@
 #
 
 class Comment < ActiveRecord::Base
-  attr_accessible :title, :body
+  attr_accessible :author, :content
   belongs_to :article
 end

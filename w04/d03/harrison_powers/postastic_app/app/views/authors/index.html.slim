@@ -1,2 +1,6 @@
-h1 Authors#index
-p Find me in app/views/authors/index.html.slim
+h1 Authors
+
+- @authors.each do |author|
+  .author_container
+    a href="/authors/#{author.id}"
+      = author.name

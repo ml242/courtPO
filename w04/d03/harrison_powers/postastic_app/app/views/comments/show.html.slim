@@ -1,2 +1,9 @@
-h1 Comments#show
-p Find me in app/views/comments/show.html.slim
+h1 Comment
+
+= @comment.author
+= @comment.content
+
+br/
+br/
+
+= link_to 'Edit Comment', "/comments/#{@comment.id}/edit"

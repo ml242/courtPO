@@ -2,6 +2,12 @@ h1 Edit = @article.title
 
   = form_for @article do |f|
      = f.select :author_id, options_from_collection_for_select(@authors, :id, :name, @article.author_id)
-    = f.text_field :title
-    = f.text_area :body
+    = f.text_field :title, @article.title, :required => true
+    = f.text_area :body, @article.body, :required => true
     = f.submit
+
+br/
+br/
+
+= form_tag "/articles/#{@article.id}/delete"
+  = submit_tag 'Delete', data: { confirm: "Are you sure?" }
