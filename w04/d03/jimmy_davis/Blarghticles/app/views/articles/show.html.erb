@@ -1,0 +1,23 @@
+  <h1><%= @article.title %></h1>
+  <p><%= @article.created_at %></p>
+
+<div>
+  <p><%= @article.body %></p>
+  <p><%= @article.comments %></p>
+</div>
+
+<h2>Comments</h2>
+<% @article.comments.each do |comment| %>
+<ul>
+  <li><%= comment.body %></li>
+</ul>
+<% end %>
+
+<h2>Post a comment about <%= @article.title %></h2>
+<%= link_to 'Post New Comment', '/comments/new' %>
+<br>
+<br>
+<br>
+<%= form_tag ("/articles/#{@article.id}/delete") do %>
+  <%= submit_tag "Delete #{@article.title}" %>
+<% end %>
