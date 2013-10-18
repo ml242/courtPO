@@ -1,6 +1,7 @@
 h1 New Comment
 
 = form_for @comment do |f|
+  = f.hidden_field :article_id, @article_id
   = f.text_field :author, placeholder => 'Your name..', :required => true
   = f.text_field :content, placeholder => 'Your comment..', :required => true
   = f.submit
