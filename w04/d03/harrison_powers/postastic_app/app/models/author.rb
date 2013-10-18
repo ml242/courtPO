@@ -10,5 +10,6 @@
 #
 
 class Author < ActiveRecord::Base
-  # attr_accessible :title, :body
+  attr_accessible :name, :email
+  has_many :articles
 end
