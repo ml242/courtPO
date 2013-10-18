@@ -1,4 +1,11 @@
 BlarghticlesApp::Application.routes.draw do
+
+  resources :articles, :comments, :users
+
+  post '/articles/:id/delete' => 'articles#destroy'
+
+  post '/comments/:id/delete' => 'comments#destroy'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
