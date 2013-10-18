@@ -8,14 +8,12 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    id = params[:id]
-    Article.find(id).update params[:article]
-    redirect_to "/articles/#{id}"
+    Article.find(params[:id]).update params[:article]
+    redirect_to "/articles/#{params[:id]}"
   end
 
   def edit
-    id = params[:id]
-    @article = Article.find(id)
+    @article = Article.find params[:id]
   end
 
   def destroy
