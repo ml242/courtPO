@@ -17,9 +17,13 @@ class CommentsController < ApplicationController
     id = params["id"]
     c = Comment.find(id)
     c.update_attributes(params[:comment])
-    redirect_to '/articles'
+    redirect_to "/articles/#{c.article.id}"
   end
 
   def destroy
+    id = params["id"]
+    c = Comment.find(id)
+    c.delete
+    redirect_to "/articles/#{c.article.id}"
   end
 end

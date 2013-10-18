@@ -3,5 +3,10 @@
   <%= f.text_field :body %>
   <%= f.submit %>
 <% end %>
+<br>
 
+<%= form_tag "/comments/#{@comment.id}", method: 'delete' do %>
+  <%= submit_tag "delete this comment" %>
+<% end %>
+  
 

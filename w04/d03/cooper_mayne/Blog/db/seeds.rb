@@ -8,5 +8,9 @@ c1 = Comment.create(body: "i love it")
 c2 = Comment.create(body: "i hate it")
 c3 = Comment.create(body: "i dont care about it")
 
+c4 = Comment.create(body: "jimmy wrote this!")
+c5 = Comment.create(body: "johnny wrote this!")
+
+a2.comments << c4 << c5
 a1.comments << c1 << c2 << c3
 
