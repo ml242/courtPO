@@ -1,0 +1,4 @@
+ul, ol { list-style: none; margin: 0; padding: 0;}
+html { font: 16px/1.4 sans-serif; }
+form label, textarea { display:block; }
+.datestamp { font-size: 14px; color: #666665; }

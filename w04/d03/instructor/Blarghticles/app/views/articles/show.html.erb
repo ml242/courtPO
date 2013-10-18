@@ -1,0 +1,29 @@
+<article class="post">
+<h2><%= @article.title %></h2>
+<h3>Posted <%= @article.created_at.strftime("%d %b %y") %></h3>
+
+<%= link_to "Edit Article", edit_article_path %>
+<%= link_to "Delete Article", @article, :method => :delete, :confirm => "Are you sure?" %>
+
+<p>
+<%= @article.body %>
+</p>
+</article>
+
+Comments:
+<ul class="comments-list">
+  <% @article.comments.each do |comment| %>
+    <li>
+      <div class="comment">
+        <span class="datestamp">
+          <%= comment.created_at.strftime("%d %b %y at %I:%M%p") %>
+        </span>
+        <div class="comment-body">
+          <%= comment.body %>
+        </div>
+      </div>
+    </li>
+  <% end %>
+</ul>
+<%= link_to "Add a Comment", new_article_comment_path(@article) %> |
+<%= link_to "View All Articles", articles_path %>
