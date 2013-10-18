@@ -1,0 +1,7 @@
+<h1>Blog!</h1>
+<ul>Articles by Title
+<% Article.all.each do |art|%>
+<li><a href=<%= "/articles/#{art.id}" %>><%= "#{art.title}     #{art.comments.length} comments" %></a></li>
+<% end %>
+</ul>
+<%= link_to("Make a new article", "/articles/new") %>
