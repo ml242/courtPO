@@ -1,0 +1,8 @@
+<%= form_tag '/trainers', method: :post do %>
+<br><%= label_tag 'name' %><br>
+<%= text_field_tag 'name', nil, placeholder: 'name' %>
+<br><%= label_tag 'gym_id' %><br>
+<%= text_field_tag 'gym_id', nil, placeholder: 'gym id' %>
+<br>
+<%= submit_tag 'Save Changes' %>
+<% end -%>

@@ -1,0 +1,11 @@
+<h1> Add new programmer!</h1>
+
+<%=form_tag("/programmers") do %>
+  <%=label_tag 'name'%>
+  <%=text_field_tag "name" %>
+  <%=label_tag 'twitter_username', 'twitter username'%>
+  <%=text_field_tag "twitter_username" %>
+  <%=label_tag 'twitter_pic', 'twitter pic'%>
+  <%=text_field_tag "twitter_pic" %>
+  <%=submit_tag(value = "save changes") %>
+<%end%>

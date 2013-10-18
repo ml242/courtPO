@@ -1,0 +1,12 @@
+<%= form_tag "/pokemons" do %>
+  <%= label_tag "name", "Name" %>
+  <%= text_field_tag "name"%>
+  <%= label_tag "level", "Level" %>
+  <%= text_field_tag "level"%>
+  <%= label_tag "moves", "Moves" %>
+  <%= text_field_tag "moves"%>
+  <%= label_tag "types", "Types" %>
+  <%= text_field_tag "types"%>
+   <%= select_tag "trainer_id", options_from_collection_for_select(@trainers, "id", "name") %>
+  <%= submit_tag "Update" %>
+<% end %>

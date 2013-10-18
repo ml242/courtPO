@@ -1,0 +1,8 @@
+<h1> Edit <%="#{@programmer.name}" %>'s profile!</h1>
+
+<%=form_tag("/programmers/#{@programmer.id}") do %>
+  <%=text_field_tag "name", "#{@programmer.name}" %>
+  <%=text_field_tag "twitter_username", "#{@programmer.twitter_username}" %>
+  <%=text_field_tag "twitter_pic", "#{@programmer.twitter_pic}" %>
+  <%=submit_tag(value = "save changes") %>
+<%end%>

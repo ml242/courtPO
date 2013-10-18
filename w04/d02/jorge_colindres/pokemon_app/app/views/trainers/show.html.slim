@@ -1,0 +1,12 @@
+- content_for :title do
+  = "#{@trainer.name}"
+h1 #{@trainer.name}
+a href="/trainers/#{@trainer.id}/edit" Edit Trainer
+- unless @trainer.gym.nil?
+  p Trains at: #{@trainer.gym.name}
+- unless @trainer.pokemons.empty?
+  p Is training:
+  - @trainer.pokemons.each do |pokemon|
+    li #{pokemon.name}
+- else
+  | Not training any Pokemons yet.

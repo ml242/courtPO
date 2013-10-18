@@ -57,12 +57,12 @@ get '/movies/:id' do
     end
     if response["root"]["movie"]["poster"] != "N/A"
      @poster = response["root"]["movie"]["poster"]
-    else
+   else
     @poster = "http://www.findingbetteragencies.com/wp-content/uploads/HomerSimpsonDoh.png"
-    end
-  @isfull = true
+  end
+    @isfull = true
   else
-  @isfull = false
+    @isfull = false
   end
 @search = "http://www.google.com/search?q=" +  @search_name
    # @search_name

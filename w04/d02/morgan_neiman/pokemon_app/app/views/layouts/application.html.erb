@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PokemonApp</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<a href="/gyms">Gyms</a>
+<a href="/trainers">Trainers</a>
+<a href="/pokemons">Pokemons</a>
+<br><br>
+<%= yield %>
+
+</body>
+</html>

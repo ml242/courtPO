@@ -1,0 +1,8 @@
+<h2>Create a new trainer!</h2>
+<%= form_tag '/trainers' do %>
+  <%= label_tag 'Trainer name:' %>
+  <%= text_field_tag 'name' %>
+  <%= label_tag 'Gym ID:' %>
+  <%= text_field_tag 'gym_id' %>
+  <%= submit_tag 'Create' %>
+<% end %>

@@ -1,7 +1,7 @@
-<img src="<%= @entry.photo %>">
+<img src="/<%= @entry['photo'] %>" class=<%= @entry['filter'] %>>
 <% author = User.find(@entry.author_id) %>
 <br>Are you sure you want to delete this ?
-<br><form action="/delete/<%= @entry.id %>" method="post">
+<br><form action="/photos/<%= @entry.id %>/delete" method="post">
   <label for="radio_yes">Yes</label>
   <input type="radio" name="delete" value="yes">
   <label for="radio_no">Nevermind</label>

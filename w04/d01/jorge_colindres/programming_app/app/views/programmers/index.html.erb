@@ -1,0 +1,6 @@
+<h2>All Programmers</h2>
+<ul>
+<% @all_programmers.each do |programmer| %>
+  <li><a href="/programmers/<%= programmer.id %>"><%= programmer.name %></a></li>
+<% end %>
+</ul>

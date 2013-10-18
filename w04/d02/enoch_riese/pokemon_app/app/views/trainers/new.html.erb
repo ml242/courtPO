@@ -1,0 +1,6 @@
+<%= form_tag "/trainers" do %>
+  <%= label_tag "name", "Name" %>
+  <%= text_field_tag "name"%>
+   <%= select_tag "gym_id", options_from_collection_for_select(@gyms, "id", "name")%>
+  <%= submit_tag "Update" %>
+<% end %>

@@ -1,0 +1,9 @@
+<div> <%=@gym.name%> <br>
+  <%=@gym.trainer%>
+</div>
+
+<%=form_tag"/gyms/#{@gym.id}/delete" do %>
+      Press to delete Gym
+    <%=submit_tag 'Delete'%>
+    <%end%>
+  <div class="editor"><%=link_to("Edit Gym","/gyms/#{@gym.id}/edit")%></div>
