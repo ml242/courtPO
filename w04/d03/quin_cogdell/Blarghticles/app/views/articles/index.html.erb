@@ -4,14 +4,20 @@
 
 
 <% @articles.each do |article| %>
-  <ul>
+  <section>
     <h3>Title</h3>
     <%= article.title %>
-    <li><%= article.body %></li>
-    <h4>Comments</h4>
+
+    <h4>Body</h4>
+    <p><%= article.body %></p>
+
+    <h5>Comments</h5>
+    <article class="comment">
     <% article.comments.each do |comment| %>
-    <li> <%= comment.body %> </li>
+      <p class="comments"><%= comment.body %> </p>
     <% end %>
-  </ul>
+    </article>
+
+  </section>
 
   <% end %>
