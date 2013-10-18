@@ -1,0 +1,23 @@
+<h1> My Articles </h1>
+<h2> Click on title if you want to edit </h2>
+<div>
+  <ul class="articles">
+    <%@articles.each do |article|%>
+    <br>
+    <li><%=link_to(article.title,"/articles/#{article.id}")%>
+        <br>
+        <%=article.body%>
+        <br>
+        <ul class="comments">
+          Comments
+          <%article.comments.each do |comment|%>
+          <li><%=comment.body%></li>
+          <%end%>
+        </ul>
+        <%=article.updated_at%>
+    </li>
+    <%end%>
+  </ul>
+</div>
+
+<%=link_to('Add Article',"/articles/new")%>

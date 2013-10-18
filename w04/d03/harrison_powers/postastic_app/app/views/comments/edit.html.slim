@@ -1,0 +1,12 @@
+h1 Edit Comment
+
+= form_for @comment do |f|
+  = f.text_field :author, :value => @comment.author, :required => true
+  = f.text_field :content, :value => @comment.content, :required => true
+  = f.submit
+
+br/
+br/
+
+= form_tag "/comments/#{@comment.id}/delete"
+  = submit_tag 'Delete', data: { confirm: "Are you sure?" }

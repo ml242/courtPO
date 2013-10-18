@@ -1,0 +1,6 @@
+<% Article.all.each do |a| %>
+<br><%= a.title %><br>
+<%= link_to("read more", "articles/#{a.id}") %><br>
+<% end %>
+<br>
+<%= link_to('Add Article',"articles/new")%><br>

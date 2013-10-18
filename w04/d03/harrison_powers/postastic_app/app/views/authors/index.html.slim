@@ -1,0 +1,6 @@
+h1 Authors
+
+- @authors.each do |author|
+  .author_container
+    a href="/authors/#{author.id}"
+      = author.name

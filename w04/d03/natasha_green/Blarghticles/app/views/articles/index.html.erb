@@ -1,0 +1,11 @@
+<h1> Articles' home page </h1>
+
+
+<ul>
+<% @articles.each do |article|  %>
+<li><%= article.title  %></li>
+<%= article.body %>
+<%= article.comments %>
+
+<% end %>
+</ul>

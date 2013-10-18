@@ -1,0 +1,9 @@
+<h1 id="heading">ARTICLES</h1>
+
+<% @articles.each do |article|%>
+  <h2><%= article.title %></h2>
+  <h3 id="heading">Author: <%= article.author %></h3>
+  <%= link_to('view', "/articles/#{article.id}") %>
+  <p><%= article.body.slice(0,50) %>...</p>
+  <span class="comments">comments:&nbsp;<%= article.comments.count %></span>
+<% end %>

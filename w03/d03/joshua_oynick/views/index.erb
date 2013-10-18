@@ -11,7 +11,9 @@
     <label for='owners'> Owner </label>
       <select name='owner_id' id='owners'>
         <% @owners.each do |owner| %>
-          <option value='#{owner['id']}'>#{owner['name']}></option>
+          <option value='<%=owner['id']%>'>
+            <%= owner['name'] %>
+          </option>
         <% end %>
       </select><br><br>
     <label> Image URL </label>

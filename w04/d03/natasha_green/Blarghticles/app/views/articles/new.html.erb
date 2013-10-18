@@ -1,0 +1,9 @@
+new.html.erb
+
+<%= from_for(@article) do |f| %>
+  <%= f.text_field :title, :placeholder => "title" %>
+  <%= f.text_field :body, :placeholder => "Interesting" %>
+
+<%= f.submit %>
+<% end %>
+

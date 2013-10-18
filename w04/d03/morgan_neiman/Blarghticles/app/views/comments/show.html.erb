@@ -1,0 +1,7 @@
+<br><%= @comment.body %>
+<br><%= @comment.time %>
+<a href="/articles/<%= @comment.article_id %>/comments/<%= @comment.id %>/edit">edit comment</a>
+<%= form_tag "/articles/#{@comment.article_id}/comments/#{@comment.id}", method: :delete do %>
+<br>
+<%= submit_tag 'Delete comment' %>
+<% end %>

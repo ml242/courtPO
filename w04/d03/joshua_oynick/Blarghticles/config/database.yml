@@ -1,0 +1,25 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: Blarghticles_development
+  pool: 5
+  username:  joshoynick
+  password:
+  host: localhost
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: Blarghticles_test
+  pool: 5
+  username: joshoynick
+  password:
+  host: localhost
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: Blarghticles_production
+  pool: 5
+  username: joshoynick
+  password:
