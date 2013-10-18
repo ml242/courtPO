@@ -7,10 +7,19 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 Article.delete_all
 Comment.delete_all
+Tag.delete_all
+
+t1 = Tag.create(body:'Cool')
+t2 = Tag.create(body:'Favs')
+t3 = Tag.create(body:'Awesomeness')
 
 a1 = Article.create(title: 'Happiness', body:'Family,Friends,Anime,Reading,Tchotkes,Fun')
 a2 = Article.create(title: 'Russian Authors', body:'Fyodor Dostoyevsky,Nikolai Gogol,Anton Chekhov,Leo Tolstoy')
 a3 = Article.create(title: 'Places To Go', body:'Japan,Korea,China,Cambodia,Thailand,Germany,Greece')
+
+a1.tags << [t1,t2]
+a2.tags << [t2]
+a3.tags << [t2,t3,t1]
 
 c1 = Comment.create(body:"This is awesome", article_id:1)
 c2 = Comment.create(body:"This is pretty true", article_id:1)
