@@ -1,0 +1,19 @@
+<h1><%= @article.title %></h1>
+
+<div><button>
+  <%= link_to "Edit Post", "/articles/#{@article.id}/edit" %></button>
+</div>
+
+<div>
+  <%= form_tag "/articles/#{@article.id}", method: :delete do %>
+  <%= submit_tag 'Delete Post' %>
+  <% end %>
+</div>
+
+
+<div>Created: <%= @article.created_at %></div>
+<div>Updated: <%= @article.updated_at %></div>
+<div><%= @article.body %></div>
+
+<h3>Comments</h3>
+
