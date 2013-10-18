@@ -1,0 +1,13 @@
+<h1>Index</h1>
+
+<br>
+
+<%= link_to('Create new article', '/articles/new') %>
+
+<br>
+<br>
+<br>
+
+<% @articles.each do |article| %>
+  <h3><%= link_to(article.title, "/articles/#{article.id}") %></h3>
+<% end %>
