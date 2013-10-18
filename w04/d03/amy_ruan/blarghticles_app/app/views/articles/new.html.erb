@@ -1,0 +1,10 @@
+<h1>Add new article!</h1>
+<%=form_for(@article, method::put) do |f|%>
+  <%=f.label 'Title'%><br>
+  <%=f.text_field :title, :placeholder=>'Enter Title',:size => 150%>
+  <br>
+  <%=f.label 'Body'%> <br>
+  <%=f.text_area :body, :placeholder =>'Enter Body', :cols => "107", :rows => "10"%>
+  <br>
+  <%=f.submit%>
+<%end%>

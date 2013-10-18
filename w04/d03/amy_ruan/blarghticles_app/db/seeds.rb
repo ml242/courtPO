@@ -1,0 +1,23 @@
+# This file should contain all the record creation needed to seed the database with its default values.
+# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
+#
+# Examples:
+#
+#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
+#   Mayor.create(name: 'Emanuel', city: cities.first)
+Article.delete_all
+Comment.delete_all
+
+a1 = Article.create(title: 'Happiness', body:'Family,Friends,Anime,Reading,Tchotkes,Fun')
+a2 = Article.create(title: 'Russian Authors', body:'Fyodor Dostoyevsky,Nikolai Gogol,Anton Chekhov,Leo Tolstoy')
+a3 = Article.create(title: 'Places To Go', body:'Japan,Korea,China,Cambodia,Thailand,Germany,Greece')
+
+c1 = Comment.create(body:"This is awesome", article_id:1)
+c2 = Comment.create(body:"This is pretty true", article_id:1)
+c3 = Comment.create(body:"Where is career?", article_id:1)
+c4 = Comment.create(body:"Where is Pushkin?", article_id:2)
+c5 = Comment.create(body:"Best of the best!", article_id:1)
+c6 = Comment.create(body:"Yup!", article_id:3)
+c7 = Comment.create(body:"JAPAANNNN", article_id:3)
+c8 = Comment.create(body:"Dont miss out on Bhutan", article_id:3)
+c9 = Comment.create(body:"Great List", article_id:3)

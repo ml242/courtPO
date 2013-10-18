@@ -1,0 +1,14 @@
+<h1><%=@article.title%></h1>
+<div class="body">
+  <%=@article.body%> <br>
+  Comments
+  <ul class="comments">
+    <%@article.comments.each do |comment|%>
+    <li><%=comment.body%></li>
+    <%end%>
+  </ul>
+    <%=@article.updated_at%>
+</div>
+
+<%=link_to('Edit Article',"/articles/#{@article.id}/edit")%>
+<%=link_to('Delete Article',"/articles/#{@article.id}",method: :delete)%>
