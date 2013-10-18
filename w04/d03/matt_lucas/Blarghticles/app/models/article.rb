@@ -1,4 +1,4 @@
 class Article < ActiveRecord::Base
-    attr_accessible :title, :author, :body, :article_id
+    attr_accessible :title, :author, :body
     has_many :comments
 end

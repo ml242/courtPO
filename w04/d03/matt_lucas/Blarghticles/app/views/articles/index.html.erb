@@ -1,1 +1,7 @@
-"is this on?"
+<h1>See some articles here</h1>
+<%= link_to('New Article', '/articles/new')%>
+<br><br>
+<% @articles.each do |article| %>
+<a href="articles/<%= article.id %>"><%= article.title %></a>
+<br>
+<% end %>
