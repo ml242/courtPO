@@ -6,6 +6,11 @@ PostasticApp::Application.routes.draw do
 
   get '/articles/:id/comments/new' => 'comments#new'
 
+  post '/articles/:id/delete' => 'articles#destroy'
+
+  post '/comments/:id/delete' => 'comments#destroy'
+
+  post '/authors/:id/delete' => 'authors#destroy'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
