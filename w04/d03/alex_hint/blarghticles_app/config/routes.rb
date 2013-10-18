@@ -1,14 +1,20 @@
-ProgrammingApp::Application.routes.draw do
+BlarghticlesApp::Application.routes.draw do
 
-  get '/' => 'programmers#index'
+  root to: 'articles#index'
+  resources :articles
+  #== Route Map
+# Generated on 17 Oct 2013 18:36
+#
+#     articles GET    /articles(.:format)          articles#index
+#              POST   /articles(.:format)          articles#create
+#  new_article GET    /articles/new(.:format)      articles#new
+# edit_article GET    /articles/:id/edit(.:format) articles#edit
+#      article GET    /articles/:id(.:format)      articles#show
+#              PUT    /articles/:id(.:format)      articles#update
+#              DELETE /articles/:id(.:format)      articles#destroy
+  post '/comments' => 'comments#create'
 
-  get '/programmers' => 'programmers#index'
 
-  get '/programmers/:id' => 'programmers#single_programmer'
-
-  get '/programmers/:id/edit' => 'programmers#edit'
-
-  post '/programmers/:id' => 'programmers#update'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
