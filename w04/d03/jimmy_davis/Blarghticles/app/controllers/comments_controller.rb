@@ -6,7 +6,6 @@ class CommentsController < ApplicationController
 
   def new
     @comment = Comment.new
-    redirect_to('/articles')
   end
 
   def create

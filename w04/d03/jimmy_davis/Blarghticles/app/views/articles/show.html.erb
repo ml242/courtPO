@@ -3,6 +3,7 @@
 
 <div>
   <p><%= @article.body %></p>
+  <p><%= @article.comments %></p>
 </div>
 
 <h2>Comments</h2>
@@ -13,11 +14,7 @@
 <% end %>
 
 <h2>Post a comment about <%= @article.title %></h2>
-<%= form_tag ("/comments") do %>
-  <%= text_field_tag "body", nil, placeholder: "Comment" %>
-  <%= hidden_field_tag "article_id", @article.id %>
-  <%= submit_tag "Post New Comment" %>
-<% end %>
+<%= link_to 'Post New Comment', '/comments/new' %>
 <br>
 <br>
 <br>
