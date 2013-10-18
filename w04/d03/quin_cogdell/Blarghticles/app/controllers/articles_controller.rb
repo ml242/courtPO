@@ -12,4 +12,11 @@ class ArticlesController < ApplicationController
     Article.create(params[:article])
     redirect_to 'articles'
   end
+
+  def show
+    #aise
+    @article = Article.find(params[:id])
+  end
+
+
 end

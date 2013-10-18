@@ -11,6 +11,11 @@
     <h4>Body</h4>
     <p><%= article.body %></p>
 
+    <div>
+      <a href="/articles/<%=article.id %>">View Article</a>
+    </div>
+
+
     <h5>Comments</h5>
     <article class="comment">
     <% article.comments.each do |comment| %>
