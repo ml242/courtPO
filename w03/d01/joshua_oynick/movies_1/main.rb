@@ -1,81 +1,71 @@
+require 'pg'
 require 'sinatra'
-require 'sinatra/reloader.rb' if development?
-require 'pry'
+require 'sinatra/reloader' if development?
 require 'httparty'
 require 'json'
-require 'cgi'
-require 'pg'
+require 'pry'
 
-get "/" do
-   erb :search
+get "/" do  # SEARCH FORM
+  erb :index
 end
 
 get "/movies/search" do
-  query = params[:q]
-  query = CGI::escape(query)
-  url = "http://www.omdbapi.com/?s=#{query}"
-  response_string = HTTParty.get(url)
-  response = JSON.parse(response_string)
+  # DISPLAY ALL THE TITLES THAT MATCH THEIR SEARCH
+  # MAKE THEM INTO LINKS WHICH GO TO FULL INFO ON THAT MOVIE
 
-  @movie_hashes = []
-  response["Search"].each do |movie_hash|
-    imdb_id = movie_hash["imdbID"]
-    url = "/movies/#{imdb_id}"
+  query = params[:title].gsub(" ","+")
+  response = HTTParty.get("http://www.omdbapi.com/?s=#{query}")
+  r = JSON.parse(response)
 
-    movie_hash = {
-      :title => movie_hash["Title"],
-      :year => movie_hash["Year"],
-      :type => movie_hash["Type"],
-      :url => url
-    }
-
-    @movie_hashes << movie_hash
-
+  unless r.has_key? "Search" # IN CASE THERE ARE NO RESULTS!
+    erb :nores
+  else
+    @results =  r["Search"]
+    erb :search
   end
-
-  erb :results
 end
 
-get "/movies/:imdb_id" do
-  imdb_id = params[:imdb_id]
-  imdb_id = CGI::escape(imdb_id)
-  url = "http://www.omdbapi.com/?i=#{imdb_id}"
-
-  response_string = HTTParty.get(url)
-  response = JSON.parse(response_string)
-
-  poster_url = response["Poster"]
-  poster_url = nil if poster_url == "N/A"
-
-  @movie = {
-    :title => response["Title"],
-    :year => response["Year"],
-    :genre => response["Genre"],
-    :poster => response["Poster"]
-  }
-
-  erb :movie
+get "/movies/:id" do
+  @imdbid = params[:id]
+  response = HTTParty.get("http://www.omdbapi.com/?i=#{@imdbid}")
+  results = JSON.parse(response)
+  l = %w(Title Year Actors Plot Director Genre imdbRating Released Runtime imdbRating Poster)
+  @results = results.select { |result| l.include? result }
+  erb :display
 end
 
-post "/movies/faves" do
+post "/movies" do
+  db_conn = PG.connect(:host => 'localhost',
+                       :dbname => 'movie_db',
+                       :user => 'postgres',
+                       :password => 'home3232'
+                      )
+  sql = "INSERT INTO movies (imdb_id) VALUES ('#{params[:imdb_id]}')"
 
-  db_connection = PG.connect(
-    :dbname => 'movies_db',
-    :host => 'localhost')
-
-  # check the size
-  sql = "INSERT INTO movies (title, year, genre) VALUES ('#{params['title']}', #{params[year]}, '#{params['genre']}')"
-  db_connection.exec(sql)
-  sql = "SELECT * FROM movies"
-  response = db_connection.exec(sql)
-  db_connection.close
-  redirect to ("/")
+  db_conn.exec(sql)
+  redirect "/movies"
+  db_conn.close
 end
 
-
-get "/movies/faves" do
-  erb :faves
-end
-
-
-
+get "/movies" do
+  #show saved movies
+  db_conn = PG.connect(:host => 'localhost',
+                       :dbname => 'movie_db',
+                       :user => 'postgres',
+                       :password => 'home3232'
+                      )
+  sql = "SELECT imdb_id FROM movies"
+  res = db_conn.exec(sql)
+  #p res.entries.to_s
+  imdb_ids = []
+  res.entries.each { |entry| imdb_ids << entry["imdb_id"] }
+  db_conn.close
+  @movies = []
+  imdb_ids.each do |imdb_id|
+    response = HTTParty.get("http://www.omdbapi.com/?i=#{imdb_id}")
+    r = JSON.parse(response)
+    @movies << r
+  end
+  @movies
+  erb :movies
+endx

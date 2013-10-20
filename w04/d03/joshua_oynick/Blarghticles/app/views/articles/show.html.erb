@@ -1,0 +1,21 @@
+<h1><%= @article.title %></h1>
+<br>
+<%= @article.body %>
+<br>
+<%= link_to 'Edit', "/articles/#{@article.id}/edit" %>
+<br>
+<br>
+<%= form_for @comment do |f| %>
+  <%= f.hidden_field :article_id, :value => "#{@article.id}" %>
+  <%= f.label :body, 'Comment' %>
+  <%= f.submit %>
+<% end %>
+<br>
+<br>
+<ul>
+  <% @comments.each do |comment| %>
+    <li>
+      <%= comment.body %>
+    </li>
+  <% end %>
+</ul>

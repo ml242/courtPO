@@ -1,0 +1,15 @@
+<h2><%= @article.title %><br></h2>
+<%= @article.body %><br>
+Created: <%= @article.created_at%> by Anonymous<br><br>
+<%= link_to('edit article',"#{@article.id}/edit")%><br>
+<%= link_to('delete article',"#{@article.id}/delete")%><br>
+<%= link_to('View all Articles','/articles')%>
+
+<h2>Comments</h2>
+<% @article.comments.each do |c| %>
+<b><%= c.body %></b><br>
+by Anonymous <br>
+<% end %>
+<br>
+<%= link_to('add comment', '/comments/new')%>
+

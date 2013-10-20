@@ -1,0 +1,10 @@
+<h1>Articles /index will show all articles</h1>
+
+<% @articles.each do |article| %>
+  <b><%= article[:title] %></b><br>
+  <%= article[:body] %><br><br>
+<% end %>
+
+<%= link_to('New Article', '/articles/new') %>
+
+

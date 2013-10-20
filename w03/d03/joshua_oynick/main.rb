@@ -21,7 +21,6 @@ end
 get '/kittens' do
   sql = "SELECT * FROM kittens"
   @kittens = db_exec(sql)
-
   erb :all_kittens
 end
 
@@ -39,6 +38,7 @@ post '/kittens' do
   end
 
   sql = "INSERT INTO kittens (name, age, is_cute, image_url, owner_id) VALUES ('#{name}', #{age}, #{is_cute}, '#{image_url}', '#{owner_id}')"
+  db_exec(sql)
   redirect '/kittens'
 end
 

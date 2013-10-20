@@ -1,0 +1,7 @@
+<h1>New Comment</h1>
+
+<%= form_for(@comment) do |f| %>
+  <%= f.text_field :article_id, placeholder: 'Article ID' %>
+  <%= f.text_field :body, placeholder: 'Your Comment' %>
+  <%= f.submit %>
+<% end %>
