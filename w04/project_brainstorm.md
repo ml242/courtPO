@@ -1,4 +1,4 @@
-**I am a:** Scientist & Developer (in training)
+**As a:** Scientist & Developer (in training)
 
 **I want to:** Create a catalog of Gal4 lines
 
@@ -90,4 +90,17 @@ THURSDAY
 	- slide on genetics (loss of function & gain of function)
 	- slide on Gal4-UAS
 	- slide showing flybase & bloomington
+
+-----------
+-----------
+USER STORIES
+
+**As a:** New user
+
+**I want to:** 
+
+**So I can:** 
+
+
+
 
