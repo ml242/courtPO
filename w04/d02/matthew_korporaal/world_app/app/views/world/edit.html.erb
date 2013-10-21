@@ -1,0 +1,24 @@
+<h1><%= @country.name %></h1>
+
+
+<%= form_tag("/countries/#{@country.id.to_s}") do %>
+<div>
+  <%= text_field_tag("country-name", "#{@country.name}") %>
+  <%= label_tag "Name" %><br>
+
+  <% @country.states.each do |state| %>
+
+  <%= text_field_tag("state-name-#{state.id}", "#{state.name}") %>
+  <%= label_tag "Name" %>
+  <%= text_field_tag("state-motto-#{state.id}", "#{state.motto}") %>
+  <%= label_tag "Motto" %><br>
+
+  <% end %>
+
+  <%= label_tag("Add State & Motto") %><br>
+  <%= text_field_tag("new-state-name") %><%= label_tag "Name" %>
+  <%= text_field_tag("new-state-motto") %><%= label_tag "Motto" %><br>
+
+  <%= submit_tag("Submit") %>
+</div>
+<% end %>

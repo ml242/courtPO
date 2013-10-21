@@ -1,0 +1,9 @@
+<h1>Edit <%= @programmer.name %><h1>
+
+<%= form_tag("/programmers/#{@programmer.id.to_s}") do %>
+  <%= text_field_tag("prog-name", "#{@programmer.name}") %><%= label_tag "Name" %>
+  <%= text_field_tag("prog-url", "#{@programmer.avatar_url}") %><%= label_tag "Pic URL" %><br>
+  <%= text_field_tag("prog-twitter", "#{@programmer.twitter_acct}") %><%= label_tag "Twitter Account" %>
+  <%= text_field_tag("prog-github", "#{@programmer.github_acct}") %><%= label_tag "GitHub Account" %><br>
+  <%= submit_tag("Update") %>
+<% end %>
