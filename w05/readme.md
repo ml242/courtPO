@@ -10,7 +10,6 @@ This is a schedule of your classtime activities during project week.
 This is your estimated project outline for this week:
 
 * Monday: Project plan deliverables due, including
-
     0. Meet with your standup groups.
     1. A Project log with estimated stories to be completed on a given day.
     2. Basic wireframes complete.
