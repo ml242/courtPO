@@ -1,0 +1,5 @@
+<%= link_to 'New Entry', '/articles/new' %><br><br>
+
+<% @articles.each do |article| %>
+<%= link_to(article.title, "/articles/#{article.id}") %><br>
+<% end %>
