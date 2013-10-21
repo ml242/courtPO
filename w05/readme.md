@@ -8,5 +8,5 @@
 
 ##### Project Guidelines
 
-Read through the [project 1 guidelines](https://github.com/ga-students/WDI_NYC_Hash/blob/master/week_05/project/project_guidelines.md) *very carefully*. Use this guideline to stay on top of project deliverables throughout the week.
+Read through the [project 1 guidelines](https://github.com/ga-students/WDI_NYC_Hash/blob/master/week_05/project/project_guidelines.md) *very carefully*. Use this guideline to stay on top of project deliverables throughout the week, submitting the changes to your `project_log.md` file each day.
 
