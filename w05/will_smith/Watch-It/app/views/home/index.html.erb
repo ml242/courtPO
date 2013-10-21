@@ -1,0 +1,27 @@
+<% if current_user %>
+<% @users.each do |user| %>
+  <p>
+    <%= user[:first_name]%>
+    <%= user[:last_name]%>
+    <%= user[:username]%>
+  </p>
+  <% end %>
+  <% else %>
+<h1>Welcome to Watch.it</h1>
+  <h2>Scenario:</h2>
+<p>
+  You meet up with a group of friends for some casual socializing. A few beers, a few laughs, one thing leads to another... <br>
+  you're all talking about a Movie or TV show <strong><em>that you've never seen!</em></strong>
+</p>
+<img src="http://media2.giphy.com/media/1R0cQCHcdqdiM/giphy.gif" alt="Ryan Gosling NO">
+<p>The embarassing moment doesn't have to happen again.
+  <br>
+  <br>
+  use Watch.it to find the Movie or TV show and add it to your list.
+  <br>
+  when you've watched it, write a revew for it.
+  <br>
+  then dump it and get started watching the next thing.
+</p>
+
+<% end %>
