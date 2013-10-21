@@ -1,0 +1,6 @@
+<%= form_tag '/gyms', method: :post do %>
+<br><%= label_tag 'name' %><br>
+<%= text_field_tag 'name', nil, placeholder: 'name' %>
+<br>
+<%= submit_tag 'Save Changes' %>
+<% end -%>

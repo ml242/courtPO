@@ -1,0 +1,7 @@
+<h1>Every comment ever made on this blog!</h1>
+<ul>
+<% Comment.all.each do |art|%>
+<li><a href=<%= "/comments/#{art.id}" %>><%= "#{art.body}"%></a></li>
+<% end %>
+</ul>
+<%= link_to("Make a new comment", "/comments/new") %>

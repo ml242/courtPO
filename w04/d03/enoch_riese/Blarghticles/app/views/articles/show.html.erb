@@ -1,0 +1,9 @@
+<h1><%= @article.title %></h1>
+<p><%= @article.body %></p>
+
+<h2>Comments:</h2>
+<ul><% @article.comments.each do |comment| %>
+  <li><a href=<%= "/comments/#{comment.id}" %>><%= comment.body %></a></li>
+<% end  %>
+<%= link_to("Edit", "/articles/#{@article.id}/edit") %>
+<%= link_to("Make a new comment", "/comments/new") %>

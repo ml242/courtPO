@@ -1,0 +1,8 @@
+<h1>new comment</h1>
+<%= form_for(@comment, :url => "/articles/#{@article_id}/comments", :method => :post) do |f| %>
+  <%= f.label 'body' %>
+  <%= f.text_field 'body'%>
+  <%= f.hidden_field :time, :value => Time.now %>
+  <%= f.hidden_field :article_id, :value => @article_id %>
+  <%= f.submit %>
+  <% end %>

@@ -1,0 +1,5 @@
+<%= form_for @comment do |f| %>
+  <%=  f.text_area :body %>
+  <%= f.submit %>
+<% end %>
+<%= link_to("Delete comment", "/comments/#{@comment.id}/delete") %>

@@ -1,0 +1,22 @@
+<%= link_to('List of Articles','/') %><br>
+
+<h3><%= @article_info.title %></h3><br>
+<%= @article_info.created_at %><br>
+<%= @article_info.body %><br>
+<%= link_to('Edit Article',"/articles/#{@article_info.id}/edit") %><br>
+<%= link_to('Delete Article',"/articles/#{@article_info.id}") %>
+
+<h6>Comments</h6>
+
+<% @article_info.comments.each do |comment| %>
+  <%= comment.body %><br>
+  <%= comment.created_at %><br>
+<% end %>
+
+<%= form_for (@article) do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %><br>
+  <%= f.label :body %>
+  <%= f.text_field :body %><br>
+  <%= f.submit %>
+<% end %>

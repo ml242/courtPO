@@ -1,0 +1,23 @@
+.container
+
+  = form_tag '/programmers' do
+
+    = label_tag 'name'
+    = text_field_tag 'name', :required => true
+
+    br/
+
+    = label_tag 'twitter_username', 'Twitter Username'
+    = text_field_tag 'twitter_username', :required => true
+    br/
+
+    = label_tag 'twitter_pic', 'Picture Link:'
+    = text_field_tag 'img_url', :required => true
+    br/
+
+    = label_tag 'github_username', 'Github Username:'
+    = text_field_tag 'github_username', required => true
+    br/
+    br/
+
+    = submit_tag 'Add the programmer!'

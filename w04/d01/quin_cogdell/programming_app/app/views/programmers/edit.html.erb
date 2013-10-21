@@ -1,0 +1,18 @@
+<% result = @results %>
+
+<form action="/programmers/<%=result.id%>" method='post'>
+  <label id="name">Name</label>
+  <input type="text" name="name" id="name" value="<%=result.name%>">
+
+  <label id="twitter_username">Twitter Username</label>
+  <input type="text" name="twitter_username" id="twitter_username" value="<%=result.twitter_username%>">
+
+  <label id="twitter_pic_url">Twitter Pic URL</label>
+  <input type="text" name="twitter_pic_url" id="twitter_pic_url" value="<%=result.twitter_pic_url%>">
+
+  <label id="github_username">Github Username</label>
+  <input type="text" name="github_username" id="github_username"value="<%=result.github_username%>">
+
+  <input type="Submit" value="Submit">
+
+</form>

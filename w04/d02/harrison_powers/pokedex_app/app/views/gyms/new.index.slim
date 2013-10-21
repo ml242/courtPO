@@ -1,0 +1,12 @@
+= form_tag('/gyms') do
+
+  = label_tag 'name', 'Name:'
+  = text_field_tag 'name', :required => true
+  br/
+
+  = label_tag 'game_version', 'Game Version:'
+  = text_field_tag 'game_version', :required => true
+  br/
+  br/
+
+  = submit_tag 'Add new gym!'

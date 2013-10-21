@@ -1,4 +1,10 @@
-<form action="/update/<%= @photo.id %>" method="post">
+<div class="show">
+<img src="/<%= @photo['photo'] %>" class=<%= @photo['filter'] %>>
+<% author = User.find(@photo.author_id) %>
+<br>taken by <%= author['username'] %> on <%= @photo.date_taken %>
+</div>
+<br>
+<form action="/photos/<%= @photo.id %>" method="post">
   <select name="username" id="username">
   <% @user_array.each do |user| %>
   <option value=<%= user[:id] %>><%= user[:username] %></option>
@@ -8,6 +14,7 @@
   <br><input type="text" value=<%= @photo.date_taken %> name="date_taken">
     <br><label for="select">Filter?</label>
   <br><select name="filter" id="filter">
+  <option value="">None</option>
   <option value="filter-blur">Blur</option>
   <option value="filter-edges">Edges</option>
   <option value="filter-emboss">Emboss</option>

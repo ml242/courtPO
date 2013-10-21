@@ -1,0 +1,13 @@
+h1 Articles
+- @articles.each do |article|
+  .article_container
+    a href="/articles/#{article.id}"
+      = article.name
+    br/
+    = article.author.name
+    br/
+    = article.content
+    br/
+    = "#{article.comments.length} comments"
+  br/
+  br/

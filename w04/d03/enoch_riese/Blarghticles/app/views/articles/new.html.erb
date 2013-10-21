@@ -1,0 +1,7 @@
+<h1>Create a new article!</h1>
+<%= form_for(Article.new) do |f| %>
+  <%= f.text_field "title", placeholder: "Title" %><br>
+  <%= f.text_area "body", placeholder: "Article" %>
+  <%= f.submit %>
+<% end %>
+

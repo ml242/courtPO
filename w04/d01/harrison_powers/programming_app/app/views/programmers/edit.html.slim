@@ -1,0 +1,28 @@
+.container
+
+  = form_tag "/programmers/#{@programmer.id}" do
+
+    = label_tag 'name', 'Name:'
+    = text_field_tag 'name', @programmer.name, :required => true
+    br/
+
+    = label_tag 'twitter_username', 'Twitter Username:'
+    = text_field_tag 'twitter_username', @programmer.twitter_username, :required => true
+    br/
+
+    = label_tag 'img_url', 'Picture Link:'
+    = text_field_tag 'img_url', @programmer.img_url, :required => true
+    br/
+
+    = label_tag 'github_username', 'Github Username:'
+    = text_field_tag 'github_username', @programmer.github_username, :required => true
+    br/
+    br/
+
+    = submit_tag 'Save Changes!'
+
+  br/
+  br/
+
+  = form_tag "/programmers/#{@programmer.id}/delete"
+    = submit_tag 'Delete!'

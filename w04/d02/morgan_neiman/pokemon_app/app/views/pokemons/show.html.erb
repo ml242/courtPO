@@ -1,0 +1,9 @@
+<%= @pokemon.name %>
+<br>
+<br> Trainer: <a href="/trainers/<%= @pokemon.trainer_id %>"><%= @pokemon.trainer.name %></a>
+
+<br><a href="/pokemons/<%= @pokemon.id %>/edit">Edit Pokemon</a>
+<%= form_tag "/pokemons/#{@pokemon.id}", method: :delete do %>
+<br>
+<%= submit_tag 'Delete Pokemon' %>
+<% end %>

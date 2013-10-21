@@ -1,0 +1,7 @@
+<h1>Create a new comment!</h1>
+<%= form_for(Comment.new) do |f| %>
+  <%= f.text_area "body", placeholder: "Comment" %><br>
+  <%= f.select :article_id, options_from_collection_for_select(Article.all, :id, :title)%>
+  <%= f.submit %>
+<% end %>
+

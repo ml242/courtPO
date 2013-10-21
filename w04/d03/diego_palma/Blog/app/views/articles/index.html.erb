@@ -1,0 +1,6 @@
+<h1>Display all articles </h1>
+<p><%= link_to 'Post new article', '/articles/new' %></p>
+
+<% @articles.each do |article| %>
+ <div><a href="/articles/<%= article.id %>"><%= article.title %> </a></div>
+  <% end %>
