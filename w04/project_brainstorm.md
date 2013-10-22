@@ -60,7 +60,9 @@ MONDAY
 
 TUESDAY
 
-- build out controllers
+- build out last 2 database tables (rails g migration table_name)
+- build out models
+- build routes & controllers 
 - create basic views
 - add all required data to database
 	- user info
