@@ -1,6 +1,6 @@
 <h1>Search Titles</h1>
   <%= form_tag ("/titles/show") do %>
-  <%= text_field_tag "q", nil, placeholder: "What are you looking for?" %>
+  <%= text_field_tag "q", nil, placeholder: "What would you like to watch?" %>
   <%= submit_tag "Search" %>
   <% end %>
 <% if @titles %>
