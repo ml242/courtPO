@@ -1,0 +1,29 @@
+# == Schema Information
+#
+# Table name: titles
+#
+#  id         :integer          not null, primary key
+#  title      :string(255)
+#  type       :string(255)
+#  poster     :text
+#  plot       :text
+#  imdbID     :string(255)
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  type: 
+  poster: MyText
+  plot: MyText
+  imdbID: MyString
+
+two:
+  title: MyString
+  type: 
+  poster: MyText
+  plot: MyText
+  imdbID: MyString

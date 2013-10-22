@@ -1,6 +1,23 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id            :integer          not null, primary key
+#  first_name    :string(255)
+#  last_name     :string(255)
+#  username      :string(255)
+#  email         :string(255)
+#  password_hash :string(255)
+#  password_salt :string(255)
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#
+
 class User < ActiveRecord::Base
   attr_accessible :first_name, :last_name, :username, :email, :password, :password_confirmation
-
+  has_many :playlists
+  has_many :reviews
+  has_many :titles, :through => :playlists
   attr_accessor :password
   before_save :encrypt_password
 

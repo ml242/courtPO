@@ -11,7 +11,33 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131020182944) do
+ActiveRecord::Schema.define(:version => 20131021222044) do
+
+  create_table "playlists", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "title_id"
+    t.boolean  "watched"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "reviews", :force => true do |t|
+    t.text     "body"
+    t.integer  "title_id"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "titles", :force => true do |t|
+    t.string   "title"
+    t.string   "type"
+    t.text     "poster"
+    t.text     "plot"
+    t.string   "imdbID"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "first_name"
