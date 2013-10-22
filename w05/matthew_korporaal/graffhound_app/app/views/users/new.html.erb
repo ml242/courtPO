@@ -1,0 +1,21 @@
+<!--
+the first time through this is User.new, which doesn't have any errors.
+then when the create action renders new, @user.errors will have errors.
+-->
+<% if @user.errors.any? %>
+<ul>
+  <% @user.errors.messages.each do |error, msg| %>
+    <li><%= msg %></li>
+  <% end %>
+  </ul>
+<% end %>
+
+<%= form_for(@user) do |f| %>
+  <%= f.label :email %>
+  <%= f.text_field :email %><br>
+  <%= f.label :password %>
+  <%= f.password_field :password %><br>
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation %><br>
+  <%= f.submit "Sign Up" %>
+<% end %>
