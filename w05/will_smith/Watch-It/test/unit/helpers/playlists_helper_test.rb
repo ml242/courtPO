@@ -1,4 +1,4 @@
 require 'test_helper'
 
-class PlaylistsHelperTest < ActionView::TestCase
+class WatchItemsHelperTest < ActionView::TestCase
 end

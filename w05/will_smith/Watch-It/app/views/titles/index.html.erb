@@ -1,13 +1,6 @@
 <% if current_user %>
 <%= link_to "Search Titles", "/titles/show" %>
-<% @users.each do |user| %>
-  <p>
-    <%= user[:first_name]%>
-    <%= user[:last_name]%>
-    <%= user[:username]%>
-  </p>
-  <% end %>
-  <% else %>
+<% else %>
 <h1>Welcome to Watch.it</h1>
   <h2>Scenario:</h2>
 <p>

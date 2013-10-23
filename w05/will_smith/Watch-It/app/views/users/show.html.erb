@@ -1,9 +1,13 @@
-<h1>Single User</h1>
-  <p>Name:
-    <%= @user.first_name %>
-    <%= @user.last_name %>
-  </p>
-  <p>Username:
-    <%= @user.username %>
-  </p>
+<h1><%= @user.first_name %>'s Watch List</h1>
+  <h2>To Watch</h2>
+  <ul>
+    <% @user.watch_items.each do |watch_item| %>
+      <% title_id =  watch_item.title_id  %>
+      <% title = Title.find title_id %>
+      <li><%= title.title %></li>
+    <% end %>
+  </ul>
+  <h2>Watched</h2>
 
+<!--   add ability to call a post method on a checkbox with a form
+ -->

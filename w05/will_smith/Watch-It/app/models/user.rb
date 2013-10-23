@@ -15,9 +15,9 @@
 
 class User < ActiveRecord::Base
   attr_accessible :first_name, :last_name, :username, :email, :password, :password_confirmation
-  has_many :playlists
+  has_many :watch_items
   has_many :reviews
-  has_many :titles, :through => :playlists
+  has_many :titles, :through => :watch_items
   attr_accessor :password
   before_save :encrypt_password
 

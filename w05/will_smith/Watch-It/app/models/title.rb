@@ -13,8 +13,8 @@
 #
 
 class Title < ActiveRecord::Base
-  attr_accessible :imdbID, :plot, :poster, :title, :type
-  has_many :playlists
+  attr_accessible :imdbID, :plot, :poster, :title, :kind
+  has_many :watch_items
   has_many :reviews
-  has_many :users, :through => :playlists
+  has_many :users, :through => :watch_items
 end

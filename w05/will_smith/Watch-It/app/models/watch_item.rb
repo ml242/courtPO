@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: playlists
+# Table name: watch_items
 #
 #  id         :integer          not null, primary key
 #  user_id    :integer
@@ -10,7 +10,7 @@
 #  updated_at :datetime         not null
 #
 
-class Playlist < ActiveRecord::Base
+class WatchItem < ActiveRecord::Base
   attr_accessible :title_id, :user_id, :watched
   belongs_to :title
   belongs_to :user

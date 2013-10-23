@@ -13,14 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20131021222044) do
 
-  create_table "playlists", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "title_id"
-    t.boolean  "watched",    :default => false
-    t.datetime "created_at",                    :null => false
-    t.datetime "updated_at",                    :null => false
-  end
-
   create_table "reviews", :force => true do |t|
     t.text     "body"
     t.integer  "title_id"
@@ -31,7 +23,7 @@ ActiveRecord::Schema.define(:version => 20131021222044) do
 
   create_table "titles", :force => true do |t|
     t.string   "title"
-    t.string   "type"
+    t.string   "kind"
     t.text     "poster"
     t.text     "plot"
     t.string   "imdbID"
@@ -48,6 +40,14 @@ ActiveRecord::Schema.define(:version => 20131021222044) do
     t.string   "password_salt"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+  end
+
+  create_table "watch_items", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "title_id"
+    t.boolean  "watched",    :default => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
 end

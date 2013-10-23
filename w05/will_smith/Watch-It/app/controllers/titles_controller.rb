@@ -10,20 +10,17 @@ class TitlesController < ApplicationController
     unless search == nil
       results = OMDB.search("#{search}")
       if results == {:response=>"False", :error=>"Movie not found!"}
-      flash.now.alert = "No Matches Found! Try again"
-      redirect_to '/titles/show'
+        flash.now.alert = "No Matches Found! Try again"
+        redirect_to '/titles/show'
       elsif results.class == Hash && results != {:response=>"False", :error=>"Movie not found!"}
-        @movie = results
+        @movies = [results]
       else
         @movies = results
       end
     end
   end
-
+#TODO change show to search
   def create
-
-    # game_of_thrones = OMDB.title('Game of Thrones')
-    @titles = Title.new(params[:title])
-
+    @title = Title.new(params[:title])
   end
 end
