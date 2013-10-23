@@ -22,15 +22,15 @@ ActiveRecord::Schema.define(:version => 20131022020320) do
 
   create_table "comments", :force => true do |t|
     t.text     "entry"
-    t.integer  "user_id"
     t.integer  "piece_id"
+    t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   create_table "favorites", :force => true do |t|
-    t.integer  "artist_id"
     t.integer  "piece_id"
+    t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -38,6 +38,9 @@ ActiveRecord::Schema.define(:version => 20131022020320) do
   create_table "pieces", :force => true do |t|
     t.string   "name"
     t.date     "birth"
+    t.string   "location"
+    t.float    "latitude"
+    t.float    "longitude"
     t.boolean  "alive",      :default => true
     t.text     "url",        :default => "--- []\n"
     t.integer  "artist_id"

@@ -13,5 +13,4 @@ class Artist < ActiveRecord::Base
   attr_accessible :name, :bio
 
   has_many :pieces
-  has_many :favorites, :through => :user
 end

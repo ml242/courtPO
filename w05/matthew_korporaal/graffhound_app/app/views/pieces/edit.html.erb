@@ -1,0 +1,17 @@
+<h1>Edit Piece</h1>
+<% if @piece.errors.any? %>
+
+<ul>
+  <% @piece.errors.messages.each do |error, msg| %>
+    <li><%= msg %></li>
+  <% end %>
+  </ul>
+<% end %>
+
+<%= form_for(@piece) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :url %>
+  <%= f.text_field :url %><br>
+  <%= f.submit "Submit" %>
+<% end %>

@@ -1,1 +1,38 @@
 <h1>piece show</h1>
+<div class="piece-edit">
+<% if current_user %>
+<%= link_to "Edit..", edit_piece_path  %>
+<% else %>
+    <br><%= link_to "log in to comment.", "/login" %>
+<% end %>
+</div>
+<ul>
+  <li>
+    <%= @piece.artist.name %> - "<%= @piece.name %>"
+  </li>
+  <li>
+    last seen <%= time_ago_in_words(@piece.updated_at) %> - <%= @piece.location %>
+  </li>
+  <li>
+    <%= image_tag @piece.url, :size => "800X600"  %>
+  </li>
+  <div class="comments">
+    <% comments = Comment.where(:piece_id => @piece.id) %>
+    <% comments.each do |comment| %>
+    <%= comment.entry %> -
+    <%= comment.user.username %> -
+    <%= time_ago_in_words(comment.updated_at) %><br>
+    <% end %>
+    <!--TODO if session[:id] -->
+    <% if current_user %>
+
+    <%= form_for [@piece, @comment] do |f| %>
+    <%= f.text_area :entry, size: "400x10" %>
+    <%= f.submit "Submit Comment" %>
+    <% end %>
+    <% else %>
+    <br><%= link_to "log in to comment.", "/login" %>
+
+    <% end %>
+  </div>
+</ul>

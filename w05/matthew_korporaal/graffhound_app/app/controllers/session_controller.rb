@@ -4,7 +4,8 @@ class SessionController < ApplicationController
   def create
     email = params[:email]
     password = params[:password]
-    @user = User.where(email: email).first
+    username = params[:username]
+    @user = User.where(username: username).first
     if @user && @user.authenticate(password)
       session[:user_id] = @user.id
       # redirect_to("/users/#{user.id}")

@@ -30,9 +30,12 @@
 		border: 0;
 		font-size: 100%;
 		font: inherit;
-		vertical-align: baseline; }
+		vertical-align: baseline;
+/*		background: slate grey;
+*/		width: 100%;
+		}
 	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-		display: block; }
+		display: block;}
 	body {
 		line-height: 1; }
 	ol, ul {
@@ -52,19 +55,25 @@
 ================================================== */
 	body {
 		background: #fff;
-		font: 14px/21px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-		color: #444;
+		font: 16px/21px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		color: #fff;
 		-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
 		-webkit-text-size-adjust: 100%;
+		background: url('bw_bg.jpg') no-repeat center center fixed;
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
  }
 
 
 /* #Typography
 ================================================== */
 	h1, h2, h3, h4, h5, h6 {
-		color: #181818;
+		color: #DDDDDD;
 		font-family: "Georgia", "Times New Roman", serif;
-		font-weight: normal; }
+		font-weight: normal;
+}
 	h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { font-weight: inherit; }
 	h1 { font-size: 46px; line-height: 50px; margin-bottom: 14px;}
 	h2 { font-size: 35px; line-height: 40px; margin-bottom: 10px; }
@@ -94,8 +103,8 @@
 
 /* #Links
 ================================================== */
-	a, a:visited { color: #333; text-decoration: underline; outline: 0; }
-	a:hover, a:focus { color: #000; }
+	a, a:visited { color: #FFF; text-decoration: none; outline: 0; }
+	a:hover, a:focus { color: #FFF; }
 	p a, p a:visited { line-height: inherit; }
 
 
@@ -145,7 +154,7 @@
 	  -moz-border-radius: 3px;
 	  -webkit-border-radius: 3px;
 	  border-radius: 3px;
-	  color: #444;
+	  color: #000;
 	  display: inline-block;
 	  font-size: 11px;
 	  font-weight: bold;
@@ -239,7 +248,7 @@
 	input[type="email"]:focus,
 	textarea:focus {
 		border: 1px solid #aaa;
- 		color: #444;
+ 		color: #000;
  		-moz-box-shadow: 0 0 3px rgba(0,0,0,.2);
 		-webkit-box-shadow: 0 0 3px rgba(0,0,0,.2);
 		box-shadow:  0 0 3px rgba(0,0,0,.2); }
@@ -249,7 +258,8 @@
 	legend {
 		display: block;
 		font-weight: bold;
-		font-size: 13px;  }
+		font-size: 18px;
+		font-family: 'Syncopate', sans-serif; }
 	select {
 		width: 220px; }
 	input[type="checkbox"] {
@@ -258,7 +268,7 @@
 	legend span {
 		font-weight: normal;
 		font-size: 13px;
-		color: #444; }
+		color: #FFF; }
 
 /* #Misc
 ================================================== */
@@ -266,4 +276,30 @@
 	.half-bottom { margin-bottom: 10px !important; }
 	.add-bottom { margin-bottom: 20px !important; }
 
+/*TIME FOR MY CSS...*/
 
+.container {
+	width: 90%  background-repeat: no-repeat;
+	position: relative;
+	margin: 0 auto;
+
+}
+.comments {
+	font:12px;
+	padding-bottom: 10px;
+}
+.graff-head {
+  font-family: 'Syncopate', sans-serif;
+/*font-family: 'Michroma', sans-serif;
+*/
+text-decoration: none;
+}
+.session-div {
+/*	height 300px;
+	width 300px
+	background-color: slate grey;*/
+}
+.nav-head:link {text-decoration: none;}
+.nav-head:visited {text-decoration: none;}
+.graff-head:link {text-decoration: none; color: white}
+.graff-head:visited {text-decoration: none;}

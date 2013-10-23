@@ -1,18 +1,15 @@
 GraffhoundApp::Application.routes.draw do
-  resources :users, :artists, :pieces, :location
+  resources :users, :artists, :location
   resources :welcome, only: [:new]
   resources :sessions, only: [:new, :create, :destroy]
+  resources :pieces do
+    resources :comments, :only => [:create]
+  end
 
-  get '/' => 'welcome#index'
+  root to: 'welcome#home'
   get '/signup' => "users#new"
   get '/login' => 'session#new'
   post '/login' => 'session#create'
   get '/logout' => 'session#destroy'
-  get '/artists' => 'artists#index'
-  get '/artists/:id' => 'artists#show'
-  get '/pieces' => 'pieces#index'
-  get '/pieces/:id' => 'pieces#show'
-  get '/location' => 'location#index'
-  get '/location/:id' => 'location#show'
 
 end

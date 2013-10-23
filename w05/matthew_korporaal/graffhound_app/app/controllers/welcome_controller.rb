@@ -1,4 +1,5 @@
 class WelcomeController < ApplicationController
-  def index
+  def home
+    @piece = Piece.last
   end
 end

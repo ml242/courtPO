@@ -5,37 +5,35 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Syncopate' rel='stylesheet' type='text/css'>
+
 </head>
 <body>
   <header>
-    <h1>GraffHound</h1>
-    <p>
-      <% if session[:user_id] %>
-      <%= link_to "logout", "/logout" %>
-      <% else %>
-      <%= link_to "sign up", "/users/new"  %>
-      <%= link_to "log in", "/login" %>
-      <% end %>
-    </p>
-    <nav>
-      <ul>
-        <li>
-          <%= link_to "Artists", "/artists"  %>
-        </li>
-        <li>
-          <%= link_to "Pieces", "/pieces"  %>
-        </li>
-        <li>
-          <%= link_to "Locations", "/location"  %>
-        </li>
-      </ul>
-    </nav>
+    <div class="alpha five columns">
+      <h1><strong><%= link_to "GraffHound", "/", :class => "graff-head" %></strong></h1>
+    </div>
+    <div class="five columns omega">
+      <nav class="nav-head">
+        <% if session[:user_id] %>
+        <%= link_to "logout", "/logout" %>
+        <% else %>
+        <%= link_to "log in", "/login" %>
+        <% end %>
+        <%= link_to "Artists", "/artists"  %>
+        <%= link_to "Pieces", "/pieces"  %>
+        <%= link_to "Locations", "/location"  %>
+      </nav>
+    </div>
   </header>
   <% flash.each do |name, msg| %>
   <%= content_tag :div, msg, :id => "flash_#{name}" %>
   <% end %>
-
-  <%= yield %>
-
+  <div class="container">
+    <%= yield %>
+  </div>
+  <footer>
+    <%= yield :scripts %>
+  </footer>
 </body>
 </html>

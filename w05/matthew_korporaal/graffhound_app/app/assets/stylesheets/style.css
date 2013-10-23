@@ -1,0 +1,32 @@
+html {
+/*  background: url('bw_bg.jpg') no-repeat center center fixed;
+*/  background: #333333 no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+header {
+  position: relative;
+  text-decoration: none;
+    margin: 10px 20px;
+}
+
+h1 {
+  font-family: 'Syncopate', sans-serif;
+/*font-family: 'Michroma', sans-serif;
+*/
+}
+
+.nav-head {
+    position: relative;
+      padding-bottom: 20px
+
+  /*  display: inline;
+  float: left;*/
+}
+.nav-head a{
+  display: inline;
+  padding: 0 10px;
+}

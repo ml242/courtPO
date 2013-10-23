@@ -1,1 +1,20 @@
 <h1>artist info</h1>
+
+<ul>
+  <li>
+    <%= @artist.name %>
+  </li>
+  <li>
+    Bio:
+  </li>
+  <li>
+    <%= @artist.bio %>
+  </li>
+  <li>
+    Works:
+  </li>
+  <% @artist.pieces.each do |piece| %>
+  <li>
+    <%= link_to piece.name, piece %>
+  </li>
+  <% end %>
