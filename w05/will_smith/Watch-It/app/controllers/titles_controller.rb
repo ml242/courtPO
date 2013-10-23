@@ -1,4 +1,3 @@
-require 'cgi'
 require 'omdbapi'
 
 class TitlesController < ApplicationController
@@ -10,12 +9,21 @@ class TitlesController < ApplicationController
     search = params[:q]
     unless search == nil
       results = OMDB.search("#{search}")
-      # need to handle these exceptions
-        # undefined method `title' for [:title, "The Birdcage"] if there's only one title
-        # undefined method `title' for [:response, "False"] if the search returns no results
-      if results
-        @titles = results.each { |r| puts r.title }
+      if results == {:response=>"False", :error=>"Movie not found!"}
+      flash.now.alert = "No Matches Found! Try again"
+      redirect_to '/titles/show'
+      elsif results.class == Hash && results != {:response=>"False", :error=>"Movie not found!"}
+        @movie = results
+      else
+        @movies = results
       end
     end
+  end
+
+  def create
+
+    # game_of_thrones = OMDB.title('Game of Thrones')
+    @titles = Title.new(params[:title])
+
   end
 end

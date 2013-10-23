@@ -1,12 +1,26 @@
 <h1>Search Titles</h1>
+<% flash.each do |name, msg| %>
+  <%= content_tag :div, msg, :id => "flash_#{name}" %>
+<% end %>
   <%= form_tag ("/titles/show") do %>
   <%= text_field_tag "q", nil, placeholder: "What would you like to watch?" %>
   <%= submit_tag "Search" %>
-  <% end %>
-<% if @titles %>
-  <% @titles.each do |t| %>
+<!--   need to disable the search function with an empty text field
+ -->
+ <% end %>
+<% if @movies%>
+  <% @movies.each do |t| %>
   <p><%= t[:title] %></p>
+  <p><%= t[:type] %></p>
+  <p><%= t[:year] %></p>
   <% end %>
-<% end %>
+
+<% elsif @movie %>
+  <p><%= @movie.title %></p>
+  <p><%= @movie.type %></p>
+  <p><%= @movie.year %></p>
+<!--   need to make each of these movies have the ability to be added to the user's playlist as a title that belongs to the user that is unwatched
+ -->
+ <% end %>
 
 

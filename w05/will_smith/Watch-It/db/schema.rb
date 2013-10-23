@@ -16,9 +16,9 @@ ActiveRecord::Schema.define(:version => 20131021222044) do
   create_table "playlists", :force => true do |t|
     t.integer  "user_id"
     t.integer  "title_id"
-    t.boolean  "watched"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.boolean  "watched",    :default => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
   create_table "reviews", :force => true do |t|
