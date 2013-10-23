@@ -13,6 +13,14 @@
   <p><%= t[:title] %></p>
   <p><%= t[:type] %></p>
   <p><%= t[:year] %></p>
+  <% title = t[:title] %>
+  <% type = t[:type] %>
+  <% year = t[:year] %>
+  <% imdbID = t[:imdbID] %>
+  <% form_for :title, :url => {:action => :create} do |f| %>
+
+  <p class="button"><%= f.submit "Add to List"%></p>
+  <% end %>
   <% end %>
 
 <% elsif @movie %>
