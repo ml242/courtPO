@@ -5,13 +5,13 @@ class TitlesController < ApplicationController
     @users = User.all
   end
 
-  def show
+  def search
     search = params[:q]
     unless search == nil
       results = OMDB.search("#{search}")
       if results == {:response=>"False", :error=>"Movie not found!"}
-        flash.now.alert = "No Matches Found! Try again"
-        redirect_to '/titles/show'
+        flash[:alert] = "No Matches Found! Try again"
+        redirect_to '/titles/search'
       elsif results.class == Hash && results != {:response=>"False", :error=>"Movie not found!"}
         @movies = [results]
       else

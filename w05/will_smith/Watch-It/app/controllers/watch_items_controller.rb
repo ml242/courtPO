@@ -1,17 +1,9 @@
 class WatchItemsController < ApplicationController
   def new
-    @watch_item = WatchItem.new
-    # this should be created when the user selects a title to watch
+
   end
 
   def create
-    # user clicks the button that says "Add to list" for a given title
-    #   if it doesn't exist
-    #     the title needs to be created in the database
-    #   user.watch_items.create(title_id: title.id)
-    #   user.titles.create
-    # imdb_id = params[:imdb_id]
-
     current_title = Title.where(:imdbID => params[:imdb_id]).first
     if current_title.nil?
       movie_hash = OMDB.title(params[:title])
@@ -33,21 +25,38 @@ class WatchItemsController < ApplicationController
       watched_title = Title.where(:imdbID => current_title.imdbID).first
     end
 
+    watch_list = []
+    current_user.watch_items.each do |item|
+      movie_id = item.title_id
+      item = Title.find movie_id
+      watch_list << item.imdbID
+    end
 
-    watch_item = current_user.watch_items.create
-    watch_item.title_id = watched_title.id
-    watch_item.save
+    unless watch_list.include? watched_title.imdbID
+      watch_item = current_user.watch_items.create
+      watch_item.title_id = watched_title.id
+      watch_item.save
+      flash[:notice] = "Successfully added #{new_title.title}"
+      redirect_to :back
+    else
+      flash[:notice] = "Already there."
+      redirect_to :back
+    end
+
+  end
+
+  def update
+    @watch_item = current_user.watch_items.find(params[:id])
+    @watch_item.watched = true
+    @watch_item.save
     redirect_to :back
   end
 
-  def show
-    @user = User.find(params[:user_id])
-    @watch_item = WatchItem.find(params[:user_id])
-    # this should display the list of titles for the user. what do I need here?
-  end
+  def destroy
+    @watch_item = current_user.watch_items.find(params[:id])
+    @watch_item.destroy
 
-  def edit
-    # this should allow the user the ability to select "watched" so that the boolean becomes true instead of false. what do I need here?
+    redirect_to current_user
   end
 end
 

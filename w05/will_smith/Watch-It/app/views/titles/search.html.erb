@@ -1,0 +1,43 @@
+<h1>Search Titles</h1>
+  <%= form_tag("/titles/search", method: :get) do %>
+  <%= text_field_tag "q", nil, placeholder: "What would you like to watch?" %>
+  <%= submit_tag "Search" %>
+<!--   need to disable the search function with an empty text field
+ -->
+ <% end %>
+<% if @movies%>
+  <% @movies.each do |t| %>
+  <% title = OMDB.id(t[:imdb_id]) %>
+    <% if title.poster != "N/A" %>
+    <img src="<%= title.poster %>" alt="poster">
+    <ul>
+      <li><%= t[:title] %></li>
+      <li><%= t[:year] %></li>
+      <li><%= t[:type] %></li>
+    </ul>
+    <%= form_tag('/watch_items') do %>
+    <%= hidden_field_tag 'title', t[:title] %>
+    <%= hidden_field_tag 'imdb_id', t[:imdb_id] %>
+    <%= submit_tag 'Add to Watchlist' %>
+      <% end %>
+    <% else %>
+    <img src="http://i.movie.as/none_140px_2_bk.jpg" alt="no poster">
+    <ul>
+      <li><%= t[:title] %></li>
+      <li><%= t[:year] %></li>
+      <li><%= t[:type] %></li>
+    </ul>
+    <%= form_tag('/watch_items') do %>
+    <%= hidden_field_tag 'title', t[:title] %>
+    <%= hidden_field_tag 'imdb_id', t[:imdb_id] %>
+    <%= submit_tag 'Add to Watchlist' %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
+
+<!--   need to make each of these movies have the ability to be added to the user's watch_item as a title that belongs to the user that is unwatched
+ -->
+
+
+

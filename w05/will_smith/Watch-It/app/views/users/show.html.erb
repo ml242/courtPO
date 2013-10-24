@@ -1,13 +1,55 @@
 <h1><%= @user.first_name %>'s Watch List</h1>
   <h2>To Watch</h2>
-  <ul>
+    <h3>Movies</h3>
+    <hr>
     <% @user.watch_items.each do |watch_item| %>
       <% title_id =  watch_item.title_id  %>
       <% title = Title.find title_id %>
-      <li><%= title.title %></li>
+      <% if title.kind == "movie" %>
+      <ul>
+        <% if title.poster != "N/A" %>
+        <li><img src="<%= title.poster %>" alt="poster"></li>
+        <% else %>
+          <li><img src="http://i.movie.as/none_140px_2_bk.jpg" alt="no poster"></li>
+        <% end %>
+        <li><%= title.title %></li>
+      </ul>
+      <% end %>
+      <%= link_to "Delete", watch_item, :method => :delete, :confirm => "Are you sure?" %>
     <% end %>
-  </ul>
-  <h2>Watched</h2>
-
+    <h3>TV Shows</h3>
+    <hr>
+    <% @user.watch_items.each do |watch_item| %>
+      <% title_id =  watch_item.title_id  %>
+      <% title = Title.find title_id %>
+      <% if title.kind == "series" %>
+      <ul>
+        <% if title.poster != "N/A" %>
+        <li><img src="<%= title.poster %>" alt="poster"></li>
+        <% else %>
+        <li><img src="http://i.movie.as/none_140px_2_bk.jpg" alt="no poster"></li>
+        <% end %>
+        <li><%= title.title %></li>
+      </ul>
+      <% end %>
+      <%= link_to "Delete", watch_item, :method => :delete, :confirm => "Are you sure?" %>
+    <% end %>
+    <h3>TV Episodes</h3>
+    <hr>
+    <% @user.watch_items.each do |watch_item| %>
+      <% title_id =  watch_item.title_id  %>
+      <% title = Title.find title_id %>
+      <% if title.kind == "episode" %>
+      <ul>
+        <% if title.poster != "N/A" %>
+        <li><img src="<%= title.poster %>" alt="poster"></li>
+        <% else %>
+        <li><img src="http://i.movie.as/none_140px_2_bk.jpg" alt="no poster"></li>
+        <% end %>
+        <li><%= title.title %></li>
+      </ul>
+      <% end %>
+      <%= link_to "Delete", watch_item, :method => :delete, :confirm => "Are you sure?" %>
+    <% end %>
 <!--   add ability to call a post method on a checkbox with a form
  -->
