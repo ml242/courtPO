@@ -1,0 +1,30 @@
+namespace :sinatra do
+
+  desc "This makes a Sinatra app"
+  task :create do
+    current_directory = Rake.application.original_dir
+    print "Project Name? "
+    project_name = "#{STDIN.gets.chomp}_app"
+    project = "#{current_directory}/#{project_name}"
+    unless Dir.exists?(project)
+      Dir.mkdir(project)
+      Dir.mkdir("#{project}/views")
+      Dir.mkdir("#{project}/public")
+      Dir.mkdir("#{project}/public/css")
+      f = File.open("#{project}/main.rb", "w+")
+      f = File.open("#{project}/views/layout.erb", "w+")
+      f = File.open("#{project}/public/css/style.css", "w+")
+      f.puts("require 'sinatra'\nrequire 'sinatra/reloader' if development?\nrequire 'pg'\nrequire 'pry'\n\nget '/' do\nend")
+      f.close
+      puts "Created Project at #{project}"
+    else
+      puts "Project already exists"
+    end
+  end
+
+  desc "sing it"
+  task :sing do
+    puts "doobee doobee doo"
+  end
+
+end

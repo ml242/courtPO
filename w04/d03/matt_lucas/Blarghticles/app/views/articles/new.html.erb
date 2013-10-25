@@ -1,0 +1,12 @@
+<h1>New Article for the Grey Lady</h1>
+
+<h1>New Article!</h1>
+<%= form_for(@article) do |f| %>
+<%= f.label 'Title' %>
+<%= f.text_field :title %>
+<%= f.label 'Author' %>
+<%= f.text_field :author %>
+<%= f.label 'body' %>
+<%= f.text_field :body %>
+<%= f.submit %>
+<% end %>
