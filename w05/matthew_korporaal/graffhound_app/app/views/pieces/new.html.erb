@@ -1,15 +1,31 @@
 <h1>Add New Piece</h1>
 
-
-<%= form_for(@piece) do |f| %>
-<%= f.label :name %>
-<%= f.text_field :name %>
-<%= f.select :artist_id, options_from_collection_for_select(@artists, :id, :name) %>
-<%= f.label :artist %>
-<%= f.text_field :artist %>
-<%= f.label :location %>
-<%= f.text_field :location %>
-<%= f.label :url %>
-<%= f.text_field :url %><br>
-<%= f.submit "Submit" %>
-<% end %>
+<div class="new-piece-form">
+  <ul>
+    <%= form_for(@piece) do |f| %>
+    <li>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </li>
+    <li>
+      <%= f.label "artists" %>
+      <%= f.select :artist_id, options_from_collection_for_select(@artists, :id, :name) %>
+    </li>
+    <li>
+      <%= label_tag "Add new artist" %>
+      <%= text_field_tag :artist_name %>
+    </li>
+    <li>
+      <%= f.label :location %>
+      <%= f.text_field :location %>
+    </li>
+    <li>
+      <%= label_tag "Pic URL" %>
+      <%= text_field_tag :URL %>
+    </li>
+    <li>
+      <%= f.submit "Submit" %>
+    </li>
+    <% end %>
+  </ul>
+  <div>

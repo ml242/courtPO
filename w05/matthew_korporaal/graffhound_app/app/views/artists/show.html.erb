@@ -1,20 +1,12 @@
-<h1>artist info</h1>
 
 <ul>
-  <li>
-    <%= @artist.name %>
-  </li>
-  <li>
-    Bio:
-  </li>
-  <li>
-    <%= @artist.bio %>
-  </li>
-  <li>
-    Works:
-  </li>
+  <li><h1><%= @artist.name %></h1></li>
+  <li>Bio: </li>
+  <li><%= @artist.bio %></li><br>
+  <li>Works:  </li>
   <% @artist.pieces.each do |piece| %>
-  <li>
-    <%= link_to piece.name, piece %>
-  </li>
-  <% end %>
+  <li><%= link_to piece.name, piece %></li>
+  <% end %><br>
+<div id="gmap">
+  <%= gmaps4rails(@json) %>
+</div>

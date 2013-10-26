@@ -10,7 +10,7 @@ gem 'skeleton-rails'
 gem 'bcrypt-ruby', '3.0.0'
 
 gem 'geocoder'
-gem 'gmaps4rails'
+gem 'gmaps4rails', '1.5.6'
 
 group :development, :test do
   gem 'pry-rails'           # Causes rails console to open pry

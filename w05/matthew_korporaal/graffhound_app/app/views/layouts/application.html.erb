@@ -6,34 +6,39 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
   <link href='http://fonts.googleapis.com/css?family=Syncopate' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Gruppo' rel='stylesheet' type='text/css'>
 
 </head>
 <body>
-  <header>
-    <div class="alpha five columns">
+  <div class="container"> <!--class="container"-->
+    <header>
+      <div class="graff-head">
       <h1><strong><%= link_to "GraffHound", "/", :class => "graff-head" %></strong></h1>
     </div>
-    <div class="five columns omega">
       <nav class="nav-head">
-        <% if session[:user_id] %>
-        <%= link_to "logout", "/logout" %>
-        <% else %>
-        <%= link_to "log in", "/login" %>
-        <% end %>
-        <%= link_to "Artists", "/artists"  %>
-        <%= link_to "Pieces", "/pieces"  %>
-        <%= link_to "Locations", "/location"  %>
+        <ul>
+          <% if current_user %>
+          <li><%= link_to "logout", "/logout" %></li>
+          <li><%= link_to "my page", "/users/#{current_user.id}" %></li>
+
+          <% else %>
+          <li><%= link_to "log in", "/login" %></li>
+          <% end %>
+          <li><%= link_to "artists", "/artists"  %></li>
+          <li><%= link_to "pieces", "/pieces"  %></li>
+          <li><%= link_to "locations", "/locations"  %></li>
+        </ul>
       </nav>
-    </div>
-  </header>
-  <% flash.each do |name, msg| %>
-  <%= content_tag :div, msg, :id => "flash_#{name}" %>
-  <% end %>
-  <div class="container">
+    </header>
+    <% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, :id => "flash_#{name}" %>
+    <% end %>
     <%= yield %>
+    <footer>
+      <%= yield :scripts %>
+    </footer>
   </div>
-  <footer>
-    <%= yield :scripts %>
-  </footer>
 </body>
+
+
 </html>
