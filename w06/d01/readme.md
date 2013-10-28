@@ -44,6 +44,7 @@ triangle.perimeter
     - Support more than two operands.
 
 ### Supplemental Material
+* [Math - Javascript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math)
 * [Eloquent JavaScript](http://eloquentjavascript.net/)
 * [Code School JavaScript Course](https://www.codeschool.com/courses/javascript-road-trip-part-1)
 * [Codecademy JavaScript](http://www.codecademy.com/tracks/javascript)
