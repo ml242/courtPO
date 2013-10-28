@@ -13,6 +13,14 @@
     - side 2
     - side 3
   - Write a function that takes a variable and calculates the perimeter
+```
+calcPerimeterForTriangle(triangle) //returns the perimeter
+```
+Then create a method on a triangle object that calculates its perimeter
+
+```
+triangle.perimeter
+```
   - Put your code in your work folder in a file named `triangle.js`
 
 ##Part 3
