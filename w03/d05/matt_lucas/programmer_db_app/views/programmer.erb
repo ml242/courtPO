@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+<div class="topper"></div>
+<div class="detail">
+<div class="name">name: <%= @name %></div>
+<div class="twitter">twitter: <%= @twitter %></div>
+<div class="image"><img src="<%= @img_url %>"></div>
+<div class="feed">
+<a href="https://twitter.com/<%= @twitter %>">Twitter</a><br><br>
+<a href="<%= @githubs %>">github</a>
+</div>
+
+
+<a href="/programmers/<%= @id %>/edit">edit my profile</a>
+
+</div>
+
+</body>
+</html>
