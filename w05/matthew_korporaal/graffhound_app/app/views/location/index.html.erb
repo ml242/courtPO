@@ -1,0 +1,7 @@
+<h1>location</h1>
+<% form_tag location_path, :method => :get do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search Near", :name => nil %>
+  </p>
+<% end %>
