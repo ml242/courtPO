@@ -4,7 +4,7 @@
 ###Your pull-request title must start with `hw_w06_submission`
 
 ##Part 1
-Complete Chapters 1 & 2 of [Code School's JavaScript Roadtrip](https://www.codeschool.com/courses/javascript-road-trip-part-1)
+###Complete Chapters 1 & 2 of [Code School's JavaScript Roadtrip](https://www.codeschool.com/courses/javascript-road-trip-part-1)
 
 ##Part 2
 - Triangle
