@@ -22,12 +22,23 @@ var isIsosceles = function() {
 }
 
 var calcArea = function() {
-  perimeter = ((triangle.sideA + triangle.sideB + triangle.sideC) / 2);
-  area = Math.sqrt(perimeter * (perimeter - triangle.sideA) * (perimeter - triangle.sideB) * (perimeter - triangle.sideC));
+  var perimeter = ((triangle.sideA + triangle.sideB + triangle.sideC) / 2);
+  var area = Math.sqrt(perimeter * (perimeter - triangle.sideA) * (perimeter - triangle.sideB) * (perimeter - triangle.sideC));
   console.log("The area is " + area);
 }
+
+// If a^2 + b^2 < c^2, then the triangle is obtuse
+//pow(x,y) -- X ^ Y
+
+// var isObtuse = function() {
+//   var sortedTriangle = triangle.sort();
+//   if (((Math.pow(sortedTriangle[1], 2) + (Math.pow(sortedTriangle[2], 2)) < (Math.pow(sortedTriangle[0], 2)) {
+//     console.log("true");
+//   }
+// }
 
 isEquilateral();
 isIsosceles();
 calcArea();
+//isObtuse();
 
