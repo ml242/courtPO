@@ -1,0 +1,27 @@
+<h1>Location Search</h1>
+
+<%= form_for(@location) do |f| %>
+<%= f.text_field :location %>
+<%= f.submit "Submit" %>
+<% end %>
+
+
+<div id="gmap">
+  <%= gmaps4rails(@json) %>
+</div>
+
+<% content_for :scripts do %>
+<script type="text/javascript">
+Gmaps.map.callback = function() {
+  function openInfoWindow(){
+    var m, marker;
+    marker = Gmaps.map.markers[0];
+    m = marker.serviceObject;
+    marker.infowindow.open(marker,@json)
+  }
+  openInfoWindow();
+}
+
+</script>
+
+<% end %>

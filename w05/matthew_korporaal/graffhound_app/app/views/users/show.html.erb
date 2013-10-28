@@ -1,0 +1,13 @@
+<h1>you are <%= @user.username %></h1>
+
+<h3>Favorite Pieces</h3>
+<% favorites = Favorite.where(:user_id => @user.id) %>
+<ul>
+<% favorites.each do |fave| %>
+<li>
+  <% piece = Piece.find(fave.piece_id) %>
+  <%= link_to piece.name, piece %>
+</li>
+<% end %>
+</ul>
+

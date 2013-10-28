@@ -1,0 +1,290 @@
+/*
+Project Name: Ecard.ly
+Client: General Assembly
+Author: Christopher Castig | @castig
+Developer @GA in NYC
+*/
+
+Box Model Hack {
+     -moz-box-sizing: border-box; /* Firexfox */
+     -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
+     box-sizing: border-box; /* IE */
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.topper {
+background-image: url("http://www.stevemiller4lasvegas.com/EntertainersYellowPageAd.jpg");
+height: 48px;
+}
+
+.clear {
+clear: both;
+}
+
+body {
+background-color: #FFFFC0;
+max-width: 800px;
+margin: 0 auto;
+}
+
+.pname {
+  font-family: sans-serif;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.header {
+background-color: white;
+border: 3px solid blue;
+border-radius: 15px;
+max-width: 750px;
+margin-top: 15px;
+padding-left: 15px;
+}
+
+.header h1 {
+color: black;
+font-size: 48px;
+}
+
+.header h2 {
+color: black;
+font-size: 36px;
+}
+
+.browse_bar {
+color: blue;
+font-family: sans-serif;
+font-weight:
+}
+
+ul {
+text-decoration: none;
+list-style-type: none;
+}
+
+ul a:link {
+text-decoration: none;
+font-weight: bold;
+background-color: white;
+}
+
+ul a:hover {
+color: red;
+}
+
+.box {
+height: 250px;
+width: 200px;
+text-align: center;
+background-color: white;
+display:inline-block;
+border: black 1px solid;
+border-radius: 20px;
+padding: 10px;
+margin: 20px;
+position: float;
+word-wrap: break-word;
+text-align: center;
+/*background-image: url("http://www.stevemiller4lasvegas.com/EntertainersYellowPageAd.jpg");
+*/}
+
+.box .a {
+word-wrap: break-word;
+max-width: 50px;
+}
+.box .twitter .a {
+max-width: 50px;
+word-wrap: break-word;
+text-align: center;
+}
+
+.twitter {
+height: 40px;
+padding: 12px;
+}
+
+.picturez img {
+max-width: 75px;
+max-height: 75px;
+text-align: center;
+}
+
+.picturez img:hover {
+width: 200%;
+height: 200%;
+}
+
+.pname {
+height: 50px;
+padding-bottom: 12px
+padding-top: 12px;
+}
+
+
+.pname a:link {
+height: 40px;
+}
+
+.phone {
+margin: 0 auto;
+float: left;
+position: absolute;
+}
+
+.phone img {
+postition: relative;
+margin-top: -235px;
+margin-left: 275px;
+
+}
+
+.detail {
+margin: 0 auto;
+display: block;
+border: 1px solid black;
+max-width: 200px;
+border-radius: 15px;
+text-align: center;
+padding: 50px;
+margin: 15px;
+background-color: white;
+}
+
+.detail img {
+max-width: 150px;
+max-height: 150px;
+}
+
+.feed {
+padding: 15px;
+}
+
+.detail {
+margin: 0 auto;
+margin-top: 50px;
+}
+
+/*
+.main_logo {
+     margin: 0 auto;
+     margin-left: 410px;
+     margin-top: -190px;
+     position: relative;
+     float: left;
+}
+
+.main_logo img {
+     max-width: 95%;
+     max-height: 95%;
+}
+
+
+
+.masthead {
+     height: 162px;
+     background-image: url(../images/background.jpg);
+     background-position: center top;
+     background-repeat: repeat-x;
+     position: relative;
+     padding-bottom: 25px;
+}
+
+
+.global {
+     width: 940px;
+     margin: 0 auto;
+}
+
+.space {
+     height: 20px;
+}
+
+article {
+     width: 575px;
+     background-color: white;
+}
+
+aside {
+     margin: 0 auto;
+     float: left;
+     position: absolute;
+     top: 183px;
+     margin-top: 25px;
+     margin-left: 600px;
+}
+
+article h1 {
+     padding-top: 30px;
+     margin-left: 15px;
+
+}
+
+article img {
+     width: 545px;
+     margin-left: 15px;
+}
+
+article p {
+     margin: 10px 15px;
+     padding-bottom: 15px;
+}
+
+
+.endbar {
+     padding-top: 8px;
+     border-top: 1px dotted;
+     border-bottom: 1px solid;
+}
+
+.orange {
+     color: orange;
+}
+
+.orange a:link {
+     color: orange;
+}
+
+.sidebar {
+     width: 300px;
+     height: 715px;
+     background-color: white;
+     list-style-type: none;
+}
+
+.side_text li {
+     text-align: left;
+     font-size: 12px;
+     font-family: "Arial", "sans serif";
+     font-weight: bolder;
+     margin-left: 15px;
+     display: block;
+     list-style-type: none;
+     padding: 4px;
+}
+
+.side_ads li {
+      list-style-type: none;
+      padding: 5px;
+}
+
+.footer {
+     margin: 0 auto;
+     position: relative;
+     float: left;
+     height: 200px;
+     width: 202px;
+     padding: 50px;
+     margin-bottom: 100px;
+     margin-left: 410px;
+}
+*/

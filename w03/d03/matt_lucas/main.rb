@@ -17,12 +17,10 @@ end
 # then we want to list any wishlists
 
 get '/wishlists' do
-  db_connect = PG.connect(:dbname => 'xmas_db', :host => 'localhost')
   sql = "SELECT * FROM wishlists;"
-  response = db_connect.exec(sql)
-  db_connect.close
-  db_exec(sql)
-  p response.entries.to_s
+  binding.pry
+  result = db_exec(sql)
+  result.entries.to_s
   # sql query to get all wishlists
   # display them all
   # erb :item
