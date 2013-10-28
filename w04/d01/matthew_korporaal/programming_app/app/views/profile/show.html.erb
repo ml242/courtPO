@@ -1,0 +1,33 @@
+
+<!-- Display Individual Programmer -->
+<div class="wrapper">
+  <h1><%= @programmer.name %></h1>
+
+  <div><%= image_tag("#{@programmer.avatar_url}", :size => "73x73") %></div>
+
+
+  <div class="twit-div">
+    <h2>Twitter: @<%= @programmer.twitter_acct %></h2>
+    <% if @programmer.twitter_acct %>
+    <% @twitter.each do |tweet| %>
+    <%= link_to("#{tweet[:text]}", "https://twitter.com/#{tweet[:user][:screen_name]}/status/#{tweet[:id]}", :class => "twit-link") %><br>
+    <% end %>
+    <% end %>
+  </div>
+  <div class="git-div">
+    <h2>Github: <%= @programmer.github_acct %></h2>
+    <!-- Print GH repos -->
+    <% if @gh_repo %>
+    <h3>Repositories</h3>
+    <ul>
+      <% @gh_repo.each do |repo| %>
+      <li><%= link_to(repo["svn_url"].split("/").last, "#{repo["svn_url"]}", :class => "git-repo") %></li>
+      <% end %>
+    </ul>
+    <% end %>
+    <!-- Option to Edit programmer -->
+    <%= form_tag("/programmers/edit/#{@programmer.id.to_s}", method: "get") do %>
+    <%= submit_tag("Edit") %>
+  </div>
+  <% end %>
+</div>

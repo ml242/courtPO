@@ -1,0 +1,6 @@
+<h1>Country Listing</h1>
+<div>
+  <% @countries.each do |country| %>
+    <%= link_to(country['name'], "/countries/#{country['id']}") %><br>
+  <% end %>
+</div>

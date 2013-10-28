@@ -1,0 +1,6 @@
+<h1>Programmer Listing</h1>
+<div>
+  <% @programmers.each do |prog| %>
+    <%= link_to(prog['name'], "/programmers/#{prog['id']}") %><br>
+  <% end %>
+</div>

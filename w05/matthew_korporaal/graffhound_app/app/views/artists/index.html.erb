@@ -1,0 +1,11 @@
+<section>
+<h1><u>Artist List</u></h1>
+
+<ul class="artist-list">
+<% @artists.each do |artist| %>
+  <li>
+      <%= link_to artist.name, artist %>
+  </li>
+<% end %>
+</ul>
+</section>
