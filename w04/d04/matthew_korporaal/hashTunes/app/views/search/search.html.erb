@@ -1,0 +1,7 @@
+<%= form_tag("results", method: :get) do %>
+  <%= text_field_tag "q", nil, placeholder: "What are you looking for?" %>
+  <%= submit_tag "Search" %>
+<% end %>
+
+<img src="<%= @image_url %>">
+

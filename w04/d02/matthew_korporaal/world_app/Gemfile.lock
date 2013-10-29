@@ -53,6 +53,8 @@ GEM
     faker (1.2.0)
       i18n (~> 0.5)
     hike (1.2.3)
+    hpricot (0.8.6)
+    htmlentities (4.3.1)
     i18n (0.6.5)
     journey (1.0.4)
     jquery-rails (3.0.4)
@@ -126,6 +128,7 @@ GEM
     uglifier (2.2.1)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
+    wikipedia (0.2)
 
 PLATFORMS
   ruby
@@ -137,6 +140,8 @@ DEPENDENCIES
   binding_of_caller
   coffee-rails (~> 3.2.1)
   faker
+  hpricot
+  htmlentities
   jquery-rails
   meta_request
   pg
@@ -145,3 +150,4 @@ DEPENDENCIES
   rails (= 3.2.14)
   sass-rails (~> 3.2.3)
   uglifier (>= 1.0.3)
+  wikipedia
