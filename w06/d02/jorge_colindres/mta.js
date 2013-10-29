@@ -1,66 +1,48 @@
-var startLine = prompt('What line do you want to start at?');
-var startStation = prompt('What station do you want to start at?');
-var endLine = prompt('What line do you want to end at?');
-var endStation = prompt('What station do you want to end at?');
+function SubwaySystem(){
+  this.lines = {};
+  this.startLine = prompt('What line do you want to start at?');
+  this.startStation = prompt('What station do you want to start at?');
+  this.endLine = prompt('What line do you want to end at?');
+  this.endStation = prompt('What station do you want to end at?');
+}
+function Line(name, stations){
+  this.name = name;
+  this.stations = stations;
+}
 
-var trainLines = {
-  "N Line": [
-    "Lexington",
-    "Times Square",
-    "34",
-    "28-N",
-    "23-N",
-    "Union Square",
-    "8-N"
-  ],
-  "L Line": [
-    "8-L",
-    "6",
-    "Union Square",
-    "3",
-    "1"
-  ],
-  "Six Line": [
-    "Grand Central",
-    "33",
-    "28-6",
-    "23-6",
-    "Union Square",
-    "Astor Place"
-  ],
-  "F Line": [
-    "Lexington",
-    "34",
-    "23-F",
-    "6",
-    "W4",
-    "Broadway-Lafayette"
-  ]
-};
+var N = new Line('N', ['Times Square', '34th', '28th', '23rd', 'Union Square', '8th']);
+var L = new Line('L', ['8th', '6th', 'Union Square', '3rd','1st']);
+var S = new Line('S', ['Times Square', '34th', '28th', '23rd', 'Union Square', '8th']);
 
+var SS = new SubwaySystem();
+
+SS.lines['N'] = N;
+SS.lines['L'] = L;
+SS.lines['S'] = S;
 
 function findStopsToUnionSquare(line, station){
-  var stations = trainLines[line];
-  var startIndex = stations.indexOf(station);
-  var endIndex = stations.indexOf('Union Square');
+  var stations = SS.lines[line];
+  var startIndex = stations.stations.indexOf(station);
+  var endIndex = stations.stations.indexOf('Union Square');
   var delta = endIndex - startIndex;
   return Math.abs(delta);
 }
 
-if (startLine === endLine){
-  var stations = trainLines[startLine];
-  var startIndex = stations.indexOf(startStation);
-  var endIndex = stations.indexOf(endStation);
+if (SS.startLine === SS.endLine){
+  var stations = SS.lines[SS.startLine];
+  var startIndex = stations.stations.indexOf(SS.startStation);
+  var endIndex = stations.stations.indexOf(SS.endStation);
   var delta = endIndex - startIndex;
-  // start_index = stations.find_index(start_station)
-  // end_index = stations.find_index(end_station)
-  console.log(delta);
+  // console.log(delta);
+  alert(delta + ' stops!');
 } else {
-  var delta1 = findStopsToUnionSquare(startLine, startStation);
-  var delta2 = findStopsToUnionSquare(endLine, endStation);
+  var delta1 = findStopsToUnionSquare(SS.startLine, SS.startStation);
+  var delta2 = findStopsToUnionSquare(SS.endLine, SS.endStation);
   var delta = delta1 + delta2;
-  console.log(delta);
+  // console.log(delta);
+  alert(delta + ' stops!');
 }
+
 
 
 
