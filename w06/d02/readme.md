@@ -12,12 +12,12 @@ Create a program that models a simple subway system. The program takes the line 
           - ending line
           - ending station
       - Finally, bring up an alert that states the number of stops needed to make the trip
-    - **Objects**
+    - **Constructor Functions**
         - Define a `Line` Constructor Function 
             - You will use this function to create `new Line()` objects for each train line
             - A line's name and stops (an array) should be passed to the constructor function and stored within the object.
                 - example of storing name with constructor function: `this.name = name`
-        - Define a Constructor Function called `SubwaySystem`
+        - Define a `SubwaySystem` Constructor Function
             - Every line should be stored within this object
             - All of the user prompts should also take place here
     - **Lines**
