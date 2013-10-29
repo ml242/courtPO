@@ -1,5 +1,8 @@
 Week 6 Day 2 HW
 ============
+Apply your knowledge of JavaScript to solve a problem we've already tackled in Ruby.
+Create a program that models a simple subway system. The program takes the line and stop that a user is getting on at and the line and stop that user is getting off at and returns the total number of stops for the trip.
+
 - **MTA.js**
     - Create a simple subway system
     - **Functionality**
@@ -10,18 +13,21 @@ Week 6 Day 2 HW
           - ending station
       - Finally, bring up an alert that states the number of stops needed to make the trip
     - **Objects**
-        - Define a `Line` Constructor
-            - A line object's name and stops should be stored within this object
-        - Define an Constructor called `SubwaySystem`
-            - All the lines should be stored within this object
-            - All the of prompts should also take place here
+        - Define a `Line` Constructor Function 
+            - You will use this function to create `new Line()` objects for each train line
+            - A line's name and stops (an array) should be passed to the constructor function and stored within the object.
+                - example of storing name with constructor function: `this.name = name`
+        - Define a Constructor Function called `SubwaySystem`
+            - Every line should be stored within this object
+            - All of the user prompts should also take place here
     - **Lines**
-        - The N line has the following stops:
-            - Times Square, 34th, 28th, 23rd, Union Square, and 8th
-        - The L line has the following stops:
-            - 8th, 6th, Union Square, 3rd, and 1st
-        - The 6 line has the following stops:
-            - Grand Central, 33rd, 28th, 23rd, Union Square, and Astor Place.
+        ```js
+        // You will first need to define the Line() constructor function to create new Lines
+
+        var N = new Line('N', ['Times Square', '34th', '28th', '23rd', 'Union Square', '8th']);
+        var L = new Line('L', ['8th', '6th', 'Union Square', '3rd','1st']);
+        var S = new Line('S', ['Times Square', '34th', '28th', '23rd', 'Union Square', '8th']);
+        ```
         - All 3 subway lines intersect at Union Square, but there are no other intersection points.
 
         #### Hints:
