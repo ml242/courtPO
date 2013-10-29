@@ -1,0 +1,15 @@
+<h1>All Articles</h1>
+
+<%= link_to "Create a New Post", "articles/new" %>
+
+<% @all_articles.each do |article| %>
+<div>
+<%= link_to(article.title, "/articles/#{article.id}") %>
+<%= article.created_at %>
+<!-- format date & time to read like normal date/time -->
+</div>
+<% end %>
+
+
+
+<!-- add the total number of comments -->
