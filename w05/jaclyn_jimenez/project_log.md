@@ -16,21 +16,27 @@ GEEKout is for people passionate about specific interests. The site is meant to 
 	- I want to be able to click on outings from list and view more info, to decide if I would like to participate
 - as an admin i want to add, edit, and delete outings. (Add admin permissions after user authentication, for now adding, editing, and deleting is public)
 
-###Phase 2: Tag CRUD; tags categorize events
+###Phase 2: Tag CRUD; tags categorize events COMPLETED Tuesday  10/22
 Events and places have tags, when you click on a tag you see all events with that tag.
 #####Story
 - as an admin I want to add and delete tags. (done)
 - As a user I want to see all categories 1h (done)
-- As a user/admin I want to associate events/places with the appropriate tags by editing the event
-- As a user I want to click on a tag and be taken to a list of events that are filtered by that category 
-- As a user I want to see a list of an event's categories
+- As a user/admin I want to associate events/places with the appropriate tags by editing the event (done)
+- As a user I want to click on a tag and be taken to a list of events that are filtered by that category(done) 
+- As a user I want to see a list of an event's categories(done)
 
 ###Phase 3: Searchable with Filters
 Ability to filter and sort by date, category, location
 
 ####Story
-- As a user I want to be able to filter my search for outings by location & tag. On the search page there are checkboxs with tags, locations and 'sort by' that change what and how results are displayed. 
-- As a user, I should be able to see the results of my search and click to view more info on an event.
+- As a user I want to be able to filter my search for outings by tags using checkboxes (done)
+- - As a user, I should be able to see the results of my search and click to view more info on an event. (done)
+
+-  filter by location & tag. (done)
+
+-  sort by date (done)
+
+- choose to match all tags or any(done)
 
 
 ###Phase 4: User Authenticate
@@ -38,16 +44,16 @@ Ability to filter and sort by date, category, location
 - login/sign up allows you to add events/places
 
 ####Story
-- as a user i want to be able to create an account
-- as a user i want to be able to log in to my account 
-- as a logged-in user I want to be able to add events and associate them with tags
-- as an admin i want to add, edit, and delete outings and tags. 
+- as a user i want to be able to create an account (done)
+- as a user i want to be able to log in to my account (done)
+- as a logged-in user I want to be able to add events and associate them with tags (done)
 
 I do not expect to get passed Phase 4 by Friday.
 At this point I would stop and refactor my code, make it pretty with CSS.
 
 ##Backlog
 ###Phase 5: Commenting
+- as an admin i want to add, edit, and delete outings and tags. 
 
 ####Story
 - as a user i want to be able to view all comments on an event page
@@ -62,3 +68,12 @@ At this point I would stop and refactor my code, make it pretty with CSS.
 	
 #####Stories
 - as a users i would like to see as many search results as possible. i would like to see events from facebook and others sites aggregated here
+
+
+heroku create
+remote -v
+git push heroku master
+
+
+heroku run rake db:create
+etc
