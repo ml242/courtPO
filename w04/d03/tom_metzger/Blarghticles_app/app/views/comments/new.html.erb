@@ -1,0 +1,12 @@
+<h1>Comment on "this article"</h1>
+
+
+<%= form_for(@comment) do |f| %>
+<%= f.label :title %>
+<%= f.text_field :title %>
+<%= f.label :body %>
+<%= f.text_field :body %>
+<%= f.label :article_id %>      <!-- this should be a hidden field -->
+<%= f.text_field :article_id %> <!-- this should be a hidden field -->
+<%= f.submit %>
+<% end %>

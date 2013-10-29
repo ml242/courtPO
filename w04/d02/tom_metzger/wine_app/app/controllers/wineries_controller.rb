@@ -1,0 +1,3 @@
+class WineriesController < ApplicationController
+
+end
