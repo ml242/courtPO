@@ -38,3 +38,7 @@ Create a file called `mta.js`
         * Don't worry about user input. Start off by just hardcoding your stop and line choices in local variables.
         * Remember, you've done this in Ruby before. Look at your code and figure out how to do it in JavaScript.
 
+## Bonuses
+
+- Keep track of your total journeys taken.
+- If a subway ride is $2.50 give the total cost of your total journeys.
