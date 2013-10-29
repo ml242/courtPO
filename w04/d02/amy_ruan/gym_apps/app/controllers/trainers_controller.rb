@@ -12,7 +12,7 @@ class TrainersController < ApplicationController
 
   def show
     id = params[:id]
-    @gym = Trainer.find(id)
+    @trainer = Trainer.find(id)
   end
 
   def delete

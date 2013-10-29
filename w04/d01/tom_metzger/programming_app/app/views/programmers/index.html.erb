@@ -1,0 +1,20 @@
+<h1>Meet the Programmers</h1>
+
+
+<% @all_programmers.each do |programmer| %>
+  <div class="profile">
+    <!-- profile picture & name link to full profile -->
+    <a href="/programmers/<%= programmer.id %>">
+      <img src="<%= programmer.twitter_pic_url %>" alt="<%= programmer.name %>" class="profile_picture">
+        <%= programmer.name %>
+    </a>
+  </div>
+<% end %>
+
+
+
+
+
+
+
+
