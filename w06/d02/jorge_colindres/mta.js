@@ -38,6 +38,15 @@ var trainLines = {
   ]
 };
 
+
+function findStopsToUnionSquare(line, station){
+  var stations = trainLines[line];
+  var startIndex = stations.indexOf(station);
+  var endIndex = stations.indexOf('Union Square');
+  var delta = endIndex - startIndex;
+  return Math.abs(delta);
+}
+
 if (startLine === endLine){
   var stations = trainLines[startLine];
   var startIndex = stations.indexOf(startStation);
@@ -47,6 +56,11 @@ if (startLine === endLine){
   // end_index = stations.find_index(end_station)
   console.log(delta);
 } else {
-  console.log('Not done yet');
+  var delta1 = findStopsToUnionSquare(startLine, startStation);
+  var delta2 = findStopsToUnionSquare(endLine, endStation);
+  var delta = delta1 + delta2;
+  console.log(delta);
 }
+
+
 
