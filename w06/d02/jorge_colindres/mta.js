@@ -29,12 +29,12 @@ function findStopsToUnionSquare(line, station){
 }
 
 if (SS.startLine === SS.endLine){
-  var stations = SS.lines[SS.startLine];
-  var startIndex = stations.stations.indexOf(SS.startStation);
-  var endIndex = stations.stations.indexOf(SS.endStation);
+  var currentLine = SS.lines[SS.startLine];
+  var startIndex = currentLine.stations.indexOf(SS.startStation);
+  var endIndex = currentLine.stations.indexOf(SS.endStation);
   var delta = endIndex - startIndex;
   // console.log(delta);
-  alert(delta + ' stops!');
+  alert(Math.abs(delta) + ' stops!');
 } else {
   var delta1 = findStopsToUnionSquare(SS.startLine, SS.startStation);
   var delta2 = findStopsToUnionSquare(SS.endLine, SS.endStation);
