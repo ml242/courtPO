@@ -12,13 +12,27 @@ function SubwaySystem(lineObject) {
 };
 
 SubwaySystem.prototype.calculateDistance = function() {
-
-  // Finding the index of the user's inputs
-  var startIndex = this.lines[this.startLine].stops.indexOf(this.startStop),
+  var numStops,
+      startIndex = this.lines[this.startLine].stops.indexOf(this.startStop),
       endIndex = this.lines[this.endLine].stops.indexOf(this.endStop);
 
+  if (this.startLine === this.endLine) {
+
+    // Sets the number of stops as the difference between the stops
+    numStops = Math.abs(endIndex - startIndex);
+
+  } else {
+
+    // Finds the index of the transfers
+    var startTransferIndex = this.lines[this.startLine].stops.indexOf('Union Square'),
+        endTransferIndex = this.lines[this.endLine].stops.indexOf('Union Square');
+
+    //Sets the number of stops as the difference between the stops and the transfers
+    numStops = ( Math.abs(startTransferIndex - startIndex) + Math.abs(endTransferIndex - endIndex) )
+  };
+
   // Return the calculated distance
-  return (Math.abs(endIndex - startIndex));
+  return numStops;
 };
 
 // Creates The Subway Lines
