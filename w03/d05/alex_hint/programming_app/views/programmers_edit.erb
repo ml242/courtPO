@@ -1,0 +1,16 @@
+<h1>Hello from EDIT</h1>
+<br>
+
+<form action='/programmers/<%= @programmer[:id] %>' method ='post'>
+
+<input type='text' name='name' value='<%= @programmer[:name] %>'> <br><br>
+
+<input type='text' name='twitter_username' value='<%= @programmer[:twitter_username] %>'> <br><br>
+
+<img src="<%= @programmer[:twitter_pic] %>"> <br><br>
+<input type='text' name='twitter_pic' value='<%= @programmer[:twitter_pic] %>'> <br><br>
+
+<input type='text' name='github_username' value='<%= @programmer[:github_username] %>'> <br><br>
+
+  <input type='submit' value='Submit'>
+</form>

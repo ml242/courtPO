@@ -1,0 +1,26 @@
+* {
+     -moz-box-sizing: border-box; /* Firexfox */
+     -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
+     box-sizing: border-box; /* IE */
+}
+
+body{
+  width: 960px;
+  margin: 0 auto;
+}
+
+.logos{
+  width: 40px;
+}
+
+.profile{
+  float: left;
+  width: 33%;
+  margin: 20px 0px;
+}
+
+.profile_picture{
+  width: 73px;
+}
+
+

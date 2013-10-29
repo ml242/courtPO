@@ -6,9 +6,10 @@
 #  name             :string(255)
 #  twitter_username :string(255)
 #  twitter_pic      :string(255)
+#  company_id       :integer
 #
 
 class Programmer < ActiveRecord::Base
-  attr_accessible :name, :twitter_username, :twitter_pic
-
+  attr_accessible :name, :twitter_username, :twitter_pic, :company_id
+  belongs_to :company
 end
