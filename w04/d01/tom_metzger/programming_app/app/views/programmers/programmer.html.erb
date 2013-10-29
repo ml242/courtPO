@@ -1,0 +1,24 @@
+<h1>Meet <%= @result.name %></h1>
+<a href="/programmers">Home</a>
+
+  <div class="profile">
+    <!-- profile picture & name link to full profile -->
+    <a href="/programmers/<%= @result.id %>">
+      <img src="<%= @result.twitter_pic_url %>" alt="<%= @result.name %>" class="profile_picture">
+      <label>Name:</label>
+        <%= @result.name %>
+    </a>
+    <!-- Twitter username -->
+    <div>
+      <img src="http://theinspirationroom.com/daily/design/2012/6/new_twitter_logo.jpg" class="logos">
+      <a href="https://twitter.com/<%= @result.twitter_username %>"><%= @result.twitter_username %></a>
+    </div>
+  <!-- Github username -->
+    <div>
+      <img src="http://cdn.ahrengot.com/wp-content/uploads/github-logo-transparent.png" class="logos">
+      <a href="https://github.com/<%= @result.github_username %>"><%= @result.github_username %></a>
+    </div>
+      <a href="/programmers/<%= @result.id%>/edit"><button>Edit this programmer's info</button></a></li>
+  </div>
+
+

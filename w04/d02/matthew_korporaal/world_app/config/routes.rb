@@ -1,6 +1,9 @@
 WorldApp::Application.routes.draw do
 
-  # GET - Show all programmers
+# Controllers should be plural
+# Edit should be /c/:id/edit
+
+# GET - Show all programmers
 get '/' => redirect('/countries')
 get '/countries' => 'world#index'
 # GET - Show individual programmer
@@ -9,6 +12,14 @@ get '/countries/:id' => 'world#show'
 post '/countries/:id' => 'world#update'
 # GET - Edit form
 get '/countries/edit/:id' => 'world#edit'
+
+## JONATHANS ROUTES
+#  get '/countries/new' => 'countries#new' #
+#  post '/countries' => 'countries#create' #
+#  get '/countries/:id' => 'countries#show' #
+#  get '/countries/:id/edit' => 'countries#edit' #
+#  post '/countries/:id' => 'countries#update' #
+#  post '/countries/:id/delete' => 'countries#destroy' #
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
