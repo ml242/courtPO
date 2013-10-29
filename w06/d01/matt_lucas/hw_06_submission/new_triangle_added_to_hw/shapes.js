@@ -39,9 +39,13 @@ var simpleTriangle = function(triangle) {
   return [a, b, c].sort();
 }
 
-function isObtuse(simpleTriangle) {
-  return (simpleTriangle[0]^2 + simpleTriangle[1]^2) < (simpleTriangle[2]^2);
-};
+// function isObtuse(simpleTriangle) {
+//   return (simpleTriangle[0]^2 + simpleTriangle[1]^2) < (simpleTriangle[2]^2);
+// };
+
+var isObtuse = function(triangle) {   var tri = simpleTriangle(triangle) 
+return (Math.pow(tri[0],2) + Math.pow(tri[1],2) < Math.pow(tri[2],2)); };
+
 
 console.log(isEquilateral(triangle));
 
@@ -49,4 +53,4 @@ console.log(isIsocoles(triangle));
 
 console.log(calcArea(triangle));
 
-console.log(isObtuse(simpleTriangle));
+console.log(isObtuse(triangle));
