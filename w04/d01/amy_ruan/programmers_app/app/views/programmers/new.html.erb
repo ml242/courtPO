@@ -1,14 +1,13 @@
-<form action="/programmers" method="post">
+<%=form_tag "/programmers"do%>
 Please enter all information about your new programmer
 <br>
-<label>Name</label>
-  <input type="text" name="create_name">
-  <br>
-<label>Twitter_Username</label>
-  <input type="text" name="create_twitter_username">
-  <br>
-<label>Twitter_Pic</label>
-  <input type="text" name="create_twitter_pic">
-
-  <input type="submit" value="Submit">
-</form>
+<%=label_tag 'Name'%>
+<%=text_field_tag 'create_name'%>
+<br>
+<%=label_tag 'Twitter Username'%>
+<%=text_field_tag 'create_twitter_username'%>
+<br>
+<%=label_tag 'Twitter Pic'%>
+<%=text_field_tag 'create_twitter_pic'%>
+<%=submit_tag%>
+<%end%>
