@@ -13,8 +13,15 @@
           <%article.comments.each do |comment|%>
           <li><%=comment.body%></li>
           <%end%>
-        </ul>
-        <%=article.updated_at%>
+  </ul>
+      <br>
+      <ul class="tags">
+      Tags
+      <%article.tags.each do |tag|%>
+      <li><%=tag.body%></li>
+      <%end%>
+    </ul>
+    <%=article.updated_at%>
     </li>
     <%end%>
   </ul>
