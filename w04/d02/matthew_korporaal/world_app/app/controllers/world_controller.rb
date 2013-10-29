@@ -7,6 +7,7 @@ class WorldController < ApplicationController
   end
   def show
     @country = Country.find(params['id'])
+    #@wiki = Wikipedia.find( "#{@country.name}")
   end
   def update
     c_id = params['id'].to_i

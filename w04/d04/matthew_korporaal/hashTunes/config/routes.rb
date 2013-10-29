@@ -1,25 +1,26 @@
-WorldApp::Application.routes.draw do
+HashTunes::Application.routes.draw do
+  get "/" => "search#search"
+  get "/results" => "search#results"
 
-# Controllers should be plural
-# Edit should be /c/:id/edit
+  resources :users
+  resources :sessions, only: [:new, :create, :destroy]
 
-# GET - Show all programmers
-get '/' => redirect('/countries')
-get '/countries' => 'world#index'
-# GET - Show individual programmer
-get '/countries/:id' => 'world#show'
-# POST - Receive Info and save to DB
-post '/countries/:id' => 'world#update'
-# GET - Edit form
-get '/countries/edit/:id' => 'world#edit'
+  get '/login' => 'sessions#new'
+  get '/logout' => 'sessions#destroy'
 
-## JONATHANS ROUTES
-#  get '/countries/new' => 'countries#new' #
-#  post '/countries' => 'countries#create' #
-#  get '/countries/:id' => 'countries#show' #
-#  get '/countries/:id/edit' => 'countries#edit' #
-#  post '/countries/:id' => 'countries#update' #
-#  post '/countries/:id/delete' => 'countries#destroy' #
+  # new
+    # this will give you a form to login
+      # email
+      # password
+  # create
+    # actually store the session
+      # session[:user_id] = 5
+  # destroy
+    # actually removes the userid from the session
+      # session[:user_id] = nil
+
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
