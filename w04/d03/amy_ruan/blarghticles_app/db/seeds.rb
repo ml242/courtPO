@@ -21,12 +21,12 @@ a1.tags << [t1,t2]
 a2.tags << [t2]
 a3.tags << [t2,t3,t1]
 
-c1 = Comment.create(body:"This is awesome", article_id:1)
-c2 = Comment.create(body:"This is pretty true", article_id:1)
-c3 = Comment.create(body:"Where is career?", article_id:1)
-c4 = Comment.create(body:"Where is Pushkin?", article_id:2)
-c5 = Comment.create(body:"Best of the best!", article_id:1)
-c6 = Comment.create(body:"Yup!", article_id:3)
-c7 = Comment.create(body:"JAPAANNNN", article_id:3)
-c8 = Comment.create(body:"Dont miss out on Bhutan", article_id:3)
-c9 = Comment.create(body:"Great List", article_id:3)
+c1 = Comment.create(body:"This is awesome", article_id:18)
+c2 = Comment.create(body:"This is pretty true", article_id:18)
+c3 = Comment.create(body:"Where is career?", article_id:18)
+c4 = Comment.create(body:"Where is Pushkin?", article_id:18)
+c5 = Comment.create(body:"Best of the best!", article_id:19)
+c6 = Comment.create(body:"Yup!", article_id:20)
+c7 = Comment.create(body:"JAPAANNNN", article_id:20)
+c8 = Comment.create(body:"Dont miss out on Bhutan", article_id:20)
+c9 = Comment.create(body:"Great List", article_id:20)
