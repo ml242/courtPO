@@ -6,4 +6,8 @@ class FavoritesController < ApplicationController
     @favorite.save
     redirect_to current_user
   end
+  def destroy
+    Favorite.destroy(params[:piece_id])
+    redirect_to current_user
+  end
 end

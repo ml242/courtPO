@@ -8,6 +8,7 @@ class UsersController < ApplicationController
   end
   # POST /users
   def create
+    raise
     @user = User.new(params[:user])
     if @user.save
       redirect_to(login_path)
@@ -18,6 +19,7 @@ class UsersController < ApplicationController
     end
   end
   def show
+    @favorite = Favorite.new
     @user = User.find(params[:id])
   end
   def edit

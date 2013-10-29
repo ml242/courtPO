@@ -1,14 +1,14 @@
 <h1>Add New Piece</h1>
 
-<div class="new-piece-form">
+<div class="piece-form">
   <ul>
     <%= form_for(@piece) do |f| %>
     <li>
-      <%= f.label :name %>
+      <%= f.label :name, :class => "piece-label" %>
       <%= f.text_field :name %>
     </li>
-    <li>
-      <%= f.label "artists" %>
+    <li class="art-select">
+      <%= f.label "artists", :class => "art-label" %>
       <%= f.select :artist_id, options_from_collection_for_select(@artists, :id, :name) %>
     </li>
     <li>

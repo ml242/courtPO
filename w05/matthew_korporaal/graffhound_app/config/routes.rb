@@ -3,8 +3,7 @@ GraffhoundApp::Application.routes.draw do
   resources :welcome, only: [:new]
   resources :sessions, only: [:new, :create, :destroy]
   resources :pieces do
-
-    resources :comments, :favorites, :only => [:create]
+    resources :comments, :favorites, :only => [:create, :destroy]
   end
 
   root to: 'welcome#home'

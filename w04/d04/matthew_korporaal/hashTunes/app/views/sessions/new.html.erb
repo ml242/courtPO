@@ -1,0 +1,12 @@
+<!-- This is where I login, email and password, => create -->
+<!-- Note that I am using a form_tag because there is no model backing my resource -->
+<h1>Login</h1>
+
+<%= form_tag "/sessions" do %>
+  <%= label_tag :email %>
+  <%= text_field_tag :email %>
+  <%= label_tag :password %>
+  <%= password_field_tag :password %>
+
+  <%= submit_tag %>
+<% end %>

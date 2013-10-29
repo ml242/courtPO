@@ -2,13 +2,6 @@
 <ul>
     <h2><%= @piece.artist.name %> - "<%= @piece.name %>"<h2>
       <h3>last seen <%= time_ago_in_words(@piece.updated_at) %> - <%= @piece.location %></h3>
-      <div id="pc-edit" class="piece-edit">
-        <% if current_user %>
-        <%= link_to "Edit details..", edit_piece_path  %>
-        <% else %>
-        <br><%= link_to "log in to comment, edit or add favorite", "/login" %>
-        <% end %>
-      </div>
     <div class="show-pics">
     <% @piece.pics.each do |pic| %>
       <%= image_tag pic.url, :size => "800X600"  %>
@@ -20,6 +13,15 @@
      <%= f.submit "favorite" %>
      <% end %>
      <% end %>
+     <% num_favorites = Favorite.where(:piece_id => @piece.id).count %>
+     <p><%= num_favorites %> - Favorites</p>
+           <div id="pc-edit" class="piece-edit">
+        <% if current_user %>
+        <%= link_to "Edit details..", edit_piece_path  %>
+        <% else %>
+        <br><%= link_to "log in to comment, edit or add favorite", "/login" %>
+        <% end %>
+      </div>
    </div>
 
    <div class="comments ">

@@ -1,20 +1,35 @@
 <h1>Edit Piece</h1>
 <% if @piece.errors.any? %>
-
-<ul>
-  <% @piece.errors.messages.each do |error, msg| %>
+  <ul>
+    <% @piece.errors.messages.each do |error, msg| %>
     <li><%= msg %></li>
+    <% end %>
+  </ul>
   <% end %>
-</ul>
-<% end %>
-
-<%= form_for(@piece) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.select :artist_id, options_from_collection_for_select(@artists, :id, :name) %>
-  <%= f.label "Add artist" %>
-  <%= f.text_field :birth %>
-  <%= f.label :location %>
-  <%= f.text_field :location %>
-  <%= f.submit "Submit" %>
+<div class="piece-form">
+  <%= form_for(@piece) do |f| %>
+  <li>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </li>
+  <li class="art-select">
+    <%= f.label "Artist" %>
+    <%= f.select :artist_id, options_from_collection_for_select(@artists, :id, :name) %>
+  </li>
+  <li>
+    <%= f.label "Add artist" %>
+    <%= text_field_tag :artist_name %>
+  </li>
+  <li>
+    <%= f.label :location %>
+    <%= f.text_field :location %>
+  </li>
+  <li>
+    <%= label_tag "Pic URL" %>
+    <%= text_field_tag :URL %>
+  </li>
+  <li>
+    <%= f.submit "Submit" %>
+  </li>
+</div>
 <% end %>
