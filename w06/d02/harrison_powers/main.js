@@ -21,27 +21,39 @@ SubwaySystem.prototype.calculateDistance = function() {
   return (Math.abs(endIndex - startIndex));
 };
 
-// Creating The Subway Lines
+// Creates The Subway Lines
 var N = new Line('N', ['Times Square', '34th', '28th', '23rd', 'Union Square', '8th']),
     L = new Line('L', ['8th', '6th', 'Union Square', '3rd','1st']),
     S = new Line('S', ['Times Square', '34th', '28th', '23rd', 'Union Square', '8th']);
 
-// Creating the NYC MTA Subway System
+// Creates the NYC MTA Subway System
 var nycMTA = new SubwaySystem({
   'N': N,
   'L': L,
   'S': S
 });
 
-// Setting up seed user inputs for dev
+// Seed user inputs for dev env
 // nycMTA.startLine = 'N';
 // nycMTA.startStop = 'Times Square';
 // nycMTA.endLine = 'S';
 // nycMTA.endStop = '8th';
 
-nycMTA.startLine = prompt('Which subway line are you getting on? [N, L, or S]'),
-nycMTA.startStop = prompt('What stop are you getting on?'),
-nycMTA.endLine = prompt('Which subway line will you end up at? [N, L, or S]'),
-nycMTA.endStop = prompt('What stop are you getting off?');
+var choice = 'go',
+    numJourneys = 0,
+    totalCost = 0;
 
-alert('Your trip will have ' + nycMTA.calculateDistance() + ' stops.');
+while (choice === 'go') {
+  nycMTA.startLine = prompt('Which subway line are you getting on? [N, L, or S]'),
+  nycMTA.startStop = prompt('What stop are you getting on?'),
+  nycMTA.endLine = prompt('Which subway line will you end up at? [N, L, or S]'),
+  nycMTA.endStop = prompt('What stop are you getting off?');
+
+  alert('Your trip will have ' + nycMTA.calculateDistance() + ' stops.');
+
+  numJourneys += 1;
+  totalCost += 2.5;
+  choice = prompt('to keep going type "go"')
+}
+
+alert('You took ' + numJourneys + ' subway rides, costing you $' + totalCost)
