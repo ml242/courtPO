@@ -16,9 +16,9 @@ var S = new Line('S', ['Times Square', '34th', '28th', '23rd', 'Union Square', '
 
 var SS = new SubwaySystem();
 
-SS.lines['N'] = N;
-SS.lines['L'] = L;
-SS.lines['S'] = S;
+SS.lines.N = N;
+SS.lines.L = L;
+SS.lines.S = S;
 
 function findStopsToUnionSquare(line, station){
   var stations = SS.lines[line];
@@ -33,13 +33,11 @@ if (SS.startLine === SS.endLine){
   var startIndex = currentLine.stations.indexOf(SS.startStation);
   var endIndex = currentLine.stations.indexOf(SS.endStation);
   var delta = endIndex - startIndex;
-  // console.log(delta);
   alert(Math.abs(delta) + ' stops!');
 } else {
   var delta1 = findStopsToUnionSquare(SS.startLine, SS.startStation);
   var delta2 = findStopsToUnionSquare(SS.endLine, SS.endStation);
   var delta = delta1 + delta2;
-  // console.log(delta);
   alert(delta + ' stops!');
 }
 
