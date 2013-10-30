@@ -1,25 +1,36 @@
-LINES = {
-  n: "Times Square, 34th, 28th, 23rd, Union Square, 8th".split(", "),
-  l: "8th, 6th, Union Square, 3rd, 1st".split(", "),
-  6: "Grand Central, 33rd, 28th, 23rd, Union Square, Astor Place".split(", ")
-};
+// var SubwaySystem = function() {
+//     var LINES = {}
+// }
 
-var startLine= prompt("What line are you getting on?");
-var startStop= prompt("What stop are you getting on?");
-var endLine= prompt("What line are you getting off from?");
-var endStop= prompt("What stop are you getting off at?");
+var LINES = {},
+    Line = function(key, value) {
+      LINES[key] = value
+    }
 
-var startingLineStopsArray = LINES[startLine]; //refactoring and index values for use in subtraction later on
-var startingIndex = startingLineStopsArray.indexOf(startStop);
-var endingLineStopsArray = LINES[endLine];
-var endingIndex = endingLineStopsArray.indexOf(endStop);
+var N = new Line('N', ['Times Square', '34th', '28th', '23rd', 'Union Square', '8th']),
+    L = new Line('L', ['8th', '6th', 'Union Square', '3rd','1st']),
+    S = new Line('S', ['Times Square', '34th', '28th', '23rd', 'Union Square', '8th']);
 
-var calcDistanceToUnionSquare = function(trainStopArray, otherStopIndex) { //to get the distance from a user's starting or departure stop, subtract the index value of that stop from the index value of Union Square for that train. Then convert to an absolute value.
-  var unionSquareIndex=trainStopArray.indexOf("Union Square");
-  var stopsToUnionSquare = Math.abs(unionSquareIndex-otherStopIndex);
+var startLine = prompt("What line are you getting on?").toUpperCase(),
+    startStop = prompt("What stop are you getting on?"),
+    endLine = prompt("What line are you getting off from?").toUpperCase(),
+    endStop = prompt("What stop are you getting off at?");
+
+// refactoring and index values for use in subtraction later on
+var startingLineStopsArray = LINES[startLine],
+    startingIndex = startingLineStopsArray.indexOf(startStop),
+    endingLineStopsArray = LINES[endLine],
+    endingIndex = endingLineStopsArray.indexOf(endStop);
+
+// to get the distance from a user's starting or departure stop, subtract the index value
+// of that stop from the index value of Union Square for that train. Then convert to an absolute value.
+var calcDistanceToUnionSquare = function(trainStopArray, otherStopIndex) {
+  var unionSquareIndex = trainStopArray.indexOf("Union Square"),
+      stopsToUnionSquare = Math.abs(unionSquareIndex-otherStopIndex);
   return stopsToUnionSquare;
 };
-  //to find the distance between two stops on the same line, you need to subtract the first value from the second, and convert the result to an absolute number.
+
+  // to find the distance between two stops on the same line, you need to subtract the first value from the second, and convert the result to an absolute number.
 if (LINES[startLine]==LINES[endLine]) {
   var distanceBetweenStops = Math.abs(startingIndex-endingIndex);
 }
@@ -32,4 +43,4 @@ var log2String="You're getting off at the " + endStop + " stop on the " + endLin
 
 console.log(log1String);
 console.log(log2String);
-console.log("You're ride will be " + distanceBetweenStops + " stops long");
+console.log("Your ride will be " + distanceBetweenStops + " stops long");
