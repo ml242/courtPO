@@ -1,6 +1,6 @@
 stops_n = ['times square', '34th', '28th', '23rd', 'union square', '8th']
 stops_l = ['8th', '6th', 'union square', '3rd','1st']
-stops_s  = ["astor place", "union square", "28th street", "33rd street","grand central"]
+stops_s  = ["astor place", "union square", "28th", "33th","grand central"]
 
 function Line(name,stops) {
   this.name = name;
@@ -40,17 +40,19 @@ SubwaySystem.prototype.countStops = function(start,end) {
 
   console.log(intersection)
     if (new_line_end != new_line_start) {
-    var intersection = start_line_stops.filter(
+    var total_intersection = start_line_stops.filter(
     function(value) {
       return end_line_stops.indexOf(value) > -1;
     })
 
+
+
     var start = start_line_stops.indexOf(this.start_stop);
-    var intersection_start = start_line_stops.indexOf(intersection[0]);
+    var intersection_start = start_line_stops.indexOf(total_intersection[0]);
     var start_delta = Math.abs(intersection_start - start);
 
     var end = end_line_stops.indexOf(this.end_stop);
-    var intersection_end = end_line_stops.indexOf(intersection[0]);
+    var intersection_end = end_line_stops.indexOf(total_intersection[0]);
     var end_delta = Math.abs(intersection_end - end);
 
     var total_delta = end_delta + start_delta;
@@ -73,4 +75,4 @@ var s = new Line("S", stops_s);
 var mta = new SubwaySystem(n, l, s);
 var ans = mta.countStops('Times Square','8th');
 
-console.log(ans)
+console.log("Your travel will take " + ans + " stops")
