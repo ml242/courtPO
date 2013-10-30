@@ -35,7 +35,6 @@ Line.prototype.findIndex = function(stationName){
   }
 }
 
-Line.prototype.findStops = function
 
 if (startingLine == endingLine) {
   var numStops = Math.abs(findIndex(startingStation) - findIndex(endingStation));
