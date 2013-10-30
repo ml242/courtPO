@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Will Smith
 
 Week 6 Day 2 HW
@@ -51,3 +52,6 @@ Create a file called `mta.js`
 
 - Keep track of your total journeys taken.
 - If a subway ride is $2.50 give the total cost of your total journeys.
+=======
+Will Smith
+>>>>>>> b01938a8442f07bdb14c0b9929e43bb3a61e707a
