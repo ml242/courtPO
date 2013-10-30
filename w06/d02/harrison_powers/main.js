@@ -50,7 +50,7 @@ var nycMTA = new SubwaySystem({
 // Seed user inputs for dev env
 // nycMTA.startLine = 'N';
 // nycMTA.startStop = 'Times Square';
-// nycMTA.endLine = 'S';
+// nycMTA.endLine = 'L';
 // nycMTA.endStop = '8th';
 
 var choice = 'go',
@@ -67,7 +67,7 @@ while (choice === 'go') {
 
   numJourneys += 1;
   totalCost += 2.5;
-  choice = prompt('to keep going type "go"')
-}
+  choice = prompt('to keep going type "go"');
+};
 
-alert('You took ' + numJourneys + ' subway rides, costing you $' + totalCost)
+alert('You took ' + numJourneys + ' subway rides, costing you $' + totalCost);
