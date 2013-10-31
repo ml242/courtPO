@@ -104,20 +104,13 @@ function makeBuddies(buddies) {
 function leaveTheShire() {
   // assemble the hobbits and move them to Rivendell
   //var hobbits = document.getElementsByClassName('hobbit');
-  var rivendellTag = document.getElementsByClassName('Rivendell');
-  var shireTag = document.getElementsByClassName('the_shire');
-
-
-
-  // for (var i = 0; i < hobbits.length; i++) {
-  //   var hobbitsTag
-  // }
-
+  var rivendellTag = document.getElementsByClassName('rivendell')[0];
+  var shireTag = document.getElementsByClassName('the_shire')[0];
+  var hobbitsTag = shireTag.children[1]
+  rivendellTag.appendChild(hobbitsTag)
+  // not sure why this removes the shireTag
+  //shireTag.remove(hobbitsTag)
 }
-
-
-
-
 
 
 
@@ -183,3 +176,4 @@ makeHobbits(hobbits);
 keepItSecretKeepItSafe();
 makeBaddies(baddies);
 makeBuddies(buddies);
+leaveTheShire();
