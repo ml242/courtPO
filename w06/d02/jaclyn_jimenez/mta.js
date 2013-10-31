@@ -1,13 +1,3 @@
-// 3 lines
-// prompt the user what line they're starting from
-// prompt user for starting station
-// prompt user for ending line
-// prompt user for end station
-// bring up alert that states number of stops needed to make the trip
-// first do it for number of stops in one line
-// create function that calculates number of stops
-
-
 //constructor function
 function Line(lineStops) {
   this.stops = lineStops
