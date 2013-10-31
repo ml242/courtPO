@@ -169,6 +169,13 @@ function weWantsIt() {
 
 function thereAndBackAgain() {
   // remove Gollum and the Ring from the document
+
+  // var gollum = document.createElement('div');
+  //   gollum.id = "gollum";
+  // var mordor = document.getElementsByTagName('article')[2];
+  // mordor.appendChild(gollum);
+  gollum.remove();
   // remove all the baddies from the document
+  baddies.remove();
   // Move all the hobbits back to the shire
 }
