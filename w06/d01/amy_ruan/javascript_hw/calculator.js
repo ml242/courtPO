@@ -4,7 +4,6 @@ var calculator = {
   this.getOperation()
   this.getSecondNumber()
 
-
   switch(calculator.operation){
   case "add":
     var answer = calculator.firstNumber + calculator.secondNumber;

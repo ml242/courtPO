@@ -1,5 +1,5 @@
 <ul>
-<% @programmers.each do |programmer| %>
-  <h4><li><a href="/programmers/<%= programmer.id %>"><%= programmer.name %></a></li></h4><br>
-<% end %>
+  <% @programmers.each do |programmer| %>
+  <li><a href="/programmers/<%= programmer.id %>"><%= programmer.name %></a></li><br>
+  <% end %>
 </ul>
