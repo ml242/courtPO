@@ -59,7 +59,7 @@ function makeHobbits(hobbits) {
 function keepItSecretKeepItSafe() {
   // create a div with an id of 'the-ring'
   var theRing = document.createElement('div');
-  theRing.id = "the-ring"
+  theRing.id = "the-ring";
   // add the ring as a child of Frodo
   var FrodoRing = document.getElementsByTagName('li')[0];
   FrodoRing.appendChild(theRing);
@@ -114,4 +114,61 @@ function beautifulStranger() {
   // change the buddy 'Strider' textnode to "Aragorn"
   // 'Strider' is at index 3 of buddies array
 
+}
+
+
+function forgeTheFellowShip() {
+  // move the hobbits and the buddies to Rivendell
+  // create a new div called 'the-fellowship'
+  var theFellowship = document.createElement('div');
+  theFellowship.class = "the-fellowship";
+  // add each hobbit and buddy one at a time to 'the-fellowship'
+  for (var i = 0; i < hobbits.length; i++) {
+    theFellowship.textContent = hobbits[i];
+  }
+  for (var i = 0; i < buddies.length; i++) {
+    theFellowship.textContent = buddies[i];
+  // after each character is added make an alert that they have joined your party
+}
+
+
+function theBalrog() {
+  // change the 'Gandalf' textNode to 'Gandalf the White'
+  // apply style to the element
+  // make the background 'white', add a grey border
+}
+
+
+function hornOfGondor() {
+  // pop up an alert that the horn of gondor has been blown
+  var horn = alert("The horn of gondor has been blown!")
+  // Boromir's been killed by the Uruk-hai!
+  // put a linethrough on boromir's name
+  // Remove the Uruk-Hai from the Baddies on the page
+  // Remove Boromir from the Fellowship
+  // Put Boromir in the Footer
+}
+
+
+function itsDangerousToGoAlone(){
+  // take Frodo and Sam out of the fellowship and move them to Mordor
+  // add a div with an id of 'mount-doom' to Mordor
+}
+
+
+function weWantsIt() {
+  // Create a div with an id of 'gollum' and add it to Mordor
+  var gollum = document.createElement('div');
+    gollum.id = "gollum";
+  var mordor = document.getElementsByTagName('article')[2];
+  mordor.appendChild(gollum);
+  // Remove the ring from Frodo and give it to Gollum
+  // Move Gollum into Mount Doom
+}
+
+
+function thereAndBackAgain() {
+  // remove Gollum and the Ring from the document
+  // remove all the baddies from the document
+  // Move all the hobbits back to the shire
 }
