@@ -113,8 +113,9 @@ function leaveTheShire() {
 function beautifulStranger() {
   // change the buddy 'Strider' textnode to "Aragorn"
   // 'Strider' is at index 3 of buddies array
-
+  buddies.indexOf[3].textContent = "Aragorn";
 }
+// didn't test yet!!!
 
 
 function forgeTheFellowShip() {
@@ -134,6 +135,7 @@ function forgeTheFellowShip() {
 
 function theBalrog() {
   // change the 'Gandalf' textNode to 'Gandalf the White'
+  buddies.indexOf[0].textContent = "Gandalf the White";
   // apply style to the element
   // make the background 'white', add a grey border
 }
