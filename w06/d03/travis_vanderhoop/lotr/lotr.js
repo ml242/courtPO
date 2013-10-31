@@ -64,6 +64,7 @@ makeHobbits(hobbits);
 //
 var hobbitList=document.getElementsByTagName('li');
 hobbitList[0].id = 'frodo';
+frodo.id='frodo-baggins'
 frodo = hobbitList[0];
 
 function keepItSecretKeepItSafe() {
@@ -183,8 +184,10 @@ function hornOfGondor() {
 hornOfGondor();
 
 var mountDoom = document.createElement('div');
-var sam = theFellowship.children[4]
-mountDoom.id='mount-doom'
+var sam = theFellowship.children[4];
+sam.id='samwise-gamgee';
+mountDoom.id='mount-doom';
+
 function itsDangerousToGoAlone(){
   mordor.children[1].appendChild(frodo);
   mordor.children[1].appendChild(sam);
@@ -208,6 +211,7 @@ function weWantsIt() {
   // Move Gollum into Mount Doom
 }
 
+
 weWantsIt();
 
 function thereAndBackAgain() {
@@ -217,8 +221,11 @@ function thereAndBackAgain() {
   // remove all the baddies from the document
   // Move all the hobbits back to the shire
   mordor.children[1].innerHTML='';
+  shire.children[1].appendChild(theFellowship.children[4]);
+  shire.children[1].appendChild(theFellowship.children[4]);
+  shire.children[1].appendChild(theFellowship.children[4]);
 }
 
-weWantsIt;
+thereAndBackAgain();
 
 
