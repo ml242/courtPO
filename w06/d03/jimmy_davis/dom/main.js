@@ -112,10 +112,13 @@ function leaveTheShire() {
 
 function beautifulStranger() {
   // change the buddy 'Strider' textnode to "Aragorn"
-  // 'Strider' is at index 3 of buddies array
-  buddies.indexOf[3].textContent = "Aragorn";
+   //select strider
+   var striderLi = document.getElementsByTagName('aside')[0].children[0].getElementsByTagName('li')[3]
+   //change .textContent to Aragorn
+   striderLi.textContent = 'Aragorn'
+ }
+ beautifulStranger()
 }
-// didn't test yet!!!
 
 
 function forgeTheFellowShip() {
