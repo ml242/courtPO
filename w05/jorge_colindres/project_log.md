@@ -1,7 +1,8 @@
-##ERD
+##Day 1
+###ERD
 http://cl.ly/37430u2D063V
 
-##Stories
+###Stories
 
 - As a site visitor, I want to be able to sign up for the app when I fill out the form with my email and password and clicking 'Submit', so I can create an account
 
@@ -53,14 +54,17 @@ http://cl.ly/37430u2D063V
 
 - As an editor, I want to be able to e- asily propose edits by typing into the article that w- as shared with me and clicking 'Submit Edits' at the bottom of the page.
 
-##Yesterday
+###Yesterday
 I finished up my basic CRUD app, and added in a few additional front-end features. I also finished user authentication.
 
-##Stories to-do
+###Stories to-do
 I still have a few more stories to do related to the relationship between editors, user and shared articles. I hope to have this done on Tuesday.
 
-##Obstacles
+###Obstacles
 I'm still having a little trouble thinking about how the schema will look for the relationship described above. I'll probably work on this on Wednesday.
+
+##Day 2
+###
 
 
 
