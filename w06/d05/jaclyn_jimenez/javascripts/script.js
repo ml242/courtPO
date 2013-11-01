@@ -26,7 +26,9 @@ function StarWars() {
   addEventListener.call(deathStar, "mouseout", hideName)
   addEventListener.call(alderaan, "mouseover", showName)
   addEventListener.call(alderaan, "mouseout", hideName)
-  neverButton.addEventListener("click", destroyAlderaan)
+  neverButton.addEventListener("click", function () {
+    setTimeout(destroyAlderaan, 1000)
+  })
   tell.addEventListener("click", function(event) {
     secret.className = ""
     event.preventDefault()
