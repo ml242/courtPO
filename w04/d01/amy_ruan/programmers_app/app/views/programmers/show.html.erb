@@ -7,9 +7,9 @@
       </li>
     </ul>
   </div>
-    <form action= <%="/programmers/#{@programmer.id}/delete"%> method= "post">
+    <%=form_tag"/programmers/#{@programmer.id}/delete" do %>
       Press to delete programmer
-    <input type="submit" value="Delete"%>
-    </form>
+    <%=submit_tag 'Delete'%>
+    <%end%>
   <div class="editor"><%=link_to("Edit Programmer","/programmers/#{@programmer.id}/edit")%></div>
 
