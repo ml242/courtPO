@@ -15,7 +15,9 @@ window.onload = function(){
     thisNewText.call(this, 'Deathstar');
   });
   buttonNever.addEventListener('click', function(){
-    alderaan.remove();
+    window.setTimeout(function(){
+      alderaan.remove();
+    }, 5000);
   });
   tellLink.addEventListener('click', function(){
     revealItem(secretForm);
