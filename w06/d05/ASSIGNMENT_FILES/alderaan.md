@@ -17,7 +17,7 @@ There should be a link with an `id` of `tell` and a button with an `id` of `neve
 ## Let's talk about events
 If you mouseover `alderaan` or `death-star` their respective names should appear. 
 
-If you click on `button#never` the `alderaan` div should be removed.
+If you click on `button#never` the `alderaan` should be removed.
 
 If you click on `a#tell` make a new form with a text with the name `location` and a button with the id of `secret-coordinates`
 
@@ -26,3 +26,9 @@ If you type `Yavin 4` into `input[name=location]` the `body` background should t
 If you press `H` a text input with the name `help-me` and a button with the id `secret-message` should appear.
 
 If you type `Help me Obi Wan, you're my only hope` into `input[name=help-me]` the background should change to blue.
+
+
+## Bonus
+
+Wait 5 seconds before removing the Alderaan div to heighten the drama!
+
