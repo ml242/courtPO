@@ -9,26 +9,13 @@ function Roller (rollerNumber) {
  else if(this.rollerNumber == 3){
   this.images = document.getElementById("images-3").children;
  }
-
- this.status = true;
+ this.status = false;
    // Load the images in
 }
 
 Roller.prototype.spin = function() {
-  // var images = this.images;
-  // if(this.status == true){
-  //   for(var i=0;i<images.length;i++){
-  //       var count = i;
-  //       var a = images[i];
-  //       var b = images[count];
-  //       b.className="appear"
-  //       setTimeout(function() {
-  //         a.className="hidden"
-  //         }, 2000);
-  //   }
-    // debugger;
+  this.status = true
   }
-}
 
 Roller.prototype.stop = function() {
   this.curIndex = Math.floor(Math.random()*10);

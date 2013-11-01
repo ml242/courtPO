@@ -55,9 +55,7 @@ SlotMachine.prototype.start = function() {
     images[0].className = "hidden"
   }
 
-  this.roller1.status = true;
-  this.roller1.status = true;
-  this.roller1.status = true;
+
   this.roller1.spin();
   this.roller2.spin();
   this.roller3.spin();
@@ -89,7 +87,7 @@ SlotMachine.prototype.stopRoller = function(rollerNumber) {
 
 SlotMachine.prototype.checkWinOrLose = function() {
     images = document.getElementsByClassName("unhidden");
-    if(images[0].src===images[1].src===images[2].src){
+    if(images[0].src===images[1].src && images[1].src ===images[2].src){
       alert("you win")
       this.game_won.textContent++
     }
