@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Sandbox</title>
+
+
+    <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/2.1.3/normalize.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+
+    <script src="javascripts/sound_board.js"></script>
+
+    <!-- syntax highlighting -->
+    <link rel="stylesheet" href="http://yandex.st/highlightjs/7.4/styles/solarized_dark.min.css">
+    <script src="http://yandex.st/highlightjs/7.4/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+  </head>
+  <body>
+    <div class="wrapper">
+
+
+    <h1>Instructions</h1>
+    <p>Make sure you are reading through the source code in Sublime and also make sure that you open the <a href="https://developers.google.com/chrome-developer-tools/">Chrome Developer Tools</a> and can see console messages printing out. Here is a <a href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events#Standard_events">comprehensive list</a> of a bunch of events.</p>
+
+
+    <!--====================-->
+    <!--1. Click -->
+
+    <h1>About Click</h1>
+    <p id="clickMeForMoreInfo" class="border"><strong><em>Click Me For More Info</em></strong></p>
+
+    <pre><code class="javascript">
+var clickMeForMoreInfo = document.getElementById("clickMeForMoreInfo");
+var functionToRunWhenClicked = function(e) {
+  alert("I am function1, open debugger and take a look at what is inside of e, which stands for event. I will console.log out the entire event and important properties.");
+
+  console.log("\nLogging out 'e', which stands for 'event'");
+  console.log(e);
+
+  console.log("\nLogging out 'e.target'");
+  console.log(e.target);
+
+  console.log("\nLogging out 'e.type'");
+  console.log(e.type);
+}
+
+clickMeForMoreInfo.addEventListener("click", functionToRunWhenClicked); // This makes it all happen!
+
+    </code></pre>
+
+    <script>
+      var clickMeForMoreInfo = document.getElementById("clickMeForMoreInfo");
+      var functionToRunWhenClicked = function(e) {
+        alert("I am functionToRunWhenClicked, open debugger and take a look at what is inside of e, which stands for event. I will console.log out the entire event and important properties.");
+
+        console.log("\nLogging out 'e', which stands for 'event'");
+        console.log(e);
+
+        console.log("\nLogging out 'e.target'");
+        console.log(e.target);
+
+        console.log("\nLogging out 'e.type'");
+        console.log(e.type);
+      }
+
+      clickMeForMoreInfo.addEventListener("click", functionToRunWhenClicked); // This makes it all happen!
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--====================-->
+    <!--2. On Click Demo -->
+
+    <h1>On Click Demo</h1>
+    <p id="clickMeToAddText" class="border"><strong><em>Click Me To Add Text</em></strong></p>
+    <div id="textBox"></div>
+
+    <pre><code class="javascript">
+var clickMeToAddText = document.getElementById("clickMeToAddText");
+var textBox = document.getElementById("textBox");
+var functionToAddText = function(e) {
+  textBox.innerHTML += "You Clicked Me!<br>";
+}
+
+clickMeToAddText.addEventListener("click", functionToAddText);
+    </code></pre>
+
+    <script>
+      var clickMeToAddText = document.getElementById("clickMeToAddText");
+      var textBox = document.getElementById("textBox");
+      var functionToAddText = function(e) {
+        textBox.innerHTML += "You Clicked Me!<br>";
+      }
+
+      clickMeToAddText.addEventListener("click", functionToAddText);
+
+    </script>
+
+
+
+
+
+
+    <div class="question">
+      <h2 id="growthClickOnBox">Task: Can you make it so that if you click on these words, it will add "Yay! I did it! Growth mindset!" to the box below:</h2>
+
+      <div id="question1-box" class="border">This the the box below.</div>
+    </div>
+
+    <script>
+      var clickGrowthMindset = document.getElementById("growthClickOnBox");
+      var growthTextBox = document.getElementById("question1-box");
+      var growthMindsetFunction = function(e) {
+        growthTextBox.innerHTML += "Yay! I did it! Growth mindset!</br>";
+      }
+
+      clickGrowthMindset.addEventListener("click", growthMindsetFunction);
+    </script>
+
+
+
+
+
+
+
+    <!--====================-->
+    <!--3. On Click Demo -->
+
+    <h1>On Mouse Down &amp; On Mouse Up</h1>
+    <p id="clickMeSlowly" class="border"><strong>Click Me,<em> Slowly</em></strong></p>
+    <div id="slowBox"></div>
+
+    <pre><code class="javascript">
+var clickMeSlowly = document.getElementById("clickMeSlowly");
+
+var slowBox = document.getElementById("slowBox");
+
+var fnToRunOnMouseDown = function(e) {
+  slowBox.innerHTML += "You Moused down<br>";
+}
+clickMeSlowly.addEventListener("mousedown", fnToRunOnMouseDown);
+
+var fnToRunOnMouseUp = function(e) {
+  slowBox.innerHTML += "You Moused UP<br>";
+}
+clickMeSlowly.addEventListener("mouseup", fnToRunOnMouseUp);
+
+    </code></pre>
+
+    <script>
+      var clickMeSlowly = document.getElementById("clickMeSlowly");
+
+      var slowBox = document.getElementById("slowBox");
+
+      var fnToRunOnMouseDown = function(e) {
+        slowBox.innerHTML += "You Moused down<br>";
+      }
+      clickMeSlowly.addEventListener("mousedown", fnToRunOnMouseDown);
+
+      var fnToRunOnMouseUp = function(e) {
+        slowBox.innerHTML += "You Moused UP<br>";
+      }
+      clickMeSlowly.addEventListener("mouseup", fnToRunOnMouseUp);
+    </script>
+
+
+
+
+
+    <div class="question">
+      <h2>Task: Can you make it so that if you mouse down on these words, it will change the text below to <span style="color: green;">green</span> and when you mouseup it will change it back to <span style="color: red;">red</span>? </h2>
+
+      <div id="question2-box" class="border" style="color: red;">The below text should change from red to green.</div>
+
+      <p>
+        Hint:
+
+        <pre><code class="javascript">
+document.getElementById("question2-box").style.color = "green";
+        </code></pre>
+      </p>
+    </div>
+
+    <script>
+      var clickDown = document.getElementById("question2-box");
+
+      var greenOnDown = function(e) {
+        clickDown.style.color = "green";
+      }
+
+      var redOnUp = function(e) {
+        clickDown.style.color = "red";
+      }
+
+      clickDown.addEventListener("mousedown", greenOnDown);
+      clickDown.addEventListener("mouseup", redOnUp);
+
+    </script>
+
+
+
+
+
+
+
+
+
+    <!--====================-->
+    <!--4. You Hovered Over Me  -->
+
+    <h1>mouseover &amp; mouseout</h1>
+    <p id="mouseOverMe" class="border"><strong><em>I Like It When You mouseover and mouseout of me</em></strong></p>
+    <div id="mouseOverBox"></div>
+
+    <pre><code class="javascript">
+var mouseOverMe = document.getElementById("mouseOverMe");
+var mouseOverBox = document.getElementById("mouseOverBox");
+
+var fnToRunOnMouseOver = function() {
+  mouseOverBox.innerHTML += "You moused OVER me...<br>";
+}
+mouseOverMe.addEventListener("mouseover", fnToRunOnMouseOver);
+
+var fnToRunOnMouseOut = function() {
+  mouseOverBox.innerHTML += "You moused out<br>";
+}
+mouseOverMe.addEventListener("mouseout", fnToRunOnMouseOut);
+    </code></pre>
+
+    <script>
+      var mouseOverMe = document.getElementById("mouseOverMe");
+      var mouseOverBox = document.getElementById("mouseOverBox");
+
+      var fnToRunOnMouseOver = function() {
+        mouseOverBox.innerHTML += "You moused OVER me...<br>";
+      }
+      mouseOverMe.addEventListener("mouseover", fnToRunOnMouseOver);
+
+      var fnToRunOnMouseOut = function() {
+        mouseOverBox.innerHTML += "You moused out<br>";
+      }
+      mouseOverMe.addEventListener("mouseout", fnToRunOnMouseOut);
+    </script>
+
+
+
+
+
+
+    <div class="question">
+      <h2>Task: Make the below box's background  <span style="color: orange;">yellow</span> when you're mousing over of me, and change it back to white when you are not over me.</h2>
+
+      <div id="question4-box" class="border">This box should change to yellow.</div>
+    </div>
+
+    <script>
+      var yellowBox = document.getElementById("question4-box");
+
+      var turnYellowOnOver = function(e) {
+        yellowBox.style.color = "orange";
+      }
+
+      var turnWhiteOnExit = function(e) {
+        yellowBox.style.color = "white";
+      }
+
+      yellowBox.addEventListener("mouseover", turnYellowOnOver);
+      yellowBox.addEventListener("mouseout", turnWhiteOnExit);
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--====================-->
+    <!--5. Form Stuff -->
+
+    <h1>Now what about Forms</h1>
+
+    <p>Try clicking around on the input fields and fill them out. Try submitting real data.</p>
+
+    <form id="form1" action="http://google.com">
+      <input name="name" id="nameInput" placeholder="name">
+      <input name="email" id="emailInput" placeholder="email">
+      <input type="submit">
+    </form>
+
+
+    <div id="form1Box">Form Log:<br></div>
+
+    <pre><code class="javascript">
+var form1 = document.getElementById("form1");
+var nameInput = document.getElementById("nameInput");
+var emailInput = document.getElementById("emailInput");
+var form1Box = document.getElementById("form1Box");
+
+form1.addEventListener("submit", function(e){
+  form1Box.innerHTML += "Your name is " + nameInput.value + ", youre email is " + emailInput.value + "You Attempted To Submit The Form but you were prevented by 'e.preventDefault();'<br>"
+  e.preventDefault();
+});
+
+nameInput.addEventListener("focus", function(e){
+  form1Box.innerHTML += "FOCUSED on the name input<br>"
+});
+
+nameInput.addEventListener("blur", function(e){
+  form1Box.innerHTML += "blurred on name%3Cbr%3E"
+});
+
+emailInput.addEventListener("focus", function(e){
+  form1Box.innerHTML += "FOCUSED on the email input<br>"
+});
+
+emailInput.addEventListener("blur", function(e){
+  form1Box.innerHTML += "blurred on email<br>"
+});
+    </code></pre>
+    <script>
+      var form1 = document.getElementById("form1");
+      var nameInput = document.getElementById("nameInput");
+      var emailInput = document.getElementById("emailInput");
+      var form1Box = document.getElementById("form1Box");
+
+      form1.addEventListener("submit", function(e){
+        form1Box.innerHTML += "Your name is " + nameInput.value + ", youre email is " + emailInput.value + "You Attempted To Submit The Form but you were prevented by 'e.preventDefault();'<br>"
+        e.preventDefault();
+      });
+
+      nameInput.addEventListener("focus", function(e){
+        form1Box.innerHTML += "FOCUSED on the name input<br>"
+      });
+
+      nameInput.addEventListener("blur", function(e){
+        form1Box.innerHTML += "blurred on name<br>"
+      });
+
+      emailInput.addEventListener("focus", function(e){
+        form1Box.innerHTML += "FOCUSED on the email input<br>"
+      });
+
+      emailInput.addEventListener("blur", function(e){
+        form1Box.innerHTML += "blurred on email<br>"
+      });
+    </script>
+
+
+
+
+
+
+
+
+
+    <div class="question">
+      <h2>Create another form with an id of 'login_form' . Have it take two inputs, where one of the inputs has an id of 'email', and the other one has an id of 'pass'. After creating the form, make it so that when you submit the form, instead of submitting it, it creates an alert message with the login information and password. Do this with document.getElementById
+
+      <br><br>
+      Now try running this code on FB's site in private browsing mode.
+      </h2>
+
+
+    </div>
+
+    <form id="login_form">
+      <input name="email" id="inputEmail" placeholder="email">
+      <input name="pass" id="inputPassword" placeholder="password">
+      <input type="submit">
+    </form>
+
+    <script>
+      // when the submit button is clicked
+      // pull objects and then paste in dialog box
+      var email = document.getElementById("inputEmail");
+      var password = document.getElementById("inputPassword");
+      var form = document.getElementById("login_form");
+
+      var submitAlertAction = function(e) {
+        alert("You just submitted your email: " + email.value + " and password: " + password.value + " to Nigeria.  Thank you!");
+          e.preventDefault();
+      }
+
+      form.addEventListener("submit", submitAlertAction);
+    </script>
+
+
+
+
+    <!--====================-->
+    <!--5. Form Stuff -->
+
+    <h1>Keyboard</h1>
+    <p>Tippy Typey Tooey</p>
+    <blockquote>In order to understand the difference between keydown and keypress, it is useful to understand the difference between a "character" and a "key". A "key" is a physical button on the computer's keyboard while a "character" is a symbol typed by pressing a button.  In theory, the keydown and keyup events represent keys being pressed or released, while the keypress event represents a character being typed. The implementation of the theory is not same in all browsers.<cite><a href="http://www.bloggingdeveloper.com/post/KeyPress-KeyDown-KeyUp-The-Difference-Between-Javascript-Key-Events.aspx">KeyPress, KeyDown, KeyUp - The Difference Between Javascript Key Events</a></cite></blockquote>
+<pre><code class="javascript">
+function keyDownSurprise(event) {
+  var letter = String.fromCharCode(event.keyCode);
+  // keyCode always returns the unicode value of the uppercase version of a character
+  if (letter == "J") {
+    console.log("you're holding down j");
+  }
+};
+
+document.body.addEventListener("keydown", keyDownSurprise);
+
+function keyUpSurprise(event) {
+  var letter = String.fromCharCode(event.keyCode);
+  if (letter == "J") {
+    console.log("You stopped pressing j");
+  }
+}
+
+document.body.addEventListener("keyup", keyUpSurprise);
+
+
+function keyPressSurprise(event) {
+  var letter = String.fromCharCode(event.keyCode);
+  var blockquote = document.getElementsByTagName('blockquote')[0];
+  blockquote.textContent = blockquote.textContent + letter;
+};
+
+document.body.addEventListener("keypress", keyPressSurprise)
+</code></pre>
+<script>
+function keyDownSurprise(event) {
+  var letter = String.fromCharCode(event.keyCode);
+  // keyCode always returns the unicode value of the uppercase version of a character
+  if (letter == "J") {
+    console.log("you're holding down j");
+  }
+};
+
+document.body.addEventListener("keydown", keyDownSurprise);
+
+function keyUpSurprise(event) {
+  var letter = String.fromCharCode(event.keyCode);
+  if (letter == "J") {
+    console.log("You stopped pressing j");
+  }
+}
+
+document.body.addEventListener("keyup", keyUpSurprise);
+
+
+function keyPressSurprise(event) {
+  var letter = String.fromCharCode(event.keyCode);
+  var blockquote = document.getElementsByTagName('blockquote')[0];
+  blockquote.textContent = blockquote.textContent + letter;
+};
+
+document.body.addEventListener("keypress", keyPressSurprise);
+</script>
+<div class="question">
+  <h2>Can you make an alert pop up everytime a user releases 't'?</h2>
+  <h2>Can you make an alert pop up after a user presses down 'X' 10 times?</h2>
+</div>
+
+<script>
+  function tPress(e) {
+    var tLetter = String.fromCharCode(event.keyCode);
+    if (tLetter == "T") {
+    alert("you pressed " + tLetter);
+    }
+  }
+
+  document.body.addEventListener("keydown", tPress);
+
+  var counter = 0;
+
+  function xCount(e) {
+    var xLetter = String.fromCharCode(event.keyCode);
+    if (xLetter == "X" && counter == 4) {
+      alert("BOO!!!! Happy Halloween!");
+    } else if (xLetter == "X") {
+      counter++;
+    }
+  }
+
+  document.body.addEventListener("keydown", xCount);
+
+</script>
+
+
+
+
+
+
+
+    <h1>What is an Event?</h1>
+    <pre>
+      Client-side JavaScript programs use an asyncronous event-driven programming model. When something happens in the web browser, an event is generated. If the JavaScript program has been made to respond to this event, the code in the associated function is run. One or more functions can be bound to an event.
+
+      An example of an event might be a page load, mouse click, button press, mouseover, etc..
+
+      This programming model isn't unique to JavaScript, but is shared by all applications with GUIs. Essentially, they are waiting for something to happen and then responding to it.
+
+      Events themselves are not JavaScript objects. They are things that happen in your browser, and your JavaScript responds to.
+
+      The event type is a string that tells which kind of event occurred. "keydown" is an event type for when a key has been pressed on the keyboard. "mouse move" means that the user moved the mouse. These are just strings.
+
+      load
+      click
+      mouseover
+      mousedown
+      keypress
+      The event target is the objects on which the event occurred or is associated with. Some of the most common ones are Window, Document and Element objects.
+
+      The event object is an object associated with the particular event and contains the details about that event. They are passed as an argument of the event handler function. These objects all have a type property that specifies the event type and a target property that specifies the target. Additional information such as the mouse coordinates might be passed along, or the key that was pressed. Some others don't carry much more useful information.
+
+      Some events have default actions associated with them, which are often what we expect the items to do. For example, when you click on a link the browser's default behavior is to follow the link and load a new page. We can change this action's behavior and prevent a page from loading. This is sometimes called "canceling" the event.
+
+
+    </pre>
+
+
+
+
+
+
+    </div>
+  </body>
+</html>
