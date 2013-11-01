@@ -1,1 +1,1 @@
-var slotMachine = new SlotMachine();
+new SlotMachine();
