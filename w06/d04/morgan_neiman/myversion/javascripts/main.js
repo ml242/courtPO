@@ -1,2 +1,1 @@
-var Spooky =
-Spooky || {};
+var slotMachine = new SlotMachine();
