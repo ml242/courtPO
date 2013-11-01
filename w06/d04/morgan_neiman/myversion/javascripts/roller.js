@@ -1,25 +1,9 @@
 function Roller (rollerNode) {
   var name = "roller-" + rollerNode;
-  this.name = name
+  this.name = name;
   this.images = document.getElementById(name).getElementsByTagName('img');
   this.spinning = false;
 }
-
-
-// var counter = 0;
-// var makeStop = false;
-// var roller = Roller(1);
-
-// function spinForever(roller, counter) {
-//     roller.images[counter].className = "hidden";
-//     counter += 1;
-//     roller.images[counter].className = "showing";
-//     roller.value = counter;
-//     if(counter == 10){
-//       counter = 0;
-//     }
-//     t = setTimeout(funtion(){spinForever(roller, counter)}, 1000);
-// }
 
 
 Roller.prototype.spin = function() {
