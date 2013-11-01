@@ -19,8 +19,9 @@ window.onload = function(){
       alderaan.remove();
     }, 5000);
   });
-  tellLink.addEventListener('click', function(){
+  tellLink.addEventListener('click', function(e){
     revealItem(secretForm);
+    e.preventDefault();
   });
   locationInput.addEventListener('keyup', function(){
     checkInputValue.call(this, 'Yavin 4', 'green', 'red');
