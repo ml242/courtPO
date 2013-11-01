@@ -1,11 +1,6 @@
 // this Method is used to instantiate a new SlotMachine object.
 
 SlotMachine = function() {
-  // I need to setup my eventListeners so that when hand is clicked
-  // the .start method will be clicked
-
-  var handleNode = document.getElementById("handle");
-  handleNode.addEventListener("click", this.start);
 
   this.roller1 = new Roller(1);
   this.roller2 = new Roller(2);
@@ -17,6 +12,12 @@ SlotMachine = function() {
   // as opposed to the slot machine
   var mySlotMachine = this;
 
+  // I need to setup my eventListeners so that when hand is clicked
+  // the .start method will be clicked
+  var handleNode = document.getElementById("handle");
+  handleNode.addEventListener("click", function(){
+    mySlotMachine.start();
+  });
   // In the lines below I set my eventListeners to stop a particular roller
   // when that roller's partner button is clicked
   var button1 = document.getElementById("button-1");
@@ -77,9 +78,13 @@ SlotMachine.prototype.checkWinOrLose = function() {
   // determins if you have won or not and does the appropiate "messaging"
   console.log('checking if you won or lost!');
   if (slotMachine.fates[0].src == slotMachine.fates[1].src && slotMachine.fates[0].src == slotMachine.fates[2].src) { alert('You won!');}
-  else { alert('You lose, obviously!');}
+  else { alert('You lose!');}
   // resets the fates array so users can play again.
+  slotMachine.fates[0].className='hidden';
+  slotMachine.fates[1].className='hidden';
+  slotMachine.fates[2].className='hidden';
   slotMachine.fates = []
+
 }
 
 
