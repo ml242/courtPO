@@ -13,7 +13,8 @@ function Roller(rollerNumber) {
 }
 
 Roller.prototype.spin = function() {
-  // don't do anything, wtv
+  this.spinning = true;
+  // need to clear image above each button
 }
 
 Roller.prototype.stop = function() {

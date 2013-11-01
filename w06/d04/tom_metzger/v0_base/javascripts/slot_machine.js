@@ -3,27 +3,41 @@ SlotMachine = function() {
     // this will call the .start method
 
   var handleNode = document.getElementById("handle");
-  handleNode.addEventListener("click", this.start);
+
+  var mySlotMachine = this;
+  // INCORRECT  handleNode.addEventListener("click", this.start);
+  handleNode.addEventListener("click", function() {
+    mySlotMachine.start();
+  });
 
   this.roller1 = new Roller(1);
   this.roller2 = new Roller(2);
   this.roller3 = new Roller(3);
-
-  var mySlotMachine = this;
 
   var button1 = document.getElementById("button-1")
   button1.addEventListener("click", function() {
     mySlotMachine.stopRoller(1);
   });
 
+  var button2 = document.getElementById("button-2")
+  button2.addEventListener("click", function() {
+    mySlotMachine.stopRoller(2);
+  });
+
+  var button3 = document.getElementById("button-3")
+  button3.addEventListener("click", function() {
+    mySlotMachine.stopRoller(3);
+  });
+
 
   //  I need to setup my eventListeners so that when I click on the button
     // it tells the appropriate roller to stop
-    //
+    // DONE
 }
 
 // some event listener that when the hand is pulled
 // it calls my .start method
+// DONE ABOVE
 
 SlotMachine.prototype.start = function() {
   console.log("Started!")
