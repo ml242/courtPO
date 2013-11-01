@@ -1,0 +1,42 @@
+<h1><%= @article.title %></h1>
+<article><%= @article.body %></article>
+<p><%= @article.created_at %></p>
+
+
+
+<%= link_to "Edit Post", "#{@article.id}/edit" %>
+
+<%= form_tag "/articles/#{@article.id}/delete" %>
+<%= submit_tag 'Delete', data: { confirm: "Are you sure?" } %>
+
+<%= link_to "Home", "/articles" %>
+
+<%#= link_to "Delete Post", "#{@article.id}/delete" %>
+
+<h2>Comments:</h2>
+<%= link_to "Comment on this Post", "/comments/new" %>
+<ol>
+  <% @comments_array.each do |comment| %>
+    <li>
+    <%= comment.title %>
+    <%= comment.body %>
+    <%= comment.created_at %>
+    <%= link_to "Edit Comment", "/comments/#{comment.id}/edit" %>
+    <%= form_tag "/comments/#{comment.id}/delete" %>
+    <%= submit_tag 'Delete Comment', data: { confirm: "Are you sure?" } %>
+    </li>
+  <% end %>
+</ol>
+
+
+<h3>notes on bugs</h3>
+<p>currently when creating a comment the id of the article is not automatically added to the comment's :article_id field</p>
+<p>delete comment button deletes entire article</p>
+
+<!-- figure out how to send the article name & id to the comments form -->
+
+<%#= form_for @article do |f| %>
+<%#= f.hidden_field(@articleid) %>
+<%#= f.submit_tag(Comment on this Article)  %>
+<%# end %>
+<%#= link_to "Comment on this Article", "/comments/new" %>

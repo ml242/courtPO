@@ -1,0 +1,32 @@
+
+function theBalrog() {
+  // change the 'Gandalf' textNode to 'Gandalf the White'
+  // apply style to the element
+  // make the background 'white', add a grey border
+}
+
+function hornOfGondor() {
+  // pop up an alert that the horn of gondor has been blown
+  // Boromir's been killed by the Uruk-hai!
+  // put a linethrough on boromir's name
+  // Remove the Uruk-Hai from the Baddies on the page
+  // Remove Boromir from the Fellowship
+  // Put Boromir in the Footer
+}
+
+function itsDangerousToGoAlone(){
+  // take Frodo and Sam out of the fellowship and move them to Mordor
+  // add a div with an id of 'mount-doom' to Mordor
+}
+
+function weWantsIt() {
+  // Create a div with an id of 'gollum' and add it to Mordor
+  // Remove the ring from Frodo and give it to Gollum
+  // Move Gollum into Mount Doom
+}
+
+function thereAndBackAgain() {
+  // remove Gollum and the Ring from the document
+  // remove all the baddies from the document
+  // Move all the hobbits back to the shire
+}
