@@ -1,0 +1,1 @@
+var slotMachine = new SlotMachine();
