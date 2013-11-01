@@ -1,5 +1,12 @@
 Week 6 Day 2 HW
 ============
+
+### Part 1
+Your assignment is to closely read this article on Prototypes in Javascript! You are expected to read it before class tomorrow and will be helpful for your homework and will explain anything that we may have missed in class today!
+
+[http://msdn.microsoft.com/en-us/magazine/ff852808.aspx](http://msdn.microsoft.com/en-us/magazine/ff852808.aspx)
+
+### Part 2
 Apply your knowledge of JavaScript to solve a problem we've already tackled in Ruby.
 Create a program that models a simple subway system. The program takes the line and stop that a user is getting on at and the line and stop that user is getting off at and returns the total number of stops for the trip.
 

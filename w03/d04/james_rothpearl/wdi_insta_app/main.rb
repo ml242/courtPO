@@ -43,9 +43,14 @@ end
 
 get '/new' do
   #this route will show a form that will allow a user to create a new photo
+    # the form will have
+        # a method: POST
+        # and action:
   #
 
 end
+
+post '/new' do
 
 
 

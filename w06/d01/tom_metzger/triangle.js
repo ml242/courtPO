@@ -101,4 +101,53 @@ console.log(isObtuse(triangle));
 
 
 
+var triangle = {
+  sideA: 3,
+  sideB: 4,
+  sideC: 4,
+  isEquilateral: function(triangle){
+    if (triangle.sideA === triangle.sideB && triangle.sideB === triangle.sideC){
+      return "This triangle is equilateral";
+    } else {
+      return "This is not an equilateral triangle";
+    }
+  },
+  isEquilateral: function(triangle){
+    if (triangle.sideA === triangle.sideB && triangle.sideB === triangle.sideC){
+      return "This triangle is equilateral";
+    } else {
+      return "This is not an equilateral triangle";
+    }
+  },
+};
+
+
+
+
+var isIsosceles = function(triangle){
+  if (triangle.sideA === triangle.sideB || triangle.sideB === triangle.sideC){
+    return "This triangle is isosceles";
+  } else {
+    return "This is not an isosceles triangle";
+  }
+};
+
+var calcArea = function(triangle){
+  var perimeter = triangle.sideA + triangle.sideB + triangle.sideC;
+  return Math.sqrt(perimeter * (perimeter - triangle.sideA) * (perimeter - triangle.sideB) * (perimeter - triangle.sideC))
+};
+
+
+
+var isObtuse = function(triangle){
+  var triArray = [triangle.sideA, triangle.sideB, triangle.sideC].sort();
+  if (Math.pow(triArray[0],2) + Math.pow(triArray[1],2) < Math.pow(triArray[2],2)){
+    return "This is and obtuse triangle";
+  } else if (Math.pow(triArray[0],2) + Math.pow(triArray[1],2) > Math.pow(triArray[2],2)){
+    return "This is an acute triangle";
+  } else {
+    "This is a right triangle";
+  }
+}
+
 
