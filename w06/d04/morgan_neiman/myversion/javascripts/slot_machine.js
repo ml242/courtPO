@@ -84,8 +84,10 @@ SlotMachine = function() {
   rollerName = "roller" + rollerNumber;
   if(this[rollerName].spinning === true) {
     this[rollerName].stop();
+    this.playCoin();
   // I also want to check if all the other rollers have stopped, if they have
   if(!this.roller1.spinning && !this.roller2.spinning && !this.roller3.spinning){
+    this.stopSpin();
     this.checkWinOrLose();
   }
 }
@@ -98,11 +100,13 @@ SlotMachine = function() {
   var gamesWon = document.getElementsByClassName("games-won")[0];
   this.totalGames += 1;
   if(this.roller1.value == this.roller2.value == this.roller3.value) {
+    this.playWin();
     alert("you won!");
     this.gamesWon += 1;
     gamesWon = this.gamesWon;
   }
   else {
+    this.playLose();
     alert("you lose");
   }
   totalGames.textContent = this.totalGames;
