@@ -20,11 +20,11 @@
 // subwaySystem.addLine()
 
 function SubwaySystem(name) {
-
+  var lines = {}
 }
 
 SubwaySystem.prototype.addLine = function(name, stations) {
-  return new Line(name, stations);
+  lines[name] = stations;
 }
 
 SubwaySystem.prototype.getInfo = function(question) {
