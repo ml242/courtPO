@@ -5,7 +5,7 @@ WDIBelt.version = 0.2;
 WDIBelt.each = function(array, func) {
   for (var index = 0; index < array.length; index++) {
     var element = array[index];
-    func(element);
+    func.call(element, index);
   }
 }
 
