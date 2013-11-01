@@ -79,10 +79,12 @@ SlotMachine.prototype.stopRoller =  function(rollerNumber) {
 
 SlotMachine.prototype.checkWinOrLose = function() {
   // determine if you have won or not and does the appropiate "messaging"
-  if (this.roller1.curIndex === this.roller2.curIndex && this.roller2.curIndex === this.roller3.curIndex) {
-    alert("You win!");
-  } else {
-    alert("You lose!");
+  if (this.roller1.spinning === false && this.roller2.spinning === false && this.roller3.spinning === false) {
+    if (this.roller1.this.curIndex === this.roller2.this.curIndex && this.roller2.this.curIndex === this.roller3.this.curIndex) {
+      alert("You win!");
+    } else {
+      alert("You lose!");
+    }
   }
 }
-mySlotMachine.checkWinOrLose();
+// mySlotMachine.checkWinOrLose();

@@ -15,7 +15,7 @@ function Roller(rollerNumber) {
 
 Roller.prototype.spin = function() {
   this.spinning = true;
-  this.images[this.curIndex].hide();
+  // this.images[this.curIndex].hide();
 }
 
 Roller.prototype.stop = function() {
