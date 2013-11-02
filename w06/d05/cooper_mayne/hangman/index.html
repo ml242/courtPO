@@ -5,6 +5,24 @@
   <link rel='stylesheet' type='text/css' href='style.css'>
 </head>
 <body>
+
+<a id='reset' href=#>new game</a>
+
+<form id="guess_form" action="#" method="#" accept-charset="utf-8">
+  letter: <input type="text" name="letter" value="">
+  <input type="submit" value="Continue &rarr;">
+</form>
+
+<div id="current_guessed">
+  <!--this is where the current_guessed display goes--> 
+
+</div>
+<div>
+  <h3>Wrong guesses so far: (<span id='guess_count'></span>)</h3>
+  <div id="guess_list">
+
+  </div>
+</div>
 <script src="hangman.js"></script>
 <script src="main.js"></script>
 </body>
