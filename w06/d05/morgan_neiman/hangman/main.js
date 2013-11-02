@@ -7,9 +7,18 @@
     var guess = input.value;
     if(guess.length == 1) {
       game.takeGuess(guess);
+      var guessed = document.getElementById("letters-guessed");
+      guessed.innerHTML += guess + ", ";
     }
     else {
       alert("only one letter at a time");
     }
   }
   );
+
+  var button2 = document.getElementById("button2");
+  button2.addEventListener("click", function() {
+    var wordInput = document.getElementById("word-input");
+    var wordGuess = wordInput.value;
+    game.wordGuess(wordGuess);
+  });
