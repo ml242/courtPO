@@ -1,0 +1,58 @@
+@font-face {
+  font-family: "Rope";
+  src: url('Rope MF.ttf') format("truetype");
+}
+
+.header {
+  font-family: "Rope", sans-serif;
+  font-size: 100px;
+  text-align: center;
+}
+
+.menu {
+  width: 370px;
+  margin: 0 auto;
+}
+.menu-item {
+  margin: 0 50px;
+  float: left;
+}
+
+.letters {
+  width: 50px;
+  margin: 30px auto;
+  text-align: center;
+}
+
+.letters input {
+  font-size: 40px;
+  width: 40px;
+  text-align: center;
+}
+
+.answer {
+  font-size: 50px;
+  text-align: center;
+  clear: both;
+}
+
+.figure {
+  font-size: 30px;
+  text-align: center;
+  margin: 30px 0 0 0;
+}
+
+.timer {
+  font-size: 28px;
+  text-align: center;
+  margin: 30px 0 0 0;
+}
+
+.guesses {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  font-size: 25px;
+  text-align: center;
+  color: #af111c;
+}

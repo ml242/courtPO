@@ -1,6 +1,7 @@
 function StickFigure () {
 
-  this.one = return "
+  this.one = function() {
+    return '
     +-----+
     |     |
     |     |
@@ -15,9 +16,11 @@ function StickFigure () {
 
 
 
-  "
+  '
+  }
 
-  this.two = return "
+  this.two = function() {
+    return "
     +-----+
     | x x |
     | --- |
@@ -33,8 +36,10 @@ function StickFigure () {
 
 
   "
+  }
 
-  this.three = return "
+  this.three = function() {
+    return "
     +-----+
     | x x |
     | --- |
@@ -50,8 +55,10 @@ function StickFigure () {
 
 
   "
+  }
 
-  this.four = return "
+  this.four = function() {
+    return "
     +-----+
     | x x |
     | --- |
@@ -67,8 +74,10 @@ function StickFigure () {
 
 
   "
+  }
 
-  this.five = return "
+  this.five = function() {
+    return "
     +-----+
     | x x |
     | --- |
@@ -84,8 +93,10 @@ function StickFigure () {
 
 
   "
+  }
 
-  this.six = return "
+  this.six = function() {
+    return "
     +-----+
     | x x |
     | --- |
@@ -101,8 +112,10 @@ function StickFigure () {
 
 
   "
+  }
 
-  this.seven = return "
+  this.seven = function() {
+    return "
     +-----+
     | x x |
     | --- |
@@ -118,8 +131,10 @@ function StickFigure () {
       +
   +--+
   "
+  }
 
-  this.eight = return "
+  this.eight = function() {
+    return "
     +-----+
     | x x |
     | --- |
@@ -133,7 +148,7 @@ function StickFigure () {
        +
        +
       + +
-  +--+   +--+
-  "
+  +--+   +--+"
+  }
 
 }
