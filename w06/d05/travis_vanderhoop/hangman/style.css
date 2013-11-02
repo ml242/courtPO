@@ -1,0 +1,17 @@
+#header {
+  height:250px;
+}
+
+#hangman-container {
+margin: 0 auto;
+}
+
+#gallows-image {
+  position:absolute;
+  top:50px;
+  left: 200px;
+}
+
+h1, p {
+  text-align: center;
+}
