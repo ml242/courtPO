@@ -3,8 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <title>Hangman</title>
+  <style>
+    .letter {
+      display: inline-block;
+      text-align: center;
+      width: 1em;
+      margin: 5px;
+      padding: 0;
+      border-bottom: 2px solid black;
+    }
+    .hidden{
+      color: white;
+    }
+    .visible {
+      margin: 5px;
+    }
+    form {
+      margin: 25px 0;
+    }
+  </style>
 </head>
 <body>
+  <div id="secretWord"></div>
+  <form id="userGuessForm">
+    <input type="text" placeholder="Make a guess" id="userGuess">
+    <input type="submit">
+  </form>
   <script src="hangman.js"></script>
 </body>
 </html>
