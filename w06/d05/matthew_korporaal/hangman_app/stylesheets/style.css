@@ -1,0 +1,41 @@
+body {
+  text-align:center;
+}
+
+.score-board {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  font-family: "Century Gothic", "Arial";
+  font-weight: 700;
+  font-size: 40px;
+}
+
+.game-board {
+  margin: 0 auto;
+}
+
+
+.letter {
+  /*background-color: red;*/
+  display: inline-block;
+  width: 20%;
+}
+
+.letter .images img {
+  width: 100%;
+  height: 100%;
+}
+
+
+.start {
+  top: 0;
+  right: 0;
+  position: absolute;
+  height: 20px;
+  width: 60px;
+}
+
+.start img {
+  width: 80%;
+}

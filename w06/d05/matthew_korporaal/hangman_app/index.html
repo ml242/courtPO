@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>Hangman</title>
+
+  <link rel="stylesheet" type="text/css" href="stylesheets/reset.css">
+  <link rel="stylesheet" type="text/css" href="stylesheets/helpers.css">
+  <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+</head>
+<body>
+  <div class="score-board">
+    <span class="games-won">0</span> /
+    <span class="games-lost">0</span>
+  </div>
+  <div class="game-board">
+
+    <div class="letter">
+      <div class="images">
+        <a href="#" class="hidden letters"><img src="/images/alphabet/a.ico">A</a>
+        <a class="hidden" href="#"><img class="hidden" src="images/alphabet/b.ico">B</a>
+        <a class="hidden" href="#"><img class="hidden" src="images/alphabet/c.ico">C</a>
+        <a class="hidden" href="#"><img class="hidden" src="images/alphabet/d.ico">D</a>
+        <a class="hidden" href="#"><img class="hidden" src="images/alphabet/e.ico">E</a>
+        <a class="hidden" href="#"><img class="hidden" src="images/alphabet/f.ico">F</a>
+        <a class="hidden" href="#"><img class="hidden" src="images/alphabet/g.ico">G</a>
+        <a class="hidden" href="#"><img class="hidden" src="images/alphabet/h.ico">H</a>
+        <a class="hidden" href="#"><img class="hidden" src="images/alphabet/i.ico">I</a>
+        <a class="hidden" href="#"><img class="hidden" src="images/alphabet/j.ico">J</a>
+        <a class="hidden" href="#"><img class="hidden" src="images/alphabet/k.ico">K</a>
+        <a class="hidden" href="#"><img class="hidden" src="images/alphabet/l.ico">L</a>
+        <a class="hidden" href="#"><img class="hidden" src="images/alphabet/m.ico">M</a>
+        <a class="hidden" href="#"><img class="hidden" src="images/alphabet/n.ico">N</a>
+        <a class="hidden" href="#"><img class="hidden" src="images/alphabet/o.ico">O</a>
+        <a class="hidden" href="#"><img class="hidden" src="images/alphabet/p.ico">P</a>
+        <a class="hidden" href="#"><img class="hidden" src="images/alphabet/q.ico">Q</a>
+        <a class="hidden" href="#"><img class="hidden" src="images/alphabet/r.ico">R</a>
+        <a class="hidden" href="#"><img class="hidden" src="images/alphabet/s.ico">S</a>
+        <a class="hidden" href="#"><img class="hidden" src="images/alphabet/t.ico">T</a>
+        <a class="hidden" href="#"><img class="hidden" src="images/alphabet/u.ico">U</a>
+        <a class="hidden" href="#"><img class="hidden" src="images/alphabet/v.ico">V</a>
+        <a class="hidden" href="#"><img class="hidden" src="images/alphabet/w.ico">W</a>
+        <a class="hidden" href="#"><img class="hidden" src="images/alphabet/x.ico">X</a>
+        <a class="hidden" href="#"><img class="hidden" src="images/alphabet/y.ico">Y</a>
+        <a class="hidden" href="#"><img class="hidden" src="images/alphabet/z.ico">Z</a>
+      </div>
+
+    </div>
+    <div id="man">
+      <a id="wrong-guess" class="hidden"><img class="hidden" src="images/0.png">0</a>
+      <a id="wrong-guess" class="hidden"><img class="hidden" src="images/1.png">1</a>
+      <a id="wrong-guess" class="hidden"><img class="hidden" src="images/2.png">2</a>
+      <a id="wrong-guess" class="hidden"><img class="hidden" src="images/3.png">3</a>
+      <a id="wrong-guess" class="hidden"><img class="hidden" src="images/4.png">4</a>
+      <a id="wrong-guess" class="hidden"><img class="hidden" src="images/5.png">5</a>
+      <a id="wrong-guess" class="hidden"><img class="hidden" src="images/6.png">6</a>
+      <a id="wrong-guess" class="hidden"><img class="hidden" src="images/7.png">7</a>
+      <a id="wrong-guess" class="hidden"><img class="hidden" src="images/8.png">8</a>
+      <a id="wrong-guess" class="hidden"><img class="hidden" src="images/9.png">9</a>
+    </div>
+    <div id="answer"></div>
+    <div class="start">
+      <input id="start-button" type="button" value="start">
+<!--     <img src="images/hand.png">
+--> </div>
+</div>
+
+
+<!-- Javascripts -->
+<script src="javascripts/lib/wdibelt.js"></script>
+<script src="javascripts/data.js"></script>
+
+<script src="javascripts/image.js"></script>
+<script src="javascripts/game.js"></script>
+<script src="javascripts/main.js"></script>
+
+</body>
+</html>
