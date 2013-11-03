@@ -1,11 +1,14 @@
 var HangmanGame = HangmanGame || {}
 
 HangmanGame.Hangman = function() {
-  this.guesses = []; // initialize guesses, always starts at 0
+  this.wrong_guesses = []; // initialize wrong_guesses, always starts at 0
+  this.current_guessed = [];
   this.guessLimit = 6; //set it here for easy changing later
   this.games_won = 0;
   this.games = 0;
-  this.word_list = ["lo", "sed", "accumsan", "aliquam", "enim", "etiam", "hendrerit"];
+  this.word_list =   
+
+["acres", "adult", "advice", "arrangement", "attempt", "August", "Autumn", "border", "breeze", "brick", "calm", "canal", "Casey", "cast", "chose", "claws", "coach", "constantly", "contrast", "cookies", "customs", "damage", "Danny", "deeply", "depth", "discussion", "doll", "donkey", "Egypt", "Ellen", "essential", "exchange", "exist", "explanation", "facing", "film", "finest", "fireplace", "floating", "folks", "fort", "garage", "grabbed"]
 
   // set up these DOM pointers for later use....
   this.guessesElement = document.getElementById('guess_list');
@@ -35,6 +38,7 @@ HangmanGame.Hangman = function() {
 HangmanGame.Hangman.prototype.setUpAGame = function() {
   //start a new round
   this.word = this.word_list[this.games].split("");
+  this.wrong_guesses = [];
   this.current_guessed = [];
   this.displayGame();
 }
@@ -57,7 +61,7 @@ HangmanGame.Hangman.prototype.correctGuess = function(letter) {
 
 HangmanGame.Hangman.prototype.wrongGuess = function(letter) {
   //handle incorrect guess
-  this.guesses.push(letter);
+  this.wrong_guesses.push(letter);
   if(this.hasLost()){
     this.winLose.textContent = 'You Lost!';
   };
@@ -74,7 +78,7 @@ HangmanGame.Hangman.prototype.hasWon = function() {
 
 HangmanGame.Hangman.prototype.hasLost = function() {
   //check if user has lost this round and direct appropriately
-  if( this.guesses.length >= this.guessLimit ) {
+  if( this.wrong_guesses.length >= this.guessLimit ) {
     return true;
   } else {
     return false;
@@ -82,16 +86,18 @@ HangmanGame.Hangman.prototype.hasLost = function() {
 }
 
 HangmanGame.Hangman.prototype.clearDisplay = function() {
-   for (var i = 0; i < this.currentGuessedElement.children.length; i++) {
-     this.currentGuessedElement.children[i].remove();
-   };
+  this.currentGuessedElement.innerHTML = "";
+  this.winLose.textContent = "";
 }
 
 HangmanGame.Hangman.prototype.displayGame = function() {
 
   //this manages the current_word diplay
+
+  var total_guesses = this.current_guessed.filter(function(n){return n}).length + this.wrong_guesses.length
+
   for (var i = 0; i < this.word.length; i++) {
-    if (this.currentGuessedElement.children.length != this.word.length) {
+    if (total_guesses == 0) {
       // sets up empty spans for the new rounds
       var letterSpan = document.createElement('span');
       letterSpan.className = 'letter';
@@ -105,17 +111,16 @@ HangmanGame.Hangman.prototype.displayGame = function() {
   };
 
   //deal with the wrong guess display
-  this.guessesElement.textContent = this.guesses.join(', ');
+  this.guessesElement.textContent = this.wrong_guesses.join(', ');
   
   // deal with the guess form
   this.guessFormElement.children[0].value = "";
 
   // deal with the hangman's body picture...
-  for (var i = 0; i < this.guesses.length; i++) {
+  for (var i = 0; i < this.wrong_guesses.length; i++) {
     if(i<6){this.addBodyPart(i)};
   };
 }
-
 
 HangmanGame.Hangman.prototype.addBodyPart = function(i) {
   this.hangmanBodyParts[i+2].attributes[0].value = 'make-visible';
