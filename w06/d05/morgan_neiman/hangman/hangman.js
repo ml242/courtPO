@@ -9,6 +9,7 @@
     this.secretWord = this.wordList[num];
     this.secretWordArray = this.secretWord.split("");
     var answerDiv = document.getElementById("answer");
+    answerDiv.innerHTML = "Word: <br> ";
     var wordDiv = document.createElement("div");
     wordDiv.id = "word-div";
     for(i = 0; i < this.secretWord.length; i++) {
