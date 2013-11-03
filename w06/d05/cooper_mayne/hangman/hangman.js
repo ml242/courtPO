@@ -88,6 +88,9 @@ HangmanGame.Hangman.prototype.hasLost = function() {
 HangmanGame.Hangman.prototype.clearDisplay = function() {
   this.currentGuessedElement.innerHTML = "";
   this.winLose.textContent = "";
+  for (var i = 0; i < 6; i++) {
+  this.hangmanBodyParts[i+2].attributes[0].value = 'make-invis';
+  };
 }
 
 HangmanGame.Hangman.prototype.displayGame = function() {
@@ -117,6 +120,7 @@ HangmanGame.Hangman.prototype.displayGame = function() {
   this.guessFormElement.children[0].value = "";
 
   // deal with the hangman's body picture...
+  debugger;
   for (var i = 0; i < this.wrong_guesses.length; i++) {
     if(i<6){this.addBodyPart(i)};
   };
