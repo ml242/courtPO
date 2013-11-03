@@ -1,66 +1,101 @@
 var hangman = new Hangman();
-// var stickFigure = new StickFigure();
 
-function startTheGame() {
+var GameElements = GameElements || {};
 
-  var menu = document.getElementsByClassName('menu')[0];
-  // remove the start game button
-  if (menu.children[0]) {
-    var startButton = menu.children[0];
+GameElements.addHint = function() {
+  var hintButton = document.getElementById('menu-hint');
+  if (!hintButton) {
+    var menu = document.getElementsByClassName('menu')[0],
+        hint = document.createElement('div');
+    hint.className = 'menu-item';
+    hint.id = 'menu-hint';
+    hint.textContent = 'Gimme a hint';
+    menu.appendChild(hint);
+    hint.addEventListener('click', function() {
+      GameFunctions.getHint();
+      menu.removeChild(hint);
+      setTimeout(function(){
+        GameFunctions.loadProgress();
+      }, 10);
+    });
+  }
+}
+
+GameElements.removeHint = function() {
+  var hintButton = document.getElementById('menu-hint');
+  if (hintButton) {
+    hintButton.parentNode.removeChild(hintButton);
+  }
+}
+
+GameElements.addStart = function() {
+  var startButton = document.getElementById('menu-start');
+  if (!startButton) {
+    var menu = document.getElementsByClassName('menu')[0],
+        startGame = document.createElement('div');
+    startGame.className = 'menu-item';
+    startGame.id = 'menu-start';
+    startGame.textContent = 'Click to play again';
+    menu.appendChild(startGame);
+    startGame.addEventListener('click', function() {
+      GameFunctions.startGame();
+    });
+  }
+}
+
+GameElements.removeStart = function() {
+  var startButton = document.getElementById('menu-start');
+  if (startButton) {
     startButton.parentNode.removeChild(startButton);
   }
+}
 
-  // Add the hint button
-  var hint = document.createElement('div');
-  hint.className = 'menu-item';
-  hint.id = 'menu-hint';
-  hint.textContent = 'Gimme a hint';
-  menu.appendChild(hint);
-  hint.addEventListener('click', function() {
-    getHint();
-    menu.removeChild(hint);
-    setTimeout(function(){
-      loadProgress();
-    }, 10);
-  });
-
-
-
-  // initialize figure div
+GameElements.figureReset = function() {
   var figure = document.getElementsByClassName('figure')[0];
   figure.textContent = '';
+}
 
-  hangman.startGame();
+GameElements.addInput = function() {
+  var theLetterInput = document.getElementById('letter-input');
+  if (!theLetterInput) {
+    var letterInput = document.createElement('input');
+    letterInput.id = 'letter-input';
+    letterInput.placeholder = '?';
 
-  loadProgress();
+    var lettersDiv = document.getElementsByClassName('letters')[0];
+    lettersDiv.appendChild(letterInput);
 
-  // initialize input
-  var letterInput = document.createElement('input');
-  letterInput.id = 'letter-input';
-  letterInput.placeholder = '?';
-  var lettersDiv = document.getElementsByClassName('letters')[0];
-  lettersDiv.appendChild(letterInput);
+    // scroll down on input focus
+    letterInput.addEventListener('focus', function(){
+      setTimeout(function(){
+        scrollTo(0,200);
+      },10);
+    }, false);
 
-  letterInput.addEventListener('focus', function(){
-    setTimeout(function(){
-      scrollTo(0,200);
-    },10);
-  }, false);
+    // focus on the input
+    letterInput.focus();
 
-  letterInput.focus();
+    // listen for letters
+    letterInput.addEventListener('keyup', function(){
+      var theLetter = letterInput.value;
+      hangman.guessLetter(theLetter);
+      letterInput.value = '';
+      GameFunctions.loadProgress();
+    });
+  }
+}
 
-  // listen for letters
-  letterInput.addEventListener('keyup', function(){
-    var theLetter = letterInput.value;
-    hangman.guessLetter(theLetter);
-    letterInput.value = '';
-    loadProgress();
-  });
+GameElements.removeInput = function() {
+  var letterInput = document.getElementById('letter-input');
+  if (letterInput) {
+    letterInput.parentNode.removeChild(letterInput);
+  }
+}
 
-  // set the game number
+GameElements.addTimer = function() {
+  // set game number for unique timers
   var gameNumber = hangman.gameNumber;
 
-  // start timer
   var timeLeft = 60;
   var timerDiv = document.getElementsByClassName('timer')[0];
   timerDiv.textContent = timeLeft;
@@ -73,43 +108,42 @@ function startTheGame() {
   };
 
   var deadManInterval = setInterval(function() {
+
     if (hangman.gameNumber !== gameNumber) {
+      // if the game number has changed, abort this interval
       clearInterval(deadManInterval);
     } else if (timeLeft > 0) {
+      // if there is time left, run the function
       deadManTimeLeft();
     } else {
+      // time has run out
       timerDiv.textContent = 'Time\'s up!';
       clearInterval(deadManInterval);
-      letterInput.parentNode.removeChild(letterInput);
+
+      GameElements.removeInput();
       // remove the hint button
-      var menuHint = document.getElementById('menu-hint');
-      if (menuHint) {
-        menuHint.parentNode.removeChild(menuHint);
-      }
+      GameElements.removeHint();
 
       // add the start game button
-      var menu = document.getElementsByClassName('menu')[0],
-          startGame = document.createElement('div');
-      startGame.className = 'menu-item';
-      startGame.id = 'menu-start';
-      startGame.textContent = 'Click to play again';
-      menu.appendChild(startGame);
-      startGame.addEventListener('click', function() {
-        startTheGame();
-      });
+      GameElements.addStart();
 
       // reveal the secret word
       hangman.progress = hangman.secretBackup;
+
+      // refresh the answer
+      GameFunctions.loadProgress();
+
+      // set the answer color to red
       var answer = document.getElementsByClassName('answer')[0];
       answer.style.color = '#af111c';
-      loadProgress();
     }
     timeLeft --;
   }, 1000);
-
 }
 
-function loadProgress() {
+var GameFunctions = GameFunctions || {};
+
+GameFunctions.loadProgress = function() {
   // load correct answers
   var answer = document.getElementsByClassName('answer')[0];
   answer.textContent = '';
@@ -135,37 +169,25 @@ function loadProgress() {
     figureDiv.textContent = 'Dead man hanging!';
 
     // remove letter input
-    var letterInput = document.getElementById('letter-input');
-    letterInput.parentNode.removeChild(letterInput);
+    GameElements.removeInput();
 
     // remove the hint button
-    var menuHint = document.getElementById('menu-hint');
-    if (menuHint) {
-      menuHint.parentNode.removeChild(menuHint);
-    }
+    GameElements.removeHint();
 
     // add the start game button
-    var menu = document.getElementsByClassName('menu')[0],
-        startGame = document.createElement('div');
-    startGame.className = 'menu-item';
-    startGame.id = 'menu-start';
-    startGame.textContent = 'Click to play again';
-    menu.appendChild(startGame);
-    startGame.addEventListener('click', function() {
-      startTheGame();
-    });
+    GameElements.addStart();
 
     // revealing secret word
     hangman.progress = hangman.secretBackup;
-    var answer = document.getElementsByClassName('answer')[0];
-    answer.style.color = '#af111c';
-    answer.textContent = '';
+    var theAnswer = document.getElementsByClassName('answer')[0];
+    theAnswer.style.color = '#af111c';
+    theAnswer.textContent = '';
     for (i=0; i < hangman.progress.length; i++) {
       if (hangman.progress[i] === undefined) {
-        answer.textContent += '_ ';
+        theAnswer.textContent += '_ ';
       } else {
-        answer.textContent += hangman.progress[i];
-        answer.textContent += ' ';
+        theAnswer.textContent += hangman.progress[i];
+        theAnswer.textContent += ' ';
       }
     }
 
@@ -184,39 +206,42 @@ function loadProgress() {
     hangman.gameNumber ++;
 
     // announce win
-    var figureDiv = document.getElementsByClassName('figure')[0];
-    figureDiv.textContent = 'Blondie saves Tuco.';
+    var theFigureDiv = document.getElementsByClassName('figure')[0];
+    theFigureDiv.textContent = 'Blondie saves Tuco.';
 
     // remove letter input
-    var letterInput = document.getElementById('letter-input');
-    letterInput.parentNode.removeChild(letterInput);
-    var menuHint = document.getElementById('menu-hint');
-    menuHint.parentNode.removeChild(menuHint);
+    GameElements.removeInput();
 
     // add start game button
-    var menu = document.getElementsByClassName('menu')[0];
-    var startGame = document.createElement('div');
-    startGame.className = 'menu-item';
-    startGame.id = 'menu-start';
-    startGame.textContent = 'Click to play again';
-    menu.appendChild(startGame);
-    startGame.addEventListener('click', function() {
-      startTheGame();
-    });
+    GameElements.addStart();
 
   }
-}
+};
 
-function getHint() {
+GameFunctions.getHint = function() {
   hangman.hint();
   var letterInput = document.getElementById('letter-input');
-  letterInput.focus();
-   setTimeout(function(){
-    scrollTo(0,200);
-  },10);
-}
+  if (letterInput) {
+    letterInput.focus();
+     setTimeout(function(){
+      scrollTo(0,200);
+    },10);
+  }
+};
 
+
+GameFunctions.startGame = function() {
+  hangman.startGame();
+
+  GameElements.removeStart();
+  GameElements.addHint();
+  GameElements.addInput();
+  GameElements.figureReset();
+  GameElements.addTimer();
+
+  GameFunctions.loadProgress();
+};
 
 (function setUpGame(){
-  startTheGame();
+  GameFunctions.startGame();
 })();

@@ -76,9 +76,6 @@ and (max-device-width : 480px) {
   .menu {
     width: 380px;
   }
-  .menu-item {
-    margin-left:
-  }
   .letters {
     margin: 60px auto 0 auto;
   }
