@@ -38,7 +38,7 @@ function startTheGame() {
   if (document.getElementById('letter-input') === null) {
     var letterInput = document.createElement('input');
     letterInput.id = 'letter-input';
-    letterInput.placeholder = '_';
+    // letterInput.placeholder = '_';
     var lettersDiv = document.getElementsByClassName('letters')[0];
     lettersDiv.appendChild(letterInput);
 
@@ -50,8 +50,16 @@ function startTheGame() {
     });
   }
 
-  // set the game number
+  // focus on the input
+  var inputToFocus = document.getElementById('letter-input');
+  inputToFocus.focus();
 
+  // scroll to the bottom of the page
+  setTimeout(function(){
+    scrollTo(0,200);
+  },10);
+
+  // set the game number
   var gameNumber = hangman.gameNumber;
 
   // start timer
@@ -101,10 +109,13 @@ function loadProgress() {
     figureDiv.textContent = '1 guess left!';
   } else {
     figureDiv.textContent = 'Dead man hanging!';
+    var letterInput = document.getElementById('letter-input');
+    letterInput.parentNode.removeChild(letterInput);
+    hangman.gameNumber ++;
   }
 
   var guessesDiv = document.getElementsByClassName('guesses')[0];
-  guessesDiv.textContent = '';
+  guessesDiv.innerHTML = '&nbsp;';
   for (i=0; i < hangman.guesses.length; i++) {
     guessesDiv.textContent += hangman.guesses[i];
   }
@@ -112,6 +123,8 @@ function loadProgress() {
 
 function getHint() {
   hangman.hint();
+  var letterInput = document.getElementById('letter-input');
+  letterInput.focus();
 }
 
 

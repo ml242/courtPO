@@ -3,6 +3,14 @@
   src: url('Rope MF.ttf') format("truetype");
 }
 
+body {
+  -webkit-text-size-adjust:none;
+}
+
+.container {
+  overflow:hidden;
+}
+
 .header {
   font-family: "Rope", sans-serif;
   font-size: 100px;
@@ -49,10 +57,28 @@
 }
 
 .guesses {
-  position: absolute;
-  width: 100%;
-  bottom: 0;
   font-size: 25px;
   text-align: center;
   color: #af111c;
+}
+
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+  .menu {
+    width: 380px;
+  }
+  .menu-item {
+    margin: 0 40px;
+  }
+  .letters {
+    margin: 60px auto 0 auto;
+  }
+  .letters input {
+    font-size: 28px;
+    width: 30px;
+  }
+  .answer {
+    font-size: 40px;
+  }
 }
