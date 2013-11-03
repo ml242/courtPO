@@ -8,11 +8,13 @@ HangmanGame.Hangman = function() {
   this.word_list = ["lo", "sed", "accumsan", "aliquam", "enim", "etiam", "hendrerit"];
 
   // set up these DOM pointers for later use....
-  this.guessCountElement = document.getElementById('guess_count');
   this.guessesElement = document.getElementById('guess_list');
   this.currentGuessedElement = document.getElementById('current_guessed');
   this.guessFormElement = document.getElementById('guess_form');
   this.resetElement = document.getElementById('reset');
+  this.winLose = document.getElementById('win-lose');
+  this.hangmanBodyParts = document.getElementById('hangmans-body').children;
+
   var that = this;
 
   this.guessFormElement.addEventListener('submit', function(e){
@@ -22,6 +24,7 @@ HangmanGame.Hangman = function() {
   })
   this.resetElement.addEventListener('click', function(e) {
     that.games++;
+    that.clearDisplay();
     that.setUpAGame();
     e.preventDefault();
   })
@@ -33,7 +36,6 @@ HangmanGame.Hangman.prototype.setUpAGame = function() {
   //start a new round
   this.word = this.word_list[this.games].split("");
   this.current_guessed = [];
-  console.log(this.word);
   this.displayGame();
 }
 
@@ -48,13 +50,17 @@ HangmanGame.Hangman.prototype.correctGuess = function(letter) {
   for (var i = 0; i < this.word.length; i++) {
     if (this.word[i] == letter) { this.current_guessed[i] = letter }  
   };
-  this.hasWon();
+  if(this.hasWon()){
+    this.winLose.textContent = 'You Won!';
+  };
 }
 
 HangmanGame.Hangman.prototype.wrongGuess = function(letter) {
   //handle incorrect guess
   this.guesses.push(letter);
-  this.hasLost();
+  if(this.hasLost()){
+    this.winLose.textContent = 'You Lost!';
+  };
 }
 
 HangmanGame.Hangman.prototype.hasWon = function() {
@@ -75,6 +81,12 @@ HangmanGame.Hangman.prototype.hasLost = function() {
   }
 }
 
+HangmanGame.Hangman.prototype.clearDisplay = function() {
+   for (var i = 0; i < this.currentGuessedElement.children.length; i++) {
+     this.currentGuessedElement.children[i].remove();
+   };
+}
+
 HangmanGame.Hangman.prototype.displayGame = function() {
 
   //this manages the current_word diplay
@@ -93,10 +105,18 @@ HangmanGame.Hangman.prototype.displayGame = function() {
   };
 
   //deal with the wrong guess display
-  this.guessCountElement.textContent = this.guesses.length;
   this.guessesElement.textContent = this.guesses.join(', ');
   
   // deal with the guess form
   this.guessFormElement.children[0].value = "";
 
+  // deal with the hangman's body picture...
+  for (var i = 0; i < this.guesses.length; i++) {
+    if(i<6){this.addBodyPart(i)};
+  };
+}
+
+
+HangmanGame.Hangman.prototype.addBodyPart = function(i) {
+  this.hangmanBodyParts[i+2].attributes[0].value = 'make-visible';
 }
