@@ -6,10 +6,12 @@ function Hangman(){
   this.incorrectGuesses = 0;
   this.gameNumber = 0;
   this.secretWord = '';
+  this.secretBackup = '';
 }
 
 Hangman.prototype.newWord = function() {
   this.secretWord = WDIBelt.random(this.wordList);
+  this.secretBackup = this.secretWord;
 };
 
 Hangman.prototype.guessLetter = function(letter) {
