@@ -212,6 +212,8 @@ GameFunctions.loadProgress = function() {
     // remove letter input
     GameElements.removeInput();
 
+    GameElements.removeHint();
+
     // add start game button
     GameElements.addStart();
 

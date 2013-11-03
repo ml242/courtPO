@@ -17,10 +17,11 @@ Hangman.prototype.newWord = function() {
 Hangman.prototype.guessLetter = function(letter) {
   if (WDIBelt.contains(this.secretWord.split(''), letter) === true ) {
     // user guessed right
-    this.correctGuesses++;
 
     while (WDIBelt.contains(this.secretWord.split(''), letter) === true ) {
       // this while loop accounts for repeated letters
+      this.correctGuesses++;
+
       var letterIndex = this.secretWord.indexOf(letter);
       this.progress[letterIndex] = letter;
 
