@@ -8,7 +8,7 @@ function startTheGame() {
     var hint = document.createElement('div');
     hint.className = 'menu-item';
     hint.id = 'menu-hint';
-    hint.textContent = 'Gimme a hint!';
+    hint.textContent = 'Gimme a hint';
     menu.appendChild(hint);
     hint.addEventListener('click', function() {
       getHint();
@@ -111,6 +111,8 @@ function loadProgress() {
     figureDiv.textContent = 'Dead man hanging!';
     var letterInput = document.getElementById('letter-input');
     letterInput.parentNode.removeChild(letterInput);
+    var menuHint = document.getElementById('menu-hint');
+    menuHint.parentNode.removeChild(menuHint);
     hangman.gameNumber ++;
   }
 
@@ -123,6 +125,8 @@ function loadProgress() {
   if (hangman.checkProgress() === true) {
     var letterInput = document.getElementById('letter-input');
     letterInput.parentNode.removeChild(letterInput);
+    var menuHint = document.getElementById('menu-hint');
+    menuHint.parentNode.removeChild(menuHint);
     var figureDiv = document.getElementsByClassName('figure')[0];
     figureDiv.textContent = 'Blondie saves Tuco.';
     hangman.gameNumber ++;
@@ -142,7 +146,7 @@ function getHint() {
   var startGame = document.createElement('div');
   startGame.className = 'menu-item';
   startGame.id = 'menu-start';
-  startGame.textContent = 'New Game!';
+  startGame.textContent = 'New Game';
   menu.appendChild(startGame);
   startGame.addEventListener('click', function() {
     startTheGame();
