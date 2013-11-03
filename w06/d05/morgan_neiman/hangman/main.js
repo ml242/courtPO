@@ -22,3 +22,14 @@
     var wordGuess = wordInput.value;
     game.wordGuess(wordGuess);
   });
+
+  var giveUp = document.getElementById("give-up");
+  giveUp.addEventListener("click", function() {
+    var answerDiv = document.getElementById("answer");
+    answerDiv.innerHTML = "<div id='word-div'>The word was: " + game.secretWord + ". You lose!</div>";
+  });
+
+  var reset = document.getElementById("reset");
+  reset.addEventListener("click", function() {
+    game.won();
+  });

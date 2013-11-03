@@ -5,7 +5,7 @@
 body {
   font-family: 'helvetica';
   font-size: 30px;
-  text-align: center;
+  text-align: left;
 }
 
 #hangman {
@@ -136,5 +136,8 @@ margin-top: 300px;
 margin-top: 50px;
 }
 
+#other-buttons {
+  margin-top: 50px;
+}
 
 
