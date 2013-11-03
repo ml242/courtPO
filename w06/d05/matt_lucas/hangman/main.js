@@ -1,0 +1,3 @@
+myHangMan = new HangMan();
+
+
