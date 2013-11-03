@@ -180,6 +180,9 @@ function loadProgress() {
   }
 
   if (hangman.checkProgress() === true) {
+    // stop timer and increase game count
+    hangman.gameNumber ++;
+
     // announce win
     var figureDiv = document.getElementsByClassName('figure')[0];
     figureDiv.textContent = 'Blondie saves Tuco.';
@@ -201,8 +204,6 @@ function loadProgress() {
       startTheGame();
     });
 
-    // stop timer and increase game count
-    hangman.gameNumber ++;
   }
 }
 
