@@ -119,6 +119,14 @@ function loadProgress() {
   for (i=0; i < hangman.guesses.length; i++) {
     guessesDiv.textContent += hangman.guesses[i];
   }
+
+  if (hangman.checkProgress() === true) {
+    var letterInput = document.getElementById('letter-input');
+    letterInput.parentNode.removeChild(letterInput);
+    var figureDiv = document.getElementsByClassName('figure')[0];
+    figureDiv.textContent = 'Blondie saves Tuco.';
+    hangman.gameNumber ++;
+  }
 }
 
 function getHint() {
