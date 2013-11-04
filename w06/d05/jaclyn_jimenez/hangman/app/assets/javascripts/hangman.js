@@ -2,21 +2,25 @@ function HangManGame() {
 
   var words = ["COMPACT", "DISGUISES", "SMARTEST", "COOKIE", "EXTRA"] //hangman answers
 
+  var hangManDiv = document.createElement('div')
   //create textbox that takes a letter input
+
+//Begin Function Start Game
+function StartGame() {
+  hangManDiv.textContent = ""
+
   var textBox = document.createElement('input')
   textBox.type = "text"
   textBox.className = "textBox"
   textBox.name = "textBox"
-
-  document.body.appendChild(textBox)
+  document.body.appendChild(hangManDiv)
+  hangManDiv.appendChild(textBox)
 
     textBox.addEventListener.call(textBox, "input", function() {
       if (this.value.length > 1) {
           this.value = this.value.substring(1, 2);
       }
   })
-//Begin Function Start Game
-function StartGame() {
 
   var secretIndex = Math.floor(Math.random() * words.length)
   this.secretWord = words[secretIndex] //chooses random word from words array
@@ -45,8 +49,8 @@ function StartGame() {
       letterDiv.appendChild(secretH2)
       secretDiv.appendChild(letterDiv); //puts h2 in the div
     }
-    document.body.appendChild(secretDiv); // adds div to document
-    document.body.insertBefore(secretDiv,textBox);
+    hangManDiv.appendChild(secretDiv); // adds div to document
+    hangManDiv.insertBefore(secretDiv,textBox);
   }
 
   createWordSpace(secretWordArray);
@@ -59,8 +63,9 @@ function StartGame() {
   guessesLeftDiv.id = "guessesLeft"
   guessesLeftDiv.class = "guessesLeft"
   guessesLeftDiv.appendChild(guessesLeftOutput)
-  document.body.insertBefore(guessesLeftDiv, secretDiv)
+  hangManDiv.insertBefore(guessesLeftDiv, secretDiv)
 
+Guesses()
   }
 
 
@@ -98,7 +103,7 @@ function StartGame() {
          return (" " + elem.className + " " ).indexOf( " "+klass+" " ) > -1;
     })
       } else {
-        alert("you lose!")
+        youLose()
       }
     }
 
@@ -110,9 +115,9 @@ function StartGame() {
         numOfHidden -= evaluate(isHidden, numOfHidden)
       }
       if (numOfHidden === 0) { //if none are hidden
-        alert("You win!")
+        youWin()
       } else {
-        console.log("keep going")
+
       }
     };
 
@@ -124,7 +129,30 @@ function StartGame() {
       }
     };
 
-  textBox.addEventListener.call(textBox, "input", function() {
+    function youWin () {
+      var winBox = document.createElement('div')
+      var winText = document.createElement('h3')
+      winText.textContent = "You Win!! Click to Play again"
+      winBox.appendChild(winText)
+      hangManDiv.appendChild(winBox)
+      winBox.addEventListener("click", function (){
+      StartGame()
+    })
+    }
+
+    function youLose() {
+      var loseBox = document.createElement('div')
+      var loseText = document.createElement('h3')
+      loseText.textContent = "You Lose!! Click to Play again"
+      loseBox.appendChild(loseText)
+      hangManDiv.appendChild(loseBox)
+      loseBox.addEventListener("click", function (){
+      StartGame()
+      })
+    }
+
+    textBox = document.getElementsByClassName('textBox')[0]
+  textBox.addEventListener("input", function() {
     if (this.value) {
       var guess = this.value.toUpperCase()
       guessChecker(guess, secretWordArray)
@@ -136,7 +164,6 @@ function StartGame() {
 //end Function Guesses
 
 StartGame()
-Guesses()
 
 }
 
