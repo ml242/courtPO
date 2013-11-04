@@ -5,12 +5,13 @@ function HangMan() {
   var myHangMan = this;
   counter = 0;
   var myWord;
-  var userGuess;
+  var userGuess = [];
   var eValuation;
-  // resets the game when finished
-  // gets the word from the library
   myHangMan.getWord();
   // get target word for game
+  // resets the game when finished
+  // gets the word from the library
+  while (counter < 7 ) {
   myHangMan.guess();
   // evaluates the route of the guess
   // myHangMan.checkLetter("userGuess");
@@ -19,7 +20,7 @@ function HangMan() {
   // checks each place
   // ends game when over
   // control body mechanism
-
+  }
 }
 
 HangMan.prototype.library = [
@@ -38,7 +39,7 @@ HangMan.prototype.library = [
 
 // this.userGuess
 HangMan.prototype.guess = function() {
-  userGuess = prompt("Guess a letter.");
+  userGuess.push(prompt("Guess a letter."));
 };
 
 // gets a word
@@ -55,13 +56,9 @@ HangMan.prototype.checkLetter = function() {
     if (this.eValuation < 0) {
       console.log("fail check", this.myWord, userGuess, this.eValuation);
       counter++;
-      if (counter < 7);
-      this.guess();
     } else {
       alert("pass check");
       console.log(this.myWord, userGuess, this.eValuation);
-      if (counter < 7);
-      this.guess();
     }
   // if letter is present reveal it and its place
   // else add plus one to the scoreboard
