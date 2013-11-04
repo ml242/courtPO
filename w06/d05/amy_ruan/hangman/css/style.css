@@ -84,4 +84,12 @@
   color: transparent;
 }
 
-
+#time {
+  border: 5px solid #facade;
+  height: 2.0em;
+  width: 17.0em;
+  margin-top: 4%;
+  margin-left: 13%;
+  text-align: center;
+  padding-top: 0.5em;
+}

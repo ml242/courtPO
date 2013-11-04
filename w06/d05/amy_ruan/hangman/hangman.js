@@ -3,8 +3,8 @@ var Game = function(){
   this.badGuess = 0;
   this.word = null;
   this.wordChar = [];
+  this.currentTime = null;
   this.blanks = document.getElementsByClassName('blank')
-
   var myGame = this;
   var startButton = document.getElementById("start");
   startButton.addEventListener("click",function(){myGame.start()})
@@ -22,11 +22,16 @@ var Game = function(){
 
   this.badGuessCharBox = document.getElementById("bad_guess_char")
   this.badCharBox = [];
+
+  this.timer = document.getElementById("time")
 }
 
 Game.prototype.start = function() {
+  this.currentTime = new Date
   this.deleteBlanks()
   this.gameStatus = true;
+  this.badGuess = 0;
+  this.badGuessBox.textContent = "Bad Guess #: " + this.badGuess
   this.badGuessCharBox.textContent = null;
   this.word = this.wordChoices.random()
   this.wordChar = this.word.split("")
@@ -38,7 +43,7 @@ Game.prototype.start = function() {
     blank.style.color = "transparent"
     this.secretWord.appendChild(blank)
   }
-  this.badGuess = 0;
+
 }
 
 Game.prototype.guess = function(){
@@ -68,6 +73,7 @@ Game.prototype.guess = function(){
 
 Game.prototype.checkGoodGuess = function(){
   var check = false;
+
   for(var i = 0; i<this.blanks.length; i++){
           var colorElement = this.blanks[i].style.color
           if (colorElement === "transparent"){
@@ -76,12 +82,17 @@ Game.prototype.checkGoodGuess = function(){
     }
     if(!check){
       alert("You win!")
-    }
+      var winTime = new Date
+// time is in milliseconds
+      var totalTime = (winTime - this.currentTime)/60000
+      var totalRoundedTime = Math.round(totalTime*100)/100
+      this.timer.textContent = "You took " + totalRoundedTime + " mins to win the game."
+     }
 }
 
 Game.prototype.recordBadGuess = function(){
   var check = this.badGuess++
-  this.badGuessBox.textContent = "Bad Guess:" + this.badGuess
+  this.badGuessBox.textContent = "Bad Guess #: " + this.badGuess
   this.badCharBox.push(this.guessbox.value)
   this.badGuessCharBox.textContent = this.badCharBox;
   if(check < 7){
@@ -103,7 +114,9 @@ Game.prototype.deleteBlanks = function(){
 Game.prototype.giveup = function(){
   for(var i = 0; i < this.blanks.length; i++){
     element = this.blanks[i]
-    element.style.color = "black"
+    element.style.color = "#FF4400"
+    this.badGuess = 8;
+    this.badGuessBox.textContent = "Bad Guess #: " + this.badGuess
   }
 
 }
