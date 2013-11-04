@@ -1,0 +1,69 @@
+.container{
+  margin-left: 8%;
+  margin-right: 8%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  border: 5px solid #E80C7A;
+  padding: 10%;
+  font-family: Times, serif;
+}
+
+.side{
+  float: right;
+  margin-left: 8%;
+}
+
+#start{
+  margin-right: 5%;
+  height: 4.0em;
+  width: 8.0em;
+  font-size: 1.3em;
+  color: #E80C7A;
+}
+
+
+#bad_guess{
+  height: 2.0em;
+  width: 8.0em;
+  font-size: 1.0em;
+  font-family: Arial, sans-serif;
+  border: 5px solid #facade;
+  margin-left: 10%;
+  margin-top: 20%;
+  vertical-align: center;
+  text-align:center;
+  padding-top: 10%;
+
+}
+
+
+
+#secret_word{
+  border: 5px solid #facade;
+  height: 4.0em;
+  width: 22.0em;
+  font-size: 1.5em;
+  display: table-cell;
+  text-align:center;
+  vertical-align: middle;
+}
+
+#guessbox {
+  height: 2.0em;
+  width: 10.0em;
+  font-size: 1.2em;
+  margin-left: 18%;
+  margin-top: 5%;
+}
+
+.blank {
+  letter-spacing: 10px;
+  display: inline;
+  margin: 1%;
+  border-bottom: 2px solid grey;
+  text-align:center;
+  padding-left: 10px;
+  color: transparent;
+}
+
+
