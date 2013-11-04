@@ -29,13 +29,24 @@ Hangman.prototype.playGame = function() {
   this.correctGuesses = [];
   this.keepPlaying = true;
 
-  while (this.keepPlaying) {
+  while (this.keepPlaying === true) {
+    //debugger;
     this.askForInput();
     this.checkTheInput();
-    if (this.incorrectGuesses.length === 8) {
+    this.setTheInput();
+    if (this.incorrectGuesses.length >= 8) {
       this.keepPlaying = false;
+    } else if (this.correctGuesses.length === this.secretWord.length) {
+      this.keepPlaying = false;
+      alert('you won');
     }
+    console.log("Current input: " + this.currentInput);
+    console.log(this.secretWord);
+    console.log(this.correctGuesses);
+    console.log(this.incorrectGuesses);
   }
+
+
 }
 
 Hangman.prototype.askForInput = function() {
@@ -47,18 +58,23 @@ Hangman.prototype.checkTheInput = function() {
   var secretWordArray = this.secretWord.split('');
 
   for (var i = 0; i < secretWordArray.length; i++) {
+    //debugger;
     var letter = secretWordArray[i];
     if (this.currentInput === letter) {
-      this.correctGuesses.push(this.currentInput);
+      this.inputMatch = true;
+      break;
     } else {
-      this.incorrectGuesses.push(this.currentInput);
+      this.inputMatch = false;
     }
   }
+}
 
-  console.log("Current input: " + this.currentInput);
-  console.log(this.secretWord);
-
-  this.keepPlaying = false;
+Hangman.prototype.setTheInput = function() {
+  if (this.inputMatch) {
+    this.correctGuesses.push(this.currentInput);
+  } else {
+    this.incorrectGuesses.push(this.currentInput);
+  }
 }
 
 
