@@ -120,7 +120,6 @@ HangmanGame.Hangman.prototype.displayGame = function() {
   this.guessFormElement.children[0].value = "";
 
   // deal with the hangman's body picture...
-  debugger;
   for (var i = 0; i < this.wrong_guesses.length; i++) {
     if(i<6){this.addBodyPart(i)};
   };
