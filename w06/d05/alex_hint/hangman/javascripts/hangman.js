@@ -31,6 +31,7 @@ Hangman.prototype.playGame = function() {
     this.askForInput();
     this.checkTheInput();
     this.setTheInput();
+    //move to another function outside
     if (this.incorrectGuesses.length >= 8) {
       this.keepPlaying = false;
       alert('you lost');
