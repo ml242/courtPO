@@ -62,15 +62,17 @@ Game.prototype.guess = function(){
 }
 
 Game.prototype.checkGoodGuess = function(){
-var blanks = document.getElementsByClassName('blank')
-for(var i = 0; i<blanks.length; i++){
-        var secretChar = blanks[i].textContent
-        if (inputElement == secretChar){
-          blanks[i].style.color = "black"
-          this.guessbox.value = null;
-          check = true
-        }
-  }
+  var blanks = document.getElementsByClassName('blank')
+  var check = false;
+  for(var i = 0; i<blanks.length; i++){
+          var colorElement = blanks[i].style.color
+          if (colorElement === "transparent"){
+            check = true
+          }
+    }
+    if(!check){
+      alert("You win!")
+    }
 }
 
 Game.prototype.recordBadGuess = function(){
