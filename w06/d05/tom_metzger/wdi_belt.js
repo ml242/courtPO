@@ -21,11 +21,11 @@ WDIBelt.map = function(array, func) {
 
 
 
-function say(element) {
+function say(element, i) {
   // debugger
   if (element === s3) {
     console.log( "It's a Trap!");
-    console.log(index)
+    console.log(i)
   } else {
     console.log( "May the force be with you");
   }

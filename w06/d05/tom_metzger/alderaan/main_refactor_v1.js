@@ -20,6 +20,7 @@ deathStar.addEventListener("mouseout", hideName);
 
 function destroyAlderaan(e) {
   alderaan.parentNode.removeChild(alderaan);
+// make this take 5 seconds, bonus--- add an alert wiht a countdown
 }
 
 never.addEventListener("click", destroyAlderaan);
