@@ -76,11 +76,19 @@ Game.prototype.checkGoodGuess = function(){
 }
 
 Game.prototype.recordBadGuess = function(){
-  this.badGuess++
+  var check = this.badGuess++
+  if(check < 7){
   this.badGuessBox.textContent = "Bad Guess:" + this.badGuess
   this.badCharBox.push(this.guessbox.value)
   this.badGuessCharBox.textContent = this.badCharBox;
   this.guessbox.value = null;
+  }
+  else{
+    this.badGuessBox.textContent = "Bad Guess:" + this.badGuess
+    this.badCharBox.push(this.guessbox.value)
+    this.badGuessCharBox.textContent = this.badCharBox;
+    alert("You lost!")
+  }
 }
 
 
