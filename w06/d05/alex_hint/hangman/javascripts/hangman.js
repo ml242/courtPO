@@ -1,11 +1,8 @@
 //The game selects a random word from a word list and makes that the secret word
 //The player guesses one letter at a time, trying to figure out what the word is
 //If the player guesses correctly, any instances of that letter are revealed in the secret word
-
 //If the player guesses incorrectly, they are penalized by taking away a guess
-
 //If a player reveals all of the letters of the secret word, they win
-
 //If a player makes 8 incorrect guesses before solving the secret word, they lose
 
 Hangman = function() {
@@ -36,7 +33,7 @@ Hangman.prototype.playGame = function() {
     this.setTheInput();
     if (this.incorrectGuesses.length >= 8) {
       this.keepPlaying = false;
-    } else if (this.correctGuesses.length === this.secretWord.length) {
+    } else if (this.correctGuesses.length >= this.secretWord.length) {
       this.keepPlaying = false;
       alert('you won');
     }
@@ -45,8 +42,6 @@ Hangman.prototype.playGame = function() {
     console.log(this.correctGuesses);
     console.log(this.incorrectGuesses);
   }
-
-
 }
 
 Hangman.prototype.askForInput = function() {
@@ -56,7 +51,6 @@ Hangman.prototype.askForInput = function() {
 Hangman.prototype.checkTheInput = function() {
   //turn the secret word into array
   var secretWordArray = this.secretWord.split('');
-
   for (var i = 0; i < secretWordArray.length; i++) {
     //debugger;
     var letter = secretWordArray[i];
@@ -71,7 +65,12 @@ Hangman.prototype.checkTheInput = function() {
 
 Hangman.prototype.setTheInput = function() {
   if (this.inputMatch) {
-    this.correctGuesses.push(this.currentInput);
+    var secretWordArray = this.secretWord.split('');
+    for (var i = 0; i < secretWordArray.length; i++) {
+    var letter = secretWordArray[i];
+    if (this.currentInput === letter) {
+    this.correctGuesses.push(this.currentInput)}
+    }
   } else {
     this.incorrectGuesses.push(this.currentInput);
   }
