@@ -1,3 +1,1 @@
-myHangMan = new HangMan();
-
-
+var myHangMan = new HangMan();
