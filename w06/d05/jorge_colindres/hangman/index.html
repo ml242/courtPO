@@ -18,6 +18,12 @@
     .visible {
       margin: 5px;
     }
+    .no-display {
+      display: none;
+    }
+    .yes-display {
+      display: inline-block;
+    }
     form {
       margin: 25px 0;
     }
@@ -31,6 +37,8 @@
     <input type="text" placeholder="Make a guess" id="userGuess" autocomplete="off">
     <input type="submit">
   </form>
+  <button id="giveUp">Give Up</button>
+  <button id="restartGame" class="no-display">Play Again</button>
   <script src="hangman.js"></script>
 </body>
 </html>
