@@ -1,0 +1,27 @@
+.planet {
+  height: 120px;
+  width: 120px;
+  border: 1px solid rgba(30,30,30,1);
+  border-radius: 50%;
+  margin: 20px;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+p {
+  padding:25%;
+  text-align: center;
+}
+
+#death-star{
+  background-color: rgba(0,0,0,1);
+  color: rgba(255,255,255,1);
+}
+
+#alderaan {
+  background-color: rgba(50,50,255,0.8);
+  color:  rgba(255,100,100,1);
+}
