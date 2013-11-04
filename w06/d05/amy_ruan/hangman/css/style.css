@@ -14,25 +14,34 @@
 }
 
 #start{
-  margin-right: 5%;
-  height: 4.0em;
-  width: 8.0em;
-  font-size: 1.3em;
+  display: inline;
+  height: 3.0em;
+  width: 10.0em;
+  font-size: 1.0em;
   color: #E80C7A;
+  word-wrap:break-word;
 }
 
-
+#give-up{
+  display:inline;
+  margin-top: 2%;
+  height: 3.0em;
+  width: 10.0em;
+  font-size: 1.0em;
+  color: #E80C7A;
+  word-wrap:break-word;
+}
 #bad_guess{
   height: 2.0em;
   width: 8.0em;
   font-size: 1.0em;
   font-family: Arial, sans-serif;
   border: 5px solid #facade;
-  margin-left: 10%;
-  margin-top: 20%;
+  margin-left: 30%;
+  margin-top: 5%;
   vertical-align: middle;
   text-align:center;
-  padding-top: 10%;
+  padding-top: 5%;
 }
 
 #bad_guess_char{
@@ -41,7 +50,8 @@
   font-size: 1.0em;
   font-family: Arial, sans-serif;
   border: 5px solid #facade;
-  margin-top: 20%;
+  margin-top: 10%;
+  margin-left: 25%;
   word-wrap:break-word;
 }
 

@@ -20,6 +20,7 @@ var Game = function(){
 }
 
 Game.prototype.start = function() {
+  this.deleteBlanks()
   this.gameStatus = true;
   this.badGuessCharBox.textContent = null;
   this.word = this.wordChoices.random()
@@ -77,26 +78,22 @@ Game.prototype.checkGoodGuess = function(){
 
 Game.prototype.recordBadGuess = function(){
   var check = this.badGuess++
-  if(check < 7){
   this.badGuessBox.textContent = "Bad Guess:" + this.badGuess
   this.badCharBox.push(this.guessbox.value)
   this.badGuessCharBox.textContent = this.badCharBox;
-  this.guessbox.value = null;
+  if(check < 7){
+    this.guessbox.value = null;
   }
   else{
-    this.badGuessBox.textContent = "Bad Guess:" + this.badGuess
-    this.badCharBox.push(this.guessbox.value)
-    this.badGuessCharBox.textContent = this.badCharBox;
     alert("You lost!")
   }
 }
 
-
-
-// Game.prototype.checkGuesses = function(){
-
-// }
-
-// Game.prototype.checkWinLose = function(){
-
-// }
+Game.prototype.deleteBlanks = function(){
+  blanks = document.getElementsByClassName('blank')
+  var i = 0;
+  while(blanks.length > 0){
+    var element = blanks[i];
+    element.parentElement.removeChild(element);
+  }
+}
