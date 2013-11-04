@@ -4,10 +4,11 @@
 // everything will occur within the game
 Game = function() {
 
-  function chooseWord() {
+  Game.chooseWord = function(words) {
     // this may work, it may need WDIBelt
     var secretWord = words[Math.floor(Math.random() * words.length)];
     var secretWordArray = secretWord.toUpperCase().split("");
+    // this needs to display the spaces for the chosen word on the screen
   }
 
 
@@ -61,8 +62,9 @@ Game = function() {
 
   }
 
+starts the game by choosing a word
+chooseWord();
   // creates a listener for the letters, sends to checkGuess
-Game.chooseWord();
 document.body.addEventListener("submit", checkGuess);
 
 
