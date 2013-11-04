@@ -3,9 +3,14 @@ var Game = function(){
   this.badGuess = 0;
   this.word = null;
   this.wordChar = [];
+  this.blanks = document.getElementsByClassName('blank')
+
   var myGame = this;
   var startButton = document.getElementById("start");
   startButton.addEventListener("click",function(){myGame.start()})
+
+  var giveupButton = document.getElementById("give-up");
+  giveupButton.addEventListener("click",function(){myGame.giveup()})
 
   this.secretWord = document.getElementById("secret_word");
 
@@ -40,11 +45,10 @@ Game.prototype.guess = function(){
   if (this.gameStatus){
     var inputElement = this.guessbox.value;
     var check = false;
-    var blanks = document.getElementsByClassName('blank')
-      for(var i = 0; i<blanks.length; i++){
-        var secretChar = blanks[i].textContent
+      for(var i = 0; i<this.blanks.length; i++){
+        var secretChar = this.blanks[i].textContent
         if (inputElement == secretChar){
-          blanks[i].style.color = "black"
+          this.blanks[i].style.color = "black"
           this.guessbox.value = null;
           check = true
         }
@@ -63,10 +67,9 @@ Game.prototype.guess = function(){
 }
 
 Game.prototype.checkGoodGuess = function(){
-  var blanks = document.getElementsByClassName('blank')
   var check = false;
-  for(var i = 0; i<blanks.length; i++){
-          var colorElement = blanks[i].style.color
+  for(var i = 0; i<this.blanks.length; i++){
+          var colorElement = this.blanks[i].style.color
           if (colorElement === "transparent"){
             check = true
           }
@@ -90,10 +93,17 @@ Game.prototype.recordBadGuess = function(){
 }
 
 Game.prototype.deleteBlanks = function(){
-  blanks = document.getElementsByClassName('blank')
   var i = 0;
-  while(blanks.length > 0){
-    var element = blanks[i];
+  while(this.blanks.length > 0){
+    var element = this.blanks[i];
     element.parentElement.removeChild(element);
   }
+}
+
+Game.prototype.giveup = function(){
+  for(var i = 0; i < this.blanks.length; i++){
+    element = this.blanks[i]
+    element.style.color = "black"
+  }
+
 }
