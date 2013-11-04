@@ -2,7 +2,7 @@
 var potentialWords = ["able", "achieve", "acoustics", "action", "activity", "aftermath", "afternoon", "afterthought", "apparel", "appliance", "beginner", "believe", "bomb", "border", "boundary", "breakfast", "cabbage", "cable", "calculator", "calendar", "caption", "carpenter", "cemetery", "channel", "circle", "creator", "creature", "education", "faucet", "feather", "friction", "fruit", "fuel", "galley", "guide", "guitar", "health", "heart", "idea", "kitten", "laborer", "language", "lawyer", "linen", "locket", "lumber", "magic", "minister", "mitten", "money", "mountain", "music", "partner", "passenger", "pickle", "picture", "plantation", "plastic", "pleasure", "pocket", "police", "pollution", "railway", "recess", "reward", "route", "scene", "scent", "squirrel", "stranger", "suit", "sweater", "temper", "territory", "texture", "thread", "treatment", "veil", "vein", "volcano", "wealth", "weather", "wilderness", "wren", "wrist", "writer"];
 
 // whenever a new game is created, an empty guesses inocrrectGuessesArray is created.
-var incorrectGuesses = [];
+var incorrectGuesses
 
 // will be used within the evaluation function
 var goodGuess
@@ -21,7 +21,7 @@ Game = function() {
 
   // sets game status. While gameOn = true, the game will continue to take user inputs
   gameOn = true;
-
+  incorrectGuesses = [];
   // grabs a random word from the potentialWords array. This is
   // the word the user has to uncover
   var secretWord = potentialWords.randomElement();
@@ -36,6 +36,9 @@ Game = function() {
   // to pop correct letters into the array where appropriate, based on index value.
   var renderArray = new Array(secretWord.length)
 
+  secretWordWithBlanks.textContent = renderArray.join(' , ')
+  renderedIncorrectGuesses.textContent="Incorrect Guesses: "
+
   var guessInputField = document.getElementById("guess-input-field")
   // var userGuess = guessInputField.value
 
@@ -45,11 +48,12 @@ Game = function() {
   var verdict = "You lose!"
 
   while (incorrectGuesses.length < 6 && gameOn == true ) {
-    debugger;
     // checks if the the user's guess matches any elements within the secretWordLettersArray
     goodGuess = (secretWordLettersArray.indexOf(guess) > -1)
     if (goodGuess == false) {
       incorrectGuesses.push(guess);
+      renderedIncorrectGuesses.textContent="Incorrect Guesses: " + incorrectGuesses.join(' , ');
+      secretWordWithBlanks.textContent = renderArray.join(' , ')
       guess = prompt("YOU GUESSED WRONG:  " + renderArray.join(' , ') + "  GUESS AGAIN");
       continue;
     }
@@ -63,6 +67,7 @@ Game = function() {
       for (var index = 0; index < secretWordLettersArray.length; index++) {
         if (secretWordLettersArray[index] == guess) {
           renderArray[index] = guess;
+          secretWordWithBlanks.textContent = renderArray.join(' , ')
           guess = prompt('You guessed CORRECTLY:  ' + renderArray.join(' , ') + '  Guess again')
         }
       }
@@ -73,6 +78,7 @@ Game = function() {
   inputFieldAndSubmit.style.display='none';
   newGameButton.textContent='Play Again';
   newGameButton.style.display='block';
+  gameOn = true;
 };
 
 // function that handles the evaluation of

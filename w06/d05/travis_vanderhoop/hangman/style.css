@@ -8,8 +8,8 @@
 }
 
 #gallows-image {
-  width:50%;
-  margin: 0 auto;
+  width:436px;
+  margin-left: 107px;
 }
 
 #new-game {
@@ -24,6 +24,16 @@
   display:none;
 }
 
+.incorrect-guesses {
+  display: block;
+}
+
+#incorrect-guesses {
+  text-align: center;
+  display:block;
+}
+
+
 #submit-button {
   width: 20%;
   margin:0 auto;
@@ -36,7 +46,12 @@
   margin: 0 auto;
 }
 
-h1, p {
+#renderArray {
+  text-align: center;
+  display:block;
+}
+
+h1, p, h2 {
   text-align: center;
 }
 
