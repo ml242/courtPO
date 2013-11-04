@@ -4,7 +4,7 @@
   margin-top: 5%;
   margin-bottom: 5%;
   border: 5px solid #E80C7A;
-  padding: 10%;
+  padding: 5% 10% 15% 10%;
   font-family: Times, serif;
 }
 
@@ -30,12 +30,20 @@
   border: 5px solid #facade;
   margin-left: 10%;
   margin-top: 20%;
-  vertical-align: center;
+  vertical-align: middle;
   text-align:center;
   padding-top: 10%;
-
 }
 
+#bad_guess_char{
+  height: 8.0em;
+  width: 10.0em;
+  font-size: 1.0em;
+  font-family: Arial, sans-serif;
+  border: 5px solid #facade;
+  margin-top: 20%;
+  word-wrap:break-word;
+}
 
 
 #secret_word{
