@@ -3,7 +3,6 @@ class CrewMembersController < ApplicationController
   def index
     @crew_members = CrewMember.select("name, id")
     respond_with @crew_members
-    raise
   end
 
   def show
