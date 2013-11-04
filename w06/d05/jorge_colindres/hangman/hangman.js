@@ -57,11 +57,27 @@ function Game(secretWord){
         element.className = 'letter visible';
       });
     });
+    self.showGuesses();
     if (self.guessesLeft > 0 && self.won){
       alert('You win!');
     } else if (self.guessesLeft === 0) {
       alert('You loose');
     }
+  };
+  this.showGuesses = function(){
+    var guessesListNode = document.getElementById('yourGuesses');
+    if (self.guesses.length > 1){
+      // Delete all list items if they already exist so that when
+      // we add them a few lines below, there won't be duplicates
+      while (guessesListNode.firstChild){
+        guessesListNode.removeChild(guessesListNode.firstChild);
+      }
+    }
+    self.each(self.guesses, function(element, index){
+      var listItem = document.createElement('li');
+      listItem.textContent = element;
+      guessesListNode.appendChild(listItem);
+    });
   };
   this.each = function(array, func) {
     for (var index = 0; index < array.length; index++) {
