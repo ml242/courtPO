@@ -51,14 +51,15 @@ GEEKout is for people passionate about specific interests. The site is meant to 
 
 ###Phase 1: Basic CRUD for events [Completed Monday 10/21]
 - simple elegant event CRUD with database
-#####Story
+
+####Story
 - as a user I want to view a list of outings
 	- I want to be able to click on outings from list and view more info, to decide if I would like to participate
 - as an admin i want to add, edit, and delete outings. (Add admin permissions after user authentication, for now adding, editing, and deleting is public)
 
 ###Phase 2: Tag CRUD; tags categorize events [COMPLETED Tuesday  10/22]
 Events and places have tags, when you click on a tag you see all events with that tag.
-#####Story
+####Story
 - as an admin I want to add and delete tags. (done)
 - As a user I want to see all categories 1h (done)
 - As a user/admin I want to associate events/places with the appropriate tags by editing the event (done)

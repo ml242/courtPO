@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+ <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+  <button id="yay"></button>
+  <button id="nay"></button>
+  <div class="planet" id="alderaan"></div>
+    <div class="planet" id="death-star"></div>
+    <div id="tell">Tell</div>
+    <p id="never">Never</p>
+
+
+    <script>
+    var yayButton = document.getElementById('yay');
+    var nayButton = document.getElementById('nay');
+
+    function say() {
+      alert(this.id);
+    }
+
+    yayButton.addEventListener("click", say);
+    nayButton.addEventListener("click", say);
+
+
+  </script>
+<script src="main.js"></script>
+</body>
+</html>
