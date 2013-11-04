@@ -1,0 +1,38 @@
+body {
+  font-size: 20px;
+  font-family: 'helvetica';
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, .8);
+  font-size: 50px;
+  display: block;
+}
+a:hover {
+  color: rgba(255, 20, 20, .5);
+}
+
+.planet {
+  height: 100px;
+  width: 100px;
+  border: 1px solid black;
+  border-radius: 1000px;
+  margin-bottom: 100px;
+  padding: 50px;
+  color: rgba(255, 255, 255, .7);
+}
+
+#alderaan {
+  background-color: rgba(0, 0, 200, .8);
+}
+
+#death-star {
+  background-color: rgba(0, 0, 0, .2);
+}
+
+.hidden {
+  display: none;
+}
+
