@@ -50,31 +50,29 @@ Game = function() {
     goodGuess = (secretWordLettersArray.indexOf(guess) > -1)
     if (goodGuess == false) {
       incorrectGuesses.push(guess);
-      guess = prompt("YOU GUESSED WRONG: " + renderArray.join(', ') + " GUESS AGAIN");
+      guess = prompt("YOU GUESSED WRONG:  " + renderArray.join(' , ') + "  GUESS AGAIN");
+      continue;
     }
     // checks each letter of the secret word for equivelency with the user's guess
+    else if (renderArray.join(' ')==secretWordLettersArray.join(' ')) {
+      gameOn = false;
+      verdict = "You win!";
+      break;
+      }
     else {
       for (var index = 0; index < secretWordLettersArray.length; index++) {
         if (secretWordLettersArray[index] == guess) {
           renderArray[index] = guess;
+          guess = prompt('You guessed CORRECTLY:  ' + renderArray.join(' , ') + '  Guess again')
         }
       }
     }
-    if (renderArray.join(' ')==secretWordLettersArray.join(' ')) {
-    gameOn = false;
-    verdict = "You win!";
-    break;
-    }
-    else {guess = prompt('You guessed CORRECTLY: ' + renderArray.join(', ') + 'Guess again')}
   }
 
-
-
   alert('the game is over. ' + verdict );
-
-
-
-
+  inputFieldAndSubmit.style.display='none';
+  newGameButton.textContent='Play Again';
+  newGameButton.style.display='block';
 };
 
 // function that handles the evaluation of
