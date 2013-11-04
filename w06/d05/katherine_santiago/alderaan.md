@@ -15,7 +15,7 @@ There should be a div with an `id` of `death-star` it should have a class of `pl
 There should be a link with an `id` of `tell` and a button with an `id` of `never`
 
 ## Let's talk about events
-If you mouseover `alderaan` or `death-star` their respective names should appear. 
+If you mouseover `alderaan` or `death-star` their respective names should appear.
 
 If you click on `button#never` the `alderaan` div should be removed.
 
