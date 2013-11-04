@@ -1,0 +1,30 @@
+body.red{
+  background: red;
+}
+
+body.green {
+  background: green;
+}
+
+div {
+  height: 250px;
+  width: 250px;
+}
+
+div.planet {
+  border: 1px solid black;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  line-height: 200px;
+  text-align: center;
+}
+
+.hidden {
+  visibility: hidden
+}
+
+.show {
+  visibility: visible;
+
+}
