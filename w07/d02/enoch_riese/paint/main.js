@@ -21,11 +21,12 @@ var addEventListeners = function(node) {
   node.on("mouseup", unClick);
 }
 var makeTiles = function(tileNum) {
+  var tileStr = ""
   for (var i = 0 ; i < tileNum; i++) {
-    var divvy = $("<div>");
-    divvy.addClass("tile");
-    addEventListeners(divvy);
-    $("#canvas").append(divvy);
+    var divvy = "<div class='tile'></div>";
+    tileStr += divvy;
   };
+  $("#canvas").append(tileStr);
+  addEventListeners($(".tile"));
 }
-makeTiles(250000);
+makeTiles(10000);
