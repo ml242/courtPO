@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
 onClick = function(e) {
-  $("body").css("background-color", "pink");
+  $("body").addClass("pink");
 };
 
 $("#button").on("click", onClick);
