@@ -38,10 +38,10 @@
           x: colorXCounter,
           y: 20,
           fillPatternImage: images[swatchArray[i]],
-          fillPatternScale: { x:1, y:1 },
+          fillPatternScale: [2, 2],
           fillPatternRepeat: 'no-repeat',
-          width: 20,
-          height: 20,
+          width: 30,
+          height: 30,
           stroke: 'none',
           strokeWidth: 0
         });
@@ -50,29 +50,26 @@
           iGetFill.apply(this);
         });
         layer.add(newColor);
-        colorXCounter += 25;
+        colorXCounter += 35;
 
       }
 
-
       stage.add(layer);
-
-
     });
 
 
 
 
     function generateTiles() {
-      for(var yCoord = tileY; yCoord < maxY; yCoord += 20){
-        for(var xCoord = tileX; xCoord < maxX; xCoord += 20){
+      for(var yCoord = tileY; yCoord < maxY; yCoord += 30){
+        for(var xCoord = tileX; xCoord < maxX; xCoord += 30){
           var tile = new Kinetic.Rect({
             x: xCoord,
             y: yCoord,
-            width: 20,
-            height: 20,
+            width: 30,
+            height: 30,
             fillPatternImage: images.terrain,
-            fillPatternScale: { x:1, y:1 },
+            fillPatternScale: [2, 2],
             fillPatternRepeat: 'no-repeat',
             stroke: 'none',
             strokeWidth: 0
