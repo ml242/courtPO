@@ -55,7 +55,7 @@ function beamEnterpriseCrew() {
         pTag.textContent = crew[i].name;
         pTag.style.background = crew[i].shirt_color;
         // debugger
-        pTag.addEventListener('click', beamEnterpriseCrew);
+        pTag.addEventListener('dblclick', beamEnterpriseCrew);
       }
     }
   };
