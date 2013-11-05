@@ -1,0 +1,3 @@
+class RefugeesController < ApplicationController
+
+end
