@@ -2,20 +2,23 @@
 
     var layer = new Kinetic.Layer();
 
-    var tileY = 400;
+    var tileY = 200;
     var tileX = 0;
     var maxX = 1200;
-    var maxY = 900;
+    var maxY = 700;
     var down = false;
+    var images;
+
     $( document ).mousedown(function() {
       down = true;
     }).mouseup(function() {
       down = false;
     });
 
-    var swatchArray = ['green', 'yellow', 'pink'];
+    var swatchArray = ['fence_1', 'fence_2', 'fence_3', 'fence_4', 'fence_5', 'fence_6', 'fence_7', 'fence_8', 'fence_9'];
 
     $( document ).ready(function() {
+
 
       var stage = new Kinetic.Stage({
         container: 'container',
@@ -23,17 +26,20 @@
         height: 900
       });
 
+      loadImages(sources, function() {
 
-      generateTiles();
+      });
+        generateTiles();
 
       var colorXCounter = 20;
       for(var i = 0; i < swatchArray.length; i++) {
         var newColor = new Kinetic.Rect({
           x: colorXCounter,
           y: 20,
-          fill: swatchArray[i],
-          width: 100,
-          height: 100,
+          fillPatternImage: images[swatchArray[i]],
+          fillPatternScale: { x:1, y:1 },
+          width: 20,
+          height: 20,
           stroke: 'none',
           strokeWidth: 1
         });
@@ -42,7 +48,7 @@
           iGetFill.apply(this);
         });
         layer.add(newColor);
-        colorXCounter += 110;
+        colorXCounter += 25;
 
       }
 
@@ -56,35 +62,33 @@
 
 
     function generateTiles() {
-      for(var yCoord = tileY; yCoord < maxY; yCoord += 100){
-        for(var xCoord = tileX; xCoord < maxX; xCoord += 100){
+      for(var yCoord = tileY; yCoord < maxY; yCoord += 20){
+        for(var xCoord = tileX; xCoord < maxX; xCoord += 20){
           var tile = new Kinetic.Rect({
             x: xCoord,
             y: yCoord,
-            width: 98,
-            height: 98,
-            fill: '#DCE8E7',
+            width: 18,
+            height: 18,
+            fillPatternImage: images.terrain,
+            fillPatternScale: { x:1, y:1 },
             stroke: '#FFFFFF',
             strokeWidth: 1
           });
           tile.on('mouseover touchstart', function() {
             if(down){
-              this.setFill(drawColor);
+              this.setFillPatternImage(drawColor);
               layer.draw();
               this.off('mouseout touchend');
               this.off('mouseover touchstart');
             }
-            else{
-              this.setFill('green');
-              layer.draw();
-            }
           });
-          tile.on('mouseout touchend', function() {
-            this.setFill('#DCE8E7');
-            layer.draw();
-          });
+          // tile.on('mouseout touchend', function() {
+          //   // debugger;
+          //   this.setFillPatternImage(images.terrain);
+          //   layer.draw();
+          // });
           tile.on('mousedown', function() {
-            this.setFill(drawColor);
+            this.setFillPatternImage(drawColor);
             layer.draw();
             this.off('mouseout touchend');
           })
@@ -93,11 +97,41 @@
       }
     }
 
-  function iGetFill() {
-    drawColor = this.getFill();
-  }
+    function iGetFill() {
+      drawColor = this.getFillPatternImage();
+    }
 
 
+    function loadImages(sources, callback) {
+      images = {};
+      var loadedImages = 0;
+      var numImages = 0;
+        // get num of sources
+        for(var src in sources) {
+          numImages++;
+        }
+        for(var src in sources) {
+          images[src] = new Image();
+          images[src].onload = function() {
+            if(++loadedImages >= numImages) {
+              callback(images);
+            }
+          };
+          images[src].src = sources[src];
+        }
+      }
+      var sources = {
+        terrain: 'images/terrain/grass.png',
+        fence_1: 'images/obstructions/fence_1.png',
+        fence_2: 'images/obstructions/fence_2.png',
+        fence_3: 'images/obstructions/fence_3.png',
+        fence_4: 'images/obstructions/fence_4.png',
+        fence_5: 'images/obstructions/fence_5.png',
+        fence_6: 'images/obstructions/fence_6.png',
+        fence_7: 'images/obstructions/fence_7.png',
+        fence_8: 'images/obstructions/fence_8.png',
+        fence_9: 'images/obstructions/fence_9.png'
+      };
 
 
 
