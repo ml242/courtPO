@@ -1,11 +1,13 @@
 console.log("hi");
-$(document).ready(function() {
+$(function() {
+  var colors = ["pink", "turquoise", "emerald", "peter-river", "amethyst", "wet-asphalt", "sun-flower", "carrot", "alizarin", "clouds", "concrete", "white"];
+  var colorIndex = 0;
   $("h1").on("click", function() {
-    var isPink = $("body").hasClass("pink");
-    if (isPink === true) {
-      $("body").removeClass("pink");
-    } else {
-      $("body").addClass("pink");
+    var color = colors[colorIndex];
+    $("body").addClass(color);
+    colorIndex++;
+    if (colors.length === 11) {
+      colorIndex = 0;
     }
   });
 });
