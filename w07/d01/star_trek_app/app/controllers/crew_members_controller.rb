@@ -1,7 +1,7 @@
 class CrewMembersController < ApplicationController
 
   def index
-    @crew_members = CrewMember.select("name, id")
+    @crew_members = CrewMember.select("name, id, shirt_color")
     render :json => @crew_members
   end
 
