@@ -75,7 +75,8 @@ Hangman.prototype.won = function() {
   this.numGuesses = 0;
   var showing = document.getElementsByClassName("showing");
   var lngth = showing.length;
-  for(i = 0; i < lngth; i++) {
+  for(var i
+    = 0; i < lngth; i++) {
     showing[0].className = "hidden";
   }
   var lettersGuessed = document.getElementById("letters-guessed");
