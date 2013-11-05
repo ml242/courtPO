@@ -1,0 +1,24 @@
+.button {
+  border-radius: 75px;
+  -webkit-border-radius: 75px;
+  -moz-border-radius: 75px;
+  background: #ffdae9;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 20%;
+  text-align: center;
+  line-height: 150px;
+  font-family: 'Century Gothic';
+  font-size: 40px;
+  width: 150px;
+  height: 150px;
+  color: white;
+}
+
+h1 {
+  display: block;
+}
+
+.pink {
+  background: pink;
+}

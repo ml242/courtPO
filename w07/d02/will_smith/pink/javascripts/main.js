@@ -1,6 +1,6 @@
 console.log("hi");
 $( document ).ready(function() {
-  $( "h1" ).click(function() {
-    $( "body" ).css("background-color", "pink");
+  $( "h1" ).on("click", function() {
+    $( "body" ).addClass("pink");
   });
- });
+});
