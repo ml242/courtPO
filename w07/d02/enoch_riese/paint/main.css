@@ -1,7 +1,10 @@
 .tile {
-  height: 15px;
-  width: 15px;
-  background-color: blue;
+  height: 50px;
+  width: 50px;
+  background-color: grey;
   margin: 2px;
   display: inline-block;
+}
+.green {
+  background-color: green;
 }
