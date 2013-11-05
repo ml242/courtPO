@@ -1,0 +1,143 @@
+.hidden {
+  display: none;
+}
+
+body {
+  font-family: 'helvetica';
+  font-size: 30px;
+  text-align: left;
+}
+
+#hangman {
+  position: absolute;
+  left: 500px;
+  top: 150px;
+
+}
+
+#head {
+  width: 50px;
+  height: 50px;
+  border: 2px solid black;
+  border-radius: 100px;
+}
+
+#left-arm {
+  position: relative;
+  float: left;
+  height: 50px;
+  top: 10px;
+  left: 15px;
+  border-left: 2px solid black;
+  -moz-transform: rotate(25.5deg);
+  -o-transform: rotate(25.5deg);
+  -webkit-transform: rotate(25.5deg);
+  -ms-transform: rotate(25.5deg);
+  transform: rotate(25.5deg);
+  filter:  progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand',
+    M11=0.9914448613738104, M12=-0.13052619222005157,M21=0.13052619222005157, M22=0.9914448613738104);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=0.9914448613738104, M12=-0.13052619222005157, M21=0.13052619222005157, M22=0.9914448613738104,sizingMethod='auto expand')";
+
+  zoom: 1;
+}
+
+#body {
+  position: relative;
+  float: left;
+  left: 25px;
+  height: 100px;
+  border-left: 2px solid black;
+}
+
+#right-arm {
+  position: relative;
+  float: left;
+  height: 50px;
+  top: 10px;
+  left: 35px;
+  border-left: 2px solid black;
+  -moz-transform: rotate(-25.5deg);
+  -o-transform: rotate(-25.5deg);
+  -webkit-transform: rotate(-25.5deg);
+  -ms-transform: rotate(-25.5deg);
+  transform: rotate(-25.5deg);
+  filter:  progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand',
+    M11=0.9914448613738104, M12=-0.13052619222005157,M21=0.13052619222005157, M22=0.9914448613738104);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=0.9914448613738104, M12=-0.13052619222005157, M21=0.13052619222005157, M22=0.9914448613738104,sizingMethod='auto expand')";
+
+  zoom: 1;
+}
+
+#right-leg {
+  position: relative;
+  float: left;
+  height: 50px;
+  top: 95px;
+  left: 32px;
+  border-left: 2px solid black;
+  -moz-transform: rotate(-25.5deg);
+  -o-transform: rotate(-25.5deg);
+  -webkit-transform: rotate(-25.5deg);
+  -ms-transform: rotate(-25.5deg);
+  transform: rotate(-25.5deg);
+  filter:  progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand',
+    M11=0.9914448613738104, M12=-0.13052619222005157,M21=0.13052619222005157, M22=0.9914448613738104);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=0.9914448613738104, M12=-0.13052619222005157, M21=0.13052619222005157, M22=0.9914448613738104,sizingMethod='auto expand')";
+
+  zoom: 1;
+}
+
+#left-leg {
+  position: relative;
+  float: left;
+  height: 50px;
+  top: 95px;
+  left: 12px;
+  border-left: 2px solid black;
+  -moz-transform: rotate(25.5deg);
+  -o-transform: rotate(25.5deg);
+  -webkit-transform: rotate(25.5deg);
+  -ms-transform: rotate(25.5deg);
+  transform: rotate(25.5deg);
+  filter:  progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand',
+    M11=0.9914448613738104, M12=-0.13052619222005157,M21=0.13052619222005157, M22=0.9914448613738104);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=0.9914448613738104, M12=-0.13052619222005157, M21=0.13052619222005157, M22=0.9914448613738104,sizingMethod='auto expand')";
+
+  zoom: 1;
+}
+
+#left-hand {
+  position: relative;
+  float: left;
+  height: 5px;
+  width: 5px;
+  border: 2px solid black;
+  border-radius: 100px;
+  top: 58px;
+  left: -20px;
+}
+
+#right-hand {
+  position: relative;
+  float: left;
+  height: 5px;
+  width: 5px;
+  border: 2px solid black;
+  border-radius: 100px;
+  top: 58px;
+  left: 45px;
+}
+
+#answer {
+margin-top: 300px;
+}
+
+#guess-box {
+margin-top: 50px;
+}
+
+#other-buttons {
+  margin-top: 50px;
+}
+
+

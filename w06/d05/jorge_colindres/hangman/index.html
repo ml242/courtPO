@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hangman</title>
+  <style>
+    .letter {
+      display: inline-block;
+      text-align: center;
+      width: 1em;
+      margin: 5px;
+      padding: 0;
+      border-bottom: 2px solid black;
+    }
+    .hidden{
+      color: white;
+    }
+    .visible {
+      margin: 5px;
+    }
+    .no-display {
+      display: none;
+    }
+    .yes-display {
+      display: inline-block;
+    }
+    form {
+      margin: 25px 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="secretWord"></div>
+  <h5>Your Guesses</h5>
+  <ul id="yourGuesses"></ul>
+  <form id="userGuessForm">
+    <input type="text" placeholder="Make a guess" id="userGuess" autocomplete="off">
+    <input type="submit">
+  </form>
+  <button id="giveUp">Give Up</button>
+  <button id="restartGame" class="no-display">Play Again</button>
+  <script src="hangman.js"></script>
+</body>
+</html>

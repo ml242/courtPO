@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>hangman</title>
+  <link rel="stylesheet" href="hangman.css">
+</head>
+<body>
+  <h1>HANGMAN</h1>
+  <div id="hangman">
+    <div id="head" class="hidden"></div>
+    <div id="left-arm" class="hidden"></div>
+    <div id="body" class="hidden"></div>
+    <div id="right-arm" class="hidden"></div>
+    <div id="right-leg" class="hidden"></div>
+    <div id="left-leg" class="hidden"></div>
+    <div id="right-hand" class="hidden"></div>
+    <div id="left-hand" class="hidden"></div>
+  </div>
+
+  <div id="answer"></div>
+  <div id="letters-guessed">
+<br>Letters Guessed: <br>
+  </div>
+  <div id="guess-box">
+    Guess a Letter: <br>
+    <input type="text" id="input">
+    <button id="button">Guess</button>
+  </div>
+  <div id="complete-box">
+   <br> Guess Full Word: <br>
+    <input type="text" id="word-input">
+    <button id="button2">Guess</button>
+  </div>
+  <div id="other-buttons">
+    <button id="give-up">Give Up</button>
+    <button id="reset">Reset</button>
+  </div>
+</body>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" ></script>
+  <script src="hangman.js"></script>
+  <script src="main.js"></script>
+</html>

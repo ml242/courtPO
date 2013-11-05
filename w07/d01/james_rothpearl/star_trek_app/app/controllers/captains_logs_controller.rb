@@ -1,0 +1,2 @@
+class CaptainsLogsController < ApplicationController
+end

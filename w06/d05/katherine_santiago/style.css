@@ -1,0 +1,32 @@
+#alderaan {
+  border: 1px solid #2e8b57;
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+
+}
+
+#death-star {
+  border: 1px solid #808080;
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+
+}
+
+#yay,
+#nay {
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
+
+
+
+
+
+
+
+
