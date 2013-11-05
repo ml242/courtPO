@@ -1,0 +1,25 @@
+.planet {
+  display: inline-block;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px; 
+  color: white;
+  text-align: center;
+}
+
+#alderon {
+  background-color: green;
+}
+#death-star {
+  background-color: black;
+}
+span {
+  position: relative;
+  margin-top: 80px;
+}
+.hidden {
+  display: none;
+}
+.display {
+  display: inherit;
+}
