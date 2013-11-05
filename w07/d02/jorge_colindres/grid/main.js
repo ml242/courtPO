@@ -13,6 +13,11 @@ $(function(){
   }).mouseout(function(){
     $(this).removeClass('highlight');
   });
+  $('.tile').mousemove(function(e){
+    if (e.which === 1){
+      $(this).addClass('selected');
+    }
+  });
   $('.tile').click(function(){
     $(this).addClass('selected');
   });
