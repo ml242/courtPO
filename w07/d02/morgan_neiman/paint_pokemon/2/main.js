@@ -59,6 +59,46 @@ function newBox(){
 
 box.on('dragstart', newBox);
 
+var circle = new Kinetic.Circle({
+  x: 300,
+  y: 100,
+  radius: 10,
+  fill: 'pink',
+  stroke: 'none',
+  strokeWidth: 4,
+  draggable: true
+});
+
+function newCircle(e) {
+  var mousePos = stage.getPointerPosition();
+  var circ = new Kinetic.Circle({
+    x: mousePos.x,
+    y: mousePos.y,
+    radius: 10,
+    fill: 'pink',
+    stroke: 'none',
+    strokeWidth: 4,
+    draggable: true
+  });
+  circ.on('mousedown', drawing);
+  circ.on('mouseup', endDrawing);
+  layer.add(circ);
+}
+
+var timer;
+
+function drawing() {
+  timer = setInterval(newCircle, 100);
+}
+
+function endDrawing() {
+  clearInterval(timer);
+}
+
+circle.on('mousedown', drawing);
+circle.on('mouseup', endDrawing);
+
+layer.add(circle);
 layer.add(box);
 stage.add(layer);
 
