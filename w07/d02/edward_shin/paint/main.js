@@ -20,8 +20,14 @@ $(document).ready(function() {
   function noGreen(){
     $(this).removeClass("green");
   }
+  function clickGreen() {
+    $(this).addClass("perm_green");
+  }
 
-  $(".tile").on("mouseover", hoverGreen)
-  $(".tile").on("mouseout", noGreen)
 
+
+
+  $(".tile").on("mouseover", hoverGreen);
+  $(".tile").on("mouseout", noGreen);
+  $(".tile").on("click", clickGreen);
 });

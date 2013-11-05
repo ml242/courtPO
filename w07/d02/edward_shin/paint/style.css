@@ -6,7 +6,6 @@ body {
 #tile-box {
   width: 1000px;
   height: 1000px;
-
 }
 .tile {
   width: 50px;
@@ -20,4 +19,6 @@ body {
 .green {
   background-color: green;
 }
-
+.perm_green {
+  background-color: green;
+}
