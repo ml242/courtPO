@@ -2,9 +2,13 @@ body {
   text-align: center;
   margin: 0 auto;
   font-size: 2em;
-  font-family: sans-serif;
+  font-family: 'Love Ya Like A Sister', cursive;
   background-color: #ACA;
   color: #252;
+}
+
+h1 {
+  margin-top: 15px;
 }
 
 .tile {
@@ -16,6 +20,6 @@ body {
   margin-top: -10px;
 }
 
-.red {
+.redHover, .red {
   background-color: red;
 }
