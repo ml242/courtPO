@@ -1,0 +1,52 @@
+body{
+  background: #2c3e50;
+}
+
+h1, h2, h3, h4, h5 {
+  color: #95a5a6;
+}
+
+p {
+  color: #ecf0f1;
+}
+
+a {
+  color: #ecf0f1;
+}
+
+#alderaan {
+  height: 250px;
+  width: 500px;
+  float: left;
+}
+
+#death-star {
+  height: 250px;
+  width: 500px;
+  float: left;
+}
+
+#alderaan.planet {
+  background: url('http://images3.wikia.nocookie.net/__cb20061211013807/starwars/images/4/4a/Alderaan.jpg') center;
+  border-radius: 10px;
+  margin: 10px 10px 10px 10px;
+}
+
+#death-star.planet {
+  background: url('http://static.ddmcdn.com/gif/death-star-1.jpg') center;
+  border-radius: 10px;
+  margin: 10px 10px 10px 10px;
+}
+
+.choice {
+  clear: both;
+  text-align: center;
+}
+.choice form {
+  text-align: left;
+  padding-left: 30px;
+}
+
+.hidden {
+  display: none;
+}

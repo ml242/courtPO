@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+  </head>
+    <body>
+      <div id="header">
+        <h1>Hangman</h1>
+      </div>
+      <div id="hangman-container">
+        <div class="incorrect-guesses">
+          <h3 id="incorrect-guesses"></h3>
+        </div>
+        <div id="gallows-image">
+          <img src="gallows.png" alt="hangman gallows graphic">
+        </div>
+        <div>
+          <h2 id="render-array"></h2>
+        </div>
+
+        <div id="new-game">
+          <button id="new-game-button">New Game</button>
+        </div>
+        <div id="guess-input">
+          <input type="text" id="guess-input-field" placeholder="Enter your guess" maxlength="1" required>
+          <button id="submit-button">Submit Guess</button>
+        </div>
+      </div>
+      <script src="helpers.js"></script>
+      <script src="functions.js"></script>
+      <script src="event_listeners.js"></script>
+      <script src="main.js"></script>
+    </body>
+</html>

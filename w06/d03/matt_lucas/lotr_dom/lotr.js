@@ -48,8 +48,8 @@ function makeHobbits(hobbits) {
     var liTag = document.createElement('li');
     liTag.className = "hobbit";
     liTag.textContent = hobbits[i];
-    weepeeps.appendChild(liTag)
-  };
+    weepeeps.appendChild(liTag);
+  }
   var shire = document.getElementsByTagName('article')[0];
   shire.appendChild(weepeeps);
 }
@@ -70,8 +70,8 @@ function makeBaddies(baddies) {
     var liTag = document.createElement('li');
     liTag.className = "baddies";
     liTag.textContent = baddies[i];
-    badGuys.appendChild(liTag)
-  };
+    badGuys.appendChild(liTag);
+  }
   var enemies = document.getElementsByTagName('article')[2];
   enemies.appendChild(badGuys);
 }
@@ -84,9 +84,9 @@ function makeBuddies(buddies) {
     var liTag = document.createElement('li');
     liTag.className = "buddies";
     liTag.textContent = buddies[i];
-    buds.appendChild(liTag)
+    buds.appendChild(liTag);
   // Make the Gandalf text node have a grey background
-};
+}
   document.body.appendChild(buds);
   var gandalf = document.getElementsByTagName('aside')[0].children[0];
   gandalf.style.backgroundColor = 'grey';
@@ -103,35 +103,35 @@ function beautifulStranger() {
   strider.textContent = "Aragorn";
 }
 
-// function forgeTheFellowShip() {
+function forgeTheFellowShip() {
 
-//   // move the hobbits and the buddies to Rivendell
-//   var buddies = document.body.getElementsByTagName("aside")[0].children;
-//   var rivendell = document.body.getElementsByTagName("article")[1];
-//   var buddyLength = buddies.length;
+  // move the hobbits and the buddies to Rivendell
+  var buddies = document.body.getElementsByTagName("aside")[0].children;
+  var rivendell = document.body.getElementsByTagName("article")[1];
+  var buddyLength = buddies.length;
 
-//   for (var i=0; i < buddyLength; i++){
-//     var duder = buddies[0];
-//     rivendell.children[1].appendChild(duder);
-//   }
-//   // create a new div called 'the-fellowship'
-//   var fellowShip = document.createElement('div');
-//   rivendell.appendChild(fellowShip);
-//   var fellowUl = document.createElement('ul');
-//   fellowShip.appendChild(fellowUl);
+  for (var i=0; i < buddyLength; i++){
+    var duder = buddies[0];
+    rivendell.children[1].appendChild(duder);
+  }
+  // create a new div called 'the-fellowship'
+  var fellowShip = document.createElement('div');
+  rivendell.appendChild(fellowShip);
+  var fellowUl = document.createElement('ul');
+  fellowShip.appendChild(fellowUl);
 
-//   // calculate the fellows length
-//   var numFellows = rivendell.children[1].children.length;
+  // calculate the fellows length
+  var numFellows = rivendell.children[1].children.length;
 
-//   for (var i = 0; i < numFellows; i++){
-//     // add each hobbit and buddy one at a time to 'the-fellowship'
-//     var dude = rivendell.children[1].children[0];
-//     fellowUl.appendChild(dude);
+  for (var i = 0; i < numFellows; i++){
+    // add each hobbit and buddy one at a time to 'the-fellowship'
+    var dude = rivendell.children[1].children[0];
+    fellowUl.appendChild(dude);
 
-//     // after each character is added make an alert that they have joined your party
-//     alert(dude.textContent + " has joined the party");
-//   };
-// }
+    // after each character is added make an alert that they have joined your party
+    alert(dude.textContent + " has joined the party");
+  };
+}
 
 function theBalrog() {
   // change the 'Gandalf' textNode to 'Gandalf the White'
@@ -144,9 +144,11 @@ function theBalrog() {
 
 function hornOfGondor() {
   // pop up an alert that the horn of gondor has been blown
-  alert("the horn of Gondor has been blown!")
+  alert("the horn of Gondor has been blown!");
   // Boromir's been killed by the Uruk-hai!
+  var boromir = document.body.getElementsByTagName("li")[8];
   // put a linethrough on boromir's name
+  boromir.style.textDecoration="line-through";
   // Remove the Uruk-Hai from the Baddies on the page
   // Remove Boromir from the Fellowship
   // Put Boromir in the Footer
@@ -166,7 +168,7 @@ leaveTheShire();
 
 beautifulStranger();
 
-// forgeTheFellowShip();
+forgeTheFellowShip();
 
 theBalrog();
 
