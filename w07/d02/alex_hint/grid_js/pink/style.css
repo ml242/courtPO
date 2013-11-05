@@ -5,3 +5,9 @@
   margin:-100px 0 0 -220px;
 }
 
+.changeBackgroundPink {
+  transform:rotate(7deg);
+  -ms-transform:rotate(7deg); /* IE 9 */
+  -webkit-transform:rotate(7deg); /* Safari and Chrome */
+  background-color: pink;
+}
