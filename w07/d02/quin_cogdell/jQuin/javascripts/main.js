@@ -1,11 +1,28 @@
 $("document").ready(function() {
 
-  $("#change-color").on('click', function() {
+  var colorArray = ["white", "pink", "red", "blue"]
+  var backgroundState = 0;
+  var colorIndex = 0;
 
-    if ($("body").hasClass("pink")) {
-      $("body").removeClass("pink")
-    } else {
-      $("body").addClass("pink");
+  $("#change-color").on('click', function() {
+    var previousColor = colorArray[colorIndex];
+    $("body").removeClass(previousColor);
+
+    colorIndex++
+
+
+    if (colorIndex === colorArray.length) {
+      colorIndex = 0;
     }
+
+    var nextColor = colorArray[colorIndex];
+    $("body").addClass(nextColor);
+
+    // if ($("body").hasClass("pink")) {
+    //   $("body").removeClass("pink")
+    // } else {
+    //   $("body").addClass("pink");
+    // }
+
   })
 })
