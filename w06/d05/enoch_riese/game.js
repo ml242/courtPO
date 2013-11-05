@@ -1,6 +1,32 @@
 var Game = function() {
   this.words = ["scuttle", "ballad", "awkward", "ratchet", "states", "baseless", "anger"];
-  this.guessedLetters = [];
+  this.errors = 8;
+  this.chooseWord();
+  console.log(this.word);
+  letters.textContent = this.blanks.join(" ");
+
+
+  var allLetters = "abcdefghijklmnopqrstuvwxyz".split("");
+  if (document.getElementById("alphabet")){
+    var alph = document.getElementById("alphabet");
+    container.removeChild(alph);
+  };
+  var alphabet = document.createElement("ul");
+  alphabet.id = "alphabet";
+  for (var i = 0; i < allLetters.length; i++) {
+    var liTag = document.createElement("li");
+    var strTag = document.createElement("strong");
+    liTag.id = allLetters[i];
+    strTag.textContent = allLetters[i];
+    liTag.appendChild(strTag);
+    alphabet.appendChild(liTag);
+    var clickFunction = function(e) {
+      game.checkLetter(this.id);
+    }
+    liTag.addEventListener("click", clickFunction);
+  };
+  container.appendChild(alphabet);
+
 }
 
 Game.prototype.chooseWord = function() {
@@ -12,6 +38,7 @@ Game.prototype.chooseWord = function() {
   };
   return this.blanks;
 };
+
 Game.prototype.checkLetter = function(letter) {
   var guessed = false;
   for (var i = 0; i < this.letters.length; i++) {
@@ -27,21 +54,17 @@ Game.prototype.checkLetter = function(letter) {
     var letterDiv = document.getElementById(letter);
     letterDiv.className = "guessed_letter";
   }
-  // this.guessedLetters.push(letter);
-  // var guessedDiv = document.getElementById("guessed");
-  // guessedDiv.textContent = this.guessedLetters.join(", ")
   letters.textContent = this.blanks.join(" ");
   var stillBlanks = false;
-    for (var i = this.blanks.length - 1; i >= 0; i--) {
-      if (this.blanks[i] == "_ ") {
-        stillBlanks = true;
-      };
+  for (var i = this.blanks.length - 1; i >= 0; i--) {
+    if (this.blanks[i] == "_ ") {
+      stillBlanks = true;
     };
-    if (stillBlanks == false) {
-      alert("You won!");
-      return won;
-    };
-  // }
+  };
+  if (stillBlanks == false) {
+    alert("You won!");
+    return won;
+  };
   if (this.errors == 0) {
     var won = false;
     alert("You lost!")
@@ -49,14 +72,4 @@ Game.prototype.checkLetter = function(letter) {
   }
 };
 Game.prototype.play =  function() {
-  this.errors = 8;
-  var letterDiv = document.getElementById("letters");
-  this.chooseWord();
-  console.log(this.word);
-  letters.textContent = this.blanks.join(" ");
-  // while (this.errors > 0) {
-  //   letters.textContent = this.blanks.join(" ");
-  //
-    // this.checkLetter();
-
-  };
+};

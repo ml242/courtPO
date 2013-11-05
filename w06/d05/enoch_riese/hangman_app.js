@@ -1,28 +1,28 @@
-game = new Game();
-var start = document.createElement("h1");
+
+var start = document.createElement("h2");
 start.textContent = "Click here to start";
 clickFunction = function(e) {
-  game.play();
+  game = new Game();
 }
 document.body.appendChild(start);
 start.addEventListener("click", clickFunction);
 
+
+var container = document.createElement("div");
+container.id = "container";
+document.body.appendChild(container);
 var letters = document.createElement("div");
 letters.id = "letters";
-document.body.appendChild(letters);
-
-var allLetters = "abcdefghijklmnopqrstuvwxyz".split("");
-var alphabet = document.createElement("ul");
-for (var i = 0; i < allLetters.length; i++) {
-  var liTag = document.createElement("li");
-  var strTag = document.createElement("strong");
-  liTag.id = allLetters[i];
-  strTag.textContent = allLetters[i];
-  liTag.appendChild(strTag);
-  alphabet.appendChild(liTag);
-  var clickFunction = function(e) {
-    game.checkLetter(this.id);
-  }
-  liTag.addEventListener("click", clickFunction);
-};
-document.body.appendChild(alphabet);
+container.appendChild(letters);
+var instructions = document.createElement("div");
+instructions.textContent = "Click a letter to see if it's part of the word.";
+instructions.id = "instructions"
+container.appendChild(instructions);
+hoverFunction = function(e) {
+  instructions.style.display = "block";
+}
+mouseoutFunction = function(e) {
+  instructions.style.display = "none";
+}
+container.addEventListener("mouseover", hoverFunction);
+container.addEventListener("mouseout", mouseoutFunction);
