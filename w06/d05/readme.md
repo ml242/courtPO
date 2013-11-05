@@ -1,4 +1,6 @@
-## Hangman LAB
+# Week 6 Day 5
+
+## Hangman
 
 ###Goal:
 * The goal of this lab is to practice organizing your JavaScript code in an object-oriented way. It will also allow you to continue to practice working with events and manipulating the DOM.

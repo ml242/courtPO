@@ -1,0 +1,58 @@
+#header {
+  height:100px;
+}
+
+#hangman-container {
+  width:960px;
+  margin: 0 auto;
+}
+
+#gallows-image {
+  width:436px;
+  margin-left: 107px;
+}
+
+#new-game {
+  display:block;
+  width:20%;
+  margin: 0 auto;
+}
+
+#guess-input {
+  width:100%;
+  margin: 0 auto;
+  display:none;
+}
+
+.incorrect-guesses {
+  display: block;
+}
+
+#incorrect-guesses {
+  text-align: center;
+  display:block;
+}
+
+
+#submit-button {
+  width: 20%;
+  margin:0 auto;
+  display:block;
+}
+
+#guess-input-field {
+  display:block;
+  width: 20%;
+  margin: 0 auto;
+}
+
+#renderArray {
+  text-align: center;
+  display:block;
+}
+
+h1, p, h2 {
+  text-align: center;
+}
+
+
