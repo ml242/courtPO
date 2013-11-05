@@ -1,0 +1,124 @@
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.painted-flower_2x , .flower_2x {    background-image: url(../images/terrain/flower_2x.png)}
+.painted-flower_5x , .flower_5x {    background-image: url(../images/terrain/flower_5x.png )}
+.painted-grass , .grass {        background-image: url(../images/terrain/grass.png)}
+.painted-red_flowers , .red_flowers {  background-image: url(../images/terrain/red_flowers.png)}
+.painted-weed , .weed {         background-image: url(../images/terrain/weed.png)}
+.painted-weed_4x , .weed_4x {      background-image: url(../images/terrain/weed_4x.png)}
+.painted-weed_small , .weed_small {   background-image: url(../images/terrain/weed_small.png)}
+.painted-week_2x , .week_2x {      background-image: url(../images/terrain/week_2x.png )}
+.painted-box               , .box               { background-image: url(../images/obstructions/box.png); }
+.painted-fence_1           , .fence_1           { background-image: url(../images/obstructions/fence_1.png); }
+.painted-fence_2           , .fence_2           { background-image: url(../images/obstructions/fence_2.png); }
+.painted-fence_3           , .fence_3           { background-image: url(../images/obstructions/fence_3.png); }
+.painted-fence_4           , .fence_4           { background-image: url(../images/obstructions/fence_4.png); }
+.painted-fence_5           , .fence_5           { background-image: url(../images/obstructions/fence_5.png); }
+.painted-fence_6           , .fence_6           { background-image: url(../images/obstructions/fence_6.png); }
+.painted-fence_7           , .fence_7           { background-image: url(../images/obstructions/fence_7.png); }
+.painted-fence_8           , .fence_8           { background-image: url(../images/obstructions/fence_8.png); }
+.painted-fence_9           , .fence_9           { background-image: url(../images/obstructions/fence_9.png); }
+.painted-mountain_1        , .mountain_1        { background-image: url(../images/obstructions/mountain_1.png); }
+.painted-mountain_2        , .mountain_2        { background-image: url(../images/obstructions/mountain_2.png); }
+.painted-mountain_3        , .mountain_3        { background-image: url(../images/obstructions/mountain_3.png); }
+.painted-mountain_4        , .mountain_4        { background-image: url(../images/obstructions/mountain_4.png); }
+.painted-mountain_5        , .mountain_5        { background-image: url(../images/obstructions/mountain_5.png); }
+.painted-mountain_6        , .mountain_6        { background-image: url(../images/obstructions/mountain_6.png); }
+.painted-mountain_7        , .mountain_7        { background-image: url(../images/obstructions/mountain_7.png); }
+.painted-mountain_8        , .mountain_8        { background-image: url(../images/obstructions/mountain_8.png); }
+.painted-mountain_9        , .mountain_9        { background-image: url(../images/obstructions/mountain_9.png); }
+.painted-mountain_entrance , .mountain_entrance { background-image: url(../images/obstructions/mountain_entrance.png); }
+.painted-rock_1            , .rock_1            { background-image: url(../images/obstructions/rock_1.png); }
+.painted-rock_2            , .rock_2            { background-image: url(../images/obstructions/rock_2.png); }
+.painted-sign              , .sign              { background-image: url(../images/obstructions/sign.png); }
+.painted-tree_1            , .tree_1            { background-image: url(../images/obstructions/tree_1.png); }
+.painted-tree_2            , .tree_2            { background-image: url(../images/obstructions/tree_2.png); }
+.painted-urn               , .urn               { background-image: url(../images/obstructions/urn.png); }
+.painted-water_1           , .water_1           { background-image: url(../images/obstructions/water_1.png); }
+.painted-water_2           , .water_2           { background-image: url(../images/obstructions/water_2.png); }
+.painted-water_3           , .water_3           { background-image: url(../images/obstructions/water_3.png); }
+.painted-water_4           , .water_4           { background-image: url(../images/obstructions/water_4.png); }
+.painted-water_5           , .water_5           { background-image: url(../images/obstructions/water_5.png); }
+.painted-water_6           , .water_6           { background-image: url(../images/obstructions/water_6.png); }
+.painted-water_7           , .water_7           { background-image: url(../images/obstructions/water_7.png); }
+.painted-water_8           , .water_8           { background-image: url(../images/obstructions/water_8.png); }
+.painted-water_9           , .water_9           { background-image: url(../images/obstructions/water_9.png); }
+
+.hovered-flower_2x          { background-image: url(../images/terrain/flower_2x.png)}
+.hovered-flower_5x          { background-image: url(../images/terrain/flower_5x.png )}
+.hovered-grass              { background-image: url(../images/terrain/grass.png)}
+.hovered-red_flowers        { background-image: url(../images/terrain/red_flowers.png)}
+.hovered-weed               { background-image: url(../images/terrain/weed.png)}
+.hovered-weed_4x            { background-image: url(../images/terrain/weed_4x.png)}
+.hovered-weed_small         { background-image: url(../images/terrain/weed_small.png)}
+.hovered-week_2x            { background-image: url(../images/terrain/week_2x.png )}
+.hovered-box                { background-image: url(../images/obstructions/box.png); }
+.hovered-fence_1            { background-image: url(../images/obstructions/fence_1.png); }
+.hovered-fence_2            { background-image: url(../images/obstructions/fence_2.png); }
+.hovered-fence_3            { background-image: url(../images/obstructions/fence_3.png); }
+.hovered-fence_4            { background-image: url(../images/obstructions/fence_4.png); }
+.hovered-fence_5            { background-image: url(../images/obstructions/fence_5.png); }
+.hovered-fence_6            { background-image: url(../images/obstructions/fence_6.png); }
+.hovered-fence_7            { background-image: url(../images/obstructions/fence_7.png); }
+.hovered-fence_8            { background-image: url(../images/obstructions/fence_8.png); }
+.hovered-fence_9            { background-image: url(../images/obstructions/fence_9.png); }
+.hovered-mountain_1         { background-image: url(../images/obstructions/mountain_1.png); }
+.hovered-mountain_2         { background-image: url(../images/obstructions/mountain_2.png); }
+.hovered-mountain_3         { background-image: url(../images/obstructions/mountain_3.png); }
+.hovered-mountain_4         { background-image: url(../images/obstructions/mountain_4.png); }
+.hovered-mountain_5         { background-image: url(../images/obstructions/mountain_5.png); }
+.hovered-mountain_6         { background-image: url(../images/obstructions/mountain_6.png); }
+.hovered-mountain_7         { background-image: url(../images/obstructions/mountain_7.png); }
+.hovered-mountain_8         { background-image: url(../images/obstructions/mountain_8.png); }
+.hovered-mountain_9         { background-image: url(../images/obstructions/mountain_9.png); }
+.hovered-mountain_entrance  { background-image: url(../images/obstructions/mountain_entrance.png); }
+.hovered-rock_1             { background-image: url(../images/obstructions/rock_1.png); }
+.hovered-rock_2             { background-image: url(../images/obstructions/rock_2.png); }
+.hovered-sign               { background-image: url(../images/obstructions/sign.png); }
+.hovered-tree_1             { background-image: url(../images/obstructions/tree_1.png); }
+.hovered-tree_2             { background-image: url(../images/obstructions/tree_2.png); }
+.hovered-urn                { background-image: url(../images/obstructions/urn.png); }
+.hovered-water_1            { background-image: url(../images/obstructions/water_1.png); }
+.hovered-water_2            { background-image: url(../images/obstructions/water_2.png); }
+.hovered-water_3            { background-image: url(../images/obstructions/water_3.png); }
+.hovered-water_4            { background-image: url(../images/obstructions/water_4.png); }
+.hovered-water_5            { background-image: url(../images/obstructions/water_5.png); }
+.hovered-water_6            { background-image: url(../images/obstructions/water_6.png); }
+.hovered-water_7            { background-image: url(../images/obstructions/water_7.png); }
+.hovered-water_8            { background-image: url(../images/obstructions/water_8.png); }
+.hovered-water_9            { background-image: url(../images/obstructions/water_9.png); }
+
+
+
+
+
+

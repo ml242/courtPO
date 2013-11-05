@@ -1,3 +1,9 @@
+//REFACTOR
+
+
+
+
+
 //The game selects a random word from a word list and makes that the secret word
 //The player guesses one letter at a time, trying to figure out what the word is
 //If the player guesses correctly, any instances of that letter are revealed in the secret word
@@ -6,11 +12,13 @@
 //If a player makes 8 incorrect guesses before solving the secret word, they lose
 
 Hangman = function() {
+
   //word list
   this.wordList = ["yes", "basic", "maybe", "hello"];
   //randomly select a word from the word list and make it the secret word
   this.createSecretWord();
   this.playGame();
+
 }
 
 Hangman.prototype.createSecretWord = function() {
@@ -26,7 +34,14 @@ Hangman.prototype.playGame = function() {
 
   while (this.keepPlaying === true) {
     //debugger;
-    this.askForInput();
+    var guessedLetter = this.askForInput();
+    var correctGuess = WDIBelt.contains(guessedLetter, this.secretWord)
+    if (correctGuess) {
+      this.updateCorrect(guessedLetter)
+    } else {
+      this.updateWrong(guessedLetter);
+    }
+
     this.checkTheInput();
     this.setTheInput();
     //move to another function outside
