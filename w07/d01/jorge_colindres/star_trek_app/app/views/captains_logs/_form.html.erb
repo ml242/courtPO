@@ -1,0 +1,7 @@
+<%= form_for @captains_log, remote: true do |f| %>
+  <%= f.label :title %><br>
+  <%= f.text_field :title %><br>
+  <%= f.label :message %><br>
+  <%= f.text_area :message, rows: '4' %><br>
+  <%= f.submit %>
+<% end %>
