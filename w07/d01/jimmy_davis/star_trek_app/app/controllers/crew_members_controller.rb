@@ -3,7 +3,6 @@ class CrewMembersController < ApplicationController
   def index
     @crew_members = CrewMember.select("name, id")
     render :json => @crew_members
-    erb :index
   end
 
   def show

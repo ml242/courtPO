@@ -1,4 +1,4 @@
-var enterprise = document.getElementById("enterprise");
+var enterprise = document.getElementById('enterprise');
 // var vulcans = [“sarek”, “Skon”, “Solkar”, “Sybok”];
 
 // When you mouseover `#enterprise`
@@ -12,7 +12,6 @@ function countTotalCrew() {
     if (this.readyState === 4) {
       var crew = JSON.parse(xhr.response);
       enterprise.textContent = crew.length;
-      // alert(crew.length);
     }
   };
   xhr.send(null);
@@ -75,7 +74,7 @@ var vulcanClass = document.getElementsByClassName("vulcan");
 // Create a new captain’s log entry by posting using an `XMLHttpRequest`
 
 var form = new FormData();
-form.append("captains_logs[name]");
+form.append(captains_logs[title], "captains_logs[message]");
 var xhr = new XMLHttpRequest();
 xhr.open("POST", "/captains_logs", false);
 xhr.send(form);
