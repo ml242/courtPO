@@ -1,15 +1,37 @@
+.row {
+  width: 1000px;
+  min-height: 1px;
+}
+.row:before,
+.row:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+.row:after {
+  clear: both;
+}
 .tile {
-  border: 1px solid black;
   width: 100px;
   height: 100px;
-  margin: 1px;
   float: left;
 }
 
 .highlight {
-  background: green;
+  background: #c9c9c9;
+  opacity: .6;
 }
-
-.selected {
-  background: green;
+.palette {
+  height: 35px;
+  width: 35px;
+  float: left;
+  margin-bottom: 25px;
+}
+.green {
+  background: #27ae60;
+}
+.red {
+  background: #c23824;
+}
+.blue {
+  background: #227fbb;
 }
