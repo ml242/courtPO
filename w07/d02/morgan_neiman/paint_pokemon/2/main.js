@@ -1,4 +1,4 @@
-    var drawColor = 'blue';
+    var drawColor;
 
     var layer = new Kinetic.Layer();
 
@@ -15,7 +15,7 @@
       down = false;
     });
 
-    var swatchArray = ['fence_1', 'fence_2', 'fence_3', 'fence_4', 'fence_5', 'fence_6', 'fence_7', 'fence_8', 'fence_9'];
+    var swatchArray = ['fence_1', 'fence_2', 'fence_3', 'fence_4', 'fence_5', 'fence_6', 'fence_7', 'fence_8', 'fence_9', 'mountain_1', 'mountain_2', 'mountain_3', 'mountain_4', 'mountain_5', 'mountain_6', 'mountain_7', 'mountain_8', 'mountain_9'];
 
     $( document ).ready(function() {
 
@@ -29,7 +29,8 @@
       loadImages(sources, function() {
 
       });
-        generateTiles();
+      drawColor = images.terrain;
+      generateTiles();
 
       var colorXCounter = 20;
       for(var i = 0; i < swatchArray.length; i++) {
@@ -38,10 +39,11 @@
           y: 20,
           fillPatternImage: images[swatchArray[i]],
           fillPatternScale: { x:1, y:1 },
+          fillPatternRepeat: 'no-repeat',
           width: 20,
           height: 20,
           stroke: 'none',
-          strokeWidth: 1
+          strokeWidth: 0
         });
         // var setColor = swatchArray[i];
         newColor.on('click', function(){
@@ -67,12 +69,13 @@
           var tile = new Kinetic.Rect({
             x: xCoord,
             y: yCoord,
-            width: 18,
-            height: 18,
+            width: 20,
+            height: 20,
             fillPatternImage: images.terrain,
             fillPatternScale: { x:1, y:1 },
-            stroke: '#FFFFFF',
-            strokeWidth: 1
+            fillPatternRepeat: 'no-repeat',
+            stroke: 'none',
+            strokeWidth: 0
           });
           tile.on('mouseover touchstart', function() {
             if(down){
@@ -87,25 +90,25 @@
           //   this.setFillPatternImage(images.terrain);
           //   layer.draw();
           // });
-          tile.on('mousedown', function() {
-            this.setFillPatternImage(drawColor);
-            layer.draw();
-            this.off('mouseout touchend');
-          })
-          layer.add(tile);
-        }
-      }
-    }
+    tile.on('mousedown', function() {
+      this.setFillPatternImage(drawColor);
+      layer.draw();
+      this.off('mouseout touchend');
+    })
+    layer.add(tile);
+  }
+}
+}
 
-    function iGetFill() {
-      drawColor = this.getFillPatternImage();
-    }
+function iGetFill() {
+  drawColor = this.getFillPatternImage();
+}
 
 
-    function loadImages(sources, callback) {
-      images = {};
-      var loadedImages = 0;
-      var numImages = 0;
+function loadImages(sources, callback) {
+  images = {};
+  var loadedImages = 0;
+  var numImages = 0;
         // get num of sources
         for(var src in sources) {
           numImages++;
@@ -130,7 +133,18 @@
         fence_6: 'images/obstructions/fence_6.png',
         fence_7: 'images/obstructions/fence_7.png',
         fence_8: 'images/obstructions/fence_8.png',
-        fence_9: 'images/obstructions/fence_9.png'
+        fence_9: 'images/obstructions/fence_9.png',
+        mountain_1: 'images/obstructions/mountain_1.png',
+        mountain_2: 'images/obstructions/mountain_2.png',
+        mountain_3: 'images/obstructions/mountain_3.png',
+        mountain_4: 'images/obstructions/mountain_4.png',
+        mountain_5: 'images/obstructions/mountain_5.png',
+        mountain_6: 'images/obstructions/mountain_6.png',
+        mountain_7: 'images/obstructions/mountain_7.png',
+        mountain_8: 'images/obstructions/mountain_8.png',
+        mountain_9: 'images/obstructions/mountain_9.png',
+        rock_1: 'images/obstructions/rock_1.png',
+        rock_2: 'images/obstructions/rock_2.png'
       };
 
 
