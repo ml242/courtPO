@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  shirt_color: MyString
+  on_ship: false
+  ship_id: 1
+
+two:
+  name: MyString
+  shirt_color: MyString
+  on_ship: false
+  ship_id: 1
