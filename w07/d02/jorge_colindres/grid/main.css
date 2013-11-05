@@ -1,0 +1,15 @@
+.tile {
+  border: 1px solid black;
+  width: 100px;
+  height: 100px;
+  margin: 1px;
+  float: left;
+}
+
+.highlight {
+  background: green;
+}
+
+.selected {
+  background: green;
+}
