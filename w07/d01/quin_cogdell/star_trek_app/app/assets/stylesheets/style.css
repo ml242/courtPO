@@ -1,0 +1,49 @@
+/*body {
+  background-color: black;
+  color: white;
+
+}*/
+
+#enterprise {
+  background-image: url("http://www.star.trek.sk/suvislosti/pozadia/ent_atlernative/ent_37_1920.jpg");
+  background-size: 250px 250px;
+  background-repeat: no-repeat;
+}
+
+#vulcan {
+  background-image: url("http://storiesbywilliams.files.wordpress.com/2012/06/vulcan_planet.jpg");
+  background-size: 250px 250px;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+
+section {
+  height: 500px;
+  width: 500px;
+}
+
+article {
+  height: 500px;
+  width: 500px;
+
+}
+
+p {
+  color: grey;
+
+  max-width: 50%;
+}
+.yellow {
+  background-color: yellow;
+
+}
+
+.blue {
+  background-color: blue;
+
+}
+
+.red {
+  background-color: red;
+}
