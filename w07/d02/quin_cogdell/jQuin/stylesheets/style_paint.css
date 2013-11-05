@@ -1,0 +1,12 @@
+
+#tiles {
+  width: 500px;
+  height: 250px;
+}
+
+.tile {
+  background-color: #ededed;
+  display: inline-block;
+  border-style: solid;
+  border-color: white;
+}
