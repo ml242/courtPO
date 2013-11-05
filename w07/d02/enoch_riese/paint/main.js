@@ -9,12 +9,16 @@ var unGreen = function(e) {
 }
 var stayGreen = function(e) {
   hoverGreen();
-  $(this).off("mouseout");
+  $("div").off("mouseout");
+}
+var unClick = function(e) {
+  addEventListeners($("div").not(".green"));
 }
 var addEventListeners = function(node) {
   node.on("mouseover", hoverGreen);
   node.on("mouseout", unGreen);
-  node.on("click", stayGreen);
+  node.on("mousedown", stayGreen);
+  node.on("mouseup", unClick);
 }
 var makeTiles = function(tileNum) {
   for (var i = 0 ; i < tileNum; i++) {
