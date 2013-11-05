@@ -1,0 +1,2 @@
+module RefugeesHelper
+end
