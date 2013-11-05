@@ -1,3 +1,2 @@
-var HangmanGame = HangmanGame || {};
-
-Hangman = new HangmanGame.Hangman();
+var hangmanGame = new Hangman();
+hangmanGame.chooseWord();
