@@ -1,0 +1,78 @@
+/*NEW: the color and the painted-color are new ideas*/
+.white, .painted-white {
+  background-color: #ededed;
+}
+
+.red, .painted-red {
+  background-color: hsla(0, 80%, 70%, 1);
+}
+
+.orange, .painted-orange {
+  background-color: hsla(21, 80%, 70%, 1);
+}
+
+.yellow, .painted-yellow {
+  background-color: hsla(45, 80%, 70%, 1);
+}
+
+.green, .painted-green {
+  background-color: hsla(103, 80%, 70%, 1);
+}
+
+.blue, .painted-blue {
+  background-color: hsla(212, 80%, 70%, 1);
+}
+
+.purple, .painted-purple {
+  background-color: hsla(269, 80%, 70%, 1);
+}
+
+.pink, .painted-pink {
+  background-color: hsla(312, 80%, 70%, 1);
+}
+
+
+
+
+
+
+/*
+NEW: this is subtle but IMPORTANT. The hovered classes are at the bottom so that they take precedence over the painted colors
+Therefore, if you hover over a painted color, it will change to the paintbrushColor even though it already has a painted color.
+*/
+
+.hovered-white {
+  background-color: #ededed;
+}
+
+.hovered-red {
+  background-color: hsla(0, 80%, 70%, 1);
+}
+
+.hovered-range {
+  background-color: hsla(21, 80%, 70%, 1);
+}
+
+.hovered-yellow {
+  background-color: hsla(45, 80%, 70%, 1);
+}
+
+.hovered-green {
+  background-color: hsla(103, 80%, 70%, 1);
+}
+
+.hovered-blue {
+  background-color: hsla(212, 80%, 70%, 1);
+}
+
+.hovered-purple {
+  background-color: hsla(269, 80%, 70%, 1);
+}
+
+.hovered-pink {
+  background-color: hsla(312, 80%, 70%, 1);
+}
+
+
+
+
