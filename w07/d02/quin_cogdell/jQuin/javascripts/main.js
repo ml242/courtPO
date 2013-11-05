@@ -10,19 +10,12 @@ $("document").ready(function() {
 
     colorIndex++
 
-
     if (colorIndex === colorArray.length) {
       colorIndex = 0;
     }
 
     var nextColor = colorArray[colorIndex];
     $("body").addClass(nextColor);
-
-    // if ($("body").hasClass("pink")) {
-    //   $("body").removeClass("pink")
-    // } else {
-    //   $("body").addClass("pink");
-    // }
 
   })
 })
