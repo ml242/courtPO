@@ -12,7 +12,7 @@ var stayGreen = function(e) {
   $("div").off("mouseout");
 }
 var unClick = function(e) {
-  addEventListeners($("div").not(".green"));
+  addEventListeners($(".tile").not(".green"));
 }
 var addEventListeners = function(node) {
   node.on("mouseover", hoverGreen);
@@ -28,4 +28,4 @@ var makeTiles = function(tileNum) {
     $("#canvas").append(divvy);
   };
 }
-makeTiles(100);
+makeTiles(250000);
