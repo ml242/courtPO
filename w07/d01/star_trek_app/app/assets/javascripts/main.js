@@ -2,11 +2,11 @@ window.onload = function() {
 
   var enterprise = document.getElementById('enterprise');
   var vulcans = document.getElementsByClassName('vulcan');
-  var vulcan = document.getElementById('vulcan');
-  var vulcanRace = document.getElementsByClassName('vulcan');
+  var vulcanRace = document.getElementById('vulcan');
+  var vulcan = document.getElementsByClassName('vulcan');
 
   enterprise.addEventListener("mouseover", fnCountCrewRefugees);
-  vulcan.addEventListener("dblclick", fnListCrewMembers);
+  vulcanRace.addEventListener("dblclick", fnListCrewMembers);
 
   function fnCountCrewRefugees() {
     // get crew members from json
@@ -38,7 +38,7 @@ window.onload = function() {
       var pTag = document.createElement('p');
       pTag.textContent = (name);
       pTag.style.backgroundColor = shirt_color;
-      vulcan.appendChild(pTag);
+      vulcanRace.appendChild(pTag);
     }
   }
 

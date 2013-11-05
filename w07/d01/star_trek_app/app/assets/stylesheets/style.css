@@ -10,6 +10,10 @@ body {
 }
 
 #vulcan {
-  border: 1px solid black;
+  border-radius: 50%;
+  height: 300px;
+  width: 300px;
   margin: 0 auto;
+  border: 1px solid red;
+  background-color: red;
 }
