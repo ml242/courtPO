@@ -1,4 +1,4 @@
-var enterprise = document.getElementById('enterprise');
+var enterprise = document.getElementById("enterprise");
 // var vulcans = [“sarek”, “Skon”, “Solkar”, “Sybok”];
 
 // When you mouseover `#enterprise`
@@ -49,12 +49,12 @@ function beamEnterpriseCrew() {
   xhr.onreadystatechange = function() {
     if (this.readyState === 4) {
       var crew = JSON.parse(xhr.response);
-      var pTag = document.getElementsByClassName('p');
+      var pTag = document.getElementsByClassName("p");
       for (var i = 0; i < crew.length; i++) {
         pTag.textContent = crew[i].name;
         pTag.style.background = crew[i].shirt_color;
         // debugger
-        pTag.addEventListener('dblclick', beamEnterpriseCrew);
+        pTag.addEventListener("dblclick", beamEnterpriseCrew);
       }
     }
   };
@@ -78,7 +78,7 @@ form.append(captains_logs[title], "captains_logs[message]");
 var xhr = new XMLHttpRequest();
 xhr.open("POST", "/captains_logs", false);
 xhr.send(form);
-xhr.setRequestHeader('Content-Type', 'application/json');
+xhr.setRequestHeader("Content-Type", "application/json");
 
 
 
@@ -91,7 +91,11 @@ xhr.setRequestHeader('Content-Type', 'application/json');
 // with `class` of `bird-of-prey`
 // and a `class` of `starship`.
 
-
+var articleTag = document.createElement("article");
+articleTag.id = "bird-of-prey";
+articleTag.className = "starship";
+var space = document.getElementById("space");
+space.appendChild(articleTag);
 
 
 // single clicking on a ship reduces it’s health by `10`
