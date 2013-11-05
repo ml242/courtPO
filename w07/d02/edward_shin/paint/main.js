@@ -23,11 +23,26 @@ $(document).ready(function() {
   function clickGreen() {
     $(this).addClass("perm_green");
   }
-
-
+  function downGreen() {
+    $(this).addClass("perm_green");
+    $(".tile").on("mousemove", moveGreen);
+  }
+  function moveGreen(){
+    $(this).addClass("perm_green");
+  }
+  function upGreen(){
+    $(this).addClass("perm_green");
+    $(".tile").off("mousemove", moveGreen);
+  }
 
 
   $(".tile").on("mouseover", hoverGreen);
   $(".tile").on("mouseout", noGreen);
   $(".tile").on("click", clickGreen);
+  $(".tile").on("mousedown", downGreen);
+  $(".tile").on("mouseup", upGreen);
+
+
+
+
 });
