@@ -1,0 +1,24 @@
+
+#enterprise {
+  background-color: red;
+  border-radius: 50%;
+  height:100px;
+  width: 100px;
+  text-align: center;
+}
+
+
+#vulcan {
+  background-color: teal;
+  border-radius: 50%;
+  height:350px;
+  width: 350px;
+  text-align: center;
+}
+
+p  {
+  border-style: outset;
+  margin: 0 auto;
+  text-align: center;
+
+}
