@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+  <h2>Hangman Game</h2>
+  <aside class="side">
+    <button id="start">Start Game</button>
+    <button id="give-up">Give Up Game</button>
+    <div id = "bad_guess">Bad Guess #: 0</div>
+    <div id = "bad_guess_char"></div>
+  </aside>
+
+  <canvas id="hangman">
+  </canvas>
+  <div class="game_area">
+  <div class= "hidden" id="secret_word"></div>
+  <input type="text" id="guessbox" placeholder="Character Guess">
+  <div id="time">Time Tracker</div>
+  <script src="hangman.js"></script>
+  <script src="word.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

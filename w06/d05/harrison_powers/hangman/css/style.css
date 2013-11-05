@@ -1,0 +1,89 @@
+@import url(http://fonts.googleapis.com/css?family=Vast+Shadow);
+
+@font-face {
+  font-family: "Rope";
+  src: url('Rope MF.ttf') format("truetype");
+}
+
+body {
+  -webkit-text-size-adjust:none;
+}
+
+.container {
+  overflow:hidden;
+}
+
+.header {
+  font-family: "Rope", sans-serif;
+  font-size: 100px;
+  text-align: center;
+}
+
+.menu {
+  width: 300px;
+  margin: 0 auto;
+  font-family: 'Vast Shadow', cursive;
+}
+.menu-item {
+  text-align: center;
+  font-size: 15px;
+}
+
+.letters {
+  width: 50px;
+  margin: 30px auto;
+  text-align: center;
+}
+
+.letters input {
+  font-size: 40px;
+  width: 40px;
+  text-align: center;
+  font-family: 'Vast Shadow', cursive;
+}
+
+.answer {
+  font-size: 50px;
+  text-align: center;
+  clear: both;
+  font-family: 'Vast Shadow', cursive;
+}
+
+.figure {
+  font-size: 30px;
+  text-align: center;
+  margin: 30px 0 0 0;
+  font-family: 'Vast Shadow', cursive;
+}
+
+.timer {
+  font-size: 28px;
+  text-align: center;
+  margin: 30px 0 0 0;
+  font-family: 'Vast Shadow', cursive;
+}
+
+.guesses {
+  font-size: 25px;
+  text-align: center;
+  color: #af111c;
+  font-family: 'Vast Shadow', cursive;
+}
+
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+  .menu {
+    width: 380px;
+  }
+  .letters {
+    margin: 60px auto 0 auto;
+  }
+  .letters input {
+    font-size: 28px;
+    width: 30px;
+  }
+  .answer {
+    font-size: 40px;
+  }
+}

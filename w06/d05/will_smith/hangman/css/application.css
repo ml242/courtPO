@@ -1,0 +1,19 @@
+body {
+  background: #2c3e50;
+}
+
+.container {
+margin-left:auto;
+margin-right:auto;
+width:80%;
+background-color:#f1c40f;
+border-radius: 5px;
+}
+
+#hangman {
+  min-height: 500px;
+}
+
+.hidden {
+  display: none;
+}
