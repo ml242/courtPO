@@ -1,8 +1,13 @@
+#canvas {
+  width: 500px;
+  height: 500px;
+}
 .tile {
   height: 50px;
   width: 50px;
   background-color: grey;
-  margin: 2px;
+  margin: 0px;
+  margin-bottom: -4px;
   display: inline-block;
 }
 .green {

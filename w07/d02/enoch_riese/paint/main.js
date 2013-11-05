@@ -25,7 +25,7 @@ var makeTiles = function(tileNum) {
     var divvy = $("<div>");
     divvy.addClass("tile");
     addEventListeners(divvy);
-    $("body").append(divvy);
+    $("#canvas").append(divvy);
   };
 }
-makeTiles(50);
+makeTiles(100);
