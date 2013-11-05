@@ -16,20 +16,20 @@
   border-radius: 50%;
   text-align: center;
   font-family: monospace;
-  color: #ecf0f1;
   float: right;
 }
 
 p {
-  background-color: #f1c40f;
-  height: 75px;
-  width: 75px;
+  background-color: #7f8c8d;
+  height: 30px;
+  width: 30px;
   border-radius: 50%;
   margin: 0 auto;
   text-align: center;
+  color: #9b59b6;
 }
 
 h3 {
-  padding-top: 70px;
+  padding-top: 50px;
   text-align: center;
 }
