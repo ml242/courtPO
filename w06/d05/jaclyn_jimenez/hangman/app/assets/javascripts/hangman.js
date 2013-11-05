@@ -92,18 +92,18 @@ Guesses()
           document.getElementById("guessesLeft").children[0].textContent = "Guesses Left: " + guessesLeft
         }
       }
-      winChecker()
+      winChecker(secretWordArray)
     }
   //set secretH2.className to revealed
 
-      winChecker = function() {
+      winChecker = function(secretWordArray) {
       if (guessesLeft != 0) {
         var currentLettersArray = document.getElementsByClassName("letter") //array of letters
         hidden(currentLettersArray, function(elem, klass) {
          return (" " + elem.className + " " ).indexOf( " "+klass+" " ) > -1;
     })
       } else {
-        youLose()
+        youLose(secretWordArray)
       }
     }
 
@@ -140,12 +140,16 @@ Guesses()
     })
     }
 
-    function youLose() {
+    function youLose(secretWordArray) {
       var loseBox = document.createElement('div')
       var loseText = document.createElement('h3')
       loseText.textContent = "You Lose!! Click to Play again"
       loseBox.appendChild(loseText)
       hangManDiv.appendChild(loseBox)
+      for (var i=0; i < secretWordArray.length; i++) {
+        thisLetter = document.getElementsByClassName(secretWordArray[i])
+        thisLetter[0].className = secretWordArray[i].textContent
+        }
       loseBox.addEventListener("click", function (){
       StartGame()
       })
@@ -157,7 +161,6 @@ Guesses()
       var guess = this.value.toUpperCase()
       guessChecker(guess, secretWordArray)
      } else {
-      alert("I went to else for some reason")
     }
   })
 }
