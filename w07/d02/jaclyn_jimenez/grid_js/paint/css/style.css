@@ -1,0 +1,21 @@
+body {
+  text-align: center;
+  margin: 0 auto;
+  font-size: 2em;
+  font-family: sans-serif;
+  background-color: #ACA;
+  color: #252;
+}
+
+.tile {
+  background-color: #FFF;
+  border: 1px solid #DFD;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  margin-top: -10px;
+}
+
+.red {
+  background-color: red;
+}
