@@ -1,0 +1,23 @@
+body {
+  background-color: gray;
+  margin: 0 auto;
+  font-size: 3em;
+}
+#tile-box {
+  width: 1000px;
+  height: 1000px;
+
+}
+.tile {
+  width: 50px;
+  height: 50px;
+  background-color: #EEEEEE;
+  margin-right: 2px;
+  margin-left: 2px;
+  margin-top: -5px;
+  display: inline-block;
+}
+.green {
+  background-color: green;
+}
+
