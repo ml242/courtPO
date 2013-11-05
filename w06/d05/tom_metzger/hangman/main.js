@@ -1,6 +1,6 @@
 var newGame = new Game();
 
-
+newGame.chooseWord();
 
 
 
