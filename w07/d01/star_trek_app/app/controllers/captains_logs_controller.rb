@@ -1,2 +1,0 @@
-class CaptainsLogsController < ApplicationController
-end
