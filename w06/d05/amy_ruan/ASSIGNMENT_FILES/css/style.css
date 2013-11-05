@@ -1,0 +1,12 @@
+#alderaan{
+  height:100px;
+  width:100px;
+  background-color: #facade;
+  border:solid grey;
+}
+#death-star{
+  height:100px;
+  width:100px;
+  background-color: green;
+  border:solid grey;
+}

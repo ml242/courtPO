@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>call_apply.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" media="all" href="docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+    <ul class="sections">
+        
+          <li id="title">
+              <div class="annotation">
+                  <h1>call_apply.js</h1>
+              </div>
+          </li>
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="pilwrap for-h2">
+                <a class="pilcrow" href="#section-1">&#182;</a>
+              </div>
+              <h2>More Function Stuff?!</h2>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="keyword">var</span> name = <span class="string">"Beth"</span>;
+<span class="keyword">var</span> job  = <span class="string">"midwife"</span>;
+
+<span class="function"><span class="keyword">function</span> <span class="title">say</span><span class="params">()</span> {</span>
+    <span class="keyword">return</span> <span class="string">"I'm "</span> + <span class="keyword">this</span>.name + <span class="string">" and I'm a "</span> + <span class="keyword">this</span>.job;
+}
+
+say();</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap for-h2">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <h2>Call and Apply</h2>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <p><code>call</code> and <code>apply</code> allow us to invoke a function and specify the context of <code>this</code>.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="keyword">var</span> person1 = { name: <span class="string">"Gary"</span>, job: <span class="string">"accountant"</span> };
+<span class="keyword">var</span> person2 = { name: <span class="string">"Elaine"</span>, job: <span class="string">"teacher"</span> };
+
+say.call(person1);
+say.apply(person2);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="pilwrap for-h2">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <h2>Parameters</h2>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-6">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-6">&#182;</a>
+              </div>
+              <p>the first parameter is the context.</p>
+<p><code>apply</code> takes an array of paramters for the function as the second parameter</p>
+<p><code>call</code> takes the parameters inline, after the first context parameter.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="function"><span class="keyword">function</span> <span class="title">ifOnly</span><span class="params">(need, character)</span> {</span>
+  <span class="keyword">return</span> <span class="string">"If I only had "</span> + need + <span class="string">" said the "</span> + character;
+}
+
+ifOnly.call(<span class="literal">null</span>, <span class="string">"the nerve"</span>, <span class="string">"lion"</span>);
+ifOnly.apply(<span class="literal">null</span>, [<span class="string">"a brain"</span>, <span class="string">"scarecrow"</span>]);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-7">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-7">&#182;</a>
+              </div>
+              <p>resources
+- <a href="http://javascriptissexy.com/javascript-apply-call-and-bind-methods-are-essential-for-javascript-professionals/">call and apply</a>
+- <a href="http://fitzgeraldnick.com/weblog/26/">bind and this</a></p>
+
+            </div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>

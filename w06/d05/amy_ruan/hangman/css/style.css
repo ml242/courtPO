@@ -1,0 +1,95 @@
+.container{
+  margin-left: 8%;
+  margin-right: 8%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  border: 5px solid #E80C7A;
+  padding: 5% 10% 15% 10%;
+  font-family: Times, serif;
+}
+
+.side{
+  float: right;
+  margin-left: 8%;
+}
+
+#start{
+  display: inline;
+  height: 3.0em;
+  width: 10.0em;
+  font-size: 1.0em;
+  color: #E80C7A;
+  word-wrap:break-word;
+}
+
+#give-up{
+  display:inline;
+  margin-top: 2%;
+  height: 3.0em;
+  width: 10.0em;
+  font-size: 1.0em;
+  color: #E80C7A;
+  word-wrap:break-word;
+}
+#bad_guess{
+  height: 2.0em;
+  width: 8.0em;
+  font-size: 1.0em;
+  font-family: Arial, sans-serif;
+  border: 5px solid #facade;
+  margin-left: 30%;
+  margin-top: 5%;
+  vertical-align: middle;
+  text-align:center;
+  padding-top: 5%;
+}
+
+#bad_guess_char{
+  height: 8.0em;
+  width: 10.0em;
+  font-size: 1.0em;
+  font-family: Arial, sans-serif;
+  border: 5px solid #facade;
+  margin-top: 10%;
+  margin-left: 25%;
+  word-wrap:break-word;
+}
+
+
+#secret_word{
+  border: 5px solid #facade;
+  height: 4.0em;
+  width: 22.0em;
+  font-size: 1.5em;
+  display: table-cell;
+  text-align:center;
+  vertical-align: middle;
+}
+
+#guessbox {
+  height: 2.0em;
+  width: 10.0em;
+  font-size: 1.2em;
+  margin-left: 18%;
+  margin-top: 5%;
+}
+
+.blank {
+  letter-spacing: 10px;
+  display: inline;
+  margin: 1%;
+  border-bottom: 2px solid grey;
+  text-align:center;
+  padding-left: 10px;
+  color: transparent;
+}
+
+#time {
+  border: 5px solid #facade;
+  height: 2.0em;
+  width: 17.0em;
+  margin-top: 4%;
+  margin-left: 13%;
+  text-align: center;
+  padding-top: 0.5em;
+}

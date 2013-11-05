@@ -1,0 +1,40 @@
+body {
+  text-align:center;
+  font-family: "Century Gothic", "Arial";
+  font-weight: 700;
+  font-size: 40px;
+}
+
+header {
+  padding-top:80px;
+  padding-bottom: 30px;
+  margin: 0 auto;
+}
+
+p {
+  display: inline;
+}
+.score-board {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+.game-board {
+  margin: 0 auto;
+}
+.letter {
+  margin: 0 auto;
+}
+
+input {
+  top: 20px;
+  right: 20px;
+  position: absolute;
+  border: 0;
+  background: none;
+  background-color: orange;
+  color: white;
+  font-size: 20px;
+  height: 30px;
+  width: 60px;
+}
