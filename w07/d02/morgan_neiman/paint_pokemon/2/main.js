@@ -1,12 +1,19 @@
     var drawColor = 'blue';
 
-      var layer = new Kinetic.Layer();
+    var layer = new Kinetic.Layer();
 
-      var tileY = 400;
-      var tileX = 0;
-      var maxX = 1200;
-      var maxY = 900;
-      var down = false;
+    var tileY = 400;
+    var tileX = 0;
+    var maxX = 1200;
+    var maxY = 900;
+    var down = false;
+    $( document ).mousedown(function() {
+      down = true;
+    }).mouseup(function() {
+      down = false;
+    });
+
+    var swatchArray = ['green', 'yellow', 'pink'];
 
     $( document ).ready(function() {
 
@@ -17,20 +24,139 @@
       });
 
 
-      $( document ).mousedown(function() {
-        down = true;
-      }).mouseup(function() {
-        down = false;
-      });
-
-
-
-
-
-
       generateTiles();
 
-  // PAINTING WITHOUT TILES
+      var colorXCounter = 20;
+      for(var i = 0; i < swatchArray.length; i++) {
+        var newColor = new Kinetic.Rect({
+          x: colorXCounter,
+          y: 20,
+          fill: swatchArray[i],
+          width: 100,
+          height: 100,
+          stroke: 'none',
+          strokeWidth: 1
+        });
+        // var setColor = swatchArray[i];
+        newColor.on('click', function(){
+          iGetFill.apply(this);
+        });
+        layer.add(newColor);
+        colorXCounter += 110;
+
+      }
+
+
+      stage.add(layer);
+
+
+    });
+
+
+
+
+    function generateTiles() {
+      for(var yCoord = tileY; yCoord < maxY; yCoord += 100){
+        for(var xCoord = tileX; xCoord < maxX; xCoord += 100){
+          var tile = new Kinetic.Rect({
+            x: xCoord,
+            y: yCoord,
+            width: 98,
+            height: 98,
+            fill: '#DCE8E7',
+            stroke: '#FFFFFF',
+            strokeWidth: 1
+          });
+          tile.on('mouseover touchstart', function() {
+            if(down){
+              this.setFill(drawColor);
+              layer.draw();
+              this.off('mouseout touchend');
+              this.off('mouseover touchstart');
+            }
+            else{
+              this.setFill('green');
+              layer.draw();
+            }
+          });
+          tile.on('mouseout touchend', function() {
+            this.setFill('#DCE8E7');
+            layer.draw();
+          });
+          tile.on('mousedown', function() {
+            this.setFill(drawColor);
+            layer.draw();
+            this.off('mouseout touchend');
+          })
+          layer.add(tile);
+        }
+      }
+    }
+
+  function iGetFill() {
+    drawColor = this.getFill();
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // var green = new Kinetic.Rect({
+  //   x: 20,
+  //   y: 20,
+  //   width: 100,
+  //   height: 100,
+  //   fill: 'green',
+  //   stroke: 'none',
+  //   strokeWidth: 1
+  // });
+  // green.on('click', function(){
+  //   drawColor = 'green';
+  // });
+  // layer.add(green);
+
+  // var pink = new Kinetic.Rect({
+  //   x: 130,
+  //   y: 20,
+  //   width: 100,
+  //   height: 100,
+  //   fill: 'pink',
+  //   stroke: 'none',
+  //   strokeWidth: 1
+  // });
+
+  // pink.on('click', function() {
+  //   drawColor = 'pink';
+  // });
+  // layer.add(pink);
+
+  // var yellow = new Kinetic.Rect({
+  //   x: 240,
+  //   y: 20,
+  //   width: 100,
+  //   height: 100,
+  //   fill: 'yellow',
+  //   stroke: 'none',
+  //   strokeWidth: 1
+  // });
+
+  // yellow.on('click', function() {
+  //   drawColor = 'yellow';
+  // });
+  // layer.add(yellow);
+
+
+
+
+      // PAINTING WITHOUT TILES
   //   var rectX = 20;
   //   var rectY = 20;
   // // debugger;
@@ -124,94 +250,4 @@
 
   // layer.add(circle);
   // layer.add(box);
-
-  var green = new Kinetic.Rect({
-    x: 20,
-    y: 20,
-    width: 100,
-    height: 100,
-    fill: 'green',
-    stroke: 'none',
-    strokeWidth: 1
-  });
-  green.on('click', function(){
-    drawColor = 'green';
-  });
-  layer.add(green);
-
-  var pink = new Kinetic.Rect({
-    x: 130,
-    y: 20,
-    width: 100,
-    height: 100,
-    fill: 'pink',
-    stroke: 'none',
-    strokeWidth: 1
-  });
-
-  pink.on('click', function() {
-    drawColor = 'pink';
-  });
-  layer.add(pink);
-
-  var yellow = new Kinetic.Rect({
-    x: 240,
-    y: 20,
-    width: 100,
-    height: 100,
-    fill: 'yellow',
-    stroke: 'none',
-    strokeWidth: 1
-  });
-
-  yellow.on('click', function() {
-    drawColor = 'yellow';
-  });
-  layer.add(yellow);
-
-  stage.add(layer);
-
-
-  });
-
-
-
-
-    function generateTiles() {
-      for(var yCoord = tileY; yCoord < maxY; yCoord += 100){
-        for(var xCoord = tileX; xCoord < maxX; xCoord += 100){
-          var tile = new Kinetic.Rect({
-            x: xCoord,
-            y: yCoord,
-            width: 98,
-            height: 98,
-            fill: '#DCE8E7',
-            stroke: '#FFFFFF',
-            strokeWidth: 1
-          });
-          tile.on('mouseover touchstart', function() {
-            if(down){
-              this.setFill(drawColor);
-              layer.draw();
-              this.off('mouseout touchend');
-              this.off('mouseover touchstart');
-            }
-            else{
-              this.setFill('green');
-              layer.draw();
-            }
-          });
-          tile.on('mouseout touchend', function() {
-            this.setFill('#DCE8E7');
-            layer.draw();
-          });
-          tile.on('mousedown', function() {
-            this.setFill(drawColor);
-            layer.draw();
-            this.off('mouseout touchend');
-          })
-          layer.add(tile);
-        }
-      }
-    }
 
