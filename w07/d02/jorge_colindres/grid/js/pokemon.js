@@ -2,7 +2,6 @@ function Pokemon(){
   this.selectedTile = 'grass';
   this.addTilePicker();
   this.buildGrid(200);
-  this.character = new Character('Pikachu');
   this.sounds = new SoundFX();
   this.playGame();
 }
@@ -10,12 +9,12 @@ function Pokemon(){
 Pokemon.prototype.buildGrid = function(numTiles) {
   var numRows = numTiles / 20;
 
-  for (var i = 0; i < numRows; i++) {
+  for (var row = 0; row < numRows; row++) {
     var newRow = $('<div>');
     newRow.addClass('row');
     $('#pokemon-container').append(newRow);
 
-    for (var j = 0; j < 25; j++) {
+    for (var col = 0; col < 25; col++) {
       var newTile = $('<div>');
       newTile.addClass('tile blank-tile');
       newRow.append(newTile);
@@ -60,10 +59,7 @@ Pokemon.prototype.addTileEventListeners = function(){
 };
 
 Pokemon.prototype.setUpGame = function(){
-  var allTiles = $('.tile');
-  $.each(allTiles, function(index, tile){
-    $(tile).addClass('no-highlight');
-  });
+  $('.tile').addClass('no-highlight');
 
   var blankTiles = $('.blank-tile');
   $.each(blankTiles, function(index, tile) {
@@ -71,17 +67,16 @@ Pokemon.prototype.setUpGame = function(){
     $(tile).addClass('grass');
   });
 
-  var pika = $('<span>');
-  pika.addClass('pika');
+  var pika = $('<span>').addClass('pika');
   $('#pokemon-container').append(pika);
   $('#play').remove();
   $('.tile-choice-picker').remove();
+  this.character = new Character('pika');
 };
 
 Pokemon.prototype.playGame = function(){
   var self = this;
   $('#play').on('click', this.setUpGame);
-  this.character.addKeydownEventListeners();
   this.sounds.playThemeSong();
 };
 
