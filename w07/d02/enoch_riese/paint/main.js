@@ -6,15 +6,27 @@ var hoverGreen = function(e) {
   $(this).removeClass();
   $(this).addClass("tile painted " + $(".selected").attr("id"));
 }
+var paintedGreen = function(e) {
+  $(this).attr("id", $(this).attr("class"));
+  $(this).removeClass();
+  $(this).addClass("tile painted " + $(".selected").attr("id"));
+}
 var unGreen = function(e) {
-  $(this).removeClass($(".selected").attr("id"))
+  $(this).removeClass($(".selected").attr("id"));
+  $(this).removeClass("painted")
 }
 var stayGreen = function(e) {
+  $(".painted").on("mouseover", hoverGreen);
+  $(".tile").off("mouseout");
   hoverGreen();
-  $("div").off("mouseout");
+}
+var paintedUnGreen = function(e) {
+  $(this).attr("class", ($(this).attr("id")));
 }
 var unClick = function(e) {
   tileAddEventListeners($(".tile").not(".painted"));
+  $(".painted").on("mouseout", paintedUnGreen);
+  $(".painted").on("mouseover", paintedGreen);
 }
 var tileAddEventListeners = function(node) {
   node.on("mouseover", hoverGreen);
@@ -32,11 +44,11 @@ var makeTiles = function(tileNum) {
   tileAddEventListeners($(".tile"));
 }
 makeTiles(2500);
-paletteClick = function(e) {
-  $(".selected").removeClass("selected")
-  $(this).addClass("selected")
+var paletteClick = function(e) {
+  $(".selected").removeClass("selected");
+  $(this).addClass("selected");
 }
-paletteAddEventListeners = function(node) {
+var paletteAddEventListeners = function(node) {
   node.on("click", paletteClick);
 }
 var makePalette = function(colors) {
