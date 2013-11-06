@@ -1,11 +1,18 @@
-var Paint = Paint || {};
+window.onload = function(){
+  var numRows = 100;
+  var numCols = 100;
+  // create # of .row div
+  for (var i=0;i<numRows;i++){
+    var $row = $("<div>", {id: "row", class: "row"})
+    $('body').append($row);
 
-$(document).ready(function() {
-  Paint.chooseColor();
-  Paint.createSurface(30, 30, 25, 25);
-});
-
-
+    // fill with .block divs
+    for (var j=0;j<numCols;j++){
+      var $block = $("<div>", {id: "block", class: "block"});
+      $row.append($block);
+    }
+  }
+}
 // part 1
 // (function main() {
 //   var clicked = false;

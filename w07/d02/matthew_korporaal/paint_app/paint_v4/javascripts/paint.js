@@ -20,11 +20,15 @@ Paint.createSurface = function(numRows, numCols, blockWidth, blockHeight) {
   }
 }
 
-Paint.hoverColor = function($block, color) {
+Paint.chooseColor = function() {
+  this.currentPaint = "yellow";
+  currentPaint = this.currentPaint;
   // mouse over div, turns green
-  $block.mouseover( function() { $( this ).addClass(color) });
-  // mouse off div, turns back
-  $block.mouseout( function() { $( this ).removeClass(color) });
+  $( '.magic-button' ).each( function(){
+    $( this ).click( function() {
+      currentPaint = this.id; })
+//      Paint.addEventListeners($block); })
+  });
 }
 
 Paint.addEventListeners = function($block) {
@@ -34,12 +38,12 @@ Paint.addEventListeners = function($block) {
     $block.addClass("highlighted");
     // if mouseover and left-button clicked, then paint
     if (e.which == LEFT_MOUSE_BUTTON_DOWN) {
-      $block.addClass("painted");
+      $block.addClass(this.currentPaint);
     }
   });
 
   // mouse off and not clicking, then just highlight
   $block.mouseout( function(){ $block.removeClass("highlighted"); });
-  $block.click( function() { $block.addClass("painted"); })
+  $block.click( function() { $block.addClass(this.currentPaint); })
 
 }

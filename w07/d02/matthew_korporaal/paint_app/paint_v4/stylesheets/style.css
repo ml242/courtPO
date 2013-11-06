@@ -2,6 +2,12 @@
   box-sizing: border-box;
 }
 
+.magic-button {
+  border: none;
+  width: 60px;
+  height: 60px;
+  margin: 10px;
+}
 
 .row {
 }
@@ -15,20 +21,20 @@
 
 }
 
-.pink {
-  background-color: pink;
+#green {
+  background-color: #0F4841;
 }
-.blue {
-  background-color: blue;
+#orange {
+  background-color: #DC933A;
 }
-.aqua {
-  background-color: aqua;
+#red {
+  background-color: #9A2F41;
 }
-.yellow {
-  background-color: yellow;
+#purple {
+  background-color: #5b138a;
 }
-.green {
-  background-color: green;
+#grey {
+  background-color: #555674;
 }
 
 .highlighted {
