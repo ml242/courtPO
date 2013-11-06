@@ -1,23 +1,42 @@
 
-/*#tiles {
-  width: 500px;
-  height: 250px;
+
+/*.row {
+  width: 1600px;
+  margin-top: -4px; Just to get rid of the whitespace issues
 }*/
+
+/*.tile {
+  display: inline-block;
+  background-color: #ededed;
+  margin-top: -1px;
+  margin-bottom: -1px;
+}*/
+
+/*.mouseOverPaint {
+  background-color: green;
+}*/
+
+/*.mouseClickPaint {
+  background-color: green;
+}*/
+
+
 .row {
   width: 1600px;
-  margin-top: -1px;
+  margin-top: -4px; /*Just to get rid of the whitespace issues*/
 }
+
 .tile {
-  background-color: #ededed;
   display: inline-block;
-  border-style: solid;
-  border-color: white;
+  background-color: #ededed;
+  margin-top: -1px;
+  margin-bottom: -1px;
 }
 
-.mouseOverPaint {
-  background-color: green;
+.highlighted {
+  background-color: #79ed47;
 }
 
-.mouseClickPaint {
-  background-color: green;
+.painted {
+  background-color: #79ed47;
 }
