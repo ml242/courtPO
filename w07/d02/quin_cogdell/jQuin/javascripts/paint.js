@@ -1,17 +1,33 @@
 var Paint = Paint || {};
 
-Paint.generateTiles = function(numTiles, width, height) {
-  for (i=0; i<numTiles; i++) {
-   var $tile =  $("<div/>")
-      .addClass("tile")
-      .css("width", width)
-      .css("height", height);
+Paint.generateTiles = function(numRows, numCols, width) {
+  var $tiles = $("#tiles")
 
-// TODO last tile does not have event listeners
-    Paint.addEventListeners($tile);
-    $("#tiles").append($tile);
+  for (var row = 0; row < numRows; row++) {
+    var $row = $("<div>").addClass("row");
+      $tiles.append($row);
+
+      for (var col = 0; col < numCols; col++) {
+        var $tile = $("<div/>")
+          .css("width", width)
+          .css("height", width)
+          .addClass("tile");
+
+        Paint.addEventListeners($tile);
+
+        $row.append($tile);
+    }
   }
 }
+  // for (i=0; i<numTiles; i++) {
+  //  var $tile =  $("<div/>")
+  //     .addClass("tile")
+  //     .css("width", width)
+  //     .css("height", height);
+    // Paint.addEventListeners($tile);
+    // $("#tiles").append($tile);
+  // }
+
 
 Paint.addEventListeners = function($tile) {
 

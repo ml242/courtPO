@@ -3,7 +3,10 @@
   width: 500px;
   height: 250px;
 }*/
-
+.row {
+  width: 1600px;
+  margin-top: -1px;
+}
 .tile {
   background-color: #ededed;
   display: inline-block;
