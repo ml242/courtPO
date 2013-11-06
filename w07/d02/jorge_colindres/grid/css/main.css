@@ -26,8 +26,12 @@
   float: left;
 }
 .highlight {
-  background: #c9c9c9;
+  background-color: #c9c9c9;
   opacity: .6;
+}
+.no-highlight {
+  background-color: none;
+  opacity: 1;
 }
 .palette {
   height: 35px;
