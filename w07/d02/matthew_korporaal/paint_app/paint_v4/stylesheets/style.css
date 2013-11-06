@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+}
+
+
+.row {
+}
+
+.block {
+  background-color: #F8F8F8;
+  border: 0px solid white;
+  position: relative;
+  display: inline;
+  float: left;
+
+}
+
+.pink {
+  background-color: pink;
+}
+.blue {
+  background-color: blue;
+}
+.aqua {
+  background-color: aqua;
+}
+.yellow {
+  background-color: yellow;
+}
+.green {
+  background-color: green;
+}
+
+.highlighted {
+  background-color: #79ed47;
+}
+
+.painted {
+  background-color: #79ed47;
+}
