@@ -14,30 +14,43 @@
 
 var Paint = Paint || {};
 
-Paint.generateTiles = function(numTiles, width, height) {
-  for (var i=0; i<numTiles; i++) {
-    var $tile = $("<div/>")
-      .css("width", width)
-      .css("height", height)
-      .addClass("tile");
+Paint.generateTiles = function(numRows, numCols, width) {
+  var $body = $("body");
 
-// The event listeners are now added inside of here,
-// passing $tile so that I don't need to find it again
-    Paint.addEventListeners($tile)
+  for (var row = 0; row < numRows; row++) {
+    var $row = $("<div>").addClass("row");
+    $body.append($row);
 
-    $("body").append($tile);
+    for (var col = 0; col < numCols; col++) {
+      var $tile = $("<div>")
+        .css("width", width)
+        .css("height", width)
+        .addClass("tile");
+
+      Paint.addEventListeners($tile);
+
+      $row.append($tile);
+    }
   }
-}
+};
 
 Paint.addEventListeners = function($tile) {
-  $tile.on("mouseover", function(e){
+  $tile.on("mousemove", function(e){
     $tile.addClass("hovered");
+
+    var left_clicked = 1;
+
+    if (e.which === left_clicked) {
+      $tile.addClass("painted");
+    }
   });
 
   $tile.on("mouseout", function(e){
     $tile.removeClass("hovered");
   });
 
-
-}
+  $tile.on("click", function(e) {
+    $tile.addClass("painted");
+  });
+};
 

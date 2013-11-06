@@ -1,7 +1,7 @@
 var Paint = Paint || {};
 
 $(document).ready(function() {
-  Paint.generateTiles(264, 50, 50);
+  Paint.generateTiles(50, 110, 12);
   // Paint.addEventListeners();
 });
 
