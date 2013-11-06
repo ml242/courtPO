@@ -1,4 +1,6 @@
 .wrapper {
+  width: 1000px;
+  margin: 0 auto;
   padding: 5px 15px 0;
 }
 .row {
@@ -13,18 +15,15 @@
 .row:after {
   clear: both;
 }
-#painting-container {
-  width: 1000px;
+#pokemon-container {
+  position: relative;
+  width: 100%;
   border: 1px solid black;
-  margin: 0 auto;
 }
 .tile {
-  width: 100px;
-  height: 100px;
+  width: 40px;
+  height: 40px;
   float: left;
-}
-.selected {
-  box-shadow: 0 1px 2px 0 rgba(0,0,0,.6);
 }
 .highlight {
   background: #c9c9c9;
@@ -34,7 +33,10 @@
   height: 35px;
   width: 35px;
   float: left;
-  margin: 0 2px 25px 0;
+  margin: 2px;
+}
+.selected {
+  opacity: .6;
 }
 .green {
   background: #27ae60;

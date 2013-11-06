@@ -1,3 +1,13 @@
+.pika {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 40px;
+  width: 40px;
+  background-image:url(images/characters/pika.png);
+  background-size: contain;
+}
+
 .painted-flower_2x,.flower_2x,.hovered-flower_2x {
 background-image:url(images/terrain/flower_2x.png);
 }
