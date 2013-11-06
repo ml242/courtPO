@@ -1,0 +1,33 @@
+body {
+  width:960px;
+}
+
+.pink {
+  background-color: #facade;
+}
+
+.blue {
+  background-color: #6798CF;
+}
+
+.purple {
+  background-color: #5D176A;
+}
+
+.sandpaper {
+  background-color: #C8BEAE;
+}
+
+.cream {
+  background-color: #E5CE90;
+}
+
+.orange {
+  background-color: #D44C32;
+}
+
+img {
+  width: 70%;
+  margin: 0 auto;
+  display:block;
+}
