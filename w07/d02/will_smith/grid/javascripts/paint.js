@@ -1,5 +1,19 @@
-var Paint = Paint || {};
-Paint.createTiles = function(numRows, numCols, width) {
+function Paint(){
+  this.createSwatches();
+  this.createTiles(44, 100, 12);
+};
+Paint.prototype.activeateSwatches = function() {
+  var paletteColors = ["red", "orange", "yellow", "green", "blue", "purple"];
+  $.each(paletteColors, function(i, color) {
+    $swatch = $(".swatch"+"."+color);
+    $swatch.on("click", function(e) {
+      $(".swatch").removeClass("selected");
+      var $swatch = $(e.target);
+      $swatch.addClass("selected");
+    });
+  });
+};
+Paint.prototype.createTiles = function(numRows, numCols, width) {
   for (var r = 0; r <= numRows; r++) {
     var $row = $("<div>").addClass("row");
     $('body').append($row);
