@@ -3,23 +3,53 @@ body {
   margin: 0 auto;
   font-size: 2em;
   font-family: 'Love Ya Like A Sister', cursive;
-  background-color: #ACA;
-  color: #252;
+  background-color: #369;
+  color: #CCC;
 }
 
 h1 {
   margin-top: 15px;
+  margin-bottom: 10px;
 }
 
 .tile {
   background-color: #FFF;
-  border: 1px solid #DFD;
-  width: 40px;
-  height: 40px;
+  width: 22px;
+  height: 22px;
   display: inline-block;
-  margin-top: -10px;
+  position: static;
 }
 
 .redHover, .red {
   background-color: red;
+}
+
+.yellowHover, .yellow {
+  background-color: yellow;
+}
+
+.greenHover, .green {
+  background-color: #00FF00;
+}
+
+.blackHover, .black {
+  background-color: black;
+}
+
+.row {
+  margin: 0 auto;
+  width: 850px;
+  height: 22px;
+}
+
+.palet {
+  border: 3px solid #ddd;
+  border-radius: 6px;
+  width: 35px;
+  height: 35px;
+}
+
+.colorPalet {
+  padding-top: 10px;
+  padding-bottom: 5px;
 }
