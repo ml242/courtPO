@@ -1,9 +1,12 @@
+.row {
+  width: 1600px;
+  margin-top: -1px;
+}
 .tile {
-display: inline-block;
-border-style: solid;
-border-left-width: 1px;
-border-color: white;
-background-color: #ededed;
+  display: inline-block;
+  background-color: #ededed;
+  margin-top: -1px;
+  margin-bottom: -1px;
 }
 .highlighted {
 background: #2ecc71;
