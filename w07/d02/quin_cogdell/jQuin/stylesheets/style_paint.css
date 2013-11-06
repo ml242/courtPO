@@ -1,8 +1,8 @@
 
-#tiles {
+/*#tiles {
   width: 500px;
   height: 250px;
-}
+}*/
 
 .tile {
   background-color: #ededed;
@@ -11,6 +11,10 @@
   border-color: white;
 }
 
-.mousePaint {
+.mouseOverPaint {
+  background-color: green;
+}
+
+.mouseClickPaint {
   background-color: green;
 }
