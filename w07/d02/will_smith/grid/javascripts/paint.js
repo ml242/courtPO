@@ -11,8 +11,11 @@ Paint.createTiles = function(numTiles, width, height) {
 Paint.addEventListeners = function(){
   $('div').hover(
     function(){
-      $(this).addClass("green");
+      $(this).addClass("highlighted");
     }, function() {
-      $(this).removeClass("green");
+      $(this).removeClass("highlighted");
     });
+  $('div').click(function(){
+    $(this).addClass("painted");
+  });
 };

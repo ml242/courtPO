@@ -5,6 +5,9 @@ border-left-width: 1px;
 border-color: white;
 background-color: #ededed;
 }
-.green {
+.highlighted {
+background: #2ecc71;
+}
+.painted {
 background: #2ecc71;
 }
