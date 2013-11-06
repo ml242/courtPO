@@ -8,11 +8,37 @@
     var maxY = 700;
     var down = false;
     var images;
+    var pikachuIMG;
+    var pikachu;
 
     $( document ).mousedown(function() {
       down = true;
     }).mouseup(function() {
       down = false;
+    });
+
+    $( document ).keydown(function(e) {
+      switch(e.keyCode) {
+        case 37: // left
+        console.log("left");
+        pikachu.move(-100, 0);
+        break;
+
+        case 38: // up
+        pikachu.move(0, 100);
+        break;
+
+        case 39: // right
+        pikachu.move(100, 0);
+        break;
+
+        case 40: // down
+        pikachu.move(0, -100);
+        break;
+
+        default: return; // exit this handler for other keys
+      }
+      e.preventDefault();
     });
 
     var swatchArray = ['fence_1', 'fence_2', 'fence_3', 'fence_4', 'fence_5', 'fence_6', 'fence_7', 'fence_8', 'fence_9', 'mountain_1', 'mountain_2', 'mountain_3', 'mountain_4', 'mountain_5', 'mountain_6', 'mountain_7', 'mountain_8', 'mountain_9'];
@@ -54,8 +80,28 @@
 
       }
 
-      stage.add(layer);
-    });
+
+      pikachuIMG = new Image();
+      pikachuIMG.onload = function() {
+        pikachu = new Kinetic.Image({
+          x: 200,
+          y: 200,
+          image: pikachuIMG,
+          width: 100,
+          height: 100
+        });
+        // pikachu.keypress(function(e){
+        //   if(e.keyCode === 40) {
+        //     this.move(10, 0);
+        //   }
+        // });
+    layer.add(pikachu);
+  };
+
+  pikachuIMG.src = 'images/sprites/pikachu_down.png';
+
+  stage.add(layer);
+});
 
 
 
