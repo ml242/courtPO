@@ -1,19 +1,23 @@
-$("document").ready(function() {
-  generateTiles(32, 50, 50);
-  })
+var Paint = Paint || {};
 
-function generateTiles(numTiles, width, height) {
+Paint.generateTiles = function(numTiles, width, height) {
   for (i=0; i<numTiles; i++) {
    var tile =  $("<div/>")
       .addClass("tile")
       .css("width", width)
       .css("height", height)
-      .mouseover(function() {
-        $(this).addClass("mousePaint")
-      })
-      .mouseout(function(){
-        $(this).removeClass("mousePaint")
-      });
   $("#tiles").append(tile);
   }
+}
+
+Paint.addEventListeners = function() {
+  $(".tile").on("mouseover", function(e){
+    var tile = $(e.target);
+    tile.addClass("mousePaint");
+  })
+  $(".tile").on("mouseout", function(e) {
+    var tile = $(e.target);
+    tile.removeClass("mousePaint");
+  })
+
 }
