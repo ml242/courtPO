@@ -1,13 +1,43 @@
+div {
+  float: none;
+}
 #canvas {
   width: 500px;
   height: 500px;
 }
+#canvas:after, .paletteContainer:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 .tile {
-  height: 5px;
-  width: 5px;
+  height: 10px;
+  width: 10px;
   float: left;
   background-color: grey;
 }
+.palette {
+  width: 20px;
+  height: 20px;
+  float: left;
+  margin: 10px;
+}
+.pink {
+  background-color: pink;
+}
+.red {
+  background-color: red;
+}
+.blue {
+  background-color: blue;
+}
+.yellow {
+  background-color: yellow;
+}
 .green {
   background-color: green;
+}
+.purple {
+  background-color: purple;
 }
