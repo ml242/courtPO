@@ -1,0 +1,33 @@
+* {
+  box-sizing: border-box;
+}
+.pink {
+  background-color: pink;
+}
+.blue {
+  background-color: blue;
+}
+.aqua {
+  background-color: aqua;
+}
+.yellow {
+  background-color: yellow;
+}
+.green {
+  background-color: green;
+}
+
+.row {
+  width:2000px;
+  height:20px;
+}
+
+.block {
+  height: 20px;
+  width: 20px;
+  border: 1px solid black;
+  position: relative;
+  display: inline;
+  float: left;
+
+}
