@@ -1,0 +1,11 @@
+body {
+  width: 525px;
+}
+
+.block {
+  height: 50px;
+  width: 50px;
+  background-color: rgba(180, 180, 180, 1);
+  border: 1px solid rgba(252, 246, 239, 1);
+  float: left;
+}
