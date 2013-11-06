@@ -2,13 +2,12 @@ function Paint(){
   this.selectedColor = 'green';
 }
 
-
 Paint.prototype.buildGrid = function(numTiles) {
   var numRows = numTiles / 10;
   for (var i = 0; i < numRows; i++) {
     var newRow = $('<div>');
     newRow.addClass('row');
-    $('body').append(newRow);
+    $('#painting-container').append(newRow);
 
     for (var j = 0; j < 10; j++) {
       var newTile = $('<div>');
@@ -16,15 +15,25 @@ Paint.prototype.buildGrid = function(numTiles) {
       newRow.append(newTile);
     }
   }
-};
-Paint.prototype.addColorPicker = function(){
-  var self = this;
-  $('.palette').click(function(){
-    self.selectedColor = $(this).data('color');
-  });
+  this.addTileEventListeners();
 };
 
-Paint.prototype.addEventLists = function(){
+Paint.prototype.addColorPicker = function(){
+  var self = this;
+  var colors = ['green', 'red', 'blue'];
+  var colorPicker = $('.color-picker');
+  for (var i = 0; i < colors.length; i++) {
+    var newColor = $('<div>');
+    newColor.addClass('palette ' + colors[i]);
+    newColor.data('color', colors[i]);
+    colorPicker.append(newColor);
+    newColor.on('click', function(){
+      self.selectedColor = $(this).data('color');
+    });
+  }
+};
+
+Paint.prototype.addTileEventListeners = function(){
   var self = this;
   $('.tile').mouseover(function(e){
     $(this).addClass('highlight');
@@ -32,26 +41,18 @@ Paint.prototype.addEventLists = function(){
     $(this).removeClass('highlight');
   });
 
-  $('.tile').on('mousemove', function(e){
+  $('.tile').on('mousemove click', function(e){
     if (e.which === 1){
       $(this).removeClass();
       $(this).addClass('tile');
       $(this).addClass(self.selectedColor);
     }
   });
-
-  $('.tile').on('click', function(){
-    $(this).removeClass();
-    $(this).addClass('tile');
-    $(this).addClass(self.selectedColor);
-  });
 };
-
 
 $(function(){
   var paintMS = new Paint();
-  paintMS.buildGrid(50);
   paintMS.addColorPicker();
-  paintMS.addEventLists();
+  paintMS.buildGrid(50);
 });
 

@@ -1,5 +1,5 @@
 .row {
-  width: 1000px;
+  width: 100%;
   min-height: 1px;
 }
 .row:before,
@@ -9,6 +9,10 @@
 }
 .row:after {
   clear: both;
+}
+#painting-container {
+  width: 1000px;
+  border: 1px solid black;
 }
 .tile {
   width: 100px;
