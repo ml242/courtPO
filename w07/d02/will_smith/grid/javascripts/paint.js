@@ -9,13 +9,26 @@ Paint.createTiles = function(numTiles, width, height) {
 };
 
 Paint.addEventListeners = function(){
-  $('div').hover(
-    function(){
+  $('div').hover(function(){
       $(this).addClass("highlighted");
-    }, function() {
+  }, function() {
       $(this).removeClass("highlighted");
-    });
+  });
+
   $('div').click(function(){
     $(this).addClass("painted");
+  });
+
+  isMouseDown = false;
+  $('body').mousedown(function() {
+    isMouseDown = true;
+  })
+  .mouseup(function() {
+    isMouseDown = false;
+  });
+
+  $('div').mousemove(function(){
+    if(isMouseDown)
+      $(this).addClass('painted');
   });
 };
