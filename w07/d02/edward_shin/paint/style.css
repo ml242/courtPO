@@ -1,24 +1,56 @@
 body {
-  background-color: gray;
-  margin: 0 auto;
-  font-size: 3em;
+  background-color: #F3F6FA;
 }
-#tile-box {
-  width: 1000px;
-  height: 1000px;
+#wrapper {
+  width: 800px;
+  height: 800px;
+  margin: 0 auto;
 }
 .tile {
-  width: 50px;
-  height: 50px;
+  width: 15px;
+  height: 15px;
   background-color: #EEEEEE;
-  margin-right: 2px;
-  margin-left: 2px;
-  margin-top: -5px;
+  float:left;
+}
+.palette {
+  width: 220px;
+  height: 50px;
+  margin: 0 auto;
+}
+.colorPalette {
+  height: 40px;
+  width: 40px;
+  background-color: black;
+  border-radius: 100px;
   display: inline-block;
+}
+.pink {
+  background-color: pink;
+}
+.blue {
+  background-color: blue;
 }
 .green {
   background-color: green;
 }
+.yellow {
+  background-color: yellow;
+}
+.purple {
+  background-color: purple;
+}
+.perm_pink {
+  background-color: pink;
+}
+.perm_blue {
+  background-color: blue;
+}
 .perm_green {
   background-color: green;
+}
+.perm_yellow {
+  background-color: yellow;
+}
+.perm_purple {
+  background-color: purple;
 }
