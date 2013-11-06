@@ -1,0 +1,32 @@
+body {
+  width: 1000px;
+}
+
+.pink {
+  background-color: #ffb7c3;
+}
+
+.turquoise {
+  background-color: #1abc9c;
+}
+
+.emerald {
+  background-color: #2ecc71;
+}
+
+.peter {
+  background-color: #3498db;
+}
+
+.amethyst {
+  background-color: #9b59b6;
+}
+
+.tile {
+  background-color: #ededed;
+  width: 64px;
+  height: 64px;
+  float: left;
+  margin: 1px;
+}
+
