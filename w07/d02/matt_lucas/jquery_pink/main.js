@@ -41,12 +41,35 @@ var colorz = [
 function randColor(color){
   // alert("silly computer");
     b.removeClass();
-    var number = 1 + Math.floor(Math.random() * 4);
+    // var number = 1 + Math.floor(Math.random() * 4);
     // b.addClass(colorz[number]);
     b.css("background-color", "#" + colorz[number]);
+    // for loop through the array
+
 }
 
 hay1.on('click', randColor);
 
 
 });
+
+
+
+
+
+
+
+// var previousColor = colors[colorIndex];
+//     $bodyTag.removeClass();
+
+
+//     // Increment the color index.
+//     colorIndex++;
+
+//     if (colorIndex === colors.length) {
+//       colorIndex = 0;
+//     }
+
+//     // Add the class for the next color
+//     var nextColor = colors[colorIndex];
+//     $bodyTag.addClass(nextColor);
