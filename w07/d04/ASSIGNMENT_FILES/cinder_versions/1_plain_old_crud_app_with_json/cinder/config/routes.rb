@@ -59,3 +59,12 @@ Cinder::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
 end
+#== Route Map
+# Generated on 07 Nov 2013 13:42
+#
+#          POST   /cats(.:format)          cats#create
+#  new_cat GET    /cats/new(.:format)      cats#new
+# edit_cat GET    /cats/:id/edit(.:format) cats#edit
+#      cat GET    /cats/:id(.:format)      cats#show
+#          PUT    /cats/:id(.:format)      cats#update
+#          DELETE /cats/:id(.:format)      cats#destroy
