@@ -6,13 +6,11 @@
 //If a player makes 8 incorrect guesses before solving the secret word, they lose
 
 Hangman = function() {
-
   //word list
   this.wordList = ["yes", "basic", "maybe", "hello"];
   //randomly select a word from the word list and make it the secret word
   this.createSecretWord();
   this.playGame();
-
 }
 
 Hangman.prototype.createSecretWord = function() {
@@ -31,6 +29,7 @@ Hangman.prototype.playGame = function() {
     this.askForInput();
     this.checkTheInput();
     this.setTheInput();
+    //move to another function outside
     if (this.incorrectGuesses.length >= 8) {
       this.keepPlaying = false;
       alert('you lost');

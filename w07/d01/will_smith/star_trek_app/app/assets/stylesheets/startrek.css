@@ -1,0 +1,20 @@
+body {
+  background: url('http://images3.alphacoders.com/438/43865.jpg') no-repeat center center fixed;
+  color: #bdc3c7;
+}
+#space {
+  height: 100%;
+}
+
+#enterprise {
+  background: url('http://f.cl.ly/items/3E2g20473h2L3K1k2t0j/star_trek__enterprise_a__blue_planet.png') no-repeat;
+  height: 350px;
+  width: 950px;
+}
+#vulcan {
+  background: url('http://f.cl.ly/items/0N2q2T1y3r0L2J3t3u3I/vulcan_planet.png');
+  float: right;
+  height: 500px;
+  width: 500px;
+}
+

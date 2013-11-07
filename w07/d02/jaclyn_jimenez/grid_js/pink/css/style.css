@@ -1,0 +1,46 @@
+body {
+  text-align: center;
+  margin: 0 auto;
+  font-size: 2em;
+  font-family: sans-serif;
+}
+
+.theWorld {
+  background-color: #222;
+  color: #DED;
+}
+
+.pinkWorld {
+  background-color: #EE3355;
+  color: #441122;
+}
+
+.greenWorld {
+  background-color: green;
+  color: #221144;
+}
+
+.purpleWorld {
+  background-color: purple;
+  color: #DED;
+}
+
+.blueWorld {
+  background-color: #090688;
+  color: #DED;
+}
+
+.redWorld {
+  background-color: red;
+  color: #DED;
+}
+
+.orangeWorld {
+  background-color: orange;
+  color: #DED;
+}
+
+.yellowWorld {
+  background-color: yellow;
+  color: #DED;
+}

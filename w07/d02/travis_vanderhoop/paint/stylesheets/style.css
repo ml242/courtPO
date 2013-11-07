@@ -1,0 +1,33 @@
+body {
+  background-color: white;
+}
+
+
+
+#container {
+  width: 960px;
+  background-color: white;
+  margin: 0 auto;
+}
+
+.row {
+  margin-top: -7px;
+}
+
+.tile {
+/*  border: 1px dashed gray;*/
+  display:inline-block;
+  margin-top: -1px;
+  margin-bottom: -1px;
+}
+
+.hover-green {
+  background-color: green;
+}
+
+.paint-green {
+  background-color:green;
+}
+
+
+

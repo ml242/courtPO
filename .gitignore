@@ -12,6 +12,7 @@ test/tmp
 test/version_tmp
 tmp
 
+
 # OS specific
 .DS_Store
 thumbs.db
@@ -27,4 +28,4 @@ thumbs.db
 # Ignore all logfiles and tempfiles.
 *.log
 /tmp
-.swp
+*.swp
