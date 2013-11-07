@@ -68,7 +68,7 @@ class CatsController < ApplicationController
     respond_to do |format|
       if @cat.update_attributes(params[:cat])
         format.html { redirect_to @cat, notice: 'Cat was successfully updated.' }
-        format.json { head :no_content }
+        format.json { render json: @cat }
       else
         format.html { render action: "edit" }
         format.json { render json: @cat.errors, status: :unprocessable_entity }
