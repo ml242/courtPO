@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box;
+}
+
+.magic-button {
+  border: none;
+  width: 60px;
+  height: 60px;
+  margin: 10px;
+}
+
+.row {
+}
+
+.block {
+  background-color: #F8F8F8;
+  border: 0px solid white;
+  position: relative;
+  display: inline;
+  float: left;
+
+}
+
+#green {
+  background-color: #0F4841;
+}
+#orange {
+  background-color: #DC933A;
+}
+#red {
+  background-color: #9A2F41;
+}
+#purple {
+  background-color: #5b138a;
+}
+#grey {
+  background-color: #555674;
+}
+
+.highlighted {
+  background-color: #79ed47;
+}
+
+.painted {
+  background-color: #79ed47;
+}

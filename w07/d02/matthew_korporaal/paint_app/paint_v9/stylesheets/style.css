@@ -1,0 +1,75 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.magic-button {
+  border: none;
+  width: 60px;
+  height: 60px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.row {
+  cursor: pointer;
+}
+
+.block {
+  background-color: #F8F8F8;
+  border: 0px solid white;
+  position: relative;
+  display: inline;
+  float: left;
+}
+
+#white, .painted-white{
+  background-color: #F8F8F8;
+}
+#green, .painted-green {
+  background-color: #0F4841;
+}
+#orange, .painted-orange{
+  background-color: #DC933A;
+}
+#red, .painted-red{
+  background-color: #9A2F41;
+}
+#purple, .painted-purple{
+  background-color: #5b138a;
+}
+#grey, .painted-grey{
+  background-color: #555674;
+}
+
+#white, .hovered-white {
+  background-color: #F8F8F8;
+}
+#green, .hovered-green {
+  background-color: #0F4841;
+}
+#orange, .hovered-orange{
+  background-color: #DC933A;
+}
+#red, .hovered-red{
+  background-color: #9A2F41;
+}
+#purple, .hovered-purple{
+  background-color: #5b138a;
+}
+#grey, .hovered-grey{
+  background-color: #555674;
+}
+
+
+
+
+
