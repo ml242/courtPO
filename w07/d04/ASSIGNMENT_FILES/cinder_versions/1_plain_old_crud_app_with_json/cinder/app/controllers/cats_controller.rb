@@ -33,6 +33,7 @@ class CatsController < ApplicationController
   # GET /cats/1
   # GET /cats/1.json
   def show
+    sleep 4
     @cat = Cat.find(params[:id])
 
     respond_to do |format|
