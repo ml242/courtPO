@@ -1,1 +1,3 @@
-Harrison Powers
+Mario Teaches Typing
+
+https://github.com/fijimunkii/typestar
