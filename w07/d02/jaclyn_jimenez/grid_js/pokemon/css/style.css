@@ -1,0 +1,62 @@
+body {
+  text-align: center;
+  margin: 0 auto;
+  font-size: 2em;
+  font-family: 'Love Ya Like A Sister', cursive;
+  background-color: #369;
+  color: #CCC;
+}
+
+h1 {
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.tile {
+  background-color: #FFF;
+  background-size:30px 30px;
+  background-repeat:no-repeat;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  position: static;
+}
+
+.row {
+  margin: 0 auto;
+  width: 950px;
+  height: 30px;
+}
+
+.palet {
+  border: 3px solid #ddd;
+  border-radius: 6px;
+  width: 35px;
+  height: 35px;
+}
+
+.colorPalet {
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+
+.flower_2x, .flower_2xHover {    background-image: url(../images/terrain/flower_2x.png)}
+.flower_5x, .flower_5xHover  {    background-image: url(../images/terrain/flower_5x.png )}
+.grass, .grassHover {        background-image: url(../images/terrain/grass.png)}
+.red_flowers, .red_flowersHover {  background-image: url(../images/terrain/red_flowers.png)}
+.weed, .weedHover {         background-image: url(../images/terrain/weed.png)}
+.weed_4x, .weed_4xHover {      background-image: url(../images/terrain/weed_4x.png)}
+.box, .boxHover               { background-image: url(../images/obstructions/box.png); }
+.fence_1, .fence_1Hover           { background-image: url(../images/obstructions/fence_1.png); }
+.mountain_1, .mountain_1Hover        { background-image: url(../images/obstructions/mountain_1.png); }
+.mountain_entrance , .mountain_entranceHover { background-image: url(../images/obstructions/mountain_entrance.png); }
+.rock_1            , .rock_1Hover            { background-image: url(../images/obstructions/rock_1.png); }
+.rock_2            , .rock_2Hover            { background-image: url(../images/obstructions/rock_2.png); }
+.sign              , .signHover              { background-image: url(../images/obstructions/sign.png); }
+.tree_1            , .tree_1Hover            { background-image: url(../images/obstructions/tree_1.png); }
+.tree_2            , .tree_2Hover            { background-image: url(../images/obstructions/tree_2.png); }
+.urn               , .urnHover               { background-image: url(../images/obstructions/urn.png); }
+
+
+
+
