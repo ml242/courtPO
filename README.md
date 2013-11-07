@@ -1,5 +1,16 @@
-###WDI-HW Submission Steps
+Resources
+---
+- [Rails Cheatsheet](https://github.com/ga-students/WDI_NYC_Hash/blob/master/extra/rails_commands_cheat_sheet.md)
+- [RESTful Routing Diagram](https://docs.google.com/drawings/d/1N_4JClUYDpK7NcxWHi4ydadtFASEWNm-vQVRRSFHmkI/edit)
 
+
+#### Week 7
+---
+
+##### Day 4
+- [Assignment Files](https://github.com/ga-students/WDI_NYC_Hash_Work/tree/master/w07/d04/readme.md)
+
+###WDI-HW Submission Steps
 ---
 
 ####Instructions in words:
