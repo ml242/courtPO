@@ -1,13 +1,13 @@
 #Morning Exercise
 
-## Obtaining a Google Maps API Key
+## Obtaining a Google [Maps](http://www.youtube.com/watch?v=oIIxlgcuQRU) API Key
 
 [Instructions](https://developers.google.com/maps/documentation/javascript/tutorial#api_key)
 
 Store the Google Maps API Key as an Environmental Variable called `GOOGLE_API_KEY` in your `~/.bash_profile`
 
 ## the marauder_app
-Create a new Rails app called `marauder_app` with a postgres database.
+Create a new Rails 3.2.14 app called `marauder_app` with a postgres database.
 
 Create a user model. A user should have a `name`, and `email`.
 
@@ -40,7 +40,7 @@ In `#notice` display "Created USERNAME" then fade out.
 ## Add a map
 Add a `div` with an `id` of `map-canvas` to `welcome#index`
 
-Give `#map-canvas` a height and width with css.
+Create a `style.css` file and give `#map-canvas` a height of `400px` and width of `960px` with css.
 
 ## Add some more JS
 Create a method on `app` called `makeMap` that runs the following code:
