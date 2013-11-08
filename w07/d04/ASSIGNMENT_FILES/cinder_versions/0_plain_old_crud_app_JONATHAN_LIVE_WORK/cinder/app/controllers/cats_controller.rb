@@ -26,6 +26,15 @@ class CatsController < ApplicationController
   # GET /cats/1.json
   def show
     @cat = Cat.find(params[:id])
+    respond_to do |format|
+      format.xml do
+        render xml: @cat
+      end
+      format.json do
+        render json: @cat
+      end
+      format.html
+    end
     # show.html.erb
   end
 

@@ -4,16 +4,12 @@ class CatsController < ApplicationController
   # GET /cats/new.json
   def new
     @cat = Cat.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: {age: nil, image_url: nil, name: nil, tag_line: nil} }
-    end
   end
 
   # POST /cats
   # POST /cats.json
   def create
+    debugger
     @cat = Cat.new(params[:cat])
 
     respond_to do |format|
@@ -33,7 +29,6 @@ class CatsController < ApplicationController
   # GET /cats/1
   # GET /cats/1.json
   def show
-    sleep 4
     @cat = Cat.find(params[:id])
 
     respond_to do |format|
