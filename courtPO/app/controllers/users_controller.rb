@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+<<<<<<< HEAD
+
+=======
   def new
     @user = User.new
   end
@@ -35,4 +38,5 @@ class UsersController < ApplicationController
       format.json { render json: @users }
     end
   end
+>>>>>>> 5c16fedf60c7e5b78a0b546f46549859013457d1
 end

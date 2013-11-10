@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+class SessionsController < ApplicationController
+
+=======
 class SessionController < ApplicationController
   def new
   end
@@ -20,4 +24,5 @@ class SessionController < ApplicationController
     redirect_to :back
     # redirect to the search, so the root
   end
+>>>>>>> 6bd1011fbb4f13ad9c1e69364e758315a2884cee
 end
