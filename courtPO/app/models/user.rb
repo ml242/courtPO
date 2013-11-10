@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
 
   has_secure_password
   has_many :solutions
-  has_many :num_cases
+  has_many :cases
 
   validates :email, uniqueness: true, presence: true, length: { minimum: 4 }
   validates :password, :password_confirmation, presence: true, length: { in: 6..20 }
