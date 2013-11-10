@@ -1,0 +1,12 @@
+<h3><%= @user.name %> </h3>
+<% favorites = Favorite.where(:user_id => @user.id) %>
+<ul>
+<% favorites.each do |fave| %>
+<li>
+  <% piece = Piece.find(fave.piece_id) %>
+  <%= link_to piece.name, piece %> -
+  <%= link_to "Remove", piece_favorite_path(fave.id), :method => :delete %>
+</li>
+<% end %>
+
+</ul>
