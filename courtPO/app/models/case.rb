@@ -17,7 +17,7 @@ class Case < ActiveRecord::Base
 
   attr_accessible :title, :conflict, :summary, :is_resolved, :expiration, :user_id
 
-  belongs_to :user_id
+  belongs_to :user
   has_many :solutions
 
 end
