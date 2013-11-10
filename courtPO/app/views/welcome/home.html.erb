@@ -1,1 +1,27 @@
-The Court of Public Opinion
+<div class="container">
+
+  <header>
+    <div>
+      <h1><%= link_to "Court of Public Opinion", "/", :class => "court-head" %></h1>
+    </div>
+
+    <nav class="nav-head">
+      <ul>
+        <% if current_user %>
+        <li><%= link_to "Logout", "/logout" %></li>
+        <li><%= link_to "My Bench", "/users/#{current_user.id}" %></li>
+        <% else %>
+        <li><%= link_to "Log In", "/login" %></li>
+        <% end %>
+      </ul>
+
+    </nav>
+  </header>
+  <% flash.each do |name, msg| %>
+  <%= content_tag :div, msg, :id => "flash_#{name}" %>
+  <% end %>
+
+  <%= yield %>
+
+
+</div>
