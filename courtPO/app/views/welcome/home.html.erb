@@ -16,21 +16,24 @@
   <%= content_tag :div, msg, :id => "flash_#{name}" %>
   <% end %>
 
-  <div="welcome-home">
+<div id="courtroom">
+  <div id="welcome-home">
     <h1> Welcome </h1>
     <h2> Court is in Session!</h2>
-  <div>
+<!--     <img src="scales_of_justice.png"> -->
+  </div>
 
-  <div="gavel-home">
-    <img src="./assests/images/gavel.png" >
-  <div>
+  <div id="gavel-home">
+    <img id="gavel-img" src="gavel.png" >
+    <p> ENTER </p>
+  </div>
 
-  <div="user-testimony">
-    <blockquote> Best decision I ever made </blockqoute>
+  <div id="user-testimony">
+    <p> "Killing my boss would have been a huge mistake! I'm so glad I got some great advice from the Court of Public Opinion." - Matt </p>
   </div>
 
 
   <%= yield %>
 
-
+</div>
 </div>
