@@ -36,4 +36,7 @@ class UsersController < ApplicationController
       format.json { render json: @users }
     end
   end
+<<<<<<< HEAD
 end
+=======
+>>>>>>> 5be40885a74107ababad4c366c11d26931bfc383
