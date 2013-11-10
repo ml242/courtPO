@@ -1,10 +1,5 @@
 <div class="container">
-
   <header>
-    <div>
-      <h1><%= link_to "Court of Public Opinion", "/", :class => "court-head" %></h1>
-    </div>
-
     <nav class="nav-head">
       <ul>
         <% if current_user %>
@@ -14,12 +9,26 @@
         <li><%= link_to "Log In", "/login" %></li>
         <% end %>
       </ul>
-
     </nav>
   </header>
+
   <% flash.each do |name, msg| %>
   <%= content_tag :div, msg, :id => "flash_#{name}" %>
   <% end %>
+
+  <div="welcome-home">
+    <h1> Welcome </h1>
+    <h2> Court is in Session!</h2>
+  <div>
+
+  <div="gavel-home">
+    <img src="./assests/images/gavel.png" >
+  <div>
+
+  <div="user-testimony">
+    <blockquote> Best decision I ever made </blockqoute>
+  </div>
+
 
   <%= yield %>
 
