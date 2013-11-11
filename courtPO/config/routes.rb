@@ -9,11 +9,11 @@ CourtPO::Application.routes.draw do
   root to: 'welcome#home'
   get '/signup' => 'users#new'
   get '/login' => 'session#new'
-  get '/login' => 'session#create'
+  post '/login' => 'session#create'
   get '/logout' => 'session#destroy'
 end
 #== Route Map
-# Generated on 09 Nov 2013 20:21
+# Generated on 09 Nov 2013 23:40
 #
 #                POST   /users(.:format)                        users#create
 #       new_user GET    /users/new(.:format)                    users#new

@@ -1,4 +1,5 @@
 class CreateUsers < ActiveRecord::Migration
+# TODO add default to score
   def change
     create_table :users do |t|
       t.string :name
@@ -7,7 +8,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :password_digest
       t.integer :num_cases
       t.integer :num_best_solutions
-      t.integer :score_total
+      t.integer :score_total #should this default to 0?
       t.timestamps
     end
   end
