@@ -4,7 +4,6 @@ class SessionController < ApplicationController
   end
 
   def create
-    binding.pry
     #email = params[:email]
     password = params[:password]
     username = params[:twitter]
