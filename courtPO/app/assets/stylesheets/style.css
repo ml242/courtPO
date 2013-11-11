@@ -55,3 +55,10 @@ body {
   padding: 1%;
   background-color: white;
 }
+
+#case{
+  background: grey;
+  margin: 0 auto;
+  padding: 10px;
+
+}
