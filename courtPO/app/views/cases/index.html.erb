@@ -2,8 +2,14 @@
 
 <div id="case">
 <% @cases.each do |case_doc| %>
-  <%= case_doc.title %>
+  <h1>Title: <%= case_doc.title %></h1>
+  <li>Conflict: <%= case_doc.conflict %> </li>
+  <li> Summary: <%= case_doc.summary %></li>
+  <%= link_to "Edit", edit_case_path(case_doc) %>
+  <%= link_to "Delete", case_path(case_doc), :method => "delete", :confirm => "Are you sure you want to delete case?" %>
 <%end%>
 
-<%= link_to "Add New Case", new_case_path %>
+
+
+<p><%= link_to "Add New Case", new_case_path %></p>
 </div>
