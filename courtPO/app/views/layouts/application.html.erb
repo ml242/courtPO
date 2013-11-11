@@ -9,6 +9,9 @@
 <body>
   <%= render 'layouts/nav' %>
   <%= flash[:notice] %>
+<div id="twitter_login">
+  <%= link_to "sign in with twitter", "/auth/twitter" %>
+</div>
 
 
 <%= yield %>
