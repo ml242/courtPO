@@ -3,6 +3,9 @@ courtPO
 
 General Assembly WDI project with Natasha Green and Matthew Korporaal.
 
+ML:Monday 8:30am
+Finally got the DB off the ground and pushed to github.
+
 MTK:Sunday 8:30
 -Added migration and models
 -Added routes and annotated
