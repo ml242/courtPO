@@ -42,6 +42,8 @@ ActiveRecord::Schema.define(:version => 20131110004308) do
     t.integer  "num_cases"
     t.integer  "num_best_solutions"
     t.integer  "score_total"
+    t.string   "uid"
+    t.string   "provider"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
   end

@@ -11,6 +11,10 @@ CourtPO::Application.routes.draw do
   get '/login' => 'session#new'
   post '/login' => 'session#create'
   get '/logout' => 'session#destroy'
+  # match '/auth/twitter/callback', to: 'sessions#create'
+  # match '/auth/:provider/callback', to: 'session#create', via: 'get'
+  get '/auth/:provider/callback' => 'session#create'
+  match '/auth/failure', to: redirect('/'), via: 'get'
 end
 #== Route Map
 # Generated on 09 Nov 2013 23:40
