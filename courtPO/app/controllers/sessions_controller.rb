@@ -5,6 +5,7 @@ class SessionsController < ApplicationController
 >>>>>>> 5be40885a74107ababad4c366c11d26931bfc383
   def new
   end
+
   def create
     email = params[:email]
     password = params[:password]

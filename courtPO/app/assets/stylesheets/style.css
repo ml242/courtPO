@@ -1,0 +1,42 @@
+#courtroom {
+  margin: 0 auto;
+  width: 85%;
+}
+
+#welcome-home {
+  width: 60%;
+  height: 35%;
+  border: 2px solid red;
+  border-radius: 10px;
+  margin: 0 auto;
+  padding: 5%
+}
+
+
+
+#gavel-img{
+  width: 80%;
+  height: 80%;
+}
+
+#gavel-home {
+  margin: 0 auto;
+  margin-top: -15px;
+  background-color: white;
+  border-radius: 10px;
+  border: 2px solid red;
+  width: 20%;
+}
+
+#gavel-home p{
+  margin: 0 auto;
+  text-align: center;
+}
+
+#user-testimony{
+  margin: 0 auto;
+  border-radius: 10px;
+  border: 2px solid red;
+  width: 20%;
+  float: right;
+}
