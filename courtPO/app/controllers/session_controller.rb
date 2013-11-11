@@ -1,13 +1,10 @@
-<<<<<<< HEAD
 class SessionController < ApplicationController
-=======
-class SessionsController < ApplicationController
->>>>>>> 5be40885a74107ababad4c366c11d26931bfc383
+
   def new
   end
 
   def create
-    email = params[:email]
+    #email = params[:email]
     password = params[:password]
     username = params[:twitter]
     @user = User.where(twitter: username).first
