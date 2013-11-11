@@ -38,4 +38,10 @@ class CasesController < ApplicationController
       end
   end
 
+  def show
+    id = (params[:id])
+    @case = Case.find(id)
+    @user = User.find(@case.user_id)
+  end
+
 end
