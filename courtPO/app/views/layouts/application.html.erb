@@ -7,9 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div>
-    <h1><%= link_to "Court of Public Opinion", "/", :class => "court-head" %></h1>
-  </div>
+  <%= render 'layouts/nav' %>
+  <%= flash[:notice] %>
+
 
 <%= yield %>
 
