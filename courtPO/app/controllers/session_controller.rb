@@ -38,7 +38,6 @@ def create
 end
 
   def destroy
-    binding.pry
     session[:user_id] = nil
     session["session_id"] = nil
     session["_csrf_token"] = nil
