@@ -25,7 +25,6 @@ class SessionController < ApplicationController
 
   def create
     auth_hash = request.env['omniauth.auth']
-    binding.pry
     if User.where(:uid => auth_hash["uid"]).empty?
       @user = User.new
       @user.uid = auth_hash["uid"]
