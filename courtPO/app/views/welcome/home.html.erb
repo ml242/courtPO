@@ -1,3 +1,5 @@
+<div id="court-pic">
+
 <div class="container grid">
 
 <div class="unit two-fifths" id="courtroom">
@@ -7,17 +9,17 @@
 <!--     <img src="scales_of_justice.png"> -->
   </div>
 </div>
+</div>
 
-  <div class="unit one-fifths" id="gavel-home">
+
+  <div id="gavel-home">
     <img id="gavel-img" <img src="scales_of_justice.png">
-    <p> ENTER </p>
+    <p><%= link_to "ENTER", "/cases/" %></p>
   </div>
 
-  <div class="unit one-fifths" id="user-testimony">
+
+  <div id="user-testimony">
     <p> "Killing my boss would have been a huge mistake! I'm so glad I got some great advice from the Court of Public Opinion." - Matt</p>
   </div>
 </div>
-
-  <%= yield %>
-
-</div>
+  <%#= yield %>
