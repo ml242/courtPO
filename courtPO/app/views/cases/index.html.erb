@@ -3,8 +3,7 @@
 <div class="cases-main">
   <div id="case">
   <% @cases.each do |case_doc| %>
-    <h1>Title: <%= case_doc.title %></h1>
-    <%= link_to "Title", cases_path %>
+    <h1><a href="/cases/<%= case_doc.id %>"><%= case_doc.title %></a></h1>
     <ul>
     <li>Conflict: <%= case_doc.conflict %> </li>
     <li> Summary: <%= case_doc.summary %></li>

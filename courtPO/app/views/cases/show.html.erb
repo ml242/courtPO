@@ -17,10 +17,6 @@ Logged in as <%= session[:username] %>
       <input type="text" data-case-id="<%=@case.solutions.new %>" />
       <button> Submit </button>
 
-    </ul>
-
-
-
     </div>
   <%= link_to "Edit", edit_case_path(@case) %>
    <%= link_to "Delete", case_path(@case), :method => "delete", :confirm => "Are you sure you want to delete?" %>
