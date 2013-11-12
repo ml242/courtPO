@@ -1,10 +1,8 @@
-<h3><%= @user.name %> - Your account has been created</h3>
-
+<h2><%= @user.name %> - Thanks for logging in!</h2>
+<div class="cases-main">
 <div id="case">
-
-
 <% @user.solutions.each do |solution| %>
   <h1>Opinion: <%= solution.opinion %></h1>
 <%end%>
 </div>
-
+</div>
