@@ -6,16 +6,22 @@ Logged in as <%= session[:username] %>
   <div id="case">
     <h1>Title: <%= @case.title %></h1>
     <li>Conflict: <%= @case.conflict %> </li>
-  <!--   <li> Summary: <%#= @case.summary %></li>
-   --><br>
-  <% @case.solutions.each do |solution| %>
-    <li>Solution: <%= solution.opinion %></li>
-    <li>Written by: <%= solution.user.name %></li>
-  <br>
-  <%end%>
+
+
+    <div>
+    <% @case.solutions.each do |solution| %>
+      <li> Opinion: <%= solution.opinion %></li>
+    <%end%>
+
+     <!--  TODO edit the form to add an opinion to this page -->
+      <input type="text" data-case-id="<%=@case.solutions.new %>" />
+      <button> Submit </button>
+
+    </ul>
 
 
 
+    </div>
   <%= link_to "Edit", edit_case_path(@case) %>
    <%= link_to "Delete", case_path(@case), :method => "delete", :confirm => "Are you sure you want to delete?" %>
 

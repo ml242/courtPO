@@ -9,17 +9,6 @@
     <li> Summary: <%= case_doc.summary %></li>
     </ul>
 
-    <div>
-      <ul id="<%=case_doc.id%>" >
-      <% case_doc.solutions.each do |opinion| %>
-          <li> Opinion: <%= opinion.opinion %></li>
-      <%end %>
-      </ul>
-
-      <input type="text" data-case-id="<%=case_doc.id %>" />
-      <button> Submit </button>
-
-      </div>
   <%end%>
   </div>
 </div>
