@@ -26,6 +26,8 @@ class SessionController < ApplicationController
 def create
   auth_hash = request.env['omniauth.auth']
   @user = User.where(:uid => auth_hash["uid"])
+  @user.uid = auth_hash["uid"]
+  session[:user_id] = @user.uid
   if @user
     # render :text => "Welcome back #{@user.name}! You have already signed up."
     redirect_to("/cases")
