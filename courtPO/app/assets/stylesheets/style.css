@@ -3,11 +3,30 @@ body {
   background-size: cover;
 }
 
+[role="banner"] h1{
+margin: 0;
+margin-left: 10%;
+}
+
+[role="banner"] {
+color: #EEEEEE;
+}
+
+a, a:link, a:visited {
+color: white;
+text-decoration: none;
+}
+
+header {
+  background-color: #2F363E;
+  margin-bottom: 40px;
+}
+
 #courtroom {
   margin: 0 auto;
   width: 85%;
-
 }
+
 
 #welcome-home {
   width: 45%;
@@ -48,6 +67,7 @@ body {
 
 #user-testimony{
   margin: 0 auto;
+  margin-right: 15%;
   border-radius: 10px;
   border: 2px solid red;
   width: 20%;
