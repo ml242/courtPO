@@ -2,7 +2,7 @@ class SessionController < ApplicationController
 
   def new
   end
-
+#old logout stuff from our original log out method
   # def create
   #   #email = params[:email]
   #   password = params[:password]
@@ -25,9 +25,10 @@ class SessionController < ApplicationController
 
 def create
   auth_hash = request.env['omniauth.auth']
-  @user = User.where(:uid => auth_hash["uid"])
-  @user[0].uid = auth_hash["uid"]
-  session[:user_id] = @user
+  @user = User.where(:uid => auth_hash["uid"]).first
+  @user.uid = auth_hash["uid"]
+  @user.save
+  session[:user_id] = @user.id
   if @user
     # render :text => "Welcome back #{@user.name}! You have already signed up."
     redirect_to("/cases")
