@@ -1,3 +1,5 @@
+# Omniauth.config.logger = Rails.logger
+
 Rails.application.config.middleware.use OmniAuth::Builder do
 
 twitter_key = "ITA2Gdoe8JKt58SZ7jSjg"

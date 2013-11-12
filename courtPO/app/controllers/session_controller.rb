@@ -23,13 +23,16 @@ class SessionController < ApplicationController
   #   # redirect to the search, so the root
   # end
 
-  def create
-    raise env["omniauth.auth"].to_yaml
-    # auth = request.env["omniauth.auth"]
-    # user = User.find_by_provider_and_uid(auth["provider"], auth["uid"]) ||User.create_with_omniauth(auth)
-    # session[:user_id] = user.id
-    # redirect_to root_url, :notice => "Signed in!"
+def create
+  auth_hash = request.env['omniauth.auth']
+  @user = User.where(:uid => auth_hash["uid"])
+  if @user
+    # render :text => "Welcome back #{@user.name}! You have already signed up."
+    redirect_to("/cases")
+  else
+    redirect_to("/")
   end
+end
 
   def destroy
     session[:user_id] = nil

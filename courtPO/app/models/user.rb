@@ -16,7 +16,7 @@
 
 class User < ActiveRecord::Base
 
-  attr_accessible :name, :email, :twitter, :num_cases, :num_best_solutions, :score_total, :password, :password_confirmation
+  attr_accessible :name, :email, :twitter, :num_cases, :num_best_solutions, :score_total, :password, :password_confirmation, :uid
 
   has_secure_password
   has_many :solutions
@@ -24,5 +24,18 @@ class User < ActiveRecord::Base
 
   validates :email, uniqueness: true, presence: true, length: { minimum: 4 }
   validates :password, :password_confirmation, presence: true, length: { in: 6..20 }
+
+  # def self.from_omniauth(auth)
+  #    user = where(auth["uid"].first || create_from_omniauth(auth)
+  # end
+
+  # def self.create_from_omniauth(auth)
+  #   create! do |user|
+  #     # user.provider = auth["provider"]
+  #     user.uid = auth["uid"]
+  #     user.nickname = auth["info"]["nickname"]
+  #   end
+  # end
+
 
 end
