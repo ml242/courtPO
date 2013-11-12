@@ -21,6 +21,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @solution = Solution.new
+    @solutions = Solution.all
 
     respond_to do |format|
       format.html
