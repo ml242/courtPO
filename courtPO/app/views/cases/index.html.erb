@@ -1,10 +1,11 @@
 <h1> Cases </h1>
 
+<div class="cases-main">
 <div id="case">
 <% @cases.each do |case_doc| %>
   <h1>Title: <%= case_doc.title %></h1>
   <li>Conflict: <%= case_doc.conflict %> </li>
   <li> Summary: <%= case_doc.summary %></li>
 <%end%>
-
+</div>
 </div>

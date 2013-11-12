@@ -62,3 +62,12 @@ body {
   padding: 10px;
 
 }
+
+.cases-main {
+  float: left;
+  background-color: rgba(255, 255, 255, .85);
+  width: 40%;
+  border: black 1px solid;
+  padding: 15px;
+  margin: 15px;
+}
