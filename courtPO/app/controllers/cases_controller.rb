@@ -44,6 +44,7 @@ class CasesController < ApplicationController
     @case = Case.find(id)
     @user = User.find(@case.user_id)
     @solution = Solution.new
+    redirect_to cases_path
   end
 
 end
