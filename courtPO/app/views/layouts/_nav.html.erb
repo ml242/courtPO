@@ -6,14 +6,25 @@
           <h1><%= link_to "Court of Public Opinion", "/", :class => "court-head" %></h1>
         </div>
         <ul>
-          <% if current_user %>
-          <li><%= link_to "Logout", "/logout" %></li>
-          <li><%= link_to "My Bench", "/users/" %></li>
-          <% else %>
-          <li><%= link_to "Log In", "/login" %></li>
-          <% end %>
+          <%#= render 'layouts/nav' %>
+          <%#= flash[:notice] %>
+          <div id="twitter_login">
+            <% if current_user %>
+            Signed in as <%= current_user.name %> |
+            <%= link_to "My Bench", "/users/#{current_user.id}" %> |
+            <%= link_to "sign out", signout_path %>
+            <% else %>
+            <%= link_to "sign in with twitter", "/auth/twitter" %>
+            <% end %>
+          </div>
+<!--           <%# if current_user %>
+          <li><%#= link_to "Logout", "/logout" %></li>
+          <li><%#= link_to "My Bench", "/users/#{current_user.id}" %></li>
+          <%# else %>
+          <li><%#= link_to "Log In With Twitter", "/login" %></li>
+          <%# end %>
         </ul>
-      </nav>
+      </nav> -->
     </header>
 
     <% flash.each do |name, msg| %>

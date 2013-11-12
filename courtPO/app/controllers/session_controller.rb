@@ -28,6 +28,8 @@ class SessionController < ApplicationController
     if User.where(:uid => auth_hash["uid"]).empty?
       @user = User.new
       @user.uid = auth_hash["uid"]
+      @user.name = auth_hash["info"]["nickname"]
+      @user.image = auth_hash["info"]["image"]
       @user.save
       session[:user_id] = @user.id
       redirect_to("/cases")
