@@ -5,6 +5,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :name
       t.string :email
       t.string :twitter
+      t.string :image
       t.string :password_digest
       t.integer :num_best_solutions
       t.integer :score_total #should this default to 0?
