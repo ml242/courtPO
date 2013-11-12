@@ -5,11 +5,10 @@ class ApplicationController < ActionController::Base
 private
 
   def current_user
-    # @current_user ||= User.find(session[:user_id]) if session[:user_id]
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
     # User.find session[:user_id] if session[:user_id]
-    @current_user = session[:oauth]["twitter"]["callback_confirmed"]
+    # @current_user = session[:oauth]["twitter"]["callback_confirmed"]
   end
-
   helper_method :current_user
 end
 

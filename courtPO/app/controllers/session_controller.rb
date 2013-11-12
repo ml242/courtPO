@@ -26,8 +26,8 @@ class SessionController < ApplicationController
 def create
   auth_hash = request.env['omniauth.auth']
   @user = User.where(:uid => auth_hash["uid"])
-  @user.uid = auth_hash["uid"]
-  session[:user_id] = @user.uid
+  @user[0].uid = auth_hash["uid"]
+  session[:user_id] = @user
   if @user
     # render :text => "Welcome back #{@user.name}! You have already signed up."
     redirect_to("/cases")
@@ -37,8 +37,14 @@ def create
 end
 
   def destroy
+    binding.pry
     session[:user_id] = nil
+    session["session_id"] = nil
+    session["_csrf_token"] = nil
+    session["oauth"]["twitter"]["callback_confirmed"] = false
     redirect_to root_url, :notice => "Signed out!"
+    # redirect_to root_url
+
   end
 
 

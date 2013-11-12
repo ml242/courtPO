@@ -1,21 +1,24 @@
 CourtPO::Application.routes.draw do
   resources :users
   resources :welcome, only: [:new]
-  resources :sessions, only: [:new, :create, :destroy]
+  resources :session, only: [:new, :create, :destroy]
   resources :cases do
     resources :solutions, :only => [:create, :destroy]
   end
 
   root to: 'welcome#home'
-  get '/signup' => 'users#new'
-  get '/login' => 'session#new'
-  post '/login' => 'session#create'
-  get '/logout' => 'session#destroy'
+  # get '/signup' => 'users#new'
+  # get '/login' => 'session#new'
+  # post '/login' => 'session#create'
+  # get '/logout' => 'session#destroy'
   # match '/auth/twitter/callback', to: 'sessions#create'
   # match '/auth/:provider/callback', to: 'session#create', via: 'get'
+  get '/login' => 'session#new', :as => :login
   get '/auth/:provider/callback' => 'session#create'
   match '/auth/failure', to: redirect('/'), via: 'get'
   match 'signout', to: 'session#destroy', as: 'signout'
+  get '/logout' => 'session#destroy', as: 'signout'
+
 end
 #== Route Map
 # Generated on 09 Nov 2013 23:40
