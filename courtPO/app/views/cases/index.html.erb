@@ -1,11 +1,25 @@
 <h1> Cases </h1>
 
 <div class="cases-main">
-<div id="case">
-<% @cases.each do |case_doc| %>
-  <h1>Title: <%= case_doc.title %></h1>
-  <li>Conflict: <%= case_doc.conflict %> </li>
-  <li> Summary: <%= case_doc.summary %></li>
-<%end%>
-</div>
+  <div id="case">
+  <% @cases.each do |case_doc| %>
+    <h1>Title: <%= case_doc.title %></h1>
+    <ul>
+    <li>Conflict: <%= case_doc.conflict %> </li>
+    <li> Summary: <%= case_doc.summary %></li>
+    </ul>
+
+    <div>
+      <ul id="<%=case_doc.id%>" >
+      <% case_doc.solutions.each do |opinion| %>
+          <li> Opinion: <%= opinion.opinion %></li>
+      <%end %>
+      </ul>
+
+      <input type="text" data-case-id="<%=case_doc.id %>" />
+      <button> Submit </button>
+
+      </div>
+  <%end%>
+  </div>
 </div>
