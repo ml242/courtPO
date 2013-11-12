@@ -1,22 +1,25 @@
 <h1> Case</h1>
 Logged in as <%= session[:username] %>
-<div id="case">
-
-  <h1>Title: <%= @case.title %></h1>
-  <li>Conflict: <%= @case.conflict %> </li>
-<!--   <li> Summary: <%#= @case.summary %></li>
- --><br>
-<% @case.solutions.each do |solution| %>
-  <li>Solution: <%= solution.opinion %></li>
-  <li>Written by: <%= solution.user.name %></li>
-<br>
-<%end%>
 
 
-<%= link_to "Edit", edit_case_path(@case) %>
- <%= link_to "Delete", case_path(@case), :method => "delete", :confirm => "Are you sure you want to delete?" %>
+<div class="cases-main">
+  <div id="case">
+    <h1>Title: <%= @case.title %></h1>
+    <li>Conflict: <%= @case.conflict %> </li>
+  <!--   <li> Summary: <%#= @case.summary %></li>
+   --><br>
+  <% @case.solutions.each do |solution| %>
+    <li>Solution: <%= solution.opinion %></li>
+    <li>Written by: <%= solution.user.name %></li>
+  <br>
+  <%end%>
 
-<p><%= link_to "Add New Case", new_case_path %></p>
+
+  <%= link_to "Edit", edit_case_path(@case) %>
+   <%= link_to "Delete", case_path(@case), :method => "delete", :confirm => "Are you sure you want to delete?" %>
+
+  <p><%= link_to "Add New Case", new_case_path %></p>
+  </div>
 </div>
 
 
