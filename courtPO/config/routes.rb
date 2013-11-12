@@ -15,7 +15,7 @@ CourtPO::Application.routes.draw do
   # match '/auth/:provider/callback', to: 'session#create', via: 'get'
   get '/auth/:provider/callback' => 'session#create'
   match '/auth/failure', to: redirect('/'), via: 'get'
-  match 'signout', to: 'sessions#destroy', as: 'signout'
+  match 'signout', to: 'session#destroy', as: 'signout'
 end
 #== Route Map
 # Generated on 09 Nov 2013 23:40

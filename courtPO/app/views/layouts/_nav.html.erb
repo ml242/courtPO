@@ -7,8 +7,9 @@
         </div>
         <ul>
           <% if current_user %>
+          <% binding.pry %>
           <li><%= link_to "Logout", "/logout" %></li>
-          <li><%= link_to "My Bench", "/users/#{current_user.id}" %></li>
+          <li><%= link_to "My Bench", "/users/" %></li>
           <% else %>
           <li><%= link_to "Log In", "/login" %></li>
           <% end %>

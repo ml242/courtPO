@@ -11,7 +11,7 @@
   <%= flash[:notice] %>
 <div id="twitter_login">
   <% if current_user %>
-  Signed in as <%= current_user.nickname %>
+  Signed in as <%= current_user %>
   <%= link_to "sign out", signout_path %>
   <% else %>
   <%= link_to "sign in with twitter", "/auth/twitter" %>
