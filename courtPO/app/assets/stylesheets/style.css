@@ -21,13 +21,6 @@ header {
   background-color: #2F363E;
   margin-bottom: 40px;
 }
-
-#courtroom {
-  margin: 0 auto;
-  width: 85%;
-}
-
-
 #welcome-home {
   width: 45%;
   height: 30%;
@@ -37,6 +30,13 @@ header {
   padding: 5%;
   background-color: white;
 }
+
+#courtroom {
+  margin: 0 auto;
+  width: 85%;
+}
+
+
 
 
 #gavel-home {
