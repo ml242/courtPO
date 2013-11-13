@@ -1,0 +1,46 @@
+body {
+  font-family: "Times New Roman", serif;
+  font-size: 13px;
+  line-height: 17px;
+  color: #778899;
+}
+
+.footer {
+  display: block;
+  position: relative;
+}
+
+/* Content */
+h2 { font-weight: 500 }
+
+p { color: #969696;
+    line-height: 2em; }
+
+p.date { color: #009FFF; }
+
+p::Hover { color: #20222A; }
+
+/* Set margin for wrapper */
+#wrapper { margin: 20px auto; width: 950px; }
+#main_content { margin: 0 20px; }
+
+/* Big picture attributes */
+.girl_rings {
+  width: 960px;
+  height: 500px;
+  background-position: left;
+  background-repeat: no-repeat;
+}
+
+.sponsor_box {
+  width: 224px;
+  height: 144px;
+  float: left;
+  border: 5px solid lightgrey;
+  margin: 0 1px;
+}
+
+.more {
+  text-decoration: none;
+  color: #009FFF;
+}

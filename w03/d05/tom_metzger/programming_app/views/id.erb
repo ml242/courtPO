@@ -1,0 +1,27 @@
+<!-- displays the programmers information -->
+<h1>Profile of <%= @result[:name] %></h1>
+<div class="profile">
+<!-- profile photo -->
+<img src="<%= @result[:twitter_pic] %>">
+
+<!-- Name -->
+<h5>Name:</h5>
+  <p><%= @result[:name] %></p>
+<!-- <h5>Twitter Handle:</h5> -->
+
+<!-- Twitter Handle -->
+<div>
+<img src="http://theinspirationroom.com/daily/design/2012/6/new_twitter_logo.jpg" class="service_logos">
+  <a href="https://twitter.com/<%= @result[:twitter_username] %>"><%= @result[:twitter_username] %></a>
+</div>
+
+<!-- Github username -->
+<img src="http://cdn.ahrengot.com/wp-content/uploads/github-logo-transparent.png" class="service_logos">
+  <a href="https://github.com/<%= @result[:github] %>"><%= @result[:github] %></a>
+</div>
+
+
+
+
+
+

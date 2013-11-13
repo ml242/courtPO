@@ -1,0 +1,49 @@
+body {
+  background-color: #C2FFF3;
+  color: #30403D;
+  font-family: 'Patrick Hand SC', cursive;;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.guessesLeftDiv {
+  float: right;
+  position: fixed;
+  top: 10px;
+}
+
+.letter {
+  display: inline-block;
+  margin: 10px;
+  padding: 2px;
+  border-bottom: 2px solid black;
+  height: 25px;
+  width: 20px;
+  position: relative;
+  text-align: center;
+}
+
+.letter h2 {
+  position: absolute;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.textBox {
+  margin: 30px 10px;
+  height: 23px;
+  width: 25px;
+  font-size: 1.5em;
+  position: relative;
+  bottom: -4px;
+  text-align: center;
+}
+
+.submit {
+  height: 30px;
+}
+

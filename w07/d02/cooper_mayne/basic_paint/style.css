@@ -1,0 +1,27 @@
+#color-palette {
+  position: fixed;
+}
+
+#color-palette > * {
+  width: 80px;
+  height: 80px;
+  display:inline-block;
+}
+
+.black, .black-painted { background-color: black }
+.red, .red-painted{ background-color: red }
+.blue, .blue-painted{ background-color: blue }
+.green, .green-painted{ background-color: green }
+
+.black-hover { background-color: black }
+.red-hover{ background-color: red }
+.blue-hover{ background-color: blue }
+.green-hover{ background-color: green }
+
+.tile {
+  width: 20px;
+  height: 20px;
+  display:inline-block;
+}
+
+.white { background-color: white }

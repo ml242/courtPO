@@ -1,0 +1,18 @@
+<ol>
+<%@kittens_array.each do |hash|%>
+<%id = hash["id"]%>
+<%name = hash["name"]%>
+<%age = hash["age"]%>
+<%owner= hash["owner"]%>
+<%description =hash["description"]%>
+<a href="/kittens/<%=id%>"><li><%=name%></li></a>
+  <ul>
+  <li>Age: <%=age%></li>
+  <li>Owner: <%=owner%></li>
+  <li>Description: <%=description%></li>
+  <a href="/kittens/<%=id%>/delete"><li>remove</li></a>
+  </ul>
+  <% end%>
+</ol>
+
+

@@ -1,0 +1,15 @@
+<h1>index.erb works</h1>
+
+<ul>
+  <% @entries.each do |entry| %>
+  <li><%=entry["author"]%><br/>
+      <img src="<%= entry["photo_url"] %>"> <br/>
+      <%=entry["date_taken"]%>
+  </li>
+  <%end%>
+</ul>
+
+
+<a href="/photos/new">Add a Photo</a>
+<br/>
+<a href="/photos/:id">Find a Photo</a>

@@ -1,0 +1,133 @@
+* {
+  -moz-box-sizing: border-box; /* Firexfox */
+  -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
+  box-sizing: border-box; /* IE */
+}
+
+body {
+  background: white url("../images/ticketstub.png") repeat fixed left; 
+  font-family: "Sans-serif";
+}
+
+.container:before,
+.container:after {
+    content:"";
+    display:table;
+}
+.container:after {
+    clear:both;
+}
+/* For IE 6/7 (trigger hasLayout) */
+.container {
+    zoom:1;
+}
+img.logo {
+  display:block;
+  margin: 20px auto;
+}
+form {
+  display: inline;
+}
+input.search {
+  display:inline;
+  border: 0px;
+  font-size: 25px;
+  text-align: left;
+  box-shadow: 5px 5px 5px #565656;
+  position: relative;
+  bottom: 65px;
+}
+input.search[type="text"] {
+  width: 270px;
+  margin-left: 40px;
+}
+input.search[type="submit"] {
+  margin-right: 40px;
+  width:130px;
+}
+img.face {
+  position:relative;
+  bottom:50px;
+  width: 120px;
+  display:inline;
+}
+div.container {
+  padding: 2px 20px 20px 20px;
+  margin: 10px auto;
+  width:790px;
+  background: grey url("../images/bg.jpg") repeat fixed center; 
+  background-color:#C2C2C2;
+  border: 3px solid grey;
+  box-shadow: -5px -5px 5px #565656;
+  box-shadow: 5px 5px 5px #565656;
+  border-radius: 3px;
+}
+table {
+  margin-bottom:15px;
+  border-collapse: collapse;
+  text-align: left;
+}
+th, td {
+  padding: 5px;
+  border-bottom: 1px solid black;
+}
+
+img.poster {
+  float:left;
+  width: 290;
+}
+ul {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+}
+li {
+  background: url("../images/list_icon.png") no-repeat 0 3px;
+  padding-left: 25px;
+}
+
+a {
+  font: 20px Arial,sans-serif;
+}
+
+.add input {
+  display:none;
+}
+
+div.add {
+  display:inline;
+  background-color:#C2C2C2;
+  border: 3px solid grey;
+  box-shadow: -5px -5px 5px #565656;
+  box-shadow: 5px 5px 5px #565656;
+  border-radius: 3px;
+  padding: 2px;
+}
+
+a.header {
+  background-color: grey;
+}
+
+div.header {
+  display: inline;
+  background: grey url("../images/bg.jpg") repeat fixed center; 
+  border: 3px solid grey;
+  box-shadow: -5px -5px 5px #565656;
+  box-shadow: 5px 5px 5px #565656;
+  border-radius: 3px;
+  margin-right: 4px;
+  padding: 2px;
+}
+
+div.header-c {
+  width:790;
+  margin: 0 auto;
+}
+div.header-c a {
+  color: #304230;
+  text-decoration: none;
+}
+div.goright {
+  float: right;
+  width: 440;
+}

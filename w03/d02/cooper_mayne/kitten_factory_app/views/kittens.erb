@@ -1,0 +1,9 @@
+<h1 id="heading">kittens! yea eya1</h1>
+
+<a href=/>home</a>
+<br>
+<% @kittens.each do |kitten|%>
+  <li><%= kitten["name"] %>&#x21E5;<a href=kittens/<%= kitten["id"] %>>info</a></li>  
+<% end %>
+
+<a href=/kittens/new>add a kitten</a>

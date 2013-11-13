@@ -1,0 +1,7 @@
+<div class="show">
+ <a href="/photos"><img src="/<%= @entry['photo'] %>" class=<%= @entry['filter'] %>></a>
+<% author = User.find(@entry.author_id) %>
+<br>taken by <%= author['username'] %> on <%= @entry.date_taken %>
+<br><br><a href="/photos/<%= @entry['id'] %>/edit">update photo</a>
+<br><a href="/photos/<%= @entry['id'] %>/delete">delete photo</a><br>
+</div>

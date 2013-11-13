@@ -1,0 +1,4 @@
+<% @user_photos.each do |entry| %>
+<br><a href="/photos/<%= entry.id %>"><img src="<%= entry['photo'] %>" class="<%= entry['filter'] %>"></a>
+<br>taken by <%= @author %> on <%= entry['date_taken'] %>
+<% end %>

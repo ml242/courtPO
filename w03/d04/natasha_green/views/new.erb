@@ -1,0 +1,16 @@
+<h1> New Entry </h1>
+<form action="/new" method="post">
+  <label for="Author"> Author: </label><br />
+  <input id="Author" name="entry[author]" type="text" value="<%= @entry.author %>" />
+  <br />
+
+   <label for="Photo"> Photo: </label><br />
+  <input id="photo" name="entry[photo]" type="text" value="<%= @entry.photo %>" />
+  <br />
+
+   <label for="Photo Taken"> Photo Taken: </label><br />
+  <input id="photo_taken" name="entry[photo_taken]" type="text" value="<%= @entry.photo_taken %>" />
+  <br />
+
+  <input type="submit" value="Create Entry" />
+</form>

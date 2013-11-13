@@ -1,0 +1,17 @@
+<% unless @movies %>
+  <h1 class="logo letterpress">Movies.</h1>
+<% else %>
+<% # Search Results %>
+  <div class="search-results container">
+    <% unless @movies.empty? %>
+      <ul>
+        <% @movies.each do |movie| %>
+        <li><a href="/<%= movie[:imdb_id] %>"><%= movie[:title] %> (<%= movie[:year] %>)</a></li>
+        <% end %>
+      </ul>
+    <% else %>
+      <p class="no-movies letterpress">No movies found.</p>
+    <% end %>
+  </div>
+<% end %>
+

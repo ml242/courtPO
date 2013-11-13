@@ -1,0 +1,5 @@
+<h1>Movie results:</h1>
+<% parsed_response["Search"].each do |movie| %>
+  <%= movie_title %>
+<% end %>
+<p><a href="www.imdb.com/title/<%= @movieid %>" ><%= @title %></a>, <%= @year %></p>

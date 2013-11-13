@@ -1,0 +1,22 @@
+<div class="stock-search-wrapper">
+  <h1>Stock Search</h1>
+  <form>
+    <input type="text" name="stock" placeholder="GOOG">
+    <input type="submit" value="Search">
+  </form>
+  <% unless @params.empty? %>
+    <% if @stock == "" %>
+      <p>You didn't enter a stock symbol.</p>
+    <% else %>
+      <h3><%= @stock_name %> (<%= @stock_symbol %>)</h3>
+      <h2><%= @stock_price %></h2>
+      <% if @stock_change_percent > 0 %>
+        <span class="stock-up"><%= @stock_change_points %> (<%= @stock_change_percent %>%)</span>
+      <% elsif @stock_change_percent < 0 %>
+        <span class="stock-down"><%= @stock_change_points %> (<%= @stock_change_percent %>%)</span>
+      <% else %>
+        <span>■</span>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>

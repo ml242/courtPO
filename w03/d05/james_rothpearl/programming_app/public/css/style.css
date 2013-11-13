@@ -1,0 +1,38 @@
+* {
+     -moz-box-sizing: border-box; /* Firexfox */
+     -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
+     box-sizing: border-box; /* IE */
+}
+
+body {
+  background-color: #FFF7B2;
+  font-family: 'Georgia', serif;
+  font-size: 14px;
+  font-weight: 100;
+  line-height: 1.5;
+
+}
+
+h1 {
+  color: #B2B0AD;
+}
+
+h4 {
+  padding: 0px;
+  margin: 0px;
+  text-transform: uppercase;
+  display: inline-block;
+  font-weight: normal;
+  letter-spacing: 4px;
+}
+
+a {
+  color: #7A6CB2;
+  text-decoration: none;
+}
+
+strong {
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: 700;
+}

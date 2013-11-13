@@ -1,0 +1,24 @@
+<h1 class="game_name"><%=@rps%></h1>
+<form>
+  <label>Rock...Paper...Scissors...SHOOT:</label>
+  <input type="text" name="guess" placeholder="Guess" >
+  <input type="submit" value="Play!">
+</form>
+
+<p>PLAYER 1: <%= @guess %></p>
+<p>COMPUTER: <%= @computer_answer %> </p>
+
+
+<% if @computer_answer == @guess %>
+  <p><strong><%=@tie_message%></strong></p>
+  <% elsif @computer_answer == "rock" && @guess == "paper" || @computer_answer == "paper" && @guess == "scissors" || @computer_answer == "scissors" && @guess == "rock"%>
+  <p><strong><%=@win_message%></strong></p>
+  <% elsif @computer_answer == "rock" && @guess == "scissors" || @computer_answer == "paper" && @guess == "rock" || @computer_answer == "scissors" && @guess == "paper" %>
+  <p><strong><%=@lose_message%></strong></p>
+  <% end %>
+
+  <img src=<%= @image1  %> class = "images">
+  <img src=<%= @image2  %> class = "images">
+  <img src=<%= @image3  %> class = "images">
+
+

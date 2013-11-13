@@ -1,0 +1,29 @@
+<h1>Rock... Paper... Scissors...</h1>
+<form>
+  <input type="text" name="input" placeholder="Choose 'rock', 'paper', or 'scissors'...">
+  <input type="submit" value="SHOOT">
+</form>
+
+    <% if @computer_choice == @user_choice %>
+            <p>The computer chose: <%= @computer_choice %></p>
+            <p class="result">The result is a tie!</p>
+            <img class="tie"  src="<%= @tie_image %>">
+    <% elsif @user_choice == "rock" && @computer_choice == "scissors" %>
+            <p>The computer chose: <%= @computer_choice %></p>
+            <p class="result">You win!</p>
+            <img class="win"  src="<%= @win_image %>">
+    <% elsif @user_choice == "paper" && @computer_choice == "rock" %>
+            <p>The computer chose: <%= @computer_choice %></p>
+            <p class="result">You win!</p>
+            <img class="win" src="<%= @win_image %>">
+    <% elsif @user_choice == "scissors" && @computer_choice == "paper" %>
+            <p>The computer chose: <%= @computer_choice %></p>
+            <p class="result">You win!</p>
+            <img class="win"  src="<%= @win_image %>">
+    <% elsif @user_choice.nil? %>
+            <p>Please choose rock, paper, or scissors to play</p>
+    <% else %>
+            <p>The computer chose: <%= @computer_choice %></p>
+            <p class="result">You lose!</p>
+            <img class="lose"  src="<%= @lose_image %>">
+<% end %>

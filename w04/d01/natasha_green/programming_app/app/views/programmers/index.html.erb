@@ -1,0 +1,12 @@
+Look at all these people <br>
+
+<% if @programmers %>
+<% @programmers.each do |programmer| %>
+  <%= link_to( programmer.id, "/programmers/#{programmer.id}") %><br>
+<%= programmer.name %><br>
+<%= programmer.twitter_username %><br>
+<%= programmer.twitter_pic %><br>
+<%= programmer.github %> <br>
+
+<%end %>
+<% end %>

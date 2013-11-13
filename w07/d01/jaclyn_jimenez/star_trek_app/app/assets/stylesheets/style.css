@@ -1,0 +1,30 @@
+body {
+  background-color: #444;
+  color: #DDD;
+}
+
+section {
+  background-color: #777;
+  font-family: sans-serif;
+}
+
+.hidden {
+  display: none;
+}
+
+.starship {
+  width: 300px;
+  height: 200px;
+  border-radius: 50%;
+  margin: 20px;
+  display: inline-block;
+  text-align: center;
+}
+
+#enterprise {
+  background-color: blue;
+}
+
+#bird-of-prey {
+  background-color: red;
+}

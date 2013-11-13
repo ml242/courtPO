@@ -1,0 +1,17 @@
+<% form_tag("/programmers/#{id}", method: :put) %>
+<%= text_field_tag 'name', @person.name %>
+<%= text_field_tag 'twitter_pic', @person.twitter_pic %>
+<%= text_field_tag 'twitter_username', @person.twitter_username %>
+<%= text_field_tag 'github_username', placeholder: 'github username' %>
+
+hellooo
+
+
+<!-- <form action="/programmers/edit" method="post">
+  <input type="hidden" name="id" value=<%= @person.id %>>
+  <input type="text" name="name" value=<%= @person.name %>>
+  <br><input type="text" name="twitter_pic" value=<%= @person.twitter_pic %>>
+  <br><input type="text" name="twitter_username" value=<%=@person.twitter_username %>>
+  <br><input type="text" name="github_username" placeholder="github username">
+  <br><input type="submit" value="submit">
+</form> -->

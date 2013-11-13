@@ -1,0 +1,9 @@
+body {
+  background: black;
+  color: white;
+  font-family: 'helvetica', sans-serif;
+}
+
+body * {
+  max-width: 100px;
+}

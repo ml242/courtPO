@@ -1,0 +1,19 @@
+html {
+  background: #888888;
+  color: #EEEEEE;
+  font-family: 'Varela', sans-serif;
+}
+
+h1 { font-size: 20px;
+    border-bottom: 1px solid;
+  }
+h2 { font-size: 16px }
+h3 { font-size: 12px }
+li { font-size: 12px }
+a  { font-size: 8px }
+
+.wrapper {
+  margin: 0 auto;
+  width: 750px }
+
+.button { border-style: hidden }

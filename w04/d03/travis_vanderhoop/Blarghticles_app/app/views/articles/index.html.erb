@@ -1,0 +1,4 @@
+<h1>Look at all these articles! Holy moly!</h1>
+<% @articles.each do |article| %>
+  <p><a href=<%= "/articles/#{article.id}" %>><%= article.title %></a></p>
+<% end %>

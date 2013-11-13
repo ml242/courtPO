@@ -1,0 +1,16 @@
+<h1>
+  <%= "#{@programmer.name}" %>
+</h1>
+
+<ul>
+  <li>
+    <img src = '<%= "#{@programmer.twitter_pic}"%>' />
+  </li>
+  <li>
+    <%= "#{@programmer.twitter_username}" %>
+  </li>
+</ul>
+
+<footer>
+  <%= link_to('Programmers', "/programmers")%>
+</footer>

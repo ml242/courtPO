@@ -1,0 +1,117 @@
+body{
+  background-color: #facade;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  position:relative;
+}
+
+h2 {
+  position:relative;
+}
+
+.sidebar {
+  font-family: Arial, sans-serif;
+  color: white;
+  position: fixed;
+  border: 15px solid white;
+  border-radius: 12px;
+  padding:10px;
+  top: 30%;
+  left: 60%;
+  z-index: -1;
+}
+
+.big_size {
+  font-size: 75px;
+  margin-left:30px;
+}
+
+.big_size2 {
+  font-size: 75px;
+  margin-left:22px;
+}
+
+.big_size3 {
+  font-size: 75px;
+  margin-left:5px;
+}
+
+.small_size{
+  font-size: 20px;
+  position: relative;
+  margin-left:55px;
+}
+
+.question{
+  position:relative;
+}
+
+.question_form{
+  position:relative;
+}
+
+.response{
+  position:relative;
+  width: 500px;
+  height: 500px;
+
+}
+
+.direction {
+position:relative;
+}
+
+.movie_list {
+  list-style-type:none;
+  position:relative;
+  right:45%;
+  line-height: 40px;
+}
+
+.direction {
+position:relative;
+}
+
+.movie_info{
+position:relative;
+left: 42%;
+}
+
+.information {
+  width: 580px;
+  height: 400px;
+  line-height:25px;
+  border: 10px solid black;
+  position:relative;
+  padding:5px;
+}
+
+.title{
+  position:relative;
+  left: 25px;
+}
+
+.poster_link {
+  position:relative;
+}
+
+img {
+  width: 300px;
+  height: 290px;
+  position:relative;
+  }
+
+a:link {
+    color: blue;
+    font-weight:bolder;
+  }
+
+a:visited{
+    color: gray;
+  }
+
+nav{
+  margin-top:20px;
+}

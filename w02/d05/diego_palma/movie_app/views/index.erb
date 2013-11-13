@@ -1,0 +1,39 @@
+<div class="container">
+  <h1>Movie App!</h1>
+<div class="search">
+  <form action="/search" method="get">
+    <input type="text" name="query" placeholder="Type a movie">
+    <input type="submit" value="Search">
+  </form>
+</div>
+
+<% if @results %>
+  <div class="results">
+    <h3>Results</h3>
+    <% @results.each do |movie| %>
+    <li><a href="/<%= movie['imdbID'] %>"><%= movie["Title"] %> (<%= movie["Year"] %>)</a></li>
+    <% end %>
+  </div>
+<% end %>
+
+
+<% if @movie %>
+  <div class="movie_wrapper">
+     <div class="title">
+     <h1><%= @movie['Title'] %> (<%= @movie['Year'] %>)</h1>
+      <p><%= @movie['Rated'] %> / Release date: <%= @movie['Released'] %> / Runtime: <%= @movie['Runtime'] %></p>
+    </div>
+    <div class="poster">
+      <img src="<%= @movie['Poster'] %>">
+    </div>
+    <div class="movie_info">
+      <p><strong>Genre: </strong><%= @movie['Genre'] %></p>
+      <p><strong>Director: </strong><%= @movie['Director'] %></p>
+      <p><strong>Writer: </strong><%= @movie['Writer'] %></p>
+      <p><strong>Actors: </strong><%= @movie['Actors'] %></p>
+      <p><strong>Plot: </strong><%= @movie['Plot'] %></p>
+      <p><strong>IMDB rating: </strong><%= @movie['imdbRating'] %></p>
+    </div>
+  </div>
+</div>
+<% end %>

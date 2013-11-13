@@ -1,0 +1,20 @@
+.row {
+  width: 1600px;
+/*  height: 1600px;*/
+  margin-top: -4px;
+}
+
+.tile {
+  display: inline-block;
+  background-color: #ededed;
+  margin-top: -1px;
+  margin-bottom: -1px;
+}
+
+.hovered {
+  background-color: green;
+}
+
+.painted {
+  background-color: green;
+}

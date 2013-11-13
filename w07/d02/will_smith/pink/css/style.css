@@ -1,0 +1,68 @@
+.button {
+  border-radius: 75px;
+  -webkit-border-radius: 75px;
+  -moz-border-radius: 75px;
+  background: #ffdae9;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 20%;
+  text-align: center;
+  line-height: 150px;
+  font-family: 'Century Gothic';
+  font-size: 40px;
+  width: 150px;
+  height: 150px;
+  color: white;
+}
+
+h1 {
+  display: block;
+}
+
+.pink {
+  background: pink;
+}
+
+.turquoise {
+  background: #1abc9c;
+}
+
+.emerald {
+  background: #2ecc71;
+}
+
+.peter-river {
+  background: #3498db;
+}
+
+.amethyst {
+  background: #9b59b6;
+}
+
+.wet-asphalt {
+  background: #34495e;
+}
+
+.sun-flower {
+  background: #f1c40f;
+}
+
+.carrot {
+  background: #e67e22;
+}
+
+.alizarin {
+  background: #e74c3c;
+}
+
+.clouds {
+  background: #ecf0f1;
+}
+
+.concrete {
+  background: #95a5a6;
+}
+
+.white {
+  background: white;
+}

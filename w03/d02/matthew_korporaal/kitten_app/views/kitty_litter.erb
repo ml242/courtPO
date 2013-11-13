@@ -1,0 +1,7 @@
+<a href="/">Home</a>
+<ol>
+  <% @names.length.times do |ind| %>
+  <% id = @ids[ind] %>
+  <li><a href="/kittens/<%= id %>"><%= p "id: #{@ids[ind]} name: #{@names[ind]} age: #{@ages[ind]} cute?: #{@are_cute[ind]} URL: #{@img_urls[ind]}" %></a></li>
+  <% end %>
+</ol>

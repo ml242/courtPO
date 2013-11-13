@@ -1,0 +1,11 @@
+<h2> Click to view each programmers </h2>
+  <div class= "programmers_list">
+    <ul>
+      <%@programmers.each do |programmer|%>
+      <li><a href="/programmers/<%=programmer[:id]%>"><%=programmer[:name]%></a> <br>
+          <%=programmer[:twitter_username]%> <br>
+          <img class= "programmer" src=<%=programmer[:twitter_pic]%>>
+      </li>
+       <%end%>
+    </ul>
+  </div>

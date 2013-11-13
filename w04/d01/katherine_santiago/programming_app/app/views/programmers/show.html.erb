@@ -1,0 +1,8 @@
+<h2>profile name</h2>
+
+<%= @programmer.name %><br>
+<img src="<%= @programmer.twitter_pic %>"><br>
+Twitter: <%= @programmer.twitter_username %><br>
+Github: <%= @programmer.github %><br>
+
+<%= link_to("Edit", "/programmers/#{@programmer.id}/edit") %>

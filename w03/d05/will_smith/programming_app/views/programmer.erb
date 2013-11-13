@@ -1,0 +1,40 @@
+    <!--Content-->
+    <section id="content1">
+      <div class="container">
+        <div class="row">
+          <div class="span12">
+            <h3><%= @name %></h3>
+          </div>
+        </div>
+
+        <div class="row margin-40">
+          <div class="span8">
+            <h4>@<%= @twitter_username %></h4>
+            <p><%= @bio %></p>
+          </div>
+
+          <div class="span4">
+            <img style="height: 256px; width: 256px" src="<%= @twitter_pic %>" alt="<%= @name %> picture">
+          </div>
+
+        </div>
+
+        <div class="row">
+          <div class="span12">
+            <div class="flexslider">
+              <ul class="slides">
+                <li><img src="img/header1.jpg" alt="Title" /></li>
+                <li><img src="img/header2.jpg" alt="Title" /></li>
+              </ul>
+              </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="span12 text-center">
+            <h5><a class="more" href="/programmers"><i class="icon-chevron-sign-left"></i> Back To Programmers</a></h5>
+          </div>
+        </div>
+
+      </div>
+    </section>

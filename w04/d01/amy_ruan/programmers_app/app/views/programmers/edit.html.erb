@@ -1,0 +1,25 @@
+<h2>Edit Form</h2>
+<h3><%=@programmer.name%></h3>
+<div class= "individual">
+<ul>
+  <li><%=link_to(@programmer.twitter_username,"https://twitter.com/#{@programmer.twitter_username}")%><br>
+      <img src=<%=@programmer.twitter_pic%>>
+  </li>
+</ul>
+</div>
+
+<form action="/programmers/#{@id}" method="post">
+  Select item you want to edit
+  <label>Name</label>
+  <input type="radio" name="factor" value="name">
+  <input type="text" name="update_name">
+  <br>
+  <label>Twitter_Username</label>
+  <input type="radio" name="factor" value="twitter_username">
+  <input type="text" name="update_age">
+  <br>
+  <label>Twitter_Pic</label>
+  <input type="radio" name="factor" value="twitter_pic">
+  <input type="text" name="update_age">
+  <input type="submit" value="Submit">
+</form>

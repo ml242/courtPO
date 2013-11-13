@@ -1,0 +1,36 @@
+<h1>Add a kitten!</h1>
+<form action="/kittens" method="post">
+  What is the name of the kitten?
+  <br>
+  <label>Name</label>
+  <input type="text" name="new_name">
+  <br>
+   How old is the kitten?
+  <br>
+  <label>Age</label>
+  <input type="text" name="new_age">
+  <br>
+  Is the kitten cute?
+  <br>
+  <label>True</label>
+  <input type="radio" name="new_cute" value="True">
+  <label>False</label>
+  <input type="radio" name="new_cute" value="False">
+  <br>
+  Input image URL for kitten
+  <br>
+  <input type="text" name="new_image">
+  <br>
+  Select owner
+  <br>
+  <select name="new_owner">
+    <%@owners.each do |owner|%>
+    <%happy = owner["id"]%>
+  <option value="#{happy}">
+    <%=owner["name"]%></option>
+      <%end%>
+  </select>
+  <input type="submit" value="Submit">
+</form>
+
+

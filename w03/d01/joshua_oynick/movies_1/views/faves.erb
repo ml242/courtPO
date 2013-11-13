@@ -1,0 +1,7 @@
+<% if @movie_array != nil %>
+<% @movie_array.each do |movie_hash| %>
+<br><a href="/movies/<%= movie_hash[:imdb_id] %>"><%= movie_hash[:title] %></a><br>
+<% end %>
+<% else %>
+<p>No favorites saved.</p>
+<% end %>

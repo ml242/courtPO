@@ -1,0 +1,8 @@
+<% @comments.each do |comment| %>
+  <%= @body = comment.body %>
+  <% @id = comment.id %>
+  <%= link_to "#{@body}", "/articles/}" %>
+  <br>
+<br>
+<br>
+<% end %>

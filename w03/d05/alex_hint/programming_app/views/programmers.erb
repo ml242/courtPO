@@ -1,0 +1,9 @@
+<h1>Hello from programmers</h1>
+<br>
+<% @programmers.each do |programmer| %>
+  <a href='/programmers/<%=programmer[:id]%>'>
+    <li>
+      <%= programmer[:name] %>
+    </li>
+  </a>
+<% end %>

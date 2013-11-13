@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <style>
+    .hidden { display: none; }
+    .block { display: block; }
+    .planet{
+      height: 100px;
+      width: 100px;
+      border-radius: 50%;
+      margin: 20px 0;
+      color: white;
+      text-align: center;
+      padding-top: 10px;
+    }
+    #alderaan {
+      background-color: blue;
+    }
+    #death-star {
+      background-color: black;
+    }
+  </style>
+
+</head>
+<body>
+  <div id="alderaan" class="planet"></div>
+  <div id="death-star" class="planet"></div>
+  <a href="#" id="tell">Tell</a>
+  <button id="never">Never</button>
+
+  <form id="secret-form" class="hidden">
+    <input type="text" name="location" id="location" placeholder="location">
+    <input type="submit" id="secret-coordinates" name="secret-coordinates">
+  </form>
+  <form id="help-form" class="hidden">
+    <input type="text" id="help-me" name="help-me" placeholder="Help Me">
+    <input type="submit" id="secret-message" name="secret-message">
+  </form>
+
+  <script src="main.js"></script>
+</body>
+</html>

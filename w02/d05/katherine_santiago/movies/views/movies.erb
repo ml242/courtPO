@@ -1,0 +1,24 @@
+<h1>Search the Movies database</h1>
+
+<form action="/movies" method="get">
+
+    <label for="query">Search by movie title</label>
+    <input type="text" name="query" placeholder="submit" id="query">
+    <input type="submit" name="search">
+
+</form>
+
+<%  @search_results.each do |hash|  %>
+<%    @title = hash["Title"]  %>
+<%    @id = hash["imdbID"]  %>
+  <li> <a href ="<%="/movies/#{@id}" %>" > <%= "#{@title}" %></a><%=" > </li>
+
+  <h2> Movie Search Results </h2>
+
+<%  @search_results.each do |hash|  %>
+<%    @title = hash["Title"]  %>
+<%    @year = hash["Year"]  %>
+<%    @id = hash["imdbID"]  %>
+<%    @type = hash["Type"]  %>
+  <li> <%= "#{@type.capitalize}:" %> <a href ="<%="/movies/#{@id}" %>"> <%= "#{@title}" %></a> </li>
+  <% end %>

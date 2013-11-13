@@ -1,0 +1,18 @@
+.hidden {
+  display: none;
+}
+
+.highlight {
+  opacity:0.4;
+  filter:alpha(opacity=40); /* For IE8 and earlier */
+}
+
+.rotated {
+  transform: rotate(30deg);
+  -ms-transform: rotate(30deg); /* IE 9 */
+  -webkit-transform: rotate(30deg); /* Safari and Chrome */
+}
+
+.pushed-up {
+  top: -100px;
+}

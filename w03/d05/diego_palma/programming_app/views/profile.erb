@@ -1,0 +1,24 @@
+<div class="container">
+  <h2>Profile</h2>
+
+  <div class="name">Name: <%= @profile.name %></div>
+
+  <div class="twitter">Twitter: <%= @profile.twitter_username %></div>
+
+  <div class="github">Github: <%= @profile.github_username %></div> <br />
+
+  <div class="image"><img src="<%= @profile.twitter_pic  %>"></div><br />
+
+
+  <form action="/programmers/<%= @profile.id%>/delete" method="post">
+    <input type="hidden">
+    <input type="submit" value="Delete profile">
+  </form> <br />
+
+  <a href="/programmers/<%= @profile.id%>/edit">Update profile</a> <br />
+
+  <a href="/programmers">Go back</a>
+
+</div>
+
+

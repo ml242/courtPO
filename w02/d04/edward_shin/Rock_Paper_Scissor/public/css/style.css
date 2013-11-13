@@ -1,0 +1,26 @@
+body {
+background-color: gray;
+}
+
+.header_image{
+text-align: center;
+}
+.links {
+  height: 50px;
+  width: auto;
+}
+ul{
+  text-align: center;
+}
+h1 {
+  text-align: center;
+}
+li {
+  display: inline;
+  list-style-type: none;
+  padding: 0 10px;
+}
+
+.about {
+  text-align: center;
+}

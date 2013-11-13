@@ -1,0 +1,7 @@
+<% @entries_array.each do |entry| %>
+<% author = User.find(entry.author_id) %>
+<br><a href="/photos/<%= entry.id %>"><img src="<%= entry['photo'] %>" class=<%= entry['filter'] %>></a>
+<br>taken by <a href="/<%= author['username'] %>"><%= author['username'] %></a> on <%= entry['date_taken'] %>
+<br><br><a href="/photos/<%= entry.id %>/edit">update photo</a>
+<br><a href="/photos/<%= entry.id %>/delete">delete photo</a><br>
+<% end %>

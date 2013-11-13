@@ -1,0 +1,1 @@
+var myHangMan = new HangMan();

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hangman</title>
+  <link rel='stylesheet' type='text/css' href='style.css'>
+</head>
+<body>
+<div id="container">
+
+  <a id='reset' href=#>new game</a>
+
+  <form id="guess_form">
+    <input type="text" placeholder="guess a letter">
+    <input type="submit" value="guess">
+  </form>
+
+  <div id="current_guessed">
+    <!--this is where the current_guessed display goes--> 
+
+  </div>
+  <div id="drawing-container">
+    <div id="win-lose-div">
+      <h2 id="win-lose"><h2>
+    </div>
+    <div id="drawing">
+
+      <svg id='hangmans-body'>
+        <polyline points = "60,320 60,40 200,30 200,45" fill = "none" stroke = "black" stroke-width = "8"/>
+
+        <polyline points = "200,45 200,70" stroke = "black" stroke-width = "3"/>
+
+      <!--This is where the hangmans body starts--> 
+
+        <circle class='make-invis' cx="200" cy="95" r="25" fill="black"/>
+
+        <polyline class='make-invis' points = "200,120 200,210" stroke = "black" stroke-width = "5"/>
+        <polyline class='make-invis' points = "203,140 250,160" stroke = "black" stroke-width = "5"/>
+        <polyline class='make-invis' points = "197,140 150,160" stroke = "black" stroke-width = "5"/>
+        <polyline class='make-invis' points = "200,210 230,280" stroke = "black" stroke-width = "5"/>
+        <polyline class='make-invis' points = "200,210 170,280" stroke = "black" stroke-width = "5"/>
+      </svg> 
+    </div>
+  </div>
+  <div id="else">
+    <div>
+      <h4>Wrong guesses so far</h4>
+      <div id="guess_list">
+
+      </div>
+    </div>
+  </div>
+
+</div>
+<script src="hangman.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+<% @kittens.each do |kitten| %>
+  <h3> <%= kitten['name']  %> </h3> <!--  This line needed to have the params key passed as a string, not as a symbol, which halted me hardcore.   -->
+
+  <% end %>

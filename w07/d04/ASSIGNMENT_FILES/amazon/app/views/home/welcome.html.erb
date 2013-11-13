@@ -1,0 +1,36 @@
+<div id="doorbell">DOORBELL</div>
+
+<script>
+
+  var audio = new Audio("http://soundjax.com/reddo/18426%5EDOORBELL.mp3")
+
+  var doorBellNode = document.getElementById("doorbell")
+  doorBellNode.addEventListener("click", function() {
+    audio.play();
+  });
+
+  function callbackFunction(data) {
+    if (this.readyState === 4) {
+      audio.play();
+      console.log(this.readyState);
+    }
+  }
+
+
+  var xhr = new XMLHttpRequest();
+  var url = "http://localhost:3000/users.json";
+  var method = "get";
+  xhr.open(method, url, true);
+  xhr.onreadystatechange = callbackFunction
+  xhr.send();
+
+  function doWork() {
+    console.log("DOING WORK!");
+    setTimeout(doWork, 100);
+  }
+
+  doWork();
+
+
+  // var crewInfo = JSON.parse(xhr.response);
+</script>

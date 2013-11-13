@@ -1,0 +1,11 @@
+<%= form_tag("/programmers") do %>
+<%= label_tag 'name' %>
+<%= text_field_tag('name', @programmer.name) %>
+<%= label_tag 'twitter' %>
+<%= text_field_tag('twitter', @programmer.twitter) %>
+<%= label_tag 'img_url' %>
+<%= text_field_tag('img_url', @programmer.img_url) %>
+<%= label_tag 'github url' %>
+<%= text_field_tag('githubs', @programmer.github) %>
+<%= submit_tag('Add Programmer') %>
+<% end %>

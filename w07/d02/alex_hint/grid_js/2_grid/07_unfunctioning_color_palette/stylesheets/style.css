@@ -1,0 +1,49 @@
+.palette {
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px
+}
+
+.swatch {
+  width: 32px;
+  height: 32px;
+
+  margin-left: 5px;
+  margin-right: 5px;
+
+  border-bottom-style: solid;
+  border-width: 6px;
+  border-color: white;
+
+  display: inline-block;
+  cursor: pointer;
+}
+
+.swatch:hover {
+  border-color: #d6d6d6;
+}
+
+.selected {
+  border-color: #949494;
+}
+
+.row {
+  width: 1200px;
+  margin-top: -4px;
+  cursor: crosshair;
+}
+
+.tile {
+  display: inline-block;
+  background-color: #ededed;
+  margin-top: -1px;
+  margin-bottom: -1px;
+}
+
+.highlighted {
+  background-color: #79ed47;
+}
+
+.painted {
+  background-color: #79ed47;
+}

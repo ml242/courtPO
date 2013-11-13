@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+<div class="movie_page">
+        <div class="left">
+
+        <%= @results["Title"] %>
+        <img src=<%= @results["Poster"] %> >
+        <%= @results["Title"] %>
+        <%= @results["Rated"] %>
+        <%= @results["Released"] %>
+        </div>
+
+        <% @results.each_with_index do | "title", index | %>
+        <li><%= index %><img src=<%= @results["Poster"] %>><%= movie %></li>
+        <% end %>
+
+</body>
+</html>

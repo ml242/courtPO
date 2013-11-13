@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="container">
+        <div class="col-lg-12">
+            <div class="page-header">
+                <h1>Movie Search Results</h1>
+
+            <% if @results.class == String %>
+              <h2> <%= @results %> </h2>
+
+              <% else %>
+            </div>
+            <div class="list-group">
+                <div class="container">
+                  <% @results.each do |movie| %>
+                    <a class="list-group-item" href="/movies/<%=movie['imdbID'] %>"><%= movie['Title'] %></a>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+    </div>
+</div>
+

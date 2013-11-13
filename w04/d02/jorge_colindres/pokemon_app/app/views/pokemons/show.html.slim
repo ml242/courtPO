@@ -1,0 +1,6 @@
+- content_for :title do
+  = "#{@pokemon.name}"
+h1 #{@pokemon.name}
+- unless @pokemon.trainer.nil?
+  p Belongs to: #{@pokemon.trainer.name}
+a href="/pokemons/#{@pokemon.id}/edit" Edit Pokemon

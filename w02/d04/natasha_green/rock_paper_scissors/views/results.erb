@@ -1,0 +1,20 @@
+<h2> The Results are: </h2>
+
+
+<%= p  @results1 %>
+<p> p  @results2 </p>
+
+
+<%break if  @results1 != "rock" ||  @results1 != "paper" ||  @results1 != "scissors" || @results2 != "rock" || @results2 != "paper" || @results2 != "scissors" %>
+
+ <%if  @results1 == @results2 %>
+  p "You tie!"
+<%  elseif  @results1 = "rock" && @results2 = "paper" %>
+    p "Player 1 is the winner"
+  <%elseif  @results1 = "rock" && @results2 = "paper" %>
+    p "Player 1 is the loser"
+  <%elseif @results2 = "rock" &&  @results1 ="paper" %>
+    p "Player 2 is the winner"
+  <%elseif @results2 = "rock" &&  @results1 ="scissors" %>
+    p "Player 2 is the winner"
+  <%end  %>

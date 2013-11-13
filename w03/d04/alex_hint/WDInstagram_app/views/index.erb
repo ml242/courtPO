@@ -1,0 +1,15 @@
+<h1>Hello from the item</h1>
+<br>
+<a href='/new'>Add a new post</a>
+<br>
+<br>
+<br>
+<% @posts.each do |entry| %>
+  <a href="/show/<%=entry["id"]%>">
+  <li>
+    <img src="<%= entry["image_url"] %>">
+  </li>
+  </a>
+  <% end %>
+<br>
+<br>

@@ -1,0 +1,9 @@
+<h1>Programmers</h1>
+
+<ul>
+<% @result.each do |programmer| %>
+<li><a href="/programmers/<%= programmer[:id]%>" class="font"><%= programmer[:name] %></a>
+<a href="/programmers/<%= programmer[:id]%>/edit"><button>Edit this programmer's info</button></a></li>
+<% end %>
+</ul>
+
