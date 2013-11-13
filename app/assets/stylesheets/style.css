@@ -42,8 +42,9 @@ header {
   width: 85%;
 }
 
-
-
+.titler {
+  margin-left: 1.5%;
+}
 
 #gavel-home {
   /*z-index: 0;*/

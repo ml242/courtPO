@@ -17389,6 +17389,7 @@ Completed 200 OK in 166ms (Views: 122.2ms | ActiveRecord: 15.8ms)
 Connecting to database specified by database.yml
 
 
+<<<<<<< HEAD
 Started GET "/" for 127.0.0.1 at 2013-11-13 14:29:28 -0500
 Connecting to database specified by database.yml
 Processing by WelcomeController#home as HTML
@@ -17757,6 +17758,272 @@ ActionView::MissingTemplate - Missing template cases/index, application/index wi
   actionpack (3.2.14) lib/action_controller/metal/rendering.rb:10:in `process_action'
   actionpack (3.2.14) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
   activesupport (3.2.14) lib/active_support/callbacks.rb:414:in `_run__2618563799542105554__process_action__84106277836942123__callbacks'
+=======
+Started GET "/cases" for 127.0.0.1 at 2013-11-13 16:07:09 -0500
+Connecting to database specified by database.yml
+Processing by CasesController#index as HTML
+  [1m[36mCase Load (0.9ms)[0m  [1mSELECT "cases".* FROM "cases" [0m
+  Rendered cases/index.html.erb within layouts/application (5.2ms)
+Compiled style.css  (0ms)  (pid 6543)
+Compiled application.css  (4ms)  (pid 6543)
+  [1m[35mUser Load (8.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered layouts/_nav.html.erb (56.3ms)
+Completed 200 OK in 298ms (Views: 169.5ms | ActiveRecord: 30.5ms)
+
+
+Started GET "/cases" for 127.0.0.1 at 2013-11-13 16:08:36 -0500
+Processing by CasesController#index as HTML
+  [1m[36mCase Load (3.3ms)[0m  [1mSELECT "cases".* FROM "cases" [0m
+  Rendered cases/index.html.erb within layouts/application (0.6ms)
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered layouts/_nav.html.erb (3.2ms)
+Completed 200 OK in 19ms (Views: 12.3ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/cases" for 127.0.0.1 at 2013-11-13 16:10:53 -0500
+Processing by CasesController#index as HTML
+  [1m[36mCase Load (0.8ms)[0m  [1mSELECT "cases".* FROM "cases" [0m
+  Rendered cases/index.html.erb within layouts/application (0.5ms)
+Compiled style.css  (0ms)  (pid 6543)
+Compiled application.css  (4ms)  (pid 6543)
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered layouts/_nav.html.erb (2.8ms)
+Completed 200 OK in 33ms (Views: 29.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/cases" for 127.0.0.1 at 2013-11-13 16:11:14 -0500
+Processing by CasesController#index as HTML
+  [1m[36mCase Load (0.8ms)[0m  [1mSELECT "cases".* FROM "cases" [0m
+  Rendered cases/index.html.erb within layouts/application (0.5ms)
+Compiled style.css  (0ms)  (pid 6543)
+Compiled application.css  (4ms)  (pid 6543)
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered layouts/_nav.html.erb (3.0ms)
+Completed 200 OK in 33ms (Views: 29.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/cases" for 127.0.0.1 at 2013-11-13 16:12:25 -0500
+Processing by CasesController#index as HTML
+  [1m[36mCase Load (0.7ms)[0m  [1mSELECT "cases".* FROM "cases" [0m
+  Rendered cases/index.html.erb within layouts/application (0.6ms)
+Compiled style.css  (0ms)  (pid 6543)
+Compiled application.css  (4ms)  (pid 6543)
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered layouts/_nav.html.erb (3.3ms)
+Completed 200 OK in 36ms (Views: 32.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/cases" for 127.0.0.1 at 2013-11-13 16:12:54 -0500
+Processing by CasesController#index as HTML
+  [1m[36mCase Load (0.6ms)[0m  [1mSELECT "cases".* FROM "cases" [0m
+  Rendered cases/index.html.erb within layouts/application (1.1ms)
+Compiled style.css  (0ms)  (pid 6543)
+Compiled application.css  (4ms)  (pid 6543)
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered layouts/_nav.html.erb (2.8ms)
+Completed 200 OK in 33ms (Views: 30.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/cases" for 127.0.0.1 at 2013-11-13 16:13:02 -0500
+Processing by CasesController#index as HTML
+  [1m[36mCase Load (0.6ms)[0m  [1mSELECT "cases".* FROM "cases" [0m
+  Rendered cases/index.html.erb within layouts/application (0.5ms)
+Compiled style.css  (0ms)  (pid 6543)
+Compiled application.css  (4ms)  (pid 6543)
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered layouts/_nav.html.erb (3.2ms)
+Completed 200 OK in 109ms (Views: 106.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/cases" for 127.0.0.1 at 2013-11-13 16:13:16 -0500
+Processing by CasesController#index as HTML
+  [1m[36mCase Load (0.6ms)[0m  [1mSELECT "cases".* FROM "cases" [0m
+  Rendered cases/index.html.erb within layouts/application (0.5ms)
+Compiled style.css  (0ms)  (pid 6543)
+Compiled application.css  (4ms)  (pid 6543)
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered layouts/_nav.html.erb (3.0ms)
+Completed 200 OK in 35ms (Views: 33.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/cases" for 127.0.0.1 at 2013-11-13 16:13:22 -0500
+Processing by CasesController#index as HTML
+  [1m[36mCase Load (2.5ms)[0m  [1mSELECT "cases".* FROM "cases" [0m
+  Rendered cases/index.html.erb within layouts/application (0.8ms)
+Compiled style.css  (0ms)  (pid 6543)
+Compiled application.css  (4ms)  (pid 6543)
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered layouts/_nav.html.erb (2.7ms)
+Completed 200 OK in 37ms (Views: 32.1ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/cases" for 127.0.0.1 at 2013-11-13 16:13:28 -0500
+Processing by CasesController#index as HTML
+  [1m[36mCase Load (0.6ms)[0m  [1mSELECT "cases".* FROM "cases" [0m
+  Rendered cases/index.html.erb within layouts/application (0.5ms)
+Compiled style.css  (0ms)  (pid 6543)
+Compiled application.css  (4ms)  (pid 6543)
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered layouts/_nav.html.erb (2.6ms)
+Completed 200 OK in 31ms (Views: 29.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/cases" for 127.0.0.1 at 2013-11-13 16:13:33 -0500
+Processing by CasesController#index as HTML
+  [1m[36mCase Load (0.6ms)[0m  [1mSELECT "cases".* FROM "cases" [0m
+  Rendered cases/index.html.erb within layouts/application (0.5ms)
+Compiled style.css  (0ms)  (pid 6543)
+Compiled application.css  (4ms)  (pid 6543)
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered layouts/_nav.html.erb (2.6ms)
+Completed 200 OK in 33ms (Views: 31.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/cases" for 127.0.0.1 at 2013-11-13 16:13:42 -0500
+Processing by CasesController#index as HTML
+  [1m[36mCase Load (0.6ms)[0m  [1mSELECT "cases".* FROM "cases" [0m
+  Rendered cases/index.html.erb within layouts/application (0.5ms)
+Compiled style.css  (0ms)  (pid 6543)
+Compiled application.css  (4ms)  (pid 6543)
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered layouts/_nav.html.erb (2.8ms)
+Completed 200 OK in 34ms (Views: 31.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/cases" for 127.0.0.1 at 2013-11-13 16:13:53 -0500
+Processing by CasesController#index as HTML
+  [1m[36mCase Load (0.6ms)[0m  [1mSELECT "cases".* FROM "cases" [0m
+  Rendered cases/index.html.erb within layouts/application (0.5ms)
+Compiled style.css  (0ms)  (pid 6543)
+Compiled application.css  (4ms)  (pid 6543)
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered layouts/_nav.html.erb (2.8ms)
+Completed 200 OK in 37ms (Views: 35.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/cases" for 127.0.0.1 at 2013-11-13 16:26:25 -0500
+Processing by CasesController#index as HTML
+  [1m[36mCase Load (0.6ms)[0m  [1mSELECT "cases".* FROM "cases" [0m
+  Rendered cases/index.html.erb within layouts/application (0.7ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered layouts/_nav.html.erb (2.6ms)
+Completed 200 OK in 84ms (Views: 82.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/cases/1" for 127.0.0.1 at 2013-11-13 16:26:30 -0500
+Processing by CasesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCase Load (1.0ms)[0m  [1mSELECT "cases".* FROM "cases" WHERE "cases"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mSolution Load (0.9ms)[0m  SELECT "solutions".* FROM "solutions" WHERE "solutions"."case_id" = 1
+  Rendered cases/show.html.erb within layouts/application (121.9ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered layouts/_nav.html.erb (2.9ms)
+Completed 200 OK in 137ms (Views: 128.8ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-13 16:32:53 -0500
+Connecting to database specified by database.yml
+Processing by WelcomeController#home as HTML
+  Rendered welcome/home.html.erb within layouts/application (4.8ms)
+  [1m[36mUser Load (9.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered layouts/_nav.html.erb (147.2ms)
+Completed 200 OK in 253ms (Views: 227.5ms | ActiveRecord: 24.4ms)
+
+
+Started GET "/cases/" for 127.0.0.1 at 2013-11-13 16:33:11 -0500
+Processing by CasesController#index as HTML
+  [1m[35mCase Load (0.9ms)[0m  SELECT "cases".* FROM "cases" 
+  Rendered cases/index.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered layouts/_nav.html.erb (3.7ms)
+Completed 200 OK in 86ms (Views: 15.4ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/cases/" for 127.0.0.1 at 2013-11-13 16:34:06 -0500
+Processing by CasesController#index as HTML
+  [1m[35mCase Load (0.6ms)[0m  SELECT "cases".* FROM "cases" 
+  Rendered cases/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered layouts/_nav.html.erb (2.9ms)
+Completed 200 OK in 13ms (Views: 9.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/cases/1" for 127.0.0.1 at 2013-11-13 16:34:28 -0500
+Processing by CasesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCase Load (1.0ms)[0m  SELECT "cases".* FROM "cases" WHERE "cases"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mSolution Load (0.9ms)[0m  [1mSELECT "solutions".* FROM "solutions" WHERE "solutions"."case_id" = 1[0m
+  Rendered cases/show.html.erb within layouts/application (124.5ms)
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered layouts/_nav.html.erb (3.1ms)
+Completed 200 OK in 141ms (Views: 130.2ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/cases/1/edit" for 127.0.0.1 at 2013-11-13 16:35:49 -0500
+Processing by CasesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCase Load (0.7ms)[0m  [1mSELECT "cases".* FROM "cases" WHERE "cases"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  Rendered cases/edit.html.erb within layouts/application (10.5ms)
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered layouts/_nav.html.erb (3.2ms)
+Completed 200 OK in 24ms (Views: 20.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/cases/1/new" for 127.0.0.1 at 2013-11-13 16:37:04 -0500
+
+ActionController::RoutingError (No route matches [GET] "/cases/1/new"):
+  actionpack (3.2.14) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.14) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.14) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.2) lib/quiet_assets.rb:18:in `call_with_quiet_assets'
+  actionpack (3.2.14) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.14) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.14) lib/rails/engine.rb:484:in `call'
+  railties (3.2.14) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.14) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/ML/.rbenv/versions/1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/ML/.rbenv/versions/1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/ML/.rbenv/versions/1.9.3-p448/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/ML/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/cases/new" for 127.0.0.1 at 2013-11-13 16:37:10 -0500
+Processing by CasesController#new as HTML
+  Rendered cases/new.html.erb within layouts/application (57.1ms)
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered layouts/_nav.html.erb (3.4ms)
+Completed 200 OK in 69ms (Views: 67.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/cases/edit" for 127.0.0.1 at 2013-11-13 16:37:18 -0500
+Processing by CasesController#show as HTML
+  Parameters: {"id"=>"edit"}
+  [1m[35mCase Load (0.7ms)[0m  SELECT "cases".* FROM "cases" WHERE "cases"."id" = $1 LIMIT 1  [["id", "edit"]]
+Completed 500  in 3ms
+
+ActiveRecord::RecordNotFound - Couldn't find Case with id=edit:
+  activerecord (3.2.14) lib/active_record/relation/finder_methods.rb:344:in `find_one'
+  activerecord (3.2.14) lib/active_record/relation/finder_methods.rb:315:in `find_with_ids'
+  activerecord (3.2.14) lib/active_record/relation/finder_methods.rb:107:in `find'
+  activerecord (3.2.14) lib/active_record/querying.rb:5:in `find'
+  app/controllers/cases_controller.rb:44:in `show'
+  actionpack (3.2.14) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (3.2.14) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.14) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:414:in `_run__4537872633783300700__process_action__861013576795615079__callbacks'
+>>>>>>> master
   activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `__run_callback'
   activesupport (3.2.14) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
   activesupport (3.2.14) lib/active_support/callbacks.rb:81:in `run_callbacks'
@@ -17798,7 +18065,11 @@ ActionView::MissingTemplate - Missing template cases/index, application/index wi
   activerecord (3.2.14) lib/active_record/query_cache.rb:64:in `call'
   activerecord (3.2.14) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
   actionpack (3.2.14) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+<<<<<<< HEAD
   activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `_run__1347852934492569340__call__3838484250603425936__callbacks'
+=======
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `_run__192578720118308182__call__3255833709698410235__callbacks'
+>>>>>>> master
   activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `__run_callback'
   activesupport (3.2.14) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
   activesupport (3.2.14) lib/active_support/callbacks.rb:81:in `run_callbacks'
@@ -17832,6 +18103,7 @@ ActionView::MissingTemplate - Missing template cases/index, application/index wi
 
 
 
+<<<<<<< HEAD
 Started GET "/cases/" for 127.0.0.1 at 2013-11-13 16:41:52 -0500
 Processing by CasesController#index as HTML
   [1m[36mCase Load (0.6ms)[0m  [1mSELECT "cases".* FROM "cases" [0m
@@ -17900,3 +18172,111 @@ Processing by CasesController#show as HTML
   [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
   Rendered layouts/_nav.html.erb (4.3ms)
 Completed 200 OK in 81ms (Views: 77.2ms | ActiveRecord: 1.9ms)
+=======
+Started POST "/__better_errors/70278200603900/variables" for 127.0.0.1 at 2013-11-13 16:37:19 -0500
+
+
+Started GET "/cases/1/edit" for 127.0.0.1 at 2013-11-13 16:37:27 -0500
+Processing by CasesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCase Load (0.7ms)[0m  [1mSELECT "cases".* FROM "cases" WHERE "cases"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  Rendered cases/edit.html.erb within layouts/application (2.6ms)
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered layouts/_nav.html.erb (4.6ms)
+Completed 200 OK in 21ms (Views: 17.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/cases/new" for 127.0.0.1 at 2013-11-13 16:37:34 -0500
+Processing by CasesController#new as HTML
+  Rendered cases/new.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered layouts/_nav.html.erb (2.7ms)
+Completed 200 OK in 11ms (Views: 10.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-13 16:37:48 -0500
+Processing by WelcomeController#home as HTML
+  Rendered welcome/home.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered layouts/_nav.html.erb (2.8ms)
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/cases/" for 127.0.0.1 at 2013-11-13 16:37:51 -0500
+Processing by CasesController#index as HTML
+  [1m[36mCase Load (0.7ms)[0m  [1mSELECT "cases".* FROM "cases" [0m
+  Rendered cases/index.html.erb within layouts/application (0.7ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered layouts/_nav.html.erb (2.7ms)
+Completed 200 OK in 15ms (Views: 12.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-13 16:39:42 -0500
+Processing by WelcomeController#home as HTML
+  Rendered welcome/home.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered layouts/_nav.html.erb (3.9ms)
+Completed 200 OK in 13ms (Views: 12.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/4" for 127.0.0.1 at 2013-11-13 16:39:45 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", "4"]]
+  [1m[36mSolution Load (0.7ms)[0m  [1mSELECT "solutions".* FROM "solutions" [0m
+  [1m[35mSolution Load (0.9ms)[0m  SELECT "solutions".* FROM "solutions" WHERE "solutions"."user_id" = 4
+  Rendered users/show.html.erb within layouts/application (5.3ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered layouts/_nav.html.erb (3.0ms)
+Completed 200 OK in 26ms (Views: 18.5ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/users/4" for 127.0.0.1 at 2013-11-13 16:40:31 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", "4"]]
+  [1m[36mSolution Load (0.6ms)[0m  [1mSELECT "solutions".* FROM "solutions" [0m
+  [1m[35mSolution Load (0.6ms)[0m  SELECT "solutions".* FROM "solutions" WHERE "solutions"."user_id" = 4
+  Rendered users/show.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered layouts/_nav.html.erb (3.1ms)
+Completed 200 OK in 18ms (Views: 12.1ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/cases/" for 127.0.0.1 at 2013-11-13 16:40:35 -0500
+Processing by CasesController#index as HTML
+  [1m[35mCase Load (0.7ms)[0m  SELECT "cases".* FROM "cases" 
+  Rendered cases/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered layouts/_nav.html.erb (3.3ms)
+Completed 200 OK in 14ms (Views: 10.9ms | ActiveRecord: 1.4ms)
+>>>>>>> master
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-13 17:04:16 -0500
+Connecting to database specified by database.yml
+Processing by WelcomeController#home as HTML
+  Rendered welcome/home.html.erb within layouts/application (10.4ms)
+  [1m[36mUser Load (9.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered layouts/_nav.html.erb (175.2ms)
+Completed 200 OK in 311ms (Views: 228.5ms | ActiveRecord: 81.4ms)
+
+
+Started GET "/cases/" for 127.0.0.1 at 2013-11-13 17:04:21 -0500
+Processing by CasesController#index as HTML
+  [1m[35mCase Load (1.2ms)[0m  SELECT "cases".* FROM "cases" 
+  Rendered cases/index.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered layouts/_nav.html.erb (4.3ms)
+Completed 200 OK in 110ms (Views: 17.8ms | ActiveRecord: 8.5ms)
+
+
+Started GET "/cases/1" for 127.0.0.1 at 2013-11-13 17:04:23 -0500
+Processing by CasesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCase Load (1.2ms)[0m  SELECT "cases".* FROM "cases" WHERE "cases"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mSolution Load (1.1ms)[0m  [1mSELECT "solutions".* FROM "solutions" WHERE "solutions"."case_id" = 1[0m
+  Rendered cases/show.html.erb within layouts/application (126.9ms)
+  [1m[35mUser Load (1.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered layouts/_nav.html.erb (4.4ms)
+Completed 200 OK in 146ms (Views: 135.4ms | ActiveRecord: 8.0ms)
