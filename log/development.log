@@ -18336,3 +18336,65 @@ Processing by CasesController#show as HTML
   [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
   Rendered layouts/_nav.html.erb (2.7ms)
 Completed 200 OK in 20ms (Views: 14.1ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-13 17:11:17 -0500
+Connecting to database specified by database.yml
+Processing by WelcomeController#home as HTML
+  Rendered welcome/home.html.erb within layouts/application (4.6ms)
+  [1m[36mUser Load (9.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered layouts/_nav.html.erb (151.8ms)
+Completed 200 OK in 257ms (Views: 232.0ms | ActiveRecord: 24.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-13 17:14:54 -0500
+Processing by WelcomeController#home as HTML
+  Rendered welcome/home.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered layouts/_nav.html.erb (3.7ms)
+Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-13 17:16:23 -0500
+Processing by WelcomeController#home as HTML
+  Rendered welcome/home.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered layouts/_nav.html.erb (2.9ms)
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/cases/" for 127.0.0.1 at 2013-11-13 17:17:47 -0500
+Processing by CasesController#index as HTML
+  [1m[35mCase Load (0.9ms)[0m  SELECT "cases".* FROM "cases" 
+  Rendered cases/index.html.erb within layouts/application (1.1ms)
+Compiled twitter.js  (0ms)  (pid 9004)
+Compiled application.js  (4ms)  (pid 9004)
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered layouts/_nav.html.erb (4.6ms)
+Completed 200 OK in 126ms (Views: 102.8ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/cases/" for 127.0.0.1 at 2013-11-13 17:20:48 -0500
+Processing by CasesController#index as HTML
+  [1m[35mCase Load (0.5ms)[0m  SELECT "cases".* FROM "cases" 
+  Rendered cases/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered layouts/_nav.html.erb (48.2ms)
+Completed 200 OK in 78ms (Views: 53.1ms | ActiveRecord: 10.4ms)
+
+
+Started GET "/cases/" for 127.0.0.1 at 2013-11-13 17:21:34 -0500
+Processing by CasesController#index as HTML
+  [1m[35mCase Load (0.7ms)[0m  SELECT "cases".* FROM "cases" 
+  Rendered cases/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered layouts/_nav.html.erb (5.8ms)
+Completed 200 OK in 18ms (Views: 14.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2013-11-13 17:21:37 -0500
+Processing by WelcomeController#about as HTML
+  Rendered welcome/about.html.erb within layouts/application (0.6ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered layouts/_nav.html.erb (3.2ms)
+Completed 200 OK in 16ms (Views: 14.5ms | ActiveRecord: 0.5ms)

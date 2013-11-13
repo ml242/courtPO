@@ -9,6 +9,7 @@
   <div class="unit two-fifths">
         <% if current_user %>
         Signed in as <%= current_user.name %> |
+        <%= link_to "About the Court", "/about" %> |
         <%= link_to "My Bench", "/users/#{current_user.id}" %> |
         <%= link_to "Cases", "/cases/" %> |
         <%= link_to "sign out", signout_path %>
