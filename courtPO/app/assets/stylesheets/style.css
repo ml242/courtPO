@@ -1,0 +1,105 @@
+body {
+  background-image: url("/county_courthouse.jpg");
+  background-size: cover;
+}
+
+#courtroom-pic {
+
+
+}
+
+[role="banner"] h1{
+margin: 0;
+margin-left: 10%;
+}
+
+[role="banner"] {
+color: #EEEEEE;
+}
+
+[role="banner"] a, a:link, a:visited {
+color: white;
+text-decoration: none;
+}
+
+header {
+  background-color: #2F363E;
+  margin-bottom: 40px;
+}
+#welcome-home {
+  width: 45%;
+  height: 30%;
+  border: 4px solid red;
+  border-radius: 10px;
+  margin: 0 auto;
+  padding: 5%;
+  background-color: white;
+}
+
+#courtroom {
+  margin: 0 auto;
+  width: 85%;
+}
+
+
+
+
+#gavel-home {
+  /*z-index: 0;*/
+  margin: 0 auto;
+  margin-top: 5px;
+  margin-left: 33%;
+/*  background-color: white;*/
+  border-radius: 10px;
+  border: 4px solid red;
+  width: 20%;
+  color: black;
+}
+
+#gavel-img{
+  margin: 0 auto;
+  width: 55%;
+  height: 55%;
+
+}
+
+#gavel-home p {
+  margin: 0 auto;
+  text-align: center;
+}
+
+#gavel-home {
+  text-align: center;
+  background-color: white;
+}
+
+#gavel-home a {
+  color: black;
+}
+
+#user-testimony{
+  margin: 0 auto;
+  margin-top: 2%;
+  margin-right: 24%;
+  border-radius: 10px;
+  border: 2px solid red;
+  width: 20%;
+  float: right;
+  padding: 1%;
+  background-color: white;
+}
+
+#case{
+  background: grey;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.cases-main {
+  float: left;
+  background-color: rgba(255, 255, 255, .85);
+  width: 40%;
+  border: black 1px solid;
+  padding: 15px;
+  margin: 15px;
+}

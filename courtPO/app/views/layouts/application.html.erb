@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CourtPO</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+   <%= render 'layouts/nav' %>
+<!--  <%#= flash[:notice] %>
+<div id="twitter_login">
+  <%# if current_user %>
+  Signed in as <%#= current_user.name %>
+  <%#= link_to "sign out", signout_path %>
+  <%# else %>
+  <%#= link_to "sign in with twitter", "/auth/twitter" %>
+  <%# end %>
+</div> -->
+
+
+<%= yield %>
+
+</body>
+</html>

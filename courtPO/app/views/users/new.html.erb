@@ -1,0 +1,37 @@
+<% if @user.errors.any? %>
+<ul>
+  <% @user.errors.messages.each do |error, msg| %>
+  <li><%= msg %></li>
+  <% end %>
+</ul>
+<% end %>
+
+<div class="new-user-form">
+  <ul>
+    <%= form_for(@user) do |f| %>
+    <li>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </li>
+    <li>
+      <%= f.label :twitter %>
+      <%= f.text_field :twitter %>
+    </li>
+    <li>
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+    </li>
+    <li>
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+    </li>
+    <li>
+      <%= f.label :password_confirmation, "confirm" %>
+      <%= f.password_field :password_confirmation %>
+    </li>
+    <li>
+      <%= f.submit "sign in" %>
+    </li>
+    <% end %>
+  </ul>
+</div>

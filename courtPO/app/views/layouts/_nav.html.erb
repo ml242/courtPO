@@ -1,0 +1,33 @@
+
+<header role="banner">
+  <nav class="nav-head">
+    <div class="container grid">
+      <div class="unit three-fifths" id="twitter_login">
+        <h1><%= link_to "Court of Public Opinion", "/", :class => "court-head" %></h1>
+      </div>
+      <%#= render 'layouts/nav' %>
+      <%#= flash[:notice] %>
+      <div class="unit two-fifths">
+        <% if current_user %>
+        Signed in as <%= current_user.name %> |
+        <%= link_to "My Bench", "/users/#{current_user.id}" %> |
+        <%= link_to "Cases", "/cases/" %> |
+        <%= link_to "sign out", signout_path %>
+        <% else %>
+        <%= link_to "sign in with twitter", "/auth/twitter" %>
+      <% end %>
+      <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, :id => "flash_#{name}" %>
+      <% end %>
+      </div>
+    </div>
+<!--      <%# if current_user %>
+          <li><%#= link_to "Logout", "/logout" %></li>
+          <li><%#= link_to "My Bench", "/users/#{current_user.id}" %></li>
+          <%# else %>
+          <li><%#= link_to "Log In With Twitter", "/login" %></li>
+          <%# end %>
+        </ul>
+      </nav> -->
+    </nav>
+  </header>
