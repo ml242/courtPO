@@ -17387,3 +17387,326 @@ Processing by UsersController#show as HTML
   Rendered layouts/_nav.html.erb (3.1ms)
 Completed 200 OK in 166ms (Views: 122.2ms | ActiveRecord: 15.8ms)
 Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-13 14:29:28 -0500
+Connecting to database specified by database.yml
+Processing by WelcomeController#home as HTML
+  Rendered welcome/home.html.erb within layouts/application (5.4ms)
+Compiled twitter.js  (0ms)  (pid 2518)
+Compiled application.js  (42ms)  (pid 2518)
+  [1m[36mUser Load (9.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered layouts/_nav.html.erb (211.9ms)
+Completed 200 OK in 368ms (Views: 343.1ms | ActiveRecord: 24.7ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2013-11-13 14:29:44 -0500
+Processing by SessionController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-13 14:29:44 -0500
+Processing by WelcomeController#home as HTML
+  Rendered welcome/home.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_nav.html.erb (0.2ms)
+Completed 200 OK in 8ms (Views: 7.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-13 14:29:47 -0500
+Processing by WelcomeController#home as HTML
+  Rendered welcome/home.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_nav.html.erb (0.2ms)
+Completed 200 OK in 7ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2013-11-13 14:30:26 -0500
+
+
+Started GET "/auth/twitter/callback?oauth_token=rw9iwe3BmpVOw3BHLzOEkDRvA3jdFwapKpPc2MCJOw&oauth_verifier=NKpWGBlFWCqxKTTCTAPcwdMzWhx106kgTa48N8EU" for 127.0.0.1 at 2013-11-13 14:30:32 -0500
+Processing by SessionController#create as HTML
+  Parameters: {"oauth_token"=>"rw9iwe3BmpVOw3BHLzOEkDRvA3jdFwapKpPc2MCJOw", "oauth_verifier"=>"NKpWGBlFWCqxKTTCTAPcwdMzWhx106kgTa48N8EU", "provider"=>"twitter"}
+  [1m[35m (1.6ms)[0m  SELECT COUNT(*) FROM "users" WHERE "users"."uid" = '99201913'
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."uid" = '99201913' LIMIT 1[0m
+Redirected to http://localhost:3000/cases
+Completed 302 Found in 27ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/cases" for 127.0.0.1 at 2013-11-13 14:30:33 -0500
+Processing by CasesController#index as HTML
+  [1m[35mCase Load (0.9ms)[0m  SELECT "cases".* FROM "cases" 
+  Rendered cases/index.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered layouts/_nav.html.erb (3.3ms)
+Completed 200 OK in 45ms (Views: 15.6ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/users/4" for 127.0.0.1 at 2013-11-13 14:30:45 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (1.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", "4"]]
+  [1m[36mSolution Load (1.1ms)[0m  [1mSELECT "solutions".* FROM "solutions" [0m
+  [1m[35mSolution Load (1.9ms)[0m  SELECT "solutions".* FROM "solutions" WHERE "solutions"."user_id" = 4
+  Rendered users/show.html.erb within layouts/application (35.7ms)
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered layouts/_nav.html.erb (3.2ms)
+Completed 200 OK in 78ms (Views: 46.3ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/cases/new" for 127.0.0.1 at 2013-11-13 14:30:56 -0500
+Processing by CasesController#new as HTML
+  Rendered cases/new.html.erb within layouts/application (22.2ms)
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered layouts/_nav.html.erb (3.6ms)
+Completed 200 OK in 34ms (Views: 32.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/cases/new" for 127.0.0.1 at 2013-11-13 14:46:11 -0500
+Processing by CasesController#new as HTML
+  Rendered cases/new.html.erb within layouts/application (2.7ms)
+Compiled twitter.js  (0ms)  (pid 2518)
+Compiled application.js  (3ms)  (pid 2518)
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered layouts/_nav.html.erb (3.5ms)
+Completed 200 OK in 101ms (Views: 99.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2013-11-13 15:00:20 -0500
+Processing by SessionController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-13 15:00:20 -0500
+Processing by WelcomeController#home as HTML
+  Rendered welcome/home.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_nav.html.erb (0.2ms)
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2013-11-13 15:00:22 -0500
+
+
+Started GET "/auth/twitter/callback?oauth_token=6bi48OKnjJM1lpzqZkCDNmJUf3MsCpsqf66IZEjE&oauth_verifier=XhIjB0z9ufc9lRzezufrsTPMYV6cvmDYabDRJHsJU" for 127.0.0.1 at 2013-11-13 15:00:23 -0500
+Processing by SessionController#create as HTML
+  Parameters: {"oauth_token"=>"6bi48OKnjJM1lpzqZkCDNmJUf3MsCpsqf66IZEjE", "oauth_verifier"=>"XhIjB0z9ufc9lRzezufrsTPMYV6cvmDYabDRJHsJU", "provider"=>"twitter"}
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "users" WHERE "users"."uid" = '99201913'
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."uid" = '99201913' LIMIT 1[0m
+Redirected to http://localhost:3000/cases
+Completed 302 Found in 44ms (ActiveRecord: 5.0ms)
+
+
+Started GET "/cases" for 127.0.0.1 at 2013-11-13 15:00:24 -0500
+Processing by CasesController#index as HTML
+  [1m[35mCase Load (0.4ms)[0m  SELECT "cases".* FROM "cases" 
+  Rendered cases/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered layouts/_nav.html.erb (4.0ms)
+Completed 200 OK in 39ms (Views: 14.1ms | ActiveRecord: 6.0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/cases/new" for 127.0.0.1 at 2013-11-13 15:11:07 -0500
+Connecting to database specified by database.yml
+Processing by CasesController#new as HTML
+  Rendered cases/new.html.erb within layouts/application (13.5ms)
+  [1m[36mUser Load (9.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered layouts/_nav.html.erb (56.4ms)
+Completed 200 OK in 278ms (Views: 154.1ms | ActiveRecord: 29.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-13 15:30:58 -0500
+Connecting to database specified by database.yml
+Processing by WelcomeController#home as HTML
+  Rendered welcome/home.html.erb within layouts/application (5.1ms)
+  [1m[36mUser Load (9.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered layouts/_nav.html.erb (149.2ms)
+Completed 200 OK in 256ms (Views: 182.9ms | ActiveRecord: 72.2ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2013-11-13 15:31:03 -0500
+Processing by SessionController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-13 15:31:03 -0500
+Processing by WelcomeController#home as HTML
+  Rendered welcome/home.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_nav.html.erb (0.2ms)
+Completed 200 OK in 8ms (Views: 8.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2013-11-13 15:31:05 -0500
+
+
+Started GET "/auth/twitter/callback?oauth_token=b5W2qruzKIGYAIrz5pVNDvBdmZrKqX8nKtMLjgTdgk&oauth_verifier=TzWiZFqow50xLNTMlJOnb3jtxmzKCdTp99o80IiNA" for 127.0.0.1 at 2013-11-13 15:31:15 -0500
+Processing by SessionController#create as HTML
+  Parameters: {"oauth_token"=>"b5W2qruzKIGYAIrz5pVNDvBdmZrKqX8nKtMLjgTdgk", "oauth_verifier"=>"TzWiZFqow50xLNTMlJOnb3jtxmzKCdTp99o80IiNA", "provider"=>"twitter"}
+  [1m[35m (1.5ms)[0m  SELECT COUNT(*) FROM "users" WHERE "users"."uid" = '99201913'
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."uid" = '99201913' LIMIT 1[0m
+Redirected to http://localhost:3000/cases
+Completed 302 Found in 18ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/cases" for 127.0.0.1 at 2013-11-13 15:31:15 -0500
+Processing by CasesController#index as HTML
+  [1m[35mCase Load (1.6ms)[0m  SELECT "cases".* FROM "cases" 
+  Rendered cases/index.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered layouts/_nav.html.erb (3.2ms)
+Completed 200 OK in 38ms (Views: 14.2ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/cases" for 127.0.0.1 at 2013-11-13 15:34:30 -0500
+Processing by CasesController#index as HTML
+  [1m[35mCase Load (0.8ms)[0m  SELECT "cases".* FROM "cases" 
+  Rendered cases/index.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered layouts/_nav.html.erb (3.2ms)
+Completed 200 OK in 14ms (Views: 10.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/cases/new" for 127.0.0.1 at 2013-11-13 15:34:38 -0500
+Processing by CasesController#new as HTML
+  Rendered cases/new.html.erb within layouts/application (10.9ms)
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered layouts/_nav.html.erb (3.1ms)
+Completed 200 OK in 22ms (Views: 20.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/cases/1" for 127.0.0.1 at 2013-11-13 15:35:17 -0500
+Processing by CasesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCase Load (1.2ms)[0m  [1mSELECT "cases".* FROM "cases" WHERE "cases"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mSolution Load (1.9ms)[0m  SELECT "solutions".* FROM "solutions" WHERE "solutions"."case_id" = 1
+  Rendered cases/show.html.erb within layouts/application (117.6ms)
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered layouts/_nav.html.erb (3.0ms)
+Completed 200 OK in 132ms (Views: 122.4ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/cases/1" for 127.0.0.1 at 2013-11-13 15:36:18 -0500
+Connecting to database specified by database.yml
+Processing by CasesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCase Load (2.6ms)[0m  [1mSELECT "cases".* FROM "cases" WHERE "cases"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mSolution Load (0.9ms)[0m  SELECT "solutions".* FROM "solutions" WHERE "solutions"."case_id" = 1
+  Rendered cases/show.html.erb within layouts/application (117.8ms)
+  [1m[36mUser Load (8.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered layouts/_nav.html.erb (104.7ms)
+Completed 200 OK in 398ms (Views: 256.9ms | ActiveRecord: 36.1ms)
+
+
+Started GET "/cases/1" for 127.0.0.1 at 2013-11-13 15:36:19 -0500
+Processing by CasesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCase Load (0.7ms)[0m  SELECT "cases".* FROM "cases" WHERE "cases"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mSolution Load (0.8ms)[0m  [1mSELECT "solutions".* FROM "solutions" WHERE "solutions"."case_id" = 1[0m
+  Rendered cases/show.html.erb within layouts/application (4.6ms)
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered layouts/_nav.html.erb (2.9ms)
+Completed 200 OK in 22ms (Views: 17.9ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/cases/new" for 127.0.0.1 at 2013-11-13 15:36:45 -0500
+Processing by CasesController#new as HTML
+  Rendered cases/new.html.erb within layouts/application (63.9ms)
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered layouts/_nav.html.erb (3.4ms)
+Completed 200 OK in 76ms (Views: 74.9ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/cases" for 127.0.0.1 at 2013-11-13 15:36:55 -0500
+Processing by CasesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PY/bWkJAUNLI3Fumz5ILsj1F0/3jQ6PvXGyaXI67hoo=", "case"=>{"title"=>"", "conflict"=>"", "summary"=>""}, "commit"=>"Create Case"}
+  [1m[35mUser Load (1.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (12.1ms)[0m  INSERT INTO "cases" ("conflict", "created_at", "expiration", "is_resolved", "summary", "title", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["conflict", ""], ["created_at", Wed, 13 Nov 2013 20:36:55 UTC +00:00], ["expiration", nil], ["is_resolved", false], ["summary", ""], ["title", ""], ["updated_at", Wed, 13 Nov 2013 20:36:55 UTC +00:00], ["user_id", 4]]
+  [1m[36m (5.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/cases
+Completed 302 Found in 44ms (ActiveRecord: 18.9ms)
+
+
+Started GET "/cases" for 127.0.0.1 at 2013-11-13 15:36:55 -0500
+Processing by CasesController#index as HTML
+  [1m[35mCase Load (0.6ms)[0m  SELECT "cases".* FROM "cases" 
+  Rendered cases/index.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered layouts/_nav.html.erb (5.1ms)
+Completed 200 OK in 17ms (Views: 13.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/cases/1" for 127.0.0.1 at 2013-11-13 15:42:55 -0500
+Processing by CasesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCase Load (0.8ms)[0m  SELECT "cases".* FROM "cases" WHERE "cases"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mSolution Load (1.2ms)[0m  [1mSELECT "solutions".* FROM "solutions" WHERE "solutions"."case_id" = 1[0m
+  Rendered cases/show.html.erb within layouts/application (5.7ms)
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered layouts/_nav.html.erb (3.5ms)
+Completed 200 OK in 21ms (Views: 15.4ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/cases/new" for 127.0.0.1 at 2013-11-13 15:45:15 -0500
+Processing by CasesController#new as HTML
+  Rendered cases/new.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered layouts/_nav.html.erb (44.2ms)
+Completed 200 OK in 10583ms (Views: 57.8ms | ActiveRecord: 9.1ms)
+
+
+Started POST "/cases" for 127.0.0.1 at 2013-11-13 15:47:44 -0500
+Processing by CasesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PY/bWkJAUNLI3Fumz5ILsj1F0/3jQ6PvXGyaXI67hoo=", "case"=>{"title"=>"My parents are getting divorced", "conflict"=>"I can't take sides", "summary"=>""}, "commit"=>"Create Case"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "cases" ("conflict", "created_at", "expiration", "is_resolved", "summary", "title", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["conflict", "I can't take sides"], ["created_at", Wed, 13 Nov 2013 20:51:23 UTC +00:00], ["expiration", nil], ["is_resolved", false], ["summary", ""], ["title", "My parents are getting divorced"], ["updated_at", Wed, 13 Nov 2013 20:51:23 UTC +00:00], ["user_id", 4]]
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/cases
+Completed 302 Found in 219021ms (ActiveRecord: 18.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-13 15:51:23 -0500
+Processing by WelcomeController#home as HTML
+  Rendered welcome/home.html.erb within layouts/application (1.1ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered layouts/_nav.html.erb (108.8ms)
+Completed 200 OK in 124ms (Views: 115.2ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/cases" for 127.0.0.1 at 2013-11-13 15:51:24 -0500
+Processing by CasesController#index as HTML
+  [1m[36mCase Load (0.5ms)[0m  [1mSELECT "cases".* FROM "cases" [0m
+  Rendered cases/index.html.erb within layouts/application (0.6ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered layouts/_nav.html.erb (3.9ms)
+Completed 200 OK in 57ms (Views: 35.3ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/cases/new" for 127.0.0.1 at 2013-11-13 15:51:30 -0500
+Processing by CasesController#new as HTML
+  Rendered cases/new.html.erb within layouts/application (5.1ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered layouts/_nav.html.erb (3.0ms)
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/cases" for 127.0.0.1 at 2013-11-13 15:51:33 -0500
+Processing by CasesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PY/bWkJAUNLI3Fumz5ILsj1F0/3jQ6PvXGyaXI67hoo=", "case"=>{"title"=>"", "conflict"=>""}, "commit"=>"Create Case"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "cases" ("conflict", "created_at", "expiration", "is_resolved", "summary", "title", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["conflict", ""], ["created_at", Wed, 13 Nov 2013 20:51:33 UTC +00:00], ["expiration", nil], ["is_resolved", false], ["summary", nil], ["title", ""], ["updated_at", Wed, 13 Nov 2013 20:51:33 UTC +00:00], ["user_id", 4]]
+  [1m[36m (1.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/cases
+Completed 302 Found in 16ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/cases" for 127.0.0.1 at 2013-11-13 15:51:33 -0500
+Processing by CasesController#index as HTML
+  [1m[35mCase Load (0.7ms)[0m  SELECT "cases".* FROM "cases" 
+  Rendered cases/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered layouts/_nav.html.erb (2.9ms)
+Completed 200 OK in 14ms (Views: 11.1ms | ActiveRecord: 1.2ms)

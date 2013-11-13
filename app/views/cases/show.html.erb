@@ -9,6 +9,8 @@ Logged in as <%= session[:username] %>
 
 
     <div>
+    <a href="https://twitter.com/share?url=https%3A%2F%2Fcourtofpopularopinion.heroku.com&amp;via=courtofPOP&amp;text=Looking+for+a+solution:%3A<%= @case.title %>" class="twitter-share-button">Tweet</a>
+
     <% @case.solutions.each do |solution| %>
       <li> Opinion: <%= solution.opinion %></li>
     <%end%>
