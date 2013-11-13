@@ -20810,3 +20810,34 @@ Processing by CasesController#show as HTML
   Rendered cases/show.html.erb within layouts/application (4.8ms)
   Rendered layouts/_nav.html.erb (0.5ms)
 Completed 200 OK in 12ms (Views: 9.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/cases" for 127.0.0.1 at 2013-11-13 15:39:39 -0500
+Connecting to database specified by database.yml
+Processing by CasesController#index as HTML
+  [1m[36mCase Load (0.5ms)[0m  [1mSELECT "cases".* FROM "cases" [0m
+  Rendered cases/index.html.erb within layouts/application (4.5ms)
+  [1m[35mUser Load (20.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered layouts/_nav.html.erb (93.4ms)
+Completed 200 OK in 373ms (Views: 283.6ms | ActiveRecord: 41.7ms)
+
+
+Started GET "/cases/1" for 127.0.0.1 at 2013-11-13 15:39:46 -0500
+Processing by CasesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCase Load (0.9ms)[0m  [1mSELECT "cases".* FROM "cases" WHERE "cases"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mSolution Load (0.6ms)[0m  SELECT "solutions".* FROM "solutions" WHERE "solutions"."case_id" = 1
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "cases" WHERE "cases"."user_id" = 4 AND "cases"."id" = 1
+  Rendered cases/show.html.erb within layouts/application (193.4ms)
+  Rendered layouts/_nav.html.erb (0.5ms)
+Completed 200 OK in 244ms (Views: 237.2ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/cases" for 127.0.0.1 at 2013-11-13 15:41:05 -0500
+Processing by CasesController#index as HTML
+  [1m[36mCase Load (0.9ms)[0m  [1mSELECT "cases".* FROM "cases" [0m
+  Rendered cases/index.html.erb within layouts/application (0.3ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered layouts/_nav.html.erb (2.3ms)
+Completed 200 OK in 11ms (Views: 7.5ms | ActiveRecord: 1.5ms)
