@@ -17549,3 +17549,259 @@ Processing by CasesController#show as HTML
   [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
   Rendered layouts/_nav.html.erb (2.9ms)
 Completed 200 OK in 137ms (Views: 128.8ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-13 16:32:53 -0500
+Connecting to database specified by database.yml
+Processing by WelcomeController#home as HTML
+  Rendered welcome/home.html.erb within layouts/application (4.8ms)
+  [1m[36mUser Load (9.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered layouts/_nav.html.erb (147.2ms)
+Completed 200 OK in 253ms (Views: 227.5ms | ActiveRecord: 24.4ms)
+
+
+Started GET "/cases/" for 127.0.0.1 at 2013-11-13 16:33:11 -0500
+Processing by CasesController#index as HTML
+  [1m[35mCase Load (0.9ms)[0m  SELECT "cases".* FROM "cases" 
+  Rendered cases/index.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered layouts/_nav.html.erb (3.7ms)
+Completed 200 OK in 86ms (Views: 15.4ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/cases/" for 127.0.0.1 at 2013-11-13 16:34:06 -0500
+Processing by CasesController#index as HTML
+  [1m[35mCase Load (0.6ms)[0m  SELECT "cases".* FROM "cases" 
+  Rendered cases/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered layouts/_nav.html.erb (2.9ms)
+Completed 200 OK in 13ms (Views: 9.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/cases/1" for 127.0.0.1 at 2013-11-13 16:34:28 -0500
+Processing by CasesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCase Load (1.0ms)[0m  SELECT "cases".* FROM "cases" WHERE "cases"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mSolution Load (0.9ms)[0m  [1mSELECT "solutions".* FROM "solutions" WHERE "solutions"."case_id" = 1[0m
+  Rendered cases/show.html.erb within layouts/application (124.5ms)
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered layouts/_nav.html.erb (3.1ms)
+Completed 200 OK in 141ms (Views: 130.2ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/cases/1/edit" for 127.0.0.1 at 2013-11-13 16:35:49 -0500
+Processing by CasesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCase Load (0.7ms)[0m  [1mSELECT "cases".* FROM "cases" WHERE "cases"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  Rendered cases/edit.html.erb within layouts/application (10.5ms)
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered layouts/_nav.html.erb (3.2ms)
+Completed 200 OK in 24ms (Views: 20.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/cases/1/new" for 127.0.0.1 at 2013-11-13 16:37:04 -0500
+
+ActionController::RoutingError (No route matches [GET] "/cases/1/new"):
+  actionpack (3.2.14) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.14) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.14) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.2) lib/quiet_assets.rb:18:in `call_with_quiet_assets'
+  actionpack (3.2.14) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.14) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.14) lib/rails/engine.rb:484:in `call'
+  railties (3.2.14) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.14) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/ML/.rbenv/versions/1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/ML/.rbenv/versions/1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/ML/.rbenv/versions/1.9.3-p448/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/ML/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/cases/new" for 127.0.0.1 at 2013-11-13 16:37:10 -0500
+Processing by CasesController#new as HTML
+  Rendered cases/new.html.erb within layouts/application (57.1ms)
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered layouts/_nav.html.erb (3.4ms)
+Completed 200 OK in 69ms (Views: 67.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/cases/edit" for 127.0.0.1 at 2013-11-13 16:37:18 -0500
+Processing by CasesController#show as HTML
+  Parameters: {"id"=>"edit"}
+  [1m[35mCase Load (0.7ms)[0m  SELECT "cases".* FROM "cases" WHERE "cases"."id" = $1 LIMIT 1  [["id", "edit"]]
+Completed 500  in 3ms
+
+ActiveRecord::RecordNotFound - Couldn't find Case with id=edit:
+  activerecord (3.2.14) lib/active_record/relation/finder_methods.rb:344:in `find_one'
+  activerecord (3.2.14) lib/active_record/relation/finder_methods.rb:315:in `find_with_ids'
+  activerecord (3.2.14) lib/active_record/relation/finder_methods.rb:107:in `find'
+  activerecord (3.2.14) lib/active_record/querying.rb:5:in `find'
+  app/controllers/cases_controller.rb:44:in `show'
+  actionpack (3.2.14) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (3.2.14) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.14) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:414:in `_run__4537872633783300700__process_action__861013576795615079__callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.14) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.14) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.14) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.14) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.14) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.14) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.14) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:184:in `call!'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:164:in `call'
+  omniauth (1.1.4) lib/omniauth/builder.rb:49:in `call'
+  meta_request (0.2.8) lib/meta_request/middlewares/app_request_handler.rb:13:in `call'
+  rack-contrib (1.1.0) lib/rack/contrib/response_headers.rb:17:in `call'
+  meta_request (0.2.8) lib/meta_request/middlewares/headers.rb:16:in `call'
+  meta_request (0.2.8) lib/meta_request/middlewares/meta_request_handler.rb:13:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.14) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.14) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `_run__192578720118308182__call__3255833709698410235__callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.14) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  better_errors (1.0.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (1.0.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (1.0.1) lib/better_errors/middleware.rb:56:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.14) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.14) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.2) lib/quiet_assets.rb:18:in `call_with_quiet_assets'
+  actionpack (3.2.14) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.14) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.14) lib/rails/engine.rb:484:in `call'
+  railties (3.2.14) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.14) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/ML/.rbenv/versions/1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/ML/.rbenv/versions/1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/ML/.rbenv/versions/1.9.3-p448/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/70278200603900/variables" for 127.0.0.1 at 2013-11-13 16:37:19 -0500
+
+
+Started GET "/cases/1/edit" for 127.0.0.1 at 2013-11-13 16:37:27 -0500
+Processing by CasesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCase Load (0.7ms)[0m  [1mSELECT "cases".* FROM "cases" WHERE "cases"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  Rendered cases/edit.html.erb within layouts/application (2.6ms)
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered layouts/_nav.html.erb (4.6ms)
+Completed 200 OK in 21ms (Views: 17.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/cases/new" for 127.0.0.1 at 2013-11-13 16:37:34 -0500
+Processing by CasesController#new as HTML
+  Rendered cases/new.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered layouts/_nav.html.erb (2.7ms)
+Completed 200 OK in 11ms (Views: 10.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-13 16:37:48 -0500
+Processing by WelcomeController#home as HTML
+  Rendered welcome/home.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered layouts/_nav.html.erb (2.8ms)
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/cases/" for 127.0.0.1 at 2013-11-13 16:37:51 -0500
+Processing by CasesController#index as HTML
+  [1m[36mCase Load (0.7ms)[0m  [1mSELECT "cases".* FROM "cases" [0m
+  Rendered cases/index.html.erb within layouts/application (0.7ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered layouts/_nav.html.erb (2.7ms)
+Completed 200 OK in 15ms (Views: 12.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-13 16:39:42 -0500
+Processing by WelcomeController#home as HTML
+  Rendered welcome/home.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered layouts/_nav.html.erb (3.9ms)
+Completed 200 OK in 13ms (Views: 12.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/4" for 127.0.0.1 at 2013-11-13 16:39:45 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", "4"]]
+  [1m[36mSolution Load (0.7ms)[0m  [1mSELECT "solutions".* FROM "solutions" [0m
+  [1m[35mSolution Load (0.9ms)[0m  SELECT "solutions".* FROM "solutions" WHERE "solutions"."user_id" = 4
+  Rendered users/show.html.erb within layouts/application (5.3ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered layouts/_nav.html.erb (3.0ms)
+Completed 200 OK in 26ms (Views: 18.5ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/users/4" for 127.0.0.1 at 2013-11-13 16:40:31 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", "4"]]
+  [1m[36mSolution Load (0.6ms)[0m  [1mSELECT "solutions".* FROM "solutions" [0m
+  [1m[35mSolution Load (0.6ms)[0m  SELECT "solutions".* FROM "solutions" WHERE "solutions"."user_id" = 4
+  Rendered users/show.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered layouts/_nav.html.erb (3.1ms)
+Completed 200 OK in 18ms (Views: 12.1ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/cases/" for 127.0.0.1 at 2013-11-13 16:40:35 -0500
+Processing by CasesController#index as HTML
+  [1m[35mCase Load (0.7ms)[0m  SELECT "cases".* FROM "cases" 
+  Rendered cases/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered layouts/_nav.html.erb (3.3ms)
+Completed 200 OK in 14ms (Views: 10.9ms | ActiveRecord: 1.4ms)
