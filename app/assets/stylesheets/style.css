@@ -105,3 +105,8 @@ header {
   padding: 15px;
   margin: 15px;
 }
+
+.input-form {
+  width: 15%;
+  height: 5%;
+}
