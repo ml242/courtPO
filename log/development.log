@@ -17338,3 +17338,52 @@ Processing by WelcomeController#home as HTML
   [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
   Rendered layouts/_nav.html.erb (3.1ms)
 Completed 200 OK in 12ms (Views: 10.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-13 14:07:26 -0500
+Connecting to database specified by database.yml
+Processing by WelcomeController#home as HTML
+  Rendered welcome/home.html.erb within layouts/application (10.4ms)
+Compiled style.css  (0ms)  (pid 1636)
+Compiled application.css  (4ms)  (pid 1636)
+Compiled cases.js  (0ms)  (pid 1636)
+Compiled application.js  (3ms)  (pid 1636)
+  Rendered layouts/_nav.html.erb (1.4ms)
+Completed 200 OK in 246ms (Views: 245.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2013-11-13 14:07:30 -0500
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2013-11-13 14:07:31 -0500
+
+
+Started GET "/auth/twitter/callback?oauth_token=zkPY5Pd7l1m3zTLBsCZg7lDZWdmHNVL40a0Hpj8WE3w&oauth_verifier=tsS1l7EO61L0PSDlj1806TDCjfLavtC2xBCRrmIpYrg" for 127.0.0.1 at 2013-11-13 14:07:41 -0500
+Processing by SessionController#create as HTML
+  Parameters: {"oauth_token"=>"zkPY5Pd7l1m3zTLBsCZg7lDZWdmHNVL40a0Hpj8WE3w", "oauth_verifier"=>"tsS1l7EO61L0PSDlj1806TDCjfLavtC2xBCRrmIpYrg", "provider"=>"twitter"}
+  [1m[36m (13.9ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE "users"."uid" = '99201913'[0m
+  [1m[35mUser Load (1.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."uid" = '99201913' LIMIT 1
+Redirected to http://localhost:3000/cases
+Completed 302 Found in 385ms (ActiveRecord: 205.4ms)
+
+
+Started GET "/cases" for 127.0.0.1 at 2013-11-13 14:07:42 -0500
+Processing by CasesController#index as HTML
+  [1m[36mCase Load (8.0ms)[0m  [1mSELECT "cases".* FROM "cases" [0m
+  Rendered cases/index.html.erb within layouts/application (1.1ms)
+  [1m[35mUser Load (12.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered layouts/_nav.html.erb (14.9ms)
+Completed 200 OK in 60ms (Views: 15.7ms | ActiveRecord: 25.3ms)
+
+
+Started GET "/users/4" for 127.0.0.1 at 2013-11-13 14:07:45 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", "4"]]
+  [1m[35mSolution Load (9.1ms)[0m  SELECT "solutions".* FROM "solutions" 
+  [1m[36mSolution Load (1.1ms)[0m  [1mSELECT "solutions".* FROM "solutions" WHERE "solutions"."user_id" = 4[0m
+  Rendered users/show.html.erb within layouts/application (109.1ms)
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered layouts/_nav.html.erb (3.1ms)
+Completed 200 OK in 166ms (Views: 122.2ms | ActiveRecord: 15.8ms)
+Connecting to database specified by database.yml
