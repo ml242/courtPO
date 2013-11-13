@@ -1,4 +1,3 @@
-# == Schema Information
 #
 # Table name: users
 #
@@ -22,8 +21,8 @@ class User < ActiveRecord::Base
   has_many :solutions
   has_many :cases
 
-  # validates :email, uniqueness: true, presence: true, length: { minimum: 4 }
-  # validates :password, :password_confirmation, presence: true, length: { in: 6..20 }
+   # validates :email, uniqueness: true, presence: true, length: { minimum: 4 }
+   # validates :password, :password_confirmation, presence: true, length: { in: 6..20 }
 
   def self.from_omniauth(auth)
      user = where(auth["uid"]).first || create_from_omniauth(auth)

@@ -1,4 +1,6 @@
 class CasesController < ApplicationController
+  before_filter :authorize, :only => [:edit, :update]
+
   def index
     @cases = Case.all
   end
@@ -43,4 +45,15 @@ class CasesController < ApplicationController
     id = (params[:id])
     @case = Case.find(id)
   end
+
+  private
+
+  def authorize
+    unless current_user
+      #params neecds to be stored as an interger because :user_id is being stored as an integer
+      redirect_to root_url
+    end
+  end
 end
+
+
