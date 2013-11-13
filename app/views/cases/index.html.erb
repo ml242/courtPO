@@ -6,10 +6,7 @@
   <div id="case">
   <% @cases.each do |case_doc| %>
     <h1><a href="/cases/<%= case_doc.id %>"><%= case_doc.title %></a></h1>
-    <ul>
-    <li>Conflict: <%= case_doc.conflict %> </li>
-    <li> Summary: <%= case_doc.summary %></li>
-    </ul>
+    <p>Conflict: <%= case_doc.conflict %> </p>
 
   <%end%>
   </div>
