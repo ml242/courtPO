@@ -35,8 +35,4 @@ CourtPO::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
-
-ENV['TWITTER_KEY']='ITA2Gdoe8JKt58SZ7jSjg'
-ENV['TWITTER_SECRET']='lnncwe4Z9p2BhCkqgbSSf0F9qQRZmdLHqVjMnFhJ6Y'
-
 end

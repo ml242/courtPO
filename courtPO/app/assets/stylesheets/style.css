@@ -3,10 +3,11 @@ body {
   background-size: cover;
 }
 
-#courtroom-pic {
+/*#court-pic {
+  background-image: url("/county_courthouse.jpg");
+  background-size: cover;
+}*/
 
-
-}
 
 [role="banner"] h1{
 margin: 0;

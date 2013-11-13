@@ -1,5 +1,5 @@
 <h1> Case</h1>
-
+Logged in as <%= session[:username] %>
 
 
 <div class="cases-main">
@@ -18,12 +18,8 @@
       <button> Submit </button>
 
     </div>
-
-    <% if current_user.id == @case.user_id %>
-
-      <%= link_to "Edit", edit_case_path(@case) %>
-      <%= link_to "Delete", case_path(@case), :method => "delete", :confirm => "Are you sure you want to delete?" %>
-    <% end %>
+  <%= link_to "Edit", edit_case_path(@case) %>
+   <%= link_to "Delete", case_path(@case), :method => "delete", :confirm => "Are you sure you want to delete?" %>
 
   <p><%= link_to "Add New Case", new_case_path %></p>
   </div>
