@@ -4,6 +4,7 @@ class CasesController < ApplicationController
   end
 
   def new
+    binding.pry
     @case = Case.new
   end
 
