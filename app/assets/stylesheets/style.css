@@ -19,8 +19,8 @@ color: #EEEEEE;
 }
 
 [role="banner"] a, a:link, a:visited {
-color: white;
 text-decoration: none;
+color: grey;
 }
 
 header {
@@ -34,7 +34,7 @@ header {
   border-radius: 10px;
   margin: 0 auto;
   padding: 5%;
-  background-color: white;
+  background-color: rgba(255, 255, 255, .85);
 }
 
 #courtroom {
@@ -72,7 +72,7 @@ header {
 
 #gavel-home {
   text-align: center;
-  background-color: white;
+  background-color: rgba(255, 255, 255, .85);
 }
 
 #gavel-home a {
@@ -88,18 +88,19 @@ header {
   width: 20%;
   float: right;
   padding: 1%;
-  background-color: white;
+  background-color: rgba(255, 255, 255, .85);
 }
 
 #case{
-  background: grey;
+  background-color: rgba(255, 255, 255, .85);
   margin: 0 auto;
   padding: 10px;
 }
 
 .cases-main {
+    background-color: rgba(255, 255, 255, .85);
+
   float: left;
-  background-color: rgba(255, 255, 255, .85);
   width: 40%;
   border: black 1px solid;
   padding: 15px;
