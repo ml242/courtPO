@@ -76,15 +76,15 @@
 <header role="banner">
   <nav class="nav-head">
   <div class="container grid">
-  <div class="unit three-fifths" id="twitter_login">
+  <div class="unit two-fifths" id="twitter_login">
         <h1><%= link_to "Court of Popular Opinion", "/", :class => "court-head" %></h1>
   </div>
       <%#= render 'layouts/nav' %>
       <%#= flash[:notice] %>
-  <div class="unit two-fifths">
+  <div class="unit three-fifths">
         <% if logged_in_twitter %>
-        Signed in as <%= session[:name] %>
-        <%= image_tag "#{session[:image]}", size: "20x20" %> |
+        <%= image_tag "#{session[:image]}", size: "15x15" %> |
+        Signed in as <%= session[:name] %> |
         <%= link_to "About the Court", "/about" %> |
         <%= link_to "My Bench", "/users/#{session[:user_id]}" %> |
         <%= link_to "Cases", "/cases/" %> |
