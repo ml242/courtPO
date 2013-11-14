@@ -44,13 +44,22 @@ footer img {
 }
 
 #about-pic {
-  text-align: center;
   margin: 0 auto;
-  background-color: rgba(255, 255, 255, .15);
-  float: left;
+  text-align: center;
+  background-color: rgba(255, 255, 255, .8);
   border: black 1px solid;
-  margin-left: 3%;
-  margin-right: 3%;
+  margin-left: 10%;
+  margin-right: 1%;
+}
+
+#about-text-main {
+  margin: 0 auto;
+  text-align: center;
+  background-color: rgba(255, 255, 255, .8);
+  border: black 1px solid;
+  color: black;
+  width: 55%;
+  padding: 1%;
 }
 
 #welcome-home {
