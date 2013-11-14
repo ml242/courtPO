@@ -6,7 +6,6 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(params[:user])
-
     respond_to do |format|
       if @user.save
         format.html { redirect_to @user, notice: 'User was successfully create.'}
@@ -21,9 +20,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @solution = Solution.new
-    @solutions = Solution.all
-
     respond_to do |format|
       format.html
       format.json { render json: @user }
