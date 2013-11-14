@@ -1,13 +1,15 @@
 <div class="cases-main">
   <div id="case">
+
     <% if session[:user_id] %>
     <div id="case-button"><button id="create-user">Create Case</button></div>
     <% end %>
     <!-- Display cases from old to new, if they have not timed out -->
-    <% @cases.reverse.each do |case_doc| %>
+    <% @cases.each do |case_doc| %>
 
     <% if (case_doc.timeLeft.floor > 0) %>
     <h1><a href="/cases/<%= case_doc.id %>"><%= case_doc.title %></a></h1>
+    <p>Remaining - ID</p>
     <p><%= case_doc.timeLeft.floor %>hrs - Case#<%= case_doc.id %>:  <%= case_doc.conflict %> </p>
     <% end %>
     <% end %>

@@ -21,7 +21,7 @@
 
     $( "#dialog-form" ).dialog({
       autoOpen: false,
-      height: 300,
+      height: 500,
       width: 350,
       modal: true,
       buttons: {
@@ -29,14 +29,20 @@
 
             $.ajax({
                 type: "POST",
-                url: "/cases.json",
+                contentType: "application/json"
+                url: "/cases",
                 data: {
+                    authenticity_token: "<%= form_authenticity_token %>"
+                   case: {
                     title: title.val(),
                     conflict: conflict.val(),
-                    expiration: expiration.val()
+                    expiration: expiration.val(),
+
+                  }
                 }
             }).done(
                 function(){
+                  debugger;
                         console.log(this);
             });
             $( this ).dialog( "close" );
@@ -73,4 +79,4 @@
   </form>
 </div>
 
-<button id="create-user">Create Case</button>
+<!-- <button id="create-user">Create Case</button> -->
