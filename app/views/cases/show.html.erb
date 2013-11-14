@@ -18,13 +18,11 @@
     </div>
 
     <% if current_user  %>
-    <% unless current_user.cases.where(id: params[:id]).empty? %>
-
-  <%= link_to "Edit", edit_case_path(@case) %>
-   <%= link_to "Delete", case_path(@case), :method => "delete", :confirm => "Are you sure you want to delete?" %>
-  <% end %>
-
-   <% end %>
+      <% if @case.user == current_user %>
+        <%= link_to "Edit", edit_case_path(@case) %>
+        <%= link_to "Delete", case_path(@case), :method => "delete", :confirm => "Are you sure you want to delete?" %>
+      <% end %>
+    <% end %>
 
    <p><%= link_to "Add New Case", new_case_path %></p>
   </div>
