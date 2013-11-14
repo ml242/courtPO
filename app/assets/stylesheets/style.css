@@ -46,7 +46,10 @@ footer img {
 }
 
 .nav-foot {
+  border-radius: 0;
   margin: 0 auto;
+  margin-top: 100%;
+  background-color: #2F363E;
 }
 
 #about-pic {
