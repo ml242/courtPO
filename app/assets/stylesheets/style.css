@@ -59,6 +59,13 @@ footer img {
   border: black 1px solid;
   margin-left: 10%;
   margin-right: 1%;
+  margin-top: 4%;
+}
+
+#about-pic img{
+  border-radius: 12px;
+  width: 90%;
+  height: 90%;
 }
 
 #about-text-main {
