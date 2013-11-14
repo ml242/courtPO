@@ -14,25 +14,30 @@ u1 = User.create(name: "Matt L", email: "mattlucas@gmail.com", twitter: "ml242")
 u2 = User.create(name: "Matthew K", email: "matthew.korporaal@gmail.com", twitter: "korp_or")
 u3 = User.create(name: "Natasha G", email: "greennatasha@aol.com", twitter: "NatashaGreen25")
 
-c1 = Case.create(title: "Problem with my Roommate", conflict: "My roommate never does her dishes. It's infuriating and I wish she'd take of her own mess. I was thinking that I could resolve this by hiring a maid. I brought it up and she doesn't want to chip in. What now?", expiration: 3)
+c1 = Case.create(title: "Problem with my Roommate", conflict: "My roommate never does her dishes. It's infuriating and I wish she'd take care of her own mess. I was thinking that I could resolve this by hiring a maid. I brought it up and she doesn't want to chip in. What now?", expiration: 3)
 c2 = Case.create(title: "Can't get along with boss", conflict: "I was penalized at work for being late, when I had called ahead as required to let them know my emergency. Meanwhile, I still got there on time. This guy really has it out for me. Is there anything I can do to patch things up, because I really don't want to get fired.", expiration: 2)
 c3 = Case.create(title: "Should I do homework or go out with my boyfriend?", conflict: "I have a big assignment due tomorrow, but promised my boyfriend I'd go out with him. He got tickets to see the Knicks play the Nets and it's a big deal to him. I want to cancel plans but can I expect him to understand?", expiration: 1)
 c4 = Case.create(title: "Israel keeps building on my land", conflict: "This conflict goes back many years. We fight all the time but militarily they have the upper hand. No one ever really tries to make peace, and only the people in each country suffer. However, I feel like I'm suffering more due to limited economic opportunity. Should I go throw rocks at soldiers or try another resolution?", expiration: 1)
+c5 = Case.create(title: "The coffee guy keeps shortchanging me", conflict: "I see this guy every day, he gives me canadian quarters and bad change. I'm not sure what I did to him, but if I walk by he gives me crazy looks. If I go there he rips me off. What's the guys deal?", expiration: 10)
+c6 = Case.create(title: "My parents are getting divorced", conflict: "They just can't get along. I am not really sure who is at fault but it's probably my dad. Either way, they insist on poisoning my relationship with the other one with awful stories. What can I do?", expiration: 12)
+c7 = Case.create(title: "Case Of Moral Turpitude Re: Littering", conflict: "It's very dificult to confront someone over littering, so I let it go. But I feel like this was a huge mistake, the planet is not a garbage can not to mention the fact that I live in the neighborhood. What would you do if you saw someone littering?", expiration: 15)
 
 c1.user = u1
 c2.user = u1
 c3.user = u2
 c4.user = u3
+c5.user = u1
+c6.user = u2
 
 s1 = Solution.create(opinion: "Shape up or ship out")
-s2 = Solution.create(opinion: "Sit them down and give them the option to either, a. cleanup after self, b. pay for cleaning, or c. look for a new place")
+s2 = Solution.create(opinion: "Sit them down and give them the option to either, a. cleanup after self, b. pay for cleaning, or c. look for a new place!")
 
 s3 = Solution.create(opinion: "Talk to human resources. Tell them the problem you are having and what can be done to fix the situation")
 s4 = Solution.create(opinion: "Bring them coffee when you are late, and use that as an excuse!")
 
-s5 = Solution.create(opinion: "Oh, and I forgot to say, my bf wouldn't go see a Ryan Gosling movie with me last weekend...")
+s5 = Solution.create(opinion: "I had a similar problem when my bf wouldn't go see a Ryan Gosling movie with me last weekend...")
 s6 = Solution.create(opinion: "Be a good student and do your homework!")
-s7 = Solution.create(opinion: "Where section are the seats in?")
+s7 = Solution.create(opinion: "What section were the seats in? Details are important!")
 
 s8 = Solution.create(opinion: "Can't we all just get along?")
 
@@ -65,3 +70,5 @@ c1.save
 c2.save
 c3.save
 c4.save
+c5.save
+c6.save
