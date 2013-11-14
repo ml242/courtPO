@@ -5,7 +5,7 @@
     <p>Conflict: <%= @case.conflict %></p>
 
 
-    <a href="https://twitter.com/share?url=https%3A%2F%2Fcourtofpopularopinion.heroku.com&amp;via=courtofPOP&amp;text=Looking+for+a+solution:%3A<%= @case.title %>" class="twitter-share-button">Tweet</a>
+    <a href="https://twitter.com/share?url=https%3A%2F%2Fcourtofpopularopinion.heroku.com/cases/<%= @case.id %>&amp;via=courtofPOP&amp;text=Looking+for+a+solution:%3A<%= @case.title %>" class="twitter-share-button">Tweet</a>
   </div>
 </div>
 
@@ -78,6 +78,7 @@
         <%= link_to "Sign In to leave an Opinion", "/auth/twitter" %>
       <% end %>
     </div>
+
   </div>
 
 
