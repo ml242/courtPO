@@ -1,6 +1,7 @@
 <div class="cases-main">
   <div id="case">
     <h1>Title: <%= @case.title %></h1>
+    <p>Plaintiff: <%= @case.user.name %></p>
     <p>Conflict: <%= @case.conflict %></p>
 
 
@@ -10,38 +11,82 @@
 
 <div class="cases-main">
   <div id="case">
+
     <% if @case.solutions.empty? %>
-    <h1>This Conflict Needs Your Opinion!</h1>
+      <h1>This Conflict Needs Your Opinion!</h1>
     <% end %>
+
     <% @case.solutions.each do |solution| %>
 
-      <div class="vote"><a href="'/solutions/'+#{solution.id}"><img src="/assets/icons/24/Thumb-up.png" alt=""></a>
-        <img src="/assets/icons/24/Thumb-down.png" alt=""></div>
-        <div id="up-votes"><%= solution.likes.size %></div>
-        <div id="down-votes"><%= solution.dislikes.size %></div>
-      <p><%= solution.opinion %> <br>
-        - <%= solution.user.twitter %> - <%= solution.age.floor %>hrs ago
-      </p>
-    <%end%>
+      <div id="vote-<%= solution.id %>">
 
+      <script>
 
-    <p> <%= solution.age.floor %>hrs ago - <%= solution.opinion %><br>
-      - <%= solution.user.twitter %>
-    </p>
+        var $id = $("#vote-" + <%= solution.id %>);
+        //creATE upvote image with ajax call to update
+        $(document.createElement("img"))
+            .attr({ src: '/assets/icons/24/Thumb-up.png', id: 'up-<%= solution.id %>' })
+            .appendTo($($id))
+            .click(function(){
+
+                $.ajax({
+                    type: "PUT",
+                    contentType: "json",
+                    url: "<%= case_solution_path(solution.id) %>",
+                    data: {
+                      vote: "+",
+                      authenticity_token: "<%= form_authenticity_token %>"
+                    }
+                }).done(
+                    function(){
+                        console.log(this);
+            });
+
+        });
+
+        // $.ajax({
+        //     type: "GET",
+        //     url: "<%= case_solution_path(solution.id) %>.json",
+        //     data: { vote: "j"}
+        // }).done(
+        //     function(){
+        //         $vote = $('<div>', {id: "vote-count-<%= solution.id %>"});
+        //         $('vote-<%= solution.id %>').append($vote);
+        //     });
+        </script>
+
+      </div>
+
+      <div class="opinion">
+        <p><%= solution.opinion %></p>
+      </div>
+
+      <div class="opinion-info">
+        <p>- <%= solution.user.twitter %> - <%= solution.age.floor %>hrs ago</p>
+      </div>
+
     <%end%>
-    <!--  TODO edit the form to add an opinion to this page -->
-    <input id="opinion-input" type="text" placeholder="This conflict needs your opinion!" />
-    <button id="case-button"> Submit </button>
+      <!--  add an opinion to this page -->
+      <% if current_user  %>
+        <div class="new-solution">
+          <%= form_for([@case, @solution]) do |f| %>
+            <%= f.text_field :opinion, :class => "text" %>
+            <%= f.submit "Leave Opinion" %>
+          <% end %>
+        </div>
+      <% else %>
+        <%= link_to "Sign In to leave an Opinion", "/auth/twitter" %>
+      <% end %>
+    </div>
   </div>
-</div>
 
 
-<% if current_user  %>
-<% if @case.user == current_user %>
-<%= link_to "Edit", edit_case_path(@case) %>
-<%= link_to "Delete", case_path(@case), :method => "delete", :confirm => "Are you sure you want to delete?" %>
-<% end %>
-<% end %>
+  <% if current_user  %>
+  <% if @case.user == current_user %>
+  <%= link_to "Edit", edit_case_path(@case) %>
+  <%= link_to "Delete", case_path(@case), :method => "delete", :confirm => "Are you sure you want to delete?" %>
+  <% end %>
+  <% end %>
 </div>
 </div>
 
