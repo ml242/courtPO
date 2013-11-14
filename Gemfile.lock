@@ -28,6 +28,7 @@ GEM
     activesupport (3.2.14)
       i18n (~> 0.6, >= 0.6.4)
       multi_json (~> 1.0)
+    acts_as_votable (0.7.1)
     annotate (2.5.0)
       rake
     arel (3.0.2)
@@ -169,6 +170,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts_as_votable (~> 0.7.1)
   annotate
   awesome_print
   bcrypt-ruby (= 3.0.0)

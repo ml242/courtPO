@@ -8,6 +8,7 @@ gem 'rails', '3.2.14'
 gem 'pg'
 gem 'omniauth-twitter'
 gem 'twitter'
+gem 'acts_as_votable', '~> 0.7.1'
 
 #Gemfile
 group :development, :test do
