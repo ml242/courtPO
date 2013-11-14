@@ -2,12 +2,12 @@
   <div id="case">
 
   <!-- Display cases from old to new, if they have not timed out -->
-  <%# @cases.reverse.each do |case_doc| %>
+  <% @cases.reverse.each do |case_doc| %>
 
-    <%# if (case_doc.timeLeft.floor > 0) %>
-      <h1><a href="/cases/<%#= case_doc.id %>"><%#= case_doc.title %></a></h1>
-      <p><%#= case_doc.timeLeft.floor %>hrs - Case#<%#= case_doc.id %>:  <%#= case_doc.conflict %> </p>
-    <%# end %>
-  <%# end %>
+    <% if (case_doc.timeLeft.floor > 0) %>
+      <h1><a href="/cases/<%= case_doc.id %>"><%= case_doc.title %></a></h1>
+      <p><%= case_doc.timeLeft.floor %>hrs - Case#<%= case_doc.id %>:  <%= case_doc.conflict %> </p>
+    <% end %>
+  <% end %>
   </div>
 </div>
