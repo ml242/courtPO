@@ -34,11 +34,11 @@ header {
   border-bottom: #CCC 1px solid;
 }
 
-footer {
+/*footer {
   height: 2%;
   color: #EEEEEE;
   margin: 0 auto;
-}
+}*/
 
 footer img {
   width: 5%;
@@ -46,10 +46,15 @@ footer img {
 }
 
 .nav-foot {
+  clear: both;
   border-radius: 0;
   margin: 0 auto;
-  margin-top: 100%;
+/*  margin-top: 100%;*/
   background-color: #2F363E;
+}
+
+#foot-img{
+  text-align: center;
 }
 
 #about-pic {

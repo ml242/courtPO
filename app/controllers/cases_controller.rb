@@ -8,7 +8,6 @@ class CasesController < ApplicationController
   end
 
   def create
-    binding.pry
     @case = Case.new(params[:case])
     @case.user = current_user
       if @case.save
