@@ -17,7 +17,6 @@ class SolutionsController < ApplicationController
   end
 
   def update
-    binding.pry
     @solution = Solution.find(params[:id])
     if params[:vote] == "+"
       @solution.liked_by current_user
