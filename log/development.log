@@ -25106,3 +25106,41 @@ Processing by WelcomeController#home as HTML
   [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
   Rendered layouts/_nav.html.erb (2.7ms)
 Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/cases" for 127.0.0.1 at 2013-11-13 19:29:29 -0500
+Connecting to database specified by database.yml
+Processing by CasesController#index as HTML
+  [1m[36mCase Load (0.6ms)[0m  [1mSELECT "cases".* FROM "cases" [0m
+  Rendered cases/index.html.erb within layouts/application (10.0ms)
+Compiled style.css  (0ms)  (pid 68982)
+Compiled application.css  (3ms)  (pid 68982)
+Compiled twitter.js  (0ms)  (pid 68982)
+Compiled application.js  (81ms)  (pid 68982)
+  [1m[35mUser Load (81.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered layouts/_nav.html.erb (119.4ms)
+Completed 200 OK in 739ms (Views: 516.7ms | ActiveRecord: 172.0ms)
+
+
+Started GET "/cases/8" for 127.0.0.1 at 2013-11-13 19:31:22 -0500
+Processing by CasesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mCase Load (0.9ms)[0m  [1mSELECT "cases".* FROM "cases" WHERE "cases"."id" = $1 LIMIT 1[0m  [["id", "8"]]
+  [1m[35mSolution Load (0.5ms)[0m  SELECT "solutions".* FROM "solutions" WHERE "solutions"."case_id" = 8
+  [1m[36mUser Load (2.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  Rendered cases/show.html.erb within layouts/application (191.7ms)
+  Rendered layouts/_nav.html.erb (0.4ms)
+Completed 200 OK in 211ms (Views: 202.6ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/cases/8" for 127.0.0.1 at 2013-11-13 19:32:37 -0500
+Processing by CasesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mCase Load (0.5ms)[0m  [1mSELECT "cases".* FROM "cases" WHERE "cases"."id" = $1 LIMIT 1[0m  [["id", "8"]]
+  [1m[35mSolution Load (0.4ms)[0m  SELECT "solutions".* FROM "solutions" WHERE "solutions"."case_id" = 8
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  Rendered cases/show.html.erb within layouts/application (52.6ms)
+  Rendered layouts/_nav.html.erb (0.3ms)
+Completed 200 OK in 60ms (Views: 57.4ms | ActiveRecord: 1.6ms)

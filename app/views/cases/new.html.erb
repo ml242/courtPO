@@ -1,6 +1,6 @@
-
+<div class="titler">
 <h1> Add a case</h1>
-
+</div>
 
 <div id="case">
 
@@ -12,14 +12,17 @@
           <li><%= message %></li>
         <% end %>
     </ul>
-    <% end %>err
+    <% end %>
  <p>
 <label>Title: </label>
-  <%= f.text_field :title, :class => "text" %></p>
+  <%= f.text_field :title, :class => "text", :validate => :presence %></p>
 
   <label>Conflict: </label>
   <%= f.text_field :conflict, :class => "text"%></p>
 
+
   <%= f.submit %>
 <% end %>
 </div>
+
+<a href="https://twitter.com/share?url=https%3A%2F%2Fdev.twitter.com&amp;via=episod&amp;text=This%20will%20show%20up" class="twitter-share-button">Tweet</a>

@@ -42,8 +42,9 @@ header {
   width: 85%;
 }
 
-
-
+.titler {
+  margin-left: 1.5%;
+}
 
 #gavel-home {
   /*z-index: 0;*/
@@ -103,4 +104,9 @@ header {
   border: black 1px solid;
   padding: 15px;
   margin: 15px;
+}
+
+.input-form {
+  width: 15%;
+  height: 5%;
 }

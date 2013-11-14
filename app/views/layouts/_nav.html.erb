@@ -2,13 +2,14 @@
   <nav class="nav-head">
   <div class="container grid">
   <div class="unit three-fifths" id="twitter_login">
-        <h1><%= link_to "Court of Public Opinion", "/", :class => "court-head" %></h1>
+        <h1><%= link_to "Court of Popular Opinion", "/", :class => "court-head" %></h1>
   </div>
       <%#= render 'layouts/nav' %>
       <%#= flash[:notice] %>
   <div class="unit two-fifths">
         <% if current_user %>
         Signed in as <%= current_user.name %> |
+        <%= link_to "About the Court", "/about" %> |
         <%= link_to "My Bench", "/users/#{current_user.id}" %> |
         <%= link_to "Cases", "/cases/" %> |
         <%= link_to "sign out", signout_path %>
