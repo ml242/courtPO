@@ -9,8 +9,9 @@
 
     <% if (case_doc.timeLeft.floor > 0) %>
     <h1><a href="/cases/<%= case_doc.id %>"><%= case_doc.title %></a></h1>
-    <p>Remaining - ID</p>
-    <p><%= case_doc.timeLeft.floor %>hrs - Case#<%= case_doc.id %>:  <%= case_doc.conflict %> </p>
+    <p>Time remaining <%= case_doc.timeLeft.floor %> hrs</p>
+    <p><%= case_doc.conflict %></p>
+    <p style="text-align:right">Case #<%= case_doc.id %></p>
     <% end %>
     <% end %>
   </div>
