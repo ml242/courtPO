@@ -1,7 +1,15 @@
 <div class="cases-main">
 <div id="case">
-<% @user.solutions.each do |solution| %>
-  <h1>Opinion: <%= solution.opinion %></h1>
+<% @user.cases.each do |cased| %>
+  <h3>Cases: </h3>
+  <p><%= cased.title %> - <%= cased.conflict %></p>
+<%end%>
+</div>
+<div id="user-solutions">
+  <% @user.solutions.each do |solution| %>
+  <h3>Recent Opinions: </h3>
+  <p><%= solution.title %> - <%= solution.conflict %></p>
 <%end%>
 </div>
 </div>
+
