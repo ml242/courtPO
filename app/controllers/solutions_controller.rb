@@ -2,6 +2,7 @@ class SolutionsController < ApplicationController
   # before_filter :load_case
 
   def create
+
     @user = current_user
     @case = Case.find(params[:case_id])
     @solution = Solution.new(params[:solution])
@@ -14,15 +15,18 @@ class SolutionsController < ApplicationController
       render :new
     end
   end
-
+  def show
+    render json: params[:id]
+  end
   def update
     @solution = Solution.find(params[:id])
     if params[:vote] == "+"
       @solution.liked_by current_user
+      @solution.addToScore
     else
       @solution.disliked_by current_user
     end
-    return @solution.likes.count
+    render json: @solution.likes.size
   end
 
   def destroy
