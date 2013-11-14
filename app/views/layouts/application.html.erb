@@ -7,7 +7,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-   <%= render 'layouts/nav' %>
+<%= render 'layouts/nav' %>
+<section id="wrapperz">
 <%= yield %>
 <!--  <%#= flash[:notice] %>
 <div id="twitter_login">
@@ -18,8 +19,7 @@
   <%#= link_to "sign in with twitter", "/auth/twitter" %>
   <%# end %>
 </div> -->
-
-
+</div>
 <%= render 'layouts/footer' %>
 </body>
 </html>

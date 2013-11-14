@@ -1,7 +1,11 @@
 body {
+/*  background-image: url("/speakers.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;*/
+}
+
+#wrapperz {
   background-image: url("/speakers.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 
 div {
@@ -152,6 +156,8 @@ footer img {
 
 #case-button {
 float: right;
+margin: .1%
+margin-bottom: .1%;
 }
 
 .cases-main {
