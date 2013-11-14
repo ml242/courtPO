@@ -20,4 +20,8 @@ class Case < ActiveRecord::Base
   belongs_to :user
   has_many :solutions
 
+  validates :title, uniqueness: true, presence: true, length: { minimum: 4 }
+  validates :conflict, presence: true, length: { minimum: 4 }
+
+
 end
