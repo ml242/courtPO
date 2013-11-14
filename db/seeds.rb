@@ -10,9 +10,9 @@ User.delete_all
 Case.delete_all
 Solution.delete_all
 
-u1 = User.create(name: "Matt L", email: "mattlucas@gmail.com", twitter: "ml242")
-u2 = User.create(name: "Matthew K", email: "matthew.korporaal@gmail.com", twitter: "korp_or")
-u3 = User.create(name: "Natasha G", email: "greennatasha@aol.com", twitter: "NatashaGreen25")
+u1 = User.create(name: "Matt L", email: "mattlucas@gmail.com", twitter: "ml242", uid: "99201913")
+u2 = User.create(name: "Matthew K", email: "matthew.korporaal@gmail.com", twitter: "korp_or", uid: "1833280297")
+u3 = User.create(name: "Natasha G", email: "greennatasha@aol.com", twitter: "NatashaGreen25", uid: "459542592")
 
 c1 = Case.create(title: "Problem with my Roommate", conflict: "My roommate never does her dishes. It's infuriating and I wish she'd take care of her own mess. I was thinking that I could resolve this by hiring a maid. I brought it up and she doesn't want to chip in. What now?", expiration: 3)
 c2 = Case.create(title: "Can't get along with boss", conflict: "I was penalized at work for being late, when I had called ahead as required to let them know my emergency. Meanwhile, I still got there on time. This guy really has it out for me. Is there anything I can do to patch things up, because I really don't want to get fired.", expiration: 2)

@@ -83,13 +83,13 @@
       <%#= flash[:notice] %>
   <div class="unit three-fifths">
         <% if logged_in_twitter %>
-        <%= image_tag "#{session[:image]}", size: "15x15" %> |
+        <%= image_tag "#{session[:image]}", size: "22x22" %> |
         Signed in as <%= session[:name] %> |
         <%= link_to "About the Court", "/about" %> |
         <%= link_to "My Bench", "/users/#{session[:user_id]}" %> |
         <%= link_to "Cases", "/cases/" %> |
         <%= link_to "sign out", signout_path %>
-        <button id="create-user">Create Case</button>
+        <!-- <button id="create-user">Create Case</button> -->
         <% else %>
         <%= link_to "sign in with twitter", "/auth/twitter" %>
         <% end %>

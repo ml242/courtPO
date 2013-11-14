@@ -180,3 +180,7 @@ footer img {
 #opinion-input{
   width :100%;
 }
+#case-button {
+  float:right;
+  margin: 1%;
+}
