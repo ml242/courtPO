@@ -1,5 +1,10 @@
 <div class="cases-main">
   <div id="case">
+    <div id="case-button">
+      <% if current_user %>
+      <button id="create-user">Create New Case</button>
+      <% end %>
+    </div>
 
   <!-- Display cases from old to new, if they have not timed out -->
   <% @cases.reverse.each do |case_doc| %>
