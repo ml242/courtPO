@@ -29,9 +29,9 @@ def age
 end
 
 def timeLeft
-  t = Time.zone.now
-  sec = (self.created_at + self.expiration * (3600 * 24)) - t
-  return (sec/60)/60
+  # t = Time.zone.now
+  # sec = (self.created_at + self.expiration * (3600 * 24)) - t
+  # return (sec/60)/60
 end
 
 end
