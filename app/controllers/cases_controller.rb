@@ -1,6 +1,6 @@
 class CasesController < ApplicationController
   def index
-    @cases = Case.all
+    @cases = Case.find(:all,:order => 'created_at ASC',:limit => 100);
   end
 
   def new
@@ -8,14 +8,16 @@ class CasesController < ApplicationController
   end
 
   def create
-    binding.pry
-    @case = Case.new(params[:case])
+    @case = Case.create(
+      title: params[:title],
+      conflict: params[:conflict],
+      expiration: params[:expiration])
     @case.user = current_user
       if @case.save
         flash[:notice] = "Added case successfully"
         redirect_to cases_path
       else
-        render :action => "new"
+        render json: { confirmation: "success"}
       end
   end
 
