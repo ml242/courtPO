@@ -15,13 +15,16 @@
 <div class="cases-main">
   <div id="case">
     <% @case.solutions.each do |solution| %>
-      <p> Opinion: <%= solution.opinion %></p>
+      <p> <%= solution.age.floor %>hrs ago - <%= solution.opinion %><br>
+        - <%= solution.user.twitter %>
+      </p>
     <%end%>
 
 
      <!--  TODO edit the form to add an opinion to this page -->
-      <input id="opinion-input" type="text" placeholder="This conflict needs your opinion!" data-case-id="<%=@case.solutions.new %>"></input>
-      <button> Submit </button>
+ <!--      <input id="opinion-input" type="text" placeholder="This conflict needs your opinion!" data-case-id="<%=@case.solutions.new %>"></input>
+      <button> Submit </button> -->
+
       </div>
     </div>
 

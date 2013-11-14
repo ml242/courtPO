@@ -23,5 +23,9 @@ class Case < ActiveRecord::Base
   validates :title, uniqueness: true, presence: true, length: { minimum: 4 }
   validates :conflict, presence: true, length: { minimum: 4 }
 
+def age
+  t = Time.zone.now
+  return ((t - self.created_at) / 60)/60
+end
 
 end

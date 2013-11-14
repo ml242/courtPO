@@ -19,4 +19,9 @@ class Solution < ActiveRecord::Base
   belongs_to :case
   belongs_to :user
 
+def age
+  t = Time.zone.now
+  return ((t - self.created_at) / 60)/60
+end
+
 end
