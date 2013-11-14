@@ -35,4 +35,8 @@ CourtPO::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
+#   # config/environments/development.rb`
+# config.reload_classes_only_on_change = false
+# config.watchable_dirs[File.join(config.root, "app/admin")] = ["rb"]
+
 end

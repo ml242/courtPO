@@ -8,6 +8,7 @@ class CasesController < ApplicationController
   end
 
   def create
+    binding.pry
     @case = Case.new(params[:case])
     @case.user = current_user
       if @case.save
@@ -44,8 +45,8 @@ class CasesController < ApplicationController
   end
 
   def show
-    id = (params[:id])
-    @case = Case.find(id)
+    @solution = Solution.new
+    @case = Case.find(params[:id])
   end
 
 end

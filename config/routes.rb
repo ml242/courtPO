@@ -3,7 +3,7 @@ CourtPO::Application.routes.draw do
   resources :welcome, only: [:new]
   resources :session, only: [:new, :create, :destroy]
   resources :cases do
-    resources :solutions, :only => [:create, :destroy]
+    resources :solutions, :only => [:create, :show, :update, :destroy]
   end
 
   root to: 'welcome#home'
@@ -22,7 +22,7 @@ CourtPO::Application.routes.draw do
 
 end
 #== Route Map
-# Generated on 09 Nov 2013 23:40
+# Generated on 14 Nov 2013 01:48
 #
 #                POST   /users(.:format)                        users#create
 #       new_user GET    /users/new(.:format)                    users#new
@@ -31,11 +31,12 @@ end
 #                PUT    /users/:id(.:format)                    users#update
 #                DELETE /users/:id(.:format)                    users#destroy
 #    new_welcome GET    /welcome/new(.:format)                  welcome#new
-#       sessions POST   /sessions(.:format)                     sessions#create
-#    new_session GET    /sessions/new(.:format)                 sessions#new
-#        session DELETE /sessions/:id(.:format)                 sessions#destroy
+#  session_index POST   /session(.:format)                      session#create
+#    new_session GET    /session/new(.:format)                  session#new
+#        session DELETE /session/:id(.:format)                  session#destroy
 # case_solutions POST   /cases/:case_id/solutions(.:format)     solutions#create
-#  case_solution DELETE /cases/:case_id/solutions/:id(.:format) solutions#destroy
+#  case_solution PUT    /cases/:case_id/solutions/:id(.:format) solutions#update
+#                DELETE /cases/:case_id/solutions/:id(.:format) solutions#destroy
 #          cases GET    /cases(.:format)                        cases#index
 #                POST   /cases(.:format)                        cases#create
 #       new_case GET    /cases/new(.:format)                    cases#new
@@ -44,7 +45,9 @@ end
 #                PUT    /cases/:id(.:format)                    cases#update
 #                DELETE /cases/:id(.:format)                    cases#destroy
 #           root        /                                       welcome#home
-#         signup GET    /signup(.:format)                       users#new
 #          login GET    /login(.:format)                        session#new
-#                GET    /login(.:format)                        session#create
-#         logout GET    /logout(.:format)                       session#destroy
+#                GET    /auth/:provider/callback(.:format)      session#create
+#   auth_failure GET    /auth/failure(.:format)                 :controller#:action
+#        signout        /signout(.:format)                      session#destroy
+#          about GET    /about(.:format)                        welcome#about
+#        signout GET    /logout(.:format)                       session#destroy
