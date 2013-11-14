@@ -15,19 +15,11 @@
     <% end %>
     <% @case.solutions.each do |solution| %>
 
-      <div class="vote"><a href="'/solutions/'+#{solution.id}"><img src="/assets/icons/24/Thumb-up.png" alt=""></a>
-        <img src="/assets/icons/24/Thumb-down.png" alt=""></div>
+      <div class="vote"><a href="/solutions/#{solution.id}"><img src="/assets/icons/24/Thumb-up.png" alt=""></a></div>
         <div id="up-votes"><%= solution.likes.size %></div>
-        <div id="down-votes"><%= solution.dislikes.size %></div>
       <p><%= solution.opinion %> <br>
         - <%= solution.user.twitter %> - <%= solution.age.floor %>hrs ago
       </p>
-
-
-
-    <p> <%= solution.age.floor %>hrs ago - <%= solution.opinion %><br>
-      - <%= solution.user.twitter %>
-    </p>
     <%end%>
     <!--  TODO edit the form to add an opinion to this page -->
     <input id="opinion-input" type="text" placeholder="This conflict needs your opinion!" />
