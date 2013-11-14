@@ -2,13 +2,15 @@ body {
   background-image: url("/speakers.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  min-height: 750px;
 }
 
-.page-wrap{
-  position: relative;
-  padding-bottom: 116px;
-}
+    body { font-size: 62.5%; }
+    label, input { display:block; }
+    input.text { margin-bottom:12px; width:95%; padding: .4em; }
+    fieldset { padding:0; border:0; margin-top:25px; }
+    h1 { font-size: 1.2em; margin: .6em 0; }
+    .validateTips { border: 1px solid transparent; padding: 0.3em; }
+
 
 div {
   border-radius: 12px;
@@ -40,11 +42,11 @@ header {
   border-bottom: #CCC 1px solid;
 }
 
-/*footer {
+footer {
   height: 2%;
   color: #EEEEEE;
   margin: 0 auto;
-}*/
+}
 
 footer img {
   width: 5%;
@@ -52,18 +54,10 @@ footer img {
 }
 
 .nav-foot {
-  clear: both;
   border-radius: 0;
   margin: 0 auto;
-/*  margin-top: 100%;*/
+  margin-top: 100%;
   background-color: #2F363E;
-  position: absolute;
-  width: 100%;
-  bottom: 0;
-}
-
-#foot-img{
-  text-align: center;
 }
 
 #about-pic {

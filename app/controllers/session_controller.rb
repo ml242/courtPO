@@ -4,7 +4,6 @@ class SessionController < ApplicationController
   end
 
   def create
-
     auth_hash = request.env['omniauth.auth']
     if User.where(:uid => auth_hash["uid"]).empty?
       @user = User.new
@@ -20,6 +19,9 @@ class SessionController < ApplicationController
       session[:user_id] = @user.id
       @user.name = auth_hash["info"]["nickname"]
       @user.image = auth_hash["info"]["image"]
+      session[:user_id] = @user.id
+      session[:name] = @user.name
+      session[:image] = @user.image
       @user.save
       # render :text => "Welcome back #{@user.name}! You have already signed up."
       redirect_to("/cases")
