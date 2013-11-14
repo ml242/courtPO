@@ -25144,3 +25144,24 @@ Processing by CasesController#show as HTML
   Rendered cases/show.html.erb within layouts/application (52.6ms)
   Rendered layouts/_nav.html.erb (0.3ms)
 Completed 200 OK in 60ms (Views: 57.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/cases/8" for 127.0.0.1 at 2013-11-13 19:38:51 -0500
+Connecting to database specified by database.yml
+Processing by CasesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mCase Load (1.5ms)[0m  [1mSELECT "cases".* FROM "cases" WHERE "cases"."id" = $1 LIMIT 1[0m  [["id", "8"]]
+  [1m[35mSolution Load (0.5ms)[0m  SELECT "solutions".* FROM "solutions" WHERE "solutions"."case_id" = 8
+  [1m[36mUser Load (9.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  Rendered cases/show.html.erb within layouts/application (244.4ms)
+Compiled gridism.css  (0ms)  (pid 70004)
+Compiled normalize.css  (0ms)  (pid 70004)
+Compiled style.css  (0ms)  (pid 70004)
+Compiled application.css  (139ms)  (pid 70004)
+Compiled jquery.js  (2ms)  (pid 70004)
+Compiled jquery_ujs.js  (0ms)  (pid 70004)
+Compiled cases.js  (0ms)  (pid 70004)
+Compiled application.js  (175ms)  (pid 70004)
+  Rendered layouts/_nav.html.erb (1.6ms)
+Completed 200 OK in 959ms (Views: 832.7ms | ActiveRecord: 74.8ms)
