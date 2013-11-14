@@ -14,6 +14,15 @@ class SolutionsController < ApplicationController
       render :new
     end
   end
+def update
+  binding.pry
+    @solution = Solution.find(params[:id])
+    if params[:vote] == "down"
+      @solution.disliked_by current_user
+    else
+      @solution.liked_by current_user
+    end
+  end
 
   def destroy
     Solution.find(params[:id]).destroy

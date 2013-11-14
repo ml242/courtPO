@@ -15,8 +15,12 @@
 <div class="cases-main">
   <div id="case">
     <% @case.solutions.each do |solution| %>
-      <p> <%= solution.age.floor %>hrs ago - <%= solution.opinion %><br>
-        - <%= solution.user.twitter %>
+      <div class="vote"><a href="'/solutions/'+#{solution.id}"><img src="/assets/icons/24/Thumb-up.png" alt=""></a>
+        <img src="/assets/icons/24/Thumb-down.png" alt=""></div>
+        <div id="up-votes"><%= solution.likes.size %></div>
+        <div id="down-votes"><%= solution.dislikes.size %></div>
+      <p><%= solution.opinion %> <br>
+        - <%= solution.user.twitter %> - <%= solution.age.floor %>hrs ago
       </p>
     <%end%>
 

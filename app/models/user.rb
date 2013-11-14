@@ -14,6 +14,7 @@
 #
 
 class User < ActiveRecord::Base
+  acts_as_voter
 
   attr_accessible :name, :email, :image, :twitter, :num_cases, :num_best_solutions, :score_total, :password, :password_confirmation, :uid
 

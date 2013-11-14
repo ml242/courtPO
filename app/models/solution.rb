@@ -13,6 +13,7 @@
 #
 
 class Solution < ActiveRecord::Base
+  acts_as_votable
 
   attr_accessible :opinion, :score, :is_judgement, :case_id, :user_id
 
