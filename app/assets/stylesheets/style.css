@@ -27,6 +27,41 @@ header {
   background-color: #2F363E;
   margin-bottom: 40px;
 }
+
+footer {
+  height: 2%;
+  color: #EEEEEE;
+  margin: 0 auto;
+}
+
+footer img {
+  width: 5%;
+  height: 5%;
+}
+
+.nav-foot {
+  margin: 0 auto;
+}
+
+#about-pic {
+  margin: 0 auto;
+  text-align: center;
+  background-color: rgba(255, 255, 255, .8);
+  border: black 1px solid;
+  margin-left: 10%;
+  margin-right: 1%;
+}
+
+#about-text-main {
+  margin: 0 auto;
+  text-align: center;
+  background-color: rgba(255, 255, 255, .8);
+  border: black 1px solid;
+  color: black;
+  width: 55%;
+  padding: 1%;
+}
+
 #welcome-home {
   width: 45%;
   height: 30%;
@@ -98,8 +133,7 @@ header {
 }
 
 .cases-main {
-    background-color: rgba(255, 255, 255, .85);
-
+  background-color: rgba(255, 255, 255, .85);
   float: left;
   width: 40%;
   border: black 1px solid;
@@ -107,7 +141,11 @@ header {
   margin: 15px;
 }
 
-.input-form {
+#input-form {
   width: 15%;
   height: 5%;
+}
+
+#opinion-input{
+  width :100%;
 }
