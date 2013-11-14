@@ -1,6 +1,11 @@
 body {
-  background-image: url("/county_courthouse.jpg");
+  background-image: url("/speakers.jpg");
   background-size: cover;
+  background-repeat: no-repeat;
+}
+
+div {
+  border-radius: 12px;
 }
 
 /*#court-pic {
@@ -26,6 +31,7 @@ color: grey;
 header {
   background-color: #2F363E;
   margin-bottom: 40px;
+  border-bottom: #CCC 1px solid;
 }
 
 footer {
@@ -63,10 +69,10 @@ footer img {
 }
 
 #welcome-home {
-  width: 45%;
+  width: 35%;
   height: 30%;
-  border: 4px solid red;
-  border-radius: 10px;
+  border: 1px solid black;
+  border-radius: 12px;
   margin: 0 auto;
   padding: 5%;
   background-color: rgba(255, 255, 255, .85);
@@ -84,19 +90,20 @@ footer img {
 #gavel-home {
   /*z-index: 0;*/
   margin: 0 auto;
-  margin-top: 5px;
-  margin-left: 33%;
+  margin-top: 15%;
 /*  background-color: white;*/
   border-radius: 10px;
-  border: 4px solid red;
-  width: 20%;
+  border: 1px solid black;
+  width: 10%;
   color: black;
+  padding-top: 1%;
+  padding-bottom: 1%;
 }
 
 #gavel-img{
   margin: 0 auto;
-  width: 55%;
-  height: 55%;
+  width: 35%;
+  height: 35%;
 
 }
 
@@ -116,10 +123,10 @@ footer img {
 
 #user-testimony{
   margin: 0 auto;
-  margin-top: 2%;
-  margin-right: 24%;
-  border-radius: 10px;
-  border: 2px solid red;
+  margin-top: 17%;
+  margin-right: 15%;
+  border-radius: 12px;
+  border: 1px solid black;
   width: 20%;
   float: right;
   padding: 1%;
