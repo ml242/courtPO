@@ -44,6 +44,7 @@ class CasesController < ApplicationController
   end
 
   def show
+    binding.pry
     id = (params[:id])
     @case = Case.find(id)
   end
