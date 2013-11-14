@@ -39,8 +39,18 @@ footer img {
   height: 5%;
 }
 
-#nav-foot {
+.nav-foot {
   margin: 0 auto;
+}
+
+#about-pic {
+  text-align: center;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, .15);
+  float: left;
+  border: black 1px solid;
+  margin-left: 3%;
+  margin-right: 3%;
 }
 
 #welcome-home {
@@ -114,8 +124,7 @@ footer img {
 }
 
 .cases-main {
-    background-color: rgba(255, 255, 255, .85);
-
+  background-color: rgba(255, 255, 255, .85);
   float: left;
   width: 40%;
   border: black 1px solid;
