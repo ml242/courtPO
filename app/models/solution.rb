@@ -25,4 +25,8 @@ def age
   return ((t - self.created_at) / 60)/60
 end
 
+def addToScore
+  self.score = self.likes.size
+end
+
 end

@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(:version => 20131114035055) do
   create_table "solutions", :force => true do |t|
     t.text     "opinion"
     t.boolean  "is_judgement", :default => false
-    t.integer  "score"
+    t.integer  "score",        :default => 0
     t.integer  "case_id"
     t.integer  "user_id"
     t.datetime "created_at",                      :null => false

@@ -82,10 +82,11 @@
       <%#= render 'layouts/nav' %>
       <%#= flash[:notice] %>
   <div class="unit two-fifths">
-        <% if current_user %>
-        Signed in as <%= current_user.name %> |
+        <% if logged_in_twitter %>
+        Signed in as <%= session[:name] %>
+        <%= image_tag "#{session[:image]}", size: "20x20" %> |
         <%= link_to "About the Court", "/about" %> |
-        <%= link_to "My Bench", "/users/#{current_user.id}" %> |
+        <%= link_to "My Bench", "/users/#{session[:user_id]}" %> |
         <%= link_to "Cases", "/cases/" %> |
         <%= link_to "sign out", signout_path %>
         <button id="create-user">Create Case</button>

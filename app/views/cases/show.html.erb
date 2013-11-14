@@ -27,32 +27,37 @@
         $(document.createElement("img"))
             .attr({ src: '/assets/icons/24/Thumb-up.png', id: 'up-<%= solution.id %>' })
             .appendTo($($id))
-            .click(function(){
-
+            .click(function(e){
+                e.preventDefault();
                 $.ajax({
                     type: "PUT",
-                    contentType: "json",
+                    contentType: "application/json",
                     url: "<%= case_solution_path(solution.id) %>",
-                    data: {
+                    data: JSON.stringify({
                       vote: "+",
                       authenticity_token: "<%= form_authenticity_token %>"
-                    }
+                    })
                 }).done(
-                    function(){
-                        console.log(this);
+                    function(xhr){
+                      console.log(xhr)
+                        var $id = $("#vote-" + <%= solution.id %>);
+                        $vote = $("#vote-count-<%= solution.id %>").text(xhr);
             });
 
         });
 
         // $.ajax({
         //     type: "GET",
-        //     url: "<%= case_solution_path(solution.id) %>.json",
-        //     data: { vote: "j"}
+        //     dataType: "application/json",
+        //     url: "<%= case_solution_path(solution.id) %>",
+        //     authenticity_token: "<%= form_authenticity_token %>"
         // }).done(
         //     function(){
-        //         $vote = $('<div>', {id: "vote-count-<%= solution.id %>"});
-        //         $('vote-<%= solution.id %>').append($vote);
-        //     });
+             //console.log(xhr)
+                $vote = $('<div>', {id: "vote-count-<%= solution.id %>"}).text(<%= solution.score %>);
+                $id.prepend($vote);
+            // });
+
         </script>
 
       </div>
@@ -67,7 +72,7 @@
 
     <%end%>
       <!--  add an opinion to this page -->
-      <% if current_user  %>
+      <% if logged_in_twitter  %>
         <div class="new-solution">
           <%= form_for([@case, @solution]) do |f| %>
             <%= f.text_field :opinion, :class => "text" %>
@@ -82,8 +87,8 @@
   </div>
 
 
-  <% if current_user  %>
-  <% if @case.user == current_user %>
+  <% if logged_in_twitter  %>
+  <% if @case.user == logged_in_twitter %>
   <%= link_to "Edit", edit_case_path(@case) %>
   <%= link_to "Delete", case_path(@case), :method => "delete", :confirm => "Are you sure you want to delete?" %>
   <% end %>
