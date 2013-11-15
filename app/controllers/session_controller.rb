@@ -11,18 +11,20 @@ class SessionController < ApplicationController
       @user.name = auth_hash["info"]["nickname"]
       @user.image = auth_hash["info"]["image"]
       @user.save
+      # @current_user = @user
       session[:user_id] = @user.id
-      session[:name] = @user.name
-      session[:image] = @user.image
+      # session[:name] = @user.name
+      # session[:image] = @user.image
       redirect_to("/cases")
     else @user = User.where(:uid => auth_hash["uid"]).first
       session[:user_id] = @user.id
       @user.name = auth_hash["info"]["nickname"]
       @user.image = auth_hash["info"]["image"]
-      session[:user_id] = @user.id
-      session[:name] = @user.name
-      session[:image] = @user.image
       @user.save
+      # @current_user = @user
+      session[:user_id] = @user.id
+      # session[:name] = @user.name
+      # session[:image] = @user.image
       # render :text => "Welcome back #{@user.name}! You have already signed up."
       redirect_to("/cases")
     end

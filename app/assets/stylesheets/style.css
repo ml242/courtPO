@@ -2,14 +2,18 @@ body {
   background-image: url("/speakers.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  font-size: 62.5%;
 }
 
-    body { font-size: 62.5%; }
-    label, input { display:block; }
-    input.text { margin-bottom:12px; width:95%; padding: .4em; }
-    fieldset { padding:0; border:0; margin-top:25px; }
-    h1 { font-size: 1.2em; margin: .6em 0; }
-    .validateTips { border: 1px solid transparent; padding: 0.3em; }
+label, input { display:block; }
+
+input.text { margin-bottom:12px; width:95%; padding: .4em; }
+
+fieldset { padding:0; border:0; margin-top:25px; }
+
+h1 { font-size: 1.2em; margin: .6em 0; }
+
+.validateTips { border: 1px solid transparent; padding: 0.3em; }
 
 
 div {

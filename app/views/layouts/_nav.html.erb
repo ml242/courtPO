@@ -1,96 +1,30 @@
-  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
-  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-
-  <script>
-
-  $(function() {
-    var title = $( "#title" ),
-      conflict = $( "#conflict" ),
-      expiration = $( "#expiration" ),
-      tips = $( ".validateTips" );
-
-
-
-    $( "#dialog-form" ).dialog({
-      autoOpen: false,
-      height: 300,
-      width: 350,
-      modal: true,
-      buttons: {
-        "Create Case": function() {
-
-            $.ajax({
-                type: "POST",
-                url: "/cases.json",
-                data: {
-                    title: title.val(),
-                    conflict: conflict.val(),
-                    expiration: expiration.val()
-                }
-            }).done(
-                function(){
-                        console.log(this);
-            });
-            $( this ).dialog( "close" );
-        },
-        Cancel: function() {
-          $( this ).dialog( "close" );
-        }
-      },
-      close: function() {
-      }
-    });
-
-    $( "#create-user" )
-      .button()
-      .click(function() {
-        $( "#dialog-form" ).dialog( "open" );
-      });
-  });
-
-  </script>
-
-  <div id="dialog-form" title="Create Case">
-  <p class="validateTips">All form fields are required.</p>
-
-  <form>
-  <fieldset>
-    <label for="title">Title</label>
-    <input type="text" name="title" id="title" class="text ui-widget-content ui-corner-all" />
-    <label for="conflict">Conflict</label>
-    <input type="text" name="conflict" id="conflict" value="" class="text ui-widget-content ui-corner-all" />
-    <label for="expiration">Expiration</label>
-    <input type="expiration" name="expiration" id="expiration" value="" class="text ui-widget-content ui-corner-all" />
-  </fieldset>
-  </form>
-</div>
 
 <header role="banner">
   <nav class="nav-head">
-  <div class="container grid">
-  <div class="unit two-fifths" id="twitter_login">
-        <h1><%= link_to "Court of Popular Opinion", "/", :class => "court-head" %></h1>
-  </div>
-      <%#= render 'layouts/nav' %>
+    <div class="container grid">
+      <div class="unit two-fifths" id="twitter_login">
+        <h1><%= link_to "Court of Popular Opinion", "/", :class => "court-head" %></h1></div>
       <%#= flash[:notice] %>
   <div class="unit three-fifths">
-        <% if logged_in_twitter %>
-        <%= image_tag "#{session[:image]}", size: "22x22" %> |
-        Signed in as <span id="loggedInUser"><%= session[:name] %></span> |
+
+        <% if current_user %>
+        <%= image_tag current_user.image, size: "22x22" %> |
+        Signed in as <span id="loggedInUser"><%= session[:name] %></span>  |
         <%= link_to "About the Court", "/about" %> |
-        <%= link_to "My Bench", "/users/#{session[:user_id]}" %> |
+        <%= link_to "My Bench", current_user
+ %> |
         <%= link_to "Cases", "/cases/" %> |
         <%= link_to "sign out", signout_path %>
         <!-- <button id="create-user">Create Case</button> -->
         <% else %>
         <%= link_to "sign in with twitter", "/auth/twitter" %>
         <% end %>
-        <% flash.each do |name, msg| %>
-        <%= content_tag :div, msg, :id => "flash_#{name}" %>
-        <% end %>
+        <%# flash.each do |name, msg| %>
+        <%#= content_tag :div, msg, :id => "flash_#{name}" %>
+        <%# end %>
   </div>
   </div>
 
     </nav>
   </header>
+

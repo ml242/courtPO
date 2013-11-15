@@ -2,17 +2,24 @@
   <div id="case">
 
     <% if session[:user_id] %>
-    <div id="case-button"><button id="create-user">Create Case</button></div>
+      <%= form_for Case.new  do |f| %>
+        <%= f.submit 'Create Case', :id => "create-user" %>
+      <% end %>
+
+      <%= render partial: "new" %>
+
     <% end %>
     <!-- Display cases from old to new, if they have not timed out -->
     <% @cases.each do |case_doc| %>
+      <% if (case_doc.timeLeft.floor > 0) %>
 
-    <% if (case_doc.timeLeft.floor > 0) %>
-    <h1><a href="/cases/<%= case_doc.id %>"><%= case_doc.title %></a></h1>
-    <p>Time remaining <%= case_doc.timeLeft.floor %> hrs</p>
-    <p><%= case_doc.conflict %></p>
-    <p style="text-align:right">Case #<%= case_doc.id %></p>
+        <h1><a href="/cases/<%= case_doc.id %>"><%= case_doc.title %></a></h1>
+        <p>Time remaining <%= case_doc.timeLeft.floor %> hrs</p>
+        <p><%= case_doc.conflict %></p>
+        <p style="text-align:right">Case #<%= case_doc.id %></p>
+
+      <% end %>
     <% end %>
-    <% end %>
+
   </div>
 </div>

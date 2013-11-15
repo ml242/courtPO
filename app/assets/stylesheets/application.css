@@ -12,5 +12,6 @@
  *= require_tree
  *= require normalize
  *= require gridism
+ *= require jquery.ui.all
  *= require style
  */
