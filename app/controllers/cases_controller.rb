@@ -4,12 +4,10 @@ class CasesController < ApplicationController
   end
 
   def new
-    binding.pry
     @case = Case.new
   end
 
   def create
-    binding.pry
     @case = Case.create(
       title: params[:title],
       conflict: params[:conflict],

@@ -26,7 +26,6 @@ def age
 end
 
 def addToScore
-  binding.pry
   self.score = self.likes.size
 end
 
