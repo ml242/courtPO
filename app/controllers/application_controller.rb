@@ -14,6 +14,7 @@ private
       # else destroy session and redirect home
         session = nil
         redirect_to('/signout')
+        return
       end
     end
   end
