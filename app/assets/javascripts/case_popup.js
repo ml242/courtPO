@@ -3,6 +3,7 @@ function newCasePop() {
       conflict = $( "#conflict" ),
       expiration = $( "#expiration" ),
       tips = $( ".validateTips" );
+      $authToke = $('input[name=authenticity_token').val();
 
     $( "#dialog-form" ).dialog({
       autoOpen: false,
@@ -11,14 +12,17 @@ function newCasePop() {
       modal: true,
       buttons: {
         "Create Case": function() {
+                        debugger;
 
             $.ajax({
                 type: "POST",
-                url: "/cases.json",
+                contentType: "JSON",
+                url: "/cases",
                 data: {
                     title: title.val(),
                     conflict: conflict.val(),
-                    expiration: expiration.val()
+                    expiration: expiration.val(),
+                    authenticity_token: $authToke
                 }
             }).done(
                 function(){

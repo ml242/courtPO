@@ -15,12 +15,12 @@ class CasesController < ApplicationController
       conflict: params[:conflict],
       expiration: params[:expiration])
     @case.user = current_user
-      if @case.save
-        flash[:notice] = "Added case successfully"
-        redirect_to cases_path
-      else
-        render json: { confirmation: "success"}
-      end
+    if @case.save
+      flash[:notice] = "Added case successfully"
+      redirect_to cases_path
+    else
+      render json: { confirmation: "success"}
+    end
   end
 
   def edit

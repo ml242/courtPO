@@ -2,10 +2,11 @@
   <div id="case">
 
     <% if session[:user_id] %>
-      <div id="case-button"><button id="create-user">Create Case</button></div>
+      <%= form_for Case.new  do |f| %>
+        <%= f.submit 'Create Case', :id => "create-user" %>
+      <% end %>
 
       <%= render partial: "new" %>
-
 
     <% end %>
     <!-- Display cases from old to new, if they have not timed out -->
