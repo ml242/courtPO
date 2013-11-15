@@ -9,7 +9,7 @@
 
         <% if current_user %>
         <%= image_tag current_user.image, size: "22x22" %> |
-        Signed in as <span id="loggedInUser"><%= session[:name] %></span>  |
+        Signed in as <span id="loggedInUser"><%= current_user.name %></span>  |
         <%= link_to "About the Court", "/about" %> |
         <%= link_to "My Bench", current_user
  %> |
