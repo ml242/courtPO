@@ -12,11 +12,9 @@ function newCasePop() {
       modal: true,
       buttons: {
         "Create Case": function() {
-                        debugger;
-
             $.ajax({
                 type: "POST",
-                contentType: "JSON",
+                dataType: 'json',
                 url: "/cases",
                 data: {
                     title: title.val(),
@@ -25,8 +23,8 @@ function newCasePop() {
                     authenticity_token: $authToke
                 }
             }).done(
-                function(){
-                        console.log(this);
+                function(data){
+                        console.log(data, this);
             });
             $( this ).dialog( "close" );
         },
@@ -38,9 +36,16 @@ function newCasePop() {
       }
     });
 
+
+    $( '#new_case').on("submit", function(e){
+        e.preventDefault();
+      });
+
+
     $( "#create-user" )
       .button()
       .click(function() {
+        // e.preventDefault();
         $( "#dialog-form" ).dialog( "open" );
       });
   };

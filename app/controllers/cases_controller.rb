@@ -1,4 +1,5 @@
 class CasesController < ApplicationController
+
   def index
     @cases = Case.find(:all,:order => 'created_at ASC',:limit => 100);
   end
@@ -8,16 +9,21 @@ class CasesController < ApplicationController
   end
 
   def create
-    @case = Case.create(
+    binding.pry
+    @case = Case.new(
       title: params[:title],
       conflict: params[:conflict],
       expiration: params[:expiration])
     @case.user = current_user
-    if @case.save
-      flash[:notice] = "Added case successfully"
-      redirect_to cases_path
-    else
-      render json: { confirmation: "success"}
+    # if @case.save
+    respond_to do |format|
+      if @case.save
+        format.html { redirect_to @case, notice: 'Case was successfully created.'}
+        format.json { render json: @case, status: :created, location: @case}
+      else
+        format.html { redirect_to @case, notice: 'Case was not successfully created.'}
+        format.json { render json: @case.errors, status: :unprocessable_entity }
+      end
     end
   end
 
