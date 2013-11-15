@@ -3,6 +3,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   font-size: 62.5%;
+  font-family: 'Roboto', sans-serif;
 }
 
 label, input { display:block; }
@@ -19,12 +20,28 @@ h1 { font-size: 1.2em; margin: .6em 0; }
 div {
   border-radius: 12px;
 }
-
+#about-text-main {
+  font-size: 1.5em;
+}
 /*#court-pic {
   background-image: url("/county_courthouse.jpg");
   background-size: cover;
 }*/
+a {
+  font-size: 1.25em;
+}
 
+a.court-head {
+  font-size: 2em;
+}
+
+p {
+  font-size: 1.25em;
+}
+
+/*div.unit.three-fifths {
+  text-align: right;
+}*/
 
 [role="banner"] h1{
 margin: 0;
@@ -164,7 +181,7 @@ footer img {
 .cases-main {
   background-color: rgba(255, 255, 255, .85);
   float: left;
-  width: 40%;
+  width: 60%;
   border: black 1px solid;
   padding: 15px;
   margin: 15px;
