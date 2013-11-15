@@ -1,14 +1,13 @@
 <div class="cases-main">
   <div id="case">
-
-    <% if session[:user_id] %>
-      <%= form_for Case.new  do |f| %>
+      <div id="cases-formz">
+      <% if session[:user_id] %>
+        <%= form_for Case.new  do |f| %>
         <%= f.submit 'Create Case', :id => "create-user" %>
       <% end %>
-
+      <% end %>
+      </div>
       <%= render partial: "new" %>
-
-    <% end %>
     <!-- Display cases from old to new, if they have not timed out -->
     <% @cases.each do |case_doc| %>
       <% if (case_doc.timeLeft.floor > 0) %>
