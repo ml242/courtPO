@@ -77,7 +77,8 @@
         <%= image_tag current_user.image, size: "22x22" %> |
         Signed in as <%= session[:name] %> |
         <%= link_to "About the Court", "/about" %> |
-        <%= link_to "My Bench", users_path %> |
+        <%= link_to "My Bench", current_user
+ %> |
         <%= link_to "Cases", "/cases/" %> |
         <%= link_to "sign out", signout_path %>
         <!-- <button id="create-user">Create Case</button> -->
