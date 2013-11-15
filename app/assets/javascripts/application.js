@@ -14,3 +14,5 @@
 //= require jquery.ui.all
 //= require case_popup
 //= require twitter
+//= require moment.min
+//= require main

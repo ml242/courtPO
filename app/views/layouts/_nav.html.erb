@@ -6,9 +6,10 @@
         <h1><%= link_to "Court of Popular Opinion", "/", :class => "court-head" %></h1></div>
       <%#= flash[:notice] %>
   <div class="unit three-fifths">
+
         <% if current_user %>
         <%= image_tag current_user.image, size: "22x22" %> |
-        Signed in as <%= session[:name] %> |
+        Signed in as <span id="loggedInUser"><%= session[:name] %></span>  |
         <%= link_to "About the Court", "/about" %> |
         <%= link_to "My Bench", current_user
  %> |
