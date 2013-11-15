@@ -5,7 +5,16 @@ private
 
   def current_user
     if session[:user_id]
-      @current_user = User.find(session[:user_id])
+      # do a where search to find a possible user
+      new_arr = User.where(id: session[:user_id])
+      # if the array is not empty, we have a user, set current user and redirect
+      if new_arr.present?
+        @current_user = new_arr.first
+      else
+      # else destroy session and redirect home
+        session = nil
+        redirect_to('/signout')
+      end
     end
   end
 
