@@ -77,7 +77,7 @@
   <div class="unit three-fifths">
         <% if logged_in_twitter %>
         <%= image_tag "#{session[:image]}", size: "22x22" %> |
-        Signed in as <%= session[:name] %> |
+        Signed in as <span id="loggedInUser"><%= session[:name] %></span> |
         <%= link_to "About the Court", "/about" %> |
         <%= link_to "My Bench", "/users/#{session[:user_id]}" %> |
         <%= link_to "Cases", "/cases/" %> |
