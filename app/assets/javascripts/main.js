@@ -6,6 +6,7 @@ $(document).ready(function(){
     e.preventDefault();
     //opinion is retrieved from input field
     var input = $('#solution_opinion').val()
+      $('#solution_opinion').val("")
     //opinion is entered via ajax to the user create action
     $.ajax({
       type: "post",
@@ -23,12 +24,8 @@ $(document).ready(function(){
                     '<p >' + solution.opinion + '</p></div>' +
                     '<div class="opinion-info"> <p>- ' + username + ' - ' +
                     created.fromNow() + '</p> </div> </div>';
-      var opinion_last = $('.opinion-container').last();
-      opinion_last.after(html);
-
-
-        // $(solution).append();
-        // $('.opinion')
+                   var opinion_last = $('.opinion-container').last();
+                   opinion_last.after(html);
     });
 
     //Opinion gets to database
