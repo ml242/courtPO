@@ -24,7 +24,31 @@ function newCasePop() {
                 }
             }).done(
                 function(data){
-                        console.log(data, this);
+
+                  var $case = $('#case');
+
+                  $h = $('<h1>')
+                  $a = $('<a>').
+                    attr('href', "/cases/" + data.id).
+                    text(data.title);
+
+                  $h.append($a);
+                  $case.append($h);
+
+                  var time = expiration.val() * 24;
+                  $p2 = $('<p>').
+                    text("Time remaining " + time + " hrs");
+                  $case.append($p2);
+
+                  $p3 = $('<p>').
+                    text(data.conflict);
+                  $case.append($p3);
+
+                  $p1 = $('<p>').
+                    attr('style', "text-align:right").
+                    text("Case #" + data.id);
+                  $case.append($p1);
+
             });
             $( this ).dialog( "close" );
         },

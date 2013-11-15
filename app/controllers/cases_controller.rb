@@ -9,7 +9,6 @@ class CasesController < ApplicationController
   end
 
   def create
-    binding.pry
     @case = Case.new(
       title: params[:title],
       conflict: params[:conflict],
