@@ -187,3 +187,8 @@ footer img {
   float: right;
   padding: 1.5%;
 }
+
+
+#person-details {
+  text-align: right;
+}
