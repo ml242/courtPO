@@ -7,11 +7,11 @@ class SolutionsController < ApplicationController
     @solution = Solution.new(
       :user_id => current_user.id,
       :case_id => @case.id,
-      :opinion => params[:opinion_input]
+      :opinion => params[:opinion_input],
+      :score => 0
     )
    #this goes to the show and helps to print out what you want to see form the database.
     if @solution.save
-      binding.pry
       render json: @solution
     else
       @users = User.all
@@ -22,11 +22,13 @@ class SolutionsController < ApplicationController
   def show
     render json: params[:id]
   end
+
   def update
-    @solution = Solution.find(params[:id])
+    @solution = Solution.find(params[:case_id])
     if params[:vote] == "+"
       @solution.liked_by current_user
       @solution.addToScore
+      @solution.save
     else
       @solution.disliked_by current_user
     end
