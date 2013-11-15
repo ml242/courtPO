@@ -1,14 +1,14 @@
 <div class="cases-main">
 <div id="case">
-<h3>Cases: </h3>
+<h1>Cases: </h1>
 <% @user.cases.each do |cased| %>
-  <p><%= cased.title %> - <%= cased.conflict %></p>
-  <a href="/cases/<%= cased.id %>">link</a>
+  <a href="/cases/<%= cased.id %>"><h1><%= cased.title %></h1></a>
+  <p><%= cased.conflict %></p>
+
 <%end%>
-<h3>Recent Opinions: </h3>
+<h1>Recent Opinions: </h1>
   <% @user.solutions.each do |solution| %>
-    <p><%= solution.opinion %></p>
-    <a href="/cases/<%= solution.case.id %>">link</a>
+    <a href="/cases/<%= solution.case.id %>"><p><%= solution.opinion %></p></a>
 <%end%>
 </div>
 </div>
