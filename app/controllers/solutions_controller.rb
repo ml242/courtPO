@@ -1,5 +1,5 @@
 class SolutionsController < ApplicationController
-  # before_filter :load_case
+  # before_filter :load_case We may want to build here to fully cmommit to AJAX
 
   def create
     @user = current_user

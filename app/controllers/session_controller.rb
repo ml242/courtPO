@@ -32,6 +32,8 @@ class SessionController < ApplicationController
 
   def destroy
     session[:user_id] = nil
+    #TODO test these session routes, see below
+    # I need to test these because they can probably be taken out
     session["session_id"] = nil
     session["_csrf_token"] = nil
     session["oauth"]["twitter"]["callback_confirmed"] = false

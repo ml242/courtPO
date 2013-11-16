@@ -13,6 +13,8 @@ private
       else
       # else destroy session and redirect home
         session = nil
+        # Find any routes that are /destroy or /logout and clean it up
+        #TODO fix logout paths so there's only one.
         redirect_to('/signout')
         return
       end
