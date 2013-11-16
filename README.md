@@ -1,10 +1,5 @@
-Resources
----
-- [Rails Cheatsheet](https://github.com/ga-students/WDI_NYC_Hash/blob/master/extra/rails_commands_cheat_sheet.md)
-- [RESTful Routing Diagram](https://docs.google.com/drawings/d/1N_4JClUYDpK7NcxWHi4ydadtFASEWNm-vQVRRSFHmkI/edit)
 
-
-#### Week 7
+#### The Court of Popular opinion is the second WDI project of Natasha Green, Matthew Korporaal, and Matt Lucas.
 ---
 
 ##### Day 4
