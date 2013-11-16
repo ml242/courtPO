@@ -1,6 +1,7 @@
 class CasesController < ApplicationController
 
   def index
+    #TODO clean this up? Would be great to have order by expiration, desc
     @cases = Case.find(:all,:order => 'created_at ASC',:limit => 100);
   end
 

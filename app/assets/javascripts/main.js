@@ -20,8 +20,9 @@ $(document).ready(function(){
 
         console.log("time to append this awesome JSON solution object to the page with jquery");
         console.log(solution);
-        var html = '<div class="opinion-container"><div class="opinion">' +
-                    '<p >' + solution.opinion + '</p></div>' +
+        var html = '<div class="vote-' + solution.id + '">' + '<div id="vote-count-' + solution.id + '">' + solution.score + '</div>' + '<img src="/assets/icons/24/Thumb-up.png">' + '</div>' +
+                    '<div class="opinion-container"><div class="opinion">' +
+                    '<p>' + solution.opinion + '</p></div>' +
                     '<div class="opinion-info"> <p>- ' + username + ' - ' +
                     created.fromNow() + '</p> </div> </div>';
                    var opinion_last = $('.opinion-container').last();

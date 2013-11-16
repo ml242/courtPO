@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-
+  #TODO add chron to ping Heroku daily
 private
 
   def current_user
@@ -23,8 +23,5 @@ private
 
   helper_method :current_user
 
-  # def logged_in_twitter
-  #   return session[:user_id]
-  # end
 end
 
