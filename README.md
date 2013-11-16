@@ -1,6 +1,6 @@
 
-#### The Court of Popular opinion
-A conflict mediation app sourcing solutions from your social network.
+The Court of Popular opinion
+#### A conflict mediation app sourcing solutions from your social network.
 ---
 
 
