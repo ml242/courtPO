@@ -5,8 +5,8 @@ $(document).ready(function(){
     // instead of submitting form we intercept it
     e.preventDefault();
     //opinion is retrieved from input field
-    var input = $('#solution_opinion').val()
-      $('#solution_opinion').val("")
+    var input = $('#solution_opinion').val();
+      $('#solution_opinion').val("");
     //opinion is entered via ajax to the user create action
     $.ajax({
       type: "post",
@@ -32,7 +32,12 @@ $(document).ready(function(){
     //Opinion gets to database
     //the response aka opinion is sent back to the page
     //Opinion is rendered on page
+
   });
-})
 
+  $('body').on('click', '#gavel-home', function() {
+    console.log('i see u ');
+    location = '/cases';
+  });
 
+});
