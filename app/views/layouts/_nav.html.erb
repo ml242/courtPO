@@ -3,7 +3,11 @@
   <nav class="nav-head">
     <div class="container grid">
       <div class="unit two-fifths" id="twitter_login">
-        <h1><%= link_to "Court of Popular Opinion", "/", :class => "court-head" %></h1></div>
+        <% if current_user %>
+        <h1><%= link_to "Court of Popular Opinion", "/cases", :class => "court-head" %></h1></div>
+        <% else %>
+        <h1><%= link_to "Court of Popular Opinion", "/cases", :class => "court-head" %></h1></div>
+        <% end %>
       <%#= flash[:notice] %>
   <div class="unit three-fifths">
   <div id="person-details">
