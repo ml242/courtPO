@@ -18,6 +18,7 @@ class SessionController < ApplicationController
       redirect_to("/cases")
     else @user = User.where(:uid => auth_hash["uid"]).first
       session[:user_id] = @user.id
+      @user.uid = auth_hash["uid"]
       @user.name = auth_hash["info"]["nickname"]
       @user.image = auth_hash["info"]["image"]
       @user.save
