@@ -20,7 +20,9 @@ class SolutionsController < ApplicationController
   end
 
   def show
+    # @solutions = Solution.find(:all,:order => 'score DSC',:limit => 100);
     render json: params[:id]
+
   end
 
   def update
