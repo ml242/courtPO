@@ -1,8 +1,8 @@
-<div class="titler">
-<h1>Editing  Case # <%= @case.id %> </h1>
-</div>
-
+<div class="cases-main">
 <div id="case">
+<div id="cases-formz">
+Editing  Case # <%= @case.id %>
+</div>
 
 <%= form_for(@case) do |f| %>
 
@@ -18,4 +18,5 @@
 
   <%= f.submit %>
 <% end %>
+</div>
 </div>
