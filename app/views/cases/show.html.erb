@@ -1,5 +1,11 @@
 <div class="cases-main">
   <div id="case">
+          <div id="cases-formz">
+        <% if @case.user == current_user %>
+        <%= link_to "Edit", edit_case_path(@case) %>
+        <%= link_to "Delete", case_path(@case), :method => "delete", :confirm => "Are you sure you want to delete?" %>
+        <% end %>
+      </div>
     <h1>Title: <%= @case.title %></h1>
     <p>Plaintiff: <%= @case.user.name %></p>
     <p>Conflict: <%= @case.conflict %></p>
@@ -11,12 +17,7 @@
 
 <div class="cases-main">
   <div id="case">
-      <div id="cases-formz">
-        <% if @case.user == current_user %>
-        <%= link_to "Edit", edit_case_path(@case) %>
-        <%= link_to "Delete", case_path(@case), :method => "delete", :confirm => "Are you sure you want to delete?" %>
-        <% end %>
-      </div>
+
 
     <% if @case.solutions.empty? %>
       <h1>This Conflict Needs Your Opinion!</h1>
