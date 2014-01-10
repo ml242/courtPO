@@ -1,6 +1,9 @@
 class SessionController < ApplicationController
 
   def new
+    if current_user
+      redirect_to('/cases')
+    end
   end
 
   def create
